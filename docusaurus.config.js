@@ -7,8 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'iDempiere',
-  tagline: 'Community Powered Enterprise',
-  favicon: 'img/favicon.ico',
+  tagline: 'Community Powered  Enterprise - Free Open Source ERP and CRM',
+  favicon: 'img/logo.png',
 
   // Set the production url of your site here
   url: 'https://idempiere-id.github.io',
@@ -44,14 +44,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/idempiere-id/idempiere-id.github.io/tree/main/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/idempiere-id/idempiere-id.github.io/tree/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -64,23 +64,23 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/idempiere-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'iDempiere',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'iDempiere Logo',
+          src: 'img/logo.png',
         },
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/idempiere/idempiere',
             label: 'GitHub',
             position: 'right',
           },
@@ -102,16 +102,28 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Google Groups',
+                href: 'https://groups.google.com/g/idempiere',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Mattermost',
+                href: 'https://mattermost.idempiere.org/',
+              },
+              {
+                label: 'Facebook',
+                href: 'https://www.facebook.com/groups/idempiere/',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'http://www.twitter.com/idempiere',
+              },
+              {
+                label: 'Youtube',
+                href: 'https://www.youtube.com/channel/UCRdFTCB3yc_ni8EBXyhVqfQ',
+              },
+              {
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/groups/5146317/',
               },
             ],
           },
@@ -124,7 +136,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/idempiere/idempiere',
               },
             ],
           },
