@@ -4,32 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Freedom',
+    Svg: require('@site/static/img/breaking-barriers-rafiki.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        iDempiere will be open forever. You will never experience the bitterness of vendor lock-ins
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Community',
+    Svg: require('@site/static/img/open-source-rafiki.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Professionals from different fields and countries make iDempiere better every day
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'High Quality',
+    Svg: require('@site/static/img/operating-system-rafiki.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        State of the art technology right at the heart of iDempiere. Java, ZK, OSGi, Oracle, PostgreSQL, Maven.
       </>
     ),
   },

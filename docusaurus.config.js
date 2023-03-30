@@ -172,7 +172,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} iDempiere. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} iDempiere<br/>Illustrations by <a href="https://storyset.com">Storyset</a>`,
       },
       prism: {
         theme: lightCodeTheme,
