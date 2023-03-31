@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Docker
 
-## Quick Start
+## Quick Start mod2
 
 ```shell
 docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres:13
