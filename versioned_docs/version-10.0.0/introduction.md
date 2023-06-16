@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction
 
-Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system supported by a skilful community. The project focuses on high-quality software, a philosophy of openness and its collaborative community that includes subject matter specialists, implementors, developers and end-users.
+Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system supported by a skillful community. The project focuses on high-quality software, a philosophy of openness and its collaborative community that includes subject matter specialists, implementors, developers and end-users.
 
 # Why iDempiere
 - It is easy to install.
