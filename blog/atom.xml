@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://idempiere.github.io/blog</id>
-    <title>iDempiere Blog</title>
+    <title>iDempiere Open Source ERP Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://idempiere.github.io/blog"/>
-    <subtitle>iDempiere Blog</subtitle>
+    <subtitle>iDempiere Open Source ERP Blog</subtitle>
     <icon>https://idempiere.github.io/img/logo.png</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
