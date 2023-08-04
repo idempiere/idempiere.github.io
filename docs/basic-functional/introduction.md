@@ -1,14 +1,13 @@
 ---
 sidebar_position: 1
 ---
-
 # Purpose
 
-The purpose of this site is to help you learn, configure, enhance, deploy, scale and support an iDempiere instance and the iDempiere community as a whole. 
+The purpose of this site is to help you learn, configure, enhance, deploy, scale and support an iDempiere instance and the iDempiere community as a whole.
 
 # iDempiere Introduction
 
-Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system supported by a skillful community. The project focuses on high-quality software, a philosophy of openness and its collaborative community that includes subject matter specialists, implementors, developers and end-users.
+Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system supported by a skilful community. The project focuses on high-quality software, a philosophy of openness and its collaborative community that includes subject matter specialists, implementors, developers and end-users.
 
 # Why iDempiere
 - It is easy to install.
@@ -20,7 +19,7 @@ Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system
 - It is commonly used around the world.
 - It is supported by a large community.
 
-# Try iDempiere online
+# Try iDempiere Online
 - [iDempiere 10 Peace Stable](https://demo.globalqss.com/webui/)
 - [iDempiere 11 Dev Build](https://test.idempiere.org/webui/)
 - [iDempiere 11 Dev Build with Oracle](https://test-oracle.idempiere.org/webui/)

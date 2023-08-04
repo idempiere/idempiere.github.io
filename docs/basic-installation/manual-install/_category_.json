@@ -1,8 +1,8 @@
 {
   "label": "Manual Install",
-  "position": 2,
+  "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "Installing iDempiere for Execution"
+    "description": "Installing iDempiere using manual steps"
   }
 }
