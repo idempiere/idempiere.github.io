@@ -8,7 +8,7 @@ You are welcome to perform basic edits using the htts://github.com web interface
 
 ### Installation
 
-If you wish to make and test local edits, the following instructions
+If you wish to make and test local edits, use the following instructions:
 
 ```
 sudo apt update
