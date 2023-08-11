@@ -8,7 +8,7 @@ The purpose of this site is to help you learn, configure, enhance, deploy, scale
 There are two sources of iDempiere documentation:
 
 1. This site offers a guided resource for learning iDempiere.
-2. [iDempiere wiki](wiki.idempiere.org) offers a place for general knowledge, comments and community details.
+2. [iDempiere wiki](https://wiki.idempiere.org) offers a place for general knowledge, comments and community details.
 
 # iDempiere Introduction
 
