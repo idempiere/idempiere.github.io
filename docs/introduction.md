@@ -5,6 +5,10 @@ sidebar_position: 1
 
 The purpose of this site is to help you learn, configure, enhance, deploy, scale and support an iDempiere instance and the iDempiere community as a whole.
 
+There are two sources of iDempiere documentation:
+1. This site whose purpose is to offer a guided resource for learning iDempiere.
+2. [iDempiere wiki](wiki.idempiere.org) whose purpose is to offer a place for general knowledge, comments and community details.
+
 # iDempiere Introduction
 
 Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system supported by a skilful community. The project focuses on high-quality software, a philosophy of openness and its collaborative community that includes subject matter specialists, implementors, developers and end-users.
