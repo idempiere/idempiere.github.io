@@ -6,8 +6,8 @@ sidebar_position: 1
 The purpose of this site is to help you learn, configure, enhance, deploy, scale and support an iDempiere instance and the iDempiere community as a whole.
 
 There are two sources of iDempiere documentation:
-1. This site whose purpose is to offer a guided resource for learning iDempiere.
-2. [iDempiere wiki](wiki.idempiere.org) whose purpose is to offer a place for general knowledge, comments and community details.
+1. This site offers a guided resource for learning iDempiere.
+2. [iDempiere wiki](wiki.idempiere.org) offers a place for general knowledge, comments and community details.
 
 # iDempiere Introduction
 
