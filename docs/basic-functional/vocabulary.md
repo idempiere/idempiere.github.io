@@ -66,9 +66,14 @@ A Product is used to represent many concepts in iDempiere. A Product can be:
 Products are similar to Charges in that they help the system map transactions to GL accounts; however, the Product architecture is much more involved. Products have the following added complexities over Charges:
 
 * Products depend on Price Lists
+* Products can maintain inventory levels
+* Products maintain costs
+* Products support Bills of Materials (BOM)
 * Products maintain multiple GL accounts (where a Charge maps to a single GL account)
 * Product GL account usage depends on how the Product is configured
 * Products are integrated with Assets and Resources
+
+Many windows give you a choice between using a Product or a Charge (Sales Order => Order Line subtab for example). If you do not know whether to use a Product or a Charge, start by using a Charge. It is more simple. Use Products when you have a requirement that cannot be solved by a Charge.
 
 # Accounting Schema
 

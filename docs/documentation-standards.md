@@ -17,5 +17,5 @@ The purpose of this page is to help encourage standards when creating and updati
         * 'System' Tenant
 * Windows, Tabs and Fields
     * Use the same case as the window name. Example: Sales Order
-    * Use => to designate subtab navigation
-    * Use the word 'subtab' to reflect a tab whose Tab Level > 0.
+    * Use '=>' to designate subtab navigation. Example: Sales Order window => Order Line subtab
+        * Use the word 'subtab' (single word) to reflect a tab whose Tab Level > 0
