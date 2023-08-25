@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 # Purpose
 
-The purpose of this section is to help get started using iDempiere. We will focus on vocabulary and tools that most people use regardless of your industry. 
+The purpose of this section is to help you get started using iDempiere. We will focus on basic vocabulary and tools that most people use regardless of your industry. 
 
 # Getting Started
 
