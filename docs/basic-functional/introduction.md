@@ -7,4 +7,4 @@ The purpose of this section is to help you get started using iDempiere. We will 
 
 # Getting Started
 
-* Start by familiarizing yourself with [iDempiere vocabulary](vocabulary.md). This page was purposefully kept to a minimum to make learning the basics as easy as possible. 
+* Start by familiarizing yourself with [iDempiere vocabulary](vocabulary.md). This page was purposefully kept to a minimum to make learning the basics as efficient as possible. 
