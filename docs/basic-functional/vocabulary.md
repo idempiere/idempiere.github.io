@@ -7,7 +7,7 @@ This page defines basic terms you should know when using iDempiere. Consider boo
 
 # Tenant Definition and Usage
 
-A Tenant is a global consolidated collection of financial entities. iDempiere is multi-tenant. This means that completely separate groups of people can use the same instance of iDempiere for very different and unrelated purposes. Because different tenants are unrelated, they do not share any information with each other.
+A Tenant (formerly known as Client) is a global consolidated collection of financial entities. iDempiere is multi-tenant. This means that completely separate groups of people can use the same instance of iDempiere for very different and unrelated purposes. Because different tenants are unrelated, they do not share any information with each other.
 
 In a simple scenario where you are a sole proprietor, you will have a single financial entity (Organization) in a single tenant. In a more complicated scenario where you are a multi-national collection of financial entities, you will have multiple financial entities (Organizations) in a single tenant.
 
@@ -19,17 +19,27 @@ The 'System' Tenant is a special tenant found in every instance of iDempiere. It
 
 An Organization is a legal, financial or taxation entity inside a Tenant. It is most commonly referred to as a 'set of books'. An organization owns all financial things of value. Said another way, all records written to the general ledger will always be associated with an organization.
 
+Here are additional important details about the Organization:
+
+* An Organization belongs to a Tenant.
+* The Organization window contains a tree to help you structure the relationships between your organizations.
+* The Organization window has a Summary check box field.
+* Any organization whose Summary check box is checked is considered a 'summary organization'.
+* Any organization whose Summary check box is NOT checked is considered a 'transactional organization'.
+* Summary organizations are a financial consolidation point.
+* You cannot post directly against a summary organization. Instead, summary organizations represent the sum of all postings against the transactional organizations that link to it via the Organization window tree.
+
 # Business Partner
 
 A Business Partner is someone or something you transact with financially. Business partners can be customers, vendors, employees, internal or external sales representatives, etc... 
 
 # Contact
 
-A Contact is someone or something you communicate with. Most commonly, a contact is a human.
+A Contact is someone or something you communicate with. Contacts are most commonly found in the Business Partner window.
 
 # User
 
-A User is a Contact that has the additional ability to log into iDempiere. Said another way, a User is a Contact, and a Contact is a User if they can log into iDempiere.
+A User is a Contact that has the additional ability to log into iDempiere. Said another way, a User is a Contact, and a Contact is a User if they can log into iDempiere. Users are most commonly found in the User window.
 
 # Role
 
