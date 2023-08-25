@@ -29,9 +29,11 @@ Here are additional important details about the Organization:
 * Summary organizations are a financial consolidation point.
 * You cannot post directly against a summary organization. Instead, summary organizations represent the sum of all postings against the transactional organizations that link to it via the Organization window tree.
 
+Organizations inside the same Tenant can share information. There exists a special Organization named '*' or commonly referred to as "star". While the '*' Organization is a real organization, it is commonly used to share data by convention. Said another way, if you wish to make a given record available to all users and records in your Tenant, assign that record the '*' Organization.
+
 # Business Partner
 
-A Business Partner is someone or something you transact with financially. Business partners can be customers, vendors, employees, internal or external sales representatives, etc... 
+A Business Partner is someone or something you transact with financially. Any given Business Partners can be flagged as either or all of the following: customer, vendor, employee, internal or external sales representative, or prospect. This means you no longer need to maintain duplicate records when a business partner is both a customer and a vendor.
 
 # Contact
 
@@ -39,7 +41,9 @@ A Contact is someone or something you communicate with. Contacts are most common
 
 # User
 
-A User is a Contact that has the additional ability to log into iDempiere. Said another way, a User is a Contact, and a Contact is a User if they can log into iDempiere. Users are most commonly found in the User window.
+A User is a Contact that has the additional ability to log into iDempiere. Said another way, a User is a Contact, and a Contact is a User only if they can log into iDempiere. Users are most commonly found in the User window.
+
+Note that the User window includes all Users and Contacts for a given Tenant.
 
 # Role
 
