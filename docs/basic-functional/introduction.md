@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 # Purpose
 
-The purpose of this site is to help you learn, configure, enhance, deploy, scale and support an iDempiere instance and the iDempiere community as a whole.
+The purpose of this section is to help get started using iDempiere. We will focus on vocabulary and tools that most people use regardless of your industry. 
 
 # iDempiere Introduction
 
