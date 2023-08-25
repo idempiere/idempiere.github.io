@@ -44,3 +44,32 @@ A User is a Contact that has the additional ability to log into iDempiere. Said 
 # Role
 
 A Role defines the attributes and abilities of a User logging into an iDempiere session. A User can have many Roles. A User must choose one (and only one) Role during the login process. The User's iDempiere experience is defined by the chosen role during login.
+
+# Charge
+
+A Charge is a facade for accounts in the Chart of Accounts (Account Element window => Element Value subtab). Charges are used in transactional windows such as the Invoice (Vendor) window and Physical Inventory window to code value to given accounts.
+
+It is commonly asked why the concept of a Charge exists. Asked another way, why not let the user simply choose the account directly? There are important reasons the Charge exists:
+
+1. Charges give ERP Administrators the ability to provide meaningful names to actions an operator might perform where the operator would have no knowledge of the underlying GL account number or meaning. Example of a Charge name that means something to a warehouse operator: "Damaged Inventory (62300)". Example of a GL account name that might be meaningless to a warehouse operator: "62300 - Material Discrepancy".
+1. Charges give you the ability to have multiple operator descriptions for the same GL account. Doing so ensures the correctly named options are available to operators in the right circumstances.
+1. iDempiere supports multiple Accounting Schemas (functional currencies) with multiple Account Elements (charts of accounts). This means that a transactional document can use a single Charge option regardless of the document's functional currencies. iDempiere knows exactly what account to use when posting to the respective functional currencies.
+
+# Product
+
+A Product is used to represent many concepts in iDempiere. A Product can be:
+
+* A stocked product like a chair
+* A not-Stocked product like water
+* A service that you perform
+
+Products are similar to Charges in that they help the system map transactions to GL accounts; however, the Product architecture is much more involved. Products have the following added complexities over Charges:
+
+* Products depend on Price Lists
+* Products maintain multiple GL accounts (where a Charge maps to a single GL account)
+* Product GL account usage depends on how the Product is configured
+* Products are integrated with Assets and Resources
+
+# Accounting Schema
+
+# Account Element (Element Value)
