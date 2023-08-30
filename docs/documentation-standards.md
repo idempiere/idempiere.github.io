@@ -12,13 +12,13 @@ The purpose of this page is to help encourage standards when creating and updati
         * Business Partner
         * Sales Order
         * Product
-    * Use sinle quotes when referring to a record of an entity. Here are examples
-        * 'Azalea Bush' Product
-        * 'System' Tenant
+    * Use quotes when referring to a record of an entity. Here are examples
+        * "Azalea Bush" Product
+        * "System" Tenant
 * Windows, Tabs and Fields
     * Use the same case as the window name. Example: Sales Order
-    * Use '=>' to designate subtab navigation. Example: Sales Order window => Order Line subtab
-        * Use the word 'subtab' (single word) to reflect a tab whose Tab Level > 0
+    * Use "=>" to designate subtab navigation. Example: Sales Order window => Order Line subtab
+        * Use the word "subtab" (single word) to reflect a tab whose Tab Level > 0
 * Docusaurus Standards
     * Page management
         * The title of the page will be pulled from your first h1 (#).
