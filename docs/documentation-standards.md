@@ -5,7 +5,7 @@ sidebar_position: 99
 
 The purpose of this page is to help encourage standards when creating and updating this site.
 
-# Standards
+## Standards
 
 * iDempiere Entities
     * Capitalize the first letter when referring to the name of a specific entity/thing in iDempiere. Here are examples
