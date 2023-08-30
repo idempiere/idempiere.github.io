@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# Vocabulary {#Vocabulary}
+# Vocabulary {#vocabulary}
 
 This page defines basic terms you should know when using iDempiere. Consider bookmarking this page for future reference.
 
