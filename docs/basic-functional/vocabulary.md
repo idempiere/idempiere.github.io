@@ -13,19 +13,19 @@ In a simple scenario where you are a sole proprietor, you will have a single fin
 
 ## System Tenant {#tenant-system}
 
-The 'System' Tenant is a special tenant found in every instance of iDempiere. It holds the metadata used to define how iDempiere looks and functions.
+The "System" Tenant is a special tenant found in every instance of iDempiere. It holds the metadata used to define how iDempiere looks and functions.
 
 ## Organization {#organization} 
 
-An Organization is a legal, financial or taxation entity inside a Tenant. It is most commonly referred to as a 'set of books'. An organization owns all financial things of value. Said another way, all records written to the general ledger will always be associated with an organization.
+An Organization is a legal, financial or taxation entity inside a Tenant. It is most commonly referred to as a "set of books". An organization owns all financial things of value. Said another way, all records written to the general ledger will always be associated with an organization.
 
 Here are additional important details about the Organization:
 
 * An Organization belongs to a Tenant.
 * The Organization window contains a tree to help you structure the relationships between your organizations.
 * The Organization window has a Summary check box field.
-* Any organization whose Summary check box is checked is considered a 'summary organization'.
-* Any organization whose Summary check box is NOT checked is considered a 'transactional organization'.
+* Any organization whose Summary check box is checked is considered a "summary organization".
+* Any organization whose Summary check box is NOT checked is considered a "transactional organization".
 * Summary organizations are a financial consolidation point.
 * You cannot post directly against a summary organization. Instead, summary organizations represent the sum of all postings against the transactional organizations that link to it via the Organization window tree.
 
