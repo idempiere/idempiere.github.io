@@ -11,7 +11,7 @@ The first step of the login process focuses on authentication (who are you) and 
 
 # Step 2 - Authorization and Defaults
 
-The second step of the login process dictates what you do, default behaviors of the system and what you can see. Let's review the authorization fields and how they impact your session.
+The second step dictates how the system will behave once you are logged in. Chose the [Tenant](vocabulary#tenant) and [Role](vocabulary#role). Let's review the authorization fields and how they impact your session.
 
 * Tenant - 
 
