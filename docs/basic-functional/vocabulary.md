@@ -29,7 +29,7 @@ Here are additional important details about the Organization:
 * Summary organizations are a financial consolidation point.
 * You cannot post directly against a summary organization. Instead, summary organizations represent the sum of all postings against the transactional organizations that link to it via the Organization window tree.
 
-Organizations inside the same Tenant can share information. There exists a special Organization named '*' or commonly referred to as "star". While the '*' Organization is a real organization, it is commonly used to share data by convention. Said another way, if you wish to make a given record available to all users and records in your Tenant, assign that record the '*' Organization.
+Organizations inside the same Tenant can share information. There exists a special Organization named "*" or commonly referred to as "star". While the "*" Organization is a real organization, it is commonly used to share data by convention. Said another way, if you wish to make a given record available to all users and records in your Tenant, assign that record the "*" Organization.
 
 ## Business Partner {#business-partner}
 
