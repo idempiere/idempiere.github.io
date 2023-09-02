@@ -100,7 +100,7 @@ On oracle some fields must be filled slightly different:
 
 
   </TabItem>
-  <TabItem value="console" label="Console" default>
+  <TabItem value="console" label="Console">
 
 Run
 

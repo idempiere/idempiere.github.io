@@ -79,7 +79,7 @@ After installing postgres you must check the correct configuration of pg_hba.con
 The following line requires change of the authentication method:
 
 <Tabs>
-  <TabItem value="ubuntu" label="Ubuntu" default>
+  <TabItem value="ubuntu" label="Ubuntu">
 
 ```shell title="/etc/postgresql/14/main/pg_hba.conf"
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
