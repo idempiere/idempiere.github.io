@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 # Vocabulary {#vocabulary}
 
-This page defines basic terms you should know when using iDempiere. Consider bookmarking this page for future reference.
+This page defines basic terms you should know when using iDempiere. Consider bookmarking this page for future reference. Note that the order of terms is prioritized by relevance and importance (not alphabet).
 
 ## Tenant Definition and Usage {#tenant}
 
