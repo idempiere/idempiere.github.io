@@ -4,9 +4,11 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 ## Github Editing
 
-You are welcome to perform basic edits using the htts://github.com web interface.
+You are welcome to perform basic edits using the htts://github.com web interface. Here is a quick summary:
+- Navigate to any given page (example: https://idempiere.github.io/docs/introduction)
+- Click on the 'edit this page' link at the bottom of the page.
 
-### Installation
+## Installation
 
 If you wish to make and test local edits, use the following instructions:
 
