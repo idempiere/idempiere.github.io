@@ -8,7 +8,7 @@ There are two ways to edit this site:
 1. Through the github interface.
 2. Through the source code.
 
-Since most users cannot directly commit to the repository, you will need to perform a pull request to peform edits. This process is quite easy when editing pages directly from the github web interface. Below is a description of how the process works in github.
+Since most users cannot directly commit to the repository, you will need to perform a pull request to perform edits. This process is quite easy when editing pages directly from the github web interface. Below is a description of how the process works in github.
 
 If you wish to download and modify the source code, you will need to fork, modify and create a pull request. This process is discussed below.
 
