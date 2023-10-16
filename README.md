@@ -37,3 +37,15 @@ npm install @giscus/react
 npm run build
 npm run serve
 ```
+
+## Internationalization and Translation
+The purpose of this section is to offer a cheatsheet for adding an new locale and translations. Here are the details:
+- Start with the [docusaurus internationalization introduction and 3 sub-pages](https://docusaurus.io/docs/i18n/introduction).
+- Quick notes:
+  - Modify docusaurus.config.js to include your [desired locale](https://saimana.com/list-of-country-locale-code/) (example: locales: ['en', 'fr', 'fa'],)
+  - Run the command to write the translation details
+    - npm run write-translations -- --locale es
+  -  Assuming you are manually translating your document (not using Crowdin), execute the mkdir/copy statements from here:
+    -  https://docusaurus.io/docs/i18n/git
+  -  Start translating...
+  -  Note: copying over the files to be translated is essentially like forking the documentation. It is recommended that you wait until the English docs are near-complete before copying over the content to minimize syncing efforts for future edits.
