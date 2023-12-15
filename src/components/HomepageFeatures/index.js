@@ -4,29 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Freedom',
+    title: 'Basic Documentation',
     Svg: require('@site/static/img/breaking-barriers-rafiki.svg').default,
     description: (
       <>
-        iDempiere will be open forever. You will never experience the bitterness of vendor lock-ins
+        Helping you gain the tools and knowledge to get started with iDempiere.
       </>
     ),
   },
   {
-    title: 'Community',
+    title: 'Configuration Documentation',
     Svg: require('@site/static/img/open-source-rafiki.svg').default,
     description: (
       <>
-        Professionals from different fields and countries make iDempiere better every day
+        Helping you make iDempiere meet your specific needs.
       </>
     ),
   },
   {
-    title: 'High Quality',
+    title: 'Production Documentation',
     Svg: require('@site/static/img/operating-system-rafiki.svg').default,
     description: (
       <>
-        State of the art technology right at the heart of iDempiere. Java, ZK, OSGi, Oracle, PostgreSQL, Maven.
+        Helping you deploy, support, and scale iDempiere.
       </>
     ),
   },

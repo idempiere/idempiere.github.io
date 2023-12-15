@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'iDempiere',
-  tagline: 'Community Powered  Enterprise - Free Open Source ERP and CRM',
+  title: 'iDempiere Open Source ERP',
+  tagline: 'Community Powered Documentation',
   favicon: 'img/logo.png',
 
   // Set the production url of your site here
@@ -77,13 +77,6 @@ const config = {
           editUrl:
             'https://github.com/idempiere/idempiere.github.io/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/idempiere/idempiere.github.io/tree/main/',
-        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -109,7 +102,6 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           // Right
           {
             type: 'docsVersionDropdown',
@@ -130,16 +122,16 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Get Started',
+                label: 'Basic Installation Guide',
                 to: '/docs/introduction',
               },
               {
-                label: 'User Guides',
-                to: '/docs/category/user-guides',
+                label: 'Basic Functional Guide',
+                to: '/docs/introduction',
               },
               {
-                label: 'Dev Guides',
-                to: '/docs/category/dev-guides',
+                label: 'Basic Developer Guide',
+                to: '/docs/introduction',
               },
             ],
           },
@@ -175,10 +167,6 @@ const config = {
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/idempiere/idempiere',
