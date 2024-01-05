@@ -7,7 +7,11 @@ import TabItem from '@theme/TabItem';
 
 # Docker
 
-## Quick Start
+## Purpose
+
+The purpose of this page is to help you get iDempiere up and running with docker. For more advanced iDempiere docker topic see the [idempiere-docker](https://github.com/idempiere/idempiere-docker) github page.
+
+## Docker Quick Start
 
 ```shell
 docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres:13
@@ -17,67 +21,44 @@ docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgre
 docker run -d --name idempiere -p 8443:8443 --link postgres:postgres idempiereofficial/idempiere:10
 ```
 
-## Advanced
+## Docker Compose Quick Start
 
-### Using Docker Commands
+Create a `docker-stack.yml` file:
 
-iDempiere Docker uses a postgres admin password and user to create a clean database, example `POSTGRES_PASSWORD=postgres`, if you are using a different configuration you need to see [Environment Variables](#environment-variables):
+```yaml
+version: '3.7'
 
-```shell
-docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres:13
+services:
+  idempiere:
+    image: idempiereofficial/idempiere:10-daily
+    volumes:
+      - idempiere_config:/opt/idempiere/configuration
+      - idempiere_plugins:/opt/idempiere/plugins
+    environment:
+      - TZ=America/Chicago
+    ports:
+      - 8080:8080
+      - 8443:8443
+      - 12612:12612
+
+  postgres:
+    image: postgres:15
+    volumes:
+      - idempiere_data:/var/lib/postgresql/data
+    environment:
+      - TZ=America/Chicago
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+
+volumes:
+  idempiere_data:
+  idempiere_plugins:
+  idempiere_config:
 ```
 
-Remember to change the postgres port in case you have one previously running, example -p 5433:5432. You could use any postgres version in the Prerequisites Page.
+Docker compose:
 
-```shell
-docker run -d --name idempiere -p 8443:8443 --link postgres:postgres idempiereofficial/idempiere:10
+```bash
+$ docker compose -f docker-stack.yml up
 ```
-
-For persistent data see the section Volumes.
-
-Starting containers automatically here.
-
-Open in the browser: https://127.0.0.1:8443/webui/
-
-### Using Docker Commands With an External DB
-
-<Tabs groupId="operating-systems">
-  <TabItem value="linux" label="Linux">
-
-```
-docker run -d --name idempiere -p 8443:8443 --network host\
-  -e DB_HOST=127.0.0.1\
-  -e DB_PORT=5432\
-  -e DB_NAME=idempiere\
-  -e DB_USER=adempiere\
-  -e DB_PASS=adempiere\
-  -e DB_ADMIN_PASS=postgres\
-  idempiereofficial/idempiere:10
-```
-
-  </TabItem>
-  <TabItem value="windows" label="Windows">
-
-```
-docker run -d --name idempiere -p 8443:8443 ^
-  -e DB_HOST=0.0.0.0 ^
-  -e DB_PORT=5432 ^
-  -e DB_NAME=idempiere ^
-  -e DB_USER=adempiere ^
-  -e DB_PASS=adempiere ^
-  -e DB_ADMIN_PASS=postgres ^
-  idempiereofficial/idempiere:10
-```
-
-  </TabItem>
-</Tabs>
-
-### Using Docker Stack (Docker Swarm or Docker Compose)
-
-## Default Accounts
-
-## Environment Variables
-
-## Default Ports
-
-## How does it work?
