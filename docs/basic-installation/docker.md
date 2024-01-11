@@ -30,7 +30,7 @@ version: '3.7'
 
 services:
   idempiere:
-    image: idempiereofficial/idempiere:10-daily
+    image: idempiereofficial/idempiere:11-release
     volumes:
       - idempiere_config:/opt/idempiere/configuration
       - idempiere_plugins:/opt/idempiere/plugins
@@ -55,6 +55,7 @@ volumes:
   idempiere_data:
   idempiere_plugins:
   idempiere_config:
+
 ```
 
 Docker compose:
