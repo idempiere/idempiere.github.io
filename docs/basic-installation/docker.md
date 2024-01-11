@@ -14,11 +14,11 @@ The purpose of this page is to help you get iDempiere up and running with docker
 ## Docker Quick Start
 
 ```shell
-docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres:13
+docker run -d --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres:15
 ```
 
 ```shell
-docker run -d --name idempiere -p 8443:8443 --link postgres:postgres idempiereofficial/idempiere:10
+docker run -d --name idempiere -p 8443:8443 --link postgres:postgres idempiereofficial/idempiere:11-release
 ```
 
 ## Docker Compose Quick Start
