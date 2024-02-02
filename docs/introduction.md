@@ -23,10 +23,10 @@ Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system
 - It supports multiple entities (sets of books) inside a single login.
 - It is commonly used around the world.
 - It is supported by a large community.
-- Has supporting ecosystem for a complete solution (BI, workflow, portals)
-- Costs a fraction of proprietary ERP
+- It has supporting ecosystem for a complete solution (BI, workflow, portals).
+- It costs a fraction of proprietary ERP.
 
 # Try iDempiere Online
-- [iDempiere 10 Peace Stable](https://demo.globalqss.com/webui/)
-- [iDempiere 11 Dev Build](https://test.idempiere.org/webui/)
-- [iDempiere 11 Dev Build with Oracle](https://test-oracle.idempiere.org/webui/)
+- [iDempiere 11 Synergy Stable](https://demo.globalqss.com/webui/)
+- [iDempiere 12 Dev Build](https://test.idempiere.org/webui/)
+- [iDempiere 12 Dev Build with Oracle](https://test-oracle.idempiere.org/webui/)
