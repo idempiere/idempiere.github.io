@@ -33,11 +33,11 @@ Organizations inside the same Tenant can share information. There exists a speci
 
 ## Business Partner {#business-partner}
 
-A Business Partner is someone or something you transact with financially. Any given Business Partners can be flagged as either or all of the following: customer, vendor, employee, internal or external sales representative, or prospect. This means you no longer need to maintain duplicate records when a business partner is both a customer and a vendor.
+A Business Partner is someone or something you transact with financially. Any given Business Partner can be flagged as either or all of the following roles: customer, vendor, employee, internal or external sales representative, or prospect. This means you no longer need to maintain duplicate records when a business partner plays multiple roles (example: both a customer and a vendor).
 
 ## Contact {#contact}
 
-A Contact is someone or something you communicate with. Contacts are most commonly found in the Business Partner window.
+A Contact is someone or something you communicate with. Contacts are most commonly found in the Business Partner window => Contact subtab.
 
 ## User {#user}
 
