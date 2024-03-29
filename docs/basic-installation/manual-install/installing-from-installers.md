@@ -93,12 +93,10 @@ The only *valid error* in red is in front of Database Password field when the da
 
 On oracle some fields must be filled slightly different:
 
-- Database Name: here you must fill the name of the oracle instance (usually xe or orcl)
-- DB Admin Password: must be filled with the SYSTEM password you set when installing oracle
-- Database User: in oracle you can define your preferred user here
-- Database Password: fill here with the password you want to assign to the database
-
-
+  - Database Name: here you must fill the name of the oracle instance (usually xe or orcl)
+  - DB Admin Password: must be filled with the SYSTEM password you set when installing oracle
+  - Database User: in oracle you can define your preferred user here
+  - Database Password: fill here with the password you want to assign to the database
   </TabItem>
   <TabItem value="console" label="Console">
 
