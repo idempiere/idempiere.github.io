@@ -36,7 +36,7 @@ nvm list-remote
 nvm install v18.16.0
 git clone https://github.com/idempiere/idempiere.github.io
 cd idempiere.github.io/
-npm install @giscus/react
+npm install
 ```
 
 Want to edit documents on "idempiere.github.io/docs" and see your changes instantly in the browser? Here's how:
