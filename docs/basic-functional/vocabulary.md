@@ -33,11 +33,11 @@ Organizations inside the same Tenant can share information. There exists a speci
 
 ## Business Partner {#business-partner}
 
-A Business Partner is someone or something you transact with financially. Any given Business Partners can be flagged as either or all of the following: customer, vendor, employee, internal or external sales representative, or prospect. This means you no longer need to maintain duplicate records when a business partner is both a customer and a vendor.
+A Business Partner is someone or something you transact with financially. Any given Business Partner can be flagged as either or all of the following roles: customer, vendor, employee, internal or external sales representative, or prospect. This means you no longer need to maintain duplicate records when a business partner plays multiple roles (example: both a customer and a vendor).
 
 ## Contact {#contact}
 
-A Contact is someone or something you communicate with. Contacts are most commonly found in the Business Partner window.
+A Contact is someone or something you communicate with. Contacts are most commonly found in the Business Partner window => Contact subtab.
 
 ## User {#user}
 
@@ -80,7 +80,19 @@ Products are similar to Charges in that they help the system map transactions to
 Many windows give you a choice between using a Product or a Charge (Sales Order => Order Line subtab for example). If you do not know whether to use a Product or a Charge, start by using a Charge. It is more simple. Use Products when you have a requirement that cannot be solved by a Charge.
 
 ## Accounting Schema {#accounting-schema}
-The Accounting Schema is the structure of accounts from an organziation. It has tight relationships with many functions and areas of the ERP-system e.g. the stored material and the accounts that reflect the values in the warhouses. Also many other control parameters are set in relation to the Accounting Schema, e.g. the currency for accounting and the costing method. As an option distinct from most other ERP-systems iDempiere can manage different Accounting Schemas in parallel, e.g., if a large company needs complete bookkeeping in two different currencies or ways. 
+The Accounting Schema window is where you begin configuring iDempiere's accounting engine. In the Accounting Schema window, you will commonly set:
+
+* Currency
+* Default product Costing Method
+* Default product Costing Level (Client, Org, or Lot)
+* Accounting dimensions/segments (what values post to the general ledger along side the account number)
+* Posting defaults (what accounts to use related to Business Partners, Banks, Warehouses, etc...)
+
+You may maintain as many Accounting Schemas as you deem appropriate. Here are common reasons to have more than one Accounting Schema record:
+
+* You maintain and report financials from more than one currency.
+* You maintain and report financials from both 'Cash' and 'Accrual' costing methods.
+* You meed to maintain multiple charts of accounts. 
 
 ## Account Element (Element Value) {#account-element}
 The Account Element is the abstract class of the individual accounts for all financial accounting and other related activities, e.g. budgeting, internal cost accounting. Every business activity which creates or changes values in the company is normally reflected by accounting entries. In this context, it is important to note that the accounts are structured by the accounts tree. It defines which account is a base or root account for a specific value category and which other account is for accumulating the values of these root accounts and of other accumulation accounts. Also in the accounts definition it can be controlled which accounts can only be posted by automatic actions of the system e.g. by a production order, and which accounts are debited or credited by journal entries of the company staff.
