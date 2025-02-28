@@ -5,7 +5,7 @@ sidebar_position: 15
 
 The purpose of this page is to help you get started
 
-## General UI
+# General UI
 
 - Menu button and Menu box
 - Favourites widget
@@ -15,20 +15,20 @@ The purpose of this page is to help you get started
 - About box
 - Feedback, Preference, Change Role, Logout
 
-## Windows
+# Windows
 
 
 Header and Details layout
 Toolbar
 
-## Executing reports and processes
+# Executing reports and processes
 
 - parameters and saved parameters
 - background
 - format, language, etc
 
-## Reports
+# Reports
 
 Toolbar
 
-## Info Windows
+# Info Windows
