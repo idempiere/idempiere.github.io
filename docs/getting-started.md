@@ -77,7 +77,6 @@ Once logged in, you will see the iDempiere home screen, which consists of:
 
 ## Getting Help
 
-* Join the iDempiere community forum for discussions and support.  
-* Refer to the official documentation for advanced topics.
+* Join the [iDempiere community forum](https://idempiere.org/forums/) for discussions and support.  
 
 Now that you're familiar with the basics, you're ready to explore iDempiere further!
