@@ -81,15 +81,3 @@ Once logged in, you will see the iDempiere home screen, which consists of:
 * Refer to the official documentation for advanced topics.
 
 Now that you're familiar with the basics, you're ready to explore iDempiere further!
-
-# Executing reports and processes
-
-- parameters and saved parameters
-- background
-- format, language, etc
-
-# Reports
-
-Toolbar
-
-# Info Windows
