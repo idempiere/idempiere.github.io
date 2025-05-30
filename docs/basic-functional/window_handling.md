@@ -59,6 +59,8 @@ Most important are data entry and display windows.
 
 # Main items and functions in data and order entry windows
 
+![Items and functions in data entry windows](./PNGs/FunctionsOnDataEditWindows_Open.png)
+
 1. Lookup Record
 2. New Record
 3. Copy Record (from current one)
@@ -69,11 +71,13 @@ Most important are data entry and display windows.
 8. Grid toggle
 9. Attachment
 10. Zoom across (cross references associated records/documents)
-11. Process (advanced actions if available)
-12. Print
-13. Back to parent record
-14. Navigate to detail record
-15. More options:
+11. Report
+12. Process (advanced actions if available)
+13. Print
+14. Back to parent record
+15. Navigate to detail record
+16. Label for dataset
+17. More options:
 
 
 ## L...
