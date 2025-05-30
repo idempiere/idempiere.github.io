@@ -10,6 +10,9 @@ on each of its icons or buttons, it clearly shows the name and/or role it plays.
 system you may use any browser (Chrome, Firefox, Explorer ...) by entering the URL
 provided. For optimum performance navigating the system with Google Chrome.
 
+# Components of iDempiere Window
+![Components of main/home page of iDempiere](./PNGs/Screen_basicplane.png)
+
 ## L...
 To enter t....
 
