@@ -3,7 +3,7 @@ sidebar_position: 20
 ---
 
 
-# Window handling  (still open work - now this is just a starter)
+# Window handling  (still open work )
 Navigation in Idempiere is one of the great benefits that it offers since its interface is very
 friendly, it allows configuration in multiple languages and when placing the mouse pointer
 on each of its icons or buttons, it clearly shows the name and/or role it plays. To enter the
@@ -52,6 +52,28 @@ The calendar will be used to display important dates for the user which must bef
 Here you see computed values in graphical displays of important business data. They usually are tailored for each company and often for single user groups.
 
 ![Further components of main/home page of iDempiere](./PNGs/Screen_basicrightpart.png)
+
+There are different types of windows you can access from the menue, a) data entry and display b) report c) jobs d) info
+
+Most important are data entry and display windows.
+
+# Main items and functions in data and order entry windows
+
+1. Lookup Record
+2. New Record
+3. Copy Record (from current one)
+4. Save Record
+5. Delete Record
+6. Undo action
+7. Requery / Refresh
+8. Grid toggle
+9. Attachment
+10. Zoom across (cross references associated records/documents)
+11. Process (advanced actions if available)
+12. Print
+13. Back to parent record
+14. Navigate to detail record
+15. More options:
 
 
 ## L...
