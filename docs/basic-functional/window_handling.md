@@ -3,7 +3,7 @@ sidebar_position: 20
 ---
 
 
-# Window handling  (still open work )
+# Window handling 
 Navigation in Idempiere is one of the great benefits that it offers since its interface is very
 friendly, it allows configuration in multiple languages and when placing the mouse pointer
 on each of its icons or buttons, it clearly shows the name and/or role it plays. To enter the
@@ -64,6 +64,7 @@ Most important are data entry and display windows.
 1. Lookup Record
 2. New Record
 3. Copy Record (from current one)
+    Will copy the current record, but only the contents of the directly visible main table elements. Other tabs containing detailed contents of the object will not be copied (e.g. copy of a product will not copy the prices.) To accomplish this, other dedicated functions are required. 
 4. Save Record
 5. Delete Record
 6. Undo action
@@ -80,6 +81,24 @@ Most important are data entry and display windows.
 17. More options:
 
 
-## L...
-To enter t....
+# More options (for functions in data and order entry windows
 
+![More options for functions in data entry windows](./PNGs/FunctionsOnDataEditWindows_HiddenExtras.png)
+
+The diverse functions to be accessed through "More options" can be moved by the system administrator to the main row of functions directly visible.
+1. Help
+2. Chat
+3. Save and Create New
+4. Post-it
+5. Archieved Documents/Reports
+6. Private Record Lock
+7. Extra Attributes
+8. Active Workflows
+9. Check Requests
+10. Export
+11. Customize
+12. Quick Form
+13. Import File Loader
+
+The above functions are partially self explaining, like New Record. But others have different behaviour compared to a function in Word or Excel (e.g. Copy Record)
+These explanations are still open work and will be extended in future!
