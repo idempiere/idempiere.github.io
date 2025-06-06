@@ -100,5 +100,5 @@ The diverse functions to be accessed through "More options" can be moved by the 
 12. Quick Form
 13. Import File Loader
 
-The above functions are partially self explaining, like New Record. But others have different behaviour compared to a function in Word or Excel (e.g. Copy Record)
-These explanations are still open work and will be extended in future!
+The above functions are partially self explaining, like New Record. But others have different behaviour compared to a function in Word or Excel (e.g. Copy Record).  
+**These explanations are still open work and will be extended in future!**
