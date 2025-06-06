@@ -63,8 +63,7 @@ Most important are data entry and display windows.
 
 1. Lookup Record
 2. New Record
-3. Copy Record (from current one)
-<br>
+3. Copy Record (from current one)  
     Will copy the current record, but only the contents of the directly visible main table elements. Other tabs containing detailed contents of the object will not be copied (e.g. copy of a product will not copy the prices.) To accomplish this, other dedicated functions are required. 
 4. Save Record
 5. Delete Record
