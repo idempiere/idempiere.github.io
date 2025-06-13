@@ -36,7 +36,7 @@ The business is conducted mainly in the functional areas of **Quote-to-Invoice (
 More complex funcitons like **Assets** or **Manufacturing** will not be part of this guide.
 
 In Idempiere, navigating the menu is very simple since it was created as an explorer and has a tree structure.
-For reference here an image of the 
+
 ![Menue for iDempiere](./PNGs/Menue.png)
 
 To view all options and submenus , you must mark the expand tree option.
