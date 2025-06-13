@@ -38,6 +38,15 @@ More complex funcitons like **Assets** or **Manufacturing** will not be part of 
 For reference here an image of the 
 ![Menue for iDempiere](./PNGs/Menue.png)
 
+To view all options and submenus , you must mark the expand tree option.
+
+![Expand for iDempiere](./PNGs/Expand.png) 
+
+Click on it again to shrink the menu to the basic structure.
+
+The system provides a search engine which allows you to filter the options that are part of
+the name typed for easy access. This is located just before the tree-symbol for access of the menue.
+
 ## Outlook
 
 To start a fresh look into iDempiere it is good to explore the menue and then 
