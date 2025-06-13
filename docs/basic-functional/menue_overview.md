@@ -35,6 +35,7 @@ The business is conducted mainly in the functional areas of **Quote-to-Invoice (
 **Requisition-to-Invoice (Purchasing)**, **Returns**, **Open Items (Financial Movements and Aging)** and **Project Management**.
 More complex funcitons like **Assets** or **Manufacturing** will not be part of this guide.
 
+In Idempiere, navigating the menu is very simple since it was created as an explorer and has a tree structure.
 For reference here an image of the 
 ![Menue for iDempiere](./PNGs/Menue.png)
 
