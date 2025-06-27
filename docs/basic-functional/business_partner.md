@@ -53,10 +53,49 @@ PARTNERS, VIP CLIENTS,INTERNAL CLIENTS, STAR SUPPLIERS ..
 As an example, the following Customer registry is created:
 
 
-![Menue for iDempiere](./PNGs/BusinessPartnerGroup.png)
+![BusinessPartnerGroupWindow](./PNGs/BusinessPartnerGroup.png)
 
+### Configuration of a Customer
 
-List example:
+In the following window you will see a sample all fields are required
+
+![BusinessPartnerWindowMain](./PNGs/BusinessPartnerMain.png)
+
+The marked Customer checkbox (on the right side) is necessary, then you will see new Sections and Tabs appear on the screen related to the customer functionality.
+
+Essential Fields for Customer: Name, Business Partner Group.
+
+Additional fields (not mandatory) with impact on sales are:
+a) Section *Customer Information*
+**Invoice Rule**: The Invoice Rule defines how a Business Partner is invoiced and the
+frequency of invoicing.
+**Invoice Schedule**: The Invoice Schedule identifies the frequency used when
+generating invoices.
+**Payment Rule**: The Payment Rule indicates the method of invoice payment.
+**Payment Term**: Payment Terms identify the method and timing of payment.
+**Delivery Rule**: The Delivery Rule indicates when an order should be delivered. For
+example should the order be
+delivered when the entire order is complete, when a line is complete or as the
+products become available.
+**Delivery Via**: The Delivery Via indicates how the products should be delivered. For
+example, will the order be
+picked up or shipped.
+**Price List**: Price Lists are used to determine the pricing, margin and cost of items
+purchased or sold.
+**Discount Schema**: After calculation of the (standard) price, the trade discount
+percentage is calculated and
+applied resulting in the final price.
+**Flat Discount %**: Flat discount percentage
+**Dunning**: To determin times and schedule for creating dunning notes to the customer if he has open invoices.
+
+b) Section *Document Preferences*
+
+In this section there are some preferences to configure the language for documents, the greeting used, the invoice print format, number of copies for the documents and some reference information.
+
+c) Section *Sales Information* 
+
+This gives direct access to information on business with the customer.
+
 - a 
 - b
 
@@ -67,3 +106,6 @@ List example:
 ## Outlook
 
 Perhaps some remarks on relationships to prices, marketing, services and requests as important relationships for business partner data.
+
+## Note
+Some parts of this text are adapted from materials created by Pedro Rozo and SmartJSP, shared under the GNU General Public License. Used with permission for this project.
