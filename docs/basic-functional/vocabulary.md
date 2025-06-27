@@ -84,7 +84,7 @@ The Accounting Schema window is where you begin configuring iDempiere's accounti
 
 * Currency
 * Default product Costing Method
-* Default product Costing Level (Client, Org, or Lot)
+* Default product Costing Level (Tenant, Org, or Lot)
 * Accounting dimensions/segments (what values post to the general ledger along side the account number)
 * Posting defaults (what accounts to use related to Business Partners, Banks, Warehouses, etc...)
 
@@ -92,7 +92,7 @@ You may maintain as many Accounting Schemas as you deem appropriate. Here are co
 
 * You maintain and report financials from more than one currency.
 * You maintain and report financials from both 'Cash' and 'Accrual' costing methods.
-* You meed to maintain multiple charts of accounts. 
+* You need to maintain multiple charts of accounts. 
 
 ## Account Element (Element Value) {#account-element}
 The Account Element is the abstract class of the individual accounts for all financial accounting and other related activities, e.g. budgeting, internal cost accounting. Every business activity which creates or changes values in the company is normally reflected by accounting entries. In this context, it is important to note that the accounts are structured by the accounts tree. It defines which account is a base or root account for a specific value category and which other account is for accumulating the values of these root accounts and of other accumulation accounts. Also in the accounts definition it can be controlled which accounts can only be posted by automatic actions of the system e.g. by a production order, and which accounts are debited or credited by journal entries of the company staff.

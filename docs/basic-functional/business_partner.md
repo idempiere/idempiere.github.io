@@ -7,7 +7,7 @@ sidebar_position: 25
 
 ## Introduction
 Business Partner is the generic name for all the people/companies with a business
-relationship with your tenant/client: that includes, vendors, customers, employes
+relationship with your tenant/client: that includes, vendors, customers, employees
 and so on. Sometimes we need to configure groups, taxes and other specific
 properties for invoicing or to manage them properly, so please be sure that you
 understand the following capabilities for them
@@ -18,7 +18,7 @@ whom you perform transactions.
 There are different types of Business Partners, these include: Customers, Vendor or
 Suppliers, Employees and Sales Representatives each one of these represent a
 different role and function within the company.
-Menue: **Partner Relations -> Business Partner Rules -> Business Partner **  
+Menu: **Partner Relations -> Business Partner Rules -> Business Partner **  
 
 ![Menue for iDempiere](./PNGs/Menue_BusinessPartner.png)
 
@@ -49,7 +49,7 @@ characteristics through this group option of third parties, either to generate r
 or carry out massive processes such as changes in accounting
 accounts, price lists and discounts.
 You can create N groups of business partners in iDempiere for example:
-PARTNERS, VIP CLIENTS,INTERNAL CLIENTS, STAR SUPPLIERS ..
+PARTNERS, VIP CUSTOMERS,INTERNAL CUSTOMERS, STAR SUPPLIERS ..
 As an example, the following Customer registry is created:
 
 
@@ -80,7 +80,7 @@ generating invoices.
 **Discount Schema**: After calculation of the (standard) price, the trade discount percentage is calculated and
 applied resulting in the final price.  
 **Flat Discount %**: Flat discount percentage   
-**Dunning**: To determin times and schedule for creating dunning notes to the customer if he has open invoices.   
+**Dunning**: To determine times and schedule for creating dunning notes to the customer if he has open invoices.   
 
 b) Section *Document Preferences* 
 
