@@ -101,5 +101,5 @@ The diverse functions to be accessed through "More options" can be moved by the 
 13. Import File Loader
 14. CSV Import File Loader
 
-The above functions are partially self explaining, like New Record. But others have different behaviour compared to a function in Word or Excel (e.g. Copy Record).  
+The above functions are partially self explaining, like New Record. But others have different behavior compared to a function in Word or Excel (e.g. Copy Record).  
 **These explanations are still open work and will be extended in future!**

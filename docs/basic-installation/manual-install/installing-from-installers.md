@@ -26,7 +26,7 @@ DO NOT install idempiere as root.
 Unzip the server installer you downloaded or created
 
 ```shell
-jar xvf idempiereServer10Daily.gtk.linux.x86_64.zip
+jar xvf idempiereServer12Daily.gtk.linux.x86_64.zip
 ```
 
 Move the folder to /opt
@@ -56,13 +56,6 @@ cd /opt/idempiere-server
 <Tabs>
   <TabItem value="graphical" label="Graphical">
 
-You can run:
-
-```shell
-sh setup.sh
-```
-or
-
 ```shell
 sh setup-alt.sh
 ```
@@ -76,7 +69,7 @@ Optionally you can add a LOG LEVEL parameter (accepted values are: OFF, SEVERE, 
 You can fill the parameters as shown in the screenshot, or with your own preferred values, specially you must take care of the following:
 
 - iDempiere Home: This is the repository folder
-- Web Port / SSL: be careful to not use a port that is already used by another application, in linux ports below 1000 cannot be used by non-root users. For example port 8080 is used by Oracle-XE
+- Web Port / SSL: be careful to not use a port that is already used by another application, in linux ports below 1000 cannot be used by non-root users. For example port 8080 can be used by Oracle-XE
 - DB Already Exists: in common installation you must leave this flag unchecked as the database will be created later
 - Database Name: here we fill with the name of the database you want to create
 - DB Admin Password: must be filled with the postgres password you set up in the [prerequisites](./install-prerequisites.md#assign-a-password-to-user-postgres)
@@ -108,12 +101,6 @@ Run
 sh console-setup-alt.sh
 ```
 
-or
-
-```shell
-sh console-setup.sh
-```
-
 :::note
 
 Optionally you can add a LOG LEVEL parameter (accepted values are: OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL). For example `sh console-setup-alt.sh FINE`
@@ -133,11 +120,6 @@ After you have a valid idempiereEnv.properties you can execute:
 
 ```shell
 sh silentsetup-alt.sh
-```
-or
-
-```shell
-sh silent-setup.sh
 ```
 
 :::note

@@ -149,7 +149,7 @@ git push origin main
 
 - Create one branch per feature or fix.
 - Keep commit messages short and descriptive.
-- Rebase instead of merging to keep history clean.
+- Solve conflicts when they appear.
 - Respond promptly to review feedback.
 
 ---

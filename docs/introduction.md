@@ -12,7 +12,7 @@ There are two sources of iDempiere documentation:
 
 # iDempiere Introduction
 
-Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system supported by a skilful community. The project focuses on high-quality software, a philosophy of openness and its collaborative community that includes subject matter specialists, implementors, developers and end-users.
+Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system supported by a skillful community. The project focuses on high-quality software, a philosophy of openness and its collaborative community that includes subject matter specialists, implementors, developers and end-users.
 
 # Why iDempiere
 - It is easy to install.
@@ -27,6 +27,6 @@ Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system
 - It costs a fraction of proprietary ERP.
 
 # Try iDempiere Online
-- [iDempiere 11 Synergy Stable](https://demo.globalqss.com/webui/)
-- [iDempiere 12 Dev Build](https://test.idempiere.org/webui/)
-- [iDempiere 12 Dev Build with Oracle](https://test-oracle.idempiere.org/webui/)
+- [iDempiere 12 Kudos Stable](https://demo.globalqss.com/webui/)
+- [iDempiere 13 Dev Build](https://test.idempiere.org/webui/)
+- [iDempiere 13 Dev Build with Oracle](https://test-oracle.idempiere.org/webui/)

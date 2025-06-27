@@ -23,9 +23,9 @@ Once logged in, you will see the iDempiere home screen, which consists of:
   * Helps users quickly access frequently used functions without manually browsing the menu.  
   * Shows result suggestions while you type to speed up navigation.  
 * **Widgets** are the panels on and around your home screen. These widgets can be dragged/moved around.
-  * Favourites widget  
-    * The Favourites widget helps a specific user organize their most commonly used windows, reports and processes.  
-    * You may group your favourites into folders to help organize and personalize your experience.  
+  * Favorites widget  
+    * The Favorites widget helps a specific user organize their most commonly used windows, reports and processes.  
+    * You may group your favorites into folders to help organize and personalize your experience.  
   * Recent Items widget  
     * The Recent Items widget contains links to the **ten** most recent documents that you have created or updated.  Every time you “touch” a record in a window a recent item link is created and set on the top of the list.  
     * If you want to delete a recent item from the list you can drag it and drop it into the trashcan button below.  

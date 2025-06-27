@@ -8,7 +8,7 @@ description: Guidelines for safely updating the iDempiere database schema
 If your contribution includes **changes to the database**, follow these steps to ensure consistency across environments:
 
 ## 🆔 Requesting Centralized IDs
-Request official IDs as described in the [Manage the Centralized IDs](https://wiki.idempiere.org/en/Centralized_ID_Management) guide or contact the core team..
+Request official IDs as described in the [Manage the Centralized IDs](https://wiki.idempiere.org/en/Centralized_ID_Management) guide or contact the core team.
 
 ## 🛠 Generating Migration Scripts
 
@@ -23,7 +23,7 @@ To generate migration scripts automatically:
 
 After completing these steps, continue creating or updating the required dictionary objects.
 
-iDempiere will automatically generate the corresponding SQL migration scripts and place them in your local migration folder (e.g., `migration/iD12/`). In most cases, these scripts will be ready to commit as part of your pull request.
+iDempiere will automatically generate the corresponding SQL migration scripts and place them in your local migration folder (e.g., `migration/iD13/`). In most cases, these scripts will be ready to commit as part of your pull request.
 
 ---
 

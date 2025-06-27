@@ -20,7 +20,7 @@ Suppliers, Employees and Sales Representatives each one of these represent a
 different role and function within the company.
 Menu: **Partner Relations -> Business Partner Rules -> Business Partner **  
 
-![Menue for iDempiere](./PNGs/Menue_BusinessPartner.png)
+![Menu for iDempiere](./PNGs/Menue_BusinessPartner.png)
 
 ## Customers
 
@@ -53,13 +53,13 @@ PARTNERS, VIP CUSTOMERS,INTERNAL CUSTOMERS, STAR SUPPLIERS ..
 As an example, the following Customer registry is created:
 
 
-![BusinessPartnerGroupWindow](./PNGs/BusinessPartnerGroup.png)
+![Business Partner Group Window](./PNGs/BusinessPartnerGroup.png)
 
 ### Configuration of a Customer
 
 In the following window you will see a sample all fields are required
 
-![BusinessPartnerWindowMain](./PNGs/BusinessPartnerMain.png)
+![Business Partner Window Main](./PNGs/BusinessPartnerMain.png)
 
 The marked Customer checkbox (on the right side) is necessary, then you will see new Sections and Tabs appear on the screen related to the customer functionality.
 
