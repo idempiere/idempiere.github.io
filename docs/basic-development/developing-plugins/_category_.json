@@ -1,0 +1,9 @@
+{
+  "label": "Developing Plug-ins",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "title": "Developing Plug-ins",
+    "description": " This series walks you through setup, best practices, and advanced techniques using OSGi and Eclipse. Perfect for both beginners and experienced developers looking to extend iDempiere the right way."
+  }
+}
