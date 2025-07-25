@@ -137,7 +137,7 @@ processes that are executed in iDempiere.
 
 **Is Manufacturer:** Indicate role of this Business partner as Manufacturer.
 
-When creating a new vendor or changing contents we proceed to save the record with the disc-icon.
+General usage of the tabs below e.g. for location is the same as for customers. Also additional tabs will appear for vendor accounting. When creating a new vendor or changing contents we proceed to save the record with the disc-icon.
 
 ## Outlook
 
