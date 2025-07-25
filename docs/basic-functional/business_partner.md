@@ -113,25 +113,35 @@ Depending on the type of items or service provided by our vendor (supplier), we 
 
 - Vendor(Supplier) of resources: these would be in charge of covering the economic needs of the company, for example, banks or financial entities.
 
-In Idempiere, the qualification of the vendor is that granted to a business partner registry created, for which we will see that the windows and the concepts will always refer to Business Partner.
-The above means that a Business Partner can be marked as a vendor (supplier)
-and in turn as an employee and as a customer.
+Details for **Business Partner Group** has beend described above.
 
-## Business Partner Group
+In Idempiere, the qualification of the vendor is that granted to a business partner registry created, for which we will see that the windows and the concepts will always refer to Business Partner. The above means that a Business Partner can be marked as a vendor (supplier) and in turn/same time as an employee and as a customer.
 
-The Vendor(Suppliers) are created in the first instance as business partners and selecting the Vendor field. A business partner group must be assigned to the registry.
+### Configuration of a Vendor/Supplier
 
-To be further completed
+Mark the Vendor checkbox, you will see that new Tabs appear on the screen related to the vendor functionality.
+Essential Fields for Vendor: Tax ID, Surname.
 
+Below you will find the Section *Vendor information*
 
-- a 
-- b
+It contains some dedicated fields. None of these fields are mandatory but have an impact on the purchasing
+processes that are executed in iDempiere.
 
-1 ddd
-2 ggg
+**Payment Rule:** The Payment Rule indicates the method of purchase payment.
 
+**PO Payment Term:** The PO Payment Term indicates the payment term that will be used when this purchase order becomes an invoice.
+
+**Purchase Price List:** Identifies the price list used by a Vendor for products purchased by this organization.
+
+**PO Discount Schema:** Schema to calculate the purchase trade discount percentage.
+
+**Is Manufacturer:** Indicate role of this Business partner as Manufacturer.
+
+When creating a new vendor or changing contents we proceed to save the record with the disc-icon.
 
 ## Outlook
+
+This part can be further completed. Please feel free to do so.
 
 Perhaps some remarks on relationships to prices, marketing, services and requests as important relationships for business partner data.
 
