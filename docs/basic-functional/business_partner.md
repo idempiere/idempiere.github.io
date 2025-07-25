@@ -82,13 +82,47 @@ applied resulting in the final price.
 **Flat Discount %**: Flat discount percentage   
 **Dunning**: To determine times and schedule for creating dunning notes to the customer if he has open invoices.   
 
+![Business Partner WindowPartCustomer](./PNGs/BP_CustomerInfos.png)
+
 b) Section *Document Preferences* 
 
 In this section there are some preferences to configure the language for documents, the greeting used, the invoice print format, number of copies for the documents and some reference information. 
 
 c) Section *Sales Information*  
 
-This gives direct access to information on business with the customer. 
+This gives direct access to information on business with the customer, a.o. actual life time value and first sale. 
+
+d) Tabs with further connected information
+
+There are a number of tabs to select below the basic data: **Contact (User)** with subtabs Interest Area and BP Access, then other main Tabs for **Location, Bank Account, Shipping Accounts, Customer Accounting and Printed Form Control**.
+
+For aspects like accounting and Form Control usually general data is sufficient, but for the **Location** usually every Business partner needs specific data. 
+
+### Configuration of a Vendor or Supplier
+
+## Introduction
+
+A vendor (supplier) can be a person or a company that supplies other companies with stocks (items) or services necessary for the development of the activity.
+The Vendors (Suppliers) correspond to the business partner with whom the company makes Purchase transactions and of which we need to know special information such as account statements, discounts granted to us, price list among
+others.
+Depending on the type of items or service provided by our vendor (supplier), we can differentiate them into e.g. 3 types (or more):
+
+- Vendor(Supplier) of goods: this would be in charge of providing the company with articles and tangible objects.
+
+- Service Vendor: this type of supplier does not provide material but provides a service or activity so that their clients can in turn perform their functions in the company. For example, as suppliers of generic services that every company needs would be telephone companies, water and electricity.
+
+- Vendor(Supplier) of resources: these would be in charge of covering the economic needs of the company, for example, banks or financial entities.
+
+In Idempiere, the qualification of the vendor is that granted to a business partner registry created, for which we will see that the windows and the concepts will always refer to Business Partner.
+The above means that a Business Partner can be marked as a vendor (supplier)
+and in turn as an employee and as a customer.
+
+## Business Partner Group
+
+The Vendor(Suppliers) are created in the first instance as business partners and selecting the Vendor field. A business partner group must be assigned to the registry.
+
+To be further completed
+
 
 - a 
 - b
