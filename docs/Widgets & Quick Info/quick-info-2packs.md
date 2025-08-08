@@ -34,11 +34,11 @@ They are installed using **2pack files** and can be enabled per window or table.
     textAlign: 'center',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
   }}>
-    <a href="/downloads/QuickInfo_LastProductPrice.zip" download>
+    <a href="/downloads/QuickInfo_LastProductPrice.zip" target="_blank" rel="noopener noreferrer">
       <img src="/img/quick-infos/QuickInfo_LastProductPrice.png" alt="Last Product Price Quick Info Preview" style={{ width: '100%', borderRadius: '8px' }} />
     </a>
     <h3 style={{ margin: '1rem 0 0.5rem', fontSize: '1.2rem' }}>Last Product Price</h3>
     <p style={{ fontSize: '0.9rem', color: '#555' }}>This Quick Info shows the last purchased price for the products selected in purchase orders. It can be configured by vendor.</p>
-    <a href="/downloads/QuickInfo_LastProductPrice.zip" download style={{ display: 'inline-block', marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: '#0078d4', color: '#fff', textDecoration: 'none', borderRadius: '4px' }}>⬇ Download</a>
+    <a href="/downloads/QuickInfo_LastProductPrice.zip" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: '1rem', padding: '0.5rem 1rem', backgroundColor: '#0078d4', color: '#fff', textDecoration: 'none', borderRadius: '4px' }}>⬇ Download</a>
   </div>
 </div>
