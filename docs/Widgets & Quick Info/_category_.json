@@ -1,0 +1,8 @@
+{
+  "label": "Widgets & Quick Info",
+  "position": 60,
+  "link": {
+    "type": "generated-index",
+    "description": "Prebuilt widgets that add real-time, in-place information panels to iDempiere."
+  }
+}
