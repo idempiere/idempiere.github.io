@@ -1,0 +1,8 @@
+{
+  "label": "Developing Plug-Ins",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "This is a series of tutorials for developing plug-ins. It can be seen as some kind of starting help and best practice. "  
+  }
+}
