@@ -10,6 +10,28 @@ import TabItem from '@theme/TabItem';
 
 # Run Script with 2Pack
 
+:::info Use Cases & Real-World Examples
+
+**When could you use scripts with 2Pack?**
+
+- **Automate post-installation tasks:**  
+  Run database updates, clear caches, or trigger processes automatically after importing a package.
+- **Environment-specific configuration:**  
+  Set up or adjust system parameters, create directories, or configure files based on the target environment.
+- **Data migration and cleanup:**  
+  Move, transform, or clean up data as part of a deployment.
+- **Integration with external systems:**  
+  Call APIs, send notifications, or interact with other services during package installation.
+
+**Real Example Scenarios:**
+- After importing a new module, automatically run a script to initialize default data.
+- Clean up temporary tables or reset caches to ensure new features work as expected.
+- Configure system settings or user roles specific to a client or environment.
+- Trigger a shell script to restart a background service after deploying a plugin.
+
+:::
+
+
 iDempiere's `Pack In` (2Pack) functionality supports running scripts during import. Two types of scripts are supported:
 
 - **Shell Scripts**
