@@ -2,7 +2,7 @@
 title: Using 2Pack to Transfer Data and Automate Plug-in Setup
 sidebar_label: 2Pack - Transfer & Automate
 description: Learn how to use iDempiere's 2Pack functionality to transfer configuration and automate setup using plug-ins.
-sidebar_position: 6
+sidebar_position: 2
 ---
 
 ## 🎯 Goal
@@ -18,8 +18,8 @@ This tutorial explains how to use the **2Pack functionality** in iDempiere to:
 
 Before starting, review:
 
-- [Developing Plug-Ins Without Affecting the Trunk](./developing-plugins)
-- [Running Plug-ins Locally](./plugin-running-locally)
+- [Developing Plug-Ins Without Affecting the Trunk](/docs/basic-development/plugin-development/developing-plugins)
+- [Running Plug-ins Locally](/docs/basic-development/plugin-development/plugin-running-locally)
 
 You should already know how to create a plug-in, as this guide will not cover that in detail.
 
