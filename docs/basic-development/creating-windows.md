@@ -179,8 +179,7 @@ For child tabs:
 2. Set **Parent Column** link to parent tab
 3. Configure **Link Column** (foreign key to parent)
 
-## Related Documentation
+:::tip Exporting Your Window
 
-- [2Pack Export/Import](./2pack/)
-- [Plugin Development](./plugin-development/)
-- [Contributing to Core](./contributing-to-core/)
+Want to export your window to a different server or share your customization? Create a 2Pack to package all related Application Dictionary components (table, columns, window, tab, fields, and menu). Learn how in the [2Pack Pack In/Pack Out Guide](./2pack/packin-packout-guide.md).
+:::
