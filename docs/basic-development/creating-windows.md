@@ -183,3 +183,9 @@ For child tabs:
 
 Want to export your window to a different server or share your customization? Create a 2Pack to package all related Application Dictionary components (table, columns, window, tab, fields, and menu). Learn how in the [2Pack Pack In/Pack Out Guide](./2pack/packin-packout-guide.md).
 :::
+
+---
+
+## Next Steps
+
+Now that you have a custom window, you might want to add some code to work your magic with custom business logic and model classes. Learn how to implement model factories and custom models in the [Using IModelFactory in Plug-ins](./plugin-development/plugin-modelfactory.md) guide.
