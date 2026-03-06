@@ -1,0 +1,8 @@
+{
+  "label": "Installing for Development",
+  "position": 40,
+  "link": {
+    "type": "generated-index",
+    "description": "Guide for setting up iDempiere development environment from source code"
+  }
+}

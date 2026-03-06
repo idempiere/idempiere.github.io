@@ -1,0 +1,8 @@
+{
+  "label": "Manual Install",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Step-by-step manual installation of iDempiere for development"
+  }
+}
