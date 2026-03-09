@@ -26,7 +26,7 @@ DO NOT install idempiere as root.
 Unzip the server installer you downloaded or created
 
 ```shell
-jar xvf idempiereServer12Daily.gtk.linux.x86_64.zip
+jar xvf idempiereServer13Daily.gtk.linux.x86_64.zip
 ```
 
 Move the folder to /opt
