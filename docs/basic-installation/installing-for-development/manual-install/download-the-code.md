@@ -29,20 +29,20 @@ Make sure the name of the folder doesn't contain spaces.
 
 ### master
 
-If you are going to work with iDempiere development version (a.k.a 13) please execute:
+If you are going to work with iDempiere development version (a.k.a 14) please execute:
 
 ```bash
 cd $HOME/sources/idempiere
 git switch master
 ```
 
-### release-12
+### release-13
 
-If you are going to work with iDempiere version 12:
+If you are going to work with iDempiere version 13:
 
 ```bash
 cd $HOME/sources/idempiere
-git switch release-12
+git switch release-13
 ```
 
 ## Keeping Up to Date
