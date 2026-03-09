@@ -8,8 +8,8 @@ import TabItem from '@theme/TabItem';
 # Install Prerequisites
 
 The examples on this guide are using the following versions:
-- Ubuntu 22.04 64 bits
-- PostgreSQL 14
+- Ubuntu 24.04 64 bits
+- PostgreSQL 17
 - OpenJDK 17
 
 :::note
@@ -20,7 +20,7 @@ In order to run iDempiere you need to have a JDK (not JRE) version of java
 
 :::info
 
-iDempiere can also run with Oracle 12C and later, and also with PostgreSQL 11 and later, for this tutorial we use postgresql 14
+iDempiere can also run with Oracle 23ai and later, and also with PostgreSQL 14 and later, for this tutorial we use postgresql 17
 
 :::
 
@@ -28,9 +28,9 @@ iDempiere can also run with Oracle 12C and later, and also with PostgreSQL 11 an
 
 Please refer to http://www.ubuntu.com/download
 
-Downloaded and installed Ubuntu Server 22.04 LTS
+Downloaded and installed Ubuntu Server 24.04 LTS
 
-## PostgreSQL 14
+## PostgreSQL 17
 
 ### Install
 
@@ -49,9 +49,9 @@ Update the package lists:
 sudo apt-get update
 ```
 
-Install the version 14 of PostgreSQL.
+Install the version 17 of PostgreSQL.
 ```shell
-sudo apt-get -y install postgresql-14
+sudo apt-get -y install postgresql-17
 ```
 
 :::note
@@ -81,7 +81,7 @@ The following line requires change of the authentication method:
 <Tabs>
   <TabItem value="ubuntu" label="Ubuntu">
 
-```shell title="/etc/postgresql/14/main/pg_hba.conf"
+```shell title="/etc/postgresql/17/main/pg_hba.conf"
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 
 # "local" is for Unix domain socket connections only
@@ -90,7 +90,7 @@ local   all             all                                     peer
 ```
 
 Change to:
-```shell title="/etc/postgresql/14/main/pg_hba.conf"
+```shell title="/etc/postgresql/17/main/pg_hba.conf"
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 
 # "local" is for Unix domain socket connections only
@@ -101,7 +101,7 @@ local   all             all                                     scram-sha-256
   </TabItem>
   <TabItem value="windows" label="Windows">
 
-```shell title="C:\Program Files\PostgreSQL\14\data\pg_hba.conf"
+```shell title="C:\Program Files\PostgreSQL\17\data\pg_hba.conf"
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 
 # "local" is for Unix domain socket connections only
@@ -110,7 +110,7 @@ local   all             all                                     peer
 ```
 
 Change to:
-```shell title="C:\Program Files\PostgreSQL\14\data\pg_hba.conf"
+```shell title="C:\Program Files\PostgreSQL\17\data\pg_hba.conf"
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 
 # "local" is for Unix domain socket connections only
