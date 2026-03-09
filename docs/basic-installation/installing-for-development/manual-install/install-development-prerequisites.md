@@ -4,15 +4,15 @@ sidebar_position: 1
 
 # Install Development Prerequisites
 
-These prerequisites apply both for release 12 and for development.
+These prerequisites apply both for release 13 and for development.
 
 The examples on this guide are using the following versions:
 
 - **Ubuntu 24.04** 64 bits
-- **PostgreSQL 17** (used for this guide, you can use any postgres >=13)
+- **PostgreSQL 17** (used for this guide, you can use any postgres >=14)
 - **git Client**
 - **OpenJDK 17**
-- **Eclipse IDE for Enterprise Java Developers 2025-09** (older versions are also supported, like 2024-03, but is recommended to run with the latest)
+- **Eclipse IDE for Enterprise Java Developers 2025-12** (older versions are also supported)
 
 :::info Other Operating Systems
 
@@ -34,7 +34,7 @@ Please refer to [http://www.ubuntu.com/download](http://www.ubuntu.com/download)
 
 :::note Database Compatibility
 
-iDempiere can also run with Oracle 12c and later, and also with any PostgreSQL >= 13. For this How-To we use PostgreSQL 17.
+iDempiere can also run with Oracle 23ai and later, and also with any PostgreSQL >= 14. For this How-To we use PostgreSQL 17.
 
 See [PostgreSQL Downloads for Ubuntu](http://www.postgresql.org/download/linux/ubuntu/) for details.
 
@@ -92,7 +92,7 @@ sudo apt-get install openjdk-17-jdk
 
 ## Install Eclipse
 
-Download the corresponding version for your operating system from [Eclipse IDE for Enterprise Java and Web Developers](https://www.eclipse.org/downloads/packages/release/2025-09/r/eclipse-ide-enterprise-java-and-web-developers). On this example we are installing the version 2025-09.
+Download the corresponding version for your operating system from [Eclipse IDE for Enterprise Java and Web Developers](https://www.eclipse.org/downloads/packages/release/2025-12/r/eclipse-ide-enterprise-java-and-web-developers). On this example we are installing the version 2025-12.
 
 On Ubuntu, you just uncompress it and it is ready for use. You could move the folder somewhere sensible, but this is optional. For the purposes of this How-To, let's suppose you uncompressed Eclipse in a folder pointed with the variable `$ECLIPSE_HOME`.
 
