@@ -29,8 +29,8 @@ cd $HOME/sources/testheadless
 # if building development (master) branch
 git switch master
 
-# if building release 12 branch
-git switch release-12
+# if building release 13 branch
+git switch release-13
 ```
 
 - Build:
