@@ -70,3 +70,11 @@ Docker compose:
 ```bash
 $ docker compose -f docker-stack.yml up
 ```
+
+## Podman 
+
+```shell
+podman pod create -n idempiere  -p 5432:5432 -p 8443:8443
+podman run -d --name postgres -e POSTGRES_PASSWORD=postgres --pod idempiere postgres:16
+podman run -d --name idempiere --pod idempiere idempiereofficial/idempiere:12-release
+```
