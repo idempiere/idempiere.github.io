@@ -10,17 +10,33 @@ There are some ways to edit this site:
 2. Through the source code at local.
 3. Through the online service like Stackblitz
 
-Since most users cannot directly commit to the repository, you will need to perform a pull request to perform edits. This process is quite easy when editing pages directly from the github web interface. Below is a description of how the process works in github.
+Since most users cannot directly commit to the repository, you will need to perform a pull request to perform edits.
+
+// Github pages does not allow direct editing of the pages.
+This process is quite easy when editing pages directly from the github web interface. Below is a description of how the process works in github.
 
 If you wish to download and modify the source code, you will need to fork, modify and create a pull request. This process is discussed below.
 
 ## Github Interface
 
-You are welcome to perform basic edits using the htts://github.com web interface. Here is a quick summary:
+You are welcome to perform basic edits by following the steps outlined below:
 
-- Navigate to any given page (example: https://idempiere.github.io/docs/introduction)
-- Click on the 'edit this page' link at the bottom of the page.
-- Since most users cannot directly commit to the repository, github will guide you through
+1. Navigate to the documentation home page: https://github.com/idempiere/idempiere.github.io
+
+2. Click the edit button shown in the image below:
+<img width="1294" height="330" alt="image" src="https://github.com/user-attachments/assets/1e9e1907-bcdb-4f50-8fa8-b4a47dccde63" />
+
+3. This button creates a fork of the repository linked to your personal github account, and opens the file you indicated you wish to edit.
+Add the edits you wish to make to the documentation, and click on the green "Commit changes..." button as shown in the image below:
+<img width="1898" height="687" alt="image" src="https://github.com/user-attachments/assets/e3cd544a-b7ba-4b5e-b361-4ca846d51a38" />
+
+4. Copilot will generate a commit message for your edits. Click "Proceed" to accept the edits, and commit them to your forked repository:
+<img width="815" height="763" alt="image" src="https://github.com/user-attachments/assets/660740d4-2001-4489-9844-1f7f3b44fa61" />
+
+5. Github will display all the changes you have committed. Confirm the changes you are proposing, and click "Create Pull Request".
+Provide a name for the pull request, and write down a summary of the pull request and click "Create Pull Request".
+<img width="1828" height="451" alt="image" src="https://github.com/user-attachments/assets/c4ba1f97-9349-4676-a4cd-1869460b99c0" />
+
 
 ## Source Code At Local
 
