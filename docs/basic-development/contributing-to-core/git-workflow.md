@@ -1,7 +1,7 @@
 ---
 title: Fork and Branch Git Workflow
 sidebar_label: Git Workflow
-sidebar_position: 2
+sidebar_position: 8
 description: The recommended Git workflow for contributing to the iDempiere core repository
 ---
 

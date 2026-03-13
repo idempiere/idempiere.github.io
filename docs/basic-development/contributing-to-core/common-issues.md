@@ -2,7 +2,7 @@
 title: Common Issues
 sidebar_label: Common Issues
 description: Common problems and mistakes to avoid when contributing
-sidebar_position: 4
+sidebar_position: 10
 ---
 
 To maintain iDempiere's high standards, avoid the following common issues:

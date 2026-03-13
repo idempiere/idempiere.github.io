@@ -1,7 +1,7 @@
 ---
 title: Changing the Database
 sidebar_label: Changing the Database
-sidebar_position: 3
+sidebar_position: 9
 description: Guidelines for safely updating the iDempiere database schema
 ---
 

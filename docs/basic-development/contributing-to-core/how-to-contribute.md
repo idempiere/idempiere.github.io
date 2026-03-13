@@ -1,7 +1,7 @@
 ---
 title: How to Contribute
 sidebar_label: How to Contribute
-sidebar_position: 1
+sidebar_position: 7
 description: Step-by-step checklist and workflow for contributing to the iDempiere core
 ---
 
