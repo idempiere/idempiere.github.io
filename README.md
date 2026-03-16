@@ -12,8 +12,8 @@ There are some ways to edit this site:
 
 Since most users cannot directly commit to the repository, you will need to perform a pull request to perform edits.
 
-// Github pages does not allow direct editing of the pages.
-This process is quite easy when editing pages directly from the github web interface. Below is a description of how the process works in github.
+GitHub Pages does not allow direct editing from rendered site pages.
+This process is easy when editing from the GitHub web interface. Below is how it works in GitHub.
 
 If you wish to download and modify the source code, you will need to fork, modify and create a pull request. This process is discussed below.
 
