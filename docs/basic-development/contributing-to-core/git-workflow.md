@@ -121,12 +121,30 @@ To enable easy navigation between your pull request and the corresponding JIRA t
 
 Below the link, write a clear and concise description that includes:
 - The purpose and impact of the changes  
-- Tests you performed for your use case  
-- Any other use cases that may be affected
+- Steps to reproduce the issue or business scenario  
+- The tests you performed and the test cases covered  
+- Any other use cases that may be affected  
+- Required test data, test packs, or 2Packs needed to validate the change  
+- Documentation updates, if applicable  
+- Design explanations for non-obvious implementation choices  
+- Unit tests added or updated, when applicable
 
 :::tip
 The more detail you provide about the change and how to verify it, the easier it will be for peer reviewers to understand and approve your contribution.
 :::
+
+
+### 8. Respond to review feedback
+
+Opening the pull request is not the end of the contribution process. Reviewers invest time in understanding and testing your work, so contributors are expected to respond to questions and requested changes.
+
+In many cases, the first review comes from CodeRabbitAI. Review those comments carefully and address the requests that are valid before or during the human review process.
+
+To reduce noise in the queue:
+
+- After 60 days without a reply from the contributor, the related ticket or pull request can be marked as stale.
+- After 7 additional days without response, the stale item can be closed.
+- If work resumes later, the ticket or pull request can be reopened.
 
 
 Once your message is complete, click the **"Create pull request"** button to submit.

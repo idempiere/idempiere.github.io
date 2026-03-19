@@ -55,6 +55,12 @@ In summary, the usual flow is:
 8. Push your commit to your own fork.
 9. Create a pull request on GitHub.
 
+When you open the pull request, make the review easy: include reproduction steps, tests performed, any required 2Packs or sample data, documentation updates, design rationale, and unit tests when applicable.
+
+After opening the pull request, stay engaged with reviewer feedback. Pull requests or related tickets that receive no answer from the contributor for 60 days can be marked as stale and closed 7 days later if there is still no response. They can be reopened later when work resumes.
+
+See [Fork and Branch Git Workflow](./git-workflow) for the full pull request checklist and inactivity policy.
+
 ### Review pull requests
 
 Start with the [Pull Request Review](./pull-request-review) guide.
