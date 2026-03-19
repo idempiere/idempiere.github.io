@@ -110,10 +110,47 @@ This script downloads and applies the latest patches from the official repositor
 
 ```shell
 cd /opt/idempiere-server
-./update-prd.sh
+
+# Install or update extensions from a p2 repository (example: REST)
+REPO=https://jenkins.idempiere.org/job/idempiere-rest/ws/com.trekglobal.idempiere.extensions.p2/target/repository/
+PRODUCT=com.trekglobal.idempiere.rest.api
+bash update-prd.sh "$REPO" "$PRODUCT"
 ```
 
-This updates plug-ins distributed through Eclipse P2 repositories.
+Equivalent one-line command:
+
+```shell
+bash update-prd.sh https://jenkins.idempiere.org/job/idempiere-rest/ws/com.trekglobal.idempiere.extensions.p2/target/repository/ com.trekglobal.idempiere.rest.api
+```
+
+:::note
+The one-line version and the variable version do the same operation. Use the variable version when scripting multiple plug-ins.
+:::
+
+Equivalent command with compare-update-prd instead of update-prd:
+
+```shell
+REPO=https://jenkins.idempiere.org/job/idempiere-rest/ws/com.trekglobal.idempiere.extensions.p2/target/repository/
+PLUGIN=com.trekglobal.idempiere.rest.api
+PRODUCT=com.trekglobal.idempiere.rest.api
+bash compare-update-prd.sh $REPO $PLUGIN $PRODUCT
+```
+
+#### Update vs Compare-Update
+
+In practice, teams often use two behaviors during plug-in maintenance:
+
+- **Update:** always attempts uninstall + install.
+	- If the plug-in is not installed, uninstall can print a harmless error.
+	- Useful when you want a forced refresh.
+- **Compare-update:** checks current state first.
+	- Does not uninstall when the plug-in is not installed.
+	- Does not reinstall when the same version is already present.
+	- Uninstalls/reinstalls only when a different version is detected.
+
+:::tip
+Prefer compare-update behavior for routine maintenance to reduce unnecessary restarts and noisy harmless errors.
+:::
 
 #### Step 3: Apply Additional Plug-ins
 
@@ -195,6 +232,8 @@ cd /opt/idempiere-server/utils
 :::warning Important Behaviors
 - The script stops when it encounters an `ERROR`.
 - Pending changes must be resolved manually or via custom scripts.
+- After fixing an error, run `./RUN_SyncDB.sh` again to continue with the remaining migration scripts.
+- Repeat this cycle until `./RUN_SyncDB.sh` finishes without errors; otherwise only a subset of scripts will be applied.
 - Custom scripts should follow a date-ordered naming convention.
 :::
 
