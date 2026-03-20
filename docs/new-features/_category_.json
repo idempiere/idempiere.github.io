@@ -1,0 +1,8 @@
+{
+  "label": "New Features",
+  "position": 50,
+  "link": {
+    "type": "generated-index",
+    "description": "New and upcoming iDempiere features grouped by release status."
+  }
+}
