@@ -47,3 +47,9 @@ Version : 14.0.0.qualifier
 ServerInfo : jetty/12.0.25
 Status : Evaluation
 ```
+
+Once the mail template has been designed, you have to register it in a System Configurator **EMAIL_SERVER_START_MAILTEXT_ID**.
+
+The value is R_MailText_ID
+
+Apart from that, the System Configurator **EMAIL_SERVER_START_RECIPIENT** allow to choose the recipient of the email (if not set, it uses the default (RequestEMail field from AD_Client)
