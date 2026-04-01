@@ -5,10 +5,6 @@ sidebar_position: 1
 description: It provides a centralized service to discover, validate, install, and update OSGi-based plugins and database extensions directly within the iDempiere environment.
 ---
 
-:::warning Not Yet in Stable Release
-This feature is not yet part of a stable iDempiere release and may change.
-:::
-
 * **Goal:** Technical  
 * **Developer:** [hengsin](https://github.com/hengsin)([TrekGlobal](https://www.trekglobal.com/))
 * **Feature Ticket:** [IDEMPIERE-6908](https://idempiere.atlassian.net/browse/IDEMPIERE-6908)
