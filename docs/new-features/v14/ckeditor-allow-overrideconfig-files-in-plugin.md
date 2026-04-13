@@ -2,7 +2,7 @@
 title: "CKEditor : allow override config files in a plugin"
 sidebar_label: "CKEditor : allow override config files in a plugin"
 sidebar_position: 1
-description: Allow to ovveride config.js and config-min.js in a plugin
+description: Allow to override config.js and config-min.js in a plugin
 ---
 
 :::warning Not Yet in Stable Release
