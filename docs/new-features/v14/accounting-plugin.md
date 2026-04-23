@@ -54,8 +54,8 @@ To disable accounting:
 
 :::warning
 **Known limitations when accounting is disabled:**
-- The **Post button** remains visible in document windows but performs no action when clicked.
-- Some accounting-related menu entries and fields may still appear in the UI.
+- The **Post button** and all Accounting related tabs disappear from the UI after accounting is disabled.
+- If your implementation requires a button or an Accounting related tab - f.e. because you have a customization using that even without accounting - then you need to change the DisplayLogic of the element to remove or replace the `@#ShowAcct@=Y`part, this can be done using "Window Customization".
 
 Do not disable accounting in production environments unless you fully understand the impact on your implementation.
 :::
