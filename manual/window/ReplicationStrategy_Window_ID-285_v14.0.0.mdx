@@ -1,0 +1,73 @@
+---
+title: 'Replication Strategy'
+sidebar_label: 'Replication Strategy'
+description: 'Maintain Data Replication Strategy'
+tags: ['Window']
+---
+
+# Replication Strategy
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 285</span>
+
+*19/06/2003 → 15/01/2024*
+
+![Replication Strategy](/img/manual/ReplicationStrategy-Window_iDempiere_v14.0.0.png)
+
+**Description:** Maintain Data Replication Strategy
+
+**Comment/Help:** The Data Replication Strategy determines which tables and how they are replicated. Note that the migration does not synchronize Application Dictionary items.
+
+## Tab: Replication Strategy
+
+*Tab Level 0 · Created 19/06/2003 · Updated 15/01/2024*
+
+**Description:** Data Replication Strategy
+
+**Comment/Help:** The Data Replication Strategy determines which tables and how they are replicated. Note that the migration does not synchronize Application Dictionary items.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_ReplicationStrategy.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_ReplicationStrategy.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | AD_ReplicationStrategy.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_ReplicationStrategy.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_ReplicationStrategy.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_ReplicationStrategy.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_ReplicationStrategy.IsActive<small> character(1) <br/> Yes-No</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_ReplicationStrategy.EntityType<small> character varying(40) <br/> Table</small> |
+| Export Processor |  |  | AD_ReplicationStrategy.EXP_Processor_ID<small> numeric(10) <br/> Table Direct</small> |
+
+## Tab: › Replication Table
+
+*Tab Level 1 · Created 19/06/2003 · Updated 05/03/2008*
+
+**Description:** Data Replication Strategy Table Info
+
+**Comment/Help:** Determines how the table is replicated. You have full access to Local tables, Reference tables are on Remote systems and are read-only. The data of Merge tables on Remote systems is copied to the central system.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_ReplicationTable.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_ReplicationTable.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Replication Strategy | Data Replication Strategy | The Data Replication Strategy determines what and how tables are replicated  | AD_ReplicationTable.AD_ReplicationStrategy_ID<small> numeric(10) <br/> Table Direct</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_ReplicationTable.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_ReplicationTable.IsActive<small> character(1) <br/> Yes-No</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_ReplicationTable.Description<small> character varying(255) <br/> String</small> |
+| Replication Type | Type of Data Replication | The Type of data Replication determines the direction of the data replication.  &lt;br&gt;<br/>Reference means that the data in this system is read only -&gt; &lt;br&gt;<br/>Local means that the data in this system is not replicated to other systems - &lt;br&gt;<br/>Merge means that the data in this system is synchronized with the other system &lt;-&gt; &lt;br&gt; | AD_ReplicationTable.ReplicationType<small> character(1) <br/> List</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_ReplicationTable.EntityType<small> character varying(40) <br/> Table</small> |
+
+## Tab: › Replication Document
+
+*Tab Level 1 · Created 05/03/2008 · Updated 05/03/2008*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_ReplicationDocument.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_ReplicationDocument.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Replication Strategy | Data Replication Strategy | The Data Replication Strategy determines what and how tables are replicated  | AD_ReplicationDocument.AD_ReplicationStrategy_ID<small> numeric(10) <br/> ID</small> |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | AD_ReplicationDocument.C_DocType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_ReplicationDocument.AD_Table_ID<small> numeric(10) <br/> Search</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_ReplicationDocument.IsActive<small> character(1) <br/> Yes-No</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_ReplicationDocument.Description<small> character varying(255) <br/> String</small> |
+| Replication Type | Type of Data Replication | The Type of data Replication determines the direction of the data replication.  &lt;br&gt;<br/>Reference means that the data in this system is read only -&gt; &lt;br&gt;<br/>Local means that the data in this system is not replicated to other systems - &lt;br&gt;<br/>Merge means that the data in this system is synchronized with the other system &lt;-&gt; &lt;br&gt; | AD_ReplicationDocument.ReplicationType<small> character(1) <br/> List</small> |
+

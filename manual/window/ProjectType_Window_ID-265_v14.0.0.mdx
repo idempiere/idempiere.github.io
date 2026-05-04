@@ -1,0 +1,79 @@
+---
+title: 'Project Type'
+sidebar_label: 'Project Type'
+description: 'Maintain Project Type and Phase'
+tags: ['Window']
+---
+
+# Project Type
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 265</span>
+
+*28/05/2003 → 02/01/2000*
+
+![Project Type](/img/manual/ProjectType-Window_iDempiere_v14.0.0.png)
+
+**Description:** Maintain Project Type and Phase
+
+**Comment/Help:** Maintain Project Types and their Phases with standard performance information
+
+## Tab: Project Type
+
+*Tab Level 0 · Created 28/05/2003 · Updated 02/01/2000*
+
+**Description:** Maintain Type of a Project
+
+**Comment/Help:** Type of the project with optional phases and tasks of the project with standard performance information
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_ProjectType.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_ProjectType.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_ProjectType.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_ProjectType.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | C_ProjectType.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_ProjectType.IsActive<small> character(1) <br/> Yes-No</small> |
+| Project Category | Project Category | The Project Category determines the behavior of the project:<br/>General - no special accounting, e.g. for Presales or general tracking<br/>Service - no special accounting, e.g. for Service/Charge projects<br/>Work Order - creates Project/Job WIP transactions - ability to issue material<br/>Asset - create Project Asset transactions - ability to issue material | C_ProjectType.ProjectCategory<small> character(1) <br/> List</small> |
+
+## Tab: › Standard Phase
+
+*Tab Level 1 · Created 28/05/2003 · Updated 02/01/2000*
+
+**Description:** Maintain Standard Project Phase
+
+**Comment/Help:** Standard Phase of the project with performance information
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Phase.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Phase.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Project Type | Type of the project | Type of the project with optional phases of the project with standard performance information | C_Phase.C_ProjectType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | C_Phase.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Phase.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Phase.Description<small> character varying(255) <br/> Text</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | C_Phase.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Phase.IsActive<small> character(1) <br/> Yes-No</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | C_Phase.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Standard Quantity | Standard Quantity |  | C_Phase.StandardQty<small> numeric <br/> Quantity</small> |
+
+## Tab: › › Standard Task
+
+*Tab Level 2 · Created 01/06/2003 · Updated 02/01/2000*
+
+**Description:** Maintain Standard Project Task
+
+**Comment/Help:** Standard Project Task
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Task.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Task.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Standard Phase | Standard Phase of the Project Type | Phase of the project with standard performance information with standard work | C_Task.C_Phase_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | C_Task.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Task.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Task.Description<small> character varying(255) <br/> Text</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | C_Task.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Task.IsActive<small> character(1) <br/> Yes-No</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | C_Task.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Standard Quantity | Standard Quantity |  | C_Task.StandardQty<small> numeric <br/> Quantity</small> |
+

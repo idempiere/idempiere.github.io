@@ -1,0 +1,71 @@
+---
+title: 'Import Business Partner'
+sidebar_label: 'Import Business Partner'
+description: 'Import Business Partner'
+tags: ['Window']
+---
+
+# Import Business Partner
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 172</span>
+
+*29/12/1999 → 02/01/2000*
+
+![Import Business Partner](/img/manual/ImportBusinessPartner-Window_iDempiere_v14.0.0.png)
+
+**Description:** Import Business Partner
+
+**Comment/Help:** The Import Business Partner Window is an interim table which is used when importing external data into the system.  Selecting the 'Process' button will either add or modify the appropriate records.
+
+## Tab: Import Business Partner
+
+*Tab Level 0 · Created 11/01/2003 · Updated 02/01/2000*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Import Business Partner |  |  | I_BPartner.I_BPartner_ID<small> numeric(10) <br/> ID</small> |
+| Imported | Has this import been processed | The Imported check box indicates if this import has been processed. | I_BPartner.I_IsImported<small> character(1) <br/> Yes-No</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | I_BPartner.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Import Error Message | Messages generated from import process | The Import Error Message displays any error messages generated during the import process. | I_BPartner.I_ErrorMsg<small> character varying(2000) <br/> String</small> |
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | I_BPartner.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | I_BPartner.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | I_BPartner.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | I_BPartner.Name<small> character varying(60) <br/> String</small> |
+| Name 2 | Additional Name |  | I_BPartner.Name2<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | I_BPartner.Description<small> character varying(255) <br/> String</small> |
+| D-U-N-S | Dun &amp; Bradstreet Number | Used for EDI - For details see   www.dnb.com/dunsno/list.htm | I_BPartner.DUNS<small> character varying(11) <br/> String</small> |
+| NAICS/SIC | Standard Industry Code or its successor NAIC - http://www.osha.gov/oshstats/sicser.html | The NAICS/SIC identifies either of these codes that may be applicable to this Business Partner. | I_BPartner.NAICS<small> character varying(6) <br/> String</small> |
+| Tax ID | Tax Identification | The Tax ID field identifies the legal Identification number of this Entity. | I_BPartner.TaxID<small> character varying(20) <br/> String</small> |
+| Group Key | Business Partner Group Key |  | I_BPartner.GroupValue<small> character varying(40) <br/> String</small> |
+| Business Partner Group | Business Partner Group | The Business Partner Group provides a method of defining defaults to be used for individual Business Partners. | I_BPartner.C_BP_Group_ID<small> numeric(10) <br/> Table Direct</small> |
+| Partner Location | Identifies the (ship to) address for this Business Partner | The Partner address indicates the location of a Business Partner | I_BPartner.C_BPartner_Location_ID<small> numeric(10) <br/> Table Direct</small> |
+| Address 1 | Address line 1 for this location | The Address 1 identifies the address for an entity's location | I_BPartner.Address1<small> character varying(60) <br/> String</small> |
+| Address 2 | Address line 2 for this location | The Address 2 provides additional address information for an entity.  It can be used for building location, apartment number or similar information. | I_BPartner.Address2<small> character varying(60) <br/> String</small> |
+| ZIP | Postal code | The Postal Code or ZIP identifies the postal code for this entity's address. | I_BPartner.Postal<small> character varying(10) <br/> String</small> |
+| Additional Zip | Additional ZIP or Postal code | The Additional ZIP or Postal Code identifies, if appropriate, any additional Postal Code information. | I_BPartner.Postal_Add<small> character varying(10) <br/> String</small> |
+| City | Identifies a City | The City identifies a unique City for this Country or Region. | I_BPartner.City<small> character varying(60) <br/> String</small> |
+| Region | Name of the Region | The Region Name defines the name that will print when this region is used in a document. | I_BPartner.RegionName<small> character varying(60) <br/> String</small> |
+| Region | Identifies a geographical Region | The Region identifies a unique Region for this Country. | I_BPartner.C_Region_ID<small> numeric(10) <br/> Table Direct</small> |
+| ISO Country Code | Upper-case two-letter alphanumeric ISO Country code according to ISO 3166-1 | The official list can be found at https://www.iso.org/obp/ui/#search | I_BPartner.CountryCode<small> character(2) <br/> String</small> |
+| Country | Country  | The Country defines a Country.  Each Country must be defined before it can be used in any document. | I_BPartner.C_Country_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | I_BPartner.AD_User_ID<small> numeric(10) <br/> Table Direct</small> |
+| Title | Name this entity is referred to as | The Title indicates the name that an entity is referred to as. | I_BPartner.Title<small> character varying(40) <br/> String</small> |
+| Contact Name | Business Partner Contact Name |  | I_BPartner.ContactName<small> character varying(60) <br/> String</small> |
+| Contact Description | Description of Contact |  | I_BPartner.ContactDescription<small> character varying(255) <br/> String</small> |
+| Comments | Comments or additional information | The Comments field allows for free form entry of additional information. | I_BPartner.Comments<small> character varying(2000) <br/> Text</small> |
+| Phone | Identifies a telephone number | The Phone field identifies a telephone number | I_BPartner.Phone<small> character varying(40) <br/> String</small> |
+| 2nd Phone | Identifies an alternate telephone number. | The 2nd Phone field identifies an alternate telephone number. | I_BPartner.Phone2<small> character varying(40) <br/> String</small> |
+| Fax | Facsimile number | The Fax identifies a facsimile number for this Business Partner or  Location | I_BPartner.Fax<small> character varying(40) <br/> String</small> |
+| Birthday | Birthday or Anniversary day | Birthday or Anniversary day | I_BPartner.Birthday<small> timestamp without time zone <br/> Date</small> |
+| EMail Address | Electronic Mail Address | The Email Address is the Electronic Mail ID for this User and should be fully qualified (e.g. joe.smith@company.com). The Email Address is used to access the self service application functionality from the web. | I_BPartner.EMail<small> character varying(60) <br/> String</small> |
+| Password | Password of any length (case sensitive) | The Password for this User.  Passwords are required to identify authorized users.  For iDempiere Users, you can change the password via the Process "Reset Password". | I_BPartner.Password<small> character varying(20) <br/> String</small> |
+| Interest Area | Name of the Interest Area | Name of the Interest Area of the user | I_BPartner.InterestAreaName<small> character varying(40) <br/> String</small> |
+| Interest Area | Interest Area or Topic | Interest Areas reflect interest in a topic by a contact. Interest areas can be used for marketing campaigns. | I_BPartner.R_InterestArea_ID<small> numeric(10) <br/> Table Direct</small> |
+| BP Contact Greeting | Greeting for Business Partner Contact |  | I_BPartner.BPContactGreeting<small> character varying(60) <br/> String</small> |
+| Greeting | Greeting to print on correspondence | The Greeting identifies the greeting to print on correspondence. | I_BPartner.C_Greeting_ID<small> numeric(10) <br/> Table Direct</small> |
+| Customer | Indicates if this Business Partner is a Customer | The Customer checkbox indicates if this Business Partner is a customer.  If it is select additional fields will display which further define this customer. | I_BPartner.IsCustomer<small> character(1) <br/> Yes-No</small> |
+| Employee | Indicates if  this Business Partner is an employee | The Employee checkbox indicates if this Business Partner is an Employee.  If it is selected, additional fields will display which further identify this employee. | I_BPartner.IsEmployee<small> character(1) <br/> Yes-No</small> |
+| Vendor | Indicates if this Business Partner is a Vendor | The Vendor checkbox indicates if this Business Partner is a Vendor.  If it is selected, additional fields will display which further identify this vendor. | I_BPartner.IsVendor<small> character(1) <br/> Yes-No</small> |
+| Import Business Partners | Import Business Partners | The Parameters are default values for null import record values, they do not overwrite any data. | I_BPartner.Processing<small> character(1) <br/> Button</small> |
+| Processed | The document has been processed | The Processed checkbox indicates that a document has been processed. | I_BPartner.Processed<small> character(1) <br/> Yes-No</small> |
+

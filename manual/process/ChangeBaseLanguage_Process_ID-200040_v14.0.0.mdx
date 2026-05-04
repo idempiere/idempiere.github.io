@@ -1,0 +1,31 @@
+---
+title: 'Change Base Language'
+sidebar_label: 'Change Base Language'
+description: 'Change Base Language'
+tags: ['Process']
+---
+
+# Change Base Language
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 200040</span>
+
+*26/03/2013 → 15/01/2021*
+
+![Change Base Language](/img/manual/ChangeBaseLanguage-Process_iDempiere_v14.0.0.png)
+
+**Description:** Change Base Language
+
+**Comment/Help:** In order to enable en_US as a translation you can enable any other language as base language.&lt;br&gt;
+If you don't want to have a base language choose a language that won't be used for login.&lt;br&gt;
+If all languages are going to be used as login, create an xx_XX language not login and use it as base.&lt;br&gt;
+Please note that base language cannot be a system language.&lt;br&gt;
+After running this process you must close all sessions and login again.&lt;br&gt;
+
+**Classname:** `org.idempiere.process.ChangeBaseLanguage`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_Language<br/>Table |
+

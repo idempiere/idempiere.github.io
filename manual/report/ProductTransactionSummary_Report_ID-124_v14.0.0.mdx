@@ -1,0 +1,28 @@
+---
+title: 'Product Transaction Summary'
+sidebar_label: 'Product Transaction Summary'
+description: 'Product Transaction Summary'
+tags: ['Report']
+---
+
+# Product Transaction Summary
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 124</span>
+
+*11/05/2000 → 02/01/2000*
+
+![Product Transaction Summary](/img/manual/ProductTransactionSummary-Report_iDempiere_v14.0.0.png)
+
+**Description:** Product Transaction Summary
+
+**Comment/Help:** The report shows transaction summary for stored products
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Movement Date | Date a product was moved in or out of inventory | The Movement Date indicates the date that a product moved in or out of inventory.  This is the result of a shipment, receipt or inventory movement. | MovementDate<br/>Date |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | M_Warehouse_ID<br/>Chosen Multiple Selection Table |
+| Movement Type | Method of moving the inventory | The Movement Type indicates the type of movement (in, out, to production, etc) | MovementType<br/>Chosen Multiple Selection List |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Product_ID<br/>Chosen Multiple Selection Search |
+

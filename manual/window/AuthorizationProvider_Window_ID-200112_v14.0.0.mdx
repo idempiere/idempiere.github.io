@@ -1,0 +1,44 @@
+---
+title: 'Authorization Provider'
+sidebar_label: 'Authorization Provider'
+tags: ['Window']
+---
+
+# Authorization Provider
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200112</span>
+
+*17/02/2021 → 17/02/2021*
+
+![Authorization Provider](/img/manual/AuthorizationProvider-Window_iDempiere_v14.0.0.png)
+
+## Tab: Authorization Provider
+
+*Tab Level 0 · Created 17/02/2021 · Updated 17/02/2021*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_AuthorizationProvider.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_AuthorizationProvider.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_AuthorizationProvider.Name<small> character varying(60) <br/> String</small> |
+| Authorization Type |  |  | AD_AuthorizationProvider.AD_AuthorizationType<small> character varying(10) <br/> List</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_AuthorizationProvider.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_AuthorizationProvider.Help<small> character varying(2000) <br/> Text</small> |
+| Authorization Endpoint |  |  | AD_AuthorizationProvider.AuthorizationEndpoint<small> character varying(2000) <br/> String</small> |
+| Token Endpoint |  |  | AD_AuthorizationProvider.TokenEndpoint<small> character varying(2000) <br/> String</small> |
+| Revoke Endpoint |  |  | AD_AuthorizationProvider.RevokeEndpoint<small> character varying(2000) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_AuthorizationProvider.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Authorization Scope Provider
+
+*Tab Level 1 · Created 17/02/2021 · Updated 17/02/2021*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_AuthorizationScopeProv.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_AuthorizationScopeProv.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Authorization Provider |  |  | AD_AuthorizationScopeProv.AD_AuthorizationProvider_ID<small> numeric(10) <br/> Table Direct</small> |
+| Authorization Scope |  |  | AD_AuthorizationScopeProv.AD_AuthorizationScope<small> character varying(10) <br/> List</small> |
+| Scope URL |  |  | AD_AuthorizationScopeProv.ScopeURL<small> character varying(2000) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_AuthorizationScopeProv.IsActive<small> character(1) <br/> Yes-No</small> |
+

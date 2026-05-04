@@ -1,0 +1,264 @@
+---
+title: 'Window, Tab and Field'
+sidebar_label: 'Window, Tab and Field'
+description: 'Maintain Windows, Tabs & Fields'
+tags: ['Window']
+---
+
+# Window, Tab and Field
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 102</span>
+
+*21/05/1999 → 08/12/2023*
+
+![Window, Tab and Field](/img/manual/WindowTabandField-Window_iDempiere_v14.0.0.png)
+
+**Description:** Maintain Windows, Tabs &amp; Fields
+
+**Comment/Help:** The Window, Tab &amp; Field Window defines the presentation of tables and columns within each window.
+
+## Tab: Window
+
+*Tab Level 0 · Created 21/05/1999 · Updated 02/01/2000*
+
+**Description:** Window header definitions
+
+**Comment/Help:** The Window Tab defines each window in the system. The default flag indicates that this window should be used as the default Zoom windows for the tables in this window.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Window.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Window.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Window.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Window.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Window.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Window.IsActive<small> character(1) <br/> Yes-No</small> |
+| Beta Functionality | This functionality is considered Beta | Beta functionality is not fully tested or completed. | AD_Window.IsBetaFunctionality<small> character(1) <br/> Yes-No</small> |
+| Window Type | Type or classification of a Window | The Window Type indicates the type of window being defined (Maintain, Transaction or Query) | AD_Window.WindowType<small> character(1) <br/> List</small> |
+| Sales Transaction | This is a Sales Transaction | The Sales Transaction checkbox indicates if this item is a Sales Transaction. | AD_Window.IsSOTrx<small> character(1) <br/> Yes-No</small> |
+| System Color | Color for backgrounds or indicators |  | AD_Window.AD_Color_ID<small> numeric(10) <br/> Table Direct</small> |
+| Image | Image or Icon | Images and Icon can be used to display supported graphic formats (gif, jpg, png).<br/>You can either load the image (in the database) or point to a graphic via a URI (i.e. it can point to a resource, http address) | AD_Window.AD_Image_ID<small> numeric(10) <br/> Table Direct</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_Window.EntityType<small> character varying(40) <br/> Table</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | AD_Window.IsDefault<small> character(1) <br/> Yes-No</small> |
+| Window Width |  |  | AD_Window.WinWidth<small> numeric(10) <br/> Integer</small> |
+| Window Height |  |  | AD_Window.WinHeight<small> numeric(10) <br/> Integer</small> |
+| Title Logic | The result determines the title to be displayed for this window | The result determines the title to be displayed for this Window, used also as the label for Recent Items.<br/>Format is just one or several context variables surrounded by @, examples:<br/>&lt;ul&gt;<br/>&lt;li&gt; @TaxID@&lt;/li&gt;<br/>&lt;li&gt; @DocumentNo@&lt;/li&gt;<br/>&lt;li&gt; @Value@ @Name@&lt;/li&gt;<br/>&lt;/ul&gt;<br/>if this field is left empty a default title/label is created using the DocumentNo, Value and Name fields if they exist. | AD_Window.TitleLogic<small> character varying(255) <br/> String</small> |
+| Copy Window Tabs | Copy all Tabs and Fields from other Window |  | AD_Window.Processing<small> character(1) <br/> Button</small> |
+| Predefined Context Variables | Predefined context variables to inject when opening a menu entry or a window |  | AD_Window.PredefinedContextVariables<small> character varying(4000) <br/> String</small> |
+
+## Tab: › Tab
+
+*Tab Level 1 · Created 21/05/1999 · Updated 16/11/2012*
+
+**Description:** Tab definition within a window holds fields
+
+**Comment/Help:** The Tab Tab defines each Tab within a Window.  Each Tab contains a discrete selection of fields. Note that the display and read only logic is evaluated when loading the window.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Tab.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Tab.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | AD_Tab.AD_Window_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Tab.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Tab.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Tab.Help<small> character varying(2000) <br/> Text</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_Tab.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_Tab.EntityType<small> character varying(40) <br/> Table</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | AD_Tab.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Tab Level | Hierarchical Tab Level (0 = top) | Hierarchical level of the tab. If the level is 0, it is the top entity. Level 1 entries are dependent on level 0, etc. | AD_Tab.TabLevel<small> numeric(10) <br/> Integer</small> |
+| Tab Type | Defines Tab Type |  | AD_Tab.AD_TabType<small> character varying(40) <br/> List</small> |
+| Single Row Layout | Default for toggle between Single- and Multi-Row (Grid) Layout | The Single Row Layout checkbox indicates if the default display type for this window is a single row as opposed to multi row. | AD_Tab.IsSingleRow<small> character(1) <br/> Yes-No</small> |
+| Has Tree | Window has Tree Graph | The Has Tree checkbox indicates if this window displays a tree metaphor. | AD_Tab.HasTree<small> character(1) <br/> Yes-No</small> |
+| Tree displayed | The tree can be displayed on master tab, detail tab or both |  | AD_Tab.TreeDisplayedOn<small> character(1) <br/> List</small> |
+| Advanced Tab | This Tab contains advanced Functionality | The tab with advanced functionality is only displayed, if enabled in Tools&gt;Preference. | AD_Tab.IsAdvancedTab<small> character(1) <br/> Yes-No</small> |
+| Accounting Tab | This Tab contains accounting information | The Accounting Tab checkbox indicates if this window contains accounting information. To display accounting information, enable this in Tools&gt;Preference and Role. | AD_Tab.IsInfoTab<small> character(1) <br/> Yes-No</small> |
+| Translation Tab | This Tab contains translation information | The Translation Tab checkbox indicate if a tab contains translation information. To display translation information, enable this in Tools&gt;Preference. | AD_Tab.IsTranslationTab<small> character(1) <br/> Yes-No</small> |
+| Lookup Only Selection Columns | When defined to true Lookup panel will display only selection columns. Default to false. |  | AD_Tab.IsLookupOnlySelection<small> character(1) <br/> Yes-No</small> |
+| Allow Advanced Lookup |  |  | AD_Tab.IsAllowAdvancedLookup<small> character(1) <br/> Yes-No</small> |
+| Order Column | Column determining the order | Integer Column of the table determining the order (display, sort, ..). If defined, the Order By replaces the default Order By clause. It should be fully qualified (i.e. "tablename.columnname"). | AD_Tab.AD_ColumnSortOrder_ID<small> numeric(10) <br/> Table</small> |
+| Included Column | Column determining if a Table Column is included in Ordering | If a Included Column is defined, it decides, if a column is active in the ordering - otherwise it is determined that the Order Column has a value of one or greater | AD_Tab.AD_ColumnSortYesNo_ID<small> numeric(10) <br/> Table</small> |
+| Link Column | Link Column for Multi-Parent tables | The Link Column indicates which column is the primary key for those situations where there is more than one parent.  Only define it, if the table has more than one parent column (e.g. AD_User_Roles). | AD_Tab.AD_Column_ID<small> numeric(10) <br/> Table Direct</small> |
+| Max Query Records | If defined, you cannot query more records as defined - the query criteria needs to be changed to query less records | Enter the number of records a user will be able to query to avoid unnecessary system load.  If 0, no restrictions are imposed. | AD_Tab.MaxQueryRecords<small> numeric(10) <br/> Integer</small> |
+| Parent Column | The link column on the parent tab. |  | AD_Tab.Parent_Column_ID<small> numeric(10) <br/> Table</small> |
+| Process | Process or Report | The Process field identifies a unique Process or Report in the system. | AD_Tab.AD_Process_ID<small> numeric(10) <br/> Table Direct</small> |
+| High Volume | Use Search instead of Pick list | The High Volume Checkbox indicates if a search screen will display as opposed to a pick list for selecting records from this table. | AD_Tab.IsHighVolume<small> character(1) <br/> List</small> |
+| Display Logic | If the Field is displayed, the result determines if the field is actually displayed | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_Tab.DisplayLogic<small> character varying(2000) <br/> String</small> |
+| Read Only | Field is read only | The Read Only indicates that this field may only be Read.  It may not be updated. | AD_Tab.IsReadOnly<small> character(1) <br/> Yes-No</small> |
+| Insert Record | The user can insert a new Record | If not selected, the user cannot create a new Record.  This is automatically disabled, if the Tab is Read Only. | AD_Tab.IsInsertRecord<small> character(1) <br/> Yes-No</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Tab.IsActive<small> character(1) <br/> Yes-No</small> |
+| Read Only Logic | Logic to determine if field is read only (applies only when field is read-write) | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_Tab.ReadOnlyLogic<small> character varying(2000) <br/> String</small> |
+| Delete Confirmation Logic |  |  | AD_Tab.DeleteConfirmationLogic<small> character varying(255) <br/> String</small> |
+| Commit Warning | Warning displayed when saving | Warning or information displayed when committing the record | AD_Tab.CommitWarning<small> character varying(2000) <br/> Text</small> |
+| Sql WHERE | Fully qualified SQL WHERE clause | The Where Clause indicates the SQL WHERE clause to use for record selection. The WHERE clause is added to the query. Fully qualified means "tablename.columnname". | AD_Tab.WhereClause<small> character varying(2000) <br/> String</small> |
+| Sql ORDER BY | Fully qualified ORDER BY clause | The ORDER BY Clause indicates the SQL ORDER BY clause to use for record selection | AD_Tab.OrderByClause<small> character varying(2000) <br/> String</small> |
+| Image | Image or Icon | Images and Icon can be used to display supported graphic formats (gif, jpg, png).<br/>You can either load the image (in the database) or point to a graphic via a URI (i.e. it can point to a resource, http address) | AD_Tab.AD_Image_ID<small> numeric(10) <br/> Table Direct</small> |
+| Context Help |  |  | AD_Tab.AD_CtxHelp_ID<small> numeric(10) <br/> Search</small> |
+| Create Fields | Create Field from Table Column, which do not exist in the Tab yet | Based on the table columns of this Tab, this procedure creates the missing Fields | AD_Tab.ImportFields<small> character(1) <br/> Button</small> |
+| Copy Tab Fields | Copy Fields from other Tab |  | AD_Tab.Processing<small> character(1) <br/> Button</small> |
+
+## Tab: › › Field
+
+*Tab Level 2 · Created 21/05/1999 · Updated 12/04/2021*
+
+**Description:** Field definitions in tabs in windows
+
+**Comment/Help:** The Field Tab defines the Fields displayed within a tab.  Changes made to the Field Tab become visible after restart due to caching. If the Sequence is negative, the record are ordered descending. Note that the name, description and help is automatically synchronized if centrally maintained.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Field.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Field.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Tab | Tab within a Window | The Tab indicates a tab that displays within a window. | AD_Field.AD_Tab_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Field.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Field.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Field.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Field.IsActive<small> character(1) <br/> Yes-No</small> |
+| Placeholder |  |  | AD_Field.Placeholder<small> character varying(255) <br/> String</small> |
+| Column | Column in the table | Link to the database column of the table | AD_Field.AD_Column_ID<small> numeric(10) <br/> Table Direct</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_Field.EntityType<small> character varying(40) <br/> Table</small> |
+| Field Group | Logical grouping of fields | The Field Group indicates the logical group that this field belongs to (History, Amounts, Quantities) | AD_Field.AD_FieldGroup_ID<small> numeric(10) <br/> Table Direct</small> |
+| Centrally maintained | Information maintained in System Element table | The Centrally Maintained checkbox indicates if the Name, Description and Help maintained in 'System Element' table  or 'Window' table. | AD_Field.IsCentrallyMaintained<small> character(1) <br/> Yes-No</small> |
+| Included Tab | Included Tab in this Tab (Master Detail) | You can include a Tab in a Tab. If displayed in single row record, the included tab is displayed as multi-row table. | AD_Field.Included_Tab_ID<small> numeric(10) <br/> Table</small> |
+| Displayed | Determines, if this field is displayed | If the field is displayed, the field Display Logic will determine at runtime, if it is actually displayed | AD_Field.IsDisplayed<small> character(1) <br/> Yes-No</small> |
+| Show in Grid |  |  | AD_Field.IsDisplayedGrid<small> character(1) <br/> Yes-No</small> |
+| Quick Entry |  |  | AD_Field.IsQuickEntry<small> character(1) <br/> Yes-No</small> |
+| Quick Form | Display in Quick Form | The field will be displayed in Quick Form for easy entry. | AD_Field.IsQuickForm<small> character(1) <br/> Yes-No</small> |
+| Read Only | Field is read only | The Read Only indicates that this field may only be Read.  It may not be updated. | AD_Field.IsReadOnly<small> character(1) <br/> Yes-No</small> |
+| Display Logic | If the Field is displayed, the result determines if the field is actually displayed | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_Field.DisplayLogic<small> character varying(2000) <br/> Text</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | AD_Field.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Grid Sequence No |  |  | AD_Field.SeqNoGrid<small> numeric(10) <br/> Integer</small> |
+| Record Sort No | Determines in what order the records are displayed | The Record Sort No indicates the ascending sort sequence of the records. If the number is negative, the records are sorted descending. <br/>Example: A tab with C_DocType_ID (1), DocumentNo (-2) will be sorted ascending by document type and descending by document number (SQL: ORDER BY C_DocType, DocumentNo DESC) | AD_Field.SortNo<small> numeric(10) <br/> Number</small> |
+| Advanced Field |  |  | AD_Field.IsAdvancedField<small> character(1) <br/> Yes-No</small> |
+| Encrypted | Display or Storage is encrypted | Display encryption (in Window/Tab/Field) - all characters are displayed as '*' - in the database it is stored in clear text. You will not be able to report on these columns.&lt;br&gt;<br/>Data storage encryption (in Table/Column) - data is stored encrypted in the database (dangerous!) and you will not be able to report on those columns. Independent from Display encryption. | AD_Field.IsEncrypted<small> character(1) <br/> Yes-No</small> |
+| Obscure | Type of obscuring the data (limiting the display) |  | AD_Field.ObscureType<small> character(3) <br/> List</small> |
+| Heading only | Field without Column - Only label is displayed | The Heading Only checkbox indicates if just the label will display on the screen | AD_Field.IsHeading<small> character(1) <br/> Yes-No</small> |
+| Default Focus |  |  | AD_Field.IsDefaultFocus<small> character(1) <br/> Yes-No</small> |
+| Field Only | Label is not displayed | The Field Only checkbox indicates that the column will display without a label. | AD_Field.IsFieldOnly<small> character(1) <br/> Yes-No</small> |
+| X Position | Absolute X (horizontal) position in 1/72 of an inch | Absolute X (horizontal) position in 1/72 of an inch | AD_Field.XPosition<small> numeric(10) <br/> Integer</small> |
+| Column Span | Number of column for a box of field |  | AD_Field.ColumnSpan<small> numeric(10) <br/> Integer</small> |
+| Number of Lines | Number of lines for a field | Number of lines for a field | AD_Field.NumLines<small> numeric(10) <br/> Integer</small> |
+| Label Style | Label CSS Style |  | AD_Field.AD_LabelStyle_ID<small> numeric(10) <br/> Table</small> |
+| Field Style | Field CSS Style  |  | AD_Field.AD_FieldStyle_ID<small> numeric(10) <br/> Table</small> |
+| Reference Overwrite | System Reference - optional Overwrite | You can overwrite the Display Type, but only use this if you aware of the consequences. | AD_Field.AD_Reference_ID<small> numeric(10) <br/> Table</small> |
+| Toolbar Button | Show the button on the toolbar, the window, or both | The IsToolbarButton field indicates if this button is part of the toolbar's process button popup list, or render as field in window, or both. | AD_Field.IsToolbarButton<small> character(1) <br/> List</small> |
+| Reference Key | Required to specify, if data type is Table or List | The Reference Value indicates where the reference values are stored.  It must be specified if the data type is Table or List.   | AD_Field.AD_Reference_Value_ID<small> numeric(10) <br/> Table</small> |
+| Dynamic Validation | Dynamic Validation Rule | These rules define how an entry is determined to valid. You can use variables for dynamic (context sensitive) validation. | AD_Field.AD_Val_Rule_ID<small> numeric(10) <br/> Table Direct</small> |
+| Dynamic Validation (Lookup) | Override Dynamic Validation Rule for Lookup Window | For some situations the dynamic validation rule for a Lookup window should be different from user data entry window.  | AD_Field.AD_Val_Rule_Lookup_ID<small> numeric(10) <br/> Table</small> |
+| Updatable | Determines, if the field can be updated | The Updatable checkbox indicates if a field can be updated by the user. | AD_Field.IsUpdateable<small> character(1) <br/> List</small> |
+| Always Updatable | The column is always updateable, even if the record is not active or processed | If selected and if the window / tab is not read only, you can always update the column.  This might be useful for comments, etc. | AD_Field.IsAlwaysUpdateable<small> character(1) <br/> List</small> |
+| Always Updatable Logic | Logic to determine if field is Updatable irrespective if record's active status or processed status. This logic Applicable only if Always Updatable is N. | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := \|&amp;()&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_Field.AlwaysUpdatableLogic<small> character varying(2000) <br/> Text</small> |
+| Mandatory Overwrite | Overwrite Field Mandatory status | The field must have a value for the record to be saved to the database. | AD_Field.IsMandatory<small> character(1) <br/> List</small> |
+| Allow Copy | Determine if a column must be copied when pushing the button to copy record |  | AD_Field.IsAllowCopy<small> character(1) <br/> List</small> |
+| Selection Column | Is this column used for finding rows in windows | If selected, the column is listed in the first find window tab and in the selection part of the window | AD_Field.IsSelectionColumn<small> character(1) <br/> List</small> |
+| Column SQL | Virtual Column (r/o) | You can define virtual columns (not stored in the database). If defined, the Column name is the synonym of the SQL expression defined here. The SQL expression must be valid.&lt;br&gt;<br/>Example: "Updated-Created" would list the age of the entry in days | AD_Field.ColumnSQL<small> character varying(4000) <br/> String</small> |
+| Chart |  |  | AD_Field.AD_Chart_ID<small> numeric(10) <br/> Table Direct</small> |
+| HTML | Text has HTML tags |  | AD_Field.IsHtml<small> character(1) <br/> List</small> |
+| Default Logic | Default value hierarchy, separated by ; | The defaults are evaluated in the order of definition, the first not null value becomes the default value of the column. The values are separated by comma or semicolon. a) Literals:. 'Text' or 123 b) Variables - in format @Variable@ - Login e.g. #Date, #AD_Org_ID, #AD_Tenant_ID - Accounting Schema: e.g. $C_AcctSchema_ID, $C_Calendar_ID - Global defaults: e.g. DateFormat - Window values (all Picks, CheckBoxes, RadioButtons, and DateDoc/DateAcct) c) SQL code with the tag: @SQL=SELECT something AS DefaultValue FROM ... The SQL statement can contain variables.  There can be no other value other than the SQL statement. The default is only evaluated, if no user preference is defined.  Default definitions are ignored for record columns as Key, Parent, Tenant as well as Buttons. | AD_Field.DefaultValue<small> character varying(2000) <br/> Text</small> |
+| Value Format | Format of the value; Can contain fixed format elements, Variables: "_lLoOaAcCa09", or ~regex | &lt;B&gt;Validation elements:&lt;/B&gt;<br/><br/>~regex - Validates a regular expression<br/><br/> 	(Space) any character<br/>_	Space (fixed character)<br/>l	any Letter a..Z NO space<br/>L	any Letter a..Z NO space converted to upper case<br/>o	any Letter a..Z or space<br/>O	any Letter a..Z or space converted to upper case<br/>a	any Letters &amp; Digits NO space<br/>A	any Letters &amp; Digits NO space converted to upper case<br/>c	any Letters &amp; Digits or space<br/>C	any Letters &amp; Digits or space converted to upper case<br/>0	Digits 0..9 NO space<br/>9	Digits 0..9 or space<br/><br/>Example of format "(000)_000-0000" | AD_Field.VFormat<small> character varying(255) <br/> String</small> |
+| Read Only Logic | Logic to determine if field is read only (applies only when field is read-write) | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_Field.ReadOnlyLogic<small> character varying(2000) <br/> Text</small> |
+| Mandatory Logic |  |  | AD_Field.MandatoryLogic<small> character varying(2000) <br/> Text</small> |
+| Display Length | Length of the display in characters | The display length is mainly for String fields. The length has no impact, if the data type of the field is - Integer, Number, Amount	(length determined by the system) - YesNo	(Checkbox) - List, Table, TableDir	(length of combo boxes are determined by their content at runtime) | AD_Field.DisplayLength<small> numeric(10) <br/> Integer</small> |
+| Same Line | Displayed on same line as previous field | The Same Line checkbox indicates that the field will display on the same line as the previous field. | AD_Field.IsSameLine<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › › Field Translation
+
+*Tab Level 3 · Created 21/05/1999 · Updated 27/10/2024*
+
+**Description:** Menu Translation - May not need to be translated
+
+**Comment/Help:** Fields are automatically translated, if centrally maintained.  You only need to translate not centrally maintained Fields.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Field_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Field_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Field | Field on a database table | The Field identifies a field on a database table. | AD_Field_Trl.AD_Field_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_Field_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Field_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_Field_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Field_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Field_Trl.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Field_Trl.Help<small> character varying(2000) <br/> Text</small> |
+| Placeholder |  |  | AD_Field_Trl.Placeholder<small> character varying(255) <br/> String</small> |
+
+## Tab: › › Field Sequence
+
+*Tab Level 2 · Created 14/07/2002 · Updated 13/12/2012*
+
+**Description:** Sequence if the Fields in a Tab
+
+## Tab: › › Grid Sequence
+
+*Tab Level 2 · Created 10/08/2012 · Updated 13/12/2012*
+
+**Description:** Defined field order for grid layout
+
+## Tab: › › Tab Translation
+
+*Tab Level 2 · Created 21/05/1999 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Tab_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Tab_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Tab | Tab within a Window | The Tab indicates a tab that displays within a window. | AD_Tab_Trl.AD_Tab_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_Tab_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Tab_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_Tab_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Tab_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Tab_Trl.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Tab_Trl.Help<small> character varying(2000) <br/> Text</small> |
+| Commit Warning | Warning displayed when saving | Warning or information displayed when committing the record | AD_Tab_Trl.CommitWarning<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › › Toolbar Button
+
+*Tab Level 2 · Created 24/10/2012 · Updated 16/11/2012*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_ToolBarButton.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_ToolBarButton.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Tab | Tab within a Window | The Tab indicates a tab that displays within a window. | AD_ToolBarButton.AD_Tab_ID<small> numeric(10) <br/> Search</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_ToolBarButton.Name<small> character varying(60) <br/> String</small> |
+| Component Name |  |  | AD_ToolBarButton.ComponentName<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_ToolBarButton.IsActive<small> character(1) <br/> Yes-No</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | AD_ToolBarButton.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_ToolBarButton.EntityType<small> character varying(40) <br/> Table</small> |
+| Process | Process or Report | The Process field identifies a unique Process or Report in the system. | AD_ToolBarButton.AD_Process_ID<small> numeric(10) <br/> Table Direct</small> |
+| Display Logic | If the Field is displayed, the result determines if the field is actually displayed | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_ToolBarButton.DisplayLogic<small> character varying(2000) <br/> Text</small> |
+| Pressed Logic |  |  | AD_ToolBarButton.PressedLogic<small> character varying(2000) <br/> Text</small> |
+| Read Only Logic | Logic to determine if field is read only (applies only when field is read-write) | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_ToolBarButton.ReadOnlyLogic<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › Window Translation
+
+*Tab Level 1 · Created 21/05/1999 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Window_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Window_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | AD_Window_Trl.AD_Window_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_Window_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Window_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_Window_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Window_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Window_Trl.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Window_Trl.Help<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › Access
+
+*Tab Level 1 · Created 04/09/2000 · Updated 16/11/2012*
+
+**Description:** Window Access
+
+**Comment/Help:** The Window Access Tab defines the Roles which have access to this Window.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Window_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Window_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | AD_Window_Access.AD_Window_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Window_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Window_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Read Write | Field is read / write | The Read Write indicates that this field may be read and updated. | AD_Window_Access.IsReadWrite<small> character(1) <br/> Yes-No</small> |
+

@@ -1,0 +1,72 @@
+---
+title: 'Vendor Details'
+sidebar_label: 'Vendor Details'
+description: 'Maintain Vendor Details'
+tags: ['Window']
+---
+
+# Vendor Details
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 176</span>
+
+*25/01/2000 → 02/01/2000*
+
+![Vendor Details](/img/manual/VendorDetails-Window_iDempiere_v14.0.0.png)
+
+**Description:** Maintain Vendor Details
+
+**Comment/Help:** The Vendor Details Window allows you to display and maintain all products for a selected Vendor.
+
+## Tab: Vendor
+
+*Tab Level 0 · Created 25/01/2000 · Updated 02/01/2000*
+
+**Description:** Vendor
+
+**Comment/Help:** The Vendor Tab displays the Vendors.  A Vendor is selected and all products for that Vendor will be displayed.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | C_BPartner.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_BPartner.Name<small> character varying(120) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_BPartner.Description<small> character varying(255) <br/> String</small> |
+| Business Partner Group | Business Partner Group | The Business Partner Group provides a method of defining defaults to be used for individual Business Partners. | C_BPartner.C_BP_Group_ID<small> numeric(10) <br/> Table Direct</small> |
+| Open Balance | Total Open Balance Amount in primary Accounting Currency | The Total Open Balance Amount is the calculated open item amount for Customer and Vendor activity.  If the Balance is below zero, we owe the Business Partner.  The amount is used for Credit Management.<br/>Invoices and Payment Allocations determine the Open Balance (i.e. not Orders or Payments). | C_BPartner.TotalOpenBalance<small> numeric <br/> Amount</small> |
+
+## Tab: › Product Details
+
+*Tab Level 1 · Created 25/01/2000 · Updated 02/01/2000*
+
+**Description:** Product Details
+
+**Comment/Help:** The Product Details Tab allows you to display and maintain all products for a selected Vendor.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_Product_PO.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_Product_PO.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | M_Product_PO.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Quality Rating | Method for rating vendors | The Quality Rating indicates how a vendor is rated (higher number = higher quality) | M_Product_PO.QualityRating<small> numeric <br/> Integer</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Product_PO.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_Product_PO.IsActive<small> character(1) <br/> Yes-No</small> |
+| Current vendor | Use this Vendor for pricing and stock replenishment | The Current Vendor indicates if prices are used and Product is reordered from this vendor | M_Product_PO.IsCurrentVendor<small> character(1) <br/> Yes-No</small> |
+| UPC/EAN | Bar Code (Universal Product Code or its superset European Article Number) | Use this field to enter the bar code for the product in any of the bar code symbologies (Codabar, Code 25, Code 39, Code 93, Code 128, UPC (A), UPC (E), EAN-13, EAN-8, ITF, ITF-14, ISBN, ISSN, JAN-13, JAN-8, POSTNET and FIM, MSI/Plessey, and Pharmacode)  | M_Product_PO.UPC<small> character varying(20) <br/> String</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | M_Product_PO.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| List Price | List Price | The List Price is the official List Price in the document currency. | M_Product_PO.PriceList<small> numeric <br/> Costs+Prices</small> |
+| Price effective | Effective Date of Price | The Price Effective indicates the date this price is for. This allows you to enter future prices for products which will become effective when appropriate. | M_Product_PO.PriceEffective<small> timestamp without time zone <br/> Date</small> |
+| PO Price | Price based on a purchase order | The PO Price indicates the price for a product per the purchase order. | M_Product_PO.PricePO<small> numeric <br/> Costs+Prices</small> |
+| Royalty Amount | (Included) Amount for copyright, etc. |  | M_Product_PO.RoyaltyAmt<small> numeric <br/> Amount</small> |
+| Last PO Price | Price of the last purchase order for the product | The Last PO Price indicates the last price paid (per the purchase order) for this product. | M_Product_PO.PriceLastPO<small> numeric <br/> Costs+Prices</small> |
+| Last Invoice Price | Price of the last invoice for the product | The Last Invoice Price indicates the last price paid (per the invoice) for this product. | M_Product_PO.PriceLastInv<small> numeric <br/> Costs+Prices</small> |
+| UOM | Unit of Measure | The UOM defines a unique non monetary Unit of Measure | M_Product_PO.C_UOM_ID<small> numeric(10) <br/> Table Direct</small> |
+| Minimum Order Qty | Minimum order quantity in UOM | The Minimum Order Quantity indicates the smallest quantity of this product which can be ordered. | M_Product_PO.Order_Min<small> numeric <br/> Quantity</small> |
+| Order Pack Qty | Package order size in UOM (e.g. order set of 5 units) | The Order Pack Quantity indicates the number of units in each pack of this product. | M_Product_PO.Order_Pack<small> numeric <br/> Quantity</small> |
+| Promised Delivery Time | Promised days between order and delivery | The Promised Delivery Time indicates the number of days between the order date and the date that delivery was promised. | M_Product_PO.DeliveryTime_Promised<small> numeric(10) <br/> Integer</small> |
+| Actual Delivery Time | Actual days between order and delivery | The Actual Delivery Time indicates the number of days elapsed between placing an order and the delivery of the order | M_Product_PO.DeliveryTime_Actual<small> numeric(10) <br/> Integer</small> |
+| Cost per Order | Fixed Cost Per Order | The Cost Per Order indicates the fixed charge levied when an order for this product is placed. | M_Product_PO.CostPerOrder<small> numeric <br/> Costs+Prices</small> |
+| Partner Product Key | Product Key of the Business Partner | The Business Partner Product Key identifies the number used by the Business Partner for this product. It can be printed on orders and invoices when you include the Product Key in the print format. | M_Product_PO.VendorProductNo<small> character varying(40) <br/> String</small> |
+| Partner Category | Product Category of the Business Partner | The Business Partner Category identifies the category used by the Business Partner for this product. | M_Product_PO.VendorCategory<small> character varying(30) <br/> String</small> |
+| Manufacturer | Manufacturer of the Product | The manufacturer of the Product (used if different from the Business Partner / Vendor) | M_Product_PO.Manufacturer<small> character varying(30) <br/> String</small> |
+| Discontinued | This product is no longer available | The Discontinued check box indicates a product that has been discontinued. | M_Product_PO.Discontinued<small> character(1) <br/> Yes-No</small> |
+| Discontinued At | Discontinued At indicates Date when product was discontinued |  | M_Product_PO.DiscontinuedAt<small> timestamp without time zone <br/> Date</small> |
+

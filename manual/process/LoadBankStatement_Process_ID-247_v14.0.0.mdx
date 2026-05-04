@@ -1,0 +1,28 @@
+---
+title: 'Load Bank Statement'
+sidebar_label: 'Load Bank Statement'
+description: 'Load Bank Statement'
+tags: ['Process']
+---
+
+# Load Bank Statement
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 247</span>
+
+*25/12/2003 → 03/03/2005*
+
+![Load Bank Statement](/img/manual/LoadBankStatement-Process_iDempiere_v14.0.0.png)
+
+**Description:** Load Bank Statement
+
+**Comment/Help:** Load the bank statement into the import table. The parameters used depend on the actual loader.
+
+**Classname:** `org.compiere.process.LoadBankStatement`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Bank Statement Loader | Definition of Bank Statement Loader (SWIFT, OFX) | The loader definition provides the parameters to load bank statements from EFT formats like SWIFT (MT940) or OFX | C_BankStatementLoader_ID<br/>Table Direct |
+| File Name | Name of the local file or URL | Name of a file in the local directory space - or URL (file://.., http://.., ftp://..) | FileName<br/>FileName |
+

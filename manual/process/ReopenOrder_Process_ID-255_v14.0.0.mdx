@@ -1,0 +1,25 @@
+---
+title: 'Reopen Order'
+sidebar_label: 'Reopen Order'
+description: 'Open previously closed Order'
+tags: ['Process']
+---
+
+# Reopen Order
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 255</span>
+
+*16/01/2004 → 02/01/2000*
+
+![Reopen Order](/img/manual/ReopenOrder-Process_iDempiere_v14.0.0.png)
+
+**Description:** Open previously closed Order
+
+**Classname:** `org.compiere.process.OrderOpen`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_Order_ID<br/>Search |
+

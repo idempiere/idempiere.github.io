@@ -1,0 +1,29 @@
+---
+title: 'Verify BOM Structure'
+sidebar_label: 'Verify BOM Structure'
+description: 'Verify BOM for correctness'
+tags: ['Process']
+---
+
+# Verify BOM Structure
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 53229</span>
+
+*27/07/2011 → 27/07/2011*
+
+![Verify BOM Structure](/img/manual/VerifyBOMStructure-Process_iDempiere_v14.0.0.png)
+
+**Description:** Verify BOM for correctness
+
+**Comment/Help:** The Verify BOM process checks for circular BOMs (unsupported).
+
+**Classname:** `org.compiere.process.BOMVerify`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Product_ID<br/>Search |
+| Product Category | Category of a Product | Identifies the category which this product belongs to.  Product categories are used for pricing and selection. | M_Product_Category_ID<br/>Table Direct |
+| Re-Validate | Re-Validate entries |  | IsReValidate<br/>Yes-No |
+

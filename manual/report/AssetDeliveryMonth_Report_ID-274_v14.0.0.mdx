@@ -1,0 +1,29 @@
+---
+title: 'Asset Delivery Month'
+sidebar_label: 'Asset Delivery Month'
+description: 'Report Asset Deliveries Summary per month'
+tags: ['Report']
+---
+
+# Asset Delivery Month
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 274</span>
+
+*13/04/2004 → 17/02/2022*
+
+![Asset Delivery Month](/img/manual/AssetDeliveryMonth-Report_iDempiere_v14.0.0.png)
+
+**Description:** Report Asset Deliveries Summary per month
+
+**Comment/Help:** The report lists the Asset and the deliveries per month for the records selected.
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Asset Group | Group of Assets | The group of assets determines default accounts.  If an asset group is selected in the product category, assets are created when delivering the asset. | A_Asset_Group_ID<br/>Table Direct |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BPartner_ID<br/>Search |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | AD_User_ID<br/>Search |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Product_ID<br/>Search |
+| Movement Date | Date a product was moved in or out of inventory | The Movement Date indicates the date that a product moved in or out of inventory.  This is the result of a shipment, receipt or inventory movement. | MovementDate<br/>Date |
+

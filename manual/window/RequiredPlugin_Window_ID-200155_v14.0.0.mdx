@@ -1,0 +1,27 @@
+---
+title: 'Required Plugin'
+sidebar_label: 'Required Plugin'
+tags: ['Window']
+---
+
+# Required Plugin
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200155</span>
+
+*14/04/2025 → 14/04/2025*
+
+![Required Plugin](/img/manual/RequiredPlugin-Window_iDempiere_v14.0.0.png)
+
+## Tab: Required Plugin
+
+*Tab Level 0 · Created 14/04/2025 · Updated 14/04/2025*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_RequiredPlugin.AD_Client_ID<small> numeric(10) <br/> Search</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_RequiredPlugin.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Plugin Name |  |  | AD_RequiredPlugin.PluginName<small> character varying(1000) <br/> String</small> |
+| Expected State |  |  | AD_RequiredPlugin.PluginExpectedState<small> character varying(20) <br/> List</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_RequiredPlugin.EntityType<small> character varying(40) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_RequiredPlugin.IsActive<small> character(1) <br/> Yes-No</small> |
+

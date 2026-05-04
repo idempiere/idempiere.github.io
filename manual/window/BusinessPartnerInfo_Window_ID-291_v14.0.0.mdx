@@ -1,0 +1,199 @@
+---
+title: 'Business Partner Info'
+sidebar_label: 'Business Partner Info'
+description: 'Document Information of Business Partners'
+tags: ['Window']
+---
+
+# Business Partner Info
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 291</span>
+
+*27/07/2003 → 30/06/2021*
+
+![Business Partner Info](/img/manual/BusinessPartnerInfo-Window_iDempiere_v14.0.0.png)
+
+**Description:** Document Information of Business Partners
+
+## Tab: Partner Selection
+
+*Tab Level 0 · Created 27/07/2003 · Updated 24/07/2005*
+
+**Description:** Business Partner Selection
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BPartner.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BPartner.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | C_BPartner.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_BPartner.Name<small> character varying(120) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_BPartner.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BPartner.IsActive<small> character(1) <br/> Yes-No</small> |
+| Business Partner Group | Business Partner Group | The Business Partner Group provides a method of defining defaults to be used for individual Business Partners. | C_BPartner.C_BP_Group_ID<small> numeric(10) <br/> Table Direct</small> |
+| Open Balance | Total Open Balance Amount in primary Accounting Currency | The Total Open Balance Amount is the calculated open item amount for Customer and Vendor activity.  If the Balance is below zero, we owe the Business Partner.  The amount is used for Credit Management.<br/>Invoices and Payment Allocations determine the Open Balance (i.e. not Orders or Payments). | C_BPartner.TotalOpenBalance<small> numeric <br/> Amount</small> |
+| Customer | Indicates if this Business Partner is a Customer | The Customer checkbox indicates if this Business Partner is a customer.  If it is select additional fields will display which further define this customer. | C_BPartner.IsCustomer<small> character(1) <br/> Yes-No</small> |
+| Vendor | Indicates if this Business Partner is a Vendor | The Vendor checkbox indicates if this Business Partner is a Vendor.  If it is selected, additional fields will display which further identify this vendor. | C_BPartner.IsVendor<small> character(1) <br/> Yes-No</small> |
+| Sales Representative | Indicates if  the business partner is a sales representative or company agent | The Sales Rep checkbox indicates if this business partner is a sales representative. A sales representative may also be an employee, but does not need to be. | C_BPartner.IsSalesRep<small> character(1) <br/> Yes-No</small> |
+| Employee | Indicates if  this Business Partner is an employee | The Employee checkbox indicates if this Business Partner is an Employee.  If it is selected, additional fields will display which further identify this employee. | C_BPartner.IsEmployee<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Partner Orders
+
+*Tab Level 1 · Created 27/07/2003 · Updated 02/01/2000*
+
+**Description:** Business Partner Orders
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Order.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Order.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document No | Document sequence number of the document | The document number is usually automatically generated by the system and determined by the document type of the document. If the document is not saved, the preliminary number is displayed in "&lt;&gt;".<br/><br/>If the document type of your document has no automatic document sequence defined, the field is empty if you create a new document. This is for documents which usually have an external number (like vendor invoice).  If you leave the field empty, the system will generate a document number for you. The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | C_Order.DocumentNo<small> character varying(30) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Order.Description<small> character varying(255) <br/> Text</small> |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | C_Order.C_DocType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Status | The current status of the document | The Document Status indicates the status of a document at this time.  If you want to change the document status, use the Document Action field | C_Order.DocStatus<small> character(2) <br/> List</small> |
+| Date Ordered | Date of Order | Indicates the Date an item was ordered. | C_Order.DateOrdered<small> timestamp without time zone <br/> Date</small> |
+| Account Date | Accounting Date | The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion. | C_Order.DateAcct<small> timestamp without time zone <br/> Date</small> |
+| Date Promised | Date Order was promised | The Date Promised indicates the date, if any, that an Order was promised for. | C_Order.DatePromised<small> timestamp without time zone <br/> Date</small> |
+| Date Printed | Date the document was printed. | Indicates the Date that a document was printed. | C_Order.DatePrinted<small> timestamp without time zone <br/> Date</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_Order.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Invoice Partner | Business Partner to be invoiced | If empty the shipment business partner will be invoiced | C_Order.Bill_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Partner Location | Identifies the (ship to) address for this Business Partner | The Partner address indicates the location of a Business Partner | C_Order.C_BPartner_Location_ID<small> numeric(10) <br/> Table Direct</small> |
+| Invoice Location | Business Partner Location for invoicing |  | C_Order.Bill_Location_ID<small> numeric(10) <br/> Table</small> |
+| Delivery Rule | Defines the timing of Delivery | The Delivery Rule indicates when an order should be delivered. For example should the order be delivered when the entire order is complete, when a line is complete or as the products become available. | C_Order.DeliveryRule<small> character(1) <br/> List</small> |
+| Priority | Priority of a document | The Priority indicates the importance (high, medium, low) of this document | C_Order.PriorityRule<small> character(1) <br/> List</small> |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | C_Order.M_Warehouse_ID<small> numeric(10) <br/> Table Direct</small> |
+| Drop Shipment | Drop Shipments are sent directly to the Drop Shipment Location | Drop Shipments are sent directly to the Drop Shipment Location using the Drop Ship Business Partner name and contact. | C_Order.IsDropShip<small> character(1) <br/> Yes-No</small> |
+| Invoice Rule | Frequency and method of invoicing  | The Invoice Rule defines how a Business Partner is invoiced and the frequency of invoicing. | C_Order.InvoiceRule<small> character(1) <br/> List</small> |
+| Sales Transaction | This is a Sales Transaction | The Sales Transaction checkbox indicates if this item is a Sales Transaction. | C_Order.IsSOTrx<small> character(1) <br/> Yes-No</small> |
+| Price List | Unique identifier of a Price List | Price Lists are used to determine the pricing, margin and cost of items purchased or sold. | C_Order.M_PriceList_ID<small> numeric(10) <br/> Table Direct</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | C_Order.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | C_Order.SalesRep_ID<small> numeric(10) <br/> Table</small> |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | C_Order.IsSelfService<small> character(1) <br/> Yes-No</small> |
+| Payment Rule | How you pay the invoice | The Payment Rule indicates the method of invoice payment. | C_Order.PaymentRule<small> character(1) <br/> Payment</small> |
+| Payment Term | The terms of Payment (timing, discount) | Payment Terms identify the method and timing of payment. | C_Order.C_PaymentTerm_ID<small> numeric(10) <br/> Table Direct</small> |
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | C_Order.C_Project_ID<small> numeric(10) <br/> Table Direct</small> |
+| Campaign | Marketing Campaign | The Campaign defines a unique marketing program.  Projects can be associated with a pre defined Marketing Campaign.  You can then report based on a specific Campaign. | C_Order.C_Campaign_ID<small> numeric(10) <br/> Table Direct</small> |
+| Total Lines | Total of all document lines | The Total amount displays the total of all lines in document currency | C_Order.TotalLines<small> numeric <br/> Amount</small> |
+| Grand Total | Total amount of document | The Grand Total displays the total amount including Tax and Freight in document currency | C_Order.GrandTotal<small> numeric <br/> Amount</small> |
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_Order.C_Order_ID<small> numeric(10) <br/> ID</small> |
+
+## Tab: › Partner Shipments
+
+*Tab Level 1 · Created 27/07/2003 · Updated 02/01/2000*
+
+**Description:** Business Partner Shipments
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_InOut.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_InOut.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | M_InOut.C_DocType_ID<small> numeric(10) <br/> Table</small> |
+| Document No | Document sequence number of the document | The document number is usually automatically generated by the system and determined by the document type of the document. If the document is not saved, the preliminary number is displayed in "&lt;&gt;".<br/><br/>If the document type of your document has no automatic document sequence defined, the field is empty if you create a new document. This is for documents which usually have an external number (like vendor invoice).  If you leave the field empty, the system will generate a document number for you. The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | M_InOut.DocumentNo<small> character varying(30) <br/> String</small> |
+| Document Status | The current status of the document | The Document Status indicates the status of a document at this time.  If you want to change the document status, use the Document Action field | M_InOut.DocStatus<small> character(2) <br/> List</small> |
+| Movement Type | Method of moving the inventory | The Movement Type indicates the type of movement (in, out, to production, etc) | M_InOut.MovementType<small> character(2) <br/> List</small> |
+| Movement Date | Date a product was moved in or out of inventory | The Movement Date indicates the date that a product moved in or out of inventory.  This is the result of a shipment, receipt or inventory movement. | M_InOut.MovementDate<small> timestamp without time zone <br/> Date</small> |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | M_InOut.SalesRep_ID<small> numeric(10) <br/> Table</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_InOut.Description<small> character varying(255) <br/> Text</small> |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | M_InOut.M_Warehouse_ID<small> numeric(10) <br/> Table Direct</small> |
+| In Dispute | Document is in dispute | The document is in dispute. Use Requests to track details. | M_InOut.IsInDispute<small> character(1) <br/> Yes-No</small> |
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | M_InOut.C_Order_ID<small> numeric(10) <br/> Search</small> |
+| Shipment/Receipt | Material Shipment Document | The Material Shipment / Receipt  | M_InOut.M_InOut_ID<small> numeric(10) <br/> ID</small> |
+
+## Tab: › Partner Invoices
+
+*Tab Level 1 · Created 27/07/2003 · Updated 02/01/2000*
+
+**Description:** Business Partner Invoices
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Invoice.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Invoice.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | C_Invoice.C_DocType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document No | Document sequence number of the document | The document number is usually automatically generated by the system and determined by the document type of the document. If the document is not saved, the preliminary number is displayed in "&lt;&gt;".<br/><br/>If the document type of your document has no automatic document sequence defined, the field is empty if you create a new document. This is for documents which usually have an external number (like vendor invoice).  If you leave the field empty, the system will generate a document number for you. The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | C_Invoice.DocumentNo<small> character varying(30) <br/> String</small> |
+| Document Status | The current status of the document | The Document Status indicates the status of a document at this time.  If you want to change the document status, use the Document Action field | C_Invoice.DocStatus<small> character(2) <br/> List</small> |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | C_Invoice.IsSelfService<small> character(1) <br/> Yes-No</small> |
+| Date Invoiced | Date printed on Invoice | The Date Invoice indicates the date printed on the invoice. | C_Invoice.DateInvoiced<small> timestamp without time zone <br/> Date</small> |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | C_Invoice.SalesRep_ID<small> numeric(10) <br/> Search</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Invoice.Description<small> character varying(255) <br/> Text</small> |
+| Paid | The document is fully paid |  | C_Invoice.IsPaid<small> character(1) <br/> Yes-No</small> |
+| In Dispute | Document is in dispute | The document is in dispute. Use Requests to track details. | C_Invoice.IsInDispute<small> character(1) <br/> Yes-No</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | C_Invoice.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Grand Total | Total amount of document | The Grand Total displays the total amount including Tax and Freight in document currency | C_Invoice.GrandTotal<small> numeric <br/> Amount</small> |
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_Invoice.C_Order_ID<small> numeric(10) <br/> Search</small> |
+| Invoice | Invoice Identifier | The Invoice Document. | C_Invoice.C_Invoice_ID<small> numeric(10) <br/> ID</small> |
+
+## Tab: › Partner Payments
+
+*Tab Level 1 · Created 27/07/2003 · Updated 02/01/2000*
+
+**Description:** Business Partner Payments
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Prepayment | The Payment/Receipt is a Prepayment | Payments not allocated to an invoice with a charge are posted to Unallocated Payments. When setting this flag, the payment is posted to the Customer or Vendor Prepayment account. | C_Payment.IsPrepayment<small> character(1) <br/> Yes-No</small> |
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Payment.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Payment.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | C_Payment.C_DocType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document No | Document sequence number of the document | The document number is usually automatically generated by the system and determined by the document type of the document. If the document is not saved, the preliminary number is displayed in "&lt;&gt;".<br/><br/>If the document type of your document has no automatic document sequence defined, the field is empty if you create a new document. This is for documents which usually have an external number (like vendor invoice).  If you leave the field empty, the system will generate a document number for you. The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | C_Payment.DocumentNo<small> character varying(30) <br/> String</small> |
+| Document Status | The current status of the document | The Document Status indicates the status of a document at this time.  If you want to change the document status, use the Document Action field | C_Payment.DocStatus<small> character(2) <br/> List</small> |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | C_Payment.IsSelfService<small> character(1) <br/> Yes-No</small> |
+| Transaction Date | Transaction Date | The Transaction Date indicates the date of the transaction. | C_Payment.DateTrx<small> timestamp without time zone <br/> Date</small> |
+| Bank Account | Account at the Bank | The Bank Account identifies an account at this Bank. | C_Payment.C_BankAccount_ID<small> numeric(10) <br/> Table Direct</small> |
+| Online Access | Can be accessed online  | The Online Access check box indicates if the application can be accessed via the web.  | C_Payment.IsOnline<small> character(1) <br/> Yes-No</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | C_Payment.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Payment amount | Amount being paid | Indicates the amount this payment is for.  The payment amount can be for single or multiple invoices or a partial payment for an invoice. | C_Payment.PayAmt<small> numeric <br/> Amount</small> |
+| Discount Amount | Calculated amount of discount | The Discount Amount indicates the discount amount for a document or line. | C_Payment.DiscountAmt<small> numeric <br/> Amount</small> |
+| Write-off Amount | Amount to write-off | The Write Off Amount indicates the amount to be written off as uncollectible. | C_Payment.WriteOffAmt<small> numeric <br/> Amount</small> |
+| Delayed Capture | Charge after Shipment | Delayed Capture is required, if you ship products.  The first credit card transaction is the Authorization, the second is the actual transaction after the shipment of the product. | C_Payment.IsDelayedCapture<small> character(1) <br/> Yes-No</small> |
+| Invoice | Invoice Identifier | The Invoice Document. | C_Payment.C_Invoice_ID<small> numeric(10) <br/> Search</small> |
+| Payment | Payment identifier | The Payment is a unique identifier of this payment. | C_Payment.C_Payment_ID<small> numeric(10) <br/> ID</small> |
+
+## Tab: › Partner Assets
+
+*Tab Level 1 · Created 27/07/2003 · Updated 02/01/2000*
+
+**Description:** Business Partner Assets
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | A_Asset.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | A_Asset.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | A_Asset.Value<small> character varying(40) <br/> String</small> |
+| Asset Group | Group of Assets | The group of assets determines default accounts.  If an asset group is selected in the product category, assets are created when delivering the asset. | A_Asset.A_Asset_Group_ID<small> numeric(10) <br/> Search</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | A_Asset.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | A_Asset.Description<small> character varying(255) <br/> String</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | A_Asset.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | A_Asset.M_AttributeSetInstance_ID<small> numeric(10) <br/> Product Attribute</small> |
+| Lot No | Lot number (alphanumeric) | The Lot Number indicates the specific lot that a product was part of. | A_Asset.Lot<small> character varying(255) <br/> String</small> |
+| Serial No | Product Serial Number  | The Serial Number identifies a tracked, warranted product.  It can only be used when the quantity is 1. | A_Asset.SerNo<small> character varying(255) <br/> String</small> |
+| Quantity | Quantity | The Quantity indicates the number of a specific product or item for this document. | A_Asset.Qty<small> numeric <br/> Quantity</small> |
+| In Service Date | Date when Asset was put into service | The date when the asset was put into service - usually used as start date for depreciation. | A_Asset.AssetServiceDate<small> timestamp without time zone <br/> Date</small> |
+| Guarantee Date | Date when guarantee expires | Date when the normal guarantee or availability expires | A_Asset.GuaranteeDate<small> timestamp without time zone <br/> Date</small> |
+
+## Tab: › Partner Requests
+
+*Tab Level 1 · Created 27/07/2003 · Updated 02/01/2000*
+
+**Description:** Business Partner Requests
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | R_Request.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | R_Request.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Request Type | Type of request (e.g. Inquiry, Complaint, ..) | Request Types are used for processing and categorizing requests. Options are Account Inquiry, Warranty Issue, etc. | R_Request.R_RequestType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document No | Document sequence number of the document | The document number is usually automatically generated by the system and determined by the document type of the document. If the document is not saved, the preliminary number is displayed in "&lt;&gt;".<br/><br/>If the document type of your document has no automatic document sequence defined, the field is empty if you create a new document. This is for documents which usually have an external number (like vendor invoice).  If you leave the field empty, the system will generate a document number for you. The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | R_Request.DocumentNo<small> character varying(30) <br/> String</small> |
+| Group | Request Group | Group of requests (e.g. version numbers, responsibility, ...) | R_Request.R_Group_ID<small> numeric(10) <br/> Table Direct</small> |
+| Category | Request Category | Category or Topic of the Request  | R_Request.R_Category_ID<small> numeric(10) <br/> Table Direct</small> |
+| Status | Request Status | Status if the request (open, closed, investigating, ..) | R_Request.R_Status_ID<small> numeric(10) <br/> Table Direct</small> |
+| Resolution | Request Resolution | Resolution status (e.g. Fixed, Rejected, ..) | R_Request.R_Resolution_ID<small> numeric(10) <br/> Table Direct</small> |
+| Priority | Indicates if this request is of a high, medium or low priority. | The Priority indicates the importance of this request. | R_Request.Priority<small> character(1) <br/> List</small> |
+| User Importance | Priority of the issue for the User |  | R_Request.PriorityUser<small> character(1) <br/> List</small> |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | R_Request.SalesRep_ID<small> numeric(10) <br/> Table</small> |
+| Summary | Textual summary of this request | The Summary allows free form text entry of a recap of this request. | R_Request.Summary<small> character varying(2000) <br/> Text</small> |
+| Date Last Action | Date this request was last acted on | The Date Last Action indicates that last time that the request was acted on. | R_Request.DateLastAction<small> timestamp without time zone <br/> Date+Time</small> |
+| Last Result | Result of last contact | The Last Result identifies the result of the last contact made. | R_Request.LastResult<small> character varying(2000) <br/> String</small> |
+| Due type | Status of the next action for this Request | The Due Type indicates if this request is Due, Overdue or Scheduled. | R_Request.DueType<small> character(1) <br/> List</small> |
+| Date Next Action | Date that this request should be acted on | The Date Next Action indicates the next scheduled date for an action to occur for this request. | R_Request.DateNextAction<small> timestamp without time zone <br/> Date+Time</small> |
+| Cost Center |  |  | R_Request.C_CostCenter_ID<small> numeric(10) <br/> Table Direct</small> |
+| Department |  |  | R_Request.C_Department_ID<small> numeric(10) <br/> Table Direct</small> |
+

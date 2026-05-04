@@ -1,0 +1,63 @@
+---
+title: 'Attribute'
+sidebar_label: 'Attribute'
+description: 'Product Attribute'
+tags: ['Window']
+---
+
+# Attribute
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 260</span>
+
+*06/05/2003 → 02/01/2000*
+
+![Attribute](/img/manual/Attribute-Window_iDempiere_v14.0.0.png)
+
+**Description:** Product Attribute
+
+**Comment/Help:** Product Attribute like Color, Size, etc.
+
+## Tab: Attribute
+
+*Tab Level 0 · Created 05/05/2003 · Updated 02/01/2000*
+
+**Description:** Product Attribute
+
+**Comment/Help:** Product Attribute like Color, Size, etc.  If it is an Instance Attribute, all products have the same value.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_Attribute.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_Attribute.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | M_Attribute.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_Attribute.Description<small> character varying(255) <br/> String</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | M_Attribute.EntityType<small> character varying(40) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_Attribute.IsActive<small> character(1) <br/> Yes-No</small> |
+| Mandatory | Data entry is required in this column | The field must have a value for the record to be saved to the database. | M_Attribute.IsMandatory<small> character(1) <br/> Yes-No</small> |
+| Attribute Value Type | Type of Attribute Value | The Attribute Value type determines the data/validation type | M_Attribute.AttributeValueType<small> character(1) <br/> List</small> |
+| Instance Attribute | The product attribute is specific to the instance (like Serial No, Lot or Guarantee Date) | If selected, the individual instance of the product has this attribute - like the individual Serial or Lot Numbers or  Guarantee Date of a product instance.  If not selected, all instances of the product share the attribute (e.g. color=green). | M_Attribute.IsInstanceAttribute<small> character(1) <br/> Yes-No</small> |
+| Reference | System Reference and Validation | The Reference could be a display type, list or table validation. | M_Attribute.AD_Reference_ID<small> numeric(10) <br/> Table</small> |
+| Reference Key | Required to specify, if data type is Table or List | The Reference Value indicates where the reference values are stored.  It must be specified if the data type is Table or List.   | M_Attribute.AD_Reference_Value_ID<small> numeric(10) <br/> Table</small> |
+| Date Format | Date format used in the input format | The date format is usually detected, but sometimes need to be defined. | M_Attribute.DateFormat<small> character varying(20) <br/> String</small> |
+| Dynamic Validation | Dynamic Validation Rule | These rules define how an entry is determined to valid. You can use variables for dynamic (context sensitive) validation. | M_Attribute.AD_Val_Rule_ID<small> numeric(10) <br/> Table Direct</small> |
+| Default Logic | Default value hierarchy, separated by ; | The defaults are evaluated in the order of definition, the first not null value becomes the default value of the column. The values are separated by comma or semicolon. a) Literals:. 'Text' or 123 b) Variables - in format @Variable@ - Login e.g. #Date, #AD_Org_ID, #AD_Tenant_ID - Accounting Schema: e.g. $C_AcctSchema_ID, $C_Calendar_ID - Global defaults: e.g. DateFormat - Window values (all Picks, CheckBoxes, RadioButtons, and DateDoc/DateAcct) c) SQL code with the tag: @SQL=SELECT something AS DefaultValue FROM ... The SQL statement can contain variables.  There can be no other value other than the SQL statement. The default is only evaluated, if no user preference is defined.  Default definitions are ignored for record columns as Key, Parent, Tenant as well as Buttons. | M_Attribute.DefaultValue<small> character varying(2000) <br/> String</small> |
+
+## Tab: › Attribute Value
+
+*Tab Level 1 · Created 05/05/2003 · Updated 27/02/2024*
+
+**Description:** Product Attribute Value
+
+**Comment/Help:** Individual value of a product attribute (e.g. green, large, ..)
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_AttributeValue.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_AttributeValue.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Attribute | Product Attribute | Product Attribute like Color, Size | M_AttributeValue.M_Attribute_ID<small> numeric(10) <br/> Table Direct</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | M_AttributeValue.EntityType<small> character varying(40) <br/> Table</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | M_AttributeValue.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | M_AttributeValue.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_AttributeValue.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_AttributeValue.IsActive<small> character(1) <br/> Yes-No</small> |
+

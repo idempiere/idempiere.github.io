@@ -1,0 +1,49 @@
+---
+title: 'Import Report Line Set'
+sidebar_label: 'Import Report Line Set'
+description: 'Import Report Line Sets'
+tags: ['Window']
+---
+
+# Import Report Line Set
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 249</span>
+
+*11/01/2003 → 02/01/2000*
+
+![Import Report Line Set](/img/manual/ImportReportLineSet-Window_iDempiere_v14.0.0.png)
+
+**Description:** Import Report Line Sets
+
+**Comment/Help:** The Import Report Line Set Window is an interim table which is used when importing external data into the system.  Selecting the 'Process' button will either add or modify the appropriate records.
+
+## Tab: Import Report Line Set
+
+*Tab Level 0 · Created 11/01/2003 · Updated 02/01/2000*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Import Report Line Set | Import Report Line Set values |  | I_ReportLine.I_ReportLine_ID<small> numeric(10) <br/> ID</small> |
+| Imported | Has this import been processed | The Imported check box indicates if this import has been processed. | I_ReportLine.I_IsImported<small> character(1) <br/> Yes-No</small> |
+| Import Error Message | Messages generated from import process | The Import Error Message displays any error messages generated during the import process. | I_ReportLine.I_ErrorMsg<small> character varying(2000) <br/> String</small> |
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | I_ReportLine.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | I_ReportLine.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Report Line Set Name | Name of the Report Line Set |  | I_ReportLine.ReportLineSetName<small> character varying(60) <br/> String</small> |
+| Report Line Set |  |  | I_ReportLine.PA_ReportLineSet_ID<small> numeric(10) <br/> Table Direct</small> |
+| Report Line |  |  | I_ReportLine.PA_ReportLine_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | I_ReportLine.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | I_ReportLine.Description<small> character varying(255) <br/> String</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | I_ReportLine.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Summary Level | This is a summary entity | A summary entity represents a branch in a tree rather than an end-node. Summary entities are used for reporting and do not have own values. | I_ReportLine.IsSummary<small> character(1) <br/> Yes-No</small> |
+| Printed | Indicates if this document / line is printed | The Printed checkbox indicates if this document or line will included when printing. | I_ReportLine.IsPrinted<small> character(1) <br/> Yes-No</small> |
+| Posting Type | The type of posted amount for the transaction | The Posting Type indicates the type of amount (Actual, Budget, Reservation, Commitment, Statistical) the transaction. | I_ReportLine.PostingType<small> character(1) <br/> List</small> |
+| Amount Type | PA Amount Type for reporting | The amount type to report on: Quantity, Credit Only, Debit Only, Balance (expected sign) or Balance (accounted sign). "Expected sign" adjusts the sign of the result based on the Account Type and Expected Sign of each Account Element, whereas "accounted sign" always returns DR-CR. | I_ReportLine.PAAmountType<small> character(1) <br/> List</small> |
+| Period Type | PA Period Type | The Period Type to report on: Period, Year, Total or Natural. Natural = Year for P &amp; L accounts, Total for Balance Sheet accounts. | I_ReportLine.PAPeriodType<small> character(1) <br/> List</small> |
+| Line Type |  |  | I_ReportLine.LineType<small> character(1) <br/> List</small> |
+| Calculation |  |  | I_ReportLine.CalculationType<small> character(1) <br/> List</small> |
+| Report Source | Restriction of what will be shown in Report Line |  | I_ReportLine.PA_ReportSource_ID<small> numeric(10) <br/> Table Direct</small> |
+| Element Key | Key of the element |  | I_ReportLine.ElementValue<small> character varying(40) <br/> String</small> |
+| Account Element | Account Element | Account Elements can be natural accounts or user defined values. | I_ReportLine.C_ElementValue_ID<small> numeric(10) <br/> Search</small> |
+| Import Report Line Set | Import Report Line Set information | The Parameters are default values for null import record values, they do not overwrite any data. | I_ReportLine.Processing<small> character(1) <br/> Button</small> |
+| Processed | The document has been processed | The Processed checkbox indicates that a document has been processed. | I_ReportLine.Processed<small> character(1) <br/> Yes-No</small> |
+

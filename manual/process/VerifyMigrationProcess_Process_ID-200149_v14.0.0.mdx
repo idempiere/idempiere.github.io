@@ -1,0 +1,27 @@
+---
+title: 'Verify Migration Process'
+sidebar_label: 'Verify Migration Process'
+description: 'This process helps to verify if everything is OK after a migration and discover possible customizations lost'
+tags: ['Process']
+---
+
+# Verify Migration Process
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 200149</span>
+
+*13/01/2023 → 13/01/2023*
+
+![Verify Migration Process](/img/manual/VerifyMigrationProcess-Process_iDempiere_v14.0.0.png)
+
+**Description:** This process helps to verify if everything is OK after a migration and discover possible customizations lost
+
+**Comment/Help:** The Date To parameter serves to filter the change audit records, in case you want to detect changes just until some date, when empty it process all change audit records
+
+**Classname:** `org.idempiere.process.VerifyMigration`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Date To | Last Date to verify Change Log | The change log is verified until this date (useful for example to exclude the application of some 2Packs) | DateTo<br/>Date |
+

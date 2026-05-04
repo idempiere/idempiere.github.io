@@ -1,0 +1,34 @@
+---
+title: 'Order Batch Process'
+sidebar_label: 'Order Batch Process'
+description: 'Process Orders in Batch'
+tags: ['Process']
+---
+
+# Order Batch Process
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 315</span>
+
+*07/01/2005 → 07/01/2005*
+
+![Order Batch Process](/img/manual/OrderBatchProcess-Process_iDempiere_v14.0.0.png)
+
+**Description:** Process Orders in Batch
+
+**Comment/Help:** Based on the selection criteria, the orders are processed using the document action selected.  Make sure that the document action is valid for the documents.
+
+**Classname:** `org.compiere.process.OrderBatchProcess`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Target Document Type | Target document type for conversing documents | You can convert document types (e.g. from Offer to Order or Invoice).  The conversion is then reflected in the current type.  This processing is initiated by selecting the appropriate Document Action. | C_DocTypeTarget_ID<br/>Table |
+| Document Status | The current status of the document | The Document Status indicates the status of a document at this time.  If you want to change the document status, use the Document Action field | DocStatus<br/>List |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BPartner_ID<br/>Search |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | IsSelfService<br/>List |
+| Delivered |  |  | IsDelivered<br/>List |
+| Invoiced | Is this invoiced? | If selected, invoices are created | IsInvoiced<br/>List |
+| Date Ordered | Date of Order | Indicates the Date an item was ordered. | DateOrdered<br/>Date |
+| Document Action | The targeted status of the document | You find the current status in the Document Status field. The options are listed in a popup | DocAction<br/>List |
+

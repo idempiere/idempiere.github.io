@@ -1,0 +1,38 @@
+---
+title: 'Schedule'
+sidebar_label: 'Schedule'
+description: 'Times for the scheduler'
+tags: ['Window']
+---
+
+# Schedule
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200012</span>
+
+*18/09/2012 → 27/09/2012*
+
+![Schedule](/img/manual/Schedule-Window_iDempiere_v14.0.0.png)
+
+**Description:** Times for the scheduler
+
+## Tab: Schedule
+
+*Tab Level 0 · Created 18/09/2012 · Updated 18/09/2012*
+
+**Description:** Schedule
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Schedule.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Schedule.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Schedule.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Schedule.Description<small> character varying(225) <br/> String</small> |
+| Schedule Type | Type of schedule | Define the method how the next occurrence is calculated | AD_Schedule.ScheduleType<small> character(1) <br/> List</small> |
+| Frequency Type | Frequency of event | The frequency type is used for calculating the date of the next event. | AD_Schedule.FrequencyType<small> character(1) <br/> List</small> |
+| Cron Scheduling Pattern | Cron pattern to define when the process should be invoked. | Cron pattern to define when the process should be invoked. See http://www.sauronsoftware.it/projects/cron4j/api/it/sauronsoftware/cron4j/SchedulingPattern.html<br/>If set, the time zone from tenant info is used. Otherwise, use the default JVM time zone at the server. | AD_Schedule.CronPattern<small> character varying(255) <br/> String</small> |
+| Frequency | Frequency of events | The frequency is used in conjunction with the frequency type in determining an event. Example: If the Frequency Type is Week and the Frequency is 2 - it is every two weeks. | AD_Schedule.Frequency<small> numeric(10) <br/> Integer</small> |
+| Run only on IP |  |  | AD_Schedule.RunOnlyOnIP<small> character varying(60) <br/> String</small> |
+| System Schedule | Schedule Just For System |  | AD_Schedule.IsSystemSchedule<small> character(1) <br/> Yes-No</small> |
+| Ignore Processing Time | Do not include processing time for the DateNextRun calculation | When this is selected, the previous DateNextRun is always use as the source for the next DateNextRun calculation. | AD_Schedule.IsIgnoreProcessingTime<small> character(1) <br/> Yes-No</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Schedule.IsActive<small> character varying(1) <br/> Yes-No</small> |
+

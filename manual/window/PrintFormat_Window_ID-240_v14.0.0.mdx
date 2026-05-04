@@ -1,0 +1,189 @@
+---
+title: 'Print Format'
+sidebar_label: 'Print Format'
+description: 'Maintain Print Format'
+tags: ['Window']
+---
+
+# Print Format
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 240</span>
+
+*11/07/2002 → 02/01/2000*
+
+![Print Format](/img/manual/PrintFormat-Window_iDempiere_v14.0.0.png)
+
+**Description:** Maintain Print Format
+
+**Comment/Help:** The print format determines how data is rendered for print.
+
+## Tab: Print Format
+
+*Tab Level 0 · Created 11/07/2002 · Updated 02/01/2000*
+
+**Description:** Maintain Print Format
+
+**Comment/Help:** The print format determines how data is rendered for print.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_PrintFormat.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_PrintFormat.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_PrintFormat.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_PrintFormat.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_PrintFormat.IsActive<small> character(1) <br/> Yes-No</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | AD_PrintFormat.IsDefault<small> character(1) <br/> Yes-No</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_PrintFormat.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Report View | View used to generate this report | The Report View indicates the view used to generate this report. | AD_PrintFormat.AD_ReportView_ID<small> numeric(10) <br/> Table Direct</small> |
+| Form | If Selected, a Form is printed, if not selected a columnar List report | A form has individual elements with layout information (example: invoice, check)<br/>&lt;br&gt;<br/>A columnar list report has individual columns (example: list of invoices) | AD_PrintFormat.IsForm<small> character(1) <br/> Yes-No</small> |
+| Table Based | Table based List Reporting | Table based columnar list reporting is invoked from the Window Report button | AD_PrintFormat.IsTableBased<small> character(1) <br/> Yes-No</small> |
+| Print Paper | Printer paper definition | Printer Paper Size, Orientation and Margins | AD_PrintFormat.AD_PrintPaper_ID<small> numeric(10) <br/> Table Direct</small> |
+| Standard Header/Footer | The standard Header and Footer is used | If the standard header is not used, it must be explicitly defined. | AD_PrintFormat.IsStandardHeaderFooter<small> character(1) <br/> Yes-No</small> |
+| Print Header/Footer |  |  | AD_PrintFormat.AD_PrintHeaderFooter_ID<small> numeric(10) <br/> Table Direct</small> |
+| Print Table Format | Table Format in Reports | Print Table Format determines Fonts, Colors of  the printed Table | AD_PrintFormat.AD_PrintTableFormat_ID<small> numeric(10) <br/> Table Direct</small> |
+| Printer Name | Name of the Printer | Internal (Operating System) Name of the Printer; Please mote that the printer name may be different on different tenants. Enter a printer name, which applies to ALL tenants (e.g. printer on a server). &lt;p&gt;<br/>If none is entered, the default printer is used. You specify your default printer when you log in. You can also change the default printer in Preferences. | AD_PrintFormat.PrinterName<small> character varying(40) <br/> String</small> |
+| Header Margin | Margin of the Header in 1/72 of an inch | Distance from the top of the printable page to the start of the main content in 1/72 of an inch (point) | AD_PrintFormat.HeaderMargin<small> numeric(10) <br/> Integer</small> |
+| Footer Margin | Margin of the Footer in 1/72 of an inch | Distance from the bottom of the main content to the end of the printable page in 1/72 of an inch (point) | AD_PrintFormat.FooterMargin<small> numeric(10) <br/> Integer</small> |
+| Print Font | Maintain Print Font | Font used for printing | AD_PrintFormat.AD_PrintFont_ID<small> numeric(10) <br/> Table Direct</small> |
+| Print Color | Color used for printing and display | Colors used for printing and display | AD_PrintFormat.AD_PrintColor_ID<small> numeric(10) <br/> Table Direct</small> |
+| Jasper Process | The Jasper Process used by the print engine if any process defined |  | AD_PrintFormat.JasperProcess_ID<small> numeric(10) <br/> Table</small> |
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | AD_PrintFormat.AD_Window_ID<small> numeric(10) <br/> Table Direct</small> |
+| Copy/Create | Copy existing OR create Print Format from Table | Select either a table to create a print format [creates initial rough layout]<br/>OR a print format to copy into the current print format [copies layout]. | AD_PrintFormat.CreateCopy<small> character(1) <br/> Button</small> |
+| Page break per record | Page Break after each record |  | AD_PrintFormat.IsBreakPagePerRecord<small> character(1) <br/> Yes-No</small> |
+| File Name Pattern |  |  | AD_PrintFormat.FileNamePattern<small> character varying(255) <br/> String</small> |
+
+## Tab: › Display Order
+
+*Tab Level 1 · Created 12/07/2002 · Updated 02/01/2000*
+
+**Description:** Display Order of the Print Format Items
+
+## Tab: › Sort Order
+
+*Tab Level 1 · Created 12/07/2002 · Updated 02/01/2000*
+
+**Description:** Sort Order of the Print Format Items
+
+## Tab: › Format Item
+
+*Tab Level 1 · Created 11/07/2002 · Updated 15/01/2024*
+
+**Description:** Print Format Item
+
+**Comment/Help:** Item in the print format maintaining layout information.  The following additional variables are available when printing:
+&lt;p&gt;@*Page@ - the current page number
+&lt;br&gt;@*PageCount@ - the total number of pages
+&lt;br&gt;@*MultiPageInfo@ - "Page x of y" - only printed if more than one page
+&lt;br&gt;@*CopyInfo@ - if it is a copy of the document "Duplicate" is printed
+&lt;br&gt;@*ReportName@ - name of the report
+&lt;br&gt;@*Header@ - Full Header with user/tenant/org name and connection
+&lt;br&gt;@*CurrentDate@ - the print date
+&lt;br&gt;@*CurrentDateTime@ - the print time
+
+&lt;p&gt;The layout logic for forms is: &lt;br&gt;
+- if not printed: ignore &lt;br&gt;
+- set New Line Position &lt;br&gt;
+- new page &lt;br&gt;
+- new line, if something was printed since last new line&lt;br&gt;
+- format item&lt;br&gt;
+- print it (if not null/empty selected)&lt;br&gt;
+(i.e. suppress null does not prevent new line)
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_PrintFormatItem.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_PrintFormatItem.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Print Format | Data Print Format | The print format determines how data is rendered for print. | AD_PrintFormatItem.AD_PrintFormat_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | AD_PrintFormatItem.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_PrintFormatItem.Name<small> character varying(60) <br/> String</small> |
+| Print Text | The label text to be printed on a document or correspondence. | The Label to be printed indicates the name that will be printed on a document or correspondence. The max length is 2000 characters. | AD_PrintFormatItem.PrintName<small> character varying(2000) <br/> String</small> |
+| Print Label Suffix | The label text to be printed on a document or correspondence after the field | The Label to be printed indicates the name that will be printed on a document or correspondence after the field. The max length is 60 characters. | AD_PrintFormatItem.PrintNameSuffix<small> character varying(60) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_PrintFormatItem.IsActive<small> character(1) <br/> Yes-No</small> |
+| Centrally maintained | Information maintained in System Element table | The Centrally Maintained checkbox indicates if the Name, Description and Help maintained in 'System Element' table  or 'Window' table. | AD_PrintFormatItem.IsCentrallyMaintained<small> character(1) <br/> Yes-No</small> |
+| Suppress Null | Suppress columns or elements with NULL value | If a Form entry is NULL and if selected, the field (including label) is not printed. &lt;br&gt;<br/>If all elements in a table column are NULL and if selected, the column is not printed. | AD_PrintFormatItem.IsSuppressNull<small> character(1) <br/> Yes-No</small> |
+| Suppress Repeats | Suppress repeated elements in column. | Determines whether repeated elements in a column are repeated in a printed table. | AD_PrintFormatItem.IsSuppressRepeats<small> character(1) <br/> Yes-No</small> |
+| Format Type | Print Format Type | The print format type determines what will be printed. | AD_PrintFormatItem.PrintFormatType<small> character(1) <br/> List</small> |
+| Column | Column in the table | Link to the database column of the table | AD_PrintFormatItem.AD_Column_ID<small> numeric(10) <br/> Table Direct</small> |
+| Line Width | Width of the lines |  | AD_PrintFormatItem.LineWidth<small> numeric(10) <br/> Integer</small> |
+| Format Pattern | The pattern used to format a number or date. | A string complying with either Java SimpleDateFormat or DecimalFormat pattern syntax used to override the default presentation format of a date or number type field. | AD_PrintFormatItem.FormatPattern<small> character varying(60) <br/> String</small> |
+| Print Attributes | Print each attributes as report column instead of printing the description of attribute set instance | This control the printing of product attribute set instance. When checked, the report will have one column for each attribute instead of printing the description of attribute set instance. | AD_PrintFormatItem.IsPrintInstanceAttributes<small> character(1) <br/> Yes-No</small> |
+| Included Print Format | Print format that is included here. | Included Print formats allow to e.g. Lines to Header records. The Column provides the parent link. | AD_PrintFormatItem.AD_PrintFormatChild_ID<small> numeric(10) <br/> Table</small> |
+| Image Field | The image is retrieved from the data column | The Image URL is retrieved from the data column | AD_PrintFormatItem.IsImageField<small> character(1) <br/> Yes-No</small> |
+| Image attached | The image to be printed is attached to the record | The image to be printed is stored in the database as attachment to this record. The image can be a gif, jpeg or png. | AD_PrintFormatItem.ImageIsAttached<small> character(1) <br/> Yes-No</small> |
+| Image URL | URL of  image | URL of image; The image is not stored in the database, but retrieved at runtime. The image can be a gif, jpeg or png. | AD_PrintFormatItem.ImageURL<small> character varying(120) <br/> URL</small> |
+| Area | Print Area | Print area of this item | AD_PrintFormatItem.PrintAreaType<small> character(1) <br/> List</small> |
+| Barcode Type | Type of barcode |  | AD_PrintFormatItem.BarcodeType<small> character(3) <br/> List</small> |
+| Print Barcode Text | Print barcode text at the bottom of barcode |  | AD_PrintFormatItem.IsPrintBarcodeText<small> character(1) <br/> Yes-No</small> |
+| Scale Factor | Scale Factor | Proportional scaling factor for barcode dimensions based on max width/height constraints | AD_PrintFormatItem.ScaleFactor<small> numeric <br/> Number</small> |
+| Relative Position | The item is relative positioned (not absolute) | The relative positioning of the item is determined by X-Z space and next line | AD_PrintFormatItem.IsRelativePosition<small> character(1) <br/> Yes-No</small> |
+| Set NL Position | Set New Line Position | When enabled, the current x (horizontal) Position before printing the item is saved. The next New Line will use the saved x (horizontal) Position, enabling to print data in columns.<br/>The setting is not restricted to an area (header, content, footer), allowing to align information also with Header and Footer with the Content. | AD_PrintFormatItem.IsSetNLPosition<small> character(1) <br/> Yes-No</small> |
+| X Position | Absolute X (horizontal) position in 1/72 of an inch | Absolute X (horizontal) position in 1/72 of an inch | AD_PrintFormatItem.XPosition<small> numeric(10) <br/> Integer</small> |
+| Y Position | Absolute Y (vertical) position in 1/72 of an inch | Absolute Y (vertical) position in 1/72 of an inch | AD_PrintFormatItem.YPosition<small> numeric(10) <br/> Integer</small> |
+| Next Line | Print item on next line | If not selected, the item is printed on the same line | AD_PrintFormatItem.IsNextLine<small> character(1) <br/> Yes-No</small> |
+| Next Page | The column is printed on the next page | Before printing this column, there will be a page break. | AD_PrintFormatItem.IsNextPage<small> character(1) <br/> Yes-No</small> |
+| Below Column | Print this column below the column index entered | This column is printed in a second line below the content of the first line identified. Please be aware, that this is depends on the actual sequence. Enter a 1 to add the info below the first column. | AD_PrintFormatItem.BelowColumn<small> numeric(10) <br/> Integer</small> |
+| Line Alignment | Line Alignment | For relative positioning, the line alignment | AD_PrintFormatItem.LineAlignmentType<small> character(1) <br/> List</small> |
+| Field Alignment | Field Text Alignment | Alignment of field text. The default is determined by the data/display type: Numbers are right aligned, other data is left aligned | AD_PrintFormatItem.FieldAlignmentType<small> character(1) <br/> List</small> |
+| X Space | Relative X (horizontal) space in 1/72 of an inch | Relative X (horizontal) space in 1/72 of an inch in relation to the end of the previous item. | AD_PrintFormatItem.XSpace<small> numeric(10) <br/> Integer</small> |
+| Y Space | Relative Y (vertical) space in 1/72 of an inch | Relative Y (vertical) space in 1/72 of an inch in relation to the end of the previous item. | AD_PrintFormatItem.YSpace<small> numeric(10) <br/> Integer</small> |
+| Max Width | Maximum Width in 1/72 if an inch - 0 = no restriction | Maximum width of the element in 1/72 of an inch (point). If zero (0), there is no width restriction. | AD_PrintFormatItem.MaxWidth<small> numeric(10) <br/> Integer</small> |
+| Fixed Width | Column has a fixed width | The Column has a fixed width, independent from the content | AD_PrintFormatItem.IsFixedWidth<small> character(1) <br/> Yes-No</small> |
+| Shape Type | Type of the shape to be painted |  | AD_PrintFormatItem.ShapeType<small> character(1) <br/> List</small> |
+| Max Height | Maximum Height in 1/72 if an inch - 0 = no restriction | Maximum height of the element in 1/72 of an inch (point). If zero (0), there is no height restriction. | AD_PrintFormatItem.MaxHeight<small> numeric(10) <br/> Integer</small> |
+| One Line Only | If selected, only one line is printed | If the column has a width restriction, the text is broken into multiple lines. If One Line is selected, only the first line is printed. | AD_PrintFormatItem.IsHeightOneLine<small> character(1) <br/> Yes-No</small> |
+| Fill Shape | Fill the shape with the color selected |  | AD_PrintFormatItem.IsFilledRectangle<small> character(1) <br/> Yes-No</small> |
+| Print Color | Color used for printing and display | Colors used for printing and display | AD_PrintFormatItem.AD_PrintColor_ID<small> numeric(10) <br/> Table Direct</small> |
+| Print Font | Maintain Print Font | Font used for printing | AD_PrintFormatItem.AD_PrintFont_ID<small> numeric(10) <br/> Table Direct</small> |
+| Field Style | Field CSS Style  |  | AD_PrintFormatItem.AD_FieldStyle_ID<small> numeric(10) <br/> Table</small> |
+| Display Logic | If the Field is displayed, the result determines if the field is actually displayed | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_PrintFormatItem.DisplayLogic<small> character varying(2000) <br/> Text</small> |
+| Arc Diameter | Arc Diameter for rounded Rectangles | Width of the horizontal/vertical diameter of the arc at the four corners | AD_PrintFormatItem.ArcDiameter<small> numeric(10) <br/> Integer</small> |
+| Order by | Include in sort order | The records are ordered by the value of this column. If a column is used for grouping, it needs to be included in the sort order as well. | AD_PrintFormatItem.IsOrderBy<small> character(1) <br/> Yes-No</small> |
+| Record Sort No | Determines in what order the records are displayed | The Record Sort No indicates the ascending sort sequence of the records. If the number is negative, the records are sorted descending. <br/>Example: A tab with C_DocType_ID (1), DocumentNo (-2) will be sorted ascending by document type and descending by document number (SQL: ORDER BY C_DocType, DocumentNo DESC) | AD_PrintFormatItem.SortNo<small> numeric(10) <br/> Integer</small> |
+| Descending | Sort your data using a SQL Desc Order By statement |  | AD_PrintFormatItem.IsDesc<small> character(1) <br/> Yes-No</small> |
+| Group by | After a group change, totals, etc. are printed | Grouping allows to print sub-totals. If a group changes, the totals are printed.  Group by columns need to be included in the sort order. | AD_PrintFormatItem.IsGroupBy<small> character(1) <br/> Yes-No</small> |
+| Page break | Start with new page | Before printing this item, create a new page | AD_PrintFormatItem.IsPageBreak<small> character(1) <br/> Yes-No</small> |
+| Calculate Sum (Σ) | Calculate the Sum of numeric content or length | Calculate the Sum (Σ) of the data if the field is numeric, otherwise total sum length of the field. | AD_PrintFormatItem.IsSummarized<small> character(1) <br/> Yes-No</small> |
+| Running Total | Create a running total (sum) | A running total creates a sum at the end of a page and on the top of the next page for all columns, which have a Sum function.  You should define running total only once per format. | AD_PrintFormatItem.IsRunningTotal<small> character(1) <br/> Yes-No</small> |
+| Calculate Count (№) | Count number of not empty elements | Calculate the total number (№) of not empty (NULL) elements (maximum is the number of lines). | AD_PrintFormatItem.IsCounted<small> character(1) <br/> Yes-No</small> |
+| Running Total Lines | Create Running Total Lines (page break) every x lines | When you want to print running totals, enter the number of lines per page after you want to create a running total line and page break. You should define running total only once per format. | AD_PrintFormatItem.RunningTotalLines<small> numeric(10) <br/> Integer</small> |
+| Calculate Minimum (↓) | Calculate the minimum amount | Calculate the Minimum (↓) of the data if the field is numeric, otherwise minimum length of the field. | AD_PrintFormatItem.IsMinCalc<small> character(1) <br/> Yes-No</small> |
+| Calculate Maximum (↑) | Calculate the maximum amount | Calculate the Maximum (↑)  of the data if the field is numeric, otherwise maximum length of the field. | AD_PrintFormatItem.IsMaxCalc<small> character(1) <br/> Yes-No</small> |
+| Calculate Mean (μ) | Calculate Average of numeric content or length | Calculate the Mean (μ) of the data if the field is numeric, otherwise calculate the average length of the field. | AD_PrintFormatItem.IsAveraged<small> character(1) <br/> Yes-No</small> |
+| Calculate Variance (σ²) | Calculate Variance | The Variance (σ²) is the a measure of dispersion - used in combination with the Mean (μ) | AD_PrintFormatItem.IsVarianceCalc<small> character(1) <br/> Yes-No</small> |
+| Calculate Deviation (σ) | Calculate Standard Deviation | The Standard Deviation (σ) is the a measure of dispersion - used in combination with the Mean (μ) | AD_PrintFormatItem.IsDeviationCalc<small> character(1) <br/> Yes-No</small> |
+| Script | Dynamic Java Language Script to calculate result | Use Java language constructs to define the result of the calculation | AD_PrintFormatItem.Script<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › › Item Translation
+
+*Tab Level 2 · Created 24/08/2002 · Updated 27/10/2024*
+
+**Description:** Print Format Translation
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_PrintFormatItem_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_PrintFormatItem_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Print Format Item | Item/Column in the Print format | Item/Column in the print format maintaining layout information | AD_PrintFormatItem_Trl.AD_PrintFormatItem_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_PrintFormatItem_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_PrintFormatItem_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_PrintFormatItem_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_PrintFormatItem_Trl.Name<small> character varying(60) <br/> String</small> |
+| Print Text | The label text to be printed on a document or correspondence. | The Label to be printed indicates the name that will be printed on a document or correspondence. The max length is 2000 characters. | AD_PrintFormatItem_Trl.PrintName<small> character varying(2000) <br/> String</small> |
+| Print Label Suffix | The label text to be printed on a document or correspondence after the field | The Label to be printed indicates the name that will be printed on a document or correspondence after the field. The max length is 60 characters. | AD_PrintFormatItem_Trl.PrintNameSuffix<small> character varying(60) <br/> String</small> |
+
+## Tab: › Translate
+
+*Tab Level 1 · Created 27/05/2014 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_PrintFormat_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_PrintFormat_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Print Format | Data Print Format | The print format determines how data is rendered for print. | AD_PrintFormat_Trl.AD_PrintFormat_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_PrintFormat_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_PrintFormat_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_PrintFormat_Trl.Description<small> character varying(255) <br/> String</small> |
+| File Name Pattern |  |  | AD_PrintFormat_Trl.FileNamePattern<small> character varying(255) <br/> String</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_PrintFormat_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_PrintFormat_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+

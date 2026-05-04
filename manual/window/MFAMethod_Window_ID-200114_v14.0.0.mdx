@@ -1,0 +1,41 @@
+---
+title: 'MFA Method'
+sidebar_label: 'MFA Method'
+description: 'Multi-factor Authentication Method'
+tags: ['Window']
+---
+
+# MFA Method
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200114</span>
+
+*30/05/2021 → 30/05/2021*
+
+![MFA Method](/img/manual/MFAMethod-Window_iDempiere_v14.0.0.png)
+
+**Description:** Multi-factor Authentication Method
+
+## Tab: MFA Method
+
+*Tab Level 0 · Created 30/05/2021 · Updated 30/05/2021*
+
+**Description:** Multi-factor Authentication Method
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | MFA_Method.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | MFA_Method.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | MFA_Method.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | MFA_Method.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | MFA_Method.Help<small> character varying(2000) <br/> Text</small> |
+| Method |  |  | MFA_Method.Method<small> character varying(60) <br/> List</small> |
+| MFA Type | Multi-factor authentication type (Something you Know/Have/Are, Location) |  | MFA_Method.MFAType<small> character(1) <br/> List</small> |
+| Parameter Element |  |  | MFA_Method.MFA_ElementPrm_ID<small> numeric(10) <br/> Search</small> |
+| Expire in Minutes |  |  | MFA_Method.ExpireInMinutes<small> numeric(10) <br/> Integer</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | MFA_Method.IsActive<small> character(1) <br/> Yes-No</small> |
+| Mail Template | Text templates for mailings | The Mail Template indicates the mail template for return messages. Mail text can include variables.  The priority of parsing is User/Contact, Business Partner and then the underlying business object (like Request, Dunning, Workflow object).&lt;br&gt;<br/>So, @Name@ would resolve into the User name (if user is defined defined), then Business Partner name (if business partner is defined) and then the Name of the business object if it has a Name.&lt;br&gt;<br/>For Multi-Lingual systems, the template is translated based on the Business Partner's language selection. | MFA_Method.R_MailText_ID<small> numeric(10) <br/> Table Direct</small> |
+| Issuer |  |  | MFA_Method.MFAIssuer<small> character varying(2000) <br/> String</small> |
+| Allowed Time Period Discrepancy |  |  | MFA_Method.MFAAllowedTimeDiscrepancy<small> numeric(10) <br/> Integer</small> |
+| Time Provider |  |  | MFA_Method.MFATimeProvider<small> character(1) <br/> List</small> |
+| Time Server |  |  | MFA_Method.MFATimeServer<small> character varying(255) <br/> String</small> |
+

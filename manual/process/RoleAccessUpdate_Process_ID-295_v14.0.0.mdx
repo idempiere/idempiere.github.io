@@ -1,0 +1,28 @@
+---
+title: 'Role Access Update'
+sidebar_label: 'Role Access Update'
+description: 'Update the access rights of a role or roles of a tenant'
+tags: ['Process']
+---
+
+# Role Access Update
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 295</span>
+
+*21/07/2004 → 15/01/2024*
+
+![Role Access Update](/img/manual/RoleAccessUpdate-Process_iDempiere_v14.0.0.png)
+
+**Description:** Update the access rights of a role or roles of a tenant
+
+**Comment/Help:** Update the access rights of a role or all roles of a tenant to windows, forms, processes and workflows. Note that a role is only updated if it is not marked as manual. Note that if is executed from System tenant and role is not set, all tenants will be updated
+
+**Classname:** `org.compiere.process.RoleAccessUpdate`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Role_ID<br/>Table Direct |
+| Reset Existing Access | Reset Existing Access |  | ResetAccess<br/>Yes-No |
+

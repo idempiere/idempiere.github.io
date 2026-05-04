@@ -1,0 +1,28 @@
+---
+title: 'Warehouse Organization'
+sidebar_label: 'Warehouse Organization'
+description: 'Set and verify Organization ownership of Warehouse'
+tags: ['Process']
+---
+
+# Warehouse Organization
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 244</span>
+
+*23/12/2003 → 02/01/2000*
+
+![Warehouse Organization](/img/manual/WarehouseOrganization-Process_iDempiere_v14.0.0.png)
+
+**Description:** Set and verify Organization ownership of Warehouse
+
+**Comment/Help:** The process allows you to change or verify the organization ownership of a warehouse and its dependent entities (Location, Storage).
+
+**Classname:** `org.compiere.process.OrgOwnership`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Org_ID<br/>Table Direct |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | M_Warehouse_ID<br/>Table Direct |
+

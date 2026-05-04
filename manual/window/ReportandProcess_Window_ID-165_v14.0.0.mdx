@@ -1,0 +1,154 @@
+---
+title: 'Report and Process'
+sidebar_label: 'Report and Process'
+description: 'Maintain Reports & Processes'
+tags: ['Window']
+---
+
+# Report and Process
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 165</span>
+
+*11/12/1999 → 08/12/2023*
+
+![Report and Process](/img/manual/ReportandProcess-Window_iDempiere_v14.0.0.png)
+
+**Description:** Maintain Reports &amp; Processes
+
+**Comment/Help:** The Report &amp; Process Window is used to define the parameters and access rules for every Report and Process within the system.  This window is for System Admin use only.
+
+## Tab: Report &amp; Process
+
+*Tab Level 0 · Created 11/12/1999 · Updated 02/01/2000*
+
+**Description:** Define Report &amp; Process
+
+**Comment/Help:** The Report and Process Tab defines each report and process run in the system.  
+Please note that the Print Format is only used for Document Print when you want to share a common format defined on System level. For normal reports and formats, you would not define a Print Format here, but modify the generated print format and set it as the default.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Process.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Process.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | AD_Process.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Process.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Process.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Process.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Process.IsActive<small> character(1) <br/> Yes-No</small> |
+| Beta Functionality | This functionality is considered Beta | Beta functionality is not fully tested or completed. | AD_Process.IsBetaFunctionality<small> character(1) <br/> Yes-No</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_Process.EntityType<small> character varying(40) <br/> Table</small> |
+| Allow Concurrent Execution | Allow or disallow executing a process/report multiple times concurrently |  | AD_Process.AllowMultipleExecution<small> character varying(2) <br/> List</small> |
+| Data Access Level | Access Level required | Indicates the access level required for this record or process. | AD_Process.AccessLevel<small> character(1) <br/> List</small> |
+| Execution Type | Execution Type defines whether the report/process will always run in background or foreground.  | Execution Type defines whether the report/process will always run in background or foreground. The System Configurator "BACKGROUND_JOB_ALLOWED" has greater precedence. | AD_Process.ExecutionType<small> character(1) <br/> List</small> |
+| Report | Indicates a Report record | The Report checkbox indicates that this record is a report as opposed to a process | AD_Process.IsReport<small> character(1) <br/> Yes-No</small> |
+| Classname | Java Classname | The Classname identifies the Java classname used by this report or process. | AD_Process.Classname<small> character varying(255) <br/> String</small> |
+| Procedure | Name of the Database Procedure | The Procedure indicates the name of the database procedure called by this report or process. | AD_Process.ProcedureName<small> character varying(60) <br/> String</small> |
+| Workflow | Workflow or combination of tasks | The Workflow field identifies a unique Workflow in the system. | AD_Process.AD_Workflow_ID<small> numeric(10) <br/> Table Direct</small> |
+| Special Form | Special Form | The Special Form field identifies a unique Special Form in the system. | AD_Process.AD_Form_ID<small> numeric(10) <br/> Table Direct</small> |
+| Report View | View used to generate this report | The Report View indicates the view used to generate this report. | AD_Process.AD_ReportView_ID<small> numeric(10) <br/> Table Direct</small> |
+| Direct print | Print without dialog | The Direct Print checkbox indicates that this report will print without a print dialog box being displayed. | AD_Process.IsDirectPrint<small> character(1) <br/> Yes-No</small> |
+| Print Format | Data Print Format | The print format determines how data is rendered for print. | AD_Process.AD_PrintFormat_ID<small> numeric(10) <br/> Table Direct</small> |
+| File Name Pattern |  |  | AD_Process.FileNamePattern<small> character varying(255) <br/> String</small> |
+| Show Help |  |  | AD_Process.ShowHelp<small> character(1) <br/> List</small> |
+| Statistic Count | Internal statistics how often the entity was used | For internal use. | AD_Process.Statistic_Count<small> numeric(10) <br/> Integer</small> |
+| Statistic Seconds | Internal statistics how many seconds a process took | For internal use | AD_Process.Statistic_Seconds<small> numeric <br/> Integer</small> |
+| Jasper Report |  |  | AD_Process.JasperReport<small> character varying(255) <br/> String</small> |
+| Context Help |  |  | AD_Process.AD_CtxHelp_ID<small> numeric(10) <br/> Search</small> |
+| Copy From Report and Process | Copy settings from one report and process to another. | Copy the settings from the selected report and process to the current one.  This overwrites existing settings and translations. | AD_Process.CopyFromProcess<small> character(1) <br/> Button</small> |
+
+## Tab: › Parameter
+
+*Tab Level 1 · Created 11/12/1999 · Updated 16/11/2012*
+
+**Description:** Report Parameter
+
+**Comment/Help:** The Report Parameter Tab defines any parameters required to execute a report or process.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Process_Para.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Process_Para.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Process | Process or Report | The Process field identifies a unique Process or Report in the system. | AD_Process_Para.AD_Process_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Process_Para.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Process_Para.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Process_Para.Help<small> character varying(2000) <br/> Text</small> |
+| Placeholder |  |  | AD_Process_Para.Placeholder<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Process_Para.IsActive<small> character(1) <br/> Yes-No</small> |
+| Centrally maintained | Information maintained in System Element table | The Centrally Maintained checkbox indicates if the Name, Description and Help maintained in 'System Element' table  or 'Window' table. | AD_Process_Para.IsCentrallyMaintained<small> character(1) <br/> Yes-No</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | AD_Process_Para.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_Process_Para.EntityType<small> character varying(40) <br/> Table</small> |
+| DB Column Name | Name of the column in the database | The Column Name indicates the name of a column on a table as defined in the database. | AD_Process_Para.ColumnName<small> character varying(63) <br/> String</small> |
+| Field Group | Logical grouping of fields | The Field Group indicates the logical group that this field belongs to (History, Amounts, Quantities) | AD_Process_Para.AD_FieldGroup_ID<small> numeric(10) <br/> Table Direct</small> |
+| System Element | System Element enables the central maintenance of column description and help. | The System Element allows for the central maintenance of help, descriptions and terminology for a database column. | AD_Process_Para.AD_Element_ID<small> numeric(10) <br/> Search</small> |
+| Reference | System Reference and Validation | The Reference could be a display type, list or table validation. | AD_Process_Para.AD_Reference_ID<small> numeric(10) <br/> Table</small> |
+| Reference Key | Required to specify, if data type is Table or List | The Reference Value indicates where the reference values are stored.  It must be specified if the data type is Table or List.   | AD_Process_Para.AD_Reference_Value_ID<small> numeric(10) <br/> Table</small> |
+| Show Negate Button | Show Negate Button for Chosen Multiple editors |  | AD_Process_Para.IsShowNegateButton<small> character(1) <br/> Yes-No</small> |
+| Value Format | Format of the value; Can contain fixed format elements, Variables: "_lLoOaAcCa09", or ~regex | &lt;B&gt;Validation elements:&lt;/B&gt;<br/><br/>~regex - Validates a regular expression<br/><br/> 	(Space) any character<br/>_	Space (fixed character)<br/>l	any Letter a..Z NO space<br/>L	any Letter a..Z NO space converted to upper case<br/>o	any Letter a..Z or space<br/>O	any Letter a..Z or space converted to upper case<br/>a	any Letters &amp; Digits NO space<br/>A	any Letters &amp; Digits NO space converted to upper case<br/>c	any Letters &amp; Digits or space<br/>C	any Letters &amp; Digits or space converted to upper case<br/>0	Digits 0..9 NO space<br/>9	Digits 0..9 or space<br/><br/>Example of format "(000)_000-0000" | AD_Process_Para.VFormat<small> character varying(255) <br/> String</small> |
+| Dynamic Validation | Dynamic Validation Rule | These rules define how an entry is determined to valid. You can use variables for dynamic (context sensitive) validation. | AD_Process_Para.AD_Val_Rule_ID<small> numeric(10) <br/> Table Direct</small> |
+| Length | Length of the column in the database | The Length indicates the length of a column as defined in the database. | AD_Process_Para.FieldLength<small> numeric(10) <br/> Integer</small> |
+| Encrypted | Display or Storage is encrypted | Display encryption (in Window/Tab/Field) - all characters are displayed as '*' - in the database it is stored in clear text. You will not be able to report on these columns.&lt;br&gt;<br/>Data storage encryption (in Table/Column) - data is stored encrypted in the database (dangerous!) and you will not be able to report on those columns. Independent from Display encryption. | AD_Process_Para.IsEncrypted<small> character(1) <br/> Yes-No</small> |
+| Mandatory | Data entry is required in this column | The field must have a value for the record to be saved to the database. | AD_Process_Para.IsMandatory<small> character(1) <br/> Yes-No</small> |
+| Range | The parameter is a range of values | The Range checkbox indicates that this parameter is a range of values. | AD_Process_Para.IsRange<small> character(1) <br/> Yes-No</small> |
+| Date Range Option | Options, how the date editor will be displayed. |  | AD_Process_Para.DateRangeOption<small> character(1) <br/> List</small> |
+| Placeholder2 |  |  | AD_Process_Para.Placeholder2<small> character varying(255) <br/> String</small> |
+| Default Logic | Default value hierarchy, separated by ; | The defaults are evaluated in the order of definition, the first not null value becomes the default value of the column. The values are separated by comma or semicolon. a) Literals:. 'Text' or 123 b) Variables - in format @Variable@ - Login e.g. #Date, #AD_Org_ID, #AD_Tenant_ID - Accounting Schema: e.g. $C_AcctSchema_ID, $C_Calendar_ID - Global defaults: e.g. DateFormat - Window values (all Picks, CheckBoxes, RadioButtons, and DateDoc/DateAcct) c) SQL code with the tag: @SQL=SELECT something AS DefaultValue FROM ... The SQL statement can contain variables.  There can be no other value other than the SQL statement. The default is only evaluated, if no user preference is defined.  Default definitions are ignored for record columns as Key, Parent, Tenant as well as Buttons. | AD_Process_Para.DefaultValue<small> character varying(2000) <br/> String</small> |
+| Default Logic 2 | Default value hierarchy, separated by ; | The defaults are evaluated in the order of definition, the first not null value becomes the default value of the column. The values are separated by comma or semicolon. a) Literals:. 'Text' or 123 b) Variables - in format @Variable@ - Login e.g. #Date, #AD_Org_ID, #AD_Tenant_ID - Accounting Schema: e.g. $C_AcctSchema_ID, $C_Calendar_ID - Global defaults: e.g. DateFormat - Window values (all Picks, CheckBoxes, RadioButtons, and DateDoc/DateAcct) c) SQL code with the tag: @SQL=SELECT something AS DefaultValue FROM ... The SQL statement can contain variables.  There can be no other value other than the SQL statement. The default is only evaluated, if no user preference is defined.  Default definitions are ignored for record columns as Key, Parent, Tenant as well as Buttons. | AD_Process_Para.DefaultValue2<small> character varying(2000) <br/> String</small> |
+| Min. Value | Minimum Value for a field | The Minimum Value indicates the lowest  allowable value for a field. use format yyyy-mm-dd for Date | AD_Process_Para.ValueMin<small> character varying(20) <br/> String</small> |
+| Max. Value | Maximum Value for a field | The Maximum Value indicates the highest allowable value for a field. use format yyyy-mm-dd for Date | AD_Process_Para.ValueMax<small> character varying(20) <br/> String</small> |
+| Query | SQL |  | AD_Process_Para.Query<small> character varying(2000) <br/> Text</small> |
+| Read Only Logic | Logic to determine if field is read only (applies only when field is read-write) | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_Process_Para.ReadOnlyLogic<small> character varying(2000) <br/> Text</small> |
+| Display Logic | If the Field is displayed, the result determines if the field is actually displayed | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_Process_Para.DisplayLogic<small> character varying(2000) <br/> Text</small> |
+| Mandatory Logic |  |  | AD_Process_Para.MandatoryLogic<small> character varying(2000) <br/> Text</small> |
+| Auto complete | Automatic completion for text fields | The autocompletion uses all existing values (from the same tenant and organization) of the field. | AD_Process_Para.IsAutocomplete<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › Parameter Translation
+
+*Tab Level 2 · Created 11/12/1999 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Process_Para_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Process_Para_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Process Parameter |  |  | AD_Process_Para_Trl.AD_Process_Para_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_Process_Para_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Process_Para_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_Process_Para_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Process_Para_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Process_Para_Trl.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Process_Para_Trl.Help<small> character varying(2000) <br/> Text</small> |
+| Placeholder |  |  | AD_Process_Para_Trl.Placeholder<small> character varying(255) <br/> String</small> |
+| Placeholder2 |  |  | AD_Process_Para_Trl.Placeholder2<small> character varying(255) <br/> String</small> |
+
+## Tab: › Report Translation
+
+*Tab Level 1 · Created 11/12/1999 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Process_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Process_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Process | Process or Report | The Process field identifies a unique Process or Report in the system. | AD_Process_Trl.AD_Process_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_Process_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Process_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_Process_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Process_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Process_Trl.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Process_Trl.Help<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › Report Access
+
+*Tab Level 1 · Created 15/07/2000 · Updated 16/11/2012*
+
+**Description:** Report Access
+
+**Comment/Help:** The Report Access Tab determines who can access a report or process
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Process_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Process_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Process | Process or Report | The Process field identifies a unique Process or Report in the system. | AD_Process_Access.AD_Process_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Process_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Process_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Read Write | Field is read / write | The Read Write indicates that this field may be read and updated. | AD_Process_Access.IsReadWrite<small> character(1) <br/> Yes-No</small> |
+

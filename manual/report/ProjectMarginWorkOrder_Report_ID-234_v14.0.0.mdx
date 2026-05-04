@@ -1,0 +1,27 @@
+---
+title: 'Project Margin (Work Order)'
+sidebar_label: 'Project Margin (Work Order)'
+description: 'Work Order Project Lines (planned revenue) vs. Project Issues (costs)'
+tags: ['Report']
+---
+
+# Project Margin (Work Order)
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 234</span>
+
+*12/10/2003 → 02/01/2000*
+
+![Project Margin (Work Order)](/img/manual/ProjectMarginWorkOrder-Report_iDempiere_v14.0.0.png)
+
+**Description:** Work Order Project Lines (planned revenue) vs. Project Issues (costs)
+
+**Comment/Help:** The Project Margin Report for Work Orders compares the Project lines (planned revenue) against the Project issues (actual effort and costs). The margin amount is calculated by subtracting the costs (issue) from the revenue (line).
+The costs are in the currency of the Accounting Schema - the lines are in the currency of the price list of the project.
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | C_Project_ID<br/>Search |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | C_AcctSchema_ID<br/>Table Direct |
+

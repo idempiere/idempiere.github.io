@@ -1,0 +1,35 @@
+---
+title: 'Packages Installed'
+sidebar_label: 'Packages Installed'
+description: 'List of packages installed'
+tags: ['Window']
+---
+
+# Packages Installed
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 50001</span>
+
+*11/12/2006 → 12/12/2006*
+
+![Packages Installed](/img/manual/PackagesInstalled-Window_iDempiere_v14.0.0.png)
+
+**Description:** List of packages installed
+
+## Tab: Packages Installed
+
+*Tab Level 0 · Created 11/12/2006 · Updated 06/08/2013*
+
+**Description:** Packages Installed
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Package_Imp_Inst.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Package_Imp_Inst.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Package_Imp_Inst.Name<small> character varying(240) <br/> String</small> |
+| Package Version |  |  | AD_Package_Imp_Inst.PK_Version<small> character varying(40) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Package_Imp_Inst.Description<small> character varying(2000) <br/> Text</small> |
+| Package Status |  |  | AD_Package_Imp_Inst.PK_Status<small> character varying(44) <br/> String</small> |
+| Created | Date this record was created | The Created field indicates the date that this record was created. | AD_Package_Imp_Inst.Created<small> timestamp without time zone <br/> Date+Time</small> |
+| Updated | Date this record was updated | The Updated field indicates the date that this record was updated. | AD_Package_Imp_Inst.Updated<small> timestamp without time zone <br/> Date+Time</small> |
+| Uninstall |  |  | AD_Package_Imp_Inst.Uninstall<small> character(1) <br/> Yes-No</small> |
+

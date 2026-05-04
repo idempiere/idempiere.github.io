@@ -1,0 +1,28 @@
+---
+title: 'Complete MFA Registration'
+sidebar_label: 'Complete MFA Registration'
+description: 'Complete a registration for a multi-factor authentication mechanism'
+tags: ['Process']
+---
+
+# Complete MFA Registration
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 200130</span>
+
+*30/05/2021 → 04/06/2021*
+
+![Complete MFA Registration](/img/manual/CompleteMFARegistration-Process_iDempiere_v14.0.0.png)
+
+**Description:** Complete a registration for a multi-factor authentication mechanism
+
+**Classname:** `org.compiere.process.MFACompleteRegistration`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| MFA Registration |  |  | MFA_Registration_ID<br/>Table |
+| Validation Code |  |  | MFAValidationCode<br/>String |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | Name<br/>String |
+| Preferred |  |  | IsUserMFAPreferred<br/>Yes-No |
+

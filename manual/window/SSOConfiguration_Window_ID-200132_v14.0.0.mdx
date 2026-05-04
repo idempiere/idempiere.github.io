@@ -1,0 +1,40 @@
+---
+title: 'SSO Configuration'
+sidebar_label: 'SSO Configuration'
+description: 'Single sign-on Configuration'
+tags: ['Window']
+---
+
+# SSO Configuration
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200132</span>
+
+*12/09/2022 → 12/09/2022*
+
+![SSO Configuration](/img/manual/SSOConfiguration-Window_iDempiere_v14.0.0.png)
+
+**Description:** Single sign-on Configuration
+
+**Comment/Help:** Single sign-on is an authentication scheme that allows a user to log in with a single ID to any of several related, yet independent, software systems.
+
+## Tab: SSO Configuration
+
+*Tab Level 0 · Created 12/09/2022 · Updated 02/03/2026*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | SSO_PrincipalConfig.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | SSO_PrincipalConfig.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| SSO Provider | Single Sign-On (SSO) Providers ( Microsoft Azure , Google, Jump Cloud etc..) |  | SSO_PrincipalConfig.SSO_Provider<small> character varying(22) <br/> List</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | SSO_PrincipalConfig.Name<small> character varying(60) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | SSO_PrincipalConfig.IsActive<small> character(1) <br/> Yes-No</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | SSO_PrincipalConfig.IsDefault<small> character(1) <br/> Yes-No</small> |
+| Tenant ID | SSO Tenant ID |  | SSO_PrincipalConfig.SSO_AuthorizationTenantID<small> character varying(100) <br/> String</small> |
+| Application Client ID | SSO Application Client ID |  | SSO_PrincipalConfig.SSO_ApplicationClientID<small> character varying(100) <br/> String</small> |
+| Application Secret Key | SSO Application Secret Key |  | SSO_PrincipalConfig.SSO_ApplicationSecretKey<small> character varying(100) <br/> String</small> |
+| Application Redirect URIs | SSO Application Redirect URIs |  | SSO_PrincipalConfig.SSO_ApplicationRedirectURIs<small> character varying(1000) <br/> String</small> |
+| iDempiere Monitor Redirect URIs | iDempiere Monitor Redirect URIs |  | SSO_PrincipalConfig.SSO_IDempMonitorRedirectURIs<small> character varying(1000) <br/> String</small> |
+| Felix Web Console Redirect URIs | Apache Felix Web Console Bundles Redirect URIs |  | SSO_PrincipalConfig.SSO_OSGIRedirectURIs<small> character varying(1000) <br/> String</small> |
+| Application Discovery URI | SSO Application Discovery URI |  | SSO_PrincipalConfig.SSO_ApplicationDiscoveryURI<small> character varying(4000) <br/> String</small> |
+| Login Button Image | Identifier for the image used as the icon for the Single Sign-On (SSO) login button. References the AD_Image table. |  | SSO_PrincipalConfig.SSO_LoginButtonImage_ID<small> numeric(10) <br/> Table</small> |
+

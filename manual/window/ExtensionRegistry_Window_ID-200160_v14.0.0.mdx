@@ -1,0 +1,48 @@
+---
+title: 'Extension Registry'
+sidebar_label: 'Extension Registry'
+description: 'Manages the registry of bundled and external extensions'
+tags: ['Window']
+---
+
+# Extension Registry
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200160</span>
+
+*24/03/2026 → 24/03/2026*
+
+![Extension Registry](/img/manual/ExtensionRegistry-Window_iDempiere_v14.0.0.png)
+
+**Description:** Manages the registry of bundled and external extensions
+
+**Comment/Help:** Maintains a record of all extensions installed in the system, whether bundled or external. It stores the JSON manifest , tracks the current deployment state (e.g., Installing, Installed, Disabled) , and helps validate dependencies before deployment.
+
+## Tab: Extension Registry
+
+*Tab Level 0 · Created 24/03/2026 · Updated 24/03/2026*
+
+**Description:** Manages the registry of bundled and external extensions
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Extension.Name<small> character varying(255) <br/> String</small> |
+| Extension Symbolic Id | Unique symbolic id of an extension |  | AD_Extension.ExtensionId<small> character varying(255) <br/> String</small> |
+| Version | Version of an extension | Semantic version of an extension (recommended to follow the semantic version definition at https://semver.org/) | AD_Extension.ExtensionVersion<small> character varying(30) <br/> String</small> |
+| Is Bundled | Indicates if the extension is bundled with the core product | A flag indicating whether this extension is distributed as part of the base iDempiere installation or if it is an externally installed extension (e.g., via a .idext archive or a GitHub repository) | AD_Extension.IsBundled<small> character(1) <br/> Yes-No</small> |
+| Extension Metadata | The JSON manifest containing extension details and dependencies | Stores the complete metadata.json payload associated with the extension. This includes the unique identifier, versioning, OSGi bundle references, and prerequisite dependencies required for installation. | AD_Extension.ExtensionMetadata<small> jsonb <br/> JSON</small> |
+| Extension State | Current installation and deployment state of the extension | Indicates the current lifecycle status of the extension within the system, such as Installed, Disabled, Error, or Uninstalled. | AD_Extension.ExtensionState<small> character varying(2) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Extension.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Extension Entities
+
+*Tab Level 1 · Created 24/03/2026 · Updated 30/03/2026*
+
+**Description:** The database dictionary objects belonging to an installed extension
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Extension | System Extension | Internal unique identifier for a System Extension record | AD_ExtensionEntity.AD_Extension_ID<small> numeric(10) <br/> Table Direct</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_ExtensionEntity.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Record UUID |  |  | AD_ExtensionEntity.Record_UU<small> uuid <br/> Record UUID</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_ExtensionEntity.IsActive<small> character(1) <br/> Yes-No</small> |
+

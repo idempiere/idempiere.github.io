@@ -1,0 +1,24 @@
+---
+title: 'Simple Fact View'
+sidebar_label: 'Simple Fact View'
+tags: ['Report']
+---
+
+# Simple Fact View
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 200037</span>
+
+*01/03/2013 → 01/03/2013*
+
+![Simple Fact View](/img/manual/SimpleFactView-Report_iDempiere_v14.0.0.png)
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | C_AcctSchema_ID<br/>Table Direct |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Org_ID<br/>Chosen Multiple Selection Table |
+| Account | Account used | The (natural) account used | Account_ID<br/>Chosen Multiple Selection Table |
+| Account Key | Key of Account Element |  | AccountValue<br/>String |
+| Account Date | Accounting Date | The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion. | DateAcct<br/>Date |
+

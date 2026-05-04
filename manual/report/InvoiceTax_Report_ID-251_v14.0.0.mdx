@@ -1,0 +1,29 @@
+---
+title: 'Invoice Tax'
+sidebar_label: 'Invoice Tax'
+description: 'Invoice Tax Reconciliation'
+tags: ['Report']
+---
+
+# Invoice Tax
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 251</span>
+
+*09/01/2004 → 21/11/2005*
+
+![Invoice Tax](/img/manual/InvoiceTax-Report_iDempiere_v14.0.0.png)
+
+**Description:** Invoice Tax Reconciliation
+
+**Comment/Help:** The Report lists Invoice Tax lines with Business Partner Tax information.
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Org_ID<br/>Chosen Multiple Selection Table |
+| Date Invoiced | Date printed on Invoice | The Date Invoice indicates the date printed on the invoice. | DateInvoiced<br/>Date |
+| Account Date | Accounting Date | The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion. | DateAcct<br/>Date |
+| Tax | Tax identifier | The Tax indicates the type of tax used in document line. | C_Tax_ID<br/>Chosen Multiple Selection Table |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | C_DocType_ID<br/>Chosen Multiple Selection Table |
+

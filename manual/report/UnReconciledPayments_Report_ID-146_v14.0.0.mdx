@@ -1,0 +1,27 @@
+---
+title: 'UnReconciled Payments'
+sidebar_label: 'UnReconciled Payments'
+description: 'Payments not reconciled with Bank Statement'
+tags: ['Report']
+---
+
+# UnReconciled Payments
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 146</span>
+
+*03/01/2001 → 27/01/2005*
+
+![UnReconciled Payments](/img/manual/UnReconciledPayments-Report_iDempiere_v14.0.0.png)
+
+**Description:** Payments not reconciled with Bank Statement
+
+**Comment/Help:** The report lists payments which are not reconciled with a bank statement. Payments with a zero payment amount are not listed.
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Bank Account | Account at the Bank | The Bank Account identifies an account at this Bank. | C_BankAccount_ID<br/>Chosen Multiple Selection Table |
+| Transaction Date | Transaction Date | The Transaction Date indicates the date of the transaction. | DateTrx<br/>Date |
+| Transaction Type | Type of credit card transaction | The Transaction Type indicates the type of transaction to be submitted to the Credit Card Company. | TrxType<br/>Chosen Multiple Selection List |
+

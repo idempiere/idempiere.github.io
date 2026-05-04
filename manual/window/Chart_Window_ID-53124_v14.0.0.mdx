@@ -1,0 +1,93 @@
+---
+title: 'Chart'
+sidebar_label: 'Chart'
+description: 'Chart Definition'
+tags: ['Window']
+---
+
+# Chart
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 53124</span>
+
+*23/08/2010 → 23/08/2010*
+
+![Chart](/img/manual/Chart-Window_iDempiere_v14.0.0.png)
+
+**Description:** Chart Definition
+
+## Tab: Chart
+
+*Tab Level 0 · Created 23/08/2010 · Updated 23/08/2010*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Chart.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Chart.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Chart.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Chart.Description<small> character varying(255) <br/> String</small> |
+| Chart Type | Type of chart to render |  | AD_Chart.ChartType<small> character varying(2) <br/> List</small> |
+| Window Height |  |  | AD_Chart.WinHeight<small> numeric(10) <br/> Integer</small> |
+| Display Legend | Display chart legend | Toggles the display of the chart legend | AD_Chart.IsDisplayLegend<small> character(1) <br/> Yes-No</small> |
+| Orientation | The orientation of the chart. |  | AD_Chart.ChartOrientation<small> character(1) <br/> List</small> |
+| Domain Label | Label for the domain axis. |  | AD_Chart.DomainLabel<small> character varying(60) <br/> String</small> |
+| Range Label | Label for the range axis. |  | AD_Chart.RangeLabel<small> character varying(60) <br/> String</small> |
+| Time Series | The domain data for the chart is organised by time. | A time series chart will automatically group and restrict the data by the time unit and scope specified. | AD_Chart.IsTimeSeries<small> character(1) <br/> Yes-No</small> |
+| Time Unit | The unit of time for grouping chart data. |  | AD_Chart.TimeUnit<small> character(1) <br/> List</small> |
+| Time Scope | The number of time units to include the chart result. |  | AD_Chart.TimeScope<small> numeric(10) <br/> Integer</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_Chart.EntityType<small> character varying(40) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Chart.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Datasource
+
+*Tab Level 1 · Created 23/08/2010 · Updated 12/09/2022*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_ChartDatasource.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_ChartDatasource.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Chart |  |  | AD_ChartDatasource.AD_Chart_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_ChartDatasource.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_ChartDatasource.Description<small> character varying(255) <br/> String</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_ChartDatasource.EntityType<small> character varying(40) <br/> Table</small> |
+| Sql FROM | SQL FROM clause | The Select Clause indicates the SQL FROM clause to use for selecting the record for a measure calculation. It can have JOIN clauses. Do not include the FROM itself. | AD_ChartDatasource.FromClause<small> character varying(2000) <br/> Text</small> |
+| Sql WHERE | Fully qualified SQL WHERE clause | The Where Clause indicates the SQL WHERE clause to use for record selection. The WHERE clause is added to the query. Fully qualified means "tablename.columnname". | AD_ChartDatasource.WhereClause<small> character varying(2000) <br/> Text</small> |
+| Series Column |  |  | AD_ChartDatasource.SeriesColumn<small> character varying(124) <br/> String</small> |
+| Category Column | Fully qualified data category column | The Category Column determines how the chart data is grouped | AD_ChartDatasource.CategoryColumn<small> character varying(124) <br/> String</small> |
+| Date Column | Fully qualified date column | The Date Column indicates the date to be used when calculating this measurement | AD_ChartDatasource.DateColumn<small> character varying(124) <br/> String</small> |
+| Time Offset | Number of time units to offset displayed chart data from the current date. | For example an offset of -12 with a chart time unit of Month will result in previous year data being displayed. | AD_ChartDatasource.TimeOffset<small> numeric(10) <br/> Integer</small> |
+| Value Column | Fully qualified data value column | The Value Column contains the value data for the chart | AD_ChartDatasource.ValueColumn<small> character varying(124) <br/> String</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_ChartDatasource.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Key Column | Key Column for Table |  | AD_ChartDatasource.KeyColumn<small> character varying(124) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_ChartDatasource.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › Datasource Translation
+
+*Tab Level 2 · Created 12/09/2022 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_ChartDatasource_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_ChartDatasource_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Chart Datasource |  |  | AD_ChartDatasource_Trl.AD_ChartDatasource_ID<small> numeric(10) <br/> Search</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_ChartDatasource_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_ChartDatasource_Trl.Name<small> character varying(60) <br/> String</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_ChartDatasource_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_ChartDatasource_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Translation
+
+*Tab Level 1 · Created 21/03/2014 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Chart_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Chart_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Chart |  |  | AD_Chart_Trl.AD_Chart_ID<small> numeric(10) <br/> Search</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_Chart_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Chart_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_Chart_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Chart_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Chart_Trl.Description<small> character varying(255) <br/> String</small> |
+| Domain Label | Label for the domain axis. |  | AD_Chart_Trl.DomainLabel<small> character varying(60) <br/> String</small> |
+| Range Label | Label for the range axis. |  | AD_Chart_Trl.RangeLabel<small> character varying(60) <br/> String</small> |
+

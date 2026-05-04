@@ -1,0 +1,26 @@
+---
+title: 'RePrice Order/Invoice'
+sidebar_label: 'RePrice Order/Invoice'
+description: 'Recalculate the price based on the latest price list version of an open order or invoice'
+tags: ['Process']
+---
+
+# RePrice Order/Invoice
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 232</span>
+
+*04/10/2003 → 02/01/2000*
+
+![RePrice Order/Invoice](/img/manual/RePriceOrderInvoice-Process_iDempiere_v14.0.0.png)
+
+**Description:** Recalculate the price based on the latest price list version of an open order or invoice
+
+**Classname:** `org.compiere.process.OrderRePrice`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_Order_ID<br/>Table Direct |
+| Invoice | Invoice Identifier | The Invoice Document. | C_Invoice_ID<br/>Table Direct |
+

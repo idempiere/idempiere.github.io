@@ -1,0 +1,36 @@
+---
+title: 'Receivables Write-Off'
+sidebar_label: 'Receivables Write-Off'
+description: 'Write off open receivables'
+tags: ['Process']
+---
+
+# Receivables Write-Off
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 171</span>
+
+*14/11/2001 → 27/11/2005*
+
+![Receivables Write-Off](/img/manual/ReceivablesWriteOff-Process_iDempiere_v14.0.0.png)
+
+**Description:** Write off open receivables
+
+**Comment/Help:** Write-off receivables causes the invoices selected by the criteria to be marked as paid and the open invoice amount to be written off.  Alternatively you can create payments.
+
+**Classname:** `org.compiere.process.InvoiceWriteOff`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BPartner_ID<br/>Search |
+| Business Partner Group | Business Partner Group | The Business Partner Group provides a method of defining defaults to be used for individual Business Partners. | C_BP_Group_ID<br/>Table Direct |
+| Invoice | Invoice Identifier | The Invoice Document. | C_Invoice_ID<br/>Search |
+| Maximum write-off per Invoice | Maximum invoice amount to be written off in invoice currency |  | MaxInvWriteOffAmt<br/>Amount |
+| AP - AR | Include Receivables and/or Payables transactions |  | APAR<br/>List |
+| Date Invoiced | Date printed on Invoice | The Date Invoice indicates the date printed on the invoice. | DateInvoiced<br/>Date |
+| Account Date | Accounting Date | The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion. | DateAcct<br/>Date |
+| Create Payment |  |  | CreatePayment<br/>Yes-No |
+| Bank Account | Account at the Bank | The Bank Account identifies an account at this Bank. | C_BankAccount_ID<br/>Table Direct |
+| Simulation | Performing the function is only simulated |  | IsSimulation<br/>Yes-No |
+

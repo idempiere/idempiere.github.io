@@ -1,0 +1,43 @@
+---
+title: 'Import Confirmations'
+sidebar_label: 'Import Confirmations'
+description: 'Import Receipt/Shipment Confirmation Lines'
+tags: ['Window']
+---
+
+# Import Confirmations
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 334</span>
+
+*02/07/2004 → 02/01/2000*
+
+![Import Confirmations](/img/manual/ImportConfirmations-Window_iDempiere_v14.0.0.png)
+
+**Description:** Import Receipt/Shipment Confirmation Lines
+
+**Comment/Help:** Import Confirmation data of existing Receipt/Shipment Confirmations
+
+## Tab: Confirmation Lines
+
+*Tab Level 0 · Created 02/07/2004 · Updated 02/01/2000*
+
+**Description:** Import Receipt/Shipment Confirmation Lines
+
+**Comment/Help:** Import Confirmation data of existing Receipt/Shipment Confirmations
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Imported | Has this import been processed | The Imported check box indicates if this import has been processed. | I_InOutLineConfirm.I_IsImported<small> character(1) <br/> Yes-No</small> |
+| Ship/Receipt Confirmation Import Line | Material Shipment or Receipt Confirmation Import Line | Import Confirmation Line Details | I_InOutLineConfirm.I_InOutLineConfirm_ID<small> numeric(10) <br/> ID</small> |
+| Import Error Message | Messages generated from import process | The Import Error Message displays any error messages generated during the import process. | I_InOutLineConfirm.I_ErrorMsg<small> character varying(2000) <br/> String</small> |
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | I_InOutLineConfirm.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | I_InOutLineConfirm.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Ship/Receipt Confirmation Line | Material Shipment or Receipt Confirmation Line | Confirmation details | I_InOutLineConfirm.M_InOutLineConfirm_ID<small> numeric(10) <br/> Search</small> |
+| Confirmation No | Confirmation Number |  | I_InOutLineConfirm.ConfirmationNo<small> character varying(20) <br/> String</small> |
+| Confirmed Quantity | Confirmation of a received quantity | Confirmation of a received quantity | I_InOutLineConfirm.ConfirmedQty<small> numeric <br/> Quantity</small> |
+| Scrapped Quantity | The Quantity scrapped due to QA issues |  | I_InOutLineConfirm.ScrappedQty<small> numeric <br/> Quantity</small> |
+| Difference | Difference Quantity |  | I_InOutLineConfirm.DifferenceQty<small> numeric <br/> Quantity</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | I_InOutLineConfirm.Description<small> character varying(255) <br/> String</small> |
+| Import Confirmations | Import Confirmations | The Parameters are default values for null import record values, they do not overwrite any data. | I_InOutLineConfirm.Processing<small> character(1) <br/> Button</small> |
+| Processed | The document has been processed | The Processed checkbox indicates that a document has been processed. | I_InOutLineConfirm.Processed<small> character(1) <br/> Yes-No</small> |
+

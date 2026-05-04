@@ -1,0 +1,29 @@
+---
+title: 'Copy Role'
+sidebar_label: 'Copy Role'
+description: 'WARNING! when executing the process, all Role to access records will be lost, being replaced by Role from records'
+tags: ['Process']
+---
+
+# Copy Role
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 50010</span>
+
+*11/12/2006 → 25/04/2023*
+
+![Copy Role](/img/manual/CopyRole-Process_iDempiere_v14.0.0.png)
+
+**Description:** WARNING! when executing the process, all Role to access records will be lost, being replaced by Role from records
+
+**Comment/Help:** Copy role access records from one role to another.  The existing access records for the destination role will be deleted.  This process can be executed just by advanced roles.
+
+**Classname:** `org.compiere.process.CopyRole`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Org_ID<br/>Table Direct |
+| Role From | Role that will be copied all accesses | Inform the role that you want to copy the access information | AD_Role_ID_From<br/>Table |
+| Role To | Role that will receive the copy of access permissions | Inform the role that will receive access information | AD_Role_ID_To<br/>Table |
+

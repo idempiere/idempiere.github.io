@@ -1,0 +1,242 @@
+---
+title: 'Project'
+sidebar_label: 'Project'
+description: 'Maintain Projects'
+tags: ['Window']
+---
+
+# Project
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 130</span>
+
+*29/06/1999 → 30/06/2021*
+
+![Project](/img/manual/Project-Window_iDempiere_v14.0.0.png)
+
+**Description:** Maintain Projects
+
+**Comment/Help:** The Project Window is used to define the projects which will can be tracked by phases and tasks.
+
+## Tab: Project
+
+*Tab Level 0 · Created 29/06/1999 · Updated 26/03/2006*
+
+**Description:** Define Project
+
+**Comment/Help:** The Project Tab is used to define the Value, Name and Description for each project.  It also is defines the tracks the amounts assigned to, committed to and used for this project. Note that when the project Type is changed, the Phases and Tasks are re-created.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Project.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Project.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | C_Project.Value<small> character varying(40) <br/> String</small> |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | C_Project.SalesRep_ID<small> numeric(10) <br/> Table</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Project.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Project.Description<small> character varying(255) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Project.IsActive<small> character(1) <br/> Yes-No</small> |
+| Summary Level | This is a summary entity | A summary entity represents a branch in a tree rather than an end-node. Summary entities are used for reporting and do not have own values. | C_Project.IsSummary<small> character(1) <br/> Yes-No</small> |
+| Note | Optional additional user defined information | The Note field allows for optional entry of user defined information regarding this record | C_Project.Note<small> character varying(2000) <br/> Text</small> |
+| Line Level | Project Line Level | Level on which Project Lines are maintained | C_Project.ProjectLineLevel<small> character(1) <br/> List</small> |
+| Set Project Type | Set Project Type and for Service Projects copy Phases and Tasks of Project Type into Project | <br/> | C_Project.C_ProjectType_ID<small> numeric(10) <br/> Button</small> |
+| Standard Phase | Standard Phase of the Project Type | Phase of the project with standard performance information with standard work | C_Project.C_Phase_ID<small> numeric(10) <br/> Table Direct</small> |
+| Contract Date | The (planned) effective date of this document. | The contract date is used to determine when the document becomes effective. This is usually the contract date.  The contract date is used in reports and report parameters. | C_Project.DateContract<small> timestamp without time zone <br/> Date</small> |
+| Finish Date | Finish or (planned) completion date | The finish date is used to indicate when the project is expected to be completed or has been completed. | C_Project.DateFinish<small> timestamp without time zone <br/> Date</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_Project.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| BPartner (Agent) | Business Partner (Agent or Sales Rep) |  | C_Project.C_BPartnerSR_ID<small> numeric(10) <br/> Search</small> |
+| Partner Location | Identifies the (ship to) address for this Business Partner | The Partner address indicates the location of a Business Partner | C_Project.C_BPartner_Location_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | C_Project.AD_User_ID<small> numeric(10) <br/> Table Direct</small> |
+| Payment Term | The terms of Payment (timing, discount) | Payment Terms identify the method and timing of payment. | C_Project.C_PaymentTerm_ID<small> numeric(10) <br/> Table Direct</small> |
+| Order Reference | Transaction Reference Number (Sales Order, Purchase Order) of your Business Partner | The business partner order reference is the order reference for this specific transaction; Often Purchase Order numbers are given to print on Invoices for easier reference.  A standard number can be defined in the Business Partner (Customer) window. | C_Project.POReference<small> character varying(20) <br/> String</small> |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | C_Project.M_Warehouse_ID<small> numeric(10) <br/> Table Direct</small> |
+| Campaign | Marketing Campaign | The Campaign defines a unique marketing program.  Projects can be associated with a pre defined Marketing Campaign.  You can then report based on a specific Campaign. | C_Project.C_Campaign_ID<small> numeric(10) <br/> Table Direct</small> |
+| Price List Version | Identifies a unique instance of a Price List | Each Price List can have multiple versions.  The most common use is to indicate the dates that a Price List is valid for. | C_Project.M_PriceList_Version_ID<small> numeric(10) <br/> Table Direct</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | C_Project.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Trx Organization | Performing or initiating organization | The organization which performs or initiates this transaction (for another organization).  The owning Organization may not be the transaction organization in a service bureau environment, with centralized services, and inter-organization transactions. | C_Project.AD_OrgTrx_ID<small> numeric(10) <br/> Table</small> |
+| Activity | Business Activity | Activities indicate tasks that are performed and used to utilize Activity based Costing | C_Project.C_Activity_ID<small> numeric(10) <br/> Table Direct</small> |
+| Planned Amount | Planned amount for this project | The Planned Amount indicates the anticipated amount for this project or project line. | C_Project.PlannedAmt<small> numeric <br/> Amount</small> |
+| Planned Quantity | Planned quantity for this project | The Planned Quantity indicates the anticipated quantity for this project or project line | C_Project.PlannedQty<small> numeric <br/> Quantity</small> |
+| Planned Margin | Project's planned margin amount | The Planned Margin Amount indicates the anticipated margin amount for this project or project line. | C_Project.PlannedMarginAmt<small> numeric <br/> Amount</small> |
+| Invoice Rule | Invoice Rule for the project | The Invoice Rule for the project determines how orders (and consequently invoices) are created.  The selection on project level can be overwritten on Phase or Task | C_Project.ProjInvoiceRule<small> character(1) <br/> List</small> |
+| Committed Amount | The (legal) commitment amount | The commitment amount is independent from the planned amount. You would use the planned amount for your realistic estimation, which might be higher or lower than the commitment amount. | C_Project.CommittedAmt<small> numeric <br/> Amount</small> |
+| Committed Quantity | The (legal) commitment Quantity | The commitment amount is independent from the planned amount. You would use the planned amount for your realistic estimation, which might be higher or lower than the commitment amount. | C_Project.CommittedQty<small> numeric <br/> Quantity</small> |
+| Invoiced Amount | The amount invoiced | The amount invoiced | C_Project.InvoicedAmt<small> numeric <br/> Amount</small> |
+| Quantity Invoiced | The quantity invoiced |  | C_Project.InvoicedQty<small> numeric <br/> Quantity</small> |
+| Project Balance | Total Project Balance | The project balance is the sum of all Issue to Project. | C_Project.ProjectBalanceAmt<small> numeric <br/> Amount</small> |
+| Copy Details | Copy Lines/Phases/Tasks from other Project |  | C_Project.CopyFrom<small> character(1) <br/> Button</small> |
+| Close Project |  |  | C_Project.Processing<small> character(1) <br/> Button</small> |
+
+## Tab: › Project Line
+
+*Tab Level 1 · Created 26/03/2006 · Updated 30/09/2009*
+
+**Description:** Maintain Project Lines
+
+**Comment/Help:** Maintain Project Level Lines
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_ProjectLine.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_ProjectLine.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | C_ProjectLine.C_Project_ID<small> numeric(10) <br/> Table Direct</small> |
+| Line No | Unique line for this document | Indicates the unique line for a document.  It will also control the display order of the lines within a document. | C_ProjectLine.Line<small> numeric(10) <br/> Integer</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_ProjectLine.IsActive<small> character(1) <br/> Yes-No</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_ProjectLine.Description<small> character varying(255) <br/> Text</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | C_ProjectLine.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Product Category | Category of a Product | Identifies the category which this product belongs to.  Product categories are used for pricing and selection. | C_ProjectLine.M_Product_Category_ID<small> numeric(10) <br/> Table Direct</small> |
+| Planned Price | Planned price for this project line | The Planned Price indicates the anticipated price for this project line. | C_ProjectLine.PlannedPrice<small> numeric <br/> Costs+Prices</small> |
+| Planned Quantity | Planned quantity for this project | The Planned Quantity indicates the anticipated quantity for this project or project line | C_ProjectLine.PlannedQty<small> numeric <br/> Quantity</small> |
+| Get Price | Get Price for Project Line based on Project Price List |  | C_ProjectLine.DoPricing<small> character(1) <br/> Button</small> |
+| Planned Amount | Planned amount for this project | The Planned Amount indicates the anticipated amount for this project or project line. | C_ProjectLine.PlannedAmt<small> numeric <br/> Amount</small> |
+| Printed | Indicates if this document / line is printed | The Printed checkbox indicates if this document or line will included when printing. | C_ProjectLine.IsPrinted<small> character(1) <br/> Yes-No</small> |
+| Planned Margin | Project's planned margin amount | The Planned Margin Amount indicates the anticipated margin amount for this project or project line. | C_ProjectLine.PlannedMarginAmt<small> numeric <br/> Amount</small> |
+| Committed Amount | The (legal) commitment amount | The commitment amount is independent from the planned amount. You would use the planned amount for your realistic estimation, which might be higher or lower than the commitment amount. | C_ProjectLine.CommittedAmt<small> numeric <br/> Amount</small> |
+| Committed Quantity | The (legal) commitment Quantity | The commitment amount is independent from the planned amount. You would use the planned amount for your realistic estimation, which might be higher or lower than the commitment amount. | C_ProjectLine.CommittedQty<small> numeric <br/> Quantity</small> |
+| Invoiced Amount | The amount invoiced | The amount invoiced | C_ProjectLine.InvoicedAmt<small> numeric <br/> Amount</small> |
+| Quantity Invoiced | The quantity invoiced |  | C_ProjectLine.InvoicedQty<small> numeric <br/> Quantity</small> |
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_ProjectLine.C_Order_ID<small> numeric(10) <br/> Search</small> |
+| Purchase Order | Purchase Order |  | C_ProjectLine.C_OrderPO_ID<small> numeric(10) <br/> Search</small> |
+| Project Issue | Project Issues (Material, Labor) | Issues to the project initiated by the "Issue to Project" process. You can issue Receipts, Time and Expenses, or Stock. | C_ProjectLine.C_ProjectIssue_ID<small> numeric(10) <br/> Table Direct</small> |
+| Processed | The document has been processed | The Processed checkbox indicates that a document has been processed. | C_ProjectLine.Processed<small> character(1) <br/> Yes-No</small> |
+| Production | Plan for producing a product | The Production uniquely identifies a Production Plan | C_ProjectLine.M_Production_ID<small> numeric(10) <br/> Search</small> |
+
+## Tab: › Phase
+
+*Tab Level 1 · Created 28/05/2003 · Updated 26/03/2006*
+
+**Description:** Maintain Actual Project Phase
+
+**Comment/Help:** Actual Phase of the Project with Status information - generated from Phase of Project Type.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_ProjectPhase.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_ProjectPhase.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | C_ProjectPhase.C_Project_ID<small> numeric(10) <br/> Table Direct</small> |
+| Standard Phase | Standard Phase of the Project Type | Phase of the project with standard performance information with standard work | C_ProjectPhase.C_Phase_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | C_ProjectPhase.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_ProjectPhase.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_ProjectPhase.Description<small> character varying(255) <br/> Text</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | C_ProjectPhase.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_ProjectPhase.IsActive<small> character(1) <br/> Yes-No</small> |
+| Complete | It is complete | Indication that this is complete | C_ProjectPhase.IsComplete<small> character(1) <br/> Yes-No</small> |
+| Start Date | First effective day (inclusive) | The Start Date indicates the first or starting date | C_ProjectPhase.StartDate<small> timestamp without time zone <br/> Date</small> |
+| End Date | Last effective date (inclusive) | The End Date indicates the last date in this range. | C_ProjectPhase.EndDate<small> timestamp without time zone <br/> Date</small> |
+| Invoice Rule | Invoice Rule for the project | The Invoice Rule for the project determines how orders (and consequently invoices) are created.  The selection on project level can be overwritten on Phase or Task | C_ProjectPhase.ProjInvoiceRule<small> character(1) <br/> List</small> |
+| Planned Amount | Planned amount for this project | The Planned Amount indicates the anticipated amount for this project or project line. | C_ProjectPhase.PlannedAmt<small> numeric <br/> Amount</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | C_ProjectPhase.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Quantity | Quantity | The Quantity indicates the number of a specific product or item for this document. | C_ProjectPhase.Qty<small> numeric <br/> Quantity</small> |
+| Committed Amount | The (legal) commitment amount | The commitment amount is independent from the planned amount. You would use the planned amount for your realistic estimation, which might be higher or lower than the commitment amount. | C_ProjectPhase.CommittedAmt<small> numeric <br/> Amount</small> |
+| Generate Order | Generate Order from Project Phase | The Generate Order process will generate a new Order document based on the project phase or tasks. A price list and warehouse/service point must be defined on the project.  If a product is defined on phase level, the Phase information is used as the basis for the Order (milestone invoicing) - otherwise the individual tasks. | C_ProjectPhase.GenerateOrder<small> character(1) <br/> Button</small> |
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_ProjectPhase.C_Order_ID<small> numeric(10) <br/> Search</small> |
+
+## Tab: › › Phase Line
+
+*Tab Level 2 · Created 26/03/2006 · Updated 30/09/2009*
+
+**Description:** Project Lines of Phase
+
+**Comment/Help:** Maintain Project Lines on Phase Level
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_ProjectLine.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_ProjectLine.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Project Phase | Phase of a Project |  | C_ProjectLine.C_ProjectPhase_ID<small> numeric(10) <br/> Table Direct</small> |
+| Line No | Unique line for this document | Indicates the unique line for a document.  It will also control the display order of the lines within a document. | C_ProjectLine.Line<small> numeric(10) <br/> Integer</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_ProjectLine.IsActive<small> character(1) <br/> Yes-No</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_ProjectLine.Description<small> character varying(255) <br/> Text</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | C_ProjectLine.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Product Category | Category of a Product | Identifies the category which this product belongs to.  Product categories are used for pricing and selection. | C_ProjectLine.M_Product_Category_ID<small> numeric(10) <br/> Table Direct</small> |
+| Planned Price | Planned price for this project line | The Planned Price indicates the anticipated price for this project line. | C_ProjectLine.PlannedPrice<small> numeric <br/> Costs+Prices</small> |
+| Planned Quantity | Planned quantity for this project | The Planned Quantity indicates the anticipated quantity for this project or project line | C_ProjectLine.PlannedQty<small> numeric <br/> Quantity</small> |
+| Get Price | Get Price for Project Line based on Project Price List |  | C_ProjectLine.DoPricing<small> character(1) <br/> Button</small> |
+| Planned Amount | Planned amount for this project | The Planned Amount indicates the anticipated amount for this project or project line. | C_ProjectLine.PlannedAmt<small> numeric <br/> Amount</small> |
+| Printed | Indicates if this document / line is printed | The Printed checkbox indicates if this document or line will included when printing. | C_ProjectLine.IsPrinted<small> character(1) <br/> Yes-No</small> |
+| Planned Margin | Project's planned margin amount | The Planned Margin Amount indicates the anticipated margin amount for this project or project line. | C_ProjectLine.PlannedMarginAmt<small> numeric <br/> Amount</small> |
+| Committed Amount | The (legal) commitment amount | The commitment amount is independent from the planned amount. You would use the planned amount for your realistic estimation, which might be higher or lower than the commitment amount. | C_ProjectLine.CommittedAmt<small> numeric <br/> Amount</small> |
+| Committed Quantity | The (legal) commitment Quantity | The commitment amount is independent from the planned amount. You would use the planned amount for your realistic estimation, which might be higher or lower than the commitment amount. | C_ProjectLine.CommittedQty<small> numeric <br/> Quantity</small> |
+| Invoiced Amount | The amount invoiced | The amount invoiced | C_ProjectLine.InvoicedAmt<small> numeric <br/> Amount</small> |
+| Quantity Invoiced | The quantity invoiced |  | C_ProjectLine.InvoicedQty<small> numeric <br/> Quantity</small> |
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_ProjectLine.C_Order_ID<small> numeric(10) <br/> Search</small> |
+| Purchase Order | Purchase Order |  | C_ProjectLine.C_OrderPO_ID<small> numeric(10) <br/> Search</small> |
+| Project Issue | Project Issues (Material, Labor) | Issues to the project initiated by the "Issue to Project" process. You can issue Receipts, Time and Expenses, or Stock. | C_ProjectLine.C_ProjectIssue_ID<small> numeric(10) <br/> Table Direct</small> |
+| Processed | The document has been processed | The Processed checkbox indicates that a document has been processed. | C_ProjectLine.Processed<small> character(1) <br/> Yes-No</small> |
+| Production | Plan for producing a product | The Production uniquely identifies a Production Plan | C_ProjectLine.M_Production_ID<small> numeric(10) <br/> Search</small> |
+
+## Tab: › › Task
+
+*Tab Level 2 · Created 01/06/2003 · Updated 26/03/2006*
+
+**Description:** Actual Project Task
+
+**Comment/Help:** A Project Task in a Project Phase represents the actual work.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_ProjectTask.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_ProjectTask.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Project Phase | Phase of a Project |  | C_ProjectTask.C_ProjectPhase_ID<small> numeric(10) <br/> Table Direct</small> |
+| Standard Task | Standard Project Type Task | Standard Project Task in a Project Phase with standard effort | C_ProjectTask.C_Task_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | C_ProjectTask.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_ProjectTask.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_ProjectTask.Description<small> character varying(255) <br/> Text</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | C_ProjectTask.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_ProjectTask.IsActive<small> character(1) <br/> Yes-No</small> |
+| Invoice Rule | Invoice Rule for the project | The Invoice Rule for the project determines how orders (and consequently invoices) are created.  The selection on project level can be overwritten on Phase or Task | C_ProjectTask.ProjInvoiceRule<small> character(1) <br/> List</small> |
+| Planned Amount | Planned amount for this project | The Planned Amount indicates the anticipated amount for this project or project line. | C_ProjectTask.PlannedAmt<small> numeric <br/> Amount</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | C_ProjectTask.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Quantity | Quantity | The Quantity indicates the number of a specific product or item for this document. | C_ProjectTask.Qty<small> numeric <br/> Quantity</small> |
+| Committed Amount | The (legal) commitment amount | The commitment amount is independent from the planned amount. You would use the planned amount for your realistic estimation, which might be higher or lower than the commitment amount. | C_ProjectTask.CommittedAmt<small> numeric <br/> Amount</small> |
+
+## Tab: › › › Task Line
+
+*Tab Level 3 · Created 26/03/2006 · Updated 30/09/2009*
+
+**Description:** Project Lines of Tasks
+
+**Comment/Help:** Maintain Project Lines of Tasks
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_ProjectLine.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_ProjectLine.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Project Task | Actual Project Task in a Phase | A Project Task in a Project Phase represents the actual work. | C_ProjectLine.C_ProjectTask_ID<small> numeric(10) <br/> Table Direct</small> |
+| Line No | Unique line for this document | Indicates the unique line for a document.  It will also control the display order of the lines within a document. | C_ProjectLine.Line<small> numeric(10) <br/> Integer</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_ProjectLine.IsActive<small> character(1) <br/> Yes-No</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_ProjectLine.Description<small> character varying(255) <br/> Text</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | C_ProjectLine.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Product Category | Category of a Product | Identifies the category which this product belongs to.  Product categories are used for pricing and selection. | C_ProjectLine.M_Product_Category_ID<small> numeric(10) <br/> Table Direct</small> |
+| Planned Price | Planned price for this project line | The Planned Price indicates the anticipated price for this project line. | C_ProjectLine.PlannedPrice<small> numeric <br/> Costs+Prices</small> |
+| Planned Quantity | Planned quantity for this project | The Planned Quantity indicates the anticipated quantity for this project or project line | C_ProjectLine.PlannedQty<small> numeric <br/> Quantity</small> |
+| Get Price | Get Price for Project Line based on Project Price List |  | C_ProjectLine.DoPricing<small> character(1) <br/> Button</small> |
+| Planned Amount | Planned amount for this project | The Planned Amount indicates the anticipated amount for this project or project line. | C_ProjectLine.PlannedAmt<small> numeric <br/> Amount</small> |
+| Printed | Indicates if this document / line is printed | The Printed checkbox indicates if this document or line will included when printing. | C_ProjectLine.IsPrinted<small> character(1) <br/> Yes-No</small> |
+| Planned Margin | Project's planned margin amount | The Planned Margin Amount indicates the anticipated margin amount for this project or project line. | C_ProjectLine.PlannedMarginAmt<small> numeric <br/> Amount</small> |
+| Committed Amount | The (legal) commitment amount | The commitment amount is independent from the planned amount. You would use the planned amount for your realistic estimation, which might be higher or lower than the commitment amount. | C_ProjectLine.CommittedAmt<small> numeric <br/> Amount</small> |
+| Committed Quantity | The (legal) commitment Quantity | The commitment amount is independent from the planned amount. You would use the planned amount for your realistic estimation, which might be higher or lower than the commitment amount. | C_ProjectLine.CommittedQty<small> numeric <br/> Quantity</small> |
+| Invoiced Amount | The amount invoiced | The amount invoiced | C_ProjectLine.InvoicedAmt<small> numeric <br/> Amount</small> |
+| Quantity Invoiced | The quantity invoiced |  | C_ProjectLine.InvoicedQty<small> numeric <br/> Quantity</small> |
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_ProjectLine.C_Order_ID<small> numeric(10) <br/> Search</small> |
+| Purchase Order | Purchase Order |  | C_ProjectLine.C_OrderPO_ID<small> numeric(10) <br/> Search</small> |
+| Project Issue | Project Issues (Material, Labor) | Issues to the project initiated by the "Issue to Project" process. You can issue Receipts, Time and Expenses, or Stock. | C_ProjectLine.C_ProjectIssue_ID<small> numeric(10) <br/> Table Direct</small> |
+| Processed | The document has been processed | The Processed checkbox indicates that a document has been processed. | C_ProjectLine.Processed<small> character(1) <br/> Yes-No</small> |
+| Production | Plan for producing a product | The Production uniquely identifies a Production Plan | C_ProjectLine.M_Production_ID<small> numeric(10) <br/> Search</small> |
+
+## Tab: › Accounting
+
+*Tab Level 1 · Created 26/09/1999 · Updated 26/03/2006*
+
+**Description:** Define Project Accounting
+
+**Comment/Help:** The Accounting Tab is used to define the Asset Account to use when a project is completed and the associated asset realized.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Project_Acct.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Project_Acct.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | C_Project_Acct.C_Project_ID<small> numeric(10) <br/> Table Direct</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | C_Project_Acct.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Project_Acct.IsActive<small> character(1) <br/> Yes-No</small> |
+| Project Asset | Project Asset Account | The Project Asset account is the account used as the final asset account in capital projects | C_Project_Acct.PJ_Asset_Acct<small> numeric(10) <br/> Account</small> |
+| Work In Progress | Account for Work in Progress | The Work in Process account is the account used in capital projects until the project is completed | C_Project_Acct.PJ_WIP_Acct<small> numeric(10) <br/> Account</small> |
+

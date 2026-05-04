@@ -1,0 +1,164 @@
+---
+title: 'ASP Modules'
+sidebar_label: 'ASP Modules'
+tags: ['Window']
+---
+
+# ASP Modules
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 53015</span>
+
+*09/01/2008 → 19/09/2012*
+
+![ASP Modules](/img/manual/ASPModules-Window_iDempiere_v14.0.0.png)
+
+## Tab: Module
+
+*Tab Level 0 · Created 09/01/2008 · Updated 09/01/2008*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | ASP_Module.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | ASP_Module.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | ASP_Module.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | ASP_Module.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | ASP_Module.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | ASP_Module.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | ASP_Module.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Level
+
+*Tab Level 1 · Created 09/01/2008 · Updated 16/01/2009*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | ASP_Level.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | ASP_Level.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Module |  |  | ASP_Level.ASP_Module_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | ASP_Level.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | ASP_Level.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | ASP_Level.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | ASP_Level.Help<small> character varying(2000) <br/> Text</small> |
+| ASP Generate Level |  |  | ASP_Level.Processing<small> character(1) <br/> Button</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | ASP_Level.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › Window
+
+*Tab Level 2 · Created 09/01/2008 · Updated 16/01/2009*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | ASP_Window.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | ASP_Window.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Level |  |  | ASP_Window.ASP_Level_ID<small> numeric(10) <br/> Table Direct</small> |
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | ASP_Window.AD_Window_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Status |  |  | ASP_Window.ASP_Status<small> character(1) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | ASP_Window.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › › Tab
+
+*Tab Level 3 · Created 09/01/2008 · Updated 16/01/2009*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | ASP_Tab.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | ASP_Tab.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Window |  |  | ASP_Tab.ASP_Window_ID<small> numeric(10) <br/> Table Direct</small> |
+| Tab | Tab within a Window | The Tab indicates a tab that displays within a window. | ASP_Tab.AD_Tab_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Status |  |  | ASP_Tab.ASP_Status<small> character(1) <br/> List</small> |
+| All Fields |  |  | ASP_Tab.AllFields<small> character(1) <br/> Yes-No</small> |
+| ASP Generate Fields |  |  | ASP_Tab.Processing<small> character(1) <br/> Button</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | ASP_Tab.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › › › Field
+
+*Tab Level 4 · Created 09/01/2008 · Updated 16/08/2012*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | ASP_Field.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | ASP_Field.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Tab |  |  | ASP_Field.ASP_Tab_ID<small> numeric(10) <br/> Table Direct</small> |
+| Field | Field on a database table | The Field identifies a field on a database table. | ASP_Field.AD_Field_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Status |  |  | ASP_Field.ASP_Status<small> character(1) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | ASP_Field.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › Process
+
+*Tab Level 2 · Created 09/01/2008 · Updated 16/01/2009*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | ASP_Process.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | ASP_Process.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Level |  |  | ASP_Process.ASP_Level_ID<small> numeric(10) <br/> Table Direct</small> |
+| Process | Process or Report | The Process field identifies a unique Process or Report in the system. | ASP_Process.AD_Process_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Status |  |  | ASP_Process.ASP_Status<small> character(1) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | ASP_Process.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › › Process Parameter
+
+*Tab Level 3 · Created 09/01/2008 · Updated 16/01/2009*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | ASP_Process_Para.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | ASP_Process_Para.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Process |  |  | ASP_Process_Para.ASP_Process_ID<small> numeric(10) <br/> Table Direct</small> |
+| Process Parameter |  |  | ASP_Process_Para.AD_Process_Para_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Status |  |  | ASP_Process_Para.ASP_Status<small> character(1) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | ASP_Process_Para.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › Form
+
+*Tab Level 2 · Created 09/01/2008 · Updated 16/01/2009*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | ASP_Form.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | ASP_Form.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Level |  |  | ASP_Form.ASP_Level_ID<small> numeric(10) <br/> Table Direct</small> |
+| Special Form | Special Form | The Special Form field identifies a unique Special Form in the system. | ASP_Form.AD_Form_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Status |  |  | ASP_Form.ASP_Status<small> character(1) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | ASP_Form.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › Task
+
+*Tab Level 2 · Created 09/01/2008 · Updated 16/01/2009*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | ASP_Task.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | ASP_Task.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Level |  |  | ASP_Task.ASP_Level_ID<small> numeric(10) <br/> Table Direct</small> |
+| OS Task | Operation System Task | The Task field identifies a Operation System Task in the system. | ASP_Task.AD_Task_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Status |  |  | ASP_Task.ASP_Status<small> character(1) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | ASP_Task.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › Workflow
+
+*Tab Level 2 · Created 09/01/2008 · Updated 16/01/2009*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | ASP_Workflow.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | ASP_Workflow.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Level |  |  | ASP_Workflow.ASP_Level_ID<small> numeric(10) <br/> Table Direct</small> |
+| Workflow | Workflow or combination of tasks | The Workflow field identifies a unique Workflow in the system. | ASP_Workflow.AD_Workflow_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Status |  |  | ASP_Workflow.ASP_Status<small> character(1) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | ASP_Workflow.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › Ref List
+
+*Tab Level 2 · Created 14/08/2012 · Updated 14/08/2012*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | ASP_Ref_List.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | ASP_Ref_List.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Level |  |  | ASP_Ref_List.ASP_Level_ID<small> numeric(10) <br/> Table Direct</small> |
+| Reference | System Reference and Validation | The Reference could be a display type, list or table validation. | ASP_Ref_List.AD_Reference_ID<small> numeric(10) <br/> Table Direct</small> |
+| Reference List | Reference List based on Table | The Reference List field indicates a list of reference values from a database tables.  Reference lists populate drop down list boxes in data entry screens | ASP_Ref_List.AD_Ref_List_ID<small> numeric(10) <br/> Table Direct</small> |
+| ASP Status |  |  | ASP_Ref_List.ASP_Status<small> character(1) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | ASP_Ref_List.IsActive<small> character(1) <br/> Yes-No</small> |
+

@@ -1,0 +1,95 @@
+---
+title: 'RfQ Response'
+sidebar_label: 'RfQ Response'
+description: 'Manage RfQ Responses'
+tags: ['Window']
+---
+
+# RfQ Response
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 324</span>
+
+*23/03/2004 → 25/03/2022*
+
+![RfQ Response](/img/manual/RfQResponse-Window_iDempiere_v14.0.0.png)
+
+**Description:** Manage RfQ Responses
+
+## Tab: Response
+
+*Tab Level 0 · Created 19/02/2004 · Updated 20/05/2013*
+
+**Description:** RfQ Response
+
+**Comment/Help:** Request for Quotation Response from a potential Vendor
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_RfQResponse.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_RfQResponse.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| RfQ | Request for Quotation | Request for Quotation to be sent out to vendors of a RfQ Topic. After Vendor selection, optionally create Sales Order or Quote for Customer as well as Purchase Order  for Vendor(s) | C_RfQResponse.C_RfQ_ID<small> numeric(10) <br/> Search</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_RfQResponse.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_RfQResponse.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | C_RfQResponse.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_RfQResponse.IsActive<small> character(1) <br/> Yes-No</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_RfQResponse.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Partner Location | Identifies the (ship from) address for this Business Partner | The Partner address indicates the location of a Business Partner | C_RfQResponse.C_BPartner_Location_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | C_RfQResponse.AD_User_ID<small> numeric(10) <br/> Table Direct</small> |
+| Invited | Date when (last) invitation was sent |  | C_RfQResponse.DateInvited<small> timestamp without time zone <br/> Date</small> |
+| Response Date | Date of the Response | Date of the Response | C_RfQResponse.DateResponse<small> timestamp without time zone <br/> Date</small> |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | C_RfQResponse.IsSelfService<small> character(1) <br/> Yes-No</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | C_RfQResponse.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Price | Price | The Price indicates the Price for a product or service. | C_RfQResponse.Price<small> numeric <br/> Costs+Prices</small> |
+| Work Start | Date when work is (planned to be) started |  | C_RfQResponse.DateWorkStart<small> timestamp without time zone <br/> Date</small> |
+| Delivery Days | Number of Days (planned) until Delivery |  | C_RfQResponse.DeliveryDays<small> numeric(10) <br/> Integer</small> |
+| Work Complete | Date when work is (planned to be) complete |  | C_RfQResponse.DateWorkComplete<small> timestamp without time zone <br/> Date</small> |
+| Invite and Remind | EMail Invite or Remind Vendor to answer RfQ | Send Invitation/Reminder to Vendors to respond to RfQ per email | C_RfQResponse.Processing<small> character(1) <br/> Button</small> |
+| Ranking | Relative Rank Number | One is the highest Rank | C_RfQResponse.Ranking<small> numeric(10) <br/> Integer</small> |
+| Selected Winner | The response is the selected winner | The response is the selected winner. If selected on Response level, the line selections are ignored. | C_RfQResponse.IsSelectedWinner<small> character(1) <br/> Yes-No</small> |
+| Purchase Order | Purchase Order | The Purchase Order is a control document.  The Purchase Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_RfQResponse.C_Order_ID<small> numeric(10) <br/> Search</small> |
+| Check Complete | Check if Response is Complete based on RfQ settings |  | C_RfQResponse.CheckComplete<small> character(1) <br/> Button</small> |
+| Complete | It is complete | Indication that this is complete | C_RfQResponse.IsComplete<small> character(1) <br/> Yes-No</small> |
+| Processed | The document has been processed | The Processed checkbox indicates that a document has been processed. | C_RfQResponse.Processed<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Response Line
+
+*Tab Level 1 · Created 19/02/2004 · Updated 20/05/2013*
+
+**Description:** RfQ Response Line
+
+**Comment/Help:** Request for Quotation Response Line from a potential Vendor
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_RfQResponseLine.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_RfQResponseLine.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| RfQ Line | Request for Quotation Line | Request for Quotation Line | C_RfQResponseLine.C_RfQLine_ID<small> numeric(10) <br/> Table Direct</small> |
+| RfQ Response | Request for Quotation Response from a potential Vendor | Request for Quotation Response from a potential Vendor | C_RfQResponseLine.C_RfQResponse_ID<small> numeric(10) <br/> Search</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_RfQResponseLine.IsActive<small> character(1) <br/> Yes-No</small> |
+| Work Start | Date when work is (planned to be) started |  | C_RfQResponseLine.DateWorkStart<small> timestamp without time zone <br/> Date</small> |
+| Delivery Days | Number of Days (planned) until Delivery |  | C_RfQResponseLine.DeliveryDays<small> numeric(10) <br/> Integer</small> |
+| Work Complete | Date when work is (planned to be) complete |  | C_RfQResponseLine.DateWorkComplete<small> timestamp without time zone <br/> Date</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_RfQResponseLine.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | C_RfQResponseLine.Help<small> character varying(2000) <br/> Text</small> |
+| Selected Winner | The response is the selected winner | The response is the selected winner. If selected on Response level, the line selections are ignored. | C_RfQResponseLine.IsSelectedWinner<small> character(1) <br/> Yes-No</small> |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | C_RfQResponseLine.IsSelfService<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › Response Quantity
+
+*Tab Level 2 · Created 19/02/2004 · Updated 20/05/2013*
+
+**Description:** RfQ Line Quantity Response
+
+**Comment/Help:** Request for Quotation Response Line Quantity from a potential Vendor
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_RfQResponseLineQty.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_RfQResponseLineQty.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| RfQ Response Line | Request for Quotation Response Line | Request for Quotation Response Line from a potential Vendor | C_RfQResponseLineQty.C_RfQResponseLine_ID<small> numeric(10) <br/> Table Direct</small> |
+| RfQ Line Quantity | Request for Quotation Line Quantity | You may request a quotation for different quantities | C_RfQResponseLineQty.C_RfQLineQty_ID<small> numeric(10) <br/> Search</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_RfQResponseLineQty.IsActive<small> character(1) <br/> Yes-No</small> |
+| Price | Price | The Price indicates the Price for a product or service. | C_RfQResponseLineQty.Price<small> numeric <br/> Costs+Prices</small> |
+| Discount % | Discount in percent | The Discount indicates the discount applied or taken as a percentage. | C_RfQResponseLineQty.Discount<small> numeric <br/> Number</small> |
+| Ranking | Relative Rank Number | One is the highest Rank | C_RfQResponseLineQty.Ranking<small> numeric(10) <br/> Integer</small> |
+

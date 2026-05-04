@@ -1,0 +1,27 @@
+---
+title: 'Recalculate Cube'
+sidebar_label: 'Recalculate Cube'
+description: 'Recalculate summary facts based on report cube definitions.'
+tags: ['Process']
+---
+
+# Recalculate Cube
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 53166</span>
+
+*15/05/2009 → 23/03/2026*
+
+![Recalculate Cube](/img/manual/RecalculateCube-Process_iDempiere_v14.0.0.png)
+
+**Description:** Recalculate summary facts based on report cube definitions.
+
+**Classname:** `org.idempiere.acct.process.FactAcctSummary`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Report Cube | Define reporting cube for pre-calculation of summary accounting data. | Summary data will be generated for each period of the selected calendar, grouped by the selected dimensions.. | PA_ReportCube_ID<br/>Table |
+| Full rebuild | Delete all existing summary data and recalculate. | If not selected, only those periods with recently posted accounting facts will be recalculated. | Reset<br/>Yes-No |
+| Force | Force rebuild of cube even if locked. |  | Force<br/>Yes-No |
+

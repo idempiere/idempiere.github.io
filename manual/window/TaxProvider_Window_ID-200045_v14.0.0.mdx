@@ -1,0 +1,31 @@
+---
+title: 'Tax Provider'
+sidebar_label: 'Tax Provider'
+tags: ['Window']
+---
+
+# Tax Provider
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200045</span>
+
+*14/08/2013 → 14/08/2013*
+
+![Tax Provider](/img/manual/TaxProvider-Window_iDempiere_v14.0.0.png)
+
+## Tab: Tax Provider
+
+*Tab Level 0 · Created 14/08/2013 · Updated 14/08/2013*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_TaxProvider.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_TaxProvider.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Tax Provider Configuration |  |  | C_TaxProvider.C_TaxProviderCfg_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_TaxProvider.Name<small> character varying(120) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_TaxProvider.IsActive<small> character(1) <br/> Yes-No</small> |
+| Account |  |  | C_TaxProvider.Account<small> character varying(60) <br/> String</small> |
+| Company Code |  |  | C_TaxProvider.CompanyCode<small> character varying(60) <br/> String</small> |
+| License |  |  | C_TaxProvider.License<small> character varying(60) <br/> String</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | C_TaxProvider.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Validate Connection |  |  | C_TaxProvider.ValidateConnection<small> character(1) <br/> Button</small> |
+

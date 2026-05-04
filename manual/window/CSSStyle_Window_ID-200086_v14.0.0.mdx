@@ -1,0 +1,48 @@
+---
+title: 'CSS Style'
+sidebar_label: 'CSS Style'
+tags: ['Window']
+---
+
+# CSS Style
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200086</span>
+
+*05/05/2016 → 05/05/2016*
+
+![CSS Style](/img/manual/CSSStyle-Window_iDempiere_v14.0.0.png)
+
+## Tab: CSS Style
+
+*Tab Level 0 · Created 05/05/2016 · Updated 05/05/2016*
+
+**Description:** CSS Inline Style Definitions
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Style.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Style.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Style.Name<small> character varying(60) <br/> String</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_Style.EntityType<small> character varying(40) <br/> Table</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Style.Description<small> character varying(255) <br/> String</small> |
+| Wrap With Span | Wrap content in Span and apply the Style to it. |  | AD_Style.IsWrapWithSpan<small> character(1) <br/> Yes-No</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Style.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Style Line
+
+*Tab Level 1 · Created 05/05/2016 · Updated 05/05/2016*
+
+**Description:** CSS Style Lines
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_StyleLine.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_StyleLine.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Style | CSS style for field and label |  | AD_StyleLine.AD_Style_ID<small> numeric(10) <br/> Table Direct</small> |
+| Line No | Unique line for this document | Indicates the unique line for a document.  It will also control the display order of the lines within a document. | AD_StyleLine.Line<small> numeric(10) <br/> Integer</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_StyleLine.EntityType<small> character varying(40) <br/> Table</small> |
+| Inline Style | CSS Inline Style |  | AD_StyleLine.InlineStyle<small> character varying(2000) <br/> String</small> |
+| Display Logic | If the Field is displayed, the result determines if the field is actually displayed | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_StyleLine.DisplayLogic<small> character varying(2000) <br/> Text</small> |
+| Theme | Theme name |  | AD_StyleLine.Theme<small> character varying(60) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_StyleLine.IsActive<small> character(1) <br/> Yes-No</small> |
+

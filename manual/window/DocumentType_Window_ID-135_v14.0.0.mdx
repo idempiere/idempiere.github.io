@@ -1,0 +1,88 @@
+---
+title: 'Document Type'
+sidebar_label: 'Document Type'
+description: 'Maintain Document Types'
+tags: ['Window']
+---
+
+# Document Type
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 135</span>
+
+*29/06/1999 → 02/01/2000*
+
+![Document Type](/img/manual/DocumentType-Window_iDempiere_v14.0.0.png)
+
+**Description:** Maintain Document Types
+
+**Comment/Help:** The Document Type Window defines any document to be used in the system.  Each document type provides the basis for processing of each document and controls the printed name and document sequence used.  
+
+## Tab: Document Type
+
+*Tab Level 0 · Created 29/06/1999 · Updated 07/02/2005*
+
+**Description:** Define a Document Type
+
+**Comment/Help:** The Document Definition Tab defines the processing parameters and controls for the document.  Note that shipments for automatic documents like POS/Warehouse Orders cannot have confirmations!
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_DocType.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_DocType.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_DocType.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_DocType.Description<small> character varying(255) <br/> String</small> |
+| Print Text | The label text to be printed on a document or correspondence. | The Label to be printed indicates the name that will be printed on a document or correspondence. The max length is 2000 characters. | C_DocType.PrintName<small> character varying(60) <br/> String</small> |
+| Document Note | Additional information for a Document | The Document Note is used for recording any additional information regarding this product. | C_DocType.DocumentNote<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_DocType.IsActive<small> character(1) <br/> Yes-No</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | C_DocType.IsDefault<small> character(1) <br/> Yes-No</small> |
+| GL Category | General Ledger Category | The General Ledger Category is an optional, user defined method of grouping journal lines. | C_DocType.GL_Category_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sales Transaction | This is a Sales Transaction | The Sales Transaction checkbox indicates if this item is a Sales Transaction. | C_DocType.IsSOTrx<small> character(1) <br/> Yes-No</small> |
+| Document Base Type | Logical type of document | The Document Base Type identifies the base or starting point for a document.  Multiple document types may share a single document base type. | C_DocType.DocBaseType<small> character(3) <br/> List</small> |
+| SO Sub Type | Sales Order Sub Type | The SO Sub Type indicates the type of sales order this document refers to.  This field only appears when the Document Base Type is Sales Order.  The selection made here will determine which documents will be generated when an order is processed and which documents must be generated manually or in batches.  &lt;br&gt;<br/>The following outlines this process.&lt;br&gt;<br/>SO Sub Type of &lt;b&gt;Standard Order&lt;/b&gt; will generate just the &lt;b&gt;Order&lt;/b&gt; document when the order is processed.  &lt;br&gt;<br/>The &lt;b&gt;Delivery Note&lt;/b&gt;, &lt;b&gt;Invoice&lt;/b&gt; and &lt;b&gt;Receipt&lt;/b&gt; must be generated via other processes.  &lt;br&gt;<br/>SO Sub Type of &lt;b&gt;Warehouse Order&lt;/b&gt; will generate the &lt;b&gt;Order&lt;/b&gt; and &lt;b&gt;Delivery Note&lt;/b&gt;. &lt;br&gt; The &lt;b&gt;Invoice&lt;/b&gt; and &lt;b&gt;Receipt&lt;/b&gt; must be generated via other processes.&lt;br&gt;<br/>SO Sub Type of &lt;b&gt;Credit Order&lt;/b&gt; will generate the &lt;b&gt;Order&lt;/b&gt;, &lt;b&gt;Delivery Note&lt;/b&gt; and &lt;b&gt;Invoice&lt;/b&gt;. &lt;br&gt; The &lt;b&gt;Receipt&lt;/b&gt; must be generated via other processes.&lt;br&gt;<br/>SO Sub Type of &lt;b&gt;POS&lt;/b&gt; (Point of Sale) will generate all document | C_DocType.DocSubTypeSO<small> character(2) <br/> List</small> |
+| Inv Sub Type | Inventory Sub Type | The Inventory Sub Type indicates the type of inventory this document refers to.  This field only appears when the Document Base Type is Material Physical Inventory.  The selection made here will determine which window must be used and which data in the lines is relevant for the document.  Internal Use inventory (based on Internal Used Quantity) or Physical Inventory (based on difference between Qty Counted vs Qty Book) | C_DocType.DocSubTypeInv<small> character varying(2) <br/> List</small> |
+| Pro forma Invoice | Indicates if Pro Forma Invoices can be generated from this document | The Pro Forma Invoice checkbox indicates if pro forma invoices can be generated from this sales document. A pro forma invoice indicates the amount that will be due should an order be shipped. | C_DocType.HasProforma<small> character(1) <br/> Yes-No</small> |
+| Document Type for ProForma | Document type used for pro forma invoices generated from this sales document | he Document Type for Invoice indicates the document type that will be used when an invoice is generated from this sales document.  This field will display only when the base document type is Sales Order and the Pro Forma Invoice checkbox is selected | C_DocType.C_DocTypeProforma_ID<small> numeric(10) <br/> Table</small> |
+| Generate Invoice | Automatically Generate Invoice after (Sales/Purchase) Order completed | When selected the Order will generate Invoice automatically. Note that only Orders with document subtype Standard and Prepay Order can be applied! | C_DocType.IsAutoGenerateInvoice<small> character(1) <br/> Yes-No</small> |
+| Document Type for Invoice | Document type used for invoices generated from this sales document | The Document Type for Invoice indicates the document type that will be used when an invoice is generated from this sales document.  This field will display only when the base document type is Sales Order. | C_DocType.C_DocTypeInvoice_ID<small> numeric(10) <br/> Table</small> |
+| Generate Shipment | Automatically Generate Shipment after (Sales/Purchase) Order completed | When selected the Order will generate Shipment automatically. Note that only Orders with document subtype Standard and Prepay Order can be applied! | C_DocType.IsAutoGenerateInout<small> character(1) <br/> Yes-No</small> |
+| Document Type for Shipment | Document type used for shipments generated from this sales document | he Document Type for Shipments indicates the document type that will be used when a shipment is generated from this sales document.  This field will display only when the base document type is Sales Order. | C_DocType.C_DocTypeShipment_ID<small> numeric(10) <br/> Table</small> |
+| Document is Number Controlled | The document has a document sequence | The Document Number Controlled checkbox indicates if this document type will have a sequence number. | C_DocType.IsDocNoControlled<small> character(1) <br/> Yes-No</small> |
+| Document Sequence | Document sequence determines the numbering of documents | The Document Sequence indicates the sequencing rule to use for this document type. | C_DocType.DocNoSequence_ID<small> numeric(10) <br/> Table</small> |
+| Overwrite Sequence on Complete |  |  | C_DocType.IsOverwriteSeqOnComplete<small> character(1) <br/> Yes-No</small> |
+| Definite Sequence |  |  | C_DocType.DefiniteSequence_ID<small> numeric(10) <br/> Table</small> |
+| Overwrite Date on Complete |  |  | C_DocType.IsOverwriteDateOnComplete<small> character(1) <br/> Yes-No</small> |
+| Allow Product Without Price List |  | Allow product without price list on this document type. | C_DocType.IsNoPriceListCheck<small> character(1) <br/> Yes-No</small> |
+| Pick/QA Confirmation | Require Pick or QA Confirmation before processing | The processing of the Shipment (Receipt) requires Pick (QA) Confirmation. Note that shipments for automatic documents like POS/Warehouse Orders cannot have confirmations! | C_DocType.IsPickQAConfirm<small> character(1) <br/> Yes-No</small> |
+| Ship/Receipt Confirmation | Require Ship or Receipt Confirmation before processing | The processing of the Shipment (Receipt) requires Ship (Receipt) Confirmation. Note that shipments for automatic documents like POS/Warehouse Orders cannot have confirmations! | C_DocType.IsShipConfirm<small> character(1) <br/> Yes-No</small> |
+| Split when Difference | Split document when there is a difference | If the confirmation contains differences, the original document is split allowing the original document (shipment) to be processed and updating Inventory - and the newly created document for handling the dispute at a later time. Until the confirmation is processed, the inventory is not updated. | C_DocType.IsSplitWhenDifference<small> character(1) <br/> Yes-No</small> |
+| Difference Document | Document type for generating in dispute Shipments | If the confirmation contains differences, the original document is split allowing the original document (shipment) to be processed and updating Inventory - and the newly created document for handling the dispute at a later time. Until the confirmation is processed, the inventory is not updated. | C_DocType.C_DocTypeDifference_ID<small> numeric(10) <br/> Table</small> |
+| Prepare Split Document | Prepare generated split shipment/receipt document |  | C_DocType.IsPrepareSplitDocument<small> character(1) <br/> Yes-No</small> |
+| In Transit | Movement is in transit | Material Movement is in transit - shipped, but not received.<br/>The transaction is completed, if confirmed. | C_DocType.IsInTransit<small> character(1) <br/> Yes-No</small> |
+| Default Counter Document | The document type is the default counter document type | When using explicit documents for inter-org transaction (after linking a Business Partner to an Organization), you can determine what document type the counter document is based on the document type of the original transaction.  Example: when generating a Sales Order, use this Sales Order document type.<br/>This default can be overwritten by defining explicit counter document relationships. | C_DocType.IsDefaultCounterDoc<small> character(1) <br/> Yes-No</small> |
+| Create Counter Document | Create Counter Document | If selected, create specified counter document.  If not selected, no counter document is created for the document type. | C_DocType.IsCreateCounter<small> character(1) <br/> Yes-No</small> |
+| Mandatory Charge or Product |  |  | C_DocType.IsChargeOrProductMandatory<small> character(1) <br/> Yes-No</small> |
+| Always Posted | Posts the document if "AlwaysPosted" is checked, regardless of accounting schema. | Posts the document if "AlwaysPosted" is checked, even without a valid accounting schema. | C_DocType.IsAlwaysPosted<small> character(1) <br/> Yes-No</small> |
+| Can Be Reactivated | This document can be reactivated | If ticked, this checkbox allow user to reactivate once it has been completed (according to rights given to the role) | C_DocType.IsCanBeReactivated<small> character(1) <br/> Yes-No</small> |
+| Print Format | Data Print Format | The print format determines how data is rendered for print. | C_DocType.AD_PrintFormat_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Copies | Number of copies to be printed | The Document Copies indicates the number of copies of each document that will be generated. | C_DocType.DocumentCopies<small> numeric(10) <br/> Integer</small> |
+
+## Tab: › Translation
+
+*Tab Level 1 · Created 04/12/1999 · Updated 27/10/2024*
+
+**Description:** Translation 
+
+**Comment/Help:** The Translation Tab defines a Document Type in an alternate language.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_DocType_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_DocType_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | C_DocType_Trl.C_DocType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | C_DocType_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_DocType_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | C_DocType_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_DocType_Trl.Name<small> character varying(60) <br/> String</small> |
+| Print Text | The label text to be printed on a document or correspondence. | The Label to be printed indicates the name that will be printed on a document or correspondence. The max length is 2000 characters. | C_DocType_Trl.PrintName<small> character varying(60) <br/> String</small> |
+| Document Note | Additional information for a Document | The Document Note is used for recording any additional information regarding this product. | C_DocType_Trl.DocumentNote<small> character varying(2000) <br/> Text</small> |
+

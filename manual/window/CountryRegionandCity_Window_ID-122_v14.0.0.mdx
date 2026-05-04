@@ -1,0 +1,176 @@
+---
+title: 'Country Region and City'
+sidebar_label: 'Country Region and City'
+description: 'Maintain Countries Regions and Cities'
+tags: ['Window']
+---
+
+# Country Region and City
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 122</span>
+
+*11/06/1999 → 02/01/2000*
+
+![Country Region and City](/img/manual/CountryRegionandCity-Window_iDempiere_v14.0.0.png)
+
+**Description:** Maintain Countries Regions and Cities
+
+**Comment/Help:** The Countries, Regions and Cities Window defines the different entities that can be used in any address field.  It defines the format of the address as well as associating Regions with Countries and Cities with Regions or Countries. 
+&lt;p&gt;You would define Countries usually only on System level.
+
+## Tab: Country
+
+*Tab Level 0 · Created 11/06/1999 · Updated 24/02/2018*
+
+**Description:** Define Country
+
+**Comment/Help:** The Country Tab defines any country in which you do business.  Values entered here are referenced in location records for Business Partners.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Country.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Country.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| ISO Country Code | Upper-case two-letter alphanumeric ISO Country code according to ISO 3166-1 | The official list can be found at https://www.iso.org/obp/ui/#search | C_Country.CountryCode<small> character(2) <br/> String</small> |
+| ISO Alpha-3 Code | ISO Alpha-3 country code - a three-letter code that represents a country name, which is usually more closely related to the country name | The official list can be found at https://www.iso.org/obp/ui/#search | C_Country.ISOCountryCodeAlpha3<small> character varying(3) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Country.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Country.Description<small> character varying(255) <br/> String</small> |
+| M49 Code | Standard country codes for statistical use (M49) defined by the United Nations | The official list can be found at https://unstats.un.org/unsd/methodology/m49/ | C_Country.M49Code<small> character varying(3) <br/> String</small> |
+| Allow Cities out of List | A flag to allow cities, currently not in the list, to be entered |  | C_Country.AllowCitiesOutOfList<small> character(1) <br/> Yes-No</small> |
+| Country has Region | Country contains Regions | The Country has Region checkbox is selected if the Country being defined is divided into regions.  If this checkbox is selected, the Region Tab is accessible. | C_Country.HasRegion<small> character(1) <br/> Yes-No</small> |
+| Region | Name of the Region | The Region Name defines the name that will print when this region is used in a document. | C_Country.RegionName<small> character varying(60) <br/> String</small> |
+| Address Print Format | Format for printing this Address | The Address Print format defines the format to be used when this address prints.  The following notations are used: @C@=City  @P@=Postal  @A@=PostalAdd  @R@=Region | C_Country.DisplaySequence<small> character varying(20) <br/> String</small> |
+| Reverse Address Lines | Print Address in reverse Order | If NOT selected the sequence is Address 1, Address 2, Address 3, Address 4, City/Region/Postal, Country.<br/>If selected the sequence is Country, City/Region/Postal, Address 4, Address 3, Address 2, Address 1.<br/>The sequence of City/Region/Postal is determined by the address format. | C_Country.IsAddressLinesReverse<small> character(1) <br/> Yes-No</small> |
+| Capture Sequence |  | The Capture Sequence defines the fields to be used when capturing an address on this country.  The following notations are used: @CO@=Country, @C@=City, @P@=Postal, @A@=PostalAdd, @R@=Region, @A1@=Address 1 to @A4@=Address 4.  Country is always mandatory, add a bang ! to make another field mandatory, for example @C!@ makes city mandatory, @A1!@ makes Address 1 mandatory. | C_Country.CaptureSequence<small> character varying(60) <br/> String</small> |
+| Local Address Format | Format for printing this Address locally | The optional Local Address Print format defines the format to be used when this address prints for the Country.  If defined, this format is used for printing the address for the country rather then the standard address format.<br/> The following notations are used: @C@=City  @P@=Postal  @A@=PostalAdd  @R@=Region | C_Country.DisplaySequenceLocal<small> character varying(20) <br/> String</small> |
+| Reverse Local Address Lines | Print Local Address in reverse Order | If NOT selected the local sequence is Address 1, Address 2, Address 3, Address 4, City/Region/Postal, Country.<br/>If selected the local sequence is Country, City/Region/Postal, Address 4, Address 3, Address 2, Address 1.<br/>The sequence of City/Region/Postal is determined by the local address format. | C_Country.IsAddressLinesLocalReverse<small> character(1) <br/> Yes-No</small> |
+| Postal Code Format | Format of the postal code; Can contain fixed format elements, Variables: "_lLoOaAcCa09" | &lt;B&gt;Validation elements:&lt;/B&gt;<br/> 	(Space) any character<br/>_	Space (fixed character)<br/>l	any Letter a..Z NO space<br/>L	any Letter a..Z NO space converted to upper case<br/>o	any Letter a..Z or space<br/>O	any Letter a..Z or space converted to upper case<br/>a	any Letters &amp; Digits NO space<br/>A	any Letters &amp; Digits NO space converted to upper case<br/>c	any Letters &amp; Digits or space<br/>C	any Letters &amp; Digits or space converted to upper case<br/>0	Digits 0..9 NO space<br/>9	Digits 0..9 or space<br/><br/>Example of format "(000)_000-0000" | C_Country.ExpressionPostal<small> character varying(20) <br/> String</small> |
+| Additional Postal code | Has Additional Postal Code | The Additional Postal Code checkbox indicates if this address uses an additional Postal Code.  If it is selected an additional field displays for entry of the additional Postal Code. | C_Country.HasPostal_Add<small> character(1) <br/> Yes-No</small> |
+| Additional Postal Format | Format of the value; Can contain fixed format elements, Variables: "_lLoOaAcCa09" | &lt;B&gt;Validation elements:&lt;/B&gt;<br/> 	(Space) any character<br/>_	Space (fixed character)<br/>l	any Letter a..Z NO space<br/>L	any Letter a..Z NO space converted to upper case<br/>o	any Letter a..Z or space<br/>O	any Letter a..Z or space converted to upper case<br/>a	any Letters &amp; Digits NO space<br/>A	any Letters &amp; Digits NO space converted to upper case<br/>c	any Letters &amp; Digits or space<br/>C	any Letters &amp; Digits or space converted to upper case<br/>0	Digits 0..9 NO space<br/>9	Digits 0..9 or space<br/><br/>Example of format "(000)_000-0000" | C_Country.ExpressionPostal_Add<small> character varying(20) <br/> String</small> |
+| Phone Format | Format of the phone; Can contain fixed format elements, Variables: "_lLoOaAcCa09" | &lt;B&gt;Validation elements:&lt;/B&gt;<br/> 	(Space) any character<br/>_	Space (fixed character)<br/>l	any Letter a..Z NO space<br/>L	any Letter a..Z NO space converted to upper case<br/>o	any Letter a..Z or space<br/>O	any Letter a..Z or space converted to upper case<br/>a	any Letters &amp; Digits NO space<br/>A	any Letters &amp; Digits NO space converted to upper case<br/>c	any Letters &amp; Digits or space<br/>C	any Letters &amp; Digits or space converted to upper case<br/>0	Digits 0..9 NO space<br/>9	Digits 0..9 or space<br/><br/>Example of format "(000)_000-0000" | C_Country.ExpressionPhone<small> character varying(20) <br/> String</small> |
+| Media Size | Java Media Size | The Java Media Size. Example: "MediaSize.ISO.A4" (the package javax.print.attribute.standard is assumed). If you define your own media size, use the fully qualified name.<br/>If the pattern for your language is not correct, please create a iDempiere support request with the correct information | C_Country.MediaSize<small> character varying(40) <br/> String</small> |
+| Bank Routing No Format | Format of the Bank Routing Number |  | C_Country.ExpressionBankRoutingNo<small> character varying(20) <br/> String</small> |
+| Bank Account No Format | Format of the Bank Account |  | C_Country.ExpressionBankAccountNo<small> character varying(20) <br/> String</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | C_Country.AD_Language<small> character varying(6) <br/> Table</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | C_Country.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Country.IsActive<small> character(1) <br/> Yes-No</small> |
+| Placeholder for Address 1 |  |  | C_Country.PlaceholderAddress1<small> character varying(255) <br/> String</small> |
+| Placeholder for Address 2 |  |  | C_Country.PlaceholderAddress2<small> character varying(255) <br/> String</small> |
+| Placeholder for Address 3 |  |  | C_Country.PlaceholderAddress3<small> character varying(255) <br/> String</small> |
+| Placeholder for Address 4 |  |  | C_Country.PlaceholderAddress4<small> character varying(255) <br/> String</small> |
+| Placeholder for Address 5 |  |  | C_Country.PlaceholderAddress5<small> character varying(255) <br/> String</small> |
+| Placeholder for postal |  |  | C_Country.PlaceholderPostal<small> character varying(255) <br/> String</small> |
+| Placeholder for additional zip |  |  | C_Country.PlaceholderPostal_Add<small> character varying(255) <br/> String</small> |
+| Placeholder for city |  |  | C_Country.PlaceholderCity<small> character varying(255) <br/> String</small> |
+| Placeholder for comments |  |  | C_Country.PlaceholderComments<small> character varying(255) <br/> String</small> |
+
+## Tab: › Region
+
+*Tab Level 1 · Created 11/06/1999 · Updated 24/02/2018*
+
+**Description:** Define Regions
+
+**Comment/Help:** The Region Tab  defines a Region within a Country.  This tab is enabled only if the Has Region checkbox is selected for the Country.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Region.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Region.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Country | Country  | The Country defines a Country.  Each Country must be defined before it can be used in any document. | C_Region.C_Country_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Region.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Region.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Region.IsActive<small> character(1) <br/> Yes-No</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | C_Region.IsDefault<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › City
+
+*Tab Level 2 · Created 26/09/1999 · Updated 12/06/2013*
+
+**Description:** Define Cities
+
+**Comment/Help:** The Cities Tab defines Cities within a Country or Region.  Cities entered here are not referenced when entering the address.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_City.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_City.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Country | Country  | The Country defines a Country.  Each Country must be defined before it can be used in any document. | C_City.C_Country_ID<small> numeric(10) <br/> Table Direct</small> |
+| Region | Identifies a geographical Region | The Region identifies a unique Region for this Country. | C_City.C_Region_ID<small> numeric(10) <br/> Table</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_City.Name<small> character varying(60) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_City.IsActive<small> character(1) <br/> Yes-No</small> |
+| ZIP | Postal code | The Postal Code or ZIP identifies the postal code for this entity's address. | C_City.Postal<small> character varying(10) <br/> String</small> |
+| Area Code | Phone Area Code | Phone Area Code | C_City.AreaCode<small> character varying(10) <br/> String</small> |
+| Locode | Location code - UN/LOCODE  | UN/Locode is a combination of a 2-character country code and a 3-character location code, e.g. BEANR is known as the city of Antwerp (ANR) which is located in Belgium (BE).<br/>&lt;p&gt;See: http://www.unece.org/cefact/locode/service/main.htm | C_City.Locode<small> character varying(10) <br/> String</small> |
+| Coordinates | Location coordinate | This column contains the geographical coordinates (latitude/longitude) of the location.&lt;p&gt;<br/>In order to avoid unnecessary use of non-standard characters and space, the following standard presentation is used:&lt;br&gt;<br/>0000N 00000W 0000S 00000E &lt;br&gt;<br/>where the two last digits refer to minutes and the two or three first digits indicate the degrees | C_City.Coordinates<small> character varying(15) <br/> String</small> |
+
+## Tab: › › Translation
+
+*Tab Level 2 · Created 21/03/2014 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Region_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Region_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Region | Identifies a geographical Region | The Region identifies a unique Region for this Country. | C_Region_Trl.C_Region_ID<small> numeric(10) <br/> Search</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | C_Region_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Region_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | C_Region_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Region_Trl.Name<small> character varying(60) <br/> String</small> |
+
+## Tab: › City (Without Regions)
+
+*Tab Level 1 · Created 13/06/2013 · Updated 12/05/2022*
+
+**Description:** Cities without Region
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_City.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_City.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Country | Country  | The Country defines a Country.  Each Country must be defined before it can be used in any document. | C_City.C_Country_ID<small> numeric(10) <br/> Table Direct</small> |
+| Region | Identifies a geographical Region | The Region identifies a unique Region for this Country. | C_City.C_Region_ID<small> numeric(10) <br/> Table</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_City.Name<small> character varying(60) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_City.IsActive<small> character(1) <br/> Yes-No</small> |
+| ZIP | Postal code | The Postal Code or ZIP identifies the postal code for this entity's address. | C_City.Postal<small> character varying(10) <br/> String</small> |
+| Area Code | Phone Area Code | Phone Area Code | C_City.AreaCode<small> character varying(10) <br/> String</small> |
+| Locode | Location code - UN/LOCODE  | UN/Locode is a combination of a 2-character country code and a 3-character location code, e.g. BEANR is known as the city of Antwerp (ANR) which is located in Belgium (BE).<br/>&lt;p&gt;See: http://www.unece.org/cefact/locode/service/main.htm | C_City.Locode<small> character varying(10) <br/> String</small> |
+| Coordinates | Location coordinate | This column contains the geographical coordinates (latitude/longitude) of the location.&lt;p&gt;<br/>In order to avoid unnecessary use of non-standard characters and space, the following standard presentation is used:&lt;br&gt;<br/>0000N 00000W 0000S 00000E &lt;br&gt;<br/>where the two last digits refer to minutes and the two or three first digits indicate the degrees | C_City.Coordinates<small> character varying(15) <br/> String</small> |
+
+## Tab: › Translation
+
+*Tab Level 1 · Created 25/07/2003 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Country_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Country_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Country | Country  | The Country defines a Country.  Each Country must be defined before it can be used in any document. | C_Country_Trl.C_Country_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | C_Country_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Country_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | C_Country_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Country_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Country_Trl.Description<small> character varying(255) <br/> String</small> |
+| Region | Name of the Region | The Region Name defines the name that will print when this region is used in a document. | C_Country_Trl.RegionName<small> character varying(60) <br/> String</small> |
+| Placeholder for Address 1 |  |  | C_Country_Trl.PlaceholderAddress1<small> character varying(255) <br/> String</small> |
+| Placeholder for Address 2 |  |  | C_Country_Trl.PlaceholderAddress2<small> character varying(255) <br/> String</small> |
+| Placeholder for Address 3 |  |  | C_Country_Trl.PlaceholderAddress3<small> character varying(255) <br/> String</small> |
+| Placeholder for Address 4 |  |  | C_Country_Trl.PlaceholderAddress4<small> character varying(255) <br/> String</small> |
+| Placeholder for Address 5 |  |  | C_Country_Trl.PlaceholderAddress5<small> character varying(255) <br/> String</small> |
+| Placeholder for postal |  |  | C_Country_Trl.PlaceholderPostal<small> character varying(255) <br/> String</small> |
+| Placeholder for additional zip |  |  | C_Country_Trl.PlaceholderPostal_Add<small> character varying(255) <br/> String</small> |
+| Placeholder for city |  |  | C_Country_Trl.PlaceholderCity<small> character varying(255) <br/> String</small> |
+| Placeholder for comments |  |  | C_Country_Trl.PlaceholderComments<small> character varying(255) <br/> String</small> |
+
+## Tab: › Country Group
+
+*Tab Level 1 · Created 07/08/2014 · Updated 07/08/2014*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_CountryGroupCountry.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_CountryGroupCountry.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Country | Country  | The Country defines a Country.  Each Country must be defined before it can be used in any document. | C_CountryGroupCountry.C_Country_ID<small> numeric(10) <br/> Table Direct</small> |
+| Country Group |  |  | C_CountryGroupCountry.C_CountryGroup_ID<small> numeric(10) <br/> Table Direct</small> |
+| Date From | Starting date for a range | The Date From indicates the starting date of a range. | C_CountryGroupCountry.DateFrom<small> timestamp without time zone <br/> Date</small> |
+| Date To | End date of a date range | The Date To indicates the end date of a range (inclusive) | C_CountryGroupCountry.DateTo<small> timestamp without time zone <br/> Date</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_CountryGroupCountry.IsActive<small> character(1) <br/> Yes-No</small> |
+

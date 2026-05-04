@@ -1,0 +1,30 @@
+---
+title: 'Business Partner Detail'
+sidebar_label: 'Business Partner Detail'
+description: 'Business Partner Detail Report'
+tags: ['Report']
+---
+
+# Business Partner Detail
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 334</span>
+
+*27/08/2005 → 04/01/2006*
+
+![Business Partner Detail](/img/manual/BusinessPartnerDetail-Report_iDempiere_v14.0.0.png)
+
+**Description:** Business Partner Detail Report
+
+**Comment/Help:** The report list details of Business Partner, Addresses and Contacts for any active Business Partner with an Address and Contact
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | Name<br/>String |
+| Contact Name | Business Partner Contact Name |  | ContactName<br/>String |
+| EMail Address | Electronic Mail Address | The Email Address is the Electronic Mail ID for this User and should be fully qualified (e.g. joe.smith@company.com). The Email Address is used to access the self service application functionality from the web. | EMail<br/>String |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | SalesRep_ID<br/>Chosen Multiple Selection Table |
+| Business Partner Group | Business Partner Group | The Business Partner Group provides a method of defining defaults to be used for individual Business Partners. | C_BP_Group_ID<br/>Chosen Multiple Selection Table |
+| Credit Status | Business Partner Credit Status | Credit Management is inactive if Credit Status is No Credit Check, Credit Stop or if the Credit Limit is 0.<br/>If active, the status is set automatically set to Credit Hold, if the Total Open Balance (including Vendor activities)  is higher then the Credit Limit. It is set to Credit Watch, if above 90% of the Credit Limit and Credit OK otherwise. | SOCreditStatus<br/>Chosen Multiple Selection List |
+

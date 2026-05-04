@@ -1,0 +1,42 @@
+---
+title: 'Active Session'
+sidebar_label: 'Active Session'
+description: 'List of Current Logged in user'
+tags: ['Window']
+---
+
+# Active Session
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200016</span>
+
+*11/10/2012 → 18/10/2012*
+
+![Active Session](/img/manual/ActiveSession-Window_iDempiere_v14.0.0.png)
+
+**Description:** List of Current Logged in user
+
+## Tab: Sessions
+
+*Tab Level 0 · Created 11/10/2012 · Updated 03/06/2020*
+
+**Description:** Current Sessions
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant Name |  | Tenant in which current session user logged in | AD_SessionInfo_v.ClientName<small> text <br/> String</small> |
+| Organization Name | Name of the Organization |  | AD_SessionInfo_v.OrgName<small> text <br/> String</small> |
+| Remote Addr | Remote Address | The Remote Address indicates an alternative or external address. | AD_SessionInfo_v.Remote_Addr<small> text <br/> String</small> |
+| Remote Host | Remote host Info |  | AD_SessionInfo_v.Remote_Host<small> text <br/> String</small> |
+| User Name |  | Login User Name | AD_SessionInfo_v.LoginName<small> text <br/> String</small> |
+| EMail Address | Electronic Mail Address | The Email Address is the Electronic Mail ID for this User and should be fully qualified (e.g. joe.smith@company.com). The Email Address is used to access the self service application functionality from the web. | AD_SessionInfo_v.EMail<small> text <br/> String</small> |
+| LDAP User Name | User Name used for authorization via LDAP (directory) services | Optional LDAP system user name for the user. If not defined, the normal Name of the user is used. This allows to use the internal (LDAP) user id (e.g. jjanke) and the normal display name (e.g. Jorg Janke).  The LDAP User Name can also be used without LDAP enables (see system window).  This would allow to sign in as jjanke and use the display name of Jorg Janke. | AD_SessionInfo_v.LDAPUser<small> text <br/> String</small> |
+| Login Role |  | Role name of user logged in with | AD_SessionInfo_v.roleName<small> text <br/> String</small> |
+| Login date |  |  | AD_SessionInfo_v.LoginDate<small> timestamp without time zone <br/> Date+Time</small> |
+| Session | User Session Online or Web | Online or Web Session Information | AD_SessionInfo_v.AD_Session_ID<small> numeric(10) <br/> Search</small> |
+| Web Session | Web Session ID |  | AD_SessionInfo_v.WebSession<small> text <br/> String</small> |
+| Created | Date this record was created | The Created field indicates the date that this record was created. | AD_SessionInfo_v.Created<small> timestamp without time zone <br/> Date+Time</small> |
+| Updated | Date this record was updated | The Updated field indicates the date that this record was updated. | AD_SessionInfo_v.Updated<small> timestamp without time zone <br/> Date+Time</small> |
+| Server Name |  | Node instance name | AD_SessionInfo_v.ServerName<small> text <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_SessionInfo_v.IsActive<small> character(1) <br/> Yes-No</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_SessionInfo_v.Description<small> text <br/> String</small> |
+

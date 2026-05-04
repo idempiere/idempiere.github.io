@@ -1,0 +1,98 @@
+---
+title: 'Import GL Journal'
+sidebar_label: 'Import GL Journal'
+description: 'Import General Ledger Journals'
+tags: ['Window']
+---
+
+# Import GL Journal
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 278</span>
+
+*07/06/2003 → 03/06/2021*
+
+![Import GL Journal](/img/manual/ImportGLJournal-Window_iDempiere_v14.0.0.png)
+
+**Description:** Import General Ledger Journals
+
+**Comment/Help:** You way want to check the balance of the import with "Validate Only" before importing. 
+Unbalanced Journals are imported; the handling is based on your settings for the posting process. The optional balance check checks the entire import, not individual batches and journals.
+
+## Tab: General Ledger
+
+*Tab Level 0 · Created 07/06/2003 · Updated 15/01/2024*
+
+**Description:** Import General Ledger
+
+**Comment/Help:** A new Journal Batch is created, if the Batch Document No or accounting schema are different. A new Journal is created, if the Document No, Currency, Document Type, GL Category, Posting Type or Accounting type is different. You can also force the creation of a new Batch or Journal by selecting the create new flag.&lt;p&gt;
+Please note that there are three Organization Fields: The Document Organization is the owner of the document and set directly or per parameter default. The Organization is part of the accounting key and only required if no Valid Account Combination is specified; If not defined it is derived from the Document Organization. The Transaction Organization is part of the account combination.&lt;br&gt;
+The optional balance check applies to the entire import, not for individual batches or journals.
+&lt;br&gt;The document numbers will be overwritten if the document type is not set to manual sequences.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Import GL Journal | Import General Ledger Journal |  | I_GLJournal.I_GLJournal_ID<small> numeric(10) <br/> ID</small> |
+| Imported | Has this import been processed | The Imported check box indicates if this import has been processed. | I_GLJournal.I_IsImported<small> character(1) <br/> Yes-No</small> |
+| Import Error Message | Messages generated from import process | The Import Error Message displays any error messages generated during the import process. | I_GLJournal.I_ErrorMsg<small> character varying(2000) <br/> String</small> |
+| Journal Batch | General Ledger Journal Batch | The General Ledger Journal Batch identifies a group of journals to be processed as a group. | I_GLJournal.GL_JournalBatch_ID<small> numeric(10) <br/> Search</small> |
+| Tenant Key | Key of the Tenant |  | I_GLJournal.ClientValue<small> character varying(40) <br/> String</small> |
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | I_GLJournal.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Org | Document Organization (independent from account organization) |  | I_GLJournal.AD_OrgDoc_ID<small> numeric(10) <br/> Table</small> |
+| Batch Document No | Document Number of the Batch |  | I_GLJournal.BatchDocumentNo<small> character varying(30) <br/> String</small> |
+| Create New Batch | If selected a new batch is created | Note that the balance check does not check that individual batches are balanced. | I_GLJournal.IsCreateNewBatch<small> character(1) <br/> Yes-No</small> |
+| Batch Description | Description of the Batch |  | I_GLJournal.BatchDescription<small> character varying(255) <br/> String</small> |
+| Journal | General Ledger Journal | The General Ledger Journal identifies a group of journal lines which represent a logical business transaction | I_GLJournal.GL_Journal_ID<small> numeric(10) <br/> Search</small> |
+| Journal Document No | Document number of the Journal |  | I_GLJournal.JournalDocumentNo<small> character varying(30) <br/> String</small> |
+| Create New Journal | If selected a new journal within the batch is created | Note that the balance check does not check that individual journals are balanced. | I_GLJournal.IsCreateNewJournal<small> character(1) <br/> Yes-No</small> |
+| Account Schema Name | Name of the Accounting Schema |  | I_GLJournal.AcctSchemaName<small> character varying(60) <br/> String</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | I_GLJournal.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Posting Type | The type of posted amount for the transaction | The Posting Type indicates the type of amount (Actual, Budget, Reservation, Commitment, Statistical) the transaction. | I_GLJournal.PostingType<small> character(1) <br/> List</small> |
+| Budget | General Ledger Budget | The General Ledger Budget identifies a user defined budget.  These can be used in reporting as a comparison against your actual amounts. | I_GLJournal.GL_Budget_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Type Name | Name of the Document Type |  | I_GLJournal.DocTypeName<small> character varying(60) <br/> String</small> |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | I_GLJournal.C_DocType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Category Name | Name of the Category |  | I_GLJournal.CategoryName<small> character varying(60) <br/> String</small> |
+| GL Category | General Ledger Category | The General Ledger Category is an optional, user defined method of grouping journal lines. | I_GLJournal.GL_Category_ID<small> numeric(10) <br/> Table Direct</small> |
+| Account Date | Accounting Date | The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion. | I_GLJournal.DateAcct<small> timestamp without time zone <br/> Date</small> |
+| Period | Period of the Calendar | The Period indicates an exclusive range of dates for a calendar. | I_GLJournal.C_Period_ID<small> numeric(10) <br/> Table Direct</small> |
+| Journal Line | General Ledger Journal Line | The General Ledger Journal Line identifies a single transaction in a journal. | I_GLJournal.GL_JournalLine_ID<small> numeric(10) <br/> Search</small> |
+| Line No | Unique line for this document | Indicates the unique line for a document.  It will also control the display order of the lines within a document. | I_GLJournal.Line<small> numeric(10) <br/> Integer</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | I_GLJournal.Description<small> character varying(255) <br/> String</small> |
+| Source Debit | Source Debit Amount | The Source Debit Amount indicates the credit amount for this line in the source currency. | I_GLJournal.AmtSourceDr<small> numeric <br/> Amount</small> |
+| Source Credit | Source Credit Amount | The Source Credit Amount indicates the credit amount for this line in the source currency. | I_GLJournal.AmtSourceCr<small> numeric <br/> Amount</small> |
+| ISO Currency Code | Three letter ISO 4217 Code of the Currency | For details - http://www.unece.org/trade/rec/rec09en.htm | I_GLJournal.ISO_Code<small> character(3) <br/> String</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | I_GLJournal.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Currency Type Key | Key value for the Currency Conversion Rate Type | The date type key for the conversion of foreign currency transactions | I_GLJournal.ConversionTypeValue<small> character varying(40) <br/> String</small> |
+| Currency Type | Currency Conversion Rate Type | The Currency Conversion Rate Type lets you define different type of rates, e.g. Spot, Corporate and/or Sell/Buy rates. | I_GLJournal.C_ConversionType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Rate | Currency Conversion Rate | The Currency Conversion Rate indicates the rate to use when converting the source currency to the accounting currency | I_GLJournal.CurrencyRate<small> numeric <br/> Number</small> |
+| Accounted Debit | Accounted Debit Amount | The Account Debit Amount indicates the transaction amount converted to this organization's accounting currency | I_GLJournal.AmtAcctDr<small> numeric <br/> Amount</small> |
+| Accounted Credit | Accounted Credit Amount | The Account Credit Amount indicates the transaction amount converted to this organization's accounting currency | I_GLJournal.AmtAcctCr<small> numeric <br/> Amount</small> |
+| UOM | Unit of Measure | The UOM defines a unique non monetary Unit of Measure | I_GLJournal.C_UOM_ID<small> numeric(10) <br/> Table Direct</small> |
+| Quantity | Quantity | The Quantity indicates the number of a specific product or item for this document. | I_GLJournal.Qty<small> numeric <br/> Quantity</small> |
+| Combination | Valid Account Combination | The Combination identifies a valid combination of element which represent a GL account. | I_GLJournal.C_ValidCombination_ID<small> numeric(10) <br/> Search</small> |
+| Org Key | Key of the Organization |  | I_GLJournal.OrgValue<small> character varying(40) <br/> String</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | I_GLJournal.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Account Key | Key of Account Element |  | I_GLJournal.AccountValue<small> character varying(40) <br/> String</small> |
+| Account | Account used | The (natural) account used | I_GLJournal.Account_ID<small> numeric(10) <br/> Search</small> |
+| Business Partner Key | Key of the Business Partner |  | I_GLJournal.BPartnerValue<small> character varying(40) <br/> String</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | I_GLJournal.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Product Key | Key of the Product |  | I_GLJournal.ProductValue<small> character varying(40) <br/> String</small> |
+| UPC/EAN | Bar Code (Universal Product Code or its superset European Article Number) | Use this field to enter the bar code for the product in any of the bar code symbologies (Codabar, Code 25, Code 39, Code 93, Code 128, UPC (A), UPC (E), EAN-13, EAN-8, ITF, ITF-14, ISBN, ISSN, JAN-13, JAN-8, POSTNET and FIM, MSI/Plessey, and Pharmacode)  | I_GLJournal.UPC<small> character varying(30) <br/> String</small> |
+| SKU | Stock Keeping Unit | The SKU indicates a user defined stock keeping unit.  It may be used for an additional bar code symbols or your own schema. | I_GLJournal.SKU<small> character varying(30) <br/> String</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | I_GLJournal.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Project Key | Key of the Project |  | I_GLJournal.ProjectValue<small> character varying(40) <br/> String</small> |
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | I_GLJournal.C_Project_ID<small> numeric(10) <br/> Search</small> |
+| Campaign Key | Text key of the Campaign |  | I_GLJournal.CampaignValue<small> character varying(40) <br/> String</small> |
+| Campaign | Marketing Campaign | The Campaign defines a unique marketing program.  Projects can be associated with a pre defined Marketing Campaign.  You can then report based on a specific Campaign. | I_GLJournal.C_Campaign_ID<small> numeric(10) <br/> Table Direct</small> |
+| Activity Key | Text key for Activity |  | I_GLJournal.ActivityValue<small> character varying(40) <br/> String</small> |
+| Activity | Business Activity | Activities indicate tasks that are performed and used to utilize Activity based Costing | I_GLJournal.C_Activity_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sales Region Key | Text key of the Sales Region |  | I_GLJournal.SalesRegionValue<small> character varying(40) <br/> String</small> |
+| Sales Region | Sales coverage region | The Sales Region indicates a specific area of sales coverage. | I_GLJournal.C_SalesRegion_ID<small> numeric(10) <br/> Table Direct</small> |
+| Trx Org Key | Key of the Transaction Organization |  | I_GLJournal.OrgTrxValue<small> character varying(40) <br/> String</small> |
+| Trx Organization | Performing or initiating organization | The organization which performs or initiates this transaction (for another organization).  The owning Organization may not be the transaction organization in a service bureau environment, with centralized services, and inter-organization transactions. | I_GLJournal.AD_OrgTrx_ID<small> numeric(10) <br/> Table</small> |
+| Location From | Location that inventory was moved from | The Location From indicates the location that a product was moved from. | I_GLJournal.C_LocFrom_ID<small> numeric(10) <br/> Table</small> |
+| Location To | Location that inventory was moved to | The Location To indicates the location that a product was moved to. | I_GLJournal.C_LocTo_ID<small> numeric(10) <br/> Table</small> |
+| User Element List 1 | User defined list element #1 | The user defined element displays the optional elements that have been defined for this account combination. | I_GLJournal.User1_ID<small> numeric(10) <br/> Search</small> |
+| User Element List 2 | User defined list element #2 | The user defined element displays the optional elements that have been defined for this account combination. | I_GLJournal.User2_ID<small> numeric(10) <br/> Search</small> |
+| Import Journal | Import General Ledger Batch/Journal/Line | The Parameters are default values for null import record values, they do not overwrite any data. | I_GLJournal.Processing<small> character(1) <br/> Button</small> |
+| Processed | The document has been processed | The Processed checkbox indicates that a document has been processed. | I_GLJournal.Processed<small> character(1) <br/> Yes-No</small> |
+

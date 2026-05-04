@@ -1,0 +1,37 @@
+---
+title: 'Accounting Fact Period'
+sidebar_label: 'Accounting Fact Period'
+description: 'Accounting Fact Details summarized by Accounting Period'
+tags: ['Report']
+---
+
+# Accounting Fact Period
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 254</span>
+
+*09/01/2004 → 10/03/2022*
+
+![Accounting Fact Period](/img/manual/AccountingFactPeriod-Report_iDempiere_v14.0.0.png)
+
+**Description:** Accounting Fact Details summarized by Accounting Period
+
+**Comment/Help:** The Period is based on the the Calendar defined on Tenant level.
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | C_AcctSchema_ID<br/>Table Direct |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Org_ID<br/>Chosen Multiple Selection Table |
+| Period | Period of the Calendar | The Period indicates an exclusive range of dates for a calendar. | C_Period_ID<br/>Chosen Multiple Selection Table |
+| Account | Account used | The (natural) account used | Account_ID<br/>Chosen Multiple Selection Table |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BPartner_ID<br/>Chosen Multiple Selection Search |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Product_ID<br/>Chosen Multiple Selection Search |
+| Tax | Tax identifier | The Tax indicates the type of tax used in document line. | C_Tax_ID<br/>Chosen Multiple Selection Table |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | M_AttributeSetInstance_ID<br/>Table Direct |
+| Charge | Additional document charges | The Charge indicates a type of Charge (Handling, Shipping, Restocking) | C_Charge_ID<br/>Table Direct |
+| Cost Center |  |  | C_CostCenter_ID<br/>Table Direct |
+| Department |  |  | C_Department_ID<br/>Table Direct |
+| Employee | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_Employee_ID<br/>Table |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | M_Warehouse_ID<br/>Table Direct |
+

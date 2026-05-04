@@ -1,0 +1,33 @@
+---
+title: 'Relation Type'
+sidebar_label: 'Relation Type'
+tags: ['Window']
+---
+
+# Relation Type
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 53102</span>
+
+*13/11/2009 → 13/11/2009*
+
+![Relation Type](/img/manual/RelationType-Window_iDempiere_v14.0.0.png)
+
+## Tab: Relation Type
+
+*Tab Level 0 · Created 13/11/2009 · Updated 13/11/2009*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_RelationType.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_RelationType.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_RelationType.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_RelationType.Description<small> character varying(255) <br/> String</small> |
+| Directed | Tells whether one "sees" the other end of the relation from each end or just from the source |  | AD_RelationType.IsDirected<small> character(1) <br/> Yes-No</small> |
+| Type | Type of Validation (SQL, Java Script, Java Language) | The Type indicates the type of validation that will occur.  This can be SQL, Java Script or Java Language. | AD_RelationType.Type<small> character(1) <br/> List</small> |
+| Source Reference |  |  | AD_RelationType.AD_Reference_Source_ID<small> numeric(10) <br/> Table</small> |
+| Source Role | If set, this role will be used as label for the zoom destination instead of the destinations's window name |  | AD_RelationType.Role_Source<small> character varying(50) <br/> List</small> |
+| Target Reference |  |  | AD_RelationType.AD_Reference_Target_ID<small> numeric(10) <br/> Table</small> |
+| Target Role | If set, this role will be used as label for the zoom destination instead of the destinations's window name |  | AD_RelationType.Role_Target<small> character varying(50) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_RelationType.IsActive<small> character(1) <br/> Yes-No</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_RelationType.EntityType<small> character varying(40) <br/> Table</small> |
+

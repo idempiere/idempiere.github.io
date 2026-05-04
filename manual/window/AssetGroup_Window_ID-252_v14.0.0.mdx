@@ -1,0 +1,82 @@
+---
+title: 'Asset Group'
+sidebar_label: 'Asset Group'
+description: 'Group of Assets'
+tags: ['Window']
+---
+
+# Asset Group
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 252</span>
+
+*23/01/2003 → 17/06/2010*
+
+![Asset Group](/img/manual/AssetGroup-Window_iDempiere_v14.0.0.png)
+
+**Description:** Group of Assets
+
+**Comment/Help:** The group of assets determines default accounts.  If a asset group is selected in the product category, assets are created when delivering the asset.
+
+## Tab: Asset Group
+
+*Tab Level 0 · Created 23/01/2003 · Updated 17/06/2010*
+
+**Description:** Group of Assets
+
+**Comment/Help:** The group of assets determines default accounts.  If a asset group is selected in the product category, assets are created when delivering the asset.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | A_Asset_Group.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | A_Asset_Group.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | A_Asset_Group.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | A_Asset_Group.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | A_Asset_Group.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | A_Asset_Group.IsActive<small> character(1) <br/> Yes-No</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | A_Asset_Group.IsDefault<small> character(1) <br/> Yes-No</small> |
+| Owned | The asset is owned by the organization | The asset may not be in possession, but the asset is legally owned by the organization | A_Asset_Group.IsOwned<small> character(1) <br/> Yes-No</small> |
+| Depreciate | The asset will be depreciated | The asset is used internally and will be depreciated | A_Asset_Group.IsDepreciated<small> character(1) <br/> Yes-No</small> |
+| One Asset Per UOM | Create one asset per UOM | If selected, one asset per UOM is created, otherwise one asset with the quantity received/shipped.  If you have multiple lines, one asset is created per line. | A_Asset_Group.IsOneAssetPerUOM<small> character(1) <br/> Yes-No</small> |
+| Is Fixed Asset |  |  | A_Asset_Group.IsFixedAsset<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Group Account
+
+*Tab Level 1 · Created 30/05/2008 · Updated 06/12/2011*
+
+**Description:** Setup for Group Accounts
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | A_Asset_Group_Acct.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | A_Asset_Group_Acct.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Asset Group | Group of Assets | The group of assets determines default accounts.  If an asset group is selected in the product category, assets are created when delivering the asset. | A_Asset_Group_Acct.A_Asset_Group_ID<small> numeric(10) <br/> Table Direct</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | A_Asset_Group_Acct.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Posting Type | The type of posted amount for the transaction | The Posting Type indicates the type of amount (Actual, Budget, Reservation, Commitment, Statistical) the transaction. | A_Asset_Group_Acct.PostingType<small> character(1) <br/> List</small> |
+| Depreciation |  |  | A_Asset_Group_Acct.A_Depreciation_ID<small> numeric(10) <br/> Table</small> |
+| Depreciation (fiscal) |  |  | A_Asset_Group_Acct.A_Depreciation_F_ID<small> numeric(10) <br/> Table</small> |
+| Usable Life - Years | Years of the usable life of the asset |  | A_Asset_Group_Acct.UseLifeYears<small> numeric <br/> Number</small> |
+| Use Life - Years (fiscal) |  |  | A_Asset_Group_Acct.UseLifeYears_F<small> numeric <br/> Number</small> |
+| Usable Life - Months | Months of the usable life of the asset |  | A_Asset_Group_Acct.UseLifeMonths<small> numeric(10) <br/> Integer</small> |
+| Use Life - Months (fiscal) |  |  | A_Asset_Group_Acct.UseLifeMonths_F<small> numeric(10) <br/> Integer</small> |
+| Asset Acct |  |  | A_Asset_Group_Acct.A_Asset_Acct<small> numeric(10) <br/> Account</small> |
+| Accumulated Depreciation Account |  |  | A_Asset_Group_Acct.A_Accumdepreciation_Acct<small> numeric(10) <br/> Account</small> |
+| Depreciation Account |  |  | A_Asset_Group_Acct.A_Depreciation_Acct<small> numeric(10) <br/> Account</small> |
+| Disposal Revenue Acct |  |  | A_Asset_Group_Acct.A_Disposal_Revenue_Acct<small> numeric(10) <br/> Account</small> |
+| Disposal Loss Acct |  |  | A_Asset_Group_Acct.A_Disposal_Loss_Acct<small> numeric(10) <br/> Account</small> |
+
+## Tab: › Translation
+
+*Tab Level 1 · Created 21/03/2014 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | A_Asset_Group_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | A_Asset_Group_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Asset Group | Group of Assets | The group of assets determines default accounts.  If an asset group is selected in the product category, assets are created when delivering the asset. | A_Asset_Group_Trl.A_Asset_Group_ID<small> numeric(10) <br/> Search</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | A_Asset_Group_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | A_Asset_Group_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | A_Asset_Group_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | A_Asset_Group_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | A_Asset_Group_Trl.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | A_Asset_Group_Trl.Help<small> character varying(2000) <br/> Text</small> |
+

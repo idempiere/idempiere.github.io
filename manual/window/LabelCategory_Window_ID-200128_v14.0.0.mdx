@@ -1,0 +1,56 @@
+---
+title: 'Label Category'
+sidebar_label: 'Label Category'
+tags: ['Window']
+---
+
+# Label Category
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200128</span>
+
+*16/05/2022 → 16/05/2022*
+
+![Label Category](/img/manual/LabelCategory-Window_iDempiere_v14.0.0.png)
+
+## Tab: Label Category
+
+*Tab Level 0 · Created 16/05/2022 · Updated 16/05/2022*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_LabelCategory.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_LabelCategory.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_LabelCategory.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_LabelCategory.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_LabelCategory.IsActive<small> character(1) <br/> Yes-No</small> |
+| Can Be Used in All Tables |  |  | AD_LabelCategory.IsCanBeUsedInAllTables<small> character(1) <br/> Yes-No</small> |
+| Label Style | Label CSS Style |  | AD_LabelCategory.AD_LabelStyle_ID<small> numeric(10) <br/> Table</small> |
+
+## Tab: › Table Access
+
+*Tab Level 1 · Created 16/05/2022 · Updated 16/05/2022*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_LabelCategoryTable.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_LabelCategoryTable.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_LabelCategoryTable.Description<small> character varying(255) <br/> String</small> |
+| Label Category | Category of a Label | Identifies the category which this label belongs to. | AD_LabelCategoryTable.AD_LabelCategory_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_LabelCategoryTable.IsActive<small> character(1) <br/> Yes-No</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_LabelCategoryTable.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+
+## Tab: › Translation
+
+*Tab Level 1 · Created 16/05/2022 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_LabelCategory_Trl.AD_Client_ID<small> numeric(10) <br/> Search</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_LabelCategory_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Label Category | Category of a Label | Identifies the category which this label belongs to. | AD_LabelCategory_Trl.AD_LabelCategory_ID<small> numeric(10) <br/> Search</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_LabelCategory_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_LabelCategory_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_LabelCategory_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_LabelCategory_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_LabelCategory_Trl.Description<small> character varying(255) <br/> String</small> |
+

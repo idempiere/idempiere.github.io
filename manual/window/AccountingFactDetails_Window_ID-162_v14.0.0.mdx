@@ -1,0 +1,76 @@
+---
+title: 'Accounting Fact Details'
+sidebar_label: 'Accounting Fact Details'
+description: 'Query Accounting Facts'
+tags: ['Window']
+---
+
+# Accounting Fact Details
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 162</span>
+
+*04/12/1999 → 09/02/2005*
+
+![Accounting Fact Details](/img/manual/AccountingFactDetails-Window_iDempiere_v14.0.0.png)
+
+**Description:** Query Accounting Facts
+
+**Comment/Help:** Query the detail accounting transactions
+
+## Tab: Accounting
+
+*Tab Level 0 · Created 04/12/1999 · Updated 02/01/2000*
+
+**Description:** View Accounting Fact Details
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | Fact_Acct.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | Fact_Acct.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | Fact_Acct.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | Fact_Acct.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Record ID | Direct internal record ID | The Record ID is the internal unique identifier of a record. Please note that zooming to the record may not be successful for Orders, Invoices and Shipment/Receipts as sometimes the Sales Order type is not known. | Fact_Acct.Record_ID<small> numeric(10) <br/> Record ID</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | Fact_Acct.Description<small> character varying(255) <br/> String</small> |
+| Period | Period of the Calendar | The Period indicates an exclusive range of dates for a calendar. | Fact_Acct.C_Period_ID<small> numeric(10) <br/> Table Direct</small> |
+| Account Date | Accounting Date | The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion. | Fact_Acct.DateAcct<small> timestamp without time zone <br/> Date</small> |
+| Posting Type | The type of posted amount for the transaction | The Posting Type indicates the type of amount (Actual, Budget, Reservation, Commitment, Statistical) the transaction. | Fact_Acct.PostingType<small> character(1) <br/> List</small> |
+| Transaction Date | Transaction Date | The Transaction Date indicates the date of the transaction. | Fact_Acct.DateTrx<small> timestamp without time zone <br/> Date</small> |
+| Account | Account used | The (natural) account used | Fact_Acct.Account_ID<small> numeric(10) <br/> Search</small> |
+| Sub Account | Sub account for Element Value | The Element Value (e.g. Account) may have optional sub accounts for further detail. The sub account is dependent on the value of the account, so a further specification. If the sub-accounts are more or less the same, consider using another accounting dimension. | Fact_Acct.C_SubAcct_ID<small> numeric(10) <br/> Table Direct</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | Fact_Acct.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | Fact_Acct.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | Fact_Acct.C_Project_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sales Region | Sales coverage region | The Sales Region indicates a specific area of sales coverage. | Fact_Acct.C_SalesRegion_ID<small> numeric(10) <br/> Table Direct</small> |
+| Campaign | Marketing Campaign | The Campaign defines a unique marketing program.  Projects can be associated with a pre defined Marketing Campaign.  You can then report based on a specific Campaign. | Fact_Acct.C_Campaign_ID<small> numeric(10) <br/> Table Direct</small> |
+| Trx Organization | Performing or initiating organization | The organization which performs or initiates this transaction (for another organization).  The owning Organization may not be the transaction organization in a service bureau environment, with centralized services, and inter-organization transactions. | Fact_Acct.AD_OrgTrx_ID<small> numeric(10) <br/> Table</small> |
+| Location From | Location that inventory was moved from | The Location From indicates the location that a product was moved from. | Fact_Acct.C_LocFrom_ID<small> numeric(10) <br/> Table</small> |
+| Location To | Location that inventory was moved to | The Location To indicates the location that a product was moved to. | Fact_Acct.C_LocTo_ID<small> numeric(10) <br/> Table</small> |
+| Activity | Business Activity | Activities indicate tasks that are performed and used to utilize Activity based Costing | Fact_Acct.C_Activity_ID<small> numeric(10) <br/> Table Direct</small> |
+| User Element List 1 | User defined list element #1 | The user defined element displays the optional elements that have been defined for this account combination. | Fact_Acct.User1_ID<small> numeric(10) <br/> Search</small> |
+| User Element List 2 | User defined list element #2 | The user defined element displays the optional elements that have been defined for this account combination. | Fact_Acct.User2_ID<small> numeric(10) <br/> Search</small> |
+| User Column 1 | User defined accounting Element | A user defined accounting element refers to an iDempiere table. This allows to use any table content as an accounting dimension (e.g. Project Task).  Note that User Elements are optional and are populated from the context of the document (i.e. not requested) | Fact_Acct.UserElement1_ID<small> numeric(10) <br/> ID</small> |
+| User Column 2 | User defined accounting Element | A user defined accounting element refers to an iDempiere table. This allows to use any table content as an accounting dimension (e.g. Project Task).  Note that User Elements are optional and are populated from the context of the document (i.e. not requested)  | Fact_Acct.UserElement2_ID<small> numeric(10) <br/> ID</small> |
+| GL Category | General Ledger Category | The General Ledger Category is an optional, user defined method of grouping journal lines. | Fact_Acct.GL_Category_ID<small> numeric(10) <br/> Table Direct</small> |
+| Budget | General Ledger Budget | The General Ledger Budget identifies a user defined budget.  These can be used in reporting as a comparison against your actual amounts. | Fact_Acct.GL_Budget_ID<small> numeric(10) <br/> Table Direct</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | Fact_Acct.M_AttributeSetInstance_ID<small> numeric(10) <br/> Table Direct</small> |
+| Tax | Tax identifier | The Tax indicates the type of tax used in document line. | Fact_Acct.C_Tax_ID<small> numeric(10) <br/> Table Direct</small> |
+| Locator | Warehouse Locator | The Locator indicates where in a Warehouse a product is located. | Fact_Acct.M_Locator_ID<small> numeric(10) <br/> Table Direct</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | Fact_Acct.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Source Debit | Source Debit Amount | The Source Debit Amount indicates the credit amount for this line in the source currency. | Fact_Acct.AmtSourceDr<small> numeric <br/> Amount</small> |
+| Source Credit | Source Credit Amount | The Source Credit Amount indicates the credit amount for this line in the source currency. | Fact_Acct.AmtSourceCr<small> numeric <br/> Amount</small> |
+| Accounted Debit | Accounted Debit Amount | The Account Debit Amount indicates the transaction amount converted to this organization's accounting currency | Fact_Acct.AmtAcctDr<small> numeric <br/> Amount</small> |
+| Accounted Credit | Accounted Credit Amount | The Account Credit Amount indicates the transaction amount converted to this organization's accounting currency | Fact_Acct.AmtAcctCr<small> numeric <br/> Amount</small> |
+| UOM | Unit of Measure | The UOM defines a unique non monetary Unit of Measure | Fact_Acct.C_UOM_ID<small> numeric(10) <br/> Table Direct</small> |
+| Quantity | Quantity | The Quantity indicates the number of a specific product or item for this document. | Fact_Acct.Qty<small> numeric <br/> Quantity</small> |
+| Project Phase | Phase of a Project |  | Fact_Acct.C_ProjectPhase_ID<small> numeric(10) <br/> Table Direct</small> |
+| Project Task | Actual Project Task in a Phase | A Project Task in a Project Phase represents the actual work. | Fact_Acct.C_ProjectTask_ID<small> numeric(10) <br/> Table Direct</small> |
+| Text Column 1 | User defined accounting Element | A user defined accounting element referres to a iDempiere table. This allows to use any table content as an accounting dimension (e.g. Description).  Note that User Elements are optional and are populated from the context of the document (i.e. not requested) | Fact_Acct.CustomFieldText1<small> character varying(255) <br/> Text</small> |
+| Text Column 2 | User defined accounting Element | A user defined accounting element referres to a iDempiere table. This allows to use any table content as an accounting dimension (e.g. Description).  Note that User Elements are optional and are populated from the context of the document (i.e. not requested) | Fact_Acct.CustomFieldText2<small> character varying(255) <br/> Text</small> |
+| Text Column 3 | User defined accounting Element | A user defined accounting element referres to a iDempiere table. This allows to use any table content as an accounting dimension (e.g. Description).  Note that User Elements are optional and are populated from the context of the document (i.e. not requested) | Fact_Acct.CustomFieldText3<small> character varying(255) <br/> Text</small> |
+| Text Column 4 | User defined accounting Element | A user defined accounting element referres to a iDempiere table. This allows to use any table content as an accounting dimension (e.g. Description).  Note that User Elements are optional and are populated from the context of the document (i.e. not requested) | Fact_Acct.CustomFieldText4<small> character varying(255) <br/> Text</small> |
+| Charge | Additional document charges | The Charge indicates a type of Charge (Handling, Shipping, Restocking) | Fact_Acct.C_Charge_ID<small> numeric(10) <br/> Table Direct</small> |
+| Employee | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | Fact_Acct.C_Employee_ID<small> numeric(10) <br/> Search</small> |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | Fact_Acct.M_Warehouse_ID<small> numeric(10) <br/> Table Direct</small> |
+| Department |  |  | Fact_Acct.C_Department_ID<small> numeric(10) <br/> Table Direct</small> |
+| Cost Center |  |  | Fact_Acct.C_CostCenter_ID<small> numeric(10) <br/> Table Direct</small> |
+

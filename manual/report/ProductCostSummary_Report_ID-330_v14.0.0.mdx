@@ -1,0 +1,28 @@
+---
+title: 'Product Cost Summary'
+sidebar_label: 'Product Cost Summary'
+description: 'Product Cost Summary Report'
+tags: ['Report']
+---
+
+# Product Cost Summary
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 330</span>
+
+*25/07/2005 → 26/07/2005*
+
+![Product Cost Summary](/img/manual/ProductCostSummary-Report_iDempiere_v14.0.0.png)
+
+**Description:** Product Cost Summary Report
+
+**Comment/Help:** The Product Cost  report lists the summarized product costs for the product
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | C_AcctSchema_ID<br/>Table Direct |
+| Product Category | Category of a Product | Identifies the category which this product belongs to.  Product categories are used for pricing and selection. | M_Product_Category_ID<br/>Chosen Multiple Selection Table |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Product_ID<br/>Chosen Multiple Selection Search |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | Value<br/>String |
+

@@ -1,0 +1,29 @@
+---
+title: 'Rollup BOM Cost'
+sidebar_label: 'Rollup BOM Cost'
+description: 'Rollup BOM cost'
+tags: ['Process']
+---
+
+# Rollup BOM Cost
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 53230</span>
+
+*27/07/2011 → 27/07/2011*
+
+![Rollup BOM Cost](/img/manual/RollupBOMCost-Process_iDempiere_v14.0.0.png)
+
+**Description:** Rollup BOM cost
+
+**Comment/Help:** Rollup BOM costs from the lowest level recursively.
+
+**Classname:** `org.compiere.process.RollUpCosts`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Product Category | Category of a Product | Identifies the category which this product belongs to.  Product categories are used for pricing and selection. | M_Product_Category_ID<br/>Table Direct |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Product_ID<br/>Search |
+| Cost Element | Product Cost Element |  | M_CostElement_ID<br/>Table Direct |
+
