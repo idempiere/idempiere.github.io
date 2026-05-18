@@ -31,14 +31,14 @@ With Redis, the cache lives outside the iDempiere JVMs. Restarting or replacing 
 
 **3. Configure the connection.** Copy `redis-template.yaml` (bundled in `org.adempiere.server-feature`) to `$IDEMPIERE_HOME/redis.yaml` and uncomment the topology block that matches your setup. The template includes single-node, Sentinel, and Cluster examples with inline comments.
 
-**4. Enable the backend.** Add the JVM argument `-Didempiere.distributed.backend=redis` (or set `IDEMPIERE_DISTRIBUTED_BACKEND=redis`) and restart iDempiere. Without this, Hazelcast stays active even if the Redis bundle is installed.
+**4. Enable the backend.** Add the JVM argument `-Didempiere.distributed.backend=redis` (or set `IDEMPIERE_DISTRIBUTED_BACKEND=redis`) and restart iDempiere. This flag is required — installing the bundle alone is not enough. Without it the Redis bundle stays passive; if Hazelcast was also removed in step 2, the server will start with no distributed cache provider. If you kept Hazelcast installed alongside Redis, omitting this flag leaves Hazelcast as the active backend.
 
 A key prefix (`idempiere:<INSTANCE_NAME>:`) is applied automatically to all Redis keys. The instance name is resolved in this order: `redis.instance.name` property, `IDEMPIERE_INSTANCE_NAME` environment variable, `ADEMPIERE_DB_NAME`, falling back to `"default"`. This avoids key collisions when multiple deployments share a Redis instance.
 
 ### Capabilities
 
 - **Caching**: Map, List, and Set operations. An optional Caffeine near-cache can be enabled per cache for fast in-memory reads.
-- **Distributed locks**: tryLock / unLock support via Redisson RLock.
+- **Distributed locks**: tryLock / unlock support via Redisson RLock.
 - **Messaging**: Fire-and-forget pub/sub via RTopic. Durable delivery using Redis Streams (RReliableTopic) is available as an opt-in.
 - **Cluster membership**: Nodes register themselves using heartbeat keys. No Hazelcast discovery configuration is needed.
 - **Remote execution**: IClusterService.execute() is supported via topic-based request/response. Calls can target a single member or a list of members.
