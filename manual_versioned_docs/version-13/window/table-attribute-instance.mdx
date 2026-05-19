@@ -1,0 +1,43 @@
+---
+title: 'Table Attribute Instance'
+sidebar_label: 'Table Attribute Instance'
+tags: ['Window']
+---
+
+# Table Attribute Instance
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200157</span>
+
+*18/06/2025 → 18/06/2025*
+
+![Table Attribute Instance](./img/table-attribute-instance.png)
+
+## Tab: Table Attribute Set
+
+*Tab Level 0 · Created 18/06/2025 · Updated 18/06/2025*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_TableAttributeSet.AD_Client_ID<small> numeric(10) <br/> Search</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_TableAttributeSet.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_TableAttributeSet.AD_Table_ID<small> numeric(10) <br/> Search</small> |
+| Attribute Set | Product Attribute Set | Define Product Attribute Sets to add additional attributes and values to the product. You need to define a Attribute Set if you want to enable Serial and Lot Number tracking. | AD_TableAttributeSet.M_AttributeSet_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_TableAttributeSet.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Table Attribute Value
+
+*Tab Level 1 · Created 24/06/2025 · Updated 27/06/2025*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_TableAttribute.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_TableAttribute.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_TableAttribute.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Record ID | Direct internal record ID | The Record ID is the internal unique identifier of a record. Please note that zooming to the record may not be successful for Orders, Invoices and Shipment/Receipts as sometimes the Sales Order type is not known. | AD_TableAttribute.Record_ID<small> numeric(10) <br/> Record ID</small> |
+| Attribute | Product Attribute | Product Attribute like Color, Size | AD_TableAttribute.M_Attribute_ID<small> numeric(10) <br/> Table Direct</small> |
+| Attribute Value | Product Attribute Value | Individual value of a product attribute (e.g. green, large, ..) | AD_TableAttribute.M_AttributeValue_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | AD_TableAttribute.Value<small> character varying(2000) <br/> Text</small> |
+| Value | Numeric Value |  | AD_TableAttribute.ValueNumber<small> numeric <br/> Number</small> |
+| Value Date |  |  | AD_TableAttribute.ValueDate<small> timestamp without time zone <br/> Date</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_TableAttribute.IsActive<small> character(1) <br/> Yes-No</small> |
+

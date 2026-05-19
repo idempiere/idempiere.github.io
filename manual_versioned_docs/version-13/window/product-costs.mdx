@@ -1,0 +1,168 @@
+---
+title: 'Product Costs'
+sidebar_label: 'Product Costs'
+description: 'Maintain Product Costs'
+tags: ['Window']
+---
+
+# Product Costs
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 344</span>
+
+*24/04/2005 → 26/07/2005*
+
+![Product Costs](./img/product-costs.png)
+
+**Description:** Maintain Product Costs
+
+**Comment/Help:** Maintain Product Cost Elements
+
+## Tab: Select Product
+
+*Tab Level 0 · Created 24/04/2005 · Updated 26/07/2005*
+
+**Description:** Select the product
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_Product.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_Product.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | M_Product.Value<small> character varying(510) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | M_Product.Name<small> character varying(255) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_Product.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | M_Product.Help<small> character varying(2000) <br/> Text</small> |
+| Product Category | Category of a Product | Identifies the category which this product belongs to.  Product categories are used for pricing and selection. | M_Product.M_Product_Category_ID<small> numeric(10) <br/> Table Direct</small> |
+| Product Type | Type of product | The type of product also determines accounting consequences. | M_Product.ProductType<small> character(1) <br/> List</small> |
+| UPC/EAN | Bar Code (Universal Product Code or its superset European Article Number) | Use this field to enter the bar code for the product in any of the bar code symbologies (Codabar, Code 25, Code 39, Code 93, Code 128, UPC (A), UPC (E), EAN-13, EAN-8, ITF, ITF-14, ISBN, ISSN, JAN-13, JAN-8, POSTNET and FIM, MSI/Plessey, and Pharmacode)  | M_Product.UPC<small> character varying(30) <br/> String</small> |
+| SKU | Stock Keeping Unit | The SKU indicates a user defined stock keeping unit.  It may be used for an additional bar code symbols or your own schema. | M_Product.SKU<small> character varying(30) <br/> String</small> |
+| UOM | Unit of Measure | The UOM defines a unique non monetary Unit of Measure | M_Product.C_UOM_ID<small> numeric(10) <br/> Table Direct</small> |
+| Stocked | Organization stocks this product | The Stocked check box indicates if this product is stocked by this Organization. | M_Product.IsStocked<small> character(1) <br/> Yes-No</small> |
+| Company Agent | Purchase or Company Agent | Purchase agent for the document. Any Sales Rep must be a valid internal user. | M_Product.SalesRep_ID<small> numeric(10) <br/> Table</small> |
+
+## Tab: › Product Costs
+
+*Tab Level 1 · Created 24/04/2005 · Updated 13/09/2005*
+
+**Description:** Maintain Product Costs
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_Cost.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_Cost.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Cost.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | M_Cost.M_AttributeSetInstance_ID<small> numeric(10) <br/> Product Attribute</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | M_Cost.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Cost Type | Type of Cost (e.g. Current, Plan, Future) | You can define multiple cost types. A cost type selected in an Accounting Schema is used for accounting. | M_Cost.M_CostType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Cost Element | Product Cost Element |  | M_Cost.M_CostElement_ID<small> numeric(10) <br/> Table Direct</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_Cost.Description<small> character varying(255) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_Cost.IsActive<small> character(1) <br/> Yes-No</small> |
+| Costing Method | Indicates how Costs will be calculated | The Costing Method indicates how costs will be calculated (Standard, Average, Lifo, FiFo).  The default costing method is defined on accounting schema level and can be optionally overwritten in the product category.  The costing method cannot conflict with the Material Movement Policy (defined on Product Category). | M_Cost.CostingMethod<small>  <br/> List</small> |
+| Current Cost Price | The currently used cost price |  | M_Cost.CurrentCostPrice<small> numeric <br/> Costs+Prices</small> |
+| Current Cost Price Lower Level | Current Price Lower Level Is the sum of the costs of the components of this product manufactured for this level. | Current Price Lower Level is used for get the total costs for lower level the a product manufactured.<br/><br/>The Current Price Lower Level always will be calculated.<br/><br/>You can see the Current Cost Price and Current Cost Price Lower Level with Cost  Bill of Material &amp; Formula Detail Report.<br/> <br/>The sum the Current Cost Price + Current Cost Price Lower Level is the total cost to a product manufactured.<br/> | M_Cost.CurrentCostPriceLL<small> numeric <br/> Costs+Prices</small> |
+| Future Cost Price |  |  | M_Cost.FutureCostPrice<small> numeric <br/> Costs+Prices</small> |
+| Future Cost Price Lower Level |  |  | M_Cost.FutureCostPriceLL<small> numeric <br/> Costs+Prices</small> |
+| Percent | Percentage | The Percent indicates the percentage used. | M_Cost.Percent<small> numeric(10) <br/> Integer</small> |
+| Current Quantity | Current Quantity |  | M_Cost.CurrentQty<small> numeric <br/> Quantity</small> |
+| Cost Frozen | Indicated that the Standard Cost is frozen |  | M_Cost.IsCostFrozen<small> character(1) <br/> Yes-No</small> |
+| Accumulated Amt | Total Amount | Sum of all amounts | M_Cost.CumulatedAmt<small> numeric <br/> Amount</small> |
+| Accumulated Qty | Total Quantity | Sum of the quantities | M_Cost.CumulatedQty<small> numeric <br/> Quantity</small> |
+| Processed | The document has been processed | The Processed checkbox indicates that a document has been processed. | M_Cost.Processed<small>  <br/> Yes-No</small> |
+
+## Tab: › › Cost Movement
+
+*Tab Level 2 · Created 08/03/2012 · Updated 23/07/2013*
+
+**Description:** Show movement of cost by transaction
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | M_CostMovement_v.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Cost Type | Type of Cost (e.g. Current, Plan, Future) | You can define multiple cost types. A cost type selected in an Accounting Schema is used for accounting. | M_CostMovement_v.M_CostType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Cost Element | Product Cost Element |  | M_CostMovement_v.M_CostElement_ID<small> numeric(10) <br/> Table Direct</small> |
+| Cost Detail | Cost Detail Information |  | M_CostMovement_v.M_CostDetail_ID<small> numeric(10) <br/> Search</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_CostMovement_v.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | M_CostMovement_v.M_AttributeSetInstance_ID<small> numeric(10) <br/> Product Attribute</small> |
+| Quantity | Quantity | The Quantity indicates the number of a specific product or item for this document. | M_CostMovement_v.Qty<small> numeric <br/> Quantity</small> |
+| Amount | Amount | Amount | M_CostMovement_v.Amt<small> numeric <br/> Amount</small> |
+| Delta Amount | Difference Amount |  | M_CostMovement_v.DeltaAmt<small> numeric <br/> Amount</small> |
+| Delta Quantity | Quantity Difference |  | M_CostMovement_v.DeltaQty<small> numeric <br/> Quantity</small> |
+| Old Current Quantity | Old current quantity before the processing of M_CostDetail |  | M_CostMovement_v.OldQty<small> numeric <br/> Quantity</small> |
+| Old Current Cost Price | Old current cost price before the processing of M_CostDetail |  | M_CostMovement_v.OldCostPrice<small> numeric <br/> Costs+Prices</small> |
+| Old Accumulated Qty | Old accumulated qty before the processing of M_CostDetail |  | M_CostMovement_v.OldCQty<small> numeric <br/> Quantity</small> |
+| Old Accumulated Amt | Old accumulated amt before the processing of M_CostDetail |  | M_CostMovement_v.OldCAmt<small> numeric <br/> Amount</small> |
+| New Current Quantity | New current quantity after processing of M_CostDetail |  | M_CostMovement_v.NewQty<small> numeric <br/> Quantity</small> |
+| New Cost Price | New current cost price after processing of M_CostDetail |  | M_CostMovement_v.NewCostPrice<small> numeric <br/> Costs+Prices</small> |
+| New Accumulated Qty | New Accumulated Qty after processing of M_CostDetail |  | M_CostMovement_v.NewCQty<small> numeric <br/> Quantity</small> |
+| New Accumulated Amt | Accumulated Amt after processing of M_CostDetail |  | M_CostMovement_v.NewCAmt<small> numeric <br/> Amount</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_CostMovement_v.Description<small> character varying(255) <br/> String</small> |
+| Account Date | Accounting Date | The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion. | M_CostMovement_v.DateAcct<small> timestamp without time zone <br/> Date</small> |
+| Back-Date |  |  | M_CostMovement_v.IsBackDate<small> character(1) <br/> Yes-No</small> |
+| Back-Date Processed On | The date+time (expressed in decimal format) when the document has been processed | The ProcessedOn Date+Time save the exact moment (nanoseconds precision if allowed by the DB) when a document has been processed. | M_CostMovement_v.BackDateProcessedOn<small> timestamp without time zone <br/> Date+Time</small> |
+| Move Line | Inventory Move document Line | The Movement Line indicates the inventory movement document line (if applicable) for this transaction | M_CostMovement_v.M_MovementLine_ID<small> numeric(10) <br/> Search</small> |
+| Invoice Line | Invoice Detail Line | The Invoice Line uniquely identifies a single line of an Invoice. | M_CostMovement_v.C_InvoiceLine_ID<small> numeric(10) <br/> Search</small> |
+| Phys.Inventory Line | Unique line in an Inventory document | The Physical Inventory Line indicates the inventory document line (if applicable) for this transaction | M_CostMovement_v.M_InventoryLine_ID<small> numeric(10) <br/> Search</small> |
+| Production Line | Document Line representing a production | The Production Line indicates the production document line (if applicable) for this transaction | M_CostMovement_v.M_ProductionLine_ID<small> numeric(10) <br/> Search</small> |
+| Project Issue | Project Issues (Material, Labor) | Issues to the project initiated by the "Issue to Project" process. You can issue Receipts, Time and Expenses, or Stock. | M_CostMovement_v.C_ProjectIssue_ID<small> numeric(10) <br/> Search</small> |
+| Purchase Order Line | Purchase Order Line | The Purchase Order Line is a unique identifier for a line in an order. | M_CostMovement_v.C_OrderLine_ID<small> numeric(10) <br/> Search</small> |
+| Receipt Line | Line on Receipt document |  | M_CostMovement_v.M_InOutLine_ID<small> numeric(10) <br/> Search</small> |
+| Match Invoice | Match Shipment/Receipt to Invoice |  | M_CostMovement_v.M_MatchInv_ID<small> numeric(10) <br/> Search</small> |
+
+## Tab: › Cost Details
+
+*Tab Level 1 · Created 26/07/2005 · Updated 08/03/2012*
+
+**Description:** View Product Cost Details
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_CostDetail.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_CostDetail.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | M_CostDetail.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Cost Element | Product Cost Element |  | M_CostDetail.M_CostElement_ID<small> numeric(10) <br/> Table Direct</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_CostDetail.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | M_CostDetail.M_AttributeSetInstance_ID<small> numeric(10) <br/> Product Attribute</small> |
+| Price | Price | The Price indicates the Price for a product or service. | M_CostDetail.Price<small>  <br/> Amount</small> |
+| Quantity | Quantity | The Quantity indicates the number of a specific product or item for this document. | M_CostDetail.Qty<small> numeric <br/> Quantity</small> |
+| Amount | Amount | Amount | M_CostDetail.Amt<small> numeric <br/> Amount</small> |
+| Delta Quantity | Quantity Difference |  | M_CostDetail.DeltaQty<small> numeric <br/> Quantity</small> |
+| Delta Amount | Difference Amount |  | M_CostDetail.DeltaAmt<small> numeric <br/> Amount</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_CostDetail.Description<small> character varying(255) <br/> String</small> |
+| Created | Date this record was created | The Created field indicates the date that this record was created. | M_CostDetail.Created<small> timestamp without time zone <br/> Date+Time</small> |
+| Account Date | Accounting Date | The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion. | M_CostDetail.DateAcct<small> timestamp without time zone <br/> Date</small> |
+| Back-Date |  |  | M_CostDetail.IsBackDate<small> character(1) <br/> Yes-No</small> |
+| Purchase Order Line | Purchase Order Line | The Purchase Order Line is a unique identifier for a line in an order. | M_CostDetail.C_OrderLine_ID<small> numeric(10) <br/> Search</small> |
+| Invoice Line | Invoice Detail Line | The Invoice Line uniquely identifies a single line of an Invoice. | M_CostDetail.C_InvoiceLine_ID<small> numeric(10) <br/> Search</small> |
+| Receipt Line | Line on Receipt document |  | M_CostDetail.M_InOutLine_ID<small> numeric(10) <br/> Search</small> |
+| Move Line | Inventory Move document Line | The Movement Line indicates the inventory movement document line (if applicable) for this transaction | M_CostDetail.M_MovementLine_ID<small> numeric(10) <br/> Search</small> |
+| Phys.Inventory Line | Unique line in an Inventory document | The Physical Inventory Line indicates the inventory document line (if applicable) for this transaction | M_CostDetail.M_InventoryLine_ID<small> numeric(10) <br/> Search</small> |
+| Project Issue | Project Issues (Material, Labor) | Issues to the project initiated by the "Issue to Project" process. You can issue Receipts, Time and Expenses, or Stock. | M_CostDetail.C_ProjectIssue_ID<small> numeric(10) <br/> Search</small> |
+| Production Line | Document Line representing a production | The Production Line indicates the production document line (if applicable) for this transaction | M_CostDetail.M_ProductionLine_ID<small> numeric(10) <br/> Search</small> |
+| Sales Transaction | This is a Sales Transaction | The Sales Transaction checkbox indicates if this item is a Sales Transaction. | M_CostDetail.IsSOTrx<small> character(1) <br/> Yes-No</small> |
+| Referenced Cost Detail |  |  | M_CostDetail.Ref_CostDetail_ID<small> numeric(10) <br/> ID</small> |
+| Processed | The document has been processed | The Processed checkbox indicates that a document has been processed. | M_CostDetail.Processed<small> character(1) <br/> Yes-No</small> |
+| Back-Date Processed On | The date+time (expressed in decimal format) when the document has been processed | The ProcessedOn Date+Time save the exact moment (nanoseconds precision if allowed by the DB) when a document has been processed. | M_CostDetail.BackDateProcessedOn<small> timestamp without time zone <br/> Date+Time</small> |
+| Current Cost Price | The currently used cost price |  | M_CostDetail.CurrentCostPrice<small> numeric <br/> Costs+Prices</small> |
+| Current Quantity | Current Quantity |  | M_CostDetail.CurrentQty<small> numeric <br/> Quantity</small> |
+| Accumulated Amt | Total Amount | Sum of all amounts | M_CostDetail.CumulatedAmt<small> numeric <br/> Amount</small> |
+| Accumulated Qty | Total Quantity | Sum of the quantities | M_CostDetail.CumulatedQty<small> numeric <br/> Quantity</small> |
+
+## Tab: › Cost Queue
+
+*Tab Level 1 · Created 18/09/2005 · Updated 08/03/2012*
+
+**Description:** Cost Queue for Lifo/Fifo
+
+**Comment/Help:** Note thet the cost queue may not be the same as the physical movement cost queue due to differences in costing level and warehouse priority.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_CostQueue.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_CostQueue.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | M_CostQueue.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Cost Type | Type of Cost (e.g. Current, Plan, Future) | You can define multiple cost types. A cost type selected in an Accounting Schema is used for accounting. | M_CostQueue.M_CostType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Cost Element | Product Cost Element |  | M_CostQueue.M_CostElement_ID<small> numeric(10) <br/> Table Direct</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_CostQueue.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | M_CostQueue.M_AttributeSetInstance_ID<small> numeric(10) <br/> Product Attribute</small> |
+| Current Cost Price | The currently used cost price |  | M_CostQueue.CurrentCostPrice<small> numeric <br/> Costs+Prices</small> |
+| Current Quantity | Current Quantity |  | M_CostQueue.CurrentQty<small> numeric <br/> Quantity</small> |
+

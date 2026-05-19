@@ -1,0 +1,71 @@
+---
+title: 'POS Key Layout'
+sidebar_label: 'POS Key Layout'
+description: 'POS Function Key Layout'
+tags: ['Window']
+---
+
+# POS Key Layout
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 339</span>
+
+*09/07/2004 → 17/02/2022*
+
+![POS Key Layout](./img/pos-key-layout.png)
+
+**Description:** POS Function Key Layout
+
+## Tab: POS Key Layout
+
+*Tab Level 0 · Created 09/07/2004 · Updated 02/01/2000*
+
+**Description:** POS Function Key Layout
+
+**Comment/Help:** POS Function Key Layout
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_POSKeyLayout.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_POSKeyLayout.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_POSKeyLayout.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_POSKeyLayout.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | C_POSKeyLayout.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_POSKeyLayout.IsActive<small> character(1) <br/> Yes-No</small> |
+| POS Key Layout Type | The type of Key Layout | Keyboard: used for POS text field on screen keyboard<br/>Numberpad: used for POS numeric field on screen numberpad<br/>Product: used to quickly add products to POS order | C_POSKeyLayout.POSKeyLayoutType<small> character(1) <br/> List</small> |
+| Columns | Number of columns | The number of columns in the layout grid | C_POSKeyLayout.Columns<small> numeric(10) <br/> Integer</small> |
+| Print Color | Color used for printing and display | Colors used for printing and display | C_POSKeyLayout.AD_PrintColor_ID<small> numeric(10) <br/> Table Direct</small> |
+| Print Font | Maintain Print Font | Font used for printing | C_POSKeyLayout.AD_PrintFont_ID<small> numeric(10) <br/> Table Direct</small> |
+
+## Tab: › Key Sequence
+
+*Tab Level 1 · Created 21/03/2010 · Updated 21/03/2010*
+
+**Description:** Key Sequence
+
+## Tab: › POS Key
+
+*Tab Level 1 · Created 09/07/2004 · Updated 02/01/2000*
+
+**Description:** POS Function Key
+
+**Comment/Help:** POS Function Key Assignment
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_POSKey.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_POSKey.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| POS Key Layout | POS Function Key Layout | POS Function Key Layout | C_POSKey.C_POSKeyLayout_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | C_POSKey.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_POSKey.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_POSKey.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_POSKey.IsActive<small> character(1) <br/> Yes-No</small> |
+| Key Layout | Key Layout to be displayed when this key is pressed |  | C_POSKey.SubKeyLayout_ID<small> numeric(10) <br/> Table</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | C_POSKey.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Quantity | Quantity | The Quantity indicates the number of a specific product or item for this document. | C_POSKey.Qty<small> numeric <br/> Quantity</small> |
+| Description |  |  | C_POSKey.Text<small> character varying(22) <br/> String</small> |
+| Print Color | Color used for printing and display | Colors used for printing and display | C_POSKey.AD_PrintColor_ID<small> numeric(10) <br/> Table Direct</small> |
+| Print Font | Maintain Print Font | Font used for printing | C_POSKey.AD_PrintFont_ID<small> numeric(10) <br/> Table Direct</small> |
+| Column span | Number of columns spanned |  | C_POSKey.SpanX<small> numeric(10) <br/> Integer</small> |
+| Row Span | Number of rows spanned |  | C_POSKey.SpanY<small> numeric(10) <br/> Integer</small> |
+| Image | Image or Icon | Images and Icon can be used to display supported graphic formats (gif, jpg, png).<br/>You can either load the image (in the database) or point to a graphic via a URI (i.e. it can point to a resource, http address) | C_POSKey.AD_Image_ID<small> numeric(10) <br/> Image</small> |
+

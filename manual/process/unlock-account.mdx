@@ -1,0 +1,27 @@
+---
+title: 'Unlock Account'
+sidebar_label: 'Unlock Account'
+description: 'Unlock Account for User'
+tags: ['Process']
+---
+
+# Unlock Account
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 200008</span>
+
+*03/09/2012 → 04/07/2025*
+
+![Unlock Account](./img/unlock-account.png)
+
+**Description:** Unlock Account for User
+
+**Comment/Help:** Select a locked user from the list to unlock it.  Alternatively you can run the process without selecting any user, in this case the process will unlock all locked users from the tenant applying accordingly the policies configured for "max account lock" and "max inactive period".
+
+**Classname:** `org.adempiere.process.ResetLockedAccount`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | AD_User_ID<br/>Table Direct |
+

@@ -1,0 +1,30 @@
+---
+title: 'Business Partner Organization'
+sidebar_label: 'Business Partner Organization'
+description: 'Set and verify Organization ownership of Business Partners'
+tags: ['Process']
+---
+
+# Business Partner Organization
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 246</span>
+
+*23/12/2003 → 02/01/2000*
+
+![Business Partner Organization](./img/business-partner-organization.png)
+
+**Description:** Set and verify Organization ownership of Business Partners
+
+**Comment/Help:** The process allows you to change or verify the organization ownership of Business Partners and its dependent entities (Location, Contact/User, Bank Account, Withholding). &lt;br&gt;
+Select either a Business Partner Group ar a specific Business Partner
+
+**Classname:** `org.compiere.process.OrgOwnership`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Org_ID<br/>Table Direct |
+| Business Partner Group | Business Partner Group | The Business Partner Group provides a method of defining defaults to be used for individual Business Partners. | C_BP_Group_ID<br/>Table Direct |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BPartner_ID<br/>Search |
+

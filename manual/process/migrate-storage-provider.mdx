@@ -1,0 +1,41 @@
+---
+title: 'Migrate Storage Provider'
+sidebar_label: 'Migrate Storage Provider'
+description: 'Migrate the storage provider for attachments, archives and/or images'
+tags: ['Process']
+---
+
+# Migrate Storage Provider
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 200117</span>
+
+*28/02/2020 → 10/03/2022*
+
+![Migrate Storage Provider](./img/migrate-storage-provider.png)
+
+**Description:** Migrate the storage provider for attachments, archives and/or images
+
+**Comment/Help:** &lt;p&gt;&lt;span style="color:#ff0000"&gt;&lt;b&gt;WARNING: This process can be destructive, so please be sure that you have a backup of the database, as well as a backup of your old storage provider.&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;The process migrates files between storage providers.&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;b&gt;Tenant:&lt;/b&gt; Optional, select a tenant to migrate, when empty it will migrate all tenants with the Actual Storage Provider&lt;/li&gt;&lt;li&gt;&lt;b&gt;Actual Storage Provider:&lt;/b&gt; Alternatively, you can define here the storage provider to migrate&lt;/li&gt;&lt;li&gt;&lt;b&gt;Storage Provider:&lt;/b&gt; The new storage provider to migrate the files&lt;/li&gt;&lt;li&gt;&lt;b&gt;Migrate Attachment:&lt;/b&gt; Migrate the attachment files&lt;/li&gt;&lt;li&gt;&lt;b&gt;Migrate Archive:&lt;/b&gt; Migate the archive files&lt;/li&gt;&lt;li&gt;&lt;b&gt;Migrate Image:&lt;/b&gt; Migrate the image  files&lt;/li&gt;&lt;li&gt;&lt;b&gt;Migrate Data:&lt;/b&gt; When unchecked, just the storage provider is changed in tenant, but the files are not migrated (they can be migrated in a future execution of this same process)&lt;/li&gt;&lt;li&gt;&lt;b&gt;Record ID Range:&lt;/b&gt; Optionally you can define a range of IDs for the records to migrate, so you can run this process in parallel to migrate the data&lt;/li&gt;&lt;li&gt;&lt;b&gt;Delete old/existing files:&lt;/b&gt; If enabled, when a file is migrated the program tries to free space deleting the file from the previous storage provider.  &lt;span style="color:#ff0000"&gt;Note that migrating from/to a DB storage provider is a destructive action that cannot be recovered, it implies deleting the old/existing files&lt;/span&gt;.&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;In case of failure or timeout, the process can be launched again, it commits on every file migrated.&lt;/p&gt;
+
+**Classname:** `org.idempiere.process.MigrateStorageProvider`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_AllClients_V_ID<br/>Table Direct |
+| Actual Storage Provider |  |  | Actual_StorageProvider_ID<br/>Table |
+| Storage Provider |  |  | AD_StorageProvider_ID<br/>Table Direct |
+| Migrate Attachment |  |  | IsMigrateAttachment<br/>Yes-No |
+| Migrate Archive |  |  | IsMigrateArchive<br/>Yes-No |
+| Migrate Image |  |  | IsMigrateImage<br/>Yes-No |
+| Migrate Data |  |  | IsMigrateData<br/>Yes-No |
+| Record ID | Direct internal record ID | The Record ID is the internal unique identifier of a record. Please note that zooming to the record may not be successful for Orders, Invoices and Shipment/Receipts as sometimes the Sales Order type is not known. | Record_ID<br/>Integer |
+| Delete old/existing files | Delete the records from the old storage provider after moved | WARNING!  This option cannot be rolled back!  Be cautious, take backups.  If not enabled, the system administrator can/must remove manually the old files from the previous storage provider later. | DeleteOld<br/>Yes-No |
+

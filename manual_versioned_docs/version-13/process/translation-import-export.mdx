@@ -1,0 +1,33 @@
+---
+title: 'Translation Import/Export'
+sidebar_label: 'Translation Import/Export'
+description: 'Import or Export Language Translation'
+tags: ['Process']
+---
+
+# Translation Import/Export
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 200126</span>
+
+*24/11/2020 → 24/11/2020*
+
+![Translation Import/Export](./img/translation-import-export.png)
+
+**Description:** Import or Export Language Translation
+
+**Comment/Help:** Export/Import Translation info to/from xml for translation in external tool.  Please note that the Language MUST be an enabled and verified System Language.
+
+**Classname:** `org.idempiere.process.TranslationImpExp`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Import/Export |  |  | ImportOrExport<br/>List |
+| Tenant (All) |  |  | AD_AllClients_V_ID<br/>Table Direct |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_Language<br/>Table |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_Table_ID<br/>Table |
+| Only Centralized Data |  |  | IsOnlyCentralizedData<br/>Yes-No |
+| File Name | Name of the local file or URL | Name of a file in the local directory space - or URL (file://.., http://.., ftp://..) | FileName<br/>FileName |
+| Folder | A folder on a local or remote system to store data into | We store files in folders, especially media files. | Folder<br/>FilePath |
+

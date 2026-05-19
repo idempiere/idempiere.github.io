@@ -1,0 +1,33 @@
+---
+title: 'Storage Provider'
+sidebar_label: 'Storage Provider'
+tags: ['Window']
+---
+
+# Storage Provider
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200022</span>
+
+*23/11/2012 → 23/11/2012*
+
+![Storage Provider](./img/storage-provider.png)
+
+## Tab: Storage Provider
+
+*Tab Level 0 · Created 23/11/2012 · Updated 06/08/2013*
+
+**Description:** Storage Provider
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_StorageProvider.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_StorageProvider.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_StorageProvider.Name<small> character varying(60) <br/> String</small> |
+| Method |  |  | AD_StorageProvider.Method<small> character varying(60) <br/> List</small> |
+| URL | Full URL address - e.g. http://www.idempiere.org | The URL defines an fully qualified web address like http://www.idempiere.org | AD_StorageProvider.URL<small> character varying(225) <br/> URL</small> |
+| Folder | A folder on a local or remote system to store data into | We store files in folders, especially media files. | AD_StorageProvider.Folder<small> character varying(255) <br/> String</small> |
+| User Name |  |  | AD_StorageProvider.UserName<small> character varying(60) <br/> String</small> |
+| Password | Password of any length (case sensitive) | The Password for this User.  Passwords are required to identify authorized users.  For iDempiere Users, you can change the password via the Process "Reset Password". | AD_StorageProvider.Password<small> character varying(255) <br/> String</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | AD_StorageProvider.IsDefault<small> character(1) <br/> Yes-No</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_StorageProvider.IsActive<small> character(1) <br/> Yes-No</small> |
+
