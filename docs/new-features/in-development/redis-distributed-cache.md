@@ -27,11 +27,9 @@ With Redis, the cache lives outside the iDempiere JVMs. Restarting or replacing 
 
 **1. Install Redis.** Any Redis 6+ instance works. For a quick local test: `docker run -p 6379:6379 redis`.
 
-**2. Swap the P2 feature.** Using p2director, uninstall `org.idempiere.hazelcast.service.feature.feature.group` and install `org.idempiere.redis.service.feature.feature.group`.
+**2. Configure the connection.** Copy `$IDEMPIERE_HOME/redis-template.yaml` to `$IDEMPIERE_HOME/redis.yaml` and uncomment the topology block that matches your setup. The template includes single-node, Sentinel, and Cluster examples with inline comments.
 
-**3. Configure the connection.** Copy `redis-template.yaml` (bundled in `org.adempiere.server-feature`) to `$IDEMPIERE_HOME/redis.yaml` and uncomment the topology block that matches your setup. The template includes single-node, Sentinel, and Cluster examples with inline comments.
-
-**4. Enable the backend.** Add the JVM argument `-Didempiere.distributed.backend=redis` (or set `IDEMPIERE_DISTRIBUTED_BACKEND=redis`) and restart iDempiere. This flag is required — installing the bundle alone is not enough. Without it the Redis bundle stays passive; if Hazelcast was also removed in step 2, the server will start with no distributed cache provider. If you kept Hazelcast installed alongside Redis, omitting this flag leaves Hazelcast as the active backend.
+**3. Enable the backend.** Add the JVM argument `-Didempiere.distributed.backend=redis` (or set `IDEMPIERE_DISTRIBUTED_BACKEND=redis`) and restart iDempiere. This flag is required — the `org.idempiere.redis.service` bundle is already included in the standard iDempiere installation alongside Hazelcast, but it stays passive until this flag is set. Without it, Hazelcast remains the active backend.
 
 A key prefix (`idempiere:<INSTANCE_NAME>:`) is applied automatically to all Redis keys. The instance name is resolved in this order: `redis.instance.name` property, `IDEMPIERE_INSTANCE_NAME` environment variable, `ADEMPIERE_DB_NAME`, falling back to `"default"`. This avoids key collisions when multiple deployments share a Redis instance.
 
