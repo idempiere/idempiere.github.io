@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkidempiere_id_github_io=self.webpackChunkidempiere_id_github_io||[]).push([[4121],{8070:e=>{e.exports=JSON.parse('[{"label":"functional","permalink":"/docs/tags/functional","count":1},{"label":"inventory","permalink":"/docs/tags/inventory","count":1}]')}}]);
