@@ -10,10 +10,6 @@ tags:
 
 # Feature: Support UOM and QtyEntered on Physical Inventory and Inventory Increase/Decrease
 
-:::warning Not Yet in Stable Release
-This feature is not yet part of a stable iDempiere release and may change.
-:::
-
 * **Goal:** Functional
 * **Developer**: [Diego Ruiz](https://github.com/d-ruiz)
 * **Sponsor**:[BX Service GmbH](https://www.bx-service.com/)
@@ -27,5 +23,12 @@ This enhancement aligns the functionality of Physical Inventory and Inventory In
 
 :::info Technical Info
 For more details, visit the [JIRA Ticket IDEMPIERE-7010](https://idempiere.atlassian.net/browse/IDEMPIERE-7010).
+:::
+
+:::warning Migration Note
+The CSV Import Formats for "Inventory Decrease/Increase" and "Physical Inventory" will fail and require updates:
+
+- In Inventory Decrease/Increase, `QtyInternalUse` must be changed to `QtyEntered`.
+- In Physical Inventory, `QtyCount` must be changed to `QtyEntered`.
 :::
 
