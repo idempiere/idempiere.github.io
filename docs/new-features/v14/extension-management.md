@@ -45,7 +45,7 @@ description: It provides a centralized service to discover, validate, install, a
 ## 🛠 Usage & Configuration
 
 * **Configuration:**
-    1. Configure the **Extension Provider URL** using the `IDEMPIERE_EXTENSION_REPOSITORY` System Property to point to a compatible metadata repository.
+    1. Configure the **Extension Provider URL** using the `IDEMPIERE_EXTENSION_REPOSITORY` System Property to point to a compatible metadata repository. For local development/testing, you can use `file:///path/to/your/extension-repository/` instead of a remote repository hosted at GitHub.com.
     2. Access the configured extension repository via the **Extension Management** form.
     3. View and manage installed extensions at the **Extension Registry** window.
 * **Extension Management Form:** 
