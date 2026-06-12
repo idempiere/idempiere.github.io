@@ -1,7 +1,7 @@
 ---
 title: "Custom key of document sequence"
 sidebar_label: "Custom key of document sequence"
-sidebar_position: 8
+sidebar_position: 6
 description: "This change allows to define a custom key for a Document Sequence, using values from the context of the document."
 tags:
   - technical

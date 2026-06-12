@@ -1,7 +1,7 @@
 ---
 title: "Advanced Options For Saved Queries"
 sidebar_label: "Advanced Options For Saved Queries"
-sidebar_position: 7
+sidebar_position: 4
 description: "A new feature has been added to the Find Window that allows users to manage saved queries more efficiently."
 tags:
   - user-experience

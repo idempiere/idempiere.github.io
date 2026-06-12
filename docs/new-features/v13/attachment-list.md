@@ -1,7 +1,7 @@
 ---
 title: "Attachment List"
 sidebar_label: "Attachment List"
-sidebar_position: 10
+sidebar_position: 5
 description: "The list of attachment files has been usually stored in a ZIP file in the database (the default), or as an XML file for FileSystem and DB_LOB (Database with Large Object Support)."
 tags:
   - functional

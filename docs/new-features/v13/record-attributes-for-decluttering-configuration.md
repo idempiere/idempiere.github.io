@@ -1,7 +1,7 @@
 ---
 title: "Record attributes For Decluttering Configuration"
 sidebar_label: "Record attributes For Decluttering Configuration"
-sidebar_position: 12
+sidebar_position: 11
 description: "In Application dictionary object like Tab, Table or Column, if we have to add any configuration which are rarely have value, then we keep adding columns on relevent tables."
 tags:
   - technical

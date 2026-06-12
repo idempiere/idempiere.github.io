@@ -1,7 +1,7 @@
 ---
 title: "New Accounting Dimensions"
 sidebar_label: "New Accounting Dimensions"
-sidebar_position: 3
+sidebar_position: 8
 description: "in iDempiere, Activity use for cost center as well as department."
 tags:
   - functional

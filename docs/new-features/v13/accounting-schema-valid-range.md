@@ -1,7 +1,7 @@
 ---
 title: "Accounting Schema Valid Range"
 sidebar_label: "Accounting Schema Valid Range"
-sidebar_position: 5
+sidebar_position: 2
 description: "The goal of this enhancement is to enable accounting schema to validate within a provided range of time, so that the documents having accounting dates out of the configured range do not post."
 tags:
   - functional

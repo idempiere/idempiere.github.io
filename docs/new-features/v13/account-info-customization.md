@@ -1,7 +1,7 @@
 ---
 title: "Account Info Customization"
 sidebar_label: "Account Info Customization"
-sidebar_position: 6
+sidebar_position: 1
 description: "Added new feature to allow customization of Account Info window with custom plugin for enhancement or modification of default account info."
 tags:
   - technical

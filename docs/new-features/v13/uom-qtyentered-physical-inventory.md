@@ -1,7 +1,7 @@
 ---
 title: Support UOM and QtyEntered on Inventory Documents
 sidebar_label: Support UOM and QtyEntered on Inventory Documents
-sidebar_position: 1
+sidebar_position: 13
 description: Adds UOM and QtyEntered fields to Physical Inventory and Inventory Increase/Decrease windows.
 tags:
   - functional
