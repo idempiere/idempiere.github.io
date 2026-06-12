@@ -50,7 +50,11 @@ This change is backward compatible and transparent to the user.  No configuratio
 
 - The SysConfig [ZK_MAX_UPLOAD_SIZE](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#ZK_MAX_UPLOAD_SIZE) has been changed to Tenant level
 
-- There is no migration of old XML attachments to the new Attachment File approach.  The process [Migrate Storage Provider](https://wiki.idempiere.org/en/NF7.1_Migrate_Storage_Provider) can be used for that purpose migrating.
+:::note
+
+There is no migration of old XML attachments to the new Attachment File approach. The [Migrate Storage Provider](https://wiki.idempiere.org/en/NF7.1_Migrate_Storage_Provider) process can be used for that purpose.
+
+:::
 
 **Technical Info:** [IDEMPIERE-6640](https://idempiere.atlassian.net/browse/IDEMPIERE-6640)
 

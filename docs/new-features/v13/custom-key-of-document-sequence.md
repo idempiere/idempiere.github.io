@@ -19,8 +19,13 @@ tags:
 This change allows to define a custom key for a Document Sequence, using values from the context of the document. If properly configured, it results in having multiple Sequence Number series (Sequence No tab) for a single Document Sequence.
 
 ### Changes
-- renamed `AD_Sequence_No.CalendarYearMonth` to `SequenceKey` and increased the length of the column to 255
 - introduced a new "key" pattern to Prefix and Suffix fields: with that you can define specific values (context variables) that will be added to the `AD_Sequence_No.SequenceKey`
+
+:::warning
+
+`AD_Sequence_No.CalendarYearMonth` has been renamed to `SequenceKey` and its length increased to 255. Any existing custom code or queries referencing `CalendarYearMonth` must be updated.
+
+:::
 
 ### Syntax
 Add "**/K"** after the name of the context variable, before the closing '@', e.g. *@ContextVariable**/K**@*

@@ -32,10 +32,14 @@ As part of this feature, added following accounting dimensions
 1. Custom Field: This allows to configure text type field as accounting dimension.
 1. Tax: This feature has added tax as parameter on accounting related reports so that tax related statements can be produced.
 
-Following new window are added
+:::warning
 
-1. Department: As now there is dedicated window for department added, if you are using activity window or system elements renamed then you need to rename it to Activity back. 
-1. Cost Center: Now there is out of box window named cost center. so, if Activity is renamed to Cost center in your implementation, then needs to rename again to Activity. 
+**Following new windows are added - action required for existing implementations**
+
+- **Department:** A dedicated Department window is now available. If you previously renamed the Activity window or system element to "Department", you must rename it back to "Activity".
+- **Cost Center:** A dedicated Cost Center window is now available. If you previously renamed Activity to "Cost Center", you must rename it back to "Activity".
+
+:::
 
 **Following new Context Variable added to track dimension used for accounting**
 

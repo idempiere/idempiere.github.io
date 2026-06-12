@@ -32,4 +32,8 @@ Now consider that some of documents you want to ignore this date validation and 
 
 ![Img always update](/img/docs/new-features/v13/Img_always_update.png)
 
-Note that if you making any changes in configuration, if Document are already posted, will not auto cleared. If you are making changes in this configuration, you must use reset accounting with clear accounting option to delete GL entries already generated and also to generate new entry which was not generated.
+:::warning
+
+If you make changes to this configuration after documents have already been posted, those postings are not automatically cleared. You must use **Reset Accounting** with the clear accounting option to delete the existing GL entries and regenerate them under the new date range.
+
+:::

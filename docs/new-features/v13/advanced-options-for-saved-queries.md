@@ -11,7 +11,7 @@ tags:
 
 **Goal:** Technical
 
-**Developer:** Diego Ruiz [BX Service GmbH](https://www.bx-service.com/)
+**Developer:** Diego Ruiz - [BX Service GmbH](https://www.bx-service.com/)
 
 ## Advanced Options for Saved Queries
 ### Overview
@@ -32,4 +32,8 @@ The context menu includes the following options:
 | **Share with all users** | Shares the query globally across users, based on role/permission checks. Only available to users with sufficient privileges. |
 | **Delete** | Deletes the currently selected saved query. A confirmation dialog is shown before deletion. |
 
-**Note:** The *Share with all users* option is only visible and enabled for users with the appropriate roles (e.g. administrators).
+:::note
+
+The *Share with all users* option is only visible and enabled for users with the appropriate roles (e.g. administrators).
+
+:::
