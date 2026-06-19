@@ -15,7 +15,7 @@ It is recommended to run the iDempiere server as a user created for such purpose
 adduser idempiere
 ```
 
-:::caution
+:::warning
 
 DO NOT install idempiere as root.
 
@@ -91,8 +91,7 @@ On oracle some fields must be filled slightly different:
 - Database User: in oracle you can define your preferred user here
 - Database Password: fill here with the password you want to assign to the database
 
-
-  </TabItem>
+</TabItem>
   <TabItem value="console" label="Console">
 
 Run
