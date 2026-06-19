@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-new-features/v1.0/web-services-improvements" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Web Services Improvements | iDempiere Open Source ERP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://idempiere.github.io/img/idempiere-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://idempiere.github.io/img/idempiere-social-card.jpg"><meta data-rh="true" property="og:url" content="https://idempiere.github.io/docs/new-features/v1.0/web-services-improvements"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Web Services Improvements | iDempiere Open Source ERP"><meta data-rh="true" name="description" content="**Goal:** Technical improvement of [Web services](https://wiki.idempiere.org/en/Web_services)"><meta data-rh="true" property="og:description" content="**Goal:** Technical improvement of [Web services](https://wiki.idempiere.org/en/Web_services)"><link data-rh="true" rel="icon" href="/img/logo.png"><link data-rh="true" rel="canonical" href="https://idempiere.github.io/docs/new-features/v1.0/web-services-improvements"><link data-rh="true" rel="alternate" href="https://idempiere.github.io/docs/new-features/v1.0/web-services-improvements" hreflang="en"><link data-rh="true" rel="alternate" href="https://idempiere.github.io/docs/new-features/v1.0/web-services-improvements" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"New Features","item":"https://idempiere.github.io/docs/category/new-features"},{"@type":"ListItem","position":2,"name":"v1.0","item":"https://idempiere.github.io/docs/category/v10-1"},{"@type":"ListItem","position":3,"name":"Web Services Improvements","item":"https://idempiere.github.io/docs/new-features/v1.0/web-services-improvements"}]}</script><link rel="icon" href="/img/logo.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0c5f91"><link rel="stylesheet" href="/assets/css/styles.6ad7aba2.css">
+<script src="/assets/js/runtime~main.5e452306.js" defer="defer"></script>
+<script src="/assets/js/main.42b8d1f3.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.png" alt="iDempiere Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.png" alt="iDempiere Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">iDempiere</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/introduction">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/docs/new-features/v1.0/web-services-improvements">Next</a><a href="https://github.com/idempiere/idempiere" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/introduction"><span title="Purpose" class="linkLabel_WmDU">Purpose</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/getting-started"><span title="Getting Started" class="linkLabel_WmDU">Getting Started</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/category/basic-installation"><span title="Basic Installation" class="categoryLinkLabel_W154">Basic Installation</span></a><button aria-label="Expand sidebar category &#x27;Basic Installation&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/category/basic-development"><span title="Basic Development" class="categoryLinkLabel_W154">Basic Development</span></a><button aria-label="Expand sidebar category &#x27;Basic Development&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/docs/category/new-features"><span title="New Features" class="categoryLinkLabel_W154">New Features</span></a><button aria-label="Collapse sidebar category &#x27;New Features&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/in-development"><span title="In Development" class="categoryLinkLabel_W154">In Development</span></a><button aria-label="Expand sidebar category &#x27;In Development&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v14"><span title="v14" class="categoryLinkLabel_W154">v14</span></a><button aria-label="Expand sidebar category &#x27;v14&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v13"><span title="v13" class="categoryLinkLabel_W154">v13</span></a><button aria-label="Expand sidebar category &#x27;v13&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v12"><span title="v12" class="categoryLinkLabel_W154">v12</span></a><button aria-label="Expand sidebar category &#x27;v12&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v11"><span title="v11" class="categoryLinkLabel_W154">v11</span></a><button aria-label="Expand sidebar category &#x27;v11&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v10"><span title="v10" class="categoryLinkLabel_W154">v10</span></a><button aria-label="Expand sidebar category &#x27;v10&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v9"><span title="v9" class="categoryLinkLabel_W154">v9</span></a><button aria-label="Expand sidebar category &#x27;v9&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v82"><span title="v8.2" class="categoryLinkLabel_W154">v8.2</span></a><button aria-label="Expand sidebar category &#x27;v8.2&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v71"><span title="v7.1" class="categoryLinkLabel_W154">v7.1</span></a><button aria-label="Expand sidebar category &#x27;v7.1&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v62"><span title="v6.2" class="categoryLinkLabel_W154">v6.2</span></a><button aria-label="Expand sidebar category &#x27;v6.2&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v51"><span title="v5.1" class="categoryLinkLabel_W154">v5.1</span></a><button aria-label="Expand sidebar category &#x27;v5.1&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v41"><span title="v4.1" class="categoryLinkLabel_W154">v4.1</span></a><button aria-label="Expand sidebar category &#x27;v4.1&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v30"><span title="v3.0" class="categoryLinkLabel_W154">v3.0</span></a><button aria-label="Expand sidebar category &#x27;v3.0&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v21"><span title="v2.1" class="categoryLinkLabel_W154">v2.1</span></a><button aria-label="Expand sidebar category &#x27;v2.1&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" tabindex="0" href="/docs/category/v20"><span title="v2.0" class="categoryLinkLabel_W154">v2.0</span></a><button aria-label="Expand sidebar category &#x27;v2.0&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" tabindex="0" href="/docs/category/v10-1"><span title="v1.0" class="categoryLinkLabel_W154">v1.0</span></a><button aria-label="Collapse sidebar category &#x27;v1.0&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/accounting-viewer-improvements"><span title="Accounting Viewer Improvements" class="linkLabel_WmDU">Accounting Viewer Improvements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/allocate-payment-to-charge"><span title="Allocate Payment To Charge" class="linkLabel_WmDU">Allocate Payment To Charge</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/configurable-copy-fields"><span title="Configurable Copy Fields" class="linkLabel_WmDU">Configurable Copy Fields</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/confirmdocvoidclose"><span title="Confirm Document Void / Close" class="linkLabel_WmDU">Confirm Document Void / Close</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/copy-from-bank-statement"><span title="Copy From Bank Statement" class="linkLabel_WmDU">Copy From Bank Statement</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/cost-adjustment"><span title="Inventory Cost Adjustment" class="linkLabel_WmDU">Inventory Cost Adjustment</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/document-sequence-improved"><span title="Improved Document Sequence" class="linkLabel_WmDU">Improved Document Sequence</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/dynamic-zoom"><span title="Dynamic Zoom" class="linkLabel_WmDU">Dynamic Zoom</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/financialreport-enhancement"><span title="Financial Report Enhancement" class="linkLabel_WmDU">Financial Report Enhancement</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/find-window"><span title="Find Window" class="linkLabel_WmDU">Find Window</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/fixed-assets"><span title="Fixed Assets Stabilization" class="linkLabel_WmDU">Fixed Assets Stabilization</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/gl-reconciliation"><span title="GL Reconciliation" class="linkLabel_WmDU">GL Reconciliation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/gljournal"><span title="Simplified GL Journal" class="linkLabel_WmDU">Simplified GL Journal</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/gljournalgenerator"><span title="GL Journal Generator" class="linkLabel_WmDU">GL Journal Generator</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/idempiere-workshop-2014"><span title="iDempiere workshop August 2014" class="linkLabel_WmDU">iDempiere workshop August 2014</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/info-window"><span title="Info Window" class="linkLabel_WmDU">Info Window</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/infoproduct"><span title="Improved Info Product" class="linkLabel_WmDU">Improved Info Product</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/inventory-documents"><span title="Inventory Documents" class="linkLabel_WmDU">Inventory Documents</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/manufacturing-light"><span title="Manufacturing Light" class="linkLabel_WmDU">Manufacturing Light</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/map-route-on-locations"><span title="Map Route On Locations" class="linkLabel_WmDU">Map Route On Locations</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/mixedpospayments"><span title="Mixed POS Payments on Sales Order" class="linkLabel_WmDU">Mixed POS Payments on Sales Order</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/payment-batch"><span title="Payment Batch" class="linkLabel_WmDU">Payment Batch</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/request-calendar-dashboard"><span title="Request Calendar Dashboard" class="linkLabel_WmDU">Request Calendar Dashboard</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/reverseaccrual"><span title="Reverse Accrual" class="linkLabel_WmDU">Reverse Accrual</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/storage-improvements"><span title="Storage Improvements" class="linkLabel_WmDU">Storage Improvements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/automatic-list-refresh"><span title="Automatic List Refresh" class="linkLabel_WmDU">Automatic List Refresh</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/broadcastmessage"><span title="Broadcast Message" class="linkLabel_WmDU">Broadcast Message</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/change-role"><span title="Change Role" class="linkLabel_WmDU">Change Role</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/columntoolbarbutton"><span title="Column Toolbar Buttons" class="linkLabel_WmDU">Column Toolbar Buttons</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/context-help-pane"><span title="Context Help Pane" class="linkLabel_WmDU">Context Help Pane</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/formlayout"><span title="Improved Form Layout" class="linkLabel_WmDU">Improved Form Layout</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/frequent-lists"><span title="Frequent lists" class="linkLabel_WmDU">Frequent lists</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/importcsv"><span title="ImportCSV" class="linkLabel_WmDU">ImportCSV</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/link-end-process-with-next-record"><span title="Link End Process With Next Record" class="linkLabel_WmDU">Link End Process With Next Record</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/login"><span title="Login Improvements" class="linkLabel_WmDU">Login Improvements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/menu"><span title="Menu" class="linkLabel_WmDU">Menu</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/newmasterdetail"><span title="New Master Detail Implementation" class="linkLabel_WmDU">New Master Detail Implementation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/paymentfield"><span title="Payment Field" class="linkLabel_WmDU">Payment Field</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/quickentry"><span title="Configurable Quick Entry" class="linkLabel_WmDU">Configurable Quick Entry</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/recent-items"><span title="Recent Items Dashboard" class="linkLabel_WmDU">Recent Items Dashboard</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/reportbutton"><span title="Report Button" class="linkLabel_WmDU">Report Button</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/reportwizard"><span title="Report Wizard" class="linkLabel_WmDU">Report Wizard</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/savegridlayout"><span title="Configurable Grid Layout" class="linkLabel_WmDU">Configurable Grid Layout</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/setupwizard"><span title="Setup Wizard" class="linkLabel_WmDU">Setup Wizard</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/standardize-ok-cancel-buttons"><span title="Standardize OK Cancel Buttons" class="linkLabel_WmDU">Standardize OK Cancel Buttons</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/tabeditor"><span title="Tab Editor" class="linkLabel_WmDU">Tab Editor</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/userfeedback"><span title="User Feedback" class="linkLabel_WmDU">User Feedback</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/welcome"><span title="Welcome Page" class="linkLabel_WmDU">Welcome Page</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/windowcustomization"><span title="Window Customization" class="linkLabel_WmDU">Window Customization</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/activesessionlist"><span title="Active Login Session List" class="linkLabel_WmDU">Active Login Session List</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/base-language-flexible"><span title="Base Language Flexible" class="linkLabel_WmDU">Base Language Flexible</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/code-best-practices"><span title="Code Best Practices" class="linkLabel_WmDU">Code Best Practices</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/customwindowtoolbarbutton"><span title="Custom Window Toolbar Buttons" class="linkLabel_WmDU">Custom Window Toolbar Buttons</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/distributed-cache"><span title="Distributed Cache" class="linkLabel_WmDU">Distributed Cache</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/scheduler-improvements"><span title="Scheduler Improvements" class="linkLabel_WmDU">Scheduler Improvements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/storage-providers"><span title="Storage Providers" class="linkLabel_WmDU">Storage Providers</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/translation-improvements"><span title="Translation Improvements" class="linkLabel_WmDU">Translation Improvements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/new-features/v1.0/web-services-improvements"><span title="Web Services Improvements" class="linkLabel_WmDU">Web Services Improvements</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/windowtabtoolbarbutton"><span title="Window Tab Toolbar Buttons" class="linkLabel_WmDU">Window Tab Toolbar Buttons</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/forgot-my-password"><span title="Forgot My Password" class="linkLabel_WmDU">Forgot My Password</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/hashedpasswords"><span title="Hashed Passwords" class="linkLabel_WmDU">Hashed Passwords</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/passwordrules"><span title="Password Rules" class="linkLabel_WmDU">Password Rules</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/restricttoolbarbuttons"><span title="Restrict Toolbar Buttons" class="linkLabel_WmDU">Restrict Toolbar Buttons</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/role-access-update-improved"><span title="Improved Role Access Update" class="linkLabel_WmDU">Improved Role Access Update</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/role-inheritance"><span title="Role Inheritance" class="linkLabel_WmDU">Role Inheritance</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/safelogout"><span title="Safe Logout" class="linkLabel_WmDU">Safe Logout</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/user-locking"><span title="User Locking" class="linkLabel_WmDU">User Locking</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/2pack-revamped"><span title="2Pack Revamped" class="linkLabel_WmDU">2Pack Revamped</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/new-features/v1.0/fitnesse-integration"><span title="Fitnesse Integration" class="linkLabel_WmDU">Fitnesse Integration</span></a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/category/widgets--quick-info"><span title="Widgets &amp; Quick Info" class="categoryLinkLabel_W154">Widgets &amp; Quick Info</span></a><button aria-label="Expand sidebar category &#x27;Widgets &amp; Quick Info&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist" href="/docs/category/basic-functional"><span title="Basic Functional" class="categoryLinkLabel_W154">Basic Functional</span></a><button aria-label="Expand sidebar category &#x27;Basic Functional&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/documentation-standards"><span title="Documentation Standards" class="linkLabel_WmDU">Documentation Standards</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/category/new-features"><span>New Features</span></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/category/v10-1"><span>v1.0</span></a></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Web Services Improvements</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Web Services Improvements</h1></header><p><strong>Goal:</strong> Technical improvement of <a href="https://wiki.idempiere.org/en/Web_services" target="_blank" rel="noopener noreferrer" class="">Web services</a></p>
+<p><strong>Sponsor:</strong> <a href="https://www.trekglobal.com" target="_blank" rel="noopener noreferrer" class="">Trek Global</a></p>
+<p><strong>Feature Ticket:</strong> <a href="http://idempiere.atlassian.net/browse/IDEMPIERE-460" target="_blank" rel="noopener noreferrer" class="">IDEMPIERE-460</a> improved by Deepak Pansheriya</p>
+<p><strong>Github source:</strong> <a href="https://github.com/idempiere/idempiere" target="_blank" rel="noopener noreferrer" class="">iDempiere</a>. Look for <a href="https://github.com/idempiere/idempiere/tree/master/org.idempiere.webservices" target="_blank" rel="noopener noreferrer" class="">org.idempiere.webservices</a>.</p>
+<p><strong>Category of technology:</strong> Middle-ware <a href="http://en.wikipedia.org/wiki/Web_service" target="_blank" rel="noopener noreferrer" class="">Web-Services</a></p>
+<p><strong>Improvements in Brief:</strong></p>
+<ul>
+<li class="">High level document process</li>
+<li class="">Run-time Validation</li>
+<li class="">Process fine-tuning</li>
+<li class="">iDempiere plug-in ready</li>
+</ul>
+<p><strong>Development in Brief:</strong></p>
+<ul>
+<li class="">Converted ADempiere Web-services as iDempiere plugin</li>
+<li class="">Compatible to version iDempiere 1.0</li>
+<li class="">Migrated from XFire to CXF framework.</li>
+<li class="">Added Composite methods for singular client calls, reducing overhead of redundant calls</li>
+<li class="">Web-Service plugin for generic access to any model, process or action in iDempiere.</li>
+<li class="">Documentation content and tutorial provided by Deepak Pansheriya</li>
+<li class="">Wiki editing assistance from Red1 (<a href="https://wiki.idempiere.org/en/User_talk:Red1" target="_blank" rel="noopener noreferrer" class="">talk</a>)</li>
+</ul>
+<p><strong>Contribution Accreditation</strong></p>
+<ul>
+<li class="">Initial prototype by 3E of Poland in 2007</li>
+<li class="">The New Web Services Window (Ruiz)<!-- -->
+<ul>
+<li class="">Search Key (Ruiz)</li>
+<li class="">Web Service (Ruiz)</li>
+<li class="">Web Service Method (Ruiz)</li>
+<li class="">Table (Ruiz)</li>
+</ul>
+</li>
+<li class="">Web Service Parameters (Ruiz)</li>
+<li class="">Web Service Field Input (Ruiz)<!-- -->
+<ul>
+<li class="">DB Column Name (Pansheriya)</li>
+<li class="">Reference (Pansheriya)</li>
+<li class="">Identifier (Pansheriya)</li>
+<li class="">Allow Null Value (Pansheriya)</li>
+<li class="">Identifier logic (Pansheriya)</li>
+</ul>
+</li>
+<li class="">Web Service Field Output (Ruiz)<!-- -->
+<ul>
+<li class="">Web Service Access (Ruiz)</li>
+</ul>
+</li>
+<li class="">Code review (HengSin)</li>
+<li class="">Web resource<!-- -->
+<ul>
+<li class=""><a href="http://www.adempiere.com/Adempiere_Web_Services" target="_blank" rel="noopener noreferrer" class="">http://www.adempiere.com/Adempiere_Web_Services</a> (Ruiz)</li>
+<li class=""><a href="http://www.adempiere.com/Adempiere_Web_Services_Security" target="_blank" rel="noopener noreferrer" class="">http://www.adempiere.com/Adempiere_Web_Services_Security</a> (Ruiz)</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="the-new-web-services-window">The New Web Services Window<a href="#the-new-web-services-window" class="hash-link" aria-label="Direct link to The New Web Services Window" title="Direct link to The New Web Services Window" translate="no">​</a></h2>
+<ol>
+<li class="">
+<p>Due to the many contributions stated above, our <em>Web-Services</em> has progressed much more in <strong>iDempiere</strong> <em>master-detail</em> layout with high-powered operational management.</p>
+</li>
+<li class="">
+<p>We shall go through the new feature request from the top. Below is its main window and tabs.
+<img decoding="async" loading="lazy" src="/img/new-features/v1.0/First_Look.png" alt="First Look" class="img_ev3q"></p>
+</li>
+<li class="">
+<p>The above is launched from the main menu by clicking on <strong>Web Services Security</strong>.</p>
+</li>
+<li class="">
+<p>The first tab is <strong>Web Service Type</strong> to define the web-services allowed on iDempiere.</p>
+</li>
+<li class="">
+<p>The Web Services plugin has generic implementation for users to make calls to the ERP server on any table, process or workflow actions.</p>
+</li>
+<li class="">
+<p>iDempiere has both <em>Input</em> and <em>Output</em> templates for external users to map the elements of their XSD (XML Schema Definitions).</p>
+</li>
+<li class="">
+<p>The new <em>Composite services</em> further reduce overhead of tasks the clients need to do as simple actions such as <em>Create a Business Partner</em> is now a single call instead of numerous cumbersome calls, thus reducing the work of the developer and ensure lower maintenance in future.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="search-key">Search Key<a href="#search-key" class="hash-link" aria-label="Direct link to Search Key" title="Direct link to Search Key" translate="no">​</a></h3>
+<ol>
+<li class="">The search key value maps to the <strong>serviceType</strong> tag in the web service request. This is demonstrated in the following snippet:
+&lt;web<!-- -->:ModelCRUD<!-- -->&gt;
+&lt;adin<!-- -->:serviceType<!-- -->&gt;CreateBPartner&lt;/adin<!-- -->:serviceType<!-- -->&gt;
+&lt;adin<!-- -->:TableName<!-- -->&gt;C_BPartner&lt;/adin<!-- -->:TableName<!-- -->&gt;
+&lt;adin<!-- -->:RecordID<!-- -->&gt;0&lt;/adin<!-- -->:RecordID<!-- -->&gt;
+&lt;adin<!-- -->:Action<!-- -->&gt;CreateUpdate&lt;/adin<!-- -->:Action<!-- -->&gt;
+:
+:
+&lt;web<!-- -->:ModelCRUD<!-- -->&gt;</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="web-service">Web Service<a href="#web-service" class="hash-link" aria-label="Direct link to Web Service" title="Direct link to Web Service" translate="no">​</a></h3>
+<ol>
+<li class="">This field denotes the type of web service. We now have both <strong>Model-Oriented</strong> and <strong>Composite</strong> Interfaces. The <strong>ModelADService</strong> is also improved to cover <em>createUpdateData</em> service.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="web-service-method">Web Service Method<a href="#web-service-method" class="hash-link" aria-label="Direct link to Web Service Method" title="Direct link to Web Service Method" translate="no">​</a></h3>
+<ol>
+<li class="">This is for selecting an operational task during web-service implementation.</li>
+<li class="">Each web-service type has option of different tasks.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="table">Table<a href="#table" class="hash-link" aria-label="Direct link to Table" title="Direct link to Table" translate="no">​</a></h3>
+<ol>
+<li class="">This field is used when the web-service method needs to work with a <strong>Table</strong>.</li>
+<li class="">For example <em>Create new record</em>, <em>Read existing records</em> or <em>Update existing records</em>.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="web-service-parameters">Web Service Parameters<a href="#web-service-parameters" class="hash-link" aria-label="Direct link to Web Service Parameters" title="Direct link to Web Service Parameters" translate="no">​</a></h2>
+<ol>
+<li class="">This tab used to define parameters for web service.</li>
+<li class="">Parameter can be a <em>Constant</em> or <em>Free</em>.</li>
+<li class="">If it is <em>Constant</em> then the value from <em>Constant Value</em> field is used, any value passed in from request is ignored.</li>
+<li class="">In case of <em>Free</em>, value from <em>Request</em> is used.</li>
+<li class="">Note that for <em>_ID</em> parameter, it will accept both <em>Record ID</em> and <em>UUID</em> value.
+<img decoding="async" loading="lazy" src="/img/new-features/v1.0/Web_Service_Parameters.png" alt="Web Service Parameters" class="img_ev3q"></li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="web-service-field-input">Web Service Field Input<a href="#web-service-field-input" class="hash-link" aria-label="Direct link to Web Service Field Input" title="Direct link to Web Service Field Input" translate="no">​</a></h2>
+<ol>
+<li class="">This tab is used to define the list of fields ( columns ) for web-service that creates new record or updates existing record.</li>
+<li class="">This tab controls the exposing of columns from the web-service request.</li>
+<li class="">Note the new <em>Reference</em> field that allows overriding of look-up type needed.
+<img decoding="async" loading="lazy" src="/img/new-features/v1.0/WebService_Field_Input.png" alt="WebService Field Input" class="img_ev3q"></li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="db-column-name">DB Column Name<a href="#db-column-name" class="hash-link" aria-label="Direct link to DB Column Name" title="Direct link to DB Column Name" translate="no">​</a></h3>
+<p><img decoding="async" loading="lazy" src="/img/new-features/v1.0/WebService_Field_Input_CtxVariable.png" alt="WebService Field Input CtxVariable" class="img_ev3q"></p>
+<ol>
+<li class="">Above shows how this can be used to configure the variable name for <em>Request Ctx</em>.</li>
+<li class="">This field contains the string pattern used for table name.</li>
+<li class="">More on <em>Request Ctx</em> later.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="reference">Reference<a href="#reference" class="hash-link" aria-label="Direct link to Reference" title="Direct link to Reference" translate="no">​</a></h3>
+<ol>
+<li class="">The idea is to allow the use of another key during look-up from another table.</li>
+<li class="">For example, to create <strong>OrderLine</strong>, we can use <em>SKU</em> instead of <em>Product_ID</em>.</li>
+<li class="">This field can thus override reference type in case of Table column and providing reference type for <strong>Ctx Variable</strong>.</li>
+<li class="">Web service uses this field to determine <em>Data-type</em> of variable.</li>
+<li class="">Reference key is used to override <strong>List</strong> or look-up value.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="identifier">Identifier<a href="#identifier" class="hash-link" aria-label="Direct link to Identifier" title="Direct link to Identifier" translate="no">​</a></h3>
+<ol>
+<li class="">If this flag is checked then current column is considered as part of record key.</li>
+<li class="">Multiple columns can be configured as identifier and they are combined for use as a composite key.</li>
+<li class="">Screen below shows how <em>C_BPartner_ID</em> is used as identifier to find existing record.
+<img decoding="async" loading="lazy" src="/img/new-features/v1.0/WebService_Field_Input_IdentifierLogic.png" alt="WebService Field Input IdentifierLogic" class="img_ev3q"></li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="allow-null-value">Allow Null Value<a href="#allow-null-value" class="hash-link" aria-label="Direct link to Allow Null Value" title="Direct link to Allow Null Value" translate="no">​</a></h3>
+<ol>
+<li class="">When this field is checked then <em>null</em> value is considered in retrieving an existing record.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="identifier-logic">Identifier logic<a href="#identifier-logic" class="hash-link" aria-label="Direct link to Identifier logic" title="Direct link to Identifier logic" translate="no">​</a></h3>
+<ol>
+<li class="">This field add support for identifying record through the use of an SQL statement.</li>
+<li class="">Above screen shows how a <em>C_BPartner</em> record can be identified through <strong>AD_User.email</strong> .</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="web-service-field-output">Web Service Field Output<a href="#web-service-field-output" class="hash-link" aria-label="Direct link to Web Service Field Output" title="Direct link to Web Service Field Output" translate="no">​</a></h2>
+<ol>
+<li class="">This tab is used to configure the list of values that will be returned in response.</li>
+<li class="">Here you can choose columns from the <em>Created/Updated</em> record.
+<img decoding="async" loading="lazy" src="/img/new-features/v1.0/Web_Service_Field_Output.png" alt="Web Service Field Output" class="img_ev3q"></li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="web-service-access">Web Service Access<a href="#web-service-access" class="hash-link" aria-label="Direct link to Web Service Access" title="Direct link to Web Service Access" translate="no">​</a></h3>
+<ul>
+<li class="">This tab configures the <em>Roles</em> that can access the defined web service.</li>
+<li class="">It gives additional layer of security as the Web-service is accessed via the open Web.
+<img decoding="async" loading="lazy" src="/img/new-features/v1.0/Web_Service_Access.png" alt="Web Service Access" class="img_ev3q"></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="composite-service">Composite Service<a href="#composite-service" class="hash-link" aria-label="Direct link to Composite Service" title="Direct link to Composite Service" translate="no">​</a></h2>
+<ol>
+<li class="">
+<p>Composite form of web-services is introduced in this iDempiere 1.0 version to support complex operations such as <em>create BPartner, contact and location</em> within a single request and within a single transaction.</p>
+</li>
+<li class="">
+<p>Another objective for this deisgn is to reduce the number of calls between client and server.</p>
+</li>
+<li class="">
+<p>Composite service is actually a wrapper on the model-oriented web-service.</p>
+</li>
+<li class="">
+<p>It allows to combine multiple atomic <em>ModelADService</em> operation like <em>createData</em>, <em>UpdateData</em>, <em>createUpdateData</em>, <em>setDocAction</em> etc in single request.</p>
+</li>
+<li class="">
+<p>Below is sample request syntax for a composite service.
+&lt;web<!-- -->:compositeOperation<!-- -->&gt;
+&lt;web<!-- -->:CompositeModelRequest<!-- -->&gt;
+&lt;web<!-- -->:ADLoginRequest<!-- -->&gt;
+:
+:
+&lt;/web<!-- -->:ADLoginRequest<!-- -->&gt;
+&lt;web<!-- -->:serviceType<!-- -->&gt;SyncOrder&lt;/web<!-- -->:serviceType<!-- -->&gt;
+&lt;web:<strong>operations</strong>&gt;
+&lt;web<!-- -->:operation<!-- --> <strong>preCommit</strong>=&quot;false&quot; <strong>postCommit</strong>=&quot;false&quot;&gt;
+&lt;web:<strong>TargetPort</strong>&gt;createUpdateData&lt;/web:<strong>TargetPort</strong>&gt;
+&lt;web<!-- -->:ModelCRUD<!-- -->&gt;
+:
+:
+&lt;/web<!-- -->:ModelCRUD<!-- -->&gt;
+&lt;web<!-- -->:TargetPort<!-- -->&gt;createUpdateData&lt;/web<!-- -->:TargetPort<!-- -->&gt;
+&lt;/web<!-- -->:operation<!-- --> preCommit=&quot;false&quot; postCommit=&quot;false&quot;&gt;
+&lt;/web<!-- -->:operations<!-- -->&gt;
+&lt;/web<!-- -->:compositeOperation<!-- -->&gt;</p>
+</li>
+<li class="">
+<p>You can take a look at the highlighted tags.</p>
+</li>
+<li class="">
+<p>Operations allow to combine multiple <em>CRUD</em> operation or <em>runProcess</em> operation.</p>
+</li>
+<li class="">
+<p><strong>TargetPort</strong> specify operation name of <em>ModelADService</em>* to be called.</p>
+</li>
+<li class="">
+<p>Possible value for <strong>TargetPort</strong> are <em>createData</em>, <em>updateData</em>, <em>createUpdateData</em>*, <em>deleteData</em>, <em>readData</em>, <em>setDocAction</em> and <em>runProcess</em>.</p>
+</li>
+<li class="">
+<p>All operation specified in this request share one login request and can share data with each other using <em>requestCtx</em> (@* variable).
+&lt;nowiki&gt;*Note that createUpdateData is an improvement for the ModelADService included in this feature request.&lt;/nowiki&gt;</p>
+</li>
+</ol>
+<p><strong>See also Video:</strong></p>
+<p><a href="https://www.youtube.com/watch?v=GrIhWbPQBrs" target="_blank" rel="noopener noreferrer" class="">Watch on YouTube</a> by Jan.thielemann - <a href="http://evenos-consulting.de" target="_blank" rel="noopener noreferrer" class="">evenos Consulting GmbH</a></p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="transaction-control">Transaction Control<a href="#transaction-control" class="hash-link" aria-label="Direct link to Transaction Control" title="Direct link to Transaction Control" translate="no">​</a></h2>
+<ol>
+<li class="">We can now fine-tune the management of data been replicated via iDempiere&#x27;s Web-Service.</li>
+<li class="">When we synchronize data, we can use the concept of <strong>Safe-Point</strong>.</li>
+<li class="">We may not need to do re-sync if we reached or passed successfully a <em>safe-point</em> location.</li>
+<li class="">For example if we are synchronizing Order, creation of <em>Sales Order Header</em> and line atomically but once we have created all <em>OrderLines</em> we can save them even though we are not able to <em>Complete</em> or <em>Prepare</em> the <em>Order</em>.</li>
+<li class="">Composite service allow to control over transaction using <strong>preCommit</strong> and <strong>postCommit</strong> attributes on <em>operation</em> element.</li>
+<li class="">If <em>preCommit</em> is true, whatever done before current operation will be committed to the database.</li>
+<li class="">When <em>postCommit</em> is true, commit is performed after current operation is executed successfully.</li>
+<li class="">If any error occurs, then a transaction is rolled-back and its response indicates whether an operation is committed or rolled-back by referring to the attribute <strong>IsRolledBack</strong> on standard response element.</li>
+<li class=""><strong>isError</strong> attribute is set to true for failed operations.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="request-ctx-variable">Request Ctx Variable<a href="#request-ctx-variable" class="hash-link" aria-label="Direct link to Request Ctx Variable" title="Direct link to Request Ctx Variable" translate="no">​</a></h2>
+<ol>
+<li class=""><strong>Request Ctx</strong> variable is available for reference during the entire request life-cycle.</li>
+<li class="">This <em>Ctx Variable</em> keeps track of all created records in current request by table name.</li>
+<li class="">Request can populate any custom variable name defined on <em>Web Service Security</em> -&gt; <em>Web Service Field Input</em> tab too.</li>
+<li class="">These variables are accessible also by consecutive operations by script.</li>
+<li class="">For example if we have created a <em>User</em> and want to use the same on <em>C_Order</em>, our <em>createOrder</em> request can have input field parameter as below.</li>
+</ol>
+<p>&lt;adin<!-- -->:field<!-- --> column=&quot;AD_User_ID&quot;&gt;
+&lt;adin<!-- -->:val<!-- -->&gt;@AD_User. AD_User_ID&lt;/adin<!-- -->:val<!-- -->&gt;
+&lt;/adin<!-- -->:field<!-- -->&gt;</p>
+<ol>
+<li class="">Here whenever field has value starting with @, the web service will consider the consecutive string as a variable and try to resolve it from the request context.</li>
+<li class="">In above example, @AD_User. AD_User_ID will get AD_User_ID from previously created AD_User record.</li>
+<li class="">If request want to populate custom variable into Ctx, it can configure web service input field without selecting any column and use DB Column Name field to define the variable name.</li>
+<li class="">For example, below screen shows <strong>email</strong> variable set on <em>CreateBPartner</em> request.</li>
+<li class="">There is no column named <strong>email</strong> on <strong>C_BPartner</strong> but configuring this variable on <strong>Web Service Input</strong> tab will allow to populate the request context with email value on <em>CreateBParner</em> request.</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="/img/new-features/v1.0/CtxVariable.png" alt="CtxVariable" class="img_ev3q"></p>
+<ol>
+<li class="">When you are configuring a <em>DB Column</em>, <em>Column</em> must be blank and reference must be selected.</li>
+<li class="">Ctx variable decides data-type for input based on <em>Reference</em> key.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="env-ctx-variable">Env Ctx Variable<a href="#env-ctx-variable" class="hash-link" aria-label="Direct link to Env Ctx Variable" title="Direct link to Env Ctx Variable" translate="no">​</a></h2>
+<ol>
+<li class="">iDempiere&#x27;s Env variable are accessible using script @#VariableName syntax.</li>
+<li class="">We can use this syntax in field and recordID elements to get dynamic value.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="createupdatedata">createUpdateData<a href="#createupdatedata" class="hash-link" aria-label="Direct link to createUpdateData" title="Direct link to createUpdateData" translate="no">​</a></h2>
+<ol>
+<li class="">This operation checks for existing record and perform either create or update record.</li>
+<li class="">This operation can be better than the <em>createData</em> or <em>updateUpdate</em> operation.</li>
+<li class=""><em>createUpdateData</em> uses record identifier(s) to check whether a record exists or not.</li>
+<li class=""><strong>Web Service Input Field</strong> has an identifier <em>Flag</em> which is used to decide whether an input field will be used to identify the record or not.</li>
+<li class="">More than one column can be used to identify any record.</li>
+<li class="">For example <em>C_BPartner_ID</em> and <em>Email</em> can be used to identify <em>BPUser</em>.</li>
+<li class="">Even custom SQL can be used in identifier logic to return its record ID.</li>
+<li class="">This operation allows explicit control creation or updating of record.</li>
+<li class=""><em>Request</em> can specify following value on <em>Action</em>.<!-- -->
+<ol>
+<li class=""><em>Create</em> - Only create record. If record exists, return error</li>
+<li class=""><em>Update</em> - Only update record. If record do not exists, return error</li>
+<li class=""><em>CreateUpdate</em> - If record does not exists, create it otherwise update existing record</li>
+</ol>
+</li>
+<li class="">Below is an sample request document for <strong>createUpdateData</strong>.</li>
+</ol>
+<p>&lt;_0<!-- -->:createUpdateData<!-- -->&gt; &lt;_0<!-- -->:ModelCRUDRequest<!-- -->&gt;
+&lt;_0<!-- -->:ModelCRUD<!-- -->&gt;
+&lt;_0<!-- -->:serviceType<!-- -->&gt;CreateUpdateLocation&lt;/_0<!-- -->:serviceType<!-- -->&gt;
+&lt;_0<!-- -->:TableName<!-- -->&gt;C_Location&lt;/_0<!-- -->:TableName<!-- -->&gt;
+&lt;_0<!-- -->:RecordID<!-- -->&gt;0&lt;/_0<!-- -->:RecordID<!-- -->&gt;
+&lt;_0<!-- -->:Action<!-- -->&gt;<strong>CreateUpdate</strong>&lt;/_0<!-- -->:Action<!-- -->&gt;
+&lt;_0<!-- -->:DataRow<!-- -->&gt;
+&lt;_0<!-- -->:field<!-- --> column=&quot;C_Country_ID&quot; lval=&quot;United States&quot;/&gt;
+&lt;_0<!-- -->:field<!-- --> column=&quot;Address1&quot;&gt;
+&lt;_0<!-- -->:val<!-- -->&gt;1625 Cowboy Chaps Place&lt;/_0<!-- -->:val<!-- -->&gt;
+&lt;/_0<!-- -->:field<!-- -->&gt;
+&lt;_0<!-- -->:field<!-- --> column=&quot;C_Region_ID&quot; lval=&quot;NV&quot;/&gt;
+&lt;_0<!-- -->:field<!-- --> column=&quot;RegionName&quot;&gt;
+&lt;_0<!-- -->:val<!-- -->&gt;NV&lt;/_0<!-- -->:val<!-- -->&gt;
+&lt;/_0<!-- -->:field<!-- -->&gt;
+&lt;_0<!-- -->:field<!-- --> column=&quot;Postal&quot;&gt;
+&lt;_0<!-- -->:val<!-- -->&gt;89002&lt;/_0<!-- -->:val<!-- -->&gt;
+&lt;/_0<!-- -->:field<!-- -->&gt;
+&lt;_0<!-- -->:field<!-- --> column=&quot;City&quot;&gt;
+&lt;_0<!-- -->:val<!-- -->&gt;Henderson&lt;/_0<!-- -->:val<!-- -->&gt;
+&lt;/_0<!-- -->:field<!-- -->&gt;
+&lt;/_0<!-- -->:DataRow<!-- -->&gt;
+&lt;/_0<!-- -->:ModelCRUD<!-- -->&gt;
+&lt;_0<!-- -->:ADLoginRequest<!-- -->&gt;
+:
+:
+&lt;/_0<!-- -->:ADLoginRequest<!-- -->&gt;
+&lt;/_0<!-- -->:ModelCRUDRequest<!-- -->&gt;
+&lt;/_0<!-- -->:createUpdateData<!-- -->&gt;</p>
+<ol>
+<li class="">Please take note of <strong>Action</strong>. It indicates <em>CreateUpdate</em>. This mean record is either created or updated based on existence.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lookup">Lookup<a href="#lookup" class="hash-link" aria-label="Direct link to Lookup" title="Direct link to Lookup" translate="no">​</a></h2>
+<ol>
+<li class="">Newly added lVal parameter for <em>Field</em> will pass readable string and will be converted to ID using standard iDempiere lookup mechanism.</li>
+<li class="">For example to set Shipping Method on Order, we can retrieve M_Freight_ID through Shipping Method name.</li>
+<li class="">Below is example how we can find out Region using lookup instead of C_Region_ID. &lt;_0<!-- -->:field<!-- --> column=&quot;C_Region_ID&quot; lval=&quot;NV&quot;/&gt;</li>
+<li class="">Please note that we are using lval attribute instead of val element when we want to use lookup.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ws-validator">WS Validator<a href="#ws-validator" class="hash-link" aria-label="Direct link to WS Validator" title="Direct link to WS Validator" translate="no">​</a></h2>
+<ol>
+<li class="">Web-service Validator can be used to extend web-service functionality and appending additional business logic.</li>
+<li class="">Validator are added as osgi service and must implement the <strong>IWSValidator</strong> interface.</li>
+<li class="">Validator can be registered to listen to a type of web-service or all web-services.</li>
+<li class="">If Validator needs to listen to all web-service calls, then use the special value GLOBAL in WSType parameter.</li>
+<li class="">Validators are called at following timings:<!-- -->
+<ol>
+<li class="">Before Parse</li>
+<li class="">After Parse</li>
+<li class="">Before Save</li>
+<li class="">After Save</li>
+</ol>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="recordidvariable">RecordIDVariable<a href="#recordidvariable" class="hash-link" aria-label="Direct link to RecordIDVariable" title="Direct link to RecordIDVariable" translate="no">​</a></h2>
+<ol>
+<li class="">RecordIDVariable is added to override recordID field and allow support for scripting.</li>
+<li class="">Using this parameter into request, record ID can be set from variable in requestCtx.</li>
+<li class="">Usage of this is in composite service to perform setDocAction without adding any complexity to identify record.</li>
+<li class="">Below sample shows how it is used to complete a document created in previous operation inside a composite srequest.</li>
+</ol>
+<p>&lt;_0<!-- -->:compositeOperation<!-- -->&gt;
+&lt;_0<!-- -->:CompositeRequest<!-- -->&gt;
+&lt;_0<!-- -->:serviceType<!-- -->&gt;SyncOrder&lt;/_0<!-- -->:serviceType<!-- -->&gt;
+&lt;_0<!-- -->:operations<!-- -->&gt;
+&lt;_0<!-- -->:operation<!-- --> preCommit=&quot;false&quot; postCommit=&quot;false&quot;&gt;
+&lt;_0<!-- -->:TargetPort<!-- -->&gt;createUpdateData&lt;/_0<!-- -->:TargetPort<!-- -->&gt;
+&lt;_0<!-- -->:ModelCRUD<!-- -->&gt;
+&lt;_0<!-- -->:serviceType<!-- -->&gt;createOrderRecord&lt;/_0<!-- -->:serviceType<!-- -->&gt;
+&lt;_0<!-- -->:TableName<!-- -->&gt;C_Order&lt;/_0<!-- -->:TableName<!-- -->&gt;
+:
+:
+&lt;/_0<!-- -->:ModelCRUD<!-- -->&gt;
+&lt;/_0<!-- -->:operation<!-- -->&gt;
+&lt;_0<!-- -->:operation<!-- --> preCommit=&quot;true&quot; postCommit=&quot;false&quot;&gt;
+&lt;_0<!-- -->:TargetPort<!-- -->&gt;createUpdateData&lt;/_0<!-- -->:TargetPort<!-- -->&gt;
+&lt;_0<!-- -->:ModelCRUD<!-- -->&gt;
+&lt;_0<!-- -->:serviceT<!-- --> ype&gt;CreateOrderLine&lt;/_0<!-- -->:serviceT<!-- --> ype&gt;
+&lt;_0<!-- -->:TableName<!-- -->&gt;C_OrderLine&lt;/_0<!-- -->:TableName<!-- -->&gt;
+:
+:
+&lt;/_0<!-- -->:ModelCRUD<!-- -->&gt;
+&lt;/_0<!-- -->:operation<!-- -->&gt;
+&lt;_0<!-- -->:operation<!-- --> preCommit=&quot;true&quot; postCommit=&quot;true&quot;&gt;
+&lt;_0<!-- -->:TargetPort<!-- -->&gt;setDocAction&lt;/_0<!-- -->:TargetPort<!-- -->&gt;
+&lt;_0<!-- -->:ModelSetDocAction<!-- -->&gt;
+&lt;_0<!-- -->:serviceType<!-- -->&gt;CompleteOrder&lt;/_0<!-- -->:serviceT<!-- --> ype&gt;
+&lt;_0<!-- -->:tableName<!-- -->&gt;C_Order&lt;/_0<!-- -->:tableName<!-- -->&gt;
+&lt;_0<!-- -->:recordID<!-- -->&gt;0&lt;/_0<!-- -->:recordID<!-- -->&gt;
+&lt;_0<!-- -->:recordIDVariable<!-- -->&gt;@C_Order.C_Order_ID&lt;/_0<!-- -->:recordIDVariable<!-- -->&gt;
+&lt;_0<!-- -->:docAction<!-- -->&gt;CO&lt;/_0<!-- -->:docAction<!-- -->&gt;
+&lt;/_0<!-- -->:ModelSetDocAction<!-- -->&gt;
+&lt;/_0<!-- -->:operation<!-- -->&gt;
+&lt;/_0<!-- -->:operations<!-- -->&gt;
+&lt;/_0<!-- -->:CompositeRequest<!-- -->&gt;
+&lt;/_0<!-- -->:compositeOperation<!-- -->&gt;</p>
+<ol>
+<li class="">In above request, we are creating order and then completing same using <em>setDocAction</em> operation.</li>
+<li class="">We use <strong>recordIDVariable</strong> to retrieve record ID for order created before this operation.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="reference-overriding">Reference Overriding<a href="#reference-overriding" class="hash-link" aria-label="Direct link to Reference Overriding" title="Direct link to Reference Overriding" translate="no">​</a></h2>
+<ol>
+<li class="">Web-service uses <em>Reference</em> type from <em>Table</em> column as default but can also be overridden on <em>Web Service Input</em> field as shown below.</li>
+<li class="">We use this overriding mechanism to define custom look-up for column.</li>
+<li class="">For example, when we configure reference for <strong>M_Product</strong> table, we normally use <em>Product Name</em>.</li>
+<li class="">Now we can choose to use <em>SKU</em> to identify products in our web-service.</li>
+<li class="">In this case we can define new look-up which use display field as SKU for product.</li>
+<li class="">Below shows how we have configured <strong>M_Product_ID</strong> column on <strong>CreateUpdateOrderLine</strong> service.</li>
+</ol>
+<p><img decoding="async" loading="lazy" src="/img/new-features/v1.0/Reference_OverRiding.png" alt="Reference OverRiding" class="img_ev3q"></p>
+<hr>
+<p><em>Source: <a href="https://wiki.idempiere.org/en/NF1.0_Web_Services_Improvements" target="_blank" rel="noopener noreferrer" class="">Wiki</a></em></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/docs/tags/technical">technical</a></li></ul></div></div><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/idempiere/idempiere.github.io/tree/main/docs/new-features/v1.0/web-services-improvements.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/new-features/v1.0/translation-improvements"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Translation Improvements</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/new-features/v1.0/windowtabtoolbarbutton"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Window Tab Toolbar Buttons</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#the-new-web-services-window" class="table-of-contents__link toc-highlight">The New Web Services Window</a><ul><li><a href="#search-key" class="table-of-contents__link toc-highlight">Search Key</a></li><li><a href="#web-service" class="table-of-contents__link toc-highlight">Web Service</a></li><li><a href="#web-service-method" class="table-of-contents__link toc-highlight">Web Service Method</a></li><li><a href="#table" class="table-of-contents__link toc-highlight">Table</a></li></ul></li><li><a href="#web-service-parameters" class="table-of-contents__link toc-highlight">Web Service Parameters</a></li><li><a href="#web-service-field-input" class="table-of-contents__link toc-highlight">Web Service Field Input</a><ul><li><a href="#db-column-name" class="table-of-contents__link toc-highlight">DB Column Name</a></li><li><a href="#reference" class="table-of-contents__link toc-highlight">Reference</a></li><li><a href="#identifier" class="table-of-contents__link toc-highlight">Identifier</a></li><li><a href="#allow-null-value" class="table-of-contents__link toc-highlight">Allow Null Value</a></li><li><a href="#identifier-logic" class="table-of-contents__link toc-highlight">Identifier logic</a></li></ul></li><li><a href="#web-service-field-output" class="table-of-contents__link toc-highlight">Web Service Field Output</a><ul><li><a href="#web-service-access" class="table-of-contents__link toc-highlight">Web Service Access</a></li></ul></li><li><a href="#composite-service" class="table-of-contents__link toc-highlight">Composite Service</a></li><li><a href="#transaction-control" class="table-of-contents__link toc-highlight">Transaction Control</a></li><li><a href="#request-ctx-variable" class="table-of-contents__link toc-highlight">Request Ctx Variable</a></li><li><a href="#env-ctx-variable" class="table-of-contents__link toc-highlight">Env Ctx Variable</a></li><li><a href="#createupdatedata" class="table-of-contents__link toc-highlight">createUpdateData</a></li><li><a href="#lookup" class="table-of-contents__link toc-highlight">Lookup</a></li><li><a href="#ws-validator" class="table-of-contents__link toc-highlight">WS Validator</a></li><li><a href="#recordidvariable" class="table-of-contents__link toc-highlight">RecordIDVariable</a></li><li><a href="#reference-overriding" class="table-of-contents__link toc-highlight">Reference Overriding</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/introduction">Basic Installation Guide</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/introduction">Basic Functional Guide</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/introduction">Basic Developer Guide</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://groups.google.com/g/idempiere" target="_blank" rel="noopener noreferrer" class="footer__link-item">Google Groups<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://mattermost.idempiere.org/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mattermost<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.facebook.com/groups/idempiere/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="http://www.twitter.com/idempiere" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.youtube.com/channel/UCRdFTCB3yc_ni8EBXyhVqfQ" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/groups/5146317/" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/idempiere/idempiere" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 iDempiere<br>Illustrations by <a href="https://storyset.com">Storyset</a></div></div></div></footer></div>
+</body>
+</html>

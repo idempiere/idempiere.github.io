@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkidempiere_id_github_io=globalThis.webpackChunkidempiere_id_github_io||[]).push([[89278],{89278(i,e,h){h.r(e)}}]);

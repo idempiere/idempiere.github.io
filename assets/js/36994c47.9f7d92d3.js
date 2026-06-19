@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkidempiere_id_github_io=globalThis.webpackChunkidempiere_id_github_io||[]).push([[9858],{5516(i){i.exports=JSON.parse('{"name":"docusaurus-plugin-content-blog","id":"default"}')}}]);
