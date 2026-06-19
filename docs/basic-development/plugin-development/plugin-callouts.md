@@ -322,7 +322,7 @@ public class CalloutFactory implements IColumnCalloutFactory {
 
 **Option A: Using Annotations (Recommended)**
 
-Add the `@Component` annotation to your factory class. See [Event Handling with Annotations](./developing-plugins#event-handle) for details.
+Add the `@Component` annotation to your factory class. See [Event Handling with Annotations](./plugin-eventhandler#event-annotations-idempiere-9) for details.
 
 ```java
 import org.osgi.service.component.annotations.Component;

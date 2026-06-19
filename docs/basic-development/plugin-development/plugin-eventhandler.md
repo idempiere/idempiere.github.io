@@ -59,7 +59,7 @@ iDempiere's event handling system is built on top of the **OSGi Event Admin Fram
 
 ## 📋 Implementation Methods
 
-### Modern Approach (iDempiere 9+): Event Annotation
+### Modern Approach (iDempiere 9+): Event Annotation {#event-annotations-idempiere-9}
 
 Starting with **iDempiere 9**, you can use annotations to register event handlers. This is the simplest and recommended approach.
 
@@ -254,7 +254,7 @@ public class MyEventHandler extends AbstractEventHandler {
 }
 ```
 
-See [Event Handling with Annotations](./developing-plugins#event-handle) for more details.
+See [Event Handling with Annotations](./plugin-eventhandler#event-annotations-idempiere-9) for more details.
 
 ---
 

@@ -284,7 +284,7 @@ public class MyFormFactory implements IFormFactory {
 }
 ```
 
-See [Event Handling with Annotations](./developing-plugins#event-handle) for more details.
+See [Event Handling with Annotations](./plugin-eventhandler#event-annotations-idempiere-9) for more details.
 
 **Option B: Manual Component Definition**
 

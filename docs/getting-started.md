@@ -32,10 +32,10 @@ Once logged in, you will see the iDempiere home screen, which consists of:
     * NOTE that the number of items defaults to ten, but it can be configured to show more or less by your administrator.  
   * Activities widget  
     * The Activities widget is intended to call your attention to documents or actions that you need to take care of.  
-    * See [Activities Widget](#activities-widget) for more information.
+    * See Activities Widget for more information.
   * Views widget  
     * The Views widget helps highlight commonly used Info Windows.  
-    * Info Windows helps you explore information in iDempiere about specific topics. See [Info Window](#info-window) section below...
+    * Info Windows helps you explore information in iDempiere about specific topics. See Info Window section below...
 
 ## Performing Basic Actions
 
