@@ -1,0 +1,35 @@
+---
+title: 'Migration Scripts'
+sidebar_label: 'Migration Scripts'
+tags: ['Window']
+---
+
+# Migration Scripts
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 53019</span>
+
+*15/02/2008 → 15/02/2008*
+
+![Migration Scripts](./img/migration-scripts.png)
+
+## Tab: Migration Scripts
+
+*Tab Level 0 · Created 15/02/2008 · Updated 15/02/2008*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_MigrationScript.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_MigrationScript.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_MigrationScript.Name<small> character varying(60) <br/> String</small> |
+| File Name | Name of the local file or URL | Name of a file in the local directory space - or URL (file://.., http://.., ftp://..) | AD_MigrationScript.FileName<small> character varying(500) <br/> FileName</small> |
+| Developer Name |  |  | AD_MigrationScript.DeveloperName<small> character varying(60) <br/> String</small> |
+| Apply Script |  |  | AD_MigrationScript.isApply<small> character(1) <br/> Yes-No</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_MigrationScript.IsActive<small> character(1) <br/> Yes-No</small> |
+| Project | Name of the Project |  | AD_MigrationScript.ProjectName<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_MigrationScript.Description<small> character varying(2000) <br/> Text</small> |
+| Reference | Reference for this record | The Reference displays the source document number. | AD_MigrationScript.Reference<small> character varying(2000) <br/> Text</small> |
+| URL | Full URL address - e.g. http://www.idempiere.org | The URL defines an fully qualified web address like http://www.idempiere.org | AD_MigrationScript.URL<small> character varying(2000) <br/> URL</small> |
+| Release No | Internal Release Number |  | AD_MigrationScript.ReleaseNo<small> character varying(10) <br/> Text</small> |
+| Status | Status of the currently running check | Status of the currently running check | AD_MigrationScript.Status<small> character(2) <br/> List</small> |
+| Script | Dynamic Java Language Script to calculate result | Use Java language constructs to define the result of the calculation | AD_MigrationScript.Script<small> bytea <br/> Binary</small> |
+

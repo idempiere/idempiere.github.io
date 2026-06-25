@@ -1,0 +1,84 @@
+---
+title: 'Alert'
+sidebar_label: 'Alert'
+description: 'iDempiere Alert'
+tags: ['Window']
+---
+
+# Alert
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 276</span>
+
+*07/06/2003 → 02/01/2000*
+
+![Alert](./img/alert.png)
+
+**Description:** iDempiere Alert
+
+**Comment/Help:** iDempiere Alerts allow you define system conditions you want to be alerted of
+
+## Tab: Alert
+
+*Tab Level 0 · Created 07/06/2003 · Updated 02/01/2000*
+
+**Description:** iDempiere Alert
+
+**Comment/Help:** iDempiere Alerts allow you define system conditions you want to be alerted of.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Alert.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Alert.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Alert.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Alert.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Alert.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Alert.IsActive<small> character(1) <br/> Yes-No</small> |
+| Valid | Element is valid | The element passed the validation check | AD_Alert.IsValid<small> character(1) <br/> Yes-No</small> |
+| Alert Processor | Alert Processor/Server Parameter | Alert Processor/Server Parameter | AD_Alert.AD_AlertProcessor_ID<small> numeric(10) <br/> Table Direct</small> |
+| Enforce Tenant Security | Send alerts to recipient only if the tenant security rules of the role allows |  | AD_Alert.EnforceClientSecurity<small> character(1) <br/> Yes-No</small> |
+| Enforce Role Security | Send alerts to recipient only if the data security rules of the role allows |  | AD_Alert.EnforceRoleSecurity<small> character(1) <br/> Yes-No</small> |
+| Alert Subject | Subject of the Alert | The subject of the email message sent for the alert | AD_Alert.AlertSubject<small> character varying(255) <br/> String</small> |
+| Alert Message | Message of the Alert | The message of the email sent for the alert | AD_Alert.AlertMessage<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › Alert Rule
+
+*Tab Level 1 · Created 07/06/2003 · Updated 06/08/2013*
+
+**Description:** Definition of the alert element
+
+**Comment/Help:** The definition of the altert or action
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_AlertRule.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_AlertRule.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Alert | iDempiere Alert | iDempiere Alerts allow you define system conditions you want to be alerted of | AD_AlertRule.AD_Alert_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_AlertRule.Name<small> character varying(60) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_AlertRule.IsActive<small> character(1) <br/> Yes-No</small> |
+| Valid | Element is valid | The element passed the validation check | AD_AlertRule.IsValid<small> character(1) <br/> Yes-No</small> |
+| Error Msg |  |  | AD_AlertRule.ErrorMsg<small> character varying(2000) <br/> Text</small> |
+| Pre Processing | Process SQL before executing the query | Could be Update/Delete/etc. statement | AD_AlertRule.PreProcessing<small> character varying(2000) <br/> Text</small> |
+| Sql SELECT | SQL SELECT clause | The Select Clause indicates the SQL SELECT clause to use for selecting the record for a measure calculation. Do not include the SELECT itself. | AD_AlertRule.SelectClause<small> character varying(2000) <br/> Text</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_AlertRule.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sql FROM | SQL FROM clause | The Select Clause indicates the SQL FROM clause to use for selecting the record for a measure calculation. It can have JOIN clauses. Do not include the FROM itself. | AD_AlertRule.FromClause<small> character varying(2000) <br/> Text</small> |
+| Sql WHERE | Fully qualified SQL WHERE clause | The Where Clause indicates the SQL WHERE clause to use for record selection. The WHERE clause is added to the query. Fully qualified means "tablename.columnname". | AD_AlertRule.WhereClause<small> character varying(2000) <br/> Text</small> |
+| Other SQL Clause | Other SQL Clause | Any other complete clause like GROUP BY, HAVING, ORDER BY, etc. after WHERE clause. | AD_AlertRule.OtherClause<small> character varying(2000) <br/> Text</small> |
+| Post Processing | Process SQL after executing the query | Could be Update/Delete/etc. statement | AD_AlertRule.PostProcessing<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › Alert Recipient
+
+*Tab Level 1 · Created 07/06/2003 · Updated 02/01/2000*
+
+**Description:** Recipient of the Alert Notification
+
+**Comment/Help:** You can send the notifications to users or roles
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_AlertRecipient.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_AlertRecipient.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Alert | iDempiere Alert | iDempiere Alerts allow you define system conditions you want to be alerted of | AD_AlertRecipient.AD_Alert_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_AlertRecipient.IsActive<small> character(1) <br/> Yes-No</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | AD_AlertRecipient.AD_User_ID<small> numeric(10) <br/> Search</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_AlertRecipient.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+

@@ -1,0 +1,31 @@
+---
+title: 'Invoice Requests'
+sidebar_label: 'Invoice Requests'
+description: 'Create Invoice for Requests'
+tags: ['Process']
+---
+
+# Invoice Requests
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 324</span>
+
+*19/05/2005 → 19/05/2005*
+
+![Invoice Requests](./img/invoice-requests.png)
+
+**Description:** Create Invoice for Requests
+
+**Comment/Help:** Create invoice for Request Type with optional Request Group, Category for Business Partner.  If the used product for invoicing is not defined, the product defined in the parameter is used.
+
+**Classname:** `org.compiere.process.RequestInvoice`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Request Type | Type of request (e.g. Inquiry, Complaint, ..) | Request Types are used for processing and categorizing requests. Options are Account Inquiry, Warranty Issue, etc. | R_RequestType_ID<br/>Table Direct |
+| Group | Request Group | Group of requests (e.g. version numbers, responsibility, ...) | R_Group_ID<br/>Table Direct |
+| Category | Request Category | Category or Topic of the Request  | R_Category_ID<br/>Table Direct |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BPartner_ID<br/>Search |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Product_ID<br/>Search |
+

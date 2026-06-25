@@ -1,0 +1,57 @@
+---
+title: 'Registration Attributes'
+sidebar_label: 'Registration Attributes'
+description: 'Asset Registration Attributes'
+tags: ['Window']
+---
+
+# Registration Attributes
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 300</span>
+
+*08/01/2004 → 17/02/2022*
+
+![Registration Attributes](./img/registration-attributes.png)
+
+**Description:** Asset Registration Attributes
+
+**Comment/Help:** Define the individual values for the Asset Registration
+
+## Tab: Attribute
+
+*Tab Level 0 · Created 08/01/2004 · Updated 02/01/2000*
+
+**Description:** Asset Registration Attribute
+
+**Comment/Help:** Define the individual values for the Asset Registration
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | A_RegistrationAttribute.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | A_RegistrationAttribute.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | A_RegistrationAttribute.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | A_RegistrationAttribute.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | A_RegistrationAttribute.IsActive<small> character(1) <br/> Yes-No</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | A_RegistrationAttribute.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Reference | System Reference and Validation | The Reference could be a display type, list or table validation. | A_RegistrationAttribute.AD_Reference_ID<small> numeric(10) <br/> Table</small> |
+| DB Column Name | Name of the column in the database | The Column Name indicates the name of a column on a table as defined in the database. | A_RegistrationAttribute.ColumnName<small> character varying(63) <br/> String</small> |
+| Reference Key | Required to specify, if data type is Table or List | The Reference Value indicates where the reference values are stored.  It must be specified if the data type is Table or List.   | A_RegistrationAttribute.AD_Reference_Value_ID<small> numeric(10) <br/> Table</small> |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | A_RegistrationAttribute.IsSelfService<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Product Assignment
+
+*Tab Level 1 · Created 10/04/2004 · Updated 15/01/2024*
+
+**Description:** Assignment of Attributes to Products
+
+**Comment/Help:** Determines, which attributes are assigned to a product
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | A_RegistrationProduct.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | A_RegistrationProduct.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Registration Attribute | Asset Registration Attribute | Define the individual values for the Asset Registration | A_RegistrationProduct.A_RegistrationAttribute_ID<small> numeric(10) <br/> Table Direct</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | A_RegistrationProduct.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | A_RegistrationProduct.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | A_RegistrationProduct.IsActive<small> character(1) <br/> Yes-No</small> |
+

@@ -1,0 +1,48 @@
+---
+title: 'Menu user favourites'
+sidebar_label: 'Menu user favourites'
+tags: ['Window']
+---
+
+# Menu user favourites
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200111</span>
+
+*27/10/2020 → 27/10/2020*
+
+![Menu user favourites](./img/menu-user-favourites.png)
+
+## Tab: User favourite tree
+
+*Tab Level 0 · Created 27/10/2020 · Updated 13/09/2022*
+
+**Description:** In this tab, you can see to manage user and role wise favourite tree references
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Tree_Favorite.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Tree_Favorite.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | AD_Tree_Favorite.AD_User_ID<small> numeric(10) <br/> Table Direct</small> |
+| Favorite Tree |  |  | AD_Tree_Favorite.AD_Tree_Favorite_ID<small> numeric(10) <br/> ID</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Tree_Favorite.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Favorite tree node
+
+*Tab Level 1 · Created 27/10/2020 · Updated 13/09/2022*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Tree_Favorite_Node.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Tree_Favorite_Node.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Favorite Tree |  |  | AD_Tree_Favorite_Node.AD_Tree_Favorite_ID<small> numeric(10) <br/> Table Direct</small> |
+| Favorite Node Tree |  |  | AD_Tree_Favorite_Node.AD_Tree_Favorite_Node_ID<small> numeric(10) <br/> ID</small> |
+| Menu | Identifies a Menu | The Menu identifies a unique Menu.  Menus are used to control the display of those screens a user has access to. | AD_Tree_Favorite_Node.AD_Menu_ID<small> numeric(10) <br/> Table Direct</small> |
+| Parent | Parent of Entity | The Parent indicates the value used to represent the next level in a hierarchy or report to level for a record | AD_Tree_Favorite_Node.Parent_ID<small> numeric(10) <br/> Table</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Tree_Favorite_Node.Name<small> character varying(120) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Tree_Favorite_Node.IsActive<small> character(1) <br/> Yes-No</small> |
+| Collapsible | Flag to indicate the state of the dashboard panel | Flag to indicate the state of the dashboard panel (i.e. collapsible or static) | AD_Tree_Favorite_Node.IsCollapsible<small> character(1) <br/> Yes-No</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | AD_Tree_Favorite_Node.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Favourite | This record is a favourite |  | AD_Tree_Favorite_Node.IsFavourite<small> character(1) <br/> Yes-No</small> |
+| Login automatic open sequence | Determine the order items will be automatically opened when user logs in |  | AD_Tree_Favorite_Node.LoginOpenSeqNo<small> numeric(10) <br/> Integer</small> |
+| Summary Level | This is a summary entity | A summary entity represents a branch in a tree rather than an end-node. Summary entities are used for reporting and do not have own values. | AD_Tree_Favorite_Node.IsSummary<small> character(1) <br/> Yes-No</small> |
+

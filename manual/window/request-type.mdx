@@ -1,0 +1,63 @@
+---
+title: 'Request Type'
+sidebar_label: 'Request Type'
+description: 'Maintain Request Types'
+tags: ['Window']
+---
+
+# Request Type
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 244</span>
+
+*01/10/2002 → 02/01/2000*
+
+![Request Type](./img/request-type.png)
+
+**Description:** Maintain Request Types
+
+**Comment/Help:** Request Types are used for processing and categorizing requests. Options are Account Inquiry, Warranty Issue, etc.
+
+## Tab: Request Type
+
+*Tab Level 0 · Created 01/10/2002 · Updated 02/01/2000*
+
+**Description:** Type of request (e.g. Inquiry, Complaint, ..)
+
+**Comment/Help:** Request Types are used for processing and categorizing requests. Options are Account Inquiry, Warranty Issue, etc.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | R_RequestType.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | R_RequestType.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | R_RequestType.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | R_RequestType.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | R_RequestType.IsActive<small> character(1) <br/> Yes-No</small> |
+| Status Category | Request Status Category | Category of Request Status enables to maintain different set of Status for different Request Categories | R_RequestType.R_StatusCategory_ID<small> numeric(10) <br/> Table Direct</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | R_RequestType.IsDefault<small> character(1) <br/> Yes-No</small> |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | R_RequestType.IsSelfService<small> character(1) <br/> Yes-No</small> |
+| EMail when Due | Send EMail when Request becomes due | Send EMail when Request becomes due | R_RequestType.IsEMailWhenDue<small> character(1) <br/> Yes-No</small> |
+| Due Date Tolerance | Tolerance in days between the Date Next Action and the date the request is regarded as overdue | When the Date Next Action is passed, the Request becomes Due. After the Due Date Tolerance, the Request becomes Overdue. | R_RequestType.DueDateTolerance<small> numeric(10) <br/> Integer</small> |
+| EMail when Overdue | Send EMail when Request becomes overdue | Send EMail when Request becomes overdue | R_RequestType.IsEMailWhenOverdue<small> character(1) <br/> Yes-No</small> |
+| Auto Due Date Days | Automatic Due Date Days | If a due date is not defined and the Auto Due Days ins greater then zero, a due date in the number of days is automatically created. | R_RequestType.AutoDueDateDays<small> numeric(10) <br/> Integer</small> |
+| Invoiced | Is this invoiced? | If selected, invoices are created | R_RequestType.IsInvoiced<small> character(1) <br/> Yes-No</small> |
+| Confidentiality | Type of Confidentiality |  | R_RequestType.ConfidentialType<small> character(1) <br/> List</small> |
+| Confidential Info | Can enter confidential information | When entering/updating Requests over the web, the user can mark his info as confidential | R_RequestType.IsConfidentialInfo<small> character(1) <br/> Yes-No</small> |
+| Create Change Request | Automatically create BOM (Engineering) Change Request | Create automatically a Product Bill of Material  (Engineering) Change Request when the Request Group references a Product BOM | R_RequestType.IsAutoChangeRequest<small> character(1) <br/> Yes-No</small> |
+| Header Color | Header color of calendar dashlet |  | R_RequestType.HeaderColor<small> character varying(7) <br/> String</small> |
+| Content Color | Content color of calendar dashlet |  | R_RequestType.ContentColor<small> character varying(7) <br/> String</small> |
+
+## Tab: › Update Notification
+
+*Tab Level 1 · Created 13/05/2005 · Updated 13/05/2005*
+
+**Description:** List Recipients for to receive Request Updates
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | R_RequestTypeUpdates.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | R_RequestTypeUpdates.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Request Type | Type of request (e.g. Inquiry, Complaint, ..) | Request Types are used for processing and categorizing requests. Options are Account Inquiry, Warranty Issue, etc. | R_RequestTypeUpdates.R_RequestType_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | R_RequestTypeUpdates.AD_User_ID<small> numeric(10) <br/> Search</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | R_RequestTypeUpdates.IsActive<small> character(1) <br/> Yes-No</small> |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | R_RequestTypeUpdates.IsSelfService<small> character(1) <br/> Yes-No</small> |
+

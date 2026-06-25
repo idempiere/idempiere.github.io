@@ -1,0 +1,62 @@
+---
+title: 'Discount Schema'
+sidebar_label: 'Discount Schema'
+description: 'Maintain Trade Discount Schema'
+tags: ['Window']
+---
+
+# Discount Schema
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 233</span>
+
+*28/12/2001 → 02/01/2000*
+
+![Discount Schema](./img/discount-schema.png)
+
+**Description:** Maintain Trade Discount Schema
+
+**Comment/Help:** Trade discount schema calculates the trade discount percentage
+
+## Tab: Discount Schema
+
+*Tab Level 0 · Created 28/12/2001 · Updated 30/09/2009*
+
+**Description:** Trade Discount Schema
+
+**Comment/Help:** Trade discount schema calculates the trade discount percentage
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_DiscountSchema.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_DiscountSchema.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | M_DiscountSchema.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_DiscountSchema.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_DiscountSchema.IsActive<small> character(1) <br/> Yes-No</small> |
+| Discount Type | Type of trade discount calculation | Type of procedure used to calculate the trade discount percentage | M_DiscountSchema.DiscountType<small> character(1) <br/> List</small> |
+| Script | Dynamic Java Language Script to calculate result | Use Java language constructs to define the result of the calculation | M_DiscountSchema.Script<small> character varying(2000) <br/> Text</small> |
+| B.Partner Flat Discount | Use flat discount defined on Business Partner Level | For calculation of the discount, use the discount defined on Business Partner Level | M_DiscountSchema.IsBPartnerFlatDiscount<small> character(1) <br/> Yes-No</small> |
+| Flat Discount % | Flat discount percentage  |  | M_DiscountSchema.FlatDiscount<small> numeric <br/> Number</small> |
+| Quantity based | Trade discount break level based on Quantity (not value) | The calculation of the trade discount level is based on the quantity of the order and not the value amount of the order | M_DiscountSchema.IsQuantityBased<small> character(1) <br/> Yes-No</small> |
+| Accumulation Level | Level for accumulative calculations |  | M_DiscountSchema.CumulativeLevel<small> character(1) <br/> List</small> |
+| Renumber | Renumber Discount entries |  | M_DiscountSchema.Processing<small> character(1) <br/> Button</small> |
+
+## Tab: › Discount Break
+
+*Tab Level 1 · Created 28/12/2001 · Updated 15/12/2008*
+
+**Description:** Trade discount based on breaks (steps)
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_DiscountSchemaBreak.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_DiscountSchemaBreak.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Discount Schema | Schema to calculate the trade discount percentage | After calculation of the (standard) price, the trade discount percentage is calculated and applied resulting in the final price. | M_DiscountSchemaBreak.M_DiscountSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_DiscountSchemaBreak.IsActive<small> character(1) <br/> Yes-No</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | M_DiscountSchemaBreak.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Product Category | Category of a Product | Identifies the category which this product belongs to.  Product categories are used for pricing and selection. | M_DiscountSchemaBreak.M_Product_Category_ID<small> numeric(10) <br/> Table Direct</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_DiscountSchemaBreak.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Break Value | Low Value of trade discount break level | Starting Quantity or Amount Value for break level | M_DiscountSchemaBreak.BreakValue<small> numeric <br/> Number</small> |
+| B.Partner Flat Discount | Use flat discount defined on Business Partner Level | For calculation of the discount, use the discount defined on Business Partner Level | M_DiscountSchemaBreak.IsBPartnerFlatDiscount<small> character(1) <br/> Yes-No</small> |
+| Break Discount % | Trade Discount in Percent for the break level | Trade Discount in Percent for the break level | M_DiscountSchemaBreak.BreakDiscount<small> numeric <br/> Number</small> |
+| Fixed Price | Fixed Price for Product |  | M_DiscountSchemaBreak.FixedPrice<small> numeric <br/> Costs+Prices</small> |
+

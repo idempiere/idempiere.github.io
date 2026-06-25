@@ -1,0 +1,66 @@
+---
+title: 'Context Help'
+sidebar_label: 'Context Help'
+description: 'Maintain Context Helps'
+tags: ['Window']
+---
+
+# Context Help
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200034</span>
+
+*05/02/2013 → 08/02/2013*
+
+![Context Help](./img/context-help.png)
+
+**Description:** Maintain Context Helps
+
+**Comment/Help:** The Context Help window defines the context help message text to display in the help pane. It is for Web UI only.
+
+## Tab: Context Help
+
+*Tab Level 0 · Created 05/02/2013 · Updated 08/02/2013*
+
+**Description:** Context Helps
+
+**Comment/Help:** The Context Help tab defines the type of context help
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_CtxHelp.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_CtxHelp.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_CtxHelp.Name<small> character varying(120) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_CtxHelp.Description<small> character varying(255) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_CtxHelp.IsActive<small> character(1) <br/> Yes-No</small> |
+| Context Type | Type of Context Help | The Context Type field indicates the type of context help (tab, process, form etc) this context help is defined as | AD_CtxHelp.CtxType<small> character(1) <br/> List</small> |
+
+## Tab: › Message
+
+*Tab Level 1 · Created 05/02/2013 · Updated 08/02/2013*
+
+**Description:** Context Help Messages
+
+**Comment/Help:** The Message tab displays message text
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_CtxHelpMsg.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_CtxHelpMsg.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Context Help |  |  | AD_CtxHelpMsg.AD_CtxHelp_ID<small> numeric(10) <br/> Search</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_CtxHelpMsg.IsActive<small> character(1) <br/> Yes-No</small> |
+| Message Text | Textual Informational, Menu or Error Message | The Message Text indicates the message that will display  | AD_CtxHelpMsg.MsgText<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › › Translation
+
+*Tab Level 2 · Created 05/02/2013 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_CtxHelpMsg_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_CtxHelpMsg_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Context Help Message |  |  | AD_CtxHelpMsg_Trl.AD_CtxHelpMsg_ID<small> numeric(10) <br/> Search</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_CtxHelpMsg_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_CtxHelpMsg_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_CtxHelpMsg_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Message Text | Textual Informational, Menu or Error Message | The Message Text indicates the message that will display  | AD_CtxHelpMsg_Trl.MsgText<small> character varying(2000) <br/> Text</small> |
+

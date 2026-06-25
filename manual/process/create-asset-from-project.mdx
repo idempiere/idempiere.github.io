@@ -1,0 +1,34 @@
+---
+title: 'Create Asset from Project'
+sidebar_label: 'Create Asset from Project'
+description: 'This process creates asset from project and automatically close the project'
+tags: ['Process']
+---
+
+# Create Asset from Project
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 200000</span>
+
+*15/03/2012 → 11/11/2022*
+
+![Create Asset from Project](./img/create-asset-from-project.png)
+
+**Description:** This process creates asset from project and automatically close the project
+
+**Comment/Help:** There are four parameters:
+a. Project, is the Project that will be converted to asset. This project will be closed after this process completes
+b. Product, is the asset product that will be act as the base for the newly created asset
+c. UseLifeYears, is an optional parameter. Use this if you want a different use life years for the newly created asset, instead of the default uselifeyears from asset group accounting.
+d. Transaction Date, will become in-service-date for the newly created asset.
+
+**Classname:** `org.idempiere.fa.process.ProjectCreateAsset`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | C_Project_ID<br/>Search |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Product_ID<br/>Search |
+| Transaction Date | Transaction Date | The Transaction Date indicates the date of the transaction. | DateTrx<br/>Date |
+| Usable Life - Years | Years of the usable life of the asset |  | UseLifeYears<br/>Integer |
+

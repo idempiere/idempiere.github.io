@@ -1,0 +1,48 @@
+---
+title: 'Print Paper'
+sidebar_label: 'Print Paper'
+description: 'Maintain Print Paper'
+tags: ['Window']
+---
+
+# Print Paper
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 241</span>
+
+*11/07/2002 → 02/01/2000*
+
+![Print Paper](./img/print-paper.png)
+
+**Description:** Maintain Print Paper
+
+**Comment/Help:** Printer Paper Size, Orientation and Margins
+
+## Tab: Print Paper
+
+*Tab Level 0 · Created 11/07/2002 · Updated 18/01/2006*
+
+**Description:** Maintain Print Paper
+
+**Comment/Help:** Printer Paper Size, Orientation and Margins. 
+The Validation Code contains the Media Size name. The names of the media sizes correspond to those in the IPP 1.1 RFC 2911 - http://www.ietf.org/rfc/rfc2911.txt  &lt;br&gt;
+If the name is not found, the SizeX/Y with the dimension is used. Size and dimension are ignored, if a valid media size name is used.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_PrintPaper.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_PrintPaper.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_PrintPaper.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_PrintPaper.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_PrintPaper.IsActive<small> character(1) <br/> Yes-No</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | AD_PrintPaper.IsDefault<small> character(1) <br/> Yes-No</small> |
+| Landscape | Landscape orientation |  | AD_PrintPaper.IsLandscape<small> character(1) <br/> Yes-No</small> |
+| Validation code | Validation Code | The Validation Code displays the date, time and message of the error. | AD_PrintPaper.Code<small> character varying(2000) <br/> String</small> |
+| Dimension Units | Units of Dimension |  | AD_PrintPaper.DimensionUnits<small> character(1) <br/> List</small> |
+| Size X | X (horizontal) dimension size | Size of X (horizontal) dimension in Units | AD_PrintPaper.SizeX<small> numeric <br/> Number</small> |
+| Size Y | Y (vertical) dimension size | Size of Y (vertical) dimension in Units | AD_PrintPaper.SizeY<small> numeric <br/> Number</small> |
+| Top Margin | Top Space in 1/72 inch | Space on top of a page in 1/72 inch | AD_PrintPaper.MarginTop<small> numeric(10) <br/> Integer</small> |
+| Bottom Margin | Bottom Space in 1/72 inch | Space on bottom of a page in 1/72 inch | AD_PrintPaper.MarginBottom<small> numeric(10) <br/> Integer</small> |
+| Left Margin | Left Space in 1/72 inch | Space on left side of a page in 1/72 inch | AD_PrintPaper.MarginLeft<small> numeric(10) <br/> Integer</small> |
+| Right Margin | Right Space in 1/72 inch | Space on right side of a page in 1/72 inch | AD_PrintPaper.MarginRight<small> numeric(10) <br/> Integer</small> |
+| Set Print Format | Set for all Print Formats with same Landscape/Portrait |  | AD_PrintPaper.Processing<small> character(1) <br/> Button</small> |
+
