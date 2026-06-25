@@ -1,8 +1,8 @@
 ---
-title: "WEditor Dynamic Display OSGI Service"
-sidebar_label: "WEditor Dynamic Display OSGI Service"
+title: "WEditor Dynamic Display OSGi Service"
+sidebar_label: "WEditor Dynamic Display OSGi Service"
 sidebar_position: 14
-description: "This enhancement expose the existing WEditor.DynamicDisplayListener interface as OSGi service"
+description: "This enhancement exposes the existing WEditor.DynamicDisplayListener interface as an OSGi service"
 tags: [technical]
 ---
 
@@ -21,8 +21,8 @@ This enhancement expose the existing `WEditor.DynamicDisplayListener` interface 
 The feature allows developers to implement OSGi component that will participate in the GridField WEditor dynamic display cycle.
 
 **Usage**
-* Create a new OSGi component that implement the `WEditor.DynamicDisplayListener` interface.
-* The OSGi component must have the `AD_Field_UU` string property that will match with `AD_Field.AD_Field_UU` value of GridField.
+* Create a new OSGi component that implements the `WEditor.DynamicDisplayListener` interface.
+* The OSGi component must have an `AD_Field_UU` string property that matches the `AD_Field.AD_Field_UU` value of the target GridField.
 * WEditor instance created for the corresponding GridField will add the OSGi component as dynamic display listener.
 * The OSGi component must be thread safe.
 
