@@ -5,10 +5,6 @@ sidebar_position: 2
 description: Adding Business Partner and Account column in Statement of account report.
 ---
 
-:::warning Not Yet in Stable Release
-This feature is not yet part of a stable iDempiere release and may change.
-:::
-
 **Goal:** Functional   
 **Developer:** [Deepak Pansheriya](https://wiki.idempiere.org/en/User:Dpansheriya) ([Logilite Technologies](https://www.logilite.com))  
 **Feature Ticket:** [IDEMPIERE-6733](https://idempiere.atlassian.net/browse/IDEMPIERE-6733)
