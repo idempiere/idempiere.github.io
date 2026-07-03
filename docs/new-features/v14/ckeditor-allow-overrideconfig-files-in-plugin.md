@@ -5,10 +5,6 @@ sidebar_position: 1
 description: Allow to override config.js and config-min.js in a plugin
 ---
 
-:::warning Not Yet in Stable Release
-This feature is not yet part of a stable iDempiere release and may change.
-:::
-
 **Goal:** Technical  
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  
 **Feature Ticket:** [IDEMPIERE-6953](https://idempiere.atlassian.net/browse/IDEMPIERE-6953)

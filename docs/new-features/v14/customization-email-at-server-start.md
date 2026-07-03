@@ -5,10 +5,6 @@ sidebar_position: 1
 description: Allow to customize the content of the email sent when the iDempiere service starts
 ---
 
-:::warning Not Yet in Stable Release
-This feature is not yet part of a stable iDempiere release and may change.
-:::
-
 **Goal:** Technical  
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  
 **Feature Ticket:** [IDEMPIERE-6063](https://idempiere.atlassian.net/browse/IDEMPIERE-6063)
