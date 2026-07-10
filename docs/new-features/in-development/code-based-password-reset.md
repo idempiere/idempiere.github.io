@@ -18,8 +18,8 @@ This feature is not yet part of a stable iDempiere release and may change.
 ## Code-based password reset
 
 When email login is enabled, "Forgot My Password" runs a code-based reset directly in the login page
-instead of emailing a temporary password. The user requests a reset, receives a 6-digit code by email,
-enters it, and then sets a new password.
+instead of emailing a temporary password. The user requests a reset, receives a numeric code by email
+(6 digits by default), enters it, and then sets a new password.
 
 This flow is active only when the `USE_EMAIL_FOR_LOGIN` System Configurator key is `Y`. When email login
 is off, the legacy [security-question flow](../v1.0/forgot-my-password.md) is unchanged.
@@ -47,12 +47,12 @@ registered.
 
 ### Step 2: Enter the code
 
-A 6-digit code is emailed to the address. The panel shows six single-digit boxes. Typing a digit moves
-focus to the next box automatically, and Backspace, Shift+Tab move between boxes so a
-digit can be corrected.
+A numeric code is emailed to the address and the user enters it in the code field. The code is 6 digits
+by default; the length is set by `PASSWORD_RESET_CODE_LENGTH` (see
+[System configuration](#system-configuration)).
 
-The code is valid for a limited time and a limited number of attempts (see
-[System configuration](#system-configuration)). Requesting a new code invalidates the previous one.
+The code is valid for a limited time and a limited number of attempts. Requesting a new code
+invalidates the previous one.
 
 ![Step 2: enter the emailed code](/img/docs/new-features/password-reset-step2-code.jpg)
 
@@ -83,6 +83,7 @@ shown below.
 | Key | Default | Purpose |
 | --- | --- | --- |
 | `PASSWORD_RESET_CODE_EXPIRY_MINUTES` | `10` | Minutes a code stays valid. |
+| `PASSWORD_RESET_CODE_LENGTH` | `6` | Number of digits in the emailed code. |
 | `PASSWORD_RESET_MAX_ATTEMPTS` | `5` | Wrong-code attempts before a code is locked. |
 | `PASSWORD_RESET_REQUEST_COOLDOWN_SECONDS` | `60` | Minimum seconds between reset requests for one identifier. |
 | `PASSWORD_RESET_MAX_REQUESTS_PER_HOUR` | `5` | Maximum reset requests per identifier per hour. |
