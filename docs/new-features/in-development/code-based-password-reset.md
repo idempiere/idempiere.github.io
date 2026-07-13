@@ -54,7 +54,7 @@ by default; the length is set by `PASSWORD_RESET_CODE_LENGTH` (see
 The code is valid for a limited time and a limited number of attempts. Requesting a new code
 invalidates the previous one.
 
-![Step 2: enter the emailed code](/img/docs/new-features/password-reset-step2-code.jpg)
+![Step 2: enter the emailed code](/img/docs/new-features/password-reset-step2-code.png)
 
 ### Step 3: Set a new password
 
@@ -100,7 +100,10 @@ Several safeguards apply beyond the request and attempt limits above:
 - The emailed code is stored encrypted. Its strength depends on the instance keystore key; an
   instance still using the shipped default key gets weaker protection.
 - Only one code is active per email at a time. Issuing a new code expires the previous one.
-- Responses are neutral so the flow does not reveal which emails are registered.
+- Responses are neutral so the flow does not reveal which emails are registered. Unknown addresses
+  get the same attempt lockout and request throttling as registered ones (simulated in memory, with
+  no token or email ever created), so the verify and request responses cannot be used to enumerate
+  accounts.
 - The token minted after a correct code is single-use and short-lived.
 - A completed reset invalidates the account's existing sessions.
 
