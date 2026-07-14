@@ -5,12 +5,6 @@ sidebar_position: 5
 description: Redesigned Forgot Password flow that emails a one-time numeric code and resets the password through a shared, swappable core service.
 ---
 
-:::warning Not Yet in Stable Release
-
-This feature is not yet part of a stable iDempiere release and may change.
-
-:::
-
 * **Goal:** Security  
 * **Developer:** [Diego Ruiz](https://github.com/d-ruiz/)([BX Service GmbH](https://www.bx-service.com/))
 * **Feature Ticket:** [IDEMPIERE-7060](https://idempiere.atlassian.net/browse/IDEMPIERE-7060)
