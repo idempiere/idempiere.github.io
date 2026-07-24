@@ -1,0 +1,28 @@
+---
+title: 'Payment Details'
+sidebar_label: 'Payment Details'
+description: 'Payment Detail Report'
+tags: ['Report']
+---
+
+# Payment Details
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 318</span>
+
+*07/02/2005 → 08/02/2005*
+
+![Payment Details](./img/payment-details.png)
+
+**Description:** Payment Detail Report
+
+**Comment/Help:** Type adjusted payments (receipts positive, payments negative) with allocated and available amounts
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Bank Account | Account at the Bank | The Bank Account identifies an account at this Bank. | C_BankAccount_ID<br/>Chosen Multiple Selection Table |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BPartner_ID<br/>Chosen Multiple Selection Search |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | C_DocType_ID<br/>Chosen Multiple Selection Table |
+| Allocated | Indicates if the payment has been allocated | The Allocated checkbox indicates if a payment has been allocated or associated with an invoice or invoices. | IsAllocated<br/>List |
+

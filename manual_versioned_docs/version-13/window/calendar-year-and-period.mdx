@@ -1,0 +1,111 @@
+---
+title: 'Calendar Year and Period'
+sidebar_label: 'Calendar Year and Period'
+description: 'Maintain Calendars Years Periods'
+tags: ['Window']
+---
+
+# Calendar Year and Period
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 117</span>
+
+*11/06/1999 → 02/01/2000*
+
+![Calendar Year and Period](./img/calendar-year-and-period.png)
+
+**Description:** Maintain Calendars Years Periods
+
+**Comment/Help:** The Calendar Year and Periods defines the calendars that will be used for period control and reporting. You can also define non-standard calendars (e.g. business year from July to June).
+
+## Tab: Calendar
+
+*Tab Level 0 · Created 11/06/1999 · Updated 02/01/2000*
+
+**Description:** Define your calendar
+
+**Comment/Help:** The Calendar Tab defines each calendar that will be used by an Organization.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Calendar.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Calendar.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Calendar.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Calendar.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Calendar.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Year
+
+*Tab Level 1 · Created 11/06/1999 · Updated 02/01/2000*
+
+**Description:** Define Calendar Year
+
+**Comment/Help:** The Year Window is used to define each year for the specified calendar.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Year.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Year.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Calendar | Accounting Calendar Name | The Calendar uniquely identifies an accounting calendar.  Multiple calendars can be used.  For example you may need a standard calendar that runs from Jan 1 to Dec 31 and a fiscal calendar that runs from July 1 to June 30. | C_Year.C_Calendar_ID<small> numeric(10) <br/> Table Direct</small> |
+| Year | The Fiscal Year | The Year identifies the accounting year for a calendar. | C_Year.FiscalYear<small> character varying(10) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Year.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Year.IsActive<small> character(1) <br/> Yes-No</small> |
+| Create Periods  | Create 12 standard calendar periods. | Creates 12 calendar month long standard periods from the specified start date.  If no start date is specified, 1st of Jan will be used.  The period name will be generated from the start date of each period using the java SimpleDateFormat pattern provided.  | C_Year.Processing<small> character(1) <br/> Button</small> |
+
+## Tab: › › Period
+
+*Tab Level 2 · Created 11/06/1999 · Updated 02/01/2000*
+
+**Description:** Define Calendar Periods
+
+**Comment/Help:** The Period Tab defines a Period No, Name and Start Date for each Calendar Year.  Each period begins on the defined Start Date and ends one day prior to the next period's Start Date.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Period.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Period.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Year | Calendar Year | The Year uniquely identifies an accounting year for a calendar. | C_Period.C_Year_ID<small> numeric(10) <br/> Table Direct</small> |
+| Period No | Unique Period Number | The Period No identifies a specific period for this year. Each period is defined by a start and end date.  Date ranges for a calendar and year cannot overlap. | C_Period.PeriodNo<small> numeric(10) <br/> Integer</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Period.Name<small> character varying(60) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Period.IsActive<small> character(1) <br/> Yes-No</small> |
+| Start Date | First effective day (inclusive) | The Start Date indicates the first or starting date | C_Period.StartDate<small> timestamp without time zone <br/> Date</small> |
+| End Date | Last effective date (inclusive) | The End Date indicates the last date in this range. | C_Period.EndDate<small> timestamp without time zone <br/> Date</small> |
+| Period Type | Period Type | The Period Type indicates the type (Standard or Adjustment) of period. | C_Period.PeriodType<small> character(1) <br/> List</small> |
+| Open/Close All | Change Period Status for all Period Controls of this Period |  | C_Period.Processing<small> character(1) <br/> Button</small> |
+
+## Tab: › › › Period Control
+
+*Tab Level 3 · Created 26/09/1999 · Updated 02/01/2000*
+
+**Description:** Define Period Control
+
+**Comment/Help:** The Period Control Tab displays the status of a Period (Never Opened, Opened, Closed).  
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_PeriodControl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_PeriodControl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Period | Period of the Calendar | The Period indicates an exclusive range of dates for a calendar. | C_PeriodControl.C_Period_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Base Type | Logical type of document | The Document Base Type identifies the base or starting point for a document.  Multiple document types may share a single document base type. | C_PeriodControl.DocBaseType<small> character(3) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_PeriodControl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Period Status | Current state of this period | The Period Status indicates the current status for this period.  For example 'Closed', 'Open', 'Never Opened'. | C_PeriodControl.PeriodStatus<small> character(1) <br/> List</small> |
+| Period Action | Action taken for this period | The Period Action indicates the action to be taken for this period.  For example 'Close Period' or 'Open Period'. | C_PeriodControl.PeriodAction<small> character(1) <br/> List</small> |
+| Open/Close | Change Period Status |  | C_PeriodControl.Processing<small> character(1) <br/> Button</small> |
+
+## Tab: › Non Business Day
+
+*Tab Level 1 · Created 11/06/1999 · Updated 02/01/2000*
+
+**Description:** Define Non Business Days
+
+**Comment/Help:** The Non Business Days Tab defines those days to exclude when calculating the due date for given payment terms.  For example, if an invoice terms was Net 10 days and the Invoice Date was 2/17/2000 the due date would be 2/27/2000.  If 2/27/2000 was defined as a non business day then the due date  on the Invoice would be 2/28/2000.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_NonBusinessDay.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_NonBusinessDay.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Calendar | Accounting Calendar Name | The Calendar uniquely identifies an accounting calendar.  Multiple calendars can be used.  For example you may need a standard calendar that runs from Jan 1 to Dec 31 and a fiscal calendar that runs from July 1 to June 30. | C_NonBusinessDay.C_Calendar_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_NonBusinessDay.IsActive<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_NonBusinessDay.Name<small> character varying(60) <br/> String</small> |
+| Date | Date when business is not conducted | The Date field identifies a calendar date on which business will not be conducted. | C_NonBusinessDay.Date1<small> timestamp without time zone <br/> Date</small> |
+| Country | Country  | The Country defines a Country.  Each Country must be defined before it can be used in any document. | C_NonBusinessDay.C_Country_ID<small> numeric(10) <br/> Table Direct</small> |
+

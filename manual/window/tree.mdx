@@ -1,0 +1,44 @@
+---
+title: 'Tree'
+sidebar_label: 'Tree'
+description: 'Maintain Tree definition'
+tags: ['Window']
+---
+
+# Tree
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 163</span>
+
+*09/12/1999 → 02/01/2000*
+
+![Tree](./img/tree.png)
+
+**Description:** Maintain Tree definition
+
+**Comment/Help:** The Tree Window defines the descriptors and images that will be used when a Tree is displayed.
+
+## Tab: Tree
+
+*Tab Level 0 · Created 09/12/1999 · Updated 02/01/2000*
+
+**Description:** Tree
+
+**Comment/Help:** The Tree Tab defines a Tree which will be displayed.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Tree.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Tree.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Tree.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Tree.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Tree.IsActive<small> character(1) <br/> Yes-No</small> |
+| Type \| Area | Element this tree is built on (i.e Product, Business Partner) | The Tree Type / Area field determines the type of tree this is.  For example, you may define one tree for your Products and another tree for your Business Partners. | AD_Tree.TreeType<small> character(2) <br/> List</small> |
+| Driven by Search Key |  |  | AD_Tree.IsTreeDrivenByValue<small> character(1) <br/> Yes-No</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_Tree.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Display Search Key | Displays Search Key in the tree | The Display Search Key checkbox indicates if the Search Key will display in the tree before the Name | AD_Tree.IsValueDisplayed<small> character(1) <br/> Yes-No</small> |
+| Parent Column | The link column on the parent tab. |  | AD_Tree.Parent_Column_ID<small> numeric(10) <br/> Table</small> |
+| All Nodes | All Nodes are included (Complete Tree) | If selected, all Nodes must be in the tree. | AD_Tree.IsAllNodes<small> character(1) <br/> Yes-No</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | AD_Tree.IsDefault<small> character(1) <br/> Yes-No</small> |
+| Loads directly all nodes | If checked, all nodes are loaded before tree is displayed |  | AD_Tree.IsLoadAllNodesImmediately<small> character(1) <br/> Yes-No</small> |
+| Verify Tree | Verify completeness and correctness of Tree |  | AD_Tree.Processing<small> character(1) <br/> Button</small> |
+

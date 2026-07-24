@@ -1,0 +1,75 @@
+---
+title: 'Pack Out'
+sidebar_label: 'Pack Out'
+description: 'Create 2pack package'
+tags: ['Window']
+---
+
+# Pack Out
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 50003</span>
+
+*11/12/2006 → 25/05/2012*
+
+![Pack Out](./img/pack-out.png)
+
+**Description:** Create 2pack package
+
+## Tab: Export Package
+
+*Tab Level 0 · Created 11/12/2006 · Updated 06/08/2013*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant |  |  | AD_Package_Exp.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization |  |  | AD_Package_Exp.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name of Package | Name of Package |  | AD_Package_Exp.Name<small> character varying(60) <br/> String</small> |
+| Package Version |  |  | AD_Package_Exp.PK_Version<small> character varying(20) <br/> String</small> |
+| EMail Address | Electronic Mail Address | The Email Address is the Electronic Mail ID for this User and should be fully qualified (e.g. joe.smith@company.com). The Email Address is used to access the self service application functionality from the web. | AD_Package_Exp.EMail<small> character varying(30) <br/> String</small> |
+| Description of Package |  |  | AD_Package_Exp.Description<small> character varying(1000) <br/> Memo</small> |
+| Instructions |  |  | AD_Package_Exp.Instructions<small> character varying(1000) <br/> Memo</small> |
+| Date From | Starting date for a range | The Date From indicates the starting date of a range. | AD_Package_Exp.DateFrom<small> timestamp without time zone <br/> Date</small> |
+| Export Dictionary Entity |  |  | AD_Package_Exp.IsExportDictionaryEntity<small> character(1) <br/> Yes-No</small> |
+| Include Organization Id | Y/N field. When set to Y, include organization id reference in exported data. |  | AD_Package_Exp.IsIncludeOrganizationId<small> character(1) <br/> Yes-No</small> |
+| Export Package |  |  | AD_Package_Exp.Processing<small> character(1) <br/> Button</small> |
+
+## Tab: › Package Details
+
+*Tab Level 1 · Created 11/12/2006 · Updated 06/08/2013*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant |  |  | AD_Package_Exp_Detail.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization |  |  | AD_Package_Exp_Detail.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Package Build ID |  |  | AD_Package_Exp_Detail.AD_Package_Exp_ID<small> numeric(10) <br/> Table Direct</small> |
+| Line No | Unique line for this document | Indicates the unique line for a document.  It will also control the display order of the lines within a document. | AD_Package_Exp_Detail.Line<small> numeric <br/> Integer</small> |
+| Type |  |  | AD_Package_Exp_Detail.Type<small> character varying(10) <br/> List</small> |
+| Entity Type | System Entity Type | The entity type determines the ownership of Application Dictionary entries.  The types "Dictionary" and "iDempiere" should not be used and are maintainted by iDempiere (i.e. all changes are reversed during migration to the current definition). | AD_Package_Exp_Detail.AD_EntityType_ID<small> numeric(10) <br/> Search</small> |
+| Menu |  |  | AD_Package_Exp_Detail.AD_Menu_ID<small> numeric(10) <br/> Table Direct</small> |
+| File Name | Name of the local file or URL | Name of a file in the local directory space - or URL (file://.., http://.., ftp://..) | AD_Package_Exp_Detail.FileName<small> character varying(255) <br/> String</small> |
+| Source File Directory | Current location of source file |  | AD_Package_Exp_Detail.File_Directory<small> character varying(255) <br/> String</small> |
+| Target_Directory |  |  | AD_Package_Exp_Detail.Target_Directory<small> character varying(255) <br/> String</small> |
+| Destination_FileName |  |  | AD_Package_Exp_Detail.Destination_FileName<small> character varying(255) <br/> String</small> |
+| Destination_Directory |  |  | AD_Package_Exp_Detail.Destination_Directory<small> character varying(255) <br/> String</small> |
+| Table |  |  | AD_Package_Exp_Detail.AD_Table_ID<small> numeric(10) <br/> Search</small> |
+| DB Type |  |  | AD_Package_Exp_Detail.DBType<small> character varying(22) <br/> List</small> |
+| SQL Expression/Statement |  |  | AD_Package_Exp_Detail.SQLStatement<small> character varying(4000) <br/> Memo</small> |
+| Old Package Code |  |  | AD_Package_Exp_Detail.AD_Package_Code_Old<small> character varying(2000) <br/> Memo</small> |
+| New Package Code |  |  | AD_Package_Exp_Detail.AD_Package_Code_New<small> character varying(2000) <br/> Memo</small> |
+| Form |  |  | AD_Package_Exp_Detail.AD_Form_ID<small> numeric(10) <br/> Search</small> |
+| Process |  |  | AD_Package_Exp_Detail.AD_Process_ID<small> numeric(10) <br/> Search</small> |
+| Workflow |  |  | AD_Package_Exp_Detail.AD_Workflow_ID<small> numeric(10) <br/> Search</small> |
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | AD_Package_Exp_Detail.AD_Window_ID<small> numeric(10) <br/> Search</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Package_Exp_Detail.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Report View | View used to generate this report | The Report View indicates the view used to generate this report. | AD_Package_Exp_Detail.AD_ReportView_ID<small> numeric(10) <br/> Search</small> |
+| Import Format |  |  | AD_Package_Exp_Detail.AD_ImpFormat_ID<small> numeric(10) <br/> Table Direct</small> |
+| Dynamic Validation | Dynamic Validation Rule | These rules define how an entry is determined to valid. You can use variables for dynamic (context sensitive) validation. | AD_Package_Exp_Detail.AD_Val_Rule_ID<small> numeric(10) <br/> Table Direct</small> |
+| Message | System Message | Information and Error messages | AD_Package_Exp_Detail.AD_Message_ID<small> numeric(10) <br/> Search</small> |
+| Print Format | Data Print Format | The print format determines how data is rendered for print. | AD_Package_Exp_Detail.AD_PrintFormat_ID<small> numeric(10) <br/> Table Direct</small> |
+| Reference | System Reference and Validation | The Reference could be a display type, list or table validation. | AD_Package_Exp_Detail.AD_Reference_ID<small> numeric(10) <br/> Table Direct</small> |
+| Model Validator |  |  | AD_Package_Exp_Detail.AD_ModelValidator_ID<small> numeric(10) <br/> Table Direct</small> |
+| Info Window | Info and search/select Window | The Info window is used to search and select records as well as display information relevant to the selection. | AD_Package_Exp_Detail.AD_InfoWindow_ID<small> numeric(10) <br/> Table Direct</small> |
+| Release No | Internal Release Number |  | AD_Package_Exp_Detail.ReleaseNo<small> character varying(20) <br/> List</small> |
+| Execution Code |  |  | AD_Package_Exp_Detail.ExecCode<small> text <br/> Text</small> |
+| Notes |  |  | AD_Package_Exp_Detail.Description<small> character varying(1000) <br/> Memo</small> |
+

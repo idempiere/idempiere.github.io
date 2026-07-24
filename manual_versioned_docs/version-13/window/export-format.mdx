@@ -1,0 +1,57 @@
+---
+title: 'Export Format'
+sidebar_label: 'Export Format'
+tags: ['Window']
+---
+
+# Export Format
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 53025</span>
+
+*05/03/2008 → 01/12/2009*
+
+![Export Format](./img/export-format.png)
+
+## Tab: Export Format
+
+*Tab Level 0 · Created 05/03/2008 · Updated 05/03/2008*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | EXP_Format.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | EXP_Format.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | EXP_Format.Value<small> character varying(40) <br/> String</small> |
+| Version | Version of the table definition | The Version indicates the version of this table definition. | EXP_Format.Version<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | EXP_Format.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | EXP_Format.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | EXP_Format.IsActive<small> character(1) <br/> Yes-No</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | EXP_Format.Help<small> character varying(2000) <br/> Text</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | EXP_Format.AD_Table_ID<small> numeric(10) <br/> Search</small> |
+| Sql WHERE | Fully qualified SQL WHERE clause | The Where Clause indicates the SQL WHERE clause to use for record selection. The WHERE clause is added to the query. Fully qualified means "tablename.columnname". | EXP_Format.WhereClause<small> character varying(255) <br/> Text</small> |
+| Test Import Model | Test Import of XML files |  | EXP_Format.TestImportModel<small> character(1) <br/> Button</small> |
+| Test Export Model | Test Export of XML files |  | EXP_Format.TestExportModel<small> character(1) <br/> Button</small> |
+| Export Format |  |  | EXP_Format.EXP_Format_ID<small> numeric(10) <br/> ID</small> |
+
+## Tab: › Export Format Line
+
+*Tab Level 1 · Created 05/03/2008 · Updated 01/12/2009*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | EXP_FormatLine.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | EXP_FormatLine.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Export Format |  |  | EXP_FormatLine.EXP_Format_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | EXP_FormatLine.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | EXP_FormatLine.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | EXP_FormatLine.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | EXP_FormatLine.IsActive<small> character(1) <br/> Yes-No</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | EXP_FormatLine.Help<small> character varying(2000) <br/> Text</small> |
+| Position |  |  | EXP_FormatLine.Position<small> numeric(10) <br/> Integer</small> |
+| Mandatory | Data entry is required in this column | The field must have a value for the record to be saved to the database. | EXP_FormatLine.IsMandatory<small> character(1) <br/> Yes-No</small> |
+| Type | Type of Validation (SQL, Java Script, Java Language) | The Type indicates the type of validation that will occur.  This can be SQL, Java Script or Java Language. | EXP_FormatLine.Type<small> character(1) <br/> List</small> |
+| Column | Column in the table | Link to the database column of the table | EXP_FormatLine.AD_Column_ID<small> numeric(10) <br/> Search</small> |
+| Is Part Unique Index |  |  | EXP_FormatLine.IsPartUniqueIndex<small> character(1) <br/> Yes-No</small> |
+| Embedded Format |  |  | EXP_FormatLine.EXP_EmbeddedFormat_ID<small> numeric(10) <br/> Table</small> |
+| Reference | System Reference and Validation | The Reference could be a display type, list or table validation. | EXP_FormatLine.AD_Reference_ID<small>  <br/> Table</small> |
+| Date Format | Date format used in the input format | The date format is usually detected, but sometimes need to be defined. | EXP_FormatLine.DateFormat<small> character varying(40) <br/> String</small> |
+

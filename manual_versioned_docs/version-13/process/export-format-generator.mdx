@@ -1,0 +1,27 @@
+---
+title: 'Export Format Generator'
+sidebar_label: 'Export Format Generator'
+description: 'Create multiple Export Format based in a Window'
+tags: ['Process']
+---
+
+# Export Format Generator
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 53085</span>
+
+*24/03/2008 → 01/12/2009*
+
+![Export Format Generator](./img/export-format-generator.png)
+
+**Description:** Create multiple Export Format based in a Window
+
+**Classname:** `org.eevolution.process.ExportFormatGenerator`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | AD_Window_ID<br/>Table Direct |
+| Includes only the Tabs that Insert records | Generated Export Format for the Tabs with Insert Record is Yes |  | IsInsertRecord<br/>Yes-No |
+| Includes only the mandatory columns | Generated an Export Format Line  if the column is mandatory  |  | IsMandatory<br/>Yes-No |
+
