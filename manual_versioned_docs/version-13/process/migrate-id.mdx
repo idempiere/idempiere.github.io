@@ -1,0 +1,29 @@
+---
+title: 'Migrate ID'
+sidebar_label: 'Migrate ID'
+description: 'Process to migrate an ID or a UUID'
+tags: ['Process']
+---
+
+# Migrate ID
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 200111</span>
+
+*14/03/2019 → 14/03/2019*
+
+![Migrate ID](./img/migrate-id.png)
+
+**Description:** Process to migrate an ID or a UUID
+
+**Classname:** `org.idempiere.process.MigraID`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_Table_ID<br/>Search |
+| Record ID | Direct internal record ID | The Record ID is the internal unique identifier of a record. Please note that zooming to the record may not be successful for Orders, Invoices and Shipment/Receipts as sometimes the Sales Order type is not known. | Record_ID<br/>Integer |
+| To Record ID |  |  | To_Record_ID<br/>Integer |
+| Source UUID | UUID from the source tenant |  | Source_UUID<br/>String |
+| Target UUID | New UUID created by the pack in tenant |  | Target_UUID<br/>String |
+

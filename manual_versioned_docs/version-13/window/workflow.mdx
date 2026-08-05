@@ -1,0 +1,230 @@
+---
+title: 'Workflow'
+sidebar_label: 'Workflow'
+description: 'Maintain Workflow'
+tags: ['Window']
+---
+
+# Workflow
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 113</span>
+
+*11/06/1999 → 02/01/2000*
+
+![Workflow](./img/workflow.png)
+
+**Description:** Maintain Workflow
+
+**Comment/Help:** The Workflow Window defines Workflows in the system, the access level for the Workflow and the Nodes or Steps within the Workflow.
+
+## Tab: Workflow
+
+*Tab Level 0 · Created 21/06/1999 · Updated 02/01/2000*
+
+**Description:** Define Workflow
+
+**Comment/Help:** The Workflow Tab defines Workflows in the system.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Workflow.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Workflow.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | AD_Workflow.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Workflow.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Workflow.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Workflow.Help<small> text <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Workflow.IsActive<small> character(1) <br/> Yes-No</small> |
+| Beta Functionality | This functionality is considered Beta | Beta functionality is not fully tested or completed. | AD_Workflow.IsBetaFunctionality<small> character(1) <br/> Yes-No</small> |
+| Workflow Type | Type of Workflow | The type of workflow determines how the workflow is started. | AD_Workflow.WorkflowType<small> character(1) <br/> List</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_Workflow.AD_Table_ID<small> numeric(10) <br/> Search</small> |
+| Document Value Logic | Logic to determine Workflow Start - If true, a workflow process is started for the document | You can enter simple logic using variables like @Created@=@Updated@, which fires, when a record is created. If you need to evaluate also values of other records, you need to use SQL logic and need to prefix this logic with "SQL=". Example: start a Order verify workflow, when a business partner ordered something and is over the credit limit  "SQL=EXISTS (SELECT * FROM C_BPartner bp WHERE C_Order. C_BPartner_ID=bp. C_BPartner_ID AND SO_CreditUsed &gt; SO_CreditLimit)".<br/>Note that the SQL based logic checks for duplicate workflows (i.e. a workflow is started only once per record). | AD_Workflow.DocValueLogic<small> character varying(2000) <br/> String</small> |
+| Data Access Level | Access Level required | Indicates the access level required for this record or process. | AD_Workflow.AccessLevel<small> character(1) <br/> List</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_Workflow.EntityType<small> character varying(40) <br/> Table</small> |
+| Workflow Responsible | Responsible for Workflow Execution | The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User. | AD_Workflow.AD_WF_Responsible_ID<small> numeric(10) <br/> Table Direct</small> |
+| Priority | Indicates if this request is of a high, medium or low priority. | The Priority indicates the importance of this request. | AD_Workflow.Priority<small> numeric(10) <br/> Integer</small> |
+| Valid from | Valid from including this date (first day) | The Valid From date indicates the first day of a date range | AD_Workflow.ValidFrom<small> timestamp without time zone <br/> Date</small> |
+| Valid to | Valid to including this date (last day) | The Valid To date indicates the last day of a date range | AD_Workflow.ValidTo<small> timestamp without time zone <br/> Date</small> |
+| Publication Status | Status of Publication | Used for internal documentation | AD_Workflow.PublishStatus<small> character(1) <br/> List</small> |
+| Version | Version of the table definition | The Version indicates the version of this table definition. | AD_Workflow.Version<small> numeric(10) <br/> Integer</small> |
+| Author | Author/Creator of the Entity |  | AD_Workflow.Author<small> character varying(20) <br/> String</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | AD_Workflow.IsDefault<small> character(1) <br/> Yes-No</small> |
+| Start Node | Workflow Node, step or process | The Workflow Node indicates a unique step or process in a Workflow. | AD_Workflow.AD_WF_Node_ID<small> numeric(10) <br/> Table Direct</small> |
+| Workflow Processor | Workflow Processor Server | Workflow Processor Server | AD_Workflow.AD_WorkflowProcessor_ID<small> numeric(10) <br/> Table Direct</small> |
+| Duration Unit | Unit of Duration | Unit to define the length of time for the execution | AD_Workflow.DurationUnit<small> character(1) <br/> List</small> |
+| Duration Limit | Maximum Duration in Duration Unit | Maximum (critical) Duration for time management purposes (e.g. starting an escalation procedure, etc.) in Duration Units. | AD_Workflow.Limit<small> numeric(10) <br/> Integer</small> |
+| Duration | Normal Duration in Duration Unit | Expected (normal) Length of time for the execution | AD_Workflow.Duration<small> numeric(10) <br/> Integer</small> |
+| Cost | Cost information |  | AD_Workflow.Cost<small> numeric <br/> Costs+Prices</small> |
+| Working Time | Workflow Simulation Execution Time | Amount of time the performer of the activity needs to perform the task in Duration Unit | AD_Workflow.WorkingTime<small> numeric(10) <br/> Integer</small> |
+| Waiting Time | Workflow Simulation Waiting time | Amount of time needed to prepare the performance of the task on Duration Units | AD_Workflow.WaitingTime<small> numeric(10) <br/> Integer</small> |
+| Context Help |  |  | AD_Workflow.AD_CtxHelp_ID<small> numeric(10) <br/> Search</small> |
+| Validate Workflow | Validate that the workflow is correct | (limited checking) | AD_Workflow.ValidateWorkflow<small> character(1) <br/> Button</small> |
+| Valid | Element is valid | The element passed the validation check | AD_Workflow.IsValid<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Node
+
+*Tab Level 1 · Created 11/06/1999 · Updated 22/04/2020*
+
+**Description:** Define workflow nodes
+
+**Comment/Help:** The Node Tab defines each Node, Activity or step in this Workflow.&lt;br&gt;
+The action (activity) type determines the execution: "Route" may be used in routing control conditions.  "None" identifies manual execution.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_WF_Node.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_WF_Node.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Workflow | Workflow or combination of tasks | The Workflow field identifies a unique Workflow in the system. | AD_WF_Node.AD_Workflow_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | AD_WF_Node.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_WF_Node.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_WF_Node.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_WF_Node.Help<small> text <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_WF_Node.IsActive<small> character(1) <br/> Yes-No</small> |
+| Centrally maintained | Information maintained in System Element table | The Centrally Maintained checkbox indicates if the Name, Description and Help maintained in 'System Element' table  or 'Window' table. | AD_WF_Node.IsCentrallyMaintained<small> character(1) <br/> Yes-No</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_WF_Node.EntityType<small> character varying(40) <br/> Table</small> |
+| Workflow Responsible | Responsible for Workflow Execution | The ultimate responsibility for a workflow is with an actual user. The Workflow Responsible allows to define ways to find that actual User. | AD_WF_Node.AD_WF_Responsible_ID<small> numeric(10) <br/> Table Direct</small> |
+| Priority | Indicates if this request is of a high, medium or low priority. | The Priority indicates the importance of this request. | AD_WF_Node.Priority<small> numeric(10) <br/> Integer</small> |
+| Start Mode | Workflow Activity Start Mode  | How is the execution of an activity triggered. Automatic are triggered implicitly by the system, Manual explicitly by the User. | AD_WF_Node.StartMode<small> character(1) <br/> List</small> |
+| Finish Mode | Workflow Activity Finish Mode | How the system operated at the end of an activity. Automatic  implies return when the invoked applications finished control - Manual the user has to explicitly terminate the activity. | AD_WF_Node.FinishMode<small> character(1) <br/> List</small> |
+| Join Element | Semantics for multiple incoming Transitions | Semantics for multiple incoming Transitions for a Node/Activity. AND joins all concurrent threads - XOR requires one thread (no synchronization). | AD_WF_Node.JoinElement<small> character(1) <br/> List</small> |
+| Split Element | Semantics for multiple outgoing Transitions | Semantics for multiple outgoing Transitions for a Node/Activity.  AND represents multiple concurrent threads - XOR represents the first transition with a true Transition condition. | AD_WF_Node.SplitElement<small> character(1) <br/> List</small> |
+| Action | Indicates the Action to be performed | The Action field is a drop down list box which indicates the Action to be performed for this Item. | AD_WF_Node.Action<small> character(1) <br/> List</small> |
+| Image | Image or Icon | Images and Icon can be used to display supported graphic formats (gif, jpg, png).<br/>You can either load the image (in the database) or point to a graphic via a URI (i.e. it can point to a resource, http address) | AD_WF_Node.AD_Image_ID<small> numeric(10) <br/> Table Direct</small> |
+| Info Window | Info and search/select Window | The Info window is used to search and select records as well as display information relevant to the selection. | AD_WF_Node.AD_InfoWindow_ID<small> numeric(10) <br/> Table Direct</small> |
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | AD_WF_Node.AD_Window_ID<small> numeric(10) <br/> Table Direct</small> |
+| Special Form | Special Form | The Special Form field identifies a unique Special Form in the system. | AD_WF_Node.AD_Form_ID<small> numeric(10) <br/> Table Direct</small> |
+| Column | Column in the table | Link to the database column of the table | AD_WF_Node.AD_Column_ID<small> numeric(10) <br/> Table Direct</small> |
+| Attribute Name | Name of the Attribute | Identifier of the attribute | AD_WF_Node.AttributeName<small> character varying(60) <br/> String</small> |
+| Attribute Value | Value of the Attribute | iDempiere converts the (string) field values to the attribute data type.  Booleans (Yes-No) may have the values "true" and "false", the date format is YYYY-MM-DD | AD_WF_Node.AttributeValue<small> character varying(60) <br/> String</small> |
+| EMail Recipient | Recipient of the EMail |  | AD_WF_Node.EMailRecipient<small> character(1) <br/> List</small> |
+| EMail Address | Electronic Mail Address | The Email Address is the Electronic Mail ID for this User and should be fully qualified (e.g. joe.smith@company.com). The Email Address is used to access the self service application functionality from the web. | AD_WF_Node.EMail<small> character varying(60) <br/> String</small> |
+| Mail Template | Text templates for mailings | The Mail Template indicates the mail template for return messages. Mail text can include variables.  The priority of parsing is User/Contact, Business Partner and then the underlying business object (like Request, Dunning, Workflow object).&lt;br&gt;<br/>So, @Name@ would resolve into the User name (if user is defined defined), then Business Partner name (if business partner is defined) and then the Name of the business object if it has a Name.&lt;br&gt;<br/>For Multi-Lingual systems, the template is translated based on the Business Partner's language selection. | AD_WF_Node.R_MailText_ID<small> numeric(10) <br/> Table Direct</small> |
+| Attached Document | Attached document to Email |  | AD_WF_Node.IsAttachedDocumentToEmail<small> character(1) <br/> Yes-No</small> |
+| Duration Limit | Maximum Duration in Duration Unit | Maximum (critical) Duration for time management purposes (e.g. starting an escalation procedure, etc.) in Duration Units. | AD_WF_Node.Limit<small> numeric(10) <br/> Integer</small> |
+| OS Task | Operation System Task | The Task field identifies a Operation System Task in the system. | AD_WF_Node.AD_Task_ID<small> numeric(10) <br/> Table Direct</small> |
+| Workflow | Workflow or tasks | The Workflow field identifies a unique workflow.   A workflow is a grouping of related tasks, in a specified sequence and optionally including approvals | AD_WF_Node.Workflow_ID<small> numeric(10) <br/> Table</small> |
+| Subflow Execution | Mode how the sub-workflow is executed |  | AD_WF_Node.SubflowExecution<small> character(1) <br/> List</small> |
+| Process | Process or Report | The Process field identifies a unique Process or Report in the system. | AD_WF_Node.AD_Process_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Action | The targeted status of the document | You find the current status in the Document Status field. The options are listed in a popup | AD_WF_Node.DocAction<small> character(2) <br/> List</small> |
+| Wait Time | Time in minutes to wait (sleep) | Time in minutes to be suspended (sleep).  A value of -1 means to wait and execute after the commit of the workflow transaction. | AD_WF_Node.WaitTime<small> numeric(10) <br/> Integer</small> |
+| Dynamic Priority Unit | Change of priority when Activity is suspended waiting for user | Starting with the Process / Node priority level, the priority of the suspended activity can be changed dynamically. Example +5 every 10 minutes | AD_WF_Node.DynPriorityUnit<small> character(1) <br/> List</small> |
+| Dynamic Priority Change | Change of priority when Activity is suspended waiting for user | Starting with the Process / Node priority level, the priority of the suspended activity can be changed dynamically. Example +5 every 10 minutes | AD_WF_Node.DynPriorityChange<small> numeric <br/> Number</small> |
+| Duration | Normal Duration in Duration Unit | Expected (normal) Length of time for the execution | AD_WF_Node.Duration<small> numeric(10) <br/> Integer</small> |
+| Cost | Cost information |  | AD_WF_Node.Cost<small> numeric <br/> Costs+Prices</small> |
+| Working Time | Workflow Simulation Execution Time | Amount of time the performer of the activity needs to perform the task in Duration Unit | AD_WF_Node.WorkingTime<small> numeric(10) <br/> Integer</small> |
+| Waiting Time | Workflow Simulation Waiting time | Amount of time needed to prepare the performance of the task on Duration Units | AD_WF_Node.WaitingTime<small> numeric(10) <br/> Integer</small> |
+| Context Help |  |  | AD_WF_Node.AD_CtxHelp_ID<small> numeric(10) <br/> Search</small> |
+
+## Tab: › › Parameter
+
+*Tab Level 2 · Created 01/01/2004 · Updated 28/09/2015*
+
+**Description:** Workflow Node Parameter
+
+**Comment/Help:** Parameter for the execution of the Workflow Node
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_WF_Node_Para.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_WF_Node_Para.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Node | Workflow Node (activity), step or process | The Workflow Node indicates a unique step or process in a Workflow. | AD_WF_Node_Para.AD_WF_Node_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_WF_Node_Para.IsActive<small> character(1) <br/> Yes-No</small> |
+| Process Parameter |  |  | AD_WF_Node_Para.AD_Process_Para_ID<small> numeric(10) <br/> Table Direct</small> |
+| Attribute Name | Name of the Attribute | Identifier of the attribute | AD_WF_Node_Para.AttributeName<small> character varying(60) <br/> String</small> |
+| Attribute Value | Value of the Attribute | iDempiere converts the (string) field values to the attribute data type.  Booleans (Yes-No) may have the values "true" and "false", the date format is YYYY-MM-DD | AD_WF_Node_Para.AttributeValue<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_WF_Node_Para.Description<small> character varying(255) <br/> String</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_WF_Node_Para.EntityType<small> character varying(40) <br/> Table</small> |
+
+## Tab: › › Node Translation
+
+*Tab Level 2 · Created 11/06/1999 · Updated 27/10/2024*
+
+**Description:** Node Translation
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_WF_Node_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_WF_Node_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Node | Workflow Node (activity), step or process | The Workflow Node indicates a unique step or process in a Workflow. | AD_WF_Node_Trl.AD_WF_Node_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_WF_Node_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_WF_Node_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_WF_Node_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_WF_Node_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_WF_Node_Trl.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_WF_Node_Trl.Help<small> text <br/> Text</small> |
+
+## Tab: › › Transition
+
+*Tab Level 2 · Created 11/06/1999 · Updated 16/11/2012*
+
+**Description:** Workflow Node Transition
+
+**Comment/Help:** The Next Nodes Tab defines the order or Nodes or Steps in a Workflow.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_WF_NodeNext.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_WF_NodeNext.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Node | Workflow Node (activity), step or process | The Workflow Node indicates a unique step or process in a Workflow. | AD_WF_NodeNext.AD_WF_Node_ID<small> numeric(10) <br/> Table Direct</small> |
+| Next Node | Next Node in workflow | The Next Node indicates the next step or task in this Workflow. | AD_WF_NodeNext.AD_WF_Next_ID<small> numeric(10) <br/> Table</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | AD_WF_NodeNext.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_WF_NodeNext.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_WF_NodeNext.IsActive<small> character(1) <br/> Yes-No</small> |
+| Std User Workflow | Standard Manual User Approval Workflow | If selected, only documents with an open status (drafted, in progress, approved, rejected, invalid) and standard user actions (prepare, complete, approve, reject) are allowed to continue.  Use this to prevent having to define details on how automatic processes (unlock, invalidate, post, re-activate) and when the document is closed for normal user action (completed, waiting, closed, voided, reversed). | AD_WF_NodeNext.IsStdUserWorkflow<small> character(1) <br/> Yes-No</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_WF_NodeNext.EntityType<small> character varying(40) <br/> Table</small> |
+
+## Tab: › › › Condition
+
+*Tab Level 3 · Created 17/03/2004 · Updated 16/11/2012*
+
+**Description:** Workflow Node Transition Condition
+
+**Comment/Help:** Optional restriction of transition of one node to the next. The (string) value is converted to the datatype.  Booleans (Yes-No) are represented by "true" and "false", the date format is YYYY-mm-DD
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_WF_NextCondition.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_WF_NextCondition.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Node Transition | Workflow Node Transition | The Next Nodes Tab defines the order or Nodes or Steps in a Workflow. | AD_WF_NextCondition.AD_WF_NodeNext_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | AD_WF_NextCondition.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_WF_NextCondition.IsActive<small> character(1) <br/> Yes-No</small> |
+| And/Or | Logical operation: AND or OR |  | AD_WF_NextCondition.AndOr<small> character(1) <br/> List</small> |
+| Operation | Compare Operation |  | AD_WF_NextCondition.Operation<small> character(2) <br/> List</small> |
+| Column | Column in the table | Link to the database column of the table | AD_WF_NextCondition.AD_Column_ID<small> numeric(10) <br/> Table Direct</small> |
+| SQL Expression/Statement |  |  | AD_WF_NextCondition.SQLStatement<small> character varying(4000) <br/> String</small> |
+| Value | Condition Value |  | AD_WF_NextCondition.Value<small> character varying(40) <br/> String</small> |
+| Value To | Value To |  | AD_WF_NextCondition.Value2<small> character varying(40) <br/> String</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_WF_NextCondition.EntityType<small> character varying(40) <br/> Table</small> |
+
+## Tab: › Workflow Translation
+
+*Tab Level 1 · Created 21/06/1999 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Workflow_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Workflow_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Workflow | Workflow or combination of tasks | The Workflow field identifies a unique Workflow in the system. | AD_Workflow_Trl.AD_Workflow_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_Workflow_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Workflow_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_Workflow_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Workflow_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Workflow_Trl.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Workflow_Trl.Help<small> text <br/> Text</small> |
+
+## Tab: › Access
+
+*Tab Level 1 · Created 04/09/2000 · Updated 16/11/2012*
+
+**Description:** Workflow Access
+
+**Comment/Help:** The Workflow Access Tab defines the Roles who have access to this Workflow. 
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Workflow_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Workflow_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Workflow | Workflow or combination of tasks | The Workflow field identifies a unique Workflow in the system. | AD_Workflow_Access.AD_Workflow_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Workflow_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Workflow_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Read Write | Field is read / write | The Read Write indicates that this field may be read and updated. | AD_Workflow_Access.IsReadWrite<small> character(1) <br/> Yes-No</small> |
+

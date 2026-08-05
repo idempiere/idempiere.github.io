@@ -1,0 +1,72 @@
+---
+title: 'Lead'
+sidebar_label: 'Lead'
+description: 'Maintain Leads'
+tags: ['Window']
+---
+
+# Lead
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 53153</span>
+
+*25/08/2013 → 04/01/2021*
+
+![Lead](./img/lead.png)
+
+**Description:** Maintain Leads
+
+**Comment/Help:** The Lead Window allows you to maintain Leads (can be Sales or Purchase). These are unqualified contacts to who you wish to recruit or market to. 
+
+## Tab: Lead
+
+*Tab Level 0 · Created 25/08/2013 · Updated 31/12/2020*
+
+**Description:** Any information about the contact
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_User.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_User.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | AD_User.Value<small> character varying(40) <br/> String</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | AD_User.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_User.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_User.Description<small> character varying(255) <br/> String</small> |
+| Convert Lead | Convert Lead to BP and Opportunity | Convert Lead into a Business Partner and (optional) Sales Opportunity | AD_User.Processing<small> character(1) <br/> Button</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_User.IsActive<small> character(1) <br/> Yes-No</small> |
+| Sales Lead | This contact is a sales lead | Sales leads can be converted into full contacts with Business Partners. | AD_User.IsSalesLead<small> character(1) <br/> Yes-No</small> |
+| Vendor Lead | This contact is a vendor lead | Vendor leads can be converted into full contacts with Business Partners. | AD_User.IsVendorLead<small> character(1) <br/> Yes-No</small> |
+| Phone | Identifies a telephone number | The Phone field identifies a telephone number | AD_User.Phone<small> character varying(40) <br/> String</small> |
+| 2nd Phone | Identifies an alternate telephone number. | The 2nd Phone field identifies an alternate telephone number. | AD_User.Phone2<small> character varying(40) <br/> String</small> |
+| EMail Address | Electronic Mail Address | The Email Address is the Electronic Mail ID for this User and should be fully qualified (e.g. joe.smith@company.com). The Email Address is used to access the self service application functionality from the web. | AD_User.EMail<small> character varying(60) <br/> String</small> |
+| Fax | Facsimile number | The Fax identifies a facsimile number for this Business Partner or  Location | AD_User.Fax<small> character varying(40) <br/> String</small> |
+| Address | Location or Address | The Location / Address field defines the location of an entity. | AD_User.C_Location_ID<small> numeric(10) <br/> Location (Address)</small> |
+| Birthday | Birthday or Anniversary day | Birthday or Anniversary day | AD_User.Birthday<small> timestamp without time zone <br/> Date</small> |
+| BP Name |  |  | AD_User.BPName<small> character varying(60) <br/> String</small> |
+| BP Address | Address of the Business Partner |  | AD_User.BP_Location_ID<small> numeric(10) <br/> Location (Address)</small> |
+| Position | Job Position |  | AD_User.C_Job_ID<small> numeric(10) <br/> Table Direct</small> |
+| Campaign | Marketing Campaign | The Campaign defines a unique marketing program.  Projects can be associated with a pre defined Marketing Campaign.  You can then report based on a specific Campaign. | AD_User.C_Campaign_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | AD_User.SalesRep_ID<small> numeric(10) <br/> Table</small> |
+| Lead Source | The source of this lead/opportunity |  | AD_User.LeadSource<small> character varying(10) <br/> List</small> |
+| Lead Source Description | Additional information on the source of this lead/opportunity |  | AD_User.LeadSourceDescription<small> character varying(255) <br/> Text</small> |
+| Lead Status | The status of this lead/opportunity in the sales cycle |  | AD_User.LeadStatus<small> character varying(10) <br/> List</small> |
+| Lead Status Description | Additional information on the status of this lead/opportunity |  | AD_User.LeadStatusDescription<small> character varying(255) <br/> Text</small> |
+| Comments | Comments or additional information | The Comments field allows for free form entry of additional information. | AD_User.Comments<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › Activity
+
+*Tab Level 1 · Created 25/08/2013 · Updated 25/08/2013*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_ContactActivity.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_ContactActivity.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | C_ContactActivity.AD_User_ID<small> numeric(10) <br/> Search</small> |
+| Activity Type | Type of activity, e.g. task, email, phone call |  | C_ContactActivity.ContactActivityType<small> character varying(10) <br/> List</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_ContactActivity.Description<small> character varying(255) <br/> String</small> |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | C_ContactActivity.SalesRep_ID<small> numeric(10) <br/> Table</small> |
+| Sales Opportunity |  |  | C_ContactActivity.C_Opportunity_ID<small> numeric(10) <br/> Table Direct</small> |
+| Comments | Comments or additional information | The Comments field allows for free form entry of additional information. | C_ContactActivity.Comments<small> text <br/> Text</small> |
+| Start Date | First effective day (inclusive) | The Start Date indicates the first or starting date | C_ContactActivity.StartDate<small> timestamp without time zone <br/> Date+Time</small> |
+| End Date | Last effective date (inclusive) | The End Date indicates the last date in this range. | C_ContactActivity.EndDate<small> timestamp without time zone <br/> Date+Time</small> |
+| Complete | It is complete | Indication that this is complete | C_ContactActivity.IsComplete<small> character(1) <br/> Yes-No</small> |
+

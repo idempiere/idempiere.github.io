@@ -1,0 +1,40 @@
+---
+title: 'Performance Measurement Setup'
+sidebar_label: 'Performance Measurement Setup'
+description: 'Setup your Performance Measurement'
+tags: ['Workflow']
+---
+
+# Performance Measurement Setup
+
+<span className="badge badge--primary">Workflow</span> <span className="badge badge--secondary">ID 112</span>
+
+*24/04/2001 → 25/12/2005*
+
+![Performance Measurement Setup](./img/performance-measurement-setup.png)
+
+**Description:** Setup your Performance Measurement
+
+**Comment/Help:** This workflow guides you through setting up your performance measurement based on Key Performance Indicators, Balanced Scorecard, etc.
+
+Most important: Do your analysis first!
+- What are your goals and how do you measure it?
+
+When you are setting up the system, you do it in reverse:
+First you define how you measure it and last you define the goals for the measurements.
+You have three ways measuring performance:
+- via quantifiable measures (e.g. sales of $3 million in Q1)
+- via manual measures
+- via achievements (tasks)
+
+The system converts the measures into percentages (based on the target and achieved measure - or number of total and reached achievements)
+
+## Table: Fields
+
+| **Name** | **Description** | **Comment/Help** | **Type** | **Zoom** |
+|---|---|---|---|---|
+| Performance Color Schema | Maintain Performance Color Schema | Visual representation of performance by color.  The Schema has often three levels (e.g. red-yellow-green).  iDempiere supports two levels (e.g. red-green) or four levels (e.g. gray-bronce-silver-gold).  Note that Measures without a goal are represented white.  The percentages could be between 0 and unlimited (i.e. above 100%). | User Window | Performance Color Schema |
+| Performance Measure Calculation | Define how you calculate your performance measures | The Performance Measure Calculation defines how performance measures will be calculated.<br/>The sql needs to return a single value.  Please check examples.&lt;br&gt;<br/>The date restriction is defined in the Goal.<br/>Any restrictions for Organizations, Business Partners, Products, etc. are as Performance Goal Restrictions. | User Window | Performance Measure Calculation |
+| Performance Measure | Define your Performance Measures | The Performance Measure Window allows you to define the rules and restrictions for performance measurement.  You can, for example, restrict performance measurement to sales for a certain product category for a defined time frame. | User Window | Performance Measure |
+| Performance Goal | Define Performance Goals | The Performance Goal Window allows you to define performance goals or all, a role or a user | User Window | Performance Goal |
+

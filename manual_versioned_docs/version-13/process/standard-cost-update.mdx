@@ -1,0 +1,31 @@
+---
+title: 'Standard Cost Update'
+sidebar_label: 'Standard Cost Update'
+description: 'Set standard and future cost price'
+tags: ['Process']
+---
+
+# Standard Cost Update
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 182</span>
+
+*21/02/2002 → 10/03/2022*
+
+![Standard Cost Update](./img/standard-cost-update.png)
+
+**Description:** Set standard and future cost price
+
+**Comment/Help:** For Standard Costs you can set/recalculate the current or future cost price (for the cost type of the accounting schema). If the Costing Level of the Accounting Schema is set to Tenant, missing cost records are created. The historical costs are calculated based on the accumulated amount/quantity of the costing method.
+
+**Classname:** `org.compiere.process.CostUpdate`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Product Category | Category of a Product | Identifies the category which this product belongs to.  Product categories are used for pricing and selection. | M_Product_Category_ID<br/>Table Direct |
+| Set Standard Cost to | Set new Standard Costs to the selection |  | SetStandardCostTo<br/>List |
+| Set Future Costs to | Set the Future costs to the selection |  | SetFutureCostTo<br/>List |
+| Pricelist Version | Only used if Price List is used to set future/standard cost price |  | M_PriceList_Version_ID<br/>Table Direct |
+| Document Type | Inventory Cost Adjustment Document Type |  | C_DocType_ID<br/>Table |
+

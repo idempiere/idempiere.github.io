@@ -1,0 +1,91 @@
+---
+title: 'Info Window Customization'
+sidebar_label: 'Info Window Customization'
+description: 'Define Info Window Customization for Role/User'
+tags: ['Window']
+---
+
+# Info Window Customization
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200110</span>
+
+*29/09/2020 → 20/09/2023*
+
+![Info Window Customization](./img/info-window-customization.png)
+
+**Description:** Define Info Window Customization for Role/User
+
+**Comment/Help:** The customization values defined here overwrite/replace the default system definition if defined.
+
+## Tab: Info Window Customization
+
+*Tab Level 0 · Created 29/09/2020 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_UserDef_Info.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_UserDef_Info.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_UserDef_Info.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | AD_UserDef_Info.AD_User_ID<small> numeric(10) <br/> Search</small> |
+| Info Window | Info and search/select Window | The Info window is used to search and select records as well as display information relevant to the selection. | AD_UserDef_Info.AD_InfoWindow_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_UserDef_Info.IsActive<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_UserDef_Info.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_UserDef_Info.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_UserDef_Info.Help<small> character varying(2000) <br/> Text</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_UserDef_Info.AD_Language<small> character varying(6) <br/> Table</small> |
+| Show in Dashboard | Show the dashlet in the dashboard |  | AD_UserDef_Info.IsShowInDashboard<small> character(1) <br/> List</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | AD_UserDef_Info.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Image URL | URL of  image | URL of image; The image is not stored in the database, but retrieved at runtime. The image can be a gif, jpeg or png. | AD_UserDef_Info.ImageURL<small> character varying(120) <br/> String</small> |
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | AD_UserDef_Info.AD_Window_ID<small> numeric(10) <br/> Table Direct</small> |
+| PO Window | Purchase Order Window | Window for Purchase Order (AP) Zooms | AD_UserDef_Info.PO_Window_ID<small> numeric(10) <br/> Table</small> |
+
+## Tab: › Column Customization
+
+*Tab Level 1 · Created 29/09/2020 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_UserDef_Info_Column.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_UserDef_Info_Column.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| User defined Info Window |  |  | AD_UserDef_Info_Column.AD_UserDef_Info_ID<small> numeric(10) <br/> Table Direct</small> |
+| Info Column | Info Window Column | Column in the Info Window for display and/or selection.  If used for selection, the column cannot be a SQL expression. The SQL clause must be fully qualified based on the FROM clause in the Info Window definition | AD_UserDef_Info_Column.AD_InfoColumn_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_UserDef_Info_Column.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_UserDef_Info_Column.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_UserDef_Info_Column.Help<small> character varying(2000) <br/> Text</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | AD_UserDef_Info_Column.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Selection Column Sequence | Selection Column Sequence | For ordering sequence of selection column | AD_UserDef_Info_Column.SeqNoSelection<small> numeric(10) <br/> Integer</small> |
+| Displayed | Determines, if this field is displayed | If the field is displayed, the field Display Logic will determine at runtime, if it is actually displayed | AD_UserDef_Info_Column.IsDisplayed<small> character(1) <br/> List</small> |
+| Read Only | Field is read only | The Read Only indicates that this field may only be Read.  It may not be updated. | AD_UserDef_Info_Column.IsReadOnly<small> character(1) <br/> List</small> |
+| Query Criteria | The column is also used as a query criteria | The column is used to enter queries - the SQL cannot be an expression | AD_UserDef_Info_Column.IsQueryCriteria<small> character(1) <br/> List</small> |
+| Mandatory | Data entry is required in this column | The field must have a value for the record to be saved to the database. | AD_UserDef_Info_Column.IsMandatory<small> character(1) <br/> List</small> |
+| Query After Change | Issues a query request after the user has made changes to the field |  | AD_UserDef_Info_Column.IsQueryAfterChange<small> character(1) <br/> List</small> |
+| Display Logic | If the Field is displayed, the result determines if the field is actually displayed | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_UserDef_Info_Column.DisplayLogic<small> character varying(2000) <br/> Text</small> |
+| Default Logic | Default value hierarchy, separated by ; | The defaults are evaluated in the order of definition, the first not null value becomes the default value of the column. The values are separated by comma or semicolon. a) Literals:. 'Text' or 123 b) Variables - in format @Variable@ - Login e.g. #Date, #AD_Org_ID, #AD_Tenant_ID - Accounting Schema: e.g. $C_AcctSchema_ID, $C_Calendar_ID - Global defaults: e.g. DateFormat - Window values (all Picks, CheckBoxes, RadioButtons, and DateDoc/DateAcct) c) SQL code with the tag: @SQL=SELECT something AS DefaultValue FROM ... The SQL statement can contain variables.  There can be no other value other than the SQL statement. The default is only evaluated, if no user preference is defined.  Default definitions are ignored for record columns as Key, Parent, Tenant as well as Buttons. | AD_UserDef_Info_Column.DefaultValue<small> character varying(2000) <br/> String</small> |
+| Field Style | Field CSS Style  |  | AD_UserDef_Info_Column.AD_FieldStyle_ID<small> numeric(10) <br/> Table</small> |
+| Auto complete | Automatic completion for text fields | The autocompletion uses all existing values (from the same tenant and organization) of the field. | AD_UserDef_Info_Column.IsAutocomplete<small> character(1) <br/> List</small> |
+| Placeholder |  |  | AD_UserDef_Info_Column.Placeholder<small> character varying(255) <br/> String</small> |
+| Reference | System Reference and Validation | The Reference could be a display type, list or table validation. | AD_UserDef_Info_Column.AD_Reference_ID<small> numeric(10) <br/> Table</small> |
+| Dynamic Validation | Dynamic Validation Rule | These rules define how an entry is determined to valid. You can use variables for dynamic (context sensitive) validation. | AD_UserDef_Info_Column.AD_Val_Rule_ID<small> numeric(10) <br/> Table Direct</small> |
+| Reference Key | Required to specify, if data type is Table or List | The Reference Value indicates where the reference values are stored.  It must be specified if the data type is Table or List.   | AD_UserDef_Info_Column.AD_Reference_Value_ID<small> numeric(10) <br/> Table</small> |
+| Query Function | Database function for query | Database function for user query. If the database function takes more than just the column name parameter, use ? to indicate where the column name should goes to. E.g: Upper, Trunc and To_Char(?,'MM') | AD_UserDef_Info_Column.QueryFunction<small> character varying(2000) <br/> String</small> |
+| Query Operator | Operator for database query |  | AD_UserDef_Info_Column.QueryOperator<small> character varying(10) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_UserDef_Info_Column.IsActive<small> character(1) <br/> Yes-No</small> |
+| Input field validation | Input field validation query | Input field validation query | AD_UserDef_Info_Column.InputFieldValidation<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › Related Customization
+
+*Tab Level 1 · Created 29/09/2020 · Updated 16/10/2020*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_UserDef_Info_Related.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_UserDef_Info_Related.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| User defined Info Window |  |  | AD_UserDef_Info_Related.AD_UserDef_Info_ID<small> numeric(10) <br/> Table Direct</small> |
+| Info Related |  |  | AD_UserDef_Info_Related.AD_InfoRelated_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_UserDef_Info_Related.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_UserDef_Info_Related.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_UserDef_Info_Related.Help<small> character varying(2000) <br/> Text</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | AD_UserDef_Info_Related.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_UserDef_Info_Related.IsActive<small> character(1) <br/> Yes-No</small> |
+| Display Logic | If the Field is displayed, the result determines if the field is actually displayed | format := &#123;expression&#125; [&#123;logic&#125; &#123;expression&#125;]&lt;br&gt; <br/>expression := @&#123;context&#125;@&#123;operand&#125;&#123;value&#125; or @&#123;context&#125;@&#123;operand&#125;&#123;value&#125;&lt;br&gt; <br/>logic := &#123;\|&#125;\|&#123;&amp;&#125;&lt;br&gt;<br/>context := any global or window context &lt;br&gt;<br/>value := strings or numbers&lt;br&gt;<br/>logic operators	:= AND or OR with the previous result from left to right &lt;br&gt;<br/>operand := eq&#123;=&#125;, gt&#123;&amp;gt;&#125;, le&#123;&amp;lt;&#125;, not&#123;~^!&#125; &lt;br&gt;<br/>Examples: &lt;br&gt;<br/>&lt;ul&gt;<br/>&lt;li&gt; @AD_Table_ID@=14 \| @Language@!GERGER&lt;/li&gt;<br/>&lt;li&gt; @PriceLimit@&gt;10 \| @PriceList@&gt;@PriceActual@&lt;/li&gt;<br/>&lt;li&gt; @Name@&gt;J&lt;/li&gt;<br/>&lt;/ul&gt;<br/>Strings may be in single quotes (optional) | AD_UserDef_Info_Related.DisplayLogic<small> character varying(2000) <br/> Text</small> |
+

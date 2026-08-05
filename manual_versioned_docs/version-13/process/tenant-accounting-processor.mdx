@@ -1,0 +1,28 @@
+---
+title: 'Tenant Accounting Processor'
+sidebar_label: 'Tenant Accounting Processor'
+description: 'Tenant Accounting Processor'
+tags: ['Process']
+---
+
+# Tenant Accounting Processor
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 53187</span>
+
+*13/09/2009 → 10/03/2022*
+
+![Tenant Accounting Processor](./img/tenant-accounting-processor.png)
+
+**Description:** Tenant Accounting Processor
+
+**Comment/Help:** The tenant accounting processor allows a user to run the accounting processor in a tenant session.  The system configurator parameter CLIENT_ACCOUNTING must be enabled (configured as [I]mmediate or [Q]ueue).
+
+**Classname:** `org.adempiere.process.ClientAcctProcessor`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | C_AcctSchema_ID<br/>Table Direct |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_Table_ID<br/>Table Direct |
+

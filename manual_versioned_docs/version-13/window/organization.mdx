@@ -1,0 +1,67 @@
+---
+title: 'Organization'
+sidebar_label: 'Organization'
+description: 'Maintain Organizations'
+tags: ['Window']
+---
+
+# Organization
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 110</span>
+
+*11/06/1999 → 02/01/2000*
+
+![Organization](./img/organization.png)
+
+**Description:** Maintain Organizations
+
+**Comment/Help:** The Organization Window allows you to define and maintain Organizational entities.  An Organization is often a legal entity or sub-unit for which documents and transactions are processed
+
+## Tab: Organization
+
+*Tab Level 0 · Created 11/06/1999 · Updated 24/02/2018*
+
+**Description:** Define Organizations
+
+**Comment/Help:** The Organization Tab is used to define an Organization.  Each Organization has a Key and Name and optionally a Description.  
+When adding a new organization, you must re-login to be able to access the new organization.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Org.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | AD_Org.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Org.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Org.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Org.IsActive<small> character(1) <br/> Yes-No</small> |
+| Summary Level | This is a summary entity | A summary entity represents a branch in a tree rather than an end-node. Summary entities are used for reporting and do not have own values. | AD_Org.IsSummary<small> character(1) <br/> Yes-No</small> |
+| Replication Strategy | Data Replication Strategy | The Data Replication Strategy determines what and how tables are replicated  | AD_Org.AD_ReplicationStrategy_ID<small> numeric <br/> Table Direct</small> |
+
+## Tab: › Organization Info
+
+*Tab Level 1 · Created 09/07/1999 · Updated 24/02/2018*
+
+**Description:** Organization Detail Information
+
+**Comment/Help:** The Organization Info Tab is used to define an Organization's address, DUNS number and Tax Identification number
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_OrgInfo.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_OrgInfo.AD_Org_ID<small> numeric(10) <br/> Search</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_OrgInfo.IsActive<small> character(1) <br/> Yes-No</small> |
+| Address | Location or Address | The Location / Address field defines the location of an entity. | AD_OrgInfo.C_Location_ID<small> numeric(10) <br/> Location (Address)</small> |
+| Organization Type | Organization Type | Organization Type allows you to categorize your organizations for reporting purposes | AD_OrgInfo.AD_OrgType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Parent Organization | Parent (superior) Organization  | Parent Organization - the next level in the organizational hierarchy. | AD_OrgInfo.Parent_Org_ID<small> numeric(10) <br/> Table</small> |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | AD_OrgInfo.M_Warehouse_ID<small> numeric(10) <br/> Table Direct</small> |
+| Drop Ship Warehouse | The (logical) warehouse to use for recording drop ship receipts and shipments. | The drop ship warehouse will be used for recording material transactions relating to drop shipments to and from this organization. | AD_OrgInfo.DropShip_Warehouse_ID<small> numeric(10) <br/> Table</small> |
+| D-U-N-S | Dun &amp; Bradstreet Number | Used for EDI - For details see   www.dnb.com/dunsno/list.htm | AD_OrgInfo.DUNS<small> character varying(11) <br/> String</small> |
+| Tax ID | Tax Identification | The Tax ID field identifies the legal Identification number of this Entity. | AD_OrgInfo.TaxID<small> character varying(20) <br/> String</small> |
+| Supervisor | Supervisor for this user/organization - used for escalation and approval | The Supervisor indicates who will be used for forwarding and escalating issues for this user - or for approvals. | AD_OrgInfo.Supervisor_ID<small> numeric(10) <br/> Search</small> |
+| Calendar | Accounting Calendar Name | The Calendar uniquely identifies an accounting calendar.  Multiple calendars can be used.  For example you may need a standard calendar that runs from Jan 1 to Dec 31 and a fiscal calendar that runs from July 1 to June 30. | AD_OrgInfo.C_Calendar_ID<small> numeric(10) <br/> Table Direct</small> |
+| Time Zone | Time zone name |  | AD_OrgInfo.TimeZone<small> character varying(60) <br/> Time Zone</small> |
+| Phone | Identifies a telephone number | The Phone field identifies a telephone number | AD_OrgInfo.Phone<small> character varying(40) <br/> String</small> |
+| 2nd Phone | Identifies an alternate telephone number. | The 2nd Phone field identifies an alternate telephone number. | AD_OrgInfo.Phone2<small> character varying(40) <br/> String</small> |
+| Fax | Facsimile number | The Fax identifies a facsimile number for this Business Partner or  Location | AD_OrgInfo.Fax<small> character varying(40) <br/> String</small> |
+| EMail Address | Electronic Mail Address | The Email Address is the Electronic Mail ID for this User and should be fully qualified (e.g. joe.smith@company.com). The Email Address is used to access the self service application functionality from the web. | AD_OrgInfo.EMail<small> character varying(60) <br/> String</small> |
+| Logo |  |  | AD_OrgInfo.Logo_ID<small> numeric(10) <br/> Image</small> |
+

@@ -1,0 +1,28 @@
+---
+title: 'Open Items (Aging)'
+sidebar_label: 'Open Items (Aging)'
+description: 'Open Items (Invoice and Aging) List'
+tags: ['Report']
+---
+
+# Open Items (Aging)
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 145</span>
+
+*03/01/2001 → 08/12/2023*
+
+![Open Items (Aging)](./img/open-items-aging.png)
+
+**Description:** Open Items (Invoice and Aging) List
+
+**Comment/Help:** Displays all unpaid invoices for a given Business Partner and date range.
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Business Partner  | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BPartner_ID<br/>Chosen Multiple Selection Search |
+| Sales Transaction | This is a Sales Transaction | The Sales Transaction checkbox indicates if this item is a Sales Transaction. | IsSOTrx<br/>Yes-No |
+| Days due | Number of days due (negative: due in number of days) |  | DaysDue<br/>Number |
+| Collection Status | Invoice Collection Status | Status of the invoice collection process | InvoiceCollectionType<br/>Chosen Multiple Selection List |
+

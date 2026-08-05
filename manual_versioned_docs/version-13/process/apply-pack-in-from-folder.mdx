@@ -1,0 +1,42 @@
+---
+title: 'Apply Pack In from Folder'
+sidebar_label: 'Apply Pack In from Folder'
+description: 'Apply all zip files from a folder following the rules and conventions of Automatic Pack In process'
+tags: ['Process']
+---
+
+# Apply Pack In from Folder
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 200099</span>
+
+*15/03/2018 → 10/03/2022*
+
+![Apply Pack In from Folder](./img/apply-pack-in-from-folder.png)
+
+**Description:** Apply all zip files from a folder following the rules and conventions of Automatic Pack In process
+
+**Comment/Help:** &lt;p&gt;This process apply all the pack in files found in a folder recursively - ordered by timestamp.&lt;br /&gt;
+The filename of the pack in files is important, it must follow the following convention:&lt;br /&gt;
+[Timestamp]_[ClientValue][_AdditionalInformation].zip&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;strong&gt;Timestamp:&lt;/strong&gt; must be in the format yyyymmddHHMM&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;ClientValue:&lt;/strong&gt; case sensitive and compared against AD_Client.Value to find the tenant where the pack in must be applied&lt;/li&gt;
+	&lt;li&gt;&lt;strong&gt;AdditionalInformation:&lt;/strong&gt; Any additional information to identify the zip file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;NOTE that AD_Client.Value must not contain underscore in order for this process to work.&lt;br /&gt;
+There is a special case for ClientValue, if the ClientValue is ALL-CLIENTS then the 2pack is intended to be applied in all active non-system tenants.&lt;br /&gt;
+If there is a need to apply initially in a seed tenant then the ClientValue must take the form ALL-CLIENTS-Seed.&lt;br /&gt;
+For example:&lt;br /&gt;
+201803151607_ALL-CLIENTS-GardenWorld_Test123.zip&lt;/p&gt;
+
+
+**Classname:** `org.adempiere.pipo2.PackInFolder`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Folder | Path on the server where the pack in files are located |  | Folder<br/>String |
+

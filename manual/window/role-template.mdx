@@ -1,0 +1,168 @@
+---
+title: 'Role Template'
+sidebar_label: 'Role Template'
+description: 'Maintain role templates'
+tags: ['Window']
+---
+
+# Role Template
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200158</span>
+
+*14/10/2025 → 14/10/2025*
+
+![Role Template](./img/role-template.png)
+
+**Description:** Maintain role templates
+
+**Comment/Help:** The Role Template Window allows you to define role templates for inclusion by role.  
+Note that access information is cached and requires re-login or reset of cache.
+
+## Tab: Role
+
+*Tab Level 0 · Created 14/10/2025 · Updated 14/10/2025*
+
+**Description:** Define responsibility roles
+
+**Comment/Help:** Define the role and add the organizations the role has access to. You can give users access to this role and modify the access of this role to windows, forms, processes and reports as well as tasks. &lt;br&gt;
+If the Role User Level is Manual, the assigned access rights are not automatically updated (e.g. if a role has a restricted number of Windows/Processes it can access). You need to add organizational access unless the role has access to all organizations. The SuperUser and the user creating a new role are assigned to the role automatically.  &lt;br&gt;
+If you select an Organization Tree, the user has access to the leaves of  summary organizations.
+Note: You cannot change the System Administrator role.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Role.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Role.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Role.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Role.Description<small> character varying(255) <br/> String</small> |
+| Manual | This is a manual process | The Manual check box indicates if the process will done manually. | AD_Role.IsManual<small> character(1) <br/> Yes-No</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Role.IsActive<small> character(1) <br/> Yes-No</small> |
+| Predefined Context Variables | Predefined context variables to inject when opening a menu entry or a window |  | AD_Role.PredefinedContextVariables<small> character varying(4000) <br/> String</small> |
+
+## Tab: › Window Access
+
+*Tab Level 1 · Created 14/10/2025 · Updated 14/10/2025*
+
+**Description:** Window Access
+
+**Comment/Help:** The Window Access Tab defines the Windows and type of access that this Role is granted.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Window_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Window_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Window_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | AD_Window_Access.AD_Window_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Window_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Read Write | Field is read / write | The Read Write indicates that this field may be read and updated. | AD_Window_Access.IsReadWrite<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Process Access
+
+*Tab Level 1 · Created 14/10/2025 · Updated 14/10/2025*
+
+**Description:** Process Access
+
+**Comment/Help:** The Process Access Tab defines the Processes and type of access that this Role is granted.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Process_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Process_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Process_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Process | Process or Report | The Process field identifies a unique Process or Report in the system. | AD_Process_Access.AD_Process_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Process_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Read Write | Field is read / write | The Read Write indicates that this field may be read and updated. | AD_Process_Access.IsReadWrite<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Form Access
+
+*Tab Level 1 · Created 14/10/2025 · Updated 14/10/2025*
+
+**Description:** Form Access
+
+**Comment/Help:** The Form Access Tab defines the Forms and type of access that this Role is granted.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Form_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Form_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Form_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Special Form | Special Form | The Special Form field identifies a unique Special Form in the system. | AD_Form_Access.AD_Form_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Form_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Read Write | Field is read / write | The Read Write indicates that this field may be read and updated. | AD_Form_Access.IsReadWrite<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Info Access
+
+*Tab Level 1 · Created 14/10/2025 · Updated 14/10/2025*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_InfoWindow_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_InfoWindow_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_InfoWindow_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Info Window | Info and search/select Window | The Info window is used to search and select records as well as display information relevant to the selection. | AD_InfoWindow_Access.AD_InfoWindow_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_InfoWindow_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Workflow Access
+
+*Tab Level 1 · Created 14/10/2025 · Updated 14/10/2025*
+
+**Description:** Workflow Access
+
+**Comment/Help:** The Workflow Access Tab defines the Workflows and type of access that this Role is granted.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Workflow_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Workflow_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Workflow_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Workflow | Workflow or combination of tasks | The Workflow field identifies a unique Workflow in the system. | AD_Workflow_Access.AD_Workflow_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Workflow_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Read Write | Field is read / write | The Read Write indicates that this field may be read and updated. | AD_Workflow_Access.IsReadWrite<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Task Access
+
+*Tab Level 1 · Created 14/10/2025 · Updated 14/10/2025*
+
+**Description:** Task Access
+
+**Comment/Help:** The Task Access Tab defines the Task and type of access that this Role is granted.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Task_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Task_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Task_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| OS Task | Operation System Task | The Task field identifies a Operation System Task in the system. | AD_Task_Access.AD_Task_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Task_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Read Write | Field is read / write | The Read Write indicates that this field may be read and updated. | AD_Task_Access.IsReadWrite<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Document Action Access
+
+*Tab Level 1 · Created 14/10/2025 · Updated 14/10/2025*
+
+**Description:** Define access to document type / document action / role combinations.
+
+**Comment/Help:** Define access to document type / document action / role combinations.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Document_Action_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Document_Action_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Document_Action_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | AD_Document_Action_Access.C_DocType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Reference List | Reference List based on Table | The Reference List field indicates a list of reference values from a database tables.  Reference lists populate drop down list boxes in data entry screens | AD_Document_Action_Access.AD_Ref_List_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Document_Action_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Document Status Access
+
+*Tab Level 1 · Created 14/10/2025 · Updated 14/10/2025*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | PA_DocumentStatusAccess.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | PA_DocumentStatusAccess.AD_Org_ID<small> numeric(10) <br/> Search</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | PA_DocumentStatusAccess.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | PA_DocumentStatusAccess.AD_User_ID<small> numeric(10) <br/> Search</small> |
+| Document Status |  |  | PA_DocumentStatusAccess.PA_DocumentStatus_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | PA_DocumentStatusAccess.IsActive<small> character(1) <br/> Yes-No</small> |
+

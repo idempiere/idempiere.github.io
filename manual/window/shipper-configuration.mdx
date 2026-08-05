@@ -1,0 +1,95 @@
+---
+title: 'Shipper Configuration'
+sidebar_label: 'Shipper Configuration'
+tags: ['Window']
+---
+
+# Shipper Configuration
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200029</span>
+
+*13/12/2012 → 13/12/2012*
+
+![Shipper Configuration](./img/shipper-configuration.png)
+
+## Tab: Shipper
+
+*Tab Level 0 · Created 13/12/2012 · Updated 13/12/2012*
+
+**Description:** Shippers
+
+**Comment/Help:** The Shippers Tab defines any entity who will provide shipping to or shipping from an Organization.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_ShipperCfg.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_ShipperCfg.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | M_ShipperCfg.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_ShipperCfg.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_ShipperCfg.IsActive<small> character(1) <br/> Yes-No</small> |
+| Online Access | Can be accessed online  | The Online Access check box indicates if the application can be accessed via the web.  | M_ShipperCfg.IsOnline<small> character(1) <br/> Yes-No</small> |
+| Shipping Processor Configuration |  |  | M_ShipperCfg.M_ShippingProcessorCfg_ID<small> numeric(10) <br/> Table Direct</small> |
+| Service Code |  |  | M_ShipperCfg.ShippingServiceCode<small> character varying(40) <br/> String</small> |
+| Tracking URL | URL of the shipper to track shipments | The variable @TrackingNo@ in the URL is replaced by the actual tracking number of the shipment. | M_ShipperCfg.TrackingURL<small> character varying(120) <br/> URL</small> |
+| International |  |  | M_ShipperCfg.IsInternational<small> character(1) <br/> Yes-No</small> |
+| Saturday Delivery |  |  | M_ShipperCfg.IsSaturdayDelivery<small> character(1) <br/> Yes-No</small> |
+| Residential |  |  | M_ShipperCfg.IsResidential<small> character(1) <br/> Yes-No</small> |
+| Shipper Copy From ... |  |  | M_ShipperCfg.CopyFrom<small> character(1) <br/> Button</small> |
+
+## Tab: › Packaging
+
+*Tab Level 1 · Created 13/12/2012 · Updated 13/12/2012*
+
+**Description:** Packaging Options supported by the Shipper
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_ShipperPackagingCfg.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_ShipperPackagingCfg.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Shipper Configuration |  |  | M_ShipperPackagingCfg.M_ShipperCfg_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_ShipperPackagingCfg.IsActive<small> character(1) <br/> Yes-No</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | M_ShipperPackagingCfg.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | M_ShipperPackagingCfg.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_ShipperPackagingCfg.Description<small> character varying(255) <br/> String</small> |
+| Weight | Weight of a product | The Weight indicates the weight  of the product in the Weight UOM of the Tenant | M_ShipperPackagingCfg.Weight<small> numeric <br/> Quantity</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | M_ShipperPackagingCfg.IsDefault<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Label Type
+
+*Tab Level 1 · Created 13/12/2012 · Updated 13/12/2012*
+
+**Description:** Label Types Supported by the Shipper.
+
+**Comment/Help:** Used when booking a shipment online to define the label format that will be printed.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_ShipperLabelsCfg.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_ShipperLabelsCfg.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Shipper Configuration |  |  | M_ShipperLabelsCfg.M_ShipperCfg_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_ShipperLabelsCfg.IsActive<small> character(1) <br/> Yes-No</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | M_ShipperLabelsCfg.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | M_ShipperLabelsCfg.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_ShipperLabelsCfg.Description<small> character varying(255) <br/> String</small> |
+| Width |  |  | M_ShipperLabelsCfg.Width<small> numeric <br/> Quantity</small> |
+| Height |  |  | M_ShipperLabelsCfg.Height<small> numeric <br/> Quantity</small> |
+| Label Print Method |  |  | M_ShipperLabelsCfg.LabelPrintMethod<small> character(1) <br/> List</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | M_ShipperLabelsCfg.IsDefault<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Pickup Types
+
+*Tab Level 1 · Created 13/12/2012 · Updated 13/12/2012*
+
+**Description:** Methods that the Shipper will support for picking up from your location
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_ShipperPickupTypesCfg.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_ShipperPickupTypesCfg.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Shipper Configuration |  |  | M_ShipperPickupTypesCfg.M_ShipperCfg_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_ShipperPickupTypesCfg.IsActive<small> character(1) <br/> Yes-No</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | M_ShipperPickupTypesCfg.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | M_ShipperPickupTypesCfg.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_ShipperPickupTypesCfg.Description<small> character varying(255) <br/> String</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | M_ShipperPickupTypesCfg.IsDefault<small> character(1) <br/> Yes-No</small> |
+

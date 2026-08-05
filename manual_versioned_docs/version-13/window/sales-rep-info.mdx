@@ -1,0 +1,180 @@
+---
+title: 'Sales Rep Info'
+sidebar_label: 'Sales Rep Info'
+description: 'Company Agent (Sales Rep) Information'
+tags: ['Window']
+---
+
+# Sales Rep Info
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 293</span>
+
+*11/12/2003 → 30/06/2021*
+
+![Sales Rep Info](./img/sales-rep-info.png)
+
+**Description:** Company Agent (Sales Rep) Information
+
+**Comment/Help:** This window allows you to view Company agent related information
+
+## Tab: Company Agent
+
+*Tab Level 0 · Created 11/12/2003 · Updated 02/01/2000*
+
+**Description:** Sales Representative Selection
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_User.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_User.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_User.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_User.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_User.IsActive<small> character(1) <br/> Yes-No</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | AD_User.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Partner Location | Identifies the (ship to) address for this Business Partner | The Partner address indicates the location of a Business Partner | AD_User.C_BPartner_Location_ID<small> numeric(10) <br/> Table Direct</small> |
+| EMail Address | Electronic Mail Address | The Email Address is the Electronic Mail ID for this User and should be fully qualified (e.g. joe.smith@company.com). The Email Address is used to access the self service application functionality from the web. | AD_User.EMail<small> character varying(60) <br/> String</small> |
+| Title | Name this entity is referred to as | The Title indicates the name that an entity is referred to as. | AD_User.Title<small> character varying(40) <br/> String</small> |
+| Birthday | Birthday or Anniversary day | Birthday or Anniversary day | AD_User.Birthday<small> timestamp without time zone <br/> Date</small> |
+| Phone | Identifies a telephone number | The Phone field identifies a telephone number | AD_User.Phone<small> character varying(40) <br/> String</small> |
+| Fax | Facsimile number | The Fax identifies a facsimile number for this Business Partner or  Location | AD_User.Fax<small> character varying(40) <br/> String</small> |
+| Supervisor | Supervisor for this user/organization - used for escalation and approval | The Supervisor indicates who will be used for forwarding and escalating issues for this user - or for approvals. | AD_User.Supervisor_ID<small> numeric(10) <br/> Search</small> |
+| Trx Organization | Performing or initiating organization | The organization which performs or initiates this transaction (for another organization).  The owning Organization may not be the transaction organization in a service bureau environment, with centralized services, and inter-organization transactions. | AD_User.AD_OrgTrx_ID<small> numeric(10) <br/> Table</small> |
+
+## Tab: › Orders
+
+*Tab Level 1 · Created 11/12/2003 · Updated 02/01/2000*
+
+**Description:** All Orders where the Agent "owns" the Order, the Business Partner or the Product
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Order.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Order.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document No | Document sequence number of the document | The document number is usually automatically generated by the system and determined by the document type of the document. If the document is not saved, the preliminary number is displayed in "&lt;&gt;".<br/><br/>If the document type of your document has no automatic document sequence defined, the field is empty if you create a new document. This is for documents which usually have an external number (like vendor invoice).  If you leave the field empty, the system will generate a document number for you. The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | C_Order.DocumentNo<small> character varying(30) <br/> String</small> |
+| Order Reference | Transaction Reference Number (Sales Order, Purchase Order) of your Business Partner | The business partner order reference is the order reference for this specific transaction; Often Purchase Order numbers are given to print on Invoices for easier reference.  A standard number can be defined in the Business Partner (Customer) window. | C_Order.POReference<small> character varying(20) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Order.Description<small> character varying(255) <br/> Text</small> |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | C_Order.C_DocType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Status | The current status of the document | The Document Status indicates the status of a document at this time.  If you want to change the document status, use the Document Action field | C_Order.DocStatus<small> character(2) <br/> List</small> |
+| Date Ordered | Date of Order | Indicates the Date an item was ordered. | C_Order.DateOrdered<small> timestamp without time zone <br/> Date</small> |
+| Account Date | Accounting Date | The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion. | C_Order.DateAcct<small> timestamp without time zone <br/> Date</small> |
+| Date Promised | Date Order was promised | The Date Promised indicates the date, if any, that an Order was promised for. | C_Order.DatePromised<small> timestamp without time zone <br/> Date</small> |
+| Date Printed | Date the document was printed. | Indicates the Date that a document was printed. | C_Order.DatePrinted<small> timestamp without time zone <br/> Date</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_Order.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Invoice Partner | Business Partner to be invoiced | If empty the shipment business partner will be invoiced | C_Order.Bill_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Partner Location | Identifies the (ship to) address for this Business Partner | The Partner address indicates the location of a Business Partner | C_Order.C_BPartner_Location_ID<small> numeric(10) <br/> Table Direct</small> |
+| Invoice Location | Business Partner Location for invoicing |  | C_Order.Bill_Location_ID<small> numeric(10) <br/> Table</small> |
+| Delivery Rule | Defines the timing of Delivery | The Delivery Rule indicates when an order should be delivered. For example should the order be delivered when the entire order is complete, when a line is complete or as the products become available. | C_Order.DeliveryRule<small> character(1) <br/> List</small> |
+| Priority | Priority of a document | The Priority indicates the importance (high, medium, low) of this document | C_Order.PriorityRule<small> character(1) <br/> List</small> |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | C_Order.M_Warehouse_ID<small> numeric(10) <br/> Table Direct</small> |
+| Drop Shipment | Drop Shipments are sent directly to the Drop Shipment Location | Drop Shipments are sent directly to the Drop Shipment Location using the Drop Ship Business Partner name and contact. | C_Order.IsDropShip<small> character(1) <br/> Yes-No</small> |
+| Invoice Rule | Frequency and method of invoicing  | The Invoice Rule defines how a Business Partner is invoiced and the frequency of invoicing. | C_Order.InvoiceRule<small> character(1) <br/> List</small> |
+| Sales Transaction | This is a Sales Transaction | The Sales Transaction checkbox indicates if this item is a Sales Transaction. | C_Order.IsSOTrx<small> character(1) <br/> Yes-No</small> |
+| Price List | Unique identifier of a Price List | Price Lists are used to determine the pricing, margin and cost of items purchased or sold. | C_Order.M_PriceList_ID<small> numeric(10) <br/> Table Direct</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | C_Order.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | C_Order.SalesRep_ID<small> numeric(10) <br/> Table</small> |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | C_Order.IsSelfService<small> character(1) <br/> Yes-No</small> |
+| Payment Rule | How you pay the invoice | The Payment Rule indicates the method of invoice payment. | C_Order.PaymentRule<small> character(1) <br/> Payment</small> |
+| Payment Term | The terms of Payment (timing, discount) | Payment Terms identify the method and timing of payment. | C_Order.C_PaymentTerm_ID<small> numeric(10) <br/> Table Direct</small> |
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | C_Order.C_Project_ID<small> numeric(10) <br/> Table Direct</small> |
+| Campaign | Marketing Campaign | The Campaign defines a unique marketing program.  Projects can be associated with a pre defined Marketing Campaign.  You can then report based on a specific Campaign. | C_Order.C_Campaign_ID<small> numeric(10) <br/> Table Direct</small> |
+| Delivered |  |  | C_Order.IsDelivered<small> character(1) <br/> Yes-No</small> |
+| Invoiced | Is this invoiced? | If selected, invoices are created | C_Order.IsInvoiced<small> character(1) <br/> Yes-No</small> |
+| Total Lines | Total of all document lines | The Total amount displays the total of all lines in document currency | C_Order.TotalLines<small> numeric <br/> Amount</small> |
+| Grand Total | Total amount of document | The Grand Total displays the total amount including Tax and Freight in document currency | C_Order.GrandTotal<small> numeric <br/> Amount</small> |
+
+## Tab: › › Order Lines
+
+*Tab Level 2 · Created 11/12/2003 · Updated 02/01/2000*
+
+**Description:** All Order Lines where the Agent "owns" the Order, the Business Partner or the Product
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_OrderLine.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_OrderLine.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_OrderLine.C_Order_ID<small> numeric(10) <br/> Search</small> |
+| Line No | Unique line for this document | Indicates the unique line for a document.  It will also control the display order of the lines within a document. | C_OrderLine.Line<small> numeric(10) <br/> Integer</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_OrderLine.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Partner Location | Identifies the (ship to) address for this Business Partner | The Partner address indicates the location of a Business Partner | C_OrderLine.C_BPartner_Location_ID<small> numeric(10) <br/> Table Direct</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_OrderLine.Description<small> character varying(255) <br/> Text</small> |
+| Date Ordered | Date of Order | Indicates the Date an item was ordered. | C_OrderLine.DateOrdered<small> timestamp without time zone <br/> Date</small> |
+| Date Promised | Date Order was promised | The Date Promised indicates the date, if any, that an Order was promised for. | C_OrderLine.DatePromised<small> timestamp without time zone <br/> Date</small> |
+| Date Delivered | Date when the product was delivered |  | C_OrderLine.DateDelivered<small> timestamp without time zone <br/> Date</small> |
+| Date Invoiced | Date printed on Invoice | The Date Invoice indicates the date printed on the invoice. | C_OrderLine.DateInvoiced<small> timestamp without time zone <br/> Date</small> |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | C_OrderLine.M_Warehouse_ID<small> numeric(10) <br/> Table</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | C_OrderLine.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Description Only | if true, the line is just description and no transaction | If a line is Description Only, e.g. Product Inventory is not corrected. No accounting transactions are created and the amount or totals are not included in the document.  This for including descriptive detail lines, e.g. for an Work Order. | C_OrderLine.IsDescription<small> character(1) <br/> Yes-No</small> |
+| Resource Assignment | Resource Assignment |  | C_OrderLine.S_ResourceAssignment_ID<small> numeric(10) <br/> Assignment</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | C_OrderLine.M_AttributeSetInstance_ID<small> numeric(10) <br/> Product Attribute</small> |
+| Ordered Quantity | Ordered Quantity | The Ordered Quantity indicates the quantity of a product that was ordered. | C_OrderLine.QtyOrdered<small> numeric <br/> Quantity</small> |
+| Reserved Quantity | Reserved Quantity | The Reserved Quantity indicates the quantity of a product that is currently reserved. | C_OrderLine.QtyReserved<small> numeric <br/> Quantity</small> |
+| Delivered Quantity | Delivered Quantity | The Delivered Quantity indicates the quantity of a product that has been delivered. | C_OrderLine.QtyDelivered<small> numeric <br/> Quantity</small> |
+| Quantity Invoiced | Invoiced Quantity | The Invoiced Quantity indicates the quantity of a product that have been invoiced. | C_OrderLine.QtyInvoiced<small> numeric <br/> Quantity</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | C_OrderLine.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Tax | Tax identifier | The Tax indicates the type of tax used in document line. | C_OrderLine.C_Tax_ID<small> numeric(10) <br/> Table Direct</small> |
+| List Price | List Price | The List Price is the official List Price in the document currency. | C_OrderLine.PriceList<small> numeric <br/> Costs+Prices</small> |
+| Discount % | Discount in percent | The Discount indicates the discount applied or taken as a percentage. | C_OrderLine.Discount<small> numeric <br/> Number</small> |
+| Unit Price | Actual Price  | The Actual or Unit Price indicates the Price for a product in source currency. | C_OrderLine.PriceActual<small> numeric <br/> Costs+Prices</small> |
+| Line Amount | Line Extended Amount (Quantity * Actual Price) without Freight and Charges | Indicates the extended line amount based on the quantity and the actual price.  Any additional charges or freight are not included.  The Amount may or may not include tax.  If the price list is inclusive tax, the line amount is the same as the line total. | C_OrderLine.LineNetAmt<small> numeric <br/> Amount</small> |
+
+## Tab: › Invoices
+
+*Tab Level 1 · Created 11/12/2003 · Updated 02/01/2000*
+
+**Description:** All Invoices where the Agent "owns" the Invoice, the Business Partner or the Product
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Invoice.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Invoice.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document No | Document sequence number of the document | The document number is usually automatically generated by the system and determined by the document type of the document. If the document is not saved, the preliminary number is displayed in "&lt;&gt;".<br/><br/>If the document type of your document has no automatic document sequence defined, the field is empty if you create a new document. This is for documents which usually have an external number (like vendor invoice).  If you leave the field empty, the system will generate a document number for you. The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | C_Invoice.DocumentNo<small> character varying(30) <br/> String</small> |
+| Order Reference | Transaction Reference Number (Sales Order, Purchase Order) of your Business Partner | The business partner order reference is the order reference for this specific transaction; Often Purchase Order numbers are given to print on Invoices for easier reference.  A standard number can be defined in the Business Partner (Customer) window. | C_Invoice.POReference<small> character varying(20) <br/> String</small> |
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_Invoice.C_Order_ID<small> numeric(10) <br/> Search</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Invoice.Description<small> character varying(255) <br/> Text</small> |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | C_Invoice.C_DocType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Status | The current status of the document | The Document Status indicates the status of a document at this time.  If you want to change the document status, use the Document Action field | C_Invoice.DocStatus<small> character(2) <br/> List</small> |
+| Date Invoiced | Date printed on Invoice | The Date Invoice indicates the date printed on the invoice. | C_Invoice.DateInvoiced<small> timestamp without time zone <br/> Date</small> |
+| Account Date | Accounting Date | The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion. | C_Invoice.DateAcct<small> timestamp without time zone <br/> Date</small> |
+| Date Ordered | Date of Order | Indicates the Date an item was ordered. | C_Invoice.DateOrdered<small> timestamp without time zone <br/> Date</small> |
+| Date Printed | Date the document was printed. | Indicates the Date that a document was printed. | C_Invoice.DatePrinted<small> timestamp without time zone <br/> Date</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_Invoice.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Partner Location | Identifies the (ship to) address for this Business Partner | The Partner address indicates the location of a Business Partner | C_Invoice.C_BPartner_Location_ID<small> numeric(10) <br/> Table Direct</small> |
+| Price List | Unique identifier of a Price List | Price Lists are used to determine the pricing, margin and cost of items purchased or sold. | C_Invoice.M_PriceList_ID<small> numeric(10) <br/> Table Direct</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | C_Invoice.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Payment Rule | How you pay the invoice | The Payment Rule indicates the method of invoice payment. | C_Invoice.PaymentRule<small> character(1) <br/> Payment</small> |
+| Payment Term | The terms of Payment (timing, discount) | Payment Terms identify the method and timing of payment. | C_Invoice.C_PaymentTerm_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | C_Invoice.SalesRep_ID<small> numeric(10) <br/> Search</small> |
+| Sales Transaction | This is a Sales Transaction | The Sales Transaction checkbox indicates if this item is a Sales Transaction. | C_Invoice.IsSOTrx<small> character(1) <br/> Yes-No</small> |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | C_Invoice.IsSelfService<small> character(1) <br/> Yes-No</small> |
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | C_Invoice.C_Project_ID<small> numeric(10) <br/> Table Direct</small> |
+| Paid | The document is fully paid |  | C_Invoice.IsPaid<small> character(1) <br/> Yes-No</small> |
+| In Dispute | Document is in dispute | The document is in dispute. Use Requests to track details. | C_Invoice.IsInDispute<small> character(1) <br/> Yes-No</small> |
+| Total Lines | Total of all document lines | The Total amount displays the total of all lines in document currency | C_Invoice.TotalLines<small> numeric <br/> Amount</small> |
+| Grand Total | Total amount of document | The Grand Total displays the total amount including Tax and Freight in document currency | C_Invoice.GrandTotal<small> numeric <br/> Amount</small> |
+
+## Tab: › › Invoice Line
+
+*Tab Level 2 · Created 11/12/2003 · Updated 02/01/2000*
+
+**Description:** All Invoice Liness where the Agent "owns" the Invoice, the Business Partner or the Product
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_InvoiceLine.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_InvoiceLine.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Invoice | Invoice Identifier | The Invoice Document. | C_InvoiceLine.C_Invoice_ID<small> numeric(10) <br/> Search</small> |
+| Line No | Unique line for this document | Indicates the unique line for a document.  It will also control the display order of the lines within a document. | C_InvoiceLine.Line<small> numeric(10) <br/> Integer</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_InvoiceLine.Description<small> character varying(255) <br/> Text</small> |
+| Charge | Additional document charges | The Charge indicates a type of Charge (Handling, Shipping, Restocking) | C_InvoiceLine.C_Charge_ID<small> numeric(10) <br/> Table Direct</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | C_InvoiceLine.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Description Only | if true, the line is just description and no transaction | If a line is Description Only, e.g. Product Inventory is not corrected. No accounting transactions are created and the amount or totals are not included in the document.  This for including descriptive detail lines, e.g. for an Work Order. | C_InvoiceLine.IsDescription<small> character(1) <br/> Yes-No</small> |
+| Resource Assignment | Resource Assignment |  | C_InvoiceLine.S_ResourceAssignment_ID<small> numeric(10) <br/> Assignment</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | C_InvoiceLine.M_AttributeSetInstance_ID<small> numeric(10) <br/> Product Attribute</small> |
+| Quantity Invoiced | Invoiced Quantity | The Invoiced Quantity indicates the quantity of a product that have been invoiced. | C_InvoiceLine.QtyInvoiced<small> numeric <br/> Quantity</small> |
+| Unit Price | Actual Price  | The Actual or Unit Price indicates the Price for a product in source currency. | C_InvoiceLine.PriceActual<small> numeric <br/> Costs+Prices</small> |
+| List Price | List Price | The List Price is the official List Price in the document currency. | C_InvoiceLine.PriceList<small> numeric <br/> Costs+Prices</small> |
+| Line Amount | Line Extended Amount (Quantity * Actual Price) without Freight and Charges | Indicates the extended line amount based on the quantity and the actual price.  Any additional charges or freight are not included.  The Amount may or may not include tax.  If the price list is inclusive tax, the line amount is the same as the line total. | C_InvoiceLine.LineNetAmt<small> numeric <br/> Amount</small> |
+| Tax Amount | Tax Amount for a document | The Tax Amount displays the total tax amount for a document. | C_InvoiceLine.TaxAmt<small> numeric <br/> Amount</small> |
+| Tax | Tax identifier | The Tax indicates the type of tax used in document line. | C_InvoiceLine.C_Tax_ID<small> numeric(10) <br/> Table Direct</small> |
+| Line Total | Total line amount incl. Tax | Total line amount | C_InvoiceLine.LineTotalAmt<small> numeric <br/> Amount</small> |
+

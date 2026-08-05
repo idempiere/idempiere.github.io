@@ -1,0 +1,126 @@
+---
+title: 'Web Store'
+sidebar_label: 'Web Store'
+description: 'Define Web Store'
+tags: ['Window']
+---
+
+# Web Store
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 350</span>
+
+*02/05/2005 → 03/05/2020*
+
+![Web Store](./img/web-store.png)
+
+**Description:** Define Web Store
+
+**Comment/Help:** Define the web store setup.  
+
+## Tab: Web Store
+
+*Tab Level 0 · Created 02/05/2005 · Updated 10/03/2022*
+
+**Description:** Define Web Store
+
+**Comment/Help:** Define the web store settings. The web server context must be unique and determines the settings used in the actual transaction. The selected warehouse determines the organization.  The email settings are tested with the tenant email settings. 
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | W_Store.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | W_Store.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | W_Store.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | W_Store.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | W_Store.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | W_Store.IsActive<small> character(1) <br/> Yes-No</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | W_Store.IsDefault<small> character(1) <br/> Yes-No</small> |
+| URL | Full URL address - e.g. http://www.idempiere.org | The URL defines an fully qualified web address like http://www.idempiere.org | W_Store.URL<small> character varying(120) <br/> URL</small> |
+| Web Context | Web Server Context - e.g. /wstore | Unique Web Server Context for this Web Store - will set context-root in application.xml.<br/>The web context usually starts with / and needs to be a valid context name (not checked). | W_Store.WebContext<small> character varying(20) <br/> String</small> |
+| Stylesheet | CSS (Stylesheet) used | Base Stylesheet (.css file) to use - if empty, the default (standard.css) is used. The Style sheet can be a URL. | W_Store.Stylesheet<small> character varying(60) <br/> String</small> |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | W_Store.SalesRep_ID<small> numeric(10) <br/> Search</small> |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | W_Store.M_Warehouse_ID<small> numeric(10) <br/> Table Direct</small> |
+| Price List | Unique identifier of a Price List | Price Lists are used to determine the pricing, margin and cost of items purchased or sold. | W_Store.M_PriceList_ID<small> numeric(10) <br/> Table Direct</small> |
+| Payment Term | The terms of Payment (timing, discount) | Payment Terms identify the method and timing of payment. | W_Store.C_PaymentTerm_ID<small> numeric(10) <br/> Table Direct</small> |
+| Web Store Info | Web Store Header Information | Display HTML Info in the Web Store - by default in the header.<br/> | W_Store.WebInfo<small> character varying(2000) <br/> Text</small> |
+| Web Store EMail | EMail address used as the sender (From) | The EMail address is used to send mails to users of the web store | W_Store.WStoreEMail<small> character varying(60) <br/> String</small> |
+| Web Order EMail | EMail address to receive notifications when web orders were processed | When processing a web order, a confirmation is sent to the EMail address of the customer from the request EMail address copying this email address when entered. | W_Store.WebOrderEMail<small> character varying(60) <br/> String</small> |
+| WebStore User | User ID of the Web Store EMail address | User ID to connect to the Mail Server | W_Store.WStoreUser<small> character varying(60) <br/> String</small> |
+| WebStore Password | Password of the Web Store EMail address | Password to connect to the Mail Server | W_Store.WStoreUserPW<small> character varying(20) <br/> String</small> |
+| EMail Header | Header added to EMails | The header is added to every email. | W_Store.EMailHeader<small> character varying(2000) <br/> Text</small> |
+| EMail Footer | Footer added to EMails | The footer is added to every email. | W_Store.EMailFooter<small> character varying(2000) <br/> Text</small> |
+| Menu Orders | Show Menu Orders |  | W_Store.IsMenuOrders<small> character(1) <br/> Yes-No</small> |
+| Menu Shipments | Show Menu Shipments |  | W_Store.IsMenuShipments<small> character(1) <br/> Yes-No</small> |
+| Menu Invoices | Show Menu Invoices |  | W_Store.IsMenuInvoices<small> character(1) <br/> Yes-No</small> |
+| Menu Assets | Show Menu Assets |  | W_Store.IsMenuAssets<small> character(1) <br/> Yes-No</small> |
+| Menu Payments | Show Menu Payments |  | W_Store.IsMenuPayments<small> character(1) <br/> Yes-No</small> |
+| Menu RfQs | Show Menu RfQs |  | W_Store.IsMenuRfQs<small> character(1) <br/> Yes-No</small> |
+| Menu Requests | Show Menu Requests |  | W_Store.IsMenuRequests<small> character(1) <br/> Yes-No</small> |
+| Menu Registrations | Show Menu Registrations |  | W_Store.IsMenuRegistrations<small> character(1) <br/> Yes-No</small> |
+| Menu Interests | Show Menu Interests |  | W_Store.IsMenuInterests<small> character(1) <br/> Yes-No</small> |
+| Menu Contact | Show Menu Contact |  | W_Store.IsMenuContact<small> character(1) <br/> Yes-No</small> |
+| Web Parameter 1 | Web Site Parameter 1 (default: header image) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam1 - By default, it is positioned on the upper left side with 130 pixel width. | W_Store.WebParam1<small> character varying(2000) <br/> Text</small> |
+| Web Parameter 2 | Web Site Parameter 2 (default index page) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam2 - By default, it is positioned after the header on the web store index page. | W_Store.WebParam2<small> character varying(2000) <br/> Text</small> |
+| Web Parameter 3 | Web Site Parameter 3 (default left - menu) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam3 - By default, it is positioned at the end in the menu column with 130 pixel width. | W_Store.WebParam3<small> character varying(2000) <br/> Text</small> |
+| Web Parameter 4 | Web Site Parameter 4 (default footer left) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam4 - By default, it is positioned on the left side of the footer with 130 pixel width. | W_Store.WebParam4<small> character varying(2000) <br/> Text</small> |
+| Web Parameter 5 | Web Site Parameter 5 (default footer center) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam5 - By default, it is positioned in the center of the footer. | W_Store.WebParam5<small> character varying(2000) <br/> Text</small> |
+| Web Parameter 6 | Web Site Parameter 6 (default footer right) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam6 - By default, it is positioned on the right side of the footer. | W_Store.WebParam6<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › Store Translation
+
+*Tab Level 1 · Created 02/05/2005 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | W_Store_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | W_Store_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Web Store | A Web Store of the Tenant |  | W_Store_Trl.W_Store_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | W_Store_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | W_Store_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | W_Store_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Web Store Info | Web Store Header Information | Display HTML Info in the Web Store - by default in the header.<br/> | W_Store_Trl.WebInfo<small> character varying(2000) <br/> Text</small> |
+| EMail Header | Header added to EMails | The header is added to every email. | W_Store_Trl.EMailHeader<small> character varying(2000) <br/> Text</small> |
+| EMail Footer | Footer added to EMails | The footer is added to every email. | W_Store_Trl.EMailFooter<small> character varying(2000) <br/> Text</small> |
+| Web Parameter 1 | Web Site Parameter 1 (default: header image) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam1 - By default, it is positioned on the upper left side with 130 pixel width. | W_Store_Trl.WebParam1<small> character varying(2000) <br/> Text</small> |
+| Web Parameter 2 | Web Site Parameter 2 (default index page) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam2 - By default, it is positioned after the header on the web store index page. | W_Store_Trl.WebParam2<small> character varying(2000) <br/> Text</small> |
+| Web Parameter 3 | Web Site Parameter 3 (default left - menu) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam3 - By default, it is positioned at the end in the menu column with 130 pixel width. | W_Store_Trl.WebParam3<small> character varying(2000) <br/> Text</small> |
+| Web Parameter 4 | Web Site Parameter 4 (default footer left) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam4 - By default, it is positioned on the left side of the footer with 130 pixel width. | W_Store_Trl.WebParam4<small> character varying(2000) <br/> Text</small> |
+| Web Parameter 5 | Web Site Parameter 5 (default footer center) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam5 - By default, it is positioned in the center of the footer. | W_Store_Trl.WebParam5<small> character varying(2000) <br/> Text</small> |
+| Web Parameter 6 | Web Site Parameter 6 (default footer right) | The parameter could be used in the JSP page for variables like logos, passwords, URLs or entire HTML blocks. The access is via ctx.webParam6 - By default, it is positioned on the right side of the footer. | W_Store_Trl.WebParam6<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › Web Store Message
+
+*Tab Level 1 · Created 02/05/2005 · Updated 03/05/2020*
+
+**Description:** Definine Web Store Messages
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | W_MailMsg.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | W_MailMsg.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Web Store | A Web Store of the Tenant |  | W_MailMsg.W_Store_ID<small> numeric(10) <br/> Table Direct</small> |
+| Message Type | Mail Message Type |  | W_MailMsg.MailMsgType<small> character(2) <br/> List</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | W_MailMsg.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | W_MailMsg.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | W_MailMsg.IsActive<small> character(1) <br/> Yes-No</small> |
+| Subject | Email Message Subject | Subject of the EMail  | W_MailMsg.Subject<small> character varying(255) <br/> Text</small> |
+| Message | EMail Message | Message of the EMail | W_MailMsg.Message<small> character varying(2000) <br/> Text</small> |
+| Message 2 | Optional second part of the EMail Message | Message of the EMail | W_MailMsg.Message2<small> character varying(2000) <br/> Text</small> |
+| Message 3 | Optional third part of the EMail Message | Message of the EMail | W_MailMsg.Message3<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › › Message Translation
+
+*Tab Level 2 · Created 02/05/2005 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | W_MailMsg_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | W_MailMsg_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Mail Message | Web Store Mail Message Template |  | W_MailMsg_Trl.W_MailMsg_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | W_MailMsg_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | W_MailMsg_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | W_MailMsg_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Subject | Email Message Subject | Subject of the EMail  | W_MailMsg_Trl.Subject<small> character varying(255) <br/> Text</small> |
+| Message | EMail Message | Message of the EMail | W_MailMsg_Trl.Message<small> character varying(2000) <br/> Text</small> |
+| Message 2 | Optional second part of the EMail Message | Message of the EMail | W_MailMsg_Trl.Message2<small> character varying(2000) <br/> Text</small> |
+| Message 3 | Optional third part of the EMail Message | Message of the EMail | W_MailMsg_Trl.Message3<small> character varying(2000) <br/> Text</small> |
+

@@ -1,0 +1,112 @@
+---
+title: 'Expense Type'
+sidebar_label: 'Expense Type'
+description: 'Maintain Expense Report Types'
+tags: ['Window']
+---
+
+# Expense Type
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 234</span>
+
+*15/06/2002 → 02/01/2000*
+
+![Expense Type](./img/expense-type.png)
+
+**Description:** Maintain Expense Report Types
+
+## Tab: Expense Type
+
+*Tab Level 0 · Created 15/06/2002 · Updated 02/01/2000*
+
+**Description:** Maintain Expense Report Type
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | S_ExpenseType.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | S_ExpenseType.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | S_ExpenseType.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | S_ExpenseType.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | S_ExpenseType.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | S_ExpenseType.IsActive<small> character(1) <br/> Yes-No</small> |
+| UOM | Unit of Measure | The UOM defines a unique non monetary Unit of Measure | S_ExpenseType.C_UOM_ID<small> numeric(10) <br/> Table Direct</small> |
+| Invoiced | Is this invoiced? | If selected, invoices are created | S_ExpenseType.IsInvoiced<small> character(1) <br/> Yes-No</small> |
+| Product Category | Category of a Product | Identifies the category which this product belongs to.  Product categories are used for pricing and selection. | S_ExpenseType.M_Product_Category_ID<small> numeric(10) <br/> Table Direct</small> |
+| Tax Category | Tax Category | The Tax Category provides a method of grouping similar taxes.  For example, Sales Tax or Value Added Tax. | S_ExpenseType.C_TaxCategory_ID<small> numeric(10) <br/> Table Direct</small> |
+
+## Tab: › Expense Product
+
+*Tab Level 1 · Created 15/06/2002 · Updated 02/01/2000*
+
+**Description:** Product definition of Expense Type
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_Product.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_Product.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | M_Product.Value<small> character varying(510) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | M_Product.Name<small> character varying(255) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_Product.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | M_Product.Help<small> character varying(2000) <br/> Text</small> |
+| Document Note | Additional information for a Document | The Document Note is used for recording any additional information regarding this product. | M_Product.DocumentNote<small> character varying(2000) <br/> Text</small> |
+| UPC/EAN | Bar Code (Universal Product Code or its superset European Article Number) | Use this field to enter the bar code for the product in any of the bar code symbologies (Codabar, Code 25, Code 39, Code 93, Code 128, UPC (A), UPC (E), EAN-13, EAN-8, ITF, ITF-14, ISBN, ISSN, JAN-13, JAN-8, POSTNET and FIM, MSI/Plessey, and Pharmacode)  | M_Product.UPC<small> character varying(30) <br/> String</small> |
+| SKU | Stock Keeping Unit | The SKU indicates a user defined stock keeping unit.  It may be used for an additional bar code symbols or your own schema. | M_Product.SKU<small> character varying(30) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_Product.IsActive<small> character(1) <br/> Yes-No</small> |
+| Summary Level | This is a summary entity | A summary entity represents a branch in a tree rather than an end-node. Summary entities are used for reporting and do not have own values. | M_Product.IsSummary<small> character(1) <br/> Yes-No</small> |
+| Product Category | Category of a Product | Identifies the category which this product belongs to.  Product categories are used for pricing and selection. | M_Product.M_Product_Category_ID<small> numeric(10) <br/> Table Direct</small> |
+| Classification | Classification for grouping | The Classification can be used to optionally group products. | M_Product.Classification<small> character varying(12) <br/> String</small> |
+| Tax Category | Tax Category | The Tax Category provides a method of grouping similar taxes.  For example, Sales Tax or Value Added Tax. | M_Product.C_TaxCategory_ID<small> numeric(10) <br/> Table Direct</small> |
+| Revenue Recognition | Method for recording revenue | The Revenue Recognition indicates how revenue will be recognized for this product | M_Product.C_RevenueRecognition_ID<small> numeric(10) <br/> Table Direct</small> |
+| UOM | Unit of Measure | The UOM defines a unique non monetary Unit of Measure | M_Product.C_UOM_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sales Representative | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | M_Product.SalesRep_ID<small> numeric(10) <br/> Table</small> |
+| Product Type | Type of product | The type of product also determines accounting consequences. | M_Product.ProductType<small> character(1) <br/> List</small> |
+| Purchased | Organization purchases this product | The Purchased check box indicates if this product is purchased by this organization. | M_Product.IsPurchased<small> character(1) <br/> Yes-No</small> |
+| Sold | Organization sells this product | The Sold check box indicates if this product is sold by this organization. | M_Product.IsSold<small> character(1) <br/> Yes-No</small> |
+| Discontinued | This product is no longer available | The Discontinued check box indicates a product that has been discontinued. | M_Product.Discontinued<small> character(1) <br/> Yes-No</small> |
+| Discontinued At | Discontinued At indicates Date when product was discontinued |  | M_Product.DiscontinuedAt<small> timestamp without time zone <br/> Date</small> |
+| Image URL | URL of  image | URL of image; The image is not stored in the database, but retrieved at runtime. The image can be a gif, jpeg or png. | M_Product.ImageURL<small> character varying(120) <br/> URL</small> |
+| Description URL | URL for the description |  | M_Product.DescriptionURL<small> character varying(120) <br/> URL</small> |
+
+## Tab: › › Price
+
+*Tab Level 2 · Created 22/06/2002 · Updated 02/01/2000*
+
+**Description:** Expense Type Pricing
+
+**Comment/Help:** The Pricing Tab displays the List, Standard and Limit prices for each price list a product is contained in.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_ProductPrice.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_ProductPrice.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_ProductPrice.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Price List Version | Identifies a unique instance of a Price List | Each Price List can have multiple versions.  The most common use is to indicate the dates that a Price List is valid for. | M_ProductPrice.M_PriceList_Version_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_ProductPrice.IsActive<small> character(1) <br/> Yes-No</small> |
+| List Price | List Price | The List Price is the official List Price in the document currency. | M_ProductPrice.PriceList<small> numeric <br/> Costs+Prices</small> |
+| Standard Price | Standard Price | The Standard Price indicates the standard or normal price for a product on this price list | M_ProductPrice.PriceStd<small> numeric <br/> Costs+Prices</small> |
+| Limit Price | Lowest price for a product | The Price Limit indicates the lowest price for a product stated in the Price List Currency. | M_ProductPrice.PriceLimit<small> numeric <br/> Costs+Prices</small> |
+
+## Tab: › › Accounting
+
+*Tab Level 2 · Created 22/06/2002 · Updated 05/03/2013*
+
+**Description:** Define Accounting Parameters
+
+**Comment/Help:** The Accounting Tab defines the defaults to use when generating accounting transactions for orders and invoices which contain this Expense Type. Not all accounts apply.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_Product_Acct.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_Product_Acct.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Product_Acct.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | M_Product_Acct.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | M_Product_Acct.IsActive<small> character(1) <br/> Yes-No</small> |
+| Product Asset | Account for Product Asset (Inventory) | The Product Asset Account indicates the account used for valuing this a product in inventory. | M_Product_Acct.P_Asset_Acct<small> numeric(10) <br/> Account</small> |
+| Product Expense | Account for Product Expense | The Product Expense Account indicates the account used to record expenses associated with this product. | M_Product_Acct.P_Expense_Acct<small> numeric(10) <br/> Account</small> |
+| Product COGS | Account for Cost of Goods Sold | The Product COGS Account indicates the account used when recording costs associated with this product. | M_Product_Acct.P_COGS_Acct<small> numeric(10) <br/> Account</small> |
+| Purchase Price Variance | Difference between Standard Cost and Purchase Price (PPV) | The Purchase Price Variance is used in Standard Costing. It reflects the difference between the Standard Cost and the Purchase Order Price. | M_Product_Acct.P_PurchasePriceVariance_Acct<small> numeric(10) <br/> Account</small> |
+| Invoice Price Variance | Difference between Costs and Invoice Price (IPV) | The Invoice Price Variance is used reflects the difference between the current Costs and the Invoice Price. | M_Product_Acct.P_InvoicePriceVariance_Acct<small> numeric(10) <br/> Account</small> |
+| Trade Discount Received | Trade Discount Receivable Account | The Trade Discount Receivables Account indicates the account for received trade discounts in vendor invoices | M_Product_Acct.P_TradeDiscountRec_Acct<small> numeric(10) <br/> Account</small> |
+| Trade Discount Granted | Trade Discount Granted Account | The Trade Discount Granted Account indicates the account for granted trade discount in sales invoices | M_Product_Acct.P_TradeDiscountGrant_Acct<small> numeric(10) <br/> Account</small> |
+| Product Revenue | Account for Product Revenue (Sales Account) | The Product Revenue Account indicates the account used for recording sales revenue for this product. | M_Product_Acct.P_Revenue_Acct<small> numeric(10) <br/> Account</small> |
+

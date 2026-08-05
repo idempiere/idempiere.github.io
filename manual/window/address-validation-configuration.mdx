@@ -1,0 +1,34 @@
+---
+title: 'Address Validation Configuration'
+sidebar_label: 'Address Validation Configuration'
+tags: ['Window']
+---
+
+# Address Validation Configuration
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200046</span>
+
+*19/08/2013 → 19/08/2013*
+
+![Address Validation Configuration](./img/address-validation-configuration.png)
+
+## Tab: Address Validation
+
+*Tab Level 0 · Created 19/08/2013 · Updated 19/08/2013*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_AddressValidationCfg.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_AddressValidationCfg.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_AddressValidationCfg.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_AddressValidationCfg.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_AddressValidationCfg.IsActive<small> character(1) <br/> Yes-No</small> |
+| Host Address | Host Address URL or DNS | The Host Address identifies the URL or DNS of the target host | C_AddressValidationCfg.HostAddress<small> character varying(60) <br/> String</small> |
+| Host port | Host Communication Port | The Host Port identifies the port to communicate with the host. | C_AddressValidationCfg.HostPort<small> numeric(10) <br/> Integer</small> |
+| Proxy address |  Address of your proxy server | The Proxy Address must be defined if you must pass through a firewall to access your payment processor.  | C_AddressValidationCfg.ProxyAddress<small> character varying(60) <br/> String</small> |
+| Proxy port | Port of your proxy server | The Proxy Port identifies the port of your proxy server. | C_AddressValidationCfg.ProxyPort<small> numeric(10) <br/> Integer</small> |
+| Proxy logon | Logon of your proxy server | The Proxy Logon identifies the Logon ID for your proxy server. | C_AddressValidationCfg.ProxyLogon<small> character varying(60) <br/> String</small> |
+| Proxy password | Password of your proxy server | The Proxy Password identifies the password for your proxy server. | C_AddressValidationCfg.ProxyPassword<small> character varying(60) <br/> String</small> |
+| Service Path |  |  | C_AddressValidationCfg.ServicePath<small> character varying(60) <br/> String</small> |
+| Address Validation Class |  |  | C_AddressValidationCfg.AddressValidationClass<small> character varying(100) <br/> String</small> |
+

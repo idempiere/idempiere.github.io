@@ -1,0 +1,145 @@
+---
+title: 'GL Distribution'
+sidebar_label: 'GL Distribution'
+description: 'General Ledger Distribution'
+tags: ['Window']
+---
+
+# GL Distribution
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 323</span>
+
+*19/03/2004 → 02/01/2000*
+
+![GL Distribution](./img/gl-distribution.png)
+
+**Description:** General Ledger Distribution
+
+**Comment/Help:** If the account combination criteria of the Distribution is met, the posting to the account combination is replaced by the account combinations of the distribution lines.  The distribution is a one-step operation based on the percentage of the lines.
+
+## Tab: Distribution
+
+*Tab Level 0 · Created 19/03/2004 · Updated 20/08/2020*
+
+**Description:** General Ledger Distribution
+
+**Comment/Help:** If the account combination criteria of the Distribution is met, the posting to the account combination is replaced by the account combinations of the distribution lines.  
+The distribution is prorated based on the percentage of the lines. If the total percent is less then 100 and one line is 0 (null), it gets the remainder.  If there is no line with 0, any rounding is adjusted in the line with the biggest amount.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | GL_Distribution.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | GL_Distribution.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | GL_Distribution.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | GL_Distribution.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | GL_Distribution.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | GL_Distribution.IsActive<small> character(1) <br/> Yes-No</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | GL_Distribution.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | GL_Distribution.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Create Reversal | Indicates that reversal movement will be created, if disabled the original movement will be deleted. |  | GL_Distribution.IsCreateReversal<small> character(1) <br/> Yes-No</small> |
+| Posting Type | The type of posted amount for the transaction | The Posting Type indicates the type of amount (Actual, Budget, Reservation, Commitment, Statistical) the transaction. | GL_Distribution.PostingType<small> character(1) <br/> List</small> |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | GL_Distribution.C_DocType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Valid from | Valid from including this date (first day) | The Valid From date indicates the first day of a date range | GL_Distribution.ValidFrom<small> timestamp without time zone <br/> Date</small> |
+| Valid to | Valid to including this date (last day) | The Valid To date indicates the last day of a date range | GL_Distribution.ValidTo<small> timestamp without time zone <br/> Date</small> |
+| Any Organization | Match any value of the Organization segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyOrg<small> character(1) <br/> Yes-No</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. | GL_Distribution.Org_ID<small> numeric(10) <br/> Table</small> |
+| Any Account | Match any value of the Account segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyAcct<small> character(1) <br/> Yes-No</small> |
+| Account | Account used | The (natural) account used | GL_Distribution.Account_ID<small> numeric(10) <br/> Search</small> |
+| Any Activity | Match any value of the Activity segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyActivity<small> character(1) <br/> Yes-No</small> |
+| Activity | Business Activity | Activities indicate tasks that are performed and used to utilize Activity based Costing | GL_Distribution.C_Activity_ID<small> numeric(10) <br/> Table Direct</small> |
+| Any Product | Match any value of the Product segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyProduct<small> character(1) <br/> Yes-No</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | GL_Distribution.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Any Bus.Partner | Match any value of the Business Partner segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyBPartner<small> character(1) <br/> Yes-No</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | GL_Distribution.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Any Project | Match any value of the Project segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyProject<small> character(1) <br/> Yes-No</small> |
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | GL_Distribution.C_Project_ID<small> numeric(10) <br/> Search</small> |
+| Any Campaign | Match any value of the Campaign segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyCampaign<small> character(1) <br/> Yes-No</small> |
+| Campaign | Marketing Campaign | The Campaign defines a unique marketing program.  Projects can be associated with a pre defined Marketing Campaign.  You can then report based on a specific Campaign. | GL_Distribution.C_Campaign_ID<small> numeric(10) <br/> Table Direct</small> |
+| Any Location From | Match any value of the Location From segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyLocFrom<small> character(1) <br/> Yes-No</small> |
+| Location From | Location that inventory was moved from | The Location From indicates the location that a product was moved from. | GL_Distribution.C_LocFrom_ID<small> numeric(10) <br/> Table</small> |
+| Any Location To | Match any value of the Location To segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyLocTo<small> character(1) <br/> Yes-No</small> |
+| Location To | Location that inventory was moved to | The Location To indicates the location that a product was moved to. | GL_Distribution.C_LocTo_ID<small> numeric(10) <br/> Table</small> |
+| Any Sales Region | Match any value of the Sales Region segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnySalesRegion<small> character(1) <br/> Yes-No</small> |
+| Sales Region | Sales coverage region | The Sales Region indicates a specific area of sales coverage. | GL_Distribution.C_SalesRegion_ID<small> numeric(10) <br/> Table Direct</small> |
+| Any Trx Organization | Match any value of the Transaction Organization segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyOrgTrx<small> character(1) <br/> Yes-No</small> |
+| Trx Organization | Performing or initiating organization | The organization which performs or initiates this transaction (for another organization).  The owning Organization may not be the transaction organization in a service bureau environment, with centralized services, and inter-organization transactions. | GL_Distribution.AD_OrgTrx_ID<small> numeric(10) <br/> Table</small> |
+| Any User 1 | Match any value of the User 1 segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyUser1<small> character(1) <br/> Yes-No</small> |
+| User Element List 1 | User defined list element #1 | The user defined element displays the optional elements that have been defined for this account combination. | GL_Distribution.User1_ID<small> numeric(10) <br/> Search</small> |
+| Any User 2 | Match any value of the User 2 segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyUser2<small> character(1) <br/> Yes-No</small> |
+| User Element List 2 | User defined list element #2 | The user defined element displays the optional elements that have been defined for this account combination. | GL_Distribution.User2_ID<small> numeric(10) <br/> Search</small> |
+| Any Department | Match any value of the Department segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyDepartment<small> character(1) <br/> Yes-No</small> |
+| Department |  |  | GL_Distribution.C_Department_ID<small> numeric(10) <br/> Table Direct</small> |
+| Any Warehouse | Match any value of the Warehouse segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyWarehouse<small> character(1) <br/> Yes-No</small> |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | GL_Distribution.M_Warehouse_ID<small> numeric(10) <br/> Table Direct</small> |
+| Any Asset | Match any value of the Asset segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyAsset<small> character(1) <br/> Yes-No</small> |
+| Asset | Asset used internally or by customers | An asset is either created by purchasing or by delivering a product.  An asset can be used internally or be a customer asset. | GL_Distribution.A_Asset_ID<small> numeric(10) <br/> Search</small> |
+| Any Charge | Match any value of the Charge segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyCharge<small> character(1) <br/> Yes-No</small> |
+| Charge | Additional document charges | The Charge indicates a type of Charge (Handling, Shipping, Restocking) | GL_Distribution.C_Charge_ID<small> numeric(10) <br/> Table Direct</small> |
+| Any Employee | Match any value of the Employee segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyEmployee<small> character(1) <br/> Yes-No</small> |
+| Employee | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | GL_Distribution.C_Employee_ID<small> numeric(10) <br/> Search</small> |
+| Any Attribute Set Instance | Match any value of the Employee segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyAttributeSetInstance<small> character(1) <br/> Yes-No</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | GL_Distribution.M_AttributeSetInstance_ID<small> numeric(10) <br/> Table Direct</small> |
+| Any Cost Center | Match any value of the Cost Center segment | If selected, any value of the account segment will match. If not selected, but no value of the accounting segment is selected, the matched value must be null (i.e. not defined). | GL_Distribution.AnyCostCenter<small> character(1) <br/> Yes-No</small> |
+| Cost Center |  |  | GL_Distribution.C_CostCenter_ID<small> numeric(10) <br/> Table Direct</small> |
+| Total Percent | Sum of the Percent details  |  | GL_Distribution.PercentTotal<small> numeric <br/> Number</small> |
+| Valid | Element is valid | The element passed the validation check | GL_Distribution.IsValid<small> character(1) <br/> Yes-No</small> |
+| Verify | Verify GL Distribution |  | GL_Distribution.Processing<small> character(1) <br/> Button</small> |
+
+## Tab: › Line
+
+*Tab Level 1 · Created 19/03/2004 · Updated 02/01/2000*
+
+**Description:** General Ledger Distribution Target Line
+
+**Comment/Help:** If the account combination criteria of the Distribution is met, the posting to the account combination is replaced by the account combinations of the distribution lines.  The distribution is prorated based on the perecent value of the lines. A Percent value of 0 (null) indicates the remainder to 100. There can only be one line with 0 percent.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | GL_DistributionLine.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | GL_DistributionLine.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| GL Distribution | General Ledger Distribution | If the account combination criteria of the Distribution is met, the posting to the account combination is replaced by the account combinations of the distribution lines.  The distribution is prorated based on the ratio of the lines. The distribution must be valid to be used. | GL_DistributionLine.GL_Distribution_ID<small> numeric(10) <br/> Table Direct</small> |
+| Line No | Unique line for this document | Indicates the unique line for a document.  It will also control the display order of the lines within a document. | GL_DistributionLine.Line<small> numeric(10) <br/> Integer</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | GL_DistributionLine.IsActive<small> character(1) <br/> Yes-No</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | GL_DistributionLine.Description<small> character varying(255) <br/> String</small> |
+| Percent | Percentage | The Percent indicates the percentage used. | GL_DistributionLine.Percent<small> numeric <br/> Number</small> |
+| Overwrite Organization | Overwrite the account segment Organization with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteOrg<small> character(1) <br/> Yes-No</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. | GL_DistributionLine.Org_ID<small> numeric(10) <br/> Table</small> |
+| Overwrite Account | Overwrite the account segment Account with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteAcct<small> character(1) <br/> Yes-No</small> |
+| Account | Account used | The (natural) account used | GL_DistributionLine.Account_ID<small> numeric(10) <br/> Search</small> |
+| Overwrite Activity | Overwrite the account segment Activity with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteActivity<small> character(1) <br/> Yes-No</small> |
+| Activity | Business Activity | Activities indicate tasks that are performed and used to utilize Activity based Costing | GL_DistributionLine.C_Activity_ID<small> numeric(10) <br/> Table Direct</small> |
+| Overwrite Product | Overwrite the account segment Product with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteProduct<small> character(1) <br/> Yes-No</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | GL_DistributionLine.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Overwrite Bus.Partner | Overwrite the account segment Business Partner with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteBPartner<small> character(1) <br/> Yes-No</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | GL_DistributionLine.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Overwrite Project | Overwrite the account segment Project with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteProject<small> character(1) <br/> Yes-No</small> |
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | GL_DistributionLine.C_Project_ID<small> numeric(10) <br/> Table Direct</small> |
+| Overwrite Campaign | Overwrite the account segment Campaign with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteCampaign<small> character(1) <br/> Yes-No</small> |
+| Campaign | Marketing Campaign | The Campaign defines a unique marketing program.  Projects can be associated with a pre defined Marketing Campaign.  You can then report based on a specific Campaign. | GL_DistributionLine.C_Campaign_ID<small> numeric(10) <br/> Table Direct</small> |
+| Overwrite Location From | Overwrite the account segment Location From with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteLocFrom<small> character(1) <br/> Yes-No</small> |
+| Location From | Location that inventory was moved from | The Location From indicates the location that a product was moved from. | GL_DistributionLine.C_LocFrom_ID<small> numeric(10) <br/> Table</small> |
+| Overwrite Location To | Overwrite the account segment Location From with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteLocTo<small> character(1) <br/> Yes-No</small> |
+| Location To | Location that inventory was moved to | The Location To indicates the location that a product was moved to. | GL_DistributionLine.C_LocTo_ID<small> numeric(10) <br/> Table</small> |
+| Overwrite Sales Region | Overwrite the account segment Sales Region with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteSalesRegion<small> character(1) <br/> Yes-No</small> |
+| Sales Region | Sales coverage region | The Sales Region indicates a specific area of sales coverage. | GL_DistributionLine.C_SalesRegion_ID<small> numeric(10) <br/> Table Direct</small> |
+| Overwrite Trx Organization | Overwrite the account segment Transaction Organization with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteOrgTrx<small> character(1) <br/> Yes-No</small> |
+| Trx Organization | Performing or initiating organization | The organization which performs or initiates this transaction (for another organization).  The owning Organization may not be the transaction organization in a service bureau environment, with centralized services, and inter-organization transactions. | GL_DistributionLine.AD_OrgTrx_ID<small> numeric(10) <br/> Table</small> |
+| Overwrite User1 | Overwrite the account segment User 1 with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteUser1<small> character(1) <br/> Yes-No</small> |
+| User Element List 1 | User defined list element #1 | The user defined element displays the optional elements that have been defined for this account combination. | GL_DistributionLine.User1_ID<small> numeric(10) <br/> Search</small> |
+| Overwrite User2 | Overwrite the account segment User 2 with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteUser2<small> character(1) <br/> Yes-No</small> |
+| User Element List 2 | User defined list element #2 | The user defined element displays the optional elements that have been defined for this account combination. | GL_DistributionLine.User2_ID<small> numeric(10) <br/> Search</small> |
+| Overwrite Cost Center | Overwrite the account segment Cost Center with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteCostCenter<small> character(1) <br/> Yes-No</small> |
+| Cost Center |  |  | GL_DistributionLine.C_CostCenter_ID<small> numeric(10) <br/> Table Direct</small> |
+| Overwrite Department | Overwrite the account segment Department with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteDepartment<small> character(1) <br/> Yes-No</small> |
+| Department |  |  | GL_DistributionLine.C_Department_ID<small> numeric(10) <br/> Table Direct</small> |
+| Overwrite Asset | Overwrite the account segment Asset with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteAsset<small> character(1) <br/> Yes-No</small> |
+| Asset | Asset used internally or by customers | An asset is either created by purchasing or by delivering a product.  An asset can be used internally or be a customer asset. | GL_DistributionLine.A_Asset_ID<small> numeric(10) <br/> Search</small> |
+| Overwrite Attribute Set Instance | Overwrite the account segment Attribute Set Instance with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteAttributeSetInstance<small> character(1) <br/> Yes-No</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | GL_DistributionLine.M_AttributeSetInstance_ID<small> numeric(10) <br/> Table Direct</small> |
+| Overwrite Charge | Overwrite the account segment Charge with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteCharge<small> character(1) <br/> Yes-No</small> |
+| Charge | Additional document charges | The Charge indicates a type of Charge (Handling, Shipping, Restocking) | GL_DistributionLine.C_Charge_ID<small> numeric(10) <br/> Table Direct</small> |
+| Overwrite Employee | Overwrite the account segment Employee with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteEmployee<small> character(1) <br/> Yes-No</small> |
+| Employee | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | GL_DistributionLine.C_Employee_ID<small> numeric(10) <br/> Search</small> |
+| Overwrite Warehouse | Overwrite the account segment Warehouse with the value specified | If not overwritten, the value of the original account combination is used. If selected, but not specified, the segment is set to null. | GL_DistributionLine.OverwriteWarehouse<small> character(1) <br/> Yes-No</small> |
+| Warehouse | Storage Warehouse and Service Point | The Warehouse identifies a unique Warehouse where products are stored or Services are provided. | GL_DistributionLine.M_Warehouse_ID<small> numeric(10) <br/> Table Direct</small> |
+
