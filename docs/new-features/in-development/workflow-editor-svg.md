@@ -1,12 +1,11 @@
 # Workflow Editor (SVG)
 
 :::info Not Yet in Stable Release
-
 This feature is not yet part of a stable iDempiere release and may change.
 :::
 
 **Goal:** Technical
-**Developer:** [Markus Bozem](https://wiki.idempiere.org/en/User:Mbozem)
+**Developer:** [Hengsin](https://wiki.idempiere.org/en/User:Hengsin), [Markus Bozem](https://wiki.idempiere.org/en/User:Mbozem)
 **Feature Ticket:** [IDEMPIERE-7097](https://idempiere.atlassian.net/browse/IDEMPIERE-7097)
 
 ## Editing workflows in the browser
