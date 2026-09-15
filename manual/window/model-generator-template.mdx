@@ -1,0 +1,30 @@
+---
+title: 'Model Generator Template'
+sidebar_label: 'Model Generator Template'
+tags: ['Window']
+---
+
+# Model Generator Template
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200141</span>
+
+*10/07/2023 → 10/07/2023*
+
+![Model Generator Template](./img/model-generator-template.png)
+
+## Tab: Model Generator Template
+
+*Tab Level 0 · Created 10/07/2023 · Updated 10/07/2023*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_ModelGeneratorTemplate.AD_Client_ID<small> numeric(10) <br/> Search</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_ModelGeneratorTemplate.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_ModelGeneratorTemplate.Name<small> character varying(60) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_ModelGeneratorTemplate.IsActive<small> character(1) <br/> Yes-No</small> |
+| Folder | A folder on a local or remote system to store data into | We store files in folders, especially media files. | AD_ModelGeneratorTemplate.Folder<small> character varying(255) <br/> String</small> |
+| DB Table Name |  | You can use % or a comma separated list of table names (case sensitive)<br/>Using '@TableName@' will change to current table when executing the process | AD_ModelGeneratorTemplate.TableName<small> character varying(2000) <br/> String</small> |
+| Package Name |  |  | AD_ModelGeneratorTemplate.PackageName<small> character varying(60) <br/> String</small> |
+| Table Entity Type |  |  | AD_ModelGeneratorTemplate.TableEntityType<small> character varying(20) <br/> String</small> |
+| Column Entity Type |  |  | AD_ModelGeneratorTemplate.ColumnEntityType<small> character varying(20) <br/> String</small> |
+

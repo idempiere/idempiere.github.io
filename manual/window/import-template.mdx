@@ -1,0 +1,49 @@
+---
+title: 'Import Template'
+sidebar_label: 'Import Template'
+tags: ['Window']
+---
+
+# Import Template
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200063</span>
+
+*29/10/2014 → 29/10/2014*
+
+![Import Template](./img/import-template.png)
+
+## Tab: Import Template
+
+*Tab Level 0 · Created 29/10/2014 · Updated 29/10/2014*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_ImportTemplate.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_ImportTemplate.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_ImportTemplate.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_ImportTemplate.Description<small> character varying(255) <br/> String</small> |
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | AD_ImportTemplate.AD_Window_ID<small> numeric(10) <br/> Table Direct</small> |
+| Tab | Tab within a Window | The Tab indicates a tab that displays within a window. | AD_ImportTemplate.AD_Tab_ID<small> numeric(10) <br/> Table Direct</small> |
+| Character Set |  |  | AD_ImportTemplate.CharacterSet<small> character varying(20) <br/> String</small> |
+| Separator Character |  |  | AD_ImportTemplate.SeparatorChar<small> character varying(1) <br/> String</small> |
+| Quote Char |  |  | AD_ImportTemplate.QuoteChar<small> character varying(1) <br/> String</small> |
+| CSV Header |  |  | AD_ImportTemplate.CSVHeader<small> character varying(2000) <br/> String</small> |
+| CSV Alias Header |  |  | AD_ImportTemplate.CSVAliasHeader<small> character varying(2000) <br/> String</small> |
+| Import Template Type |  |  | AD_ImportTemplate.ImportTemplateType<small> character varying(4) <br/> List</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_ImportTemplate.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Import Template Access
+
+*Tab Level 1 · Created 29/10/2014 · Updated 29/10/2014*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_ImportTemplateAccess.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_ImportTemplateAccess.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Import Template |  |  | AD_ImportTemplateAccess.AD_ImportTemplate_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_ImportTemplateAccess.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Allow Insert |  |  | AD_ImportTemplateAccess.IsAllowInsert<small> character(1) <br/> Yes-No</small> |
+| Allow Merge |  |  | AD_ImportTemplateAccess.IsAllowMerge<small> character(1) <br/> Yes-No</small> |
+| Allow Update |  |  | AD_ImportTemplateAccess.IsAllowUpdate<small> character(1) <br/> Yes-No</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_ImportTemplateAccess.IsActive<small> character(1) <br/> Yes-No</small> |
+

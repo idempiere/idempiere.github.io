@@ -1,0 +1,284 @@
+---
+title: 'Business Partner'
+sidebar_label: 'Business Partner'
+description: 'Maintain Business Partners'
+tags: ['Window']
+---
+
+# Business Partner
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 123</span>
+
+*11/06/1999 → 09/02/2005*
+
+![Business Partner](./img/business-partner.png)
+
+**Description:** Maintain Business Partners
+
+**Comment/Help:** The Business Partner window allows you do define any party with whom you transact.  This includes customers, vendors and employees.  Prior to entering or importing products, you must define your vendors.  Prior to generating Orders you must define your customers.  This window holds all information about your business partner and the values entered will be used to generate all document transactions
+
+## Tab: Business Partner
+
+*Tab Level 0 · Created 04/12/1999 · Updated 02/01/2000*
+
+**Description:** Business Partner
+
+**Comment/Help:** The Business Partner Tab defines any Entity with whom an organization transacts.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BPartner.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BPartner.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Logo |  |  | C_BPartner.Logo_ID<small> numeric(10) <br/> Image</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | C_BPartner.Value<small> character varying(40) <br/> String</small> |
+| Business Partner Group | Business Partner Group | The Business Partner Group provides a method of defining defaults to be used for individual Business Partners. | C_BPartner.C_BP_Group_ID<small> numeric(10) <br/> Table Direct</small> |
+| Customer | Indicates if this Business Partner is a Customer | The Customer checkbox indicates if this Business Partner is a customer.  If it is select additional fields will display which further define this customer. | C_BPartner.IsCustomer<small> character(1) <br/> Yes-No</small> |
+| Vendor | Indicates if this Business Partner is a Vendor | The Vendor checkbox indicates if this Business Partner is a Vendor.  If it is selected, additional fields will display which further identify this vendor. | C_BPartner.IsVendor<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_BPartner.Name<small> character varying(120) <br/> String</small> |
+| Employee | Indicates if  this Business Partner is an employee | The Employee checkbox indicates if this Business Partner is an Employee.  If it is selected, additional fields will display which further identify this employee. | C_BPartner.IsEmployee<small> character(1) <br/> Yes-No</small> |
+| Prospect | Indicates this is a Prospect | The Prospect checkbox indicates an entity that is an active prospect. | C_BPartner.IsProspect<small> character(1) <br/> Yes-No</small> |
+| Name 2 | Additional Name |  | C_BPartner.Name2<small> character varying(60) <br/> String</small> |
+| Sales Representative | Indicates if  the business partner is a sales representative or company agent | The Sales Rep checkbox indicates if this business partner is a sales representative. A sales representative may also be an employee, but does not need to be. | C_BPartner.IsSalesRep<small> character(1) <br/> Yes-No</small> |
+| Reference No | Your customer or vendor number at the Business Partner's site | The reference number can be printed on orders and invoices to allow your business partner to faster identify your records. | C_BPartner.ReferenceNo<small> character varying(40) <br/> String</small> |
+| Rating | Classification or Importance | The Rating is used to differentiate the importance | C_BPartner.Rating<small> character(1) <br/> String</small> |
+| Representative/Agent | Sales Representative or Company Agent | The Sales Representative indicates the Sales Rep for this Region.  Any Sales Rep must be a valid internal user. | C_BPartner.SalesRep_ID<small> numeric(10) <br/> Table</small> |
+| Credit Status | Business Partner Credit Status | Credit Management is inactive if Credit Status is No Credit Check, Credit Stop or if the Credit Limit is 0.<br/>If active, the status is set automatically set to Credit Hold, if the Total Open Balance (including Vendor activities)  is higher then the Credit Limit. It is set to Credit Watch, if above 90% of the Credit Limit and Credit OK otherwise. | C_BPartner.SOCreditStatus<small> character(1) <br/> List</small> |
+| Credit Limit | Total outstanding invoice amounts allowed | The Credit Limit indicates the total amount allowed "on account" in primary accounting currency.  If the Credit Limit is 0, no check is performed.  Credit Management is based on the Total Open Amount, which includes Vendor activities. | C_BPartner.SO_CreditLimit<small> numeric <br/> Amount</small> |
+| Open Balance | Total Open Balance Amount in primary Accounting Currency | The Total Open Balance Amount is the calculated open item amount for Customer and Vendor activity.  If the Balance is below zero, we owe the Business Partner.  The amount is used for Credit Management.<br/>Invoices and Payment Allocations determine the Open Balance (i.e. not Orders or Payments). | C_BPartner.TotalOpenBalance<small> numeric <br/> Amount</small> |
+| Tax ID | Tax Identification | The Tax ID field identifies the legal Identification number of this Entity. | C_BPartner.TaxID<small> character varying(20) <br/> String</small> |
+| Link Organization | Link Business Partner to an Organization | If the Business Partner is another Organization, select the Organization or set to empty to create a new Organization.  You link a Business Partner to an Organization to create explicit Documents for Inter-Org transaction.<br/>If you create a new Organization, you may supply a Organization Type.  If you select a Role, the access to the new Organization is limited to that role, otherwise all (non manual) roles of the Tenant will have access to the new Organization. | C_BPartner.AD_OrgBP_ID<small> numeric(10) <br/> Button</small> |
+| SO Tax exempt | Business partner is exempt from tax on sales | If a business partner is exempt from tax on sales, the exempt tax rate is used. For this, you need to set up a tax rate with a 0% rate and indicate that this is your tax exempt rate.  This is required for tax reporting, so that you can track tax exempt transactions. | C_BPartner.IsTaxExempt<small> character(1) <br/> Yes-No</small> |
+| PO Tax exempt | Business partner is exempt from tax on purchases | If a business partner is exempt from tax on purchases, the exempt tax rate is used. For this, you need to set up a tax rate with a 0% rate and indicate that this is your tax exempt rate.  This is required for tax reporting, so that you can track tax exempt transactions. | C_BPartner.IsPOTaxExempt<small> character(1) <br/> Yes-No</small> |
+| URL | Full URL address - e.g. http://www.idempiere.org | The URL defines an fully qualified web address like http://www.idempiere.org | C_BPartner.URL<small> character varying(120) <br/> URL</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_BPartner.Description<small> character varying(255) <br/> String</small> |
+| Summary Level | This is a summary entity | A summary entity represents a branch in a tree rather than an end-node. Summary entities are used for reporting and do not have own values. | C_BPartner.IsSummary<small> character(1) <br/> Yes-No</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BPartner.IsActive<small> character(1) <br/> Yes-No</small> |
+| Invoice Rule | Frequency and method of invoicing  | The Invoice Rule defines how a Business Partner is invoiced and the frequency of invoicing. | C_BPartner.InvoiceRule<small> character(1) <br/> List</small> |
+| Invoice Schedule | Schedule for generating Invoices | The Invoice Schedule identifies the frequency used when generating invoices. | C_BPartner.C_InvoiceSchedule_ID<small> numeric(10) <br/> Table Direct</small> |
+| Payment Rule | How you pay the invoice | The Payment Rule indicates the method of invoice payment. | C_BPartner.PaymentRule<small> character(1) <br/> List</small> |
+| Payment Term | The terms of Payment (timing, discount) | Payment Terms identify the method and timing of payment. | C_BPartner.C_PaymentTerm_ID<small> numeric(10) <br/> Table</small> |
+| Delivery Rule | Defines the timing of Delivery | The Delivery Rule indicates when an order should be delivered. For example should the order be delivered when the entire order is complete, when a line is complete or as the products become available. | C_BPartner.DeliveryRule<small> character(1) <br/> List</small> |
+| Delivery Via | How the order will be delivered | The Delivery Via indicates how the products should be delivered. For example, will the order be picked up or shipped. | C_BPartner.DeliveryViaRule<small> character(1) <br/> List</small> |
+| Price List | Unique identifier of a Price List | Price Lists are used to determine the pricing, margin and cost of items purchased or sold. | C_BPartner.M_PriceList_ID<small> numeric(10) <br/> Table Direct</small> |
+| Discount Schema | Schema to calculate the trade discount percentage | After calculation of the (standard) price, the trade discount percentage is calculated and applied resulting in the final price. | C_BPartner.M_DiscountSchema_ID<small> numeric(10) <br/> Table</small> |
+| Flat Discount % | Flat discount percentage  |  | C_BPartner.FlatDiscount<small> numeric <br/> Number</small> |
+| Dunning | Dunning Rules for overdue invoices | The Dunning indicates the rules and method of dunning for past due payments. | C_BPartner.C_Dunning_ID<small> numeric(10) <br/> Table Direct</small> |
+| Dunning Grace Date |  |  | C_BPartner.DunningGrace<small> timestamp without time zone <br/> Date</small> |
+| Min Shelf Life % | Minimum Shelf Life in percent based on Product Instance Guarantee Date | Minimum Shelf Life of products with Guarantee Date instance. If &gt; 0 you cannot select products with a shelf life ((Guarantee Date-Today) / Guarantee Days) less than the minimum shelf life, unless you select "Show All" | C_BPartner.ShelfLifeMinPct<small> numeric(10) <br/> Integer</small> |
+| Payment Rule | Purchase payment option | The Payment Rule indicates the method of purchase payment. | C_BPartner.PaymentRulePO<small> character(1) <br/> List</small> |
+| PO Payment Term | Payment rules for a purchase order | The PO Payment Term indicates the payment term that will be used when this purchase order becomes an invoice. | C_BPartner.PO_PaymentTerm_ID<small> numeric(10) <br/> Table</small> |
+| Is Manufacturer | Indicate role of this Business partner as Manufacturer |  | C_BPartner.IsManufacturer<small> character(1) <br/> Yes-No</small> |
+| Purchase Price List | Price List used by this Business Partner | Identifies the price list used by a Vendor for products purchased by this organization. | C_BPartner.PO_PriceList_ID<small> numeric(10) <br/> Table</small> |
+| PO Discount Schema | Schema to calculate the purchase trade discount percentage |  | C_BPartner.PO_DiscountSchema_ID<small> numeric(10) <br/> Table</small> |
+| 1099 Vendor |  |  | C_BPartner.Is1099Vendor<small> character(1) <br/> Yes-No</small> |
+| Default 1099 Box |  |  | C_BPartner.Default1099Box_ID<small> numeric(10) <br/> Table</small> |
+| Order Reference | Transaction Reference Number (Sales Order, Purchase Order) of your Business Partner | The business partner order reference is the order reference for this specific transaction; Often Purchase Order numbers are given to print on Invoices for easier reference.  A standard number can be defined in the Business Partner (Customer) window. | C_BPartner.POReference<small> character varying(20) <br/> String</small> |
+| Language | Language for this Business Partner if Multi-Language enabled | The Language identifies the language to use for display and formatting documents. It requires, that on Tenant level, Multi-Lingual documents are selected and that you have created/loaded the language. | C_BPartner.AD_Language<small> character varying(6) <br/> Table</small> |
+| Greeting | Greeting to print on correspondence | The Greeting identifies the greeting to print on correspondence. | C_BPartner.C_Greeting_ID<small> numeric(10) <br/> Table Direct</small> |
+| Order Description | Description to be used on orders | The Order Description identifies the standard description to use on orders for this Customer. | C_BPartner.SO_Description<small> character varying(255) <br/> String</small> |
+| Invoice Print Format | Print Format for printing Invoices | You need to define a Print Format to print the document. | C_BPartner.Invoice_PrintFormat_ID<small> numeric(10) <br/> Table</small> |
+| Document Copies | Number of copies to be printed | The Document Copies indicates the number of copies of each document that will be generated. | C_BPartner.DocumentCopies<small> numeric(10) <br/> Integer</small> |
+| Discount Printed | Print Discount on Invoice and Order | The Discount Printed Checkbox indicates if the discount will be printed on the document. | C_BPartner.IsDiscountPrinted<small> character(1) <br/> Yes-No</small> |
+| Freight Cost Rule | Method for charging Freight | The Freight Cost Rule indicates the method used when charging for freight. | C_BPartner.FreightCostRule<small> character(1) <br/> List</small> |
+| Share | Share of Customer's business as a percentage | The Share indicates the percentage of this Business Partner's volume of the products supplied. | C_BPartner.ShareOfCustomer<small> numeric(10) <br/> Integer</small> |
+| D-U-N-S | Dun &amp; Bradstreet Number | Used for EDI - For details see   www.dnb.com/dunsno/list.htm | C_BPartner.DUNS<small> character varying(11) <br/> String</small> |
+| NAICS/SIC | Standard Industry Code or its successor NAIC - http://www.osha.gov/oshstats/sicser.html | The NAICS/SIC identifies either of these codes that may be applicable to this Business Partner. | C_BPartner.NAICS<small> character varying(6) <br/> String</small> |
+| Acquisition Cost | The cost of gaining the prospect as a customer | The Acquisition Cost identifies the cost associated with making this prospect a customer. | C_BPartner.AcqusitionCost<small> numeric <br/> Costs+Prices</small> |
+| Employees | Number of employees | Indicates the number of employees for this Business Partner.  This field displays only for Prospects. | C_BPartner.NumberEmployees<small> numeric(10) <br/> Integer</small> |
+| Sales Volume in 1.000 | Total Volume of Sales in Thousands of Currency | The Sales Volume indicates the total volume of sales for a Business Partner. | C_BPartner.SalesVolume<small> numeric(10) <br/> Integer</small> |
+| Potential Life Time Value | Total Revenue expected | The Potential Life Time Value is the anticipated revenue in primary accounting currency to be generated by the Business Partner. | C_BPartner.PotentialLifeTimeValue<small> numeric <br/> Amount</small> |
+| Actual Life Time Value | Actual Life Time Revenue | The Actual Life Time Value is the recorded revenue in primary accounting currency generated by the Business Partner. | C_BPartner.ActualLifeTimeValue<small> numeric <br/> Amount</small> |
+| First Sale | Date of First Sale | The First Sale Date identifies the date of the first sale to this Business Partner | C_BPartner.FirstSale<small> timestamp without time zone <br/> Date</small> |
+
+## Tab: › Contact (User)
+
+*Tab Level 1 · Created 03/06/2003 · Updated 25/01/2013*
+
+**Description:** Maintain User within the system - Internal or Business Partner Contact
+
+**Comment/Help:** The User identifies a unique user in the system. This could be an internal user or a business partner contact
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_User.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_User.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | AD_User.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_User.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_User.Description<small> character varying(255) <br/> String</small> |
+| Comments | Comments or additional information | The Comments field allows for free form entry of additional information. | AD_User.Comments<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_User.IsActive<small> character(1) <br/> Yes-No</small> |
+| EMail Address | Electronic Mail Address | The Email Address is the Electronic Mail ID for this User and should be fully qualified (e.g. joe.smith@company.com). The Email Address is used to access the self service application functionality from the web. | AD_User.EMail<small> character varying(60) <br/> String</small> |
+| Password | Password of any length (case sensitive) | The Password for this User.  Passwords are required to identify authorized users.  For iDempiere Users, you can change the password via the Process "Reset Password". | AD_User.Password<small> character varying(1024) <br/> String</small> |
+| Partner Location | Identifies the (ship to) address for this Business Partner | The Partner address indicates the location of a Business Partner | AD_User.C_BPartner_Location_ID<small> numeric(10) <br/> Table Direct</small> |
+| Ship Contact | Business Partner Shipment Contact | If the Ship Contact is selected, the contact is used for notification. | AD_User.IsShipTo<small> character(1) <br/> Yes-No</small> |
+| Invoice Contact | Business Partner Invoice/Bill Contact | If the Invoice Contact is selected, the contact is used to send notifications about invoices to a customer or a vendor. | AD_User.IsBillTo<small> character(1) <br/> Yes-No</small> |
+| Greeting | Greeting to print on correspondence | The Greeting identifies the greeting to print on correspondence. | AD_User.C_Greeting_ID<small> numeric(10) <br/> Table Direct</small> |
+| Title | Name this entity is referred to as | The Title indicates the name that an entity is referred to as. | AD_User.Title<small> character varying(40) <br/> String</small> |
+| Birthday | Birthday or Anniversary day | Birthday or Anniversary day | AD_User.Birthday<small> timestamp without time zone <br/> Date</small> |
+| Phone | Identifies a telephone number | The Phone field identifies a telephone number | AD_User.Phone<small> character varying(40) <br/> String</small> |
+| 2nd Phone | Identifies an alternate telephone number. | The 2nd Phone field identifies an alternate telephone number. | AD_User.Phone2<small> character varying(40) <br/> String</small> |
+| Fax | Facsimile number | The Fax identifies a facsimile number for this Business Partner or  Location | AD_User.Fax<small> character varying(40) <br/> String</small> |
+| Notification Type | Type of Notifications | Emails or Notification sent out for Request Updates, etc. | AD_User.NotificationType<small> character(1) <br/> List</small> |
+| Position | Job Position |  | AD_User.C_Job_ID<small> numeric(10) <br/> Table Direct</small> |
+| Full BP Access | The user/contact has full access to Business Partner information and resources | If selected, the user has full access to the Business Partner (BP) information (Business Documents like Orders, Invoices - Requests) or resources (Assets, Downloads). If you deselect it, the user has no access rights unless, you explicitly grant it in tab "BP Access" | AD_User.IsFullBPAccess<small> character(1) <br/> Yes-No</small> |
+| EMail Verify | Date Email was verified |  | AD_User.EMailVerifyDate<small> timestamp without time zone <br/> Date+Time</small> |
+| Verification Info | Verification information of EMail Address | The field contains additional information how the EMail Address has been verified | AD_User.EMailVerify<small> character varying(40) <br/> String</small> |
+| Last Contact | Date this individual was last contacted | The Last Contact indicates the date that this Business Partner Contact was last contacted. | AD_User.LastContact<small> timestamp without time zone <br/> Date</small> |
+| Last Result | Result of last contact | The Last Result identifies the result of the last contact made. | AD_User.LastResult<small> character varying(255) <br/> String</small> |
+
+## Tab: › › Interest Area
+
+*Tab Level 2 · Created 01/10/2002 · Updated 25/01/2013*
+
+**Description:** Business Partner Contact Interest Area
+
+**Comment/Help:** Interest Area can be used for Marketing Campaigns
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | R_ContactInterest.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | R_ContactInterest.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | R_ContactInterest.AD_User_ID<small> numeric(10) <br/> Table Direct</small> |
+| Interest Area | Interest Area or Topic | Interest Areas reflect interest in a topic by a contact. Interest areas can be used for marketing campaigns. | R_ContactInterest.R_InterestArea_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | R_ContactInterest.IsActive<small> character(1) <br/> Yes-No</small> |
+| Subscribe Date | Date the contact actively subscribed | Date the contact subscribe the interest area | R_ContactInterest.SubscribeDate<small> timestamp without time zone <br/> Date</small> |
+| Opt-out Date | Date the contact opted out | If the field has a date, the customer opted out (unsubscribed) and cannot receive mails for the Interest Area | R_ContactInterest.OptOutDate<small> timestamp without time zone <br/> Date</small> |
+
+## Tab: › › BP Access
+
+*Tab Level 2 · Created 09/09/2005 · Updated 25/01/2013*
+
+**Description:** Access of the User/Contact to Business Partner information and resources
+
+**Comment/Help:** If on User level, "Full BP Access" is NOT selected, you need to give access explicitly here. 
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_UserBPAccess.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_UserBPAccess.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | AD_UserBPAccess.AD_User_ID<small> numeric(10) <br/> Search</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_UserBPAccess.IsActive<small> character(1) <br/> Yes-No</small> |
+| Access Type | Type of Access of the user/contact to Business Partner information and resources | If on User level, "Full BP Access" is NOT selected, give access explicitly | AD_UserBPAccess.BPAccessType<small> character(1) <br/> List</small> |
+| Request Type | Type of request (e.g. Inquiry, Complaint, ..) | Request Types are used for processing and categorizing requests. Options are Account Inquiry, Warranty Issue, etc. | AD_UserBPAccess.R_RequestType_ID<small> numeric(10) <br/> Table Direct</small> |
+
+## Tab: › Location
+
+*Tab Level 1 · Created 04/12/1999 · Updated 25/01/2013*
+
+**Description:** Define Location
+
+**Comment/Help:** The Location Tab defines the physical location of a business partner.  A business partner may have multiple location records.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BPartner_Location.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BPartner_Location.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BPartner_Location.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_BPartner_Location.Name<small> character varying(60) <br/> String</small> |
+| Preserve custom name |  |  | C_BPartner_Location.IsPreserveCustomName<small> character(1) <br/> Yes-No</small> |
+| Address | Location or Address | The Location / Address field defines the location of an entity. | C_BPartner_Location.C_Location_ID<small> numeric(10) <br/> Location (Address)</small> |
+| Phone | Identifies a telephone number | The Phone field identifies a telephone number | C_BPartner_Location.Phone<small> character varying(40) <br/> String</small> |
+| 2nd Phone | Identifies an alternate telephone number. | The 2nd Phone field identifies an alternate telephone number. | C_BPartner_Location.Phone2<small> character varying(40) <br/> String</small> |
+| Fax | Facsimile number | The Fax identifies a facsimile number for this Business Partner or  Location | C_BPartner_Location.Fax<small> character varying(40) <br/> String</small> |
+| ISDN | ISDN or modem line | The ISDN identifies a ISDN or Modem line number. | C_BPartner_Location.ISDN<small> character varying(40) <br/> String</small> |
+| Ship Address | Business Partner Shipment Address | If the Ship Address is selected, the location is used to ship goods to a customer or receive goods from a vendor. | C_BPartner_Location.IsShipTo<small> character(1) <br/> Yes-No</small> |
+| Invoice Address | Business Partner Invoice/Bill Address | If the Invoice Address is selected, the location is used to send invoices to a customer or receive invoices from a vendor. | C_BPartner_Location.IsBillTo<small> character(1) <br/> Yes-No</small> |
+| Pay-From | Business Partner can pay invoices from the related Business Partner | Proxy business partner is allowed to pay and allocate payments from the related Business Partner | C_BPartner_Location.IsPayFrom<small> character(1) <br/> Yes-No</small> |
+| Remit-To Address | Business Partner payment address | If the Remit-To Address is selected, the location is used to send payments to the vendor. | C_BPartner_Location.IsRemitTo<small> character(1) <br/> Yes-No</small> |
+| Sales Region | Sales coverage region | The Sales Region indicates a specific area of sales coverage. | C_BPartner_Location.C_SalesRegion_ID<small> numeric(10) <br/> Table</small> |
+| Customer Address ID |  |  | C_BPartner_Location.CustomerAddressID<small> character varying(60) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BPartner_Location.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Bank Account
+
+*Tab Level 1 · Created 04/12/1999 · Updated 25/01/2013*
+
+**Description:** Define Bank Account
+
+**Comment/Help:** The Define Bank Account Tab defines the banking information for this business partner.  This data is used for processing payments and remittances.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BP_BankAccount.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BP_BankAccount.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BP_BankAccount.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | C_BP_BankAccount.AD_User_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BP_BankAccount.IsActive<small> character(1) <br/> Yes-No</small> |
+| ACH | Automatic Clearing House | The ACH checkbox indicates if this Bank Account accepts ACH transactions. | C_BP_BankAccount.IsACH<small> character(1) <br/> Yes-No</small> |
+| Account Usage | Business Partner Bank Account usage | Determines how the bank account is used. | C_BP_BankAccount.BPBankAcctUse<small> character(1) <br/> List</small> |
+| Bank | Bank | The Bank is a unique identifier of a Bank for this Organization or for a Business Partner with whom this Organization transacts. | C_BP_BankAccount.C_Bank_ID<small> numeric(10) <br/> Search</small> |
+| Bank Account Type | Bank Account Type | The Bank Account Type field indicates the type of account (savings, checking etc) this account  is defined as. | C_BP_BankAccount.BankAccountType<small> character(1) <br/> List</small> |
+| Routing No | Bank Routing Number | The Bank Routing Number (ABA Number) identifies a legal Bank.  It is used in routing checks and electronic transactions. | C_BP_BankAccount.RoutingNo<small> character varying(20) <br/> String</small> |
+| Account No | Account Number | The Account Number indicates the Number assigned to this bank account.  | C_BP_BankAccount.AccountNo<small> character varying(20) <br/> String</small> |
+| IBAN | International Bank Account Number | If your bank provides an International Bank Account Number, enter it here<br/>Details ISO 13616 and http://www.ecbs.org. The account number has the maximum length of 22 characters (without spaces). The IBAN is often printed with a apace after 4 characters. Do not enter the spaces in iDempiere. | C_BP_BankAccount.IBAN<small> character varying(40) <br/> String</small> |
+| Credit Card | Credit Card (Visa, MC, AmEx) | The Credit Card drop down list box is used for selecting the type of Credit Card presented for payment. | C_BP_BankAccount.CreditCardType<small> character(1) <br/> List</small> |
+| Number | Credit Card Number  | The Credit Card number indicates the number on the credit card, without blanks or spaces. | C_BP_BankAccount.CreditCardNumber<small> character varying(20) <br/> String</small> |
+| Verification Code | Credit Card Verification code on credit card | The Credit Card Verification indicates the verification code on the credit card (AMEX 4 digits on front; MC,Visa 3 digits back) | C_BP_BankAccount.CreditCardVV<small> character varying(4) <br/> String</small> |
+| Exp. Month | Expiry Month | The Expiry Month indicates the expiry month for this credit card. | C_BP_BankAccount.CreditCardExpMM<small> numeric(10) <br/> Integer</small> |
+| Exp. Year | Expiry Year | The Expiry Year indicates the expiry year for this credit card. | C_BP_BankAccount.CreditCardExpYY<small> numeric(10) <br/> Integer</small> |
+| Account Name | Name on Credit Card or Account holder | The Name of the Credit Card or Account holder. | C_BP_BankAccount.A_Name<small> character varying(60) <br/> String</small> |
+| Account Street | Street address of the Credit Card or Account holder | The Street Address of the Credit Card or Account holder. | C_BP_BankAccount.A_Street<small> character varying(60) <br/> String</small> |
+| Account City | City or the Credit Card or Account Holder | The Account City indicates the City of the Credit Card or Account holder | C_BP_BankAccount.A_City<small> character varying(60) <br/> String</small> |
+| Account Zip/Postal | Zip Code of the Credit Card or Account Holder | The Zip Code of the Credit Card or Account Holder. | C_BP_BankAccount.A_Zip<small> character varying(20) <br/> String</small> |
+| Account State | State of the Credit Card or Account holder | The State of the Credit Card or Account holder | C_BP_BankAccount.A_State<small> character varying(40) <br/> String</small> |
+| Account Country | Country | Account Country Name | C_BP_BankAccount.A_Country<small> character varying(40) <br/> String</small> |
+| Driver License | Payment Identification - Driver License | The Driver's License being used as identification. | C_BP_BankAccount.A_Ident_DL<small> character varying(20) <br/> String</small> |
+| Social Security No | Payment Identification - Social Security No | The Social Security number being used as identification. | C_BP_BankAccount.A_Ident_SSN<small> character varying(20) <br/> String</small> |
+| Account EMail | Email Address | The EMail Address indicates the EMail address off the Credit Card or Account holder. | C_BP_BankAccount.A_EMail<small> character varying(60) <br/> String</small> |
+| Address verified | This address has been verified | The Address Verified indicates if the address has been verified by the Credit Card Company. | C_BP_BankAccount.R_AvsAddr<small> character(1) <br/> List</small> |
+| Zip verified | The Zip Code has been verified | The Zip Verified indicates if the zip code has been verified by the Credit Card Company. | C_BP_BankAccount.R_AvsZip<small> character(1) <br/> List</small> |
+| Customer Payment Profile ID |  |  | C_BP_BankAccount.CustomerPaymentProfileID<small> character varying(60) <br/> String</small> |
+| Payment Processor | Payment processor for electronic payments | The Payment Processor indicates the processor to be used for electronic payments | C_BP_BankAccount.C_PaymentProcessor_ID<small> numeric(10) <br/> Table Direct</small> |
+
+## Tab: › Shipping Accounts
+
+*Tab Level 1 · Created 06/12/2012 · Updated 25/01/2013*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BP_ShippingAcct.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BP_ShippingAcct.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BP_ShippingAcct.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BP_ShippingAcct.IsActive<small> character(1) <br/> Yes-No</small> |
+| Shipper Account Number |  |  | C_BP_ShippingAcct.ShipperAccount<small> character varying(40) <br/> String</small> |
+| Shipper Meter |  |  | C_BP_ShippingAcct.ShipperMeter<small> character varying(255) <br/> String</small> |
+| Duties Shipper Account |  |  | C_BP_ShippingAcct.DutiesShipperAccount<small> character varying(40) <br/> String</small> |
+| Partner Location | Identifies the (ship to) address for this Business Partner | The Partner address indicates the location of a Business Partner | C_BP_ShippingAcct.C_BPartner_Location_ID<small> numeric(10) <br/> Table Direct</small> |
+| Shipping Processor |  |  | C_BP_ShippingAcct.M_ShippingProcessor_ID<small> numeric(10) <br/> Table</small> |
+
+## Tab: › Customer Accounting
+
+*Tab Level 1 · Created 26/09/1999 · Updated 25/01/2013*
+
+**Description:** Define Customer Accounting
+
+**Comment/Help:** The Customer Accounting Tab defines the default accounts to use when this business partner is referenced on an accounts receivable transaction.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BP_Customer_Acct.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BP_Customer_Acct.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BP_Customer_Acct.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | C_BP_Customer_Acct.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BP_Customer_Acct.IsActive<small> character(1) <br/> Yes-No</small> |
+| Customer Receivables | Account for Customer Receivables | The Customer Receivables Accounts indicates the account to be used for recording transaction for customers receivables. | C_BP_Customer_Acct.C_Receivable_Acct<small> numeric(10) <br/> Account</small> |
+| Customer Prepayment | Account for customer prepayments | The Customer Prepayment account indicates the account to be used for recording prepayments from a customer. | C_BP_Customer_Acct.C_Prepayment_Acct<small> numeric(10) <br/> Account</small> |
+
+## Tab: › Vendor Accounting
+
+*Tab Level 1 · Created 26/09/1999 · Updated 25/01/2013*
+
+**Description:** Define Vendor Accounting
+
+**Comment/Help:** The Vendor Accounting Tab defines the default accounts to use when this business partner is referenced in an accounts payable transaction.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BP_Vendor_Acct.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BP_Vendor_Acct.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BP_Vendor_Acct.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | C_BP_Vendor_Acct.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BP_Vendor_Acct.IsActive<small> character(1) <br/> Yes-No</small> |
+| Vendor Liability | Account for Vendor Liability | The Vendor Liability account indicates the account used for recording transactions for vendor liabilities | C_BP_Vendor_Acct.V_Liability_Acct<small> numeric(10) <br/> Account</small> |
+| Vendor Prepayment | Account for Vendor Prepayments | The Vendor Prepayment Account indicates the account used to record prepayments from a vendor. | C_BP_Vendor_Acct.V_Prepayment_Acct<small> numeric(10) <br/> Account</small> |
+

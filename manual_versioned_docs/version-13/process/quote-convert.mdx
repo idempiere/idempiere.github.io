@@ -1,0 +1,30 @@
+---
+title: 'Quote convert'
+sidebar_label: 'Quote convert'
+description: 'Convert open Proposal or Quotation to Order'
+tags: ['Process']
+---
+
+# Quote convert
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 231</span>
+
+*04/10/2003 → 02/01/2000*
+
+![Quote convert](./img/quote-convert.png)
+
+**Description:** Convert open Proposal or Quotation to Order
+
+**Comment/Help:** You can convert a Proposal or Quotation to any other Order document type. You would use this process, if you want to maintain/keep the Proposal or Quotation. The document status needs to be In Process.
+
+**Classname:** `org.compiere.process.CopyOrder`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Order | Order | The Order is a control document.  The  Order is complete when the quantity ordered is the same as the quantity shipped and invoiced.  When you close an order, unshipped (backordered) quantities are cancelled. | C_Order_ID<br/>Table Direct |
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | C_DocType_ID<br/>Table Direct |
+| Document Date | Date of the Document | The Document Date indicates the date the document was generated.  It may or may not be the same as the accounting date. | DateDoc<br/>Date |
+| Close Document | Close Document (process) |  | IsCloseDocument<br/>Yes-No |
+

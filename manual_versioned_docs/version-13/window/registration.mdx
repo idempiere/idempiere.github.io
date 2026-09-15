@@ -1,0 +1,65 @@
+---
+title: 'Registration'
+sidebar_label: 'Registration'
+description: 'User Asset Registration'
+tags: ['Window']
+---
+
+# Registration
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 301</span>
+
+*08/01/2004 → 17/02/2022*
+
+![Registration](./img/registration.png)
+
+**Description:** User Asset Registration
+
+**Comment/Help:** User Registration of an Asset
+
+## Tab: Registration
+
+*Tab Level 0 · Created 08/01/2004 · Updated 02/01/2000*
+
+**Description:** Asset User Registration
+
+**Comment/Help:** User Registration of an Asset
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | A_Registration.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | A_Registration.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | A_Registration.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | A_Registration.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | A_Registration.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | A_Registration.IsActive<small> character(1) <br/> Yes-No</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | A_Registration.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | A_Registration.AD_User_ID<small> numeric(10) <br/> Table Direct</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | A_Registration.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Asset | Asset used internally or by customers | An asset is either created by purchasing or by delivering a product.  An asset can be used internally or be a customer asset. | A_Registration.A_Asset_ID<small> numeric(10) <br/> Search</small> |
+| Registered | The application is registered. |  | A_Registration.IsRegistered<small> character(1) <br/> Yes-No</small> |
+| Allowed to be Published | You allow to publish the information, not just statistical summary info |  | A_Registration.IsAllowPublish<small> character(1) <br/> Yes-No</small> |
+| In Production | The system is in production |  | A_Registration.IsInProduction<small> character(1) <br/> Yes-No</small> |
+| In Service Date | Date when Asset was put into service | The date when the asset was put into service - usually used as start date for depreciation. | A_Registration.AssetServiceDate<small> timestamp without time zone <br/> Date</small> |
+| Note | Optional additional user defined information | The Note field allows for optional entry of user defined information regarding this record | A_Registration.Note<small> character varying(2000) <br/> String</small> |
+| Remote Host | Remote host Info |  | A_Registration.Remote_Host<small> character varying(120) <br/> String</small> |
+| Remote Addr | Remote Address | The Remote Address indicates an alternative or external address. | A_Registration.Remote_Addr<small> character varying(60) <br/> String</small> |
+
+## Tab: › Value
+
+*Tab Level 1 · Created 08/01/2004 · Updated 02/01/2000*
+
+**Description:** Registration Values
+
+**Comment/Help:** Indivifual values of Registration Attribute
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | A_RegistrationValue.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | A_RegistrationValue.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Registration | User Asset Registration | User Registration of an Asset | A_RegistrationValue.A_Registration_ID<small> numeric(10) <br/> Table Direct</small> |
+| Registration Attribute | Asset Registration Attribute | Define the individual values for the Asset Registration | A_RegistrationValue.A_RegistrationAttribute_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | A_RegistrationValue.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | A_RegistrationValue.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | A_RegistrationValue.IsActive<small> character(1) <br/> Yes-No</small> |
+

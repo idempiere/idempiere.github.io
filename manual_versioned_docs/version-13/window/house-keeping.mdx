@@ -1,0 +1,37 @@
+---
+title: 'House Keeping'
+sidebar_label: 'House Keeping'
+tags: ['Window']
+---
+
+# House Keeping
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 53063</span>
+
+*06/09/2008 → 06/09/2008*
+
+![House Keeping](./img/house-keeping.png)
+
+## Tab: House Keeping
+
+*Tab Level 0 · Created 06/09/2008 · Updated 06/09/2008*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_HouseKeeping.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_HouseKeeping.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | AD_HouseKeeping.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_HouseKeeping.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_HouseKeeping.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_HouseKeeping.Help<small> character varying(2000) <br/> Text</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_HouseKeeping.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| DB Table Name | Name of the table in the database | The DB Table Name indicates the name of the table in database. | AD_HouseKeeping.TableName<small> character varying(60) <br/> String</small> |
+| Sql WHERE | Fully qualified SQL WHERE clause | The Where Clause indicates the SQL WHERE clause to use for record selection. The WHERE clause is added to the query. Fully qualified means "tablename.columnname". | AD_HouseKeeping.WhereClause<small> character varying(255) <br/> String</small> |
+| Save In Historic |  |  | AD_HouseKeeping.IsSaveInHistoric<small> character(1) <br/> Yes-No</small> |
+| Export XML Backup |  |  | AD_HouseKeeping.IsExportXMLBackup<small> character(1) <br/> Yes-No</small> |
+| Backup Folder | Backup Folder |  | AD_HouseKeeping.BackupFolder<small> character varying(255) <br/> FilePath</small> |
+| House Keeping |  |  | AD_HouseKeeping.Processing<small> character(1) <br/> Button</small> |
+| Last Run |  |  | AD_HouseKeeping.LastRun<small> timestamp without time zone <br/> Date+Time</small> |
+| Last Deleted |  |  | AD_HouseKeeping.LastDeleted<small> numeric(10) <br/> Integer</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_HouseKeeping.IsActive<small> character(1) <br/> Yes-No</small> |
+

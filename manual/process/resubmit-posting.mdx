@@ -1,0 +1,28 @@
+---
+title: 'Resubmit Posting'
+sidebar_label: 'Resubmit Posting'
+description: 'Resubmit posting of documents with posting errors or locked documents'
+tags: ['Process']
+---
+
+# Resubmit Posting
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 175</span>
+
+*02/12/2001 → 23/03/2026*
+
+![Resubmit Posting](./img/resubmit-posting.png)
+
+**Description:** Resubmit posting of documents with posting errors or locked documents
+
+**Comment/Help:** After resubmitting, the accounting engine will try to post the document again. You resubmit documents, if they are locked or when the document had posting errors - after fixing the cause (e.g. opening period).
+
+**Classname:** `org.idempiere.acct.process.FactAcctReset`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Client_ID<br/>Table Direct |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_Table_ID<br/>Table |
+

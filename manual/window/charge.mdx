@@ -1,0 +1,77 @@
+---
+title: 'Charge'
+sidebar_label: 'Charge'
+description: 'Maintain Charges'
+tags: ['Window']
+---
+
+# Charge
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 161</span>
+
+*04/12/1999 → 02/01/2000*
+
+![Charge](./img/charge.png)
+
+**Description:** Maintain Charges
+
+**Comment/Help:** The Charges Window defines the different charges that may be incurred.  These can include Bank Charges, Vendor Charges and Handling Charges.
+
+## Tab: Charge
+
+*Tab Level 0 · Created 04/12/1999 · Updated 19/01/2006*
+
+**Description:** Charge
+
+**Comment/Help:** The Charge Tab defines the unique charges that may be associated with a document.
+The optional Business Partner allows to create Purchase Orders from Requisitions.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Charge.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Charge.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Charge.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Charge.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Charge.IsActive<small> character(1) <br/> Yes-No</small> |
+| Charge amount | Charge Amount | The Charge Amount indicates the amount for an additional charge. | C_Charge.ChargeAmt<small> numeric <br/> Amount</small> |
+| Tax Category | Tax Category | The Tax Category provides a method of grouping similar taxes.  For example, Sales Tax or Value Added Tax. | C_Charge.C_TaxCategory_ID<small> numeric(10) <br/> Table Direct</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_Charge.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Charge Type |  |  | C_Charge.C_ChargeType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Exclude from Payment Discount | If selected, this charge is excluded from payment discount calculations. Only line amounts will be considered for discount. |  | C_Charge.IsExcludedFromDiscount<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Accounting
+
+*Tab Level 1 · Created 19/12/2000 · Updated 05/03/2013*
+
+**Description:** Charge Accounting
+
+**Comment/Help:** The Accounting Tab defines the accounting parameters used for transactions including a charge or charges.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Charge_Acct.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Charge_Acct.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Charge | Additional document charges | The Charge indicates a type of Charge (Handling, Shipping, Restocking) | C_Charge_Acct.C_Charge_ID<small> numeric(10) <br/> Table Direct</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | C_Charge_Acct.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Charge_Acct.IsActive<small> character(1) <br/> Yes-No</small> |
+| Charge Account | Charge Account | The Charge Account identifies the account to use when recording charges | C_Charge_Acct.Ch_Expense_Acct<small> numeric(10) <br/> Account</small> |
+
+## Tab: › Translation
+
+*Tab Level 1 · Created 17/04/2009 · Updated 27/10/2024*
+
+**Description:** Translation
+
+**Comment/Help:** The Translation Tab defines a Document Type in an alternate language.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Charge_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Charge_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Charge | Additional document charges | The Charge indicates a type of Charge (Handling, Shipping, Restocking) | C_Charge_Trl.C_Charge_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | C_Charge_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Charge_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Charge_Trl.Description<small> character varying(255) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Charge_Trl.Name<small> character varying(60) <br/> String</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | C_Charge_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+

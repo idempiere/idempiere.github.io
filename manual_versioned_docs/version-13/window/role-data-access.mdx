@@ -1,0 +1,116 @@
+---
+title: 'Role Data Access'
+sidebar_label: 'Role Data Access'
+description: 'Maintain Data Access Rules'
+tags: ['Window']
+---
+
+# Role Data Access
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 268</span>
+
+*28/05/2003 → 02/01/2000*
+
+![Role Data Access](./img/role-data-access.png)
+
+**Description:** Maintain Data Access Rules
+
+**Comment/Help:** Maintain Data Access Roles of Roles/Responsibilties.
+Note that access information is cached and requires re-login or reset of cache.
+
+## Tab: Role
+
+*Tab Level 0 · Created 28/05/2003 · Updated 14/10/2025*
+
+**Description:** Role with Data Access Restriction
+
+**Comment/Help:** Select Role for with Data Access Restrictions.
+Note that access information is cached and requires re-login or reset of cache.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Role.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Role.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Role.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Role.Description<small> character varying(255) <br/> String</small> |
+| Preference Level | Determines what preferences the user can set | Preferences allow you to define default values.  If set to None, you cannot set any preference nor value preference. Only if set to Tenant, you can see the Record Info Change Log. | AD_Role.PreferenceType<small> character(1) <br/> List</small> |
+| Maintain Change Log | Maintain a log of changes | If selected, a log of all changes is maintained. | AD_Role.IsChangeLog<small> character(1) <br/> Yes-No</small> |
+| Show Accounting | Users with this role can see accounting information | This allows to prevent access to any accounting information. | AD_Role.IsShowAcct<small> character(1) <br/> Yes-No</small> |
+| Access all Orgs | Access all Organizations (no org access control) of the tenant | When selected, the role has access to all organizations of the tenant automatically. This also increases performance where you have many organizations. | AD_Role.IsAccessAllOrgs<small> character(1) <br/> Yes-No</small> |
+| Can Report | Users with this role can create reports | You can restrict the ability to report on data. | AD_Role.IsCanReport<small> character(1) <br/> Yes-No</small> |
+| Can Export | Users with this role can export data | You can restrict the ability to export data from iDempiere. | AD_Role.IsCanExport<small> character(1) <br/> Yes-No</small> |
+| Personal Lock | Allow users with role to lock access to personal records | If enabled, the user with the role can prevent access of others to personal records.  If a record is locked, only the user or people who can read personal locked records can see the record. | AD_Role.IsPersonalLock<small> character(1) <br/> Yes-No</small> |
+| Personal Access | Allow access to all personal records | Users of this role have access to all records locked as personal. | AD_Role.IsPersonalAccess<small> character(1) <br/> Yes-No</small> |
+| Role Template | A role template cannot be assigned to users, it is intended to define access to menu option and documents and inherit to other roles |  | AD_Role.IsMasterRole<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Table Access
+
+*Tab Level 1 · Created 28/05/2003 · Updated 15/01/2024*
+
+**Description:** Maintain Table Access
+
+**Comment/Help:** If listed here, the Role can(not) access all data of this table, even if the role has access to the functionality.
+&lt;br&gt;If you Include Access to a table and select Read Only, you can only read data (otherwise full access).
+&lt;br&gt;If you Exclude Access to a table and select Read Only, you can only read data (otherwise no access).
+&lt;br&gt;Please note that table access rules here are in addition to the Data Access Levels defined for a Table and the User Level defined for a Role. These rules are evaluated first and you only need to define the exceptions to these rules here.
+&lt;p&gt;
+Note that access information is cached and requires re-login or reset of cache. Be aware that if you use Include rules, then you need to include also several supporting entities. As an alternative, grant access only to functionality required.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Table_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Table_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Table_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_Table_Access.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Table_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Exclude | Exclude access to the data - if not selected Include access to the data | If selected (excluded), the role cannot access the data specified.  If not selected (included), the role can ONLY access the data specified. Exclude items represent a negative list (i.e. you don't have access to the listed items). Include items represent a positive list (i.e. you only have access to the listed items).<br/>&lt;br&gt;You would usually  not mix Exclude and Include. If you have one include rule in your list, you would only have access to that item anyway. | AD_Table_Access.IsExclude<small> character(1) <br/> Yes-No</small> |
+| Access Type | The type of access for this rule | If you restrict Access to the entity, you also cannot Report or Export it (i.e. to have access is a requirement that you can report or export the data).  The Report and Export rules are further restrictions if you have access. | AD_Table_Access.AccessTypeRule<small> character(1) <br/> List</small> |
+| Read Only | Field is read only | The Read Only indicates that this field may only be Read.  It may not be updated. | AD_Table_Access.IsReadOnly<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Column Access
+
+*Tab Level 1 · Created 28/05/2003 · Updated 02/01/2000*
+
+**Description:** Maintain Column Access
+
+**Comment/Help:** If listed here, the Role can(not) access the column of this table, even if the role has access to the functionality.
+&lt;br&gt;If you Include Access to a column and select Read Only, you can only read data (otherwise full access).
+&lt;br&gt;If you Exclude Access to a column and select Read Only, you can only read data (otherwise no access).
+Note that access information is cached and requires re-login or reset of cache.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Column_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Column_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Column_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_Column_Access.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Column | Column in the table | Link to the database column of the table | AD_Column_Access.AD_Column_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Column_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Exclude | Exclude access to the data - if not selected Include access to the data | If selected (excluded), the role cannot access the data specified.  If not selected (included), the role can ONLY access the data specified. Exclude items represent a negative list (i.e. you don't have access to the listed items). Include items represent a positive list (i.e. you only have access to the listed items).<br/>&lt;br&gt;You would usually  not mix Exclude and Include. If you have one include rule in your list, you would only have access to that item anyway. | AD_Column_Access.IsExclude<small> character(1) <br/> Yes-No</small> |
+| Read Only | Field is read only | The Read Only indicates that this field may only be Read.  It may not be updated. | AD_Column_Access.IsReadOnly<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Record Access
+
+*Tab Level 1 · Created 28/05/2003 · Updated 25/09/2005*
+
+**Description:** Maintain Record Access
+
+**Comment/Help:** You create Record Access records by enabling "Personal Lock" for the administrative role and Ctl-Lock (holding the Ctrl key while clicking on the Lock button).
+&lt;p&gt;
+If listed here, the Role can(not) access the data records of this table, even if the role has access to the functionality.
+&lt;br&gt;If you Include Access to a record and select Read Only, you can only read data (otherwise full access).
+&lt;br&gt;If you Exclude Access to a recorf and select Read Only, you can only read data (otherwise no access).
+Note that access information is cached and requires re-login or reset of cache.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Record_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Record_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Record_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | AD_Record_Access.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Record ID | Direct internal record ID | The Record ID is the internal unique identifier of a record. Please note that zooming to the record may not be successful for Orders, Invoices and Shipment/Receipts as sometimes the Sales Order type is not known. | AD_Record_Access.Record_ID<small> numeric(10) <br/> Record ID</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Record_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Exclude | Exclude access to the data - if not selected Include access to the data | If selected (excluded), the role cannot access the data specified.  If not selected (included), the role can ONLY access the data specified. Exclude items represent a negative list (i.e. you don't have access to the listed items). Include items represent a positive list (i.e. you only have access to the listed items).<br/>&lt;br&gt;You would usually  not mix Exclude and Include. If you have one include rule in your list, you would only have access to that item anyway. | AD_Record_Access.IsExclude<small> character(1) <br/> Yes-No</small> |
+| Read Only | Field is read only | The Read Only indicates that this field may only be Read.  It may not be updated. | AD_Record_Access.IsReadOnly<small> character(1) <br/> Yes-No</small> |
+| Dependent Entities | Also check access in dependent entities | Also dependent entities are included.  Please be aware, that enabling this rule has severe consequences and that this is only wanted in some circumstances.<br/>&lt;p&gt;Example Rule: "Include Payment Term Immediate with Dependent Entities"<br/>&lt;br&gt;Primary effect: users with this role can only select the payment term Immediate<br/>&lt;br&gt;Secondary effect (dependent entities): users with this role can see only invoices/orders with the payment term immediate. | AD_Record_Access.IsDependentEntities<small> character(1) <br/> Yes-No</small> |
+

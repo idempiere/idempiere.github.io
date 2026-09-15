@@ -1,0 +1,75 @@
+---
+title: 'Form'
+sidebar_label: 'Form'
+description: 'Special Forms'
+tags: ['Window']
+---
+
+# Form
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 187</span>
+
+*13/07/2000 → 02/01/2000*
+
+![Form](./img/form.png)
+
+**Description:** Special Forms
+
+**Comment/Help:** The Forms Window defines any window which is not automatically generated.  For System Admin use only.
+
+## Tab: Form
+
+*Tab Level 0 · Created 13/07/2000 · Updated 02/01/2000*
+
+**Description:** Special Form
+
+**Comment/Help:** The Forms Tab defines any window which is not automatically generated.  For System Admin use only.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Form.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Form.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Form.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Form.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Form.Help<small> character varying(2000) <br/> Text</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Form.IsActive<small> character(1) <br/> Yes-No</small> |
+| Beta Functionality | This functionality is considered Beta | Beta functionality is not fully tested or completed. | AD_Form.IsBetaFunctionality<small> character(1) <br/> Yes-No</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_Form.EntityType<small> character varying(40) <br/> Table</small> |
+| Data Access Level | Access Level required | Indicates the access level required for this record or process. | AD_Form.AccessLevel<small> character(1) <br/> List</small> |
+| Classname | Java Classname | The Classname identifies the Java classname used by this report or process. | AD_Form.Classname<small> character varying(255) <br/> String</small> |
+| Context Help |  |  | AD_Form.AD_CtxHelp_ID<small> numeric(10) <br/> Search</small> |
+| Image URL | URL of  image | URL of image; The image is not stored in the database, but retrieved at runtime. The image can be a gif, jpeg or png. | AD_Form.ImageURL<small> character varying(120) <br/> String</small> |
+
+## Tab: › Access
+
+*Tab Level 1 · Created 04/09/2000 · Updated 16/11/2012*
+
+**Description:** Form Access
+
+**Comment/Help:** The Forms Access Tab defines the access rules for this form
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Form_Access.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Form_Access.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Special Form | Special Form | The Special Form field identifies a unique Special Form in the system. | AD_Form_Access.AD_Form_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | AD_Form_Access.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Form_Access.IsActive<small> character(1) <br/> Yes-No</small> |
+| Read Write | Field is read / write | The Read Write indicates that this field may be read and updated. | AD_Form_Access.IsReadWrite<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Translation
+
+*Tab Level 1 · Created 13/07/2000 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Form_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Form_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Special Form | Special Form | The Special Form field identifies a unique Special Form in the system. | AD_Form_Trl.AD_Form_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_Form_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Form_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_Form_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | AD_Form_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_Form_Trl.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | AD_Form_Trl.Help<small> character varying(2000) <br/> Text</small> |
+

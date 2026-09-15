@@ -1,0 +1,62 @@
+---
+title: 'Performance Ratio'
+sidebar_label: 'Performance Ratio'
+description: 'Maintain Performance Ratios'
+tags: ['Window']
+---
+
+# Performance Ratio
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 366</span>
+
+*26/12/2005 → 04/01/2006*
+
+![Performance Ratio](./img/performance-ratio.png)
+
+**Description:** Maintain Performance Ratios
+
+**Comment/Help:** Calculation instruction for a ratio
+
+## Tab: Ratio
+
+*Tab Level 0 · Created 26/12/2005 · Updated 26/12/2005*
+
+**Description:** Performance Ratio
+
+**Comment/Help:** Calculation instruction set  for a performance ratio
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | PA_Ratio.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | PA_Ratio.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | PA_Ratio.Name<small> character varying(60) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | PA_Ratio.IsActive<small> character(1) <br/> Yes-No</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | PA_Ratio.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | PA_Ratio.Help<small> character varying(2000) <br/> Text</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | PA_Ratio.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+
+## Tab: › Element
+
+*Tab Level 1 · Created 26/12/2005 · Updated 26/12/2005*
+
+**Description:** Performance Ratio Element
+
+**Comment/Help:** Individual calculation instruction for a ratio
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | PA_RatioElement.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | PA_RatioElement.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Ratio | Performance Ratio | Calculation instruction set  for a performance ratio | PA_RatioElement.PA_Ratio_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | PA_RatioElement.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | PA_RatioElement.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | PA_RatioElement.IsActive<small> character(1) <br/> Yes-No</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | PA_RatioElement.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Operand | Ratio Operand | Operand how data is calculated.  If it is the first in the series, 'minus' will create a negative value, otherwise ignored. | PA_RatioElement.RatioOperand<small> character(1) <br/> List</small> |
+| Element Type | Ratio Element Type | Type of data used for the calculation | PA_RatioElement.RatioElementType<small> character(1) <br/> List</small> |
+| Measure Calculation | Calculation method for measuring performance | The Measure Calculation indicates the method of measuring performance. | PA_RatioElement.PA_MeasureCalc_ID<small> numeric(10) <br/> Table Direct</small> |
+| Constant Value | Constant value |  | PA_RatioElement.ConstantValue<small> numeric <br/> Number</small> |
+| Ratio Used | Performance Ratio Used | Existing Performance Ratio to be used in the calculation.  Make sure that the Ratio is not self-referencing (loop). | PA_RatioElement.PA_RatioUsed_ID<small> numeric(10) <br/> Table</small> |
+| Account | Account used | The (natural) account used | PA_RatioElement.Account_ID<small> numeric(10) <br/> Search</small> |
+| Posting Type | The type of posted amount for the transaction | The Posting Type indicates the type of amount (Actual, Budget, Reservation, Commitment, Statistical) the transaction. | PA_RatioElement.PostingType<small> character(1) <br/> List</small> |
+

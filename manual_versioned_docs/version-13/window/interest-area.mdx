@@ -1,0 +1,71 @@
+---
+title: 'Interest Area'
+sidebar_label: 'Interest Area'
+description: 'Interest Area or Topic'
+tags: ['Window']
+---
+
+# Interest Area
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 245</span>
+
+*01/10/2002 → 02/01/2000*
+
+![Interest Area](./img/interest-area.png)
+
+**Description:** Interest Area or Topic
+
+**Comment/Help:** Interest Areas reflect interest in a topic by a contact. Interest areas can be used for marketing campaigns.
+
+## Tab: Interest Area
+
+*Tab Level 0 · Created 01/10/2002 · Updated 02/01/2000*
+
+**Description:** Interest Area or Topic
+
+**Comment/Help:** Interest Areas reflect interest in a topic by a contact. Interest areas can be used for marketing campaigns. If a list is not "Self Service", it is not visible for users via the web.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | R_InterestArea.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | R_InterestArea.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | R_InterestArea.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | R_InterestArea.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | R_InterestArea.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | R_InterestArea.IsActive<small> character(1) <br/> Yes-No</small> |
+| Self-Service | This is a Self-Service entry or this entry can be changed via Self-Service | Self-Service allows users to enter data or update their data.  The flag indicates, that this record was entered or created via Self-Service or that the user can change it via the Self-Service functionality. | R_InterestArea.IsSelfService<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Subscriptions
+
+*Tab Level 1 · Created 05/07/2003 · Updated 02/12/2024*
+
+**Description:** User Subscriptions
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | R_ContactInterest.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | R_ContactInterest.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Interest Area | Interest Area or Topic | Interest Areas reflect interest in a topic by a contact. Interest areas can be used for marketing campaigns. | R_ContactInterest.R_InterestArea_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | R_ContactInterest.AD_User_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | R_ContactInterest.IsActive<small> character(1) <br/> Yes-No</small> |
+| Subscribe Date | Date the contact actively subscribed | Date the contact subscribe the interest area | R_ContactInterest.SubscribeDate<small> timestamp without time zone <br/> Date</small> |
+| Opt-out Date | Date the contact opted out | If the field has a date, the customer opted out (unsubscribed) and cannot receive mails for the Interest Area | R_ContactInterest.OptOutDate<small> timestamp without time zone <br/> Date</small> |
+
+## Tab: › LDAP Access
+
+*Tab Level 1 · Created 29/10/2006 · Updated 29/10/2006*
+
+**Description:** User Access via LDAP
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_LdapAccess.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_LdapAccess.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Interest Area | Interest Area or Topic | Interest Areas reflect interest in a topic by a contact. Interest areas can be used for marketing campaigns. | AD_LdapAccess.R_InterestArea_ID<small> numeric(10) <br/> Table Direct</small> |
+| Ldap Processor | LDAP Server to authenticate and authorize external systems based on iDempiere | The LDAP Server allows third party software (e.g. Apache) to use the users defined in the system to authentificate and authorize them.  There is only one server per iDempiere system.  The "o" is the Tenant key and the optional "ou" is the Interest Area key. | AD_LdapAccess.AD_LdapProcessor_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | AD_LdapAccess.AD_User_ID<small> numeric(10) <br/> Table Direct</small> |
+| Created | Date this record was created | The Created field indicates the date that this record was created. | AD_LdapAccess.Created<small> timestamp without time zone <br/> Date+Time</small> |
+| Error | An Error occurred in the execution |  | AD_LdapAccess.IsError<small> character(1) <br/> Yes-No</small> |
+| Summary | Textual summary of this request | The Summary allows free form text entry of a recap of this request. | AD_LdapAccess.Summary<small> character varying(2000) <br/> Text</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | AD_LdapAccess.Description<small> character varying(255) <br/> String</small> |
+

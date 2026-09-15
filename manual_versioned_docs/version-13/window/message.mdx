@@ -1,0 +1,53 @@
+---
+title: 'Message'
+sidebar_label: 'Message'
+description: 'Maintain Information and Error Messages'
+tags: ['Window']
+---
+
+# Message
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 104</span>
+
+*21/05/1999 → 02/01/2000*
+
+![Message](./img/message.png)
+
+**Description:** Maintain Information and Error Messages
+
+**Comment/Help:** The Message Window defines the Message Text and Message Tips for each system generated message.  It is for System Admin use only.
+
+## Tab: Message
+
+*Tab Level 0 · Created 21/05/1999 · Updated 02/01/2000*
+
+**Description:** Information Error and Menu Messages
+
+**Comment/Help:** The Message Tab displays error message text and menu messages
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Message.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Message.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | AD_Message.Value<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Message.IsActive<small> character(1) <br/> Yes-No</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | AD_Message.EntityType<small> character varying(40) <br/> Table</small> |
+| Message Type | Type of message (Informational, Menu or Error) | The Message Type indicates the type of message being defined.  Valid message types are Informational, Menu and Error. | AD_Message.MsgType<small> character(1) <br/> List</small> |
+| Message Text | Textual Informational, Menu or Error Message | The Message Text indicates the message that will display  | AD_Message.MsgText<small> character varying(2000) <br/> Text</small> |
+| Message Tip | Additional tip or help for this message | The Message Tip defines additional help or information about this message. | AD_Message.MsgTip<small> character varying(2000) <br/> Text</small> |
+
+## Tab: › Translation
+
+*Tab Level 1 · Created 21/05/1999 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | AD_Message_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | AD_Message_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Message | System Message | Information and Error messages | AD_Message_Trl.AD_Message_ID<small> numeric(10) <br/> Search</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | AD_Message_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | AD_Message_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | AD_Message_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Message Text | Textual Informational, Menu or Error Message | The Message Text indicates the message that will display  | AD_Message_Trl.MsgText<small> character varying(2000) <br/> Text</small> |
+| Message Tip | Additional tip or help for this message | The Message Tip defines additional help or information about this message. | AD_Message_Trl.MsgTip<small> character varying(2000) <br/> Text</small> |
+

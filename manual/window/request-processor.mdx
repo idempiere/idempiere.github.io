@@ -1,0 +1,80 @@
+---
+title: 'Request Processor'
+sidebar_label: 'Request Processor'
+description: 'Define Request Processors'
+tags: ['Window']
+---
+
+# Request Processor
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 203</span>
+
+*11/01/2001 → 02/01/2000*
+
+![Request Processor](./img/request-processor.png)
+
+**Description:** Define Request Processors
+
+**Comment/Help:** The Request Processor Window allows you to define different processes that you want to occur and the frequency and timing of these processes  A Request Processor can be just for a specific Request Type or for all.
+
+## Tab: Request Processor
+
+*Tab Level 0 · Created 11/01/2001 · Updated 02/01/2000*
+
+**Description:** Request Processor
+
+**Comment/Help:** The Request Processor Tab allows you to define processes that you want to occur and the frequency and timing of these processes. If no other user is found, the items are assigned to the supervisor. A Request Processor can be just for a specific Request Type or for all.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | R_RequestProcessor.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | R_RequestProcessor.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | R_RequestProcessor.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | R_RequestProcessor.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | R_RequestProcessor.IsActive<small> character(1) <br/> Yes-No</small> |
+| Request Type | Type of request (e.g. Inquiry, Complaint, ..) | Request Types are used for processing and categorizing requests. Options are Account Inquiry, Warranty Issue, etc. | R_RequestProcessor.R_RequestType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Schedule |  |  | R_RequestProcessor.AD_Schedule_ID<small> numeric(10) <br/> Table Direct</small> |
+| Alert after Days Due | Send email alert after number of days due (0=no alerts) | Send an email alert after the item is Due (after Date Next Action). If set to zero, no alert is sent. | R_RequestProcessor.OverdueAlertDays<small> numeric(10) <br/> Integer</small> |
+| Reminder Days | Days between sending Reminder Emails for a due or inactive Document | When a document is due for too long without activity, a reminder is sent. 0 means no reminders.<br/>The Remind Days are the days when the next email reminder is sent. | R_RequestProcessor.RemindDays<small> numeric(10) <br/> Integer</small> |
+| Escalate after Days Due | Escalation to superior after number of due days (0 = no) | The item will be escalated and assigned to the supervisor after the number of days over due. If 0, there is no escalation. | R_RequestProcessor.OverdueAssignDays<small> numeric(10) <br/> Integer</small> |
+| Supervisor | Supervisor for this user/organization - used for escalation and approval | The Supervisor indicates who will be used for forwarding and escalating issues for this user - or for approvals. | R_RequestProcessor.Supervisor_ID<small> numeric(10) <br/> Table</small> |
+| Inactivity Alert Days | Send Alert when there is no activity after days (0= no alert) | An email alert is sent when the request shows no activity for the number of days defined. | R_RequestProcessor.InactivityAlertDays<small> numeric(10) <br/> Integer</small> |
+| Days to keep Log | Number of days to keep the log entries | Older Log entries may be deleted | R_RequestProcessor.KeepLogDays<small> numeric(10) <br/> Integer</small> |
+| Date Last Run | Date the process was last run. | The Date Last Run indicates the last time that a process was run. | R_RequestProcessor.DateLastRun<small> timestamp without time zone <br/> Date+Time</small> |
+| Date Next Run | Date the process will run next | The Date Next Run indicates the next time this process will run. | R_RequestProcessor.DateNextRun<small> timestamp without time zone <br/> Date+Time</small> |
+
+## Tab: › Routing
+
+*Tab Level 1 · Created 07/12/2001 · Updated 02/01/2000*
+
+**Description:** Request Routing
+
+**Comment/Help:** Define the sequence of request types and keywords and to whom the web and mail requests should be routed to. The keywords are separated by space, comma, semicolon, tab or new line. The first match wins (first request type then keyword.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | R_RequestProcessor_Route.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | R_RequestProcessor_Route.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Request Processor | Processor for Requests | Processor for Requests | R_RequestProcessor_Route.R_RequestProcessor_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | R_RequestProcessor_Route.IsActive<small> character(1) <br/> Yes-No</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | R_RequestProcessor_Route.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Request Type | Type of request (e.g. Inquiry, Complaint, ..) | Request Types are used for processing and categorizing requests. Options are Account Inquiry, Warranty Issue, etc. | R_RequestProcessor_Route.R_RequestType_ID<small> numeric(10) <br/> Table Direct</small> |
+| Keyword | Case insensitive keyword | Case insensitive keyword for matching. The individual keywords can be separated by space, comma, semicolon, tab or new line. Do not use filler words like "a", "the". At this point, there are NO text search operators like "or" and "and". | R_RequestProcessor_Route.Keyword<small> character varying(60) <br/> String</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | R_RequestProcessor_Route.AD_User_ID<small> numeric(10) <br/> Table Direct</small> |
+
+## Tab: › Log
+
+*Tab Level 1 · Created 06/03/2004 · Updated 02/01/2000*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | R_RequestProcessorLog.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | R_RequestProcessorLog.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Request Processor | Processor for Requests | Processor for Requests | R_RequestProcessorLog.R_RequestProcessor_ID<small> numeric(10) <br/> Table Direct</small> |
+| Created | Date this record was created | The Created field indicates the date that this record was created. | R_RequestProcessorLog.Created<small> timestamp without time zone <br/> Date+Time</small> |
+| Summary | Textual summary of this request | The Summary allows free form text entry of a recap of this request. | R_RequestProcessorLog.Summary<small> character varying(2000) <br/> Text</small> |
+| Error | An Error occurred in the execution |  | R_RequestProcessorLog.IsError<small> character(1) <br/> Yes-No</small> |
+| Reference | Reference for this record | The Reference displays the source document number. | R_RequestProcessorLog.Reference<small> character varying(60) <br/> String</small> |
+| Text Message | Text Message |  | R_RequestProcessorLog.TextMsg<small> character varying(2000) <br/> Text</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | R_RequestProcessorLog.Description<small> character varying(255) <br/> String</small> |
+

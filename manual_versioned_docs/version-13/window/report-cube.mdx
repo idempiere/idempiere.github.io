@@ -1,0 +1,50 @@
+---
+title: 'Report Cube'
+sidebar_label: 'Report Cube'
+description: 'Define reporting cube for pre-calculation of summary accounting data.'
+tags: ['Window']
+---
+
+# Report Cube
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 53078</span>
+
+*14/05/2009 → 14/05/2009*
+
+![Report Cube](./img/report-cube.png)
+
+**Description:** Define reporting cube for pre-calculation of summary accounting data.
+
+**Comment/Help:** Summary data will be generated for each period of the selected calendar, grouped by the selected dimensions..
+
+## Tab: Report Cube
+
+*Tab Level 0 · Created 14/05/2009 · Updated 14/05/2009*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | PA_ReportCube.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | PA_ReportCube.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | PA_ReportCube.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | PA_ReportCube.Description<small> character varying(255) <br/> Text</small> |
+| Calendar | Accounting Calendar Name | The Calendar uniquely identifies an accounting calendar.  Multiple calendars can be used.  For example you may need a standard calendar that runs from Jan 1 to Dec 31 and a fiscal calendar that runs from July 1 to June 30. | PA_ReportCube.C_Calendar_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | PA_ReportCube.IsActive<small> character(1) <br/> Yes-No</small> |
+| Product Dimension | Include Product as a cube dimension |  | PA_ReportCube.IsProductDim<small> character(1) <br/> Yes-No</small> |
+| Business Partner Dimension | Include Business Partner as a cube dimension |  | PA_ReportCube.IsBPartnerDim<small> character(1) <br/> Yes-No</small> |
+| Sales Region Dimension | Include Sales Region as a cube dimension |  | PA_ReportCube.IsSalesRegionDim<small> character(1) <br/> Yes-No</small> |
+| OrgTrx Dimension | Include OrgTrx as a cube dimension |  | PA_ReportCube.IsOrgTrxDim<small> character(1) <br/> Yes-No</small> |
+| Activity Dimension | Include Activity as a cube dimension |  | PA_ReportCube.IsActivityDim<small> character(1) <br/> Yes-No</small> |
+| Campaign Dimension | Include Campaign as a cube dimension |  | PA_ReportCube.IsCampaignDim<small> character(1) <br/> Yes-No</small> |
+| Project Dimension | Include Project as a cube dimension |  | PA_ReportCube.IsProjectDim<small> character(1) <br/> Yes-No</small> |
+| Project Phase  Dimension | Include Project Phase as a cube dimension |  | PA_ReportCube.IsProjectPhaseDim<small> character(1) <br/> Yes-No</small> |
+| Project Task  Dimension | Include Project Task as a cube dimension |  | PA_ReportCube.IsProjectTaskDim<small> character(1) <br/> Yes-No</small> |
+| GL Budget Dimension | Include GL Budget as a cube dimension |  | PA_ReportCube.IsGLBudgetDim<small> character(1) <br/> Yes-No</small> |
+| Location From Dimension | Include Location From as a cube dimension |  | PA_ReportCube.IsLocFromDim<small> character(1) <br/> Yes-No</small> |
+| Location To  Dimension | Include Location To as a cube dimension |  | PA_ReportCube.IsLocToDim<small> character(1) <br/> Yes-No</small> |
+| Sub Acct Dimension | Include Sub Acct as a cube dimension |  | PA_ReportCube.IsSubAcctDim<small> character(1) <br/> Yes-No</small> |
+| User Element List 1 Dimension | Include User Element List 1 as a cube dimension |  | PA_ReportCube.IsUser1Dim<small> character(1) <br/> Yes-No</small> |
+| User Element List 2 Dimension | Include User Element List 2 as a cube dimension |  | PA_ReportCube.IsUser2Dim<small> character(1) <br/> Yes-No</small> |
+| User Column 1 Dimension | Include User Element 1 as a cube dimension |  | PA_ReportCube.IsUserElement1Dim<small> character(1) <br/> Yes-No</small> |
+| User Column 2 Dimension | Include User Element 2 as a cube dimension |  | PA_ReportCube.IsUserElement2Dim<small> character(1) <br/> Yes-No</small> |
+| Last Recalculated | The time last recalculated. |  | PA_ReportCube.LastRecalculated<small> timestamp without time zone <br/> Date+Time</small> |
+

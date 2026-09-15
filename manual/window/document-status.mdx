@@ -1,0 +1,72 @@
+---
+title: 'Document Status'
+sidebar_label: 'Document Status'
+tags: ['Window']
+---
+
+# Document Status
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 200090</span>
+
+*11/04/2017 → 11/04/2017*
+
+![Document Status](./img/document-status.png)
+
+## Tab: Document Status Indicator
+
+*Tab Level 0 · Created 11/04/2017 · Updated 12/04/2017*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | PA_DocumentStatus.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | PA_DocumentStatus.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | PA_DocumentStatus.Name<small> character varying(60) <br/> String</small> |
+| Entity Type | Dictionary Entity Type; Determines ownership and synchronization | The Entity Types "Dictionary", "iDempiere" and "Application" might be automatically synchronized and customizations deleted or overwritten.  <br/><br/>For customizations, copy the entity and select "User"! | PA_DocumentStatus.EntityType<small> character varying(40) <br/> Table</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | PA_DocumentStatus.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | PA_DocumentStatus.Help<small> character varying(4000) <br/> String</small> |
+| Field Group | Logical grouping of fields | The Field Group indicates the logical group that this field belongs to (History, Amounts, Quantities) | PA_DocumentStatus.AD_FieldGroup_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | PA_DocumentStatus.IsActive<small> character(1) <br/> Yes-No</small> |
+| Project | Financial Project | A Project allows you to track and control internal or external activities. | PA_DocumentStatus.C_Project_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sequence | Method of ordering records; lowest number comes first | The Sequence indicates the order of records | PA_DocumentStatus.SeqNo<small> numeric(10) <br/> Integer</small> |
+| Print Font for Name |  |  | PA_DocumentStatus.Name_PrintFont_ID<small> numeric(10) <br/> Table</small> |
+| Print Font for Number |  |  | PA_DocumentStatus.Number_PrintFont_ID<small> numeric(10) <br/> Table</small> |
+| Print Color for Name |  |  | PA_DocumentStatus.Name_PrintColor_ID<small> numeric(10) <br/> Table</small> |
+| Print Color for Number |  |  | PA_DocumentStatus.Number_PrintColor_ID<small> numeric(10) <br/> Table</small> |
+| Hide when Zero | Hide when the Value is Zero |  | PA_DocumentStatus.IsHideWhenZero<small> character(1) <br/> Yes-No</small> |
+| Print Color for Name when Zero |  |  | PA_DocumentStatus.Name_PrintColorZero_ID<small> numeric(10) <br/> Table</small> |
+| Table | Database Table information | The Database Table provides the information of the table definition | PA_DocumentStatus.AD_Table_ID<small> numeric(10) <br/> Table Direct</small> |
+| Sql WHERE | Fully qualified SQL WHERE clause | The Where Clause indicates the SQL WHERE clause to use for record selection. The WHERE clause is added to the query. Fully qualified means "tablename.columnname". | PA_DocumentStatus.WhereClause<small> character varying(2000) <br/> Text</small> |
+| Window | Data entry or display window | The Window field identifies a unique Window in the system. | PA_DocumentStatus.AD_Window_ID<small> numeric(10) <br/> Table Direct</small> |
+| Special Form | Special Form | The Special Form field identifies a unique Special Form in the system. | PA_DocumentStatus.AD_Form_ID<small> numeric(10) <br/> Table Direct</small> |
+| Process | Process or Report | The Process field identifies a unique Process or Report in the system. | PA_DocumentStatus.AD_Process_ID<small> numeric(10) <br/> Table Direct</small> |
+| Info Window | Info and search/select Window | The Info window is used to search and select records as well as display information relevant to the selection. | PA_DocumentStatus.AD_InfoWindow_ID<small> numeric(10) <br/> Table Direct</small> |
+
+## Tab: › Document Status Access
+
+*Tab Level 1 · Created 28/06/2021 · Updated 28/06/2021*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | PA_DocumentStatusAccess.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | PA_DocumentStatusAccess.AD_Org_ID<small> numeric(10) <br/> Search</small> |
+| Document Status |  |  | PA_DocumentStatusAccess.PA_DocumentStatus_ID<small> numeric(10) <br/> Table Direct</small> |
+| Role | Responsibility Role | The Role determines security and access a user who has this Role will have in the System. | PA_DocumentStatusAccess.AD_Role_ID<small> numeric(10) <br/> Table Direct</small> |
+| User/Contact | User within the system - Internal or Business Partner Contact | The User identifies a unique user in the system. This could be an internal user or a business partner contact | PA_DocumentStatusAccess.AD_User_ID<small> numeric(10) <br/> Search</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | PA_DocumentStatusAccess.IsActive<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › Document Status Translation
+
+*Tab Level 1 · Created 12/04/2017 · Updated 27/10/2024*
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | PA_DocumentStatus_Trl.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | PA_DocumentStatus_Trl.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Document Status |  |  | PA_DocumentStatus_Trl.PA_DocumentStatus_ID<small> numeric(10) <br/> Table Direct</small> |
+| Language | Language for this entity | The Language identifies the language to use for display and formatting | PA_DocumentStatus_Trl.AD_Language<small> character varying(6) <br/> Table</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | PA_DocumentStatus_Trl.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | PA_DocumentStatus_Trl.Description<small> character varying(255) <br/> String</small> |
+| Comment/Help | Comment or Hint | The Help field contains a hint, comment or help about the use of this item. | PA_DocumentStatus_Trl.Help<small> character varying(4000) <br/> String</small> |
+| Translated | This column is translated | The Translated checkbox indicates if this column is translated. | PA_DocumentStatus_Trl.IsTranslated<small> character(1) <br/> Yes-No</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | PA_DocumentStatus_Trl.IsActive<small> character(1) <br/> Yes-No</small> |
+

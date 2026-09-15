@@ -1,0 +1,93 @@
+---
+title: 'Attribute Set Instance'
+sidebar_label: 'Attribute Set Instance'
+description: 'View Attribute Set Instance detail and use'
+tags: ['Window']
+---
+
+# Attribute Set Instance
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 358</span>
+
+*12/09/2005 → 12/09/2005*
+
+![Attribute Set Instance](./img/attribute-set-instance.png)
+
+**Description:** View Attribute Set Instance detail and use
+
+## Tab: Instance
+
+*Tab Level 0 · Created 12/09/2005 · Updated 12/09/2005*
+
+**Description:** Attribute Set Instance
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_AttributeSetInstance.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_AttributeSetInstance.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | M_AttributeSetInstance.M_AttributeSetInstance_ID<small> numeric(10) <br/> ID</small> |
+| Attribute Set | Product Attribute Set | Define Product Attribute Sets to add additional attributes and values to the product. You need to define a Attribute Set if you want to enable Serial and Lot Number tracking. | M_AttributeSetInstance.M_AttributeSet_ID<small> numeric(10) <br/> Table Direct</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | M_AttributeSetInstance.Description<small> character varying(1023) <br/> String</small> |
+| Lot | Product Lot Definition | The individual Lot of a Product | M_AttributeSetInstance.M_Lot_ID<small> numeric(10) <br/> Search</small> |
+| Lot No | Lot number (alphanumeric) | The Lot Number indicates the specific lot that a product was part of. | M_AttributeSetInstance.Lot<small> character varying(40) <br/> String</small> |
+| Guarantee Date | Date when guarantee expires | Date when the normal guarantee or availability expires | M_AttributeSetInstance.GuaranteeDate<small> timestamp without time zone <br/> Date</small> |
+| Serial No | Product Serial Number  | The Serial Number identifies a tracked, warranted product.  It can only be used when the quantity is 1. | M_AttributeSetInstance.SerNo<small> character varying(40) <br/> String</small> |
+
+## Tab: › Shipment, Receipt
+
+*Tab Level 1 · Created 12/09/2005 · Updated 12/09/2005*
+
+**Description:** Material Shipment and Receipt Lines
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_InOutLineMA_v.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_InOutLineMA_v.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | M_InOutLineMA_v.M_AttributeSetInstance_ID<small> numeric(10) <br/> Product Attribute</small> |
+| Receipt | Material Receipt Document | The Material Shipment / Receipt  | M_InOutLineMA_v.M_InOut_ID<small> numeric(10) <br/> Search</small> |
+| Receipt Line | Line on Receipt document |  | M_InOutLineMA_v.M_InOutLine_ID<small> numeric(10) <br/> Search</small> |
+| Line No | Unique line for this document | Indicates the unique line for a document.  It will also control the display order of the lines within a document. | M_InOutLineMA_v.Line<small> numeric(10) <br/> Integer</small> |
+| Locator | Warehouse Locator | The Locator indicates where in a Warehouse a product is located. | M_InOutLineMA_v.M_Locator_ID<small> numeric(10) <br/> Search</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_InOutLineMA_v.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Movement Quantity | Quantity of a product moved. | The Movement Quantity indicates the quantity of a product that has been moved. | M_InOutLineMA_v.MovementQty<small> numeric <br/> Quantity</small> |
+
+## Tab: › Movement
+
+*Tab Level 1 · Created 12/09/2005 · Updated 12/09/2005*
+
+**Description:** Material Movement Lines
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | M_MovementLineMA_v.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | M_MovementLineMA_v.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | M_MovementLineMA_v.M_AttributeSetInstance_ID<small> numeric(10) <br/> Product Attribute</small> |
+| Inventory Move | Movement of Inventory | The Inventory Movement uniquely identifies a group of movement lines. | M_MovementLineMA_v.M_Movement_ID<small> numeric(10) <br/> Search</small> |
+| Move Line | Inventory Move document Line | The Movement Line indicates the inventory movement document line (if applicable) for this transaction | M_MovementLineMA_v.M_MovementLine_ID<small> numeric(10) <br/> Search</small> |
+| Line No | Unique line for this document | Indicates the unique line for a document.  It will also control the display order of the lines within a document. | M_MovementLineMA_v.Line<small> numeric(10) <br/> Integer</small> |
+| Locator | Warehouse Locator | The Locator indicates where in a Warehouse a product is located. | M_MovementLineMA_v.M_Locator_ID<small> numeric(10) <br/> Table Direct</small> |
+| Locator To | Location inventory is moved to | The Locator To indicates the location where the inventory is being moved to. | M_MovementLineMA_v.M_LocatorTo_ID<small> numeric(10) <br/> Table</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_MovementLineMA_v.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Movement Quantity | Quantity of a product moved. | The Movement Quantity indicates the quantity of a product that has been moved. | M_MovementLineMA_v.MovementQty<small> numeric <br/> Quantity</small> |
+
+## Tab: › Invoice
+
+*Tab Level 1 · Created 12/09/2005 · Updated 12/09/2005*
+
+**Description:** AP / AR Invoice Lines
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | RV_C_InvoiceLine.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | RV_C_InvoiceLine.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Attribute Set Instance | Product Attribute Set Instance | The values of the actual Product Attribute Instances.  The product level attributes are defined on Product level. | RV_C_InvoiceLine.M_AttributeSetInstance_ID<small> numeric(10) <br/> Search</small> |
+| Invoice | Invoice Identifier | The Invoice Document. | RV_C_InvoiceLine.C_Invoice_ID<small> numeric(10) <br/> Search</small> |
+| Invoice Line | Invoice Detail Line | The Invoice Line uniquely identifies a single line of an Invoice. | RV_C_InvoiceLine.C_InvoiceLine_ID<small> numeric(10) <br/> Search</small> |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | RV_C_InvoiceLine.M_Product_ID<small> numeric(10) <br/> Search</small> |
+| Quantity Invoiced | Invoiced Quantity | The Invoiced Quantity indicates the quantity of a product that have been invoiced. | RV_C_InvoiceLine.QtyInvoiced<small> numeric <br/> Quantity</small> |
+| Business Partner | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | RV_C_InvoiceLine.C_BPartner_ID<small> numeric(10) <br/> Search</small> |
+| Unit Price | Actual Price  | The Actual or Unit Price indicates the Price for a product in source currency. | RV_C_InvoiceLine.PriceActual<small> numeric <br/> Costs+Prices</small> |
+| Lot No | Lot number (alphanumeric) | The Lot Number indicates the specific lot that a product was part of. | RV_C_InvoiceLine.Lot<small> character varying(40) <br/> String</small> |
+| Lot | Product Lot Definition | The individual Lot of a Product | RV_C_InvoiceLine.M_Lot_ID<small> numeric(10) <br/> Table Direct</small> |
+| Serial No | Product Serial Number  | The Serial Number identifies a tracked, warranted product.  It can only be used when the quantity is 1. | RV_C_InvoiceLine.SerNo<small> character varying(40) <br/> String</small> |
+

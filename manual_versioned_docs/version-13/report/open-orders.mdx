@@ -1,0 +1,27 @@
+---
+title: 'Open Orders'
+sidebar_label: 'Open Orders'
+description: 'Open Order Report'
+tags: ['Report']
+---
+
+# Open Orders
+
+<span className="badge badge--primary">Report</span> <span className="badge badge--secondary">ID 121</span>
+
+*26/04/2000 → 02/01/2000*
+
+![Open Orders](./img/open-orders.png)
+
+**Description:** Open Order Report
+
+**Comment/Help:** Orders with quantities to deliver (Backordered) or quantities to invoice
+
+## Table: Report Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Business Partner  | Identifies a Business Partner | A Business Partner is anyone with whom you transact.  This can include Vendor, Customer, Employee or Salesperson | C_BPartner_ID<br/>Chosen Multiple Selection Search |
+| Product | Product, Service, Item | Identifies an item which is either purchased or sold in this organization. | M_Product_ID<br/>Chosen Multiple Selection Search |
+| Sales Transaction | This is a Sales Transaction | The Sales Transaction checkbox indicates if this item is a Sales Transaction. | IsSOTrx<br/>Yes-No |
+

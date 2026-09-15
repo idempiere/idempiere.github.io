@@ -1,0 +1,171 @@
+---
+title: 'Bank/Cash'
+sidebar_label: 'Bank/Cash'
+description: 'Maintain Bank/Cash'
+tags: ['Window']
+---
+
+# Bank/Cash
+
+<span className="badge badge--primary">Window</span> <span className="badge badge--secondary">ID 158</span>
+
+*04/12/1999 → 15/01/2024*
+
+![Bank/Cash](./img/bank-cash.png)
+
+**Description:** Maintain Bank/Cash
+
+**Comment/Help:** The Bank/Cash Window is used to define the banks and accounts associated with an organization or business partner
+
+## Tab: Bank/Cash
+
+*Tab Level 0 · Created 04/12/1999 · Updated 15/01/2024*
+
+**Description:** Maintain Bank
+
+**Comment/Help:** The Bank Tab defines a bank that is used by an organization or business partner.  Each Bank is given an identifying Name, Address, Routing No and Swift Code
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_Bank.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_Bank.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_Bank.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_Bank.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_Bank.IsActive<small> character(1) <br/> Yes-No</small> |
+| Address | Location or Address | The Location / Address field defines the location of an entity. | C_Bank.C_Location_ID<small> numeric(10) <br/> Location (Address)</small> |
+| Own Bank | Bank for this Organization | The Own Bank field indicates if this bank is for this Organization as opposed to a Bank for a Business Partner. | C_Bank.IsOwnBank<small> character(1) <br/> Yes-No</small> |
+| Routing No | Bank Routing Number | The Bank Routing Number (ABA Number) identifies a legal Bank.  It is used in routing checks and electronic transactions. | C_Bank.RoutingNo<small> character varying(20) <br/> String</small> |
+| Swift code | Swift Code or BIC | The Swift Code (Society of Worldwide Interbank Financial Telecommunications) or BIC (Bank Identifier Code) is an identifier of a Bank. The first 4 characters are the bank code, followed by the 2 character country code, the two character location code and optional 3 character branch code. For details see http://www.swift.com/biconline/index.cfm | C_Bank.SwiftCode<small> character varying(20) <br/> String</small> |
+
+## Tab: › Account
+
+*Tab Level 1 · Created 04/12/1999 · Updated 11/10/2005*
+
+**Description:** Maintain Bank Account
+
+**Comment/Help:** The Account Tab is used to define one or more accounts for a Bank.  Each account has a unique Account No and Currency.  The bank account organization is used for accounting.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BankAccount.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BankAccount.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Search Key | Search key for the record in the format required - must be unique | A search key allows you a fast method of finding a particular record.<br/>If you leave the search key empty, the system automatically creates a numeric number.  The document sequence used for this fallback number is defined in the "Maintain Sequence" window with the name "DocumentNo_&lt;TableName&gt;", where TableName is the actual name of the table (e.g. C_Order). | C_BankAccount.Value<small> character varying(40) <br/> String</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_BankAccount.Name<small> character varying(60) <br/> String</small> |
+| Bank | Bank | The Bank is a unique identifier of a Bank for this Organization or for a Business Partner with whom this Organization transacts. | C_BankAccount.C_Bank_ID<small> numeric(10) <br/> Table Direct</small> |
+| Account No | Account Number | The Account Number indicates the Number assigned to this bank account.  | C_BankAccount.AccountNo<small> character varying(20) <br/> String</small> |
+| BBAN | Basic Bank Account Number | The Basic (or Domestic) Bank Account Number is used in Bank transfers (see also IBAN). For details see ISO 13616 and http://www.ecbs.org/ | C_BankAccount.BBAN<small> character varying(40) <br/> String</small> |
+| IBAN | International Bank Account Number | If your bank provides an International Bank Account Number, enter it here<br/>Details ISO 13616 and http://www.ecbs.org. The account number has the maximum length of 22 characters (without spaces). The IBAN is often printed with a apace after 4 characters. Do not enter the spaces in iDempiere. | C_BankAccount.IBAN<small> character varying(40) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_BankAccount.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BankAccount.IsActive<small> character(1) <br/> Yes-No</small> |
+| Default | Default value | The Default Checkbox indicates if this record will be used as a default value. | C_BankAccount.IsDefault<small> character(1) <br/> Yes-No</small> |
+| Currency | The Currency for this record | Indicates the Currency to be used when processing or reporting on this record | C_BankAccount.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Bank Account Type | Bank Account Type | The Bank Account Type field indicates the type of account (savings, checking etc) this account  is defined as. | C_BankAccount.BankAccountType<small> character(1) <br/> List</small> |
+| Credit limit | Amount of Credit allowed | The Credit Limit field indicates the credit limit for this account. | C_BankAccount.CreditLimit<small> numeric <br/> Number</small> |
+| Payment Export Class |  |  | C_BankAccount.PaymentExportClass<small> character varying(60) <br/> String</small> |
+| Current balance | Current Balance | The Current Balance field indicates the current balance in this account. | C_BankAccount.CurrentBalance<small> numeric <br/> Number</small> |
+
+## Tab: › › Bank Account Document
+
+*Tab Level 2 · Created 28/07/2001 · Updated 02/01/2000*
+
+**Description:** Maintain Bank Account Documents
+
+**Comment/Help:** In this tab, you define the documents used for this bank account.  You define your check and other payment document (sequence) number as well as format.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BankAccountDoc.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BankAccountDoc.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Bank Account | Account at the Bank | The Bank Account identifies an account at this Bank. | C_BankAccountDoc.C_BankAccount_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_BankAccountDoc.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_BankAccountDoc.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BankAccountDoc.IsActive<small> character(1) <br/> Yes-No</small> |
+| Payment Rule | How you pay the invoice | The Payment Rule indicates the method of invoice payment. | C_BankAccountDoc.PaymentRule<small> character(1) <br/> List</small> |
+| Current Next | The next number to be used | The Current Next indicates the next number to use for this document | C_BankAccountDoc.CurrentNext<small> numeric(10) <br/> Integer</small> |
+| Check Print Format | Print Format for printing Checks | You need to define a Print Format to print the document. | C_BankAccountDoc.Check_PrintFormat_ID<small> numeric(10) <br/> Table</small> |
+
+## Tab: › › Bank Account Processor
+
+*Tab Level 2 · Created 17/10/2012 · Updated 17/10/2012*
+
+**Description:** Maintain Bank Account Payment Processors
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BankAccount_Processor.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BankAccount_Processor.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Bank Account | Account at the Bank | The Bank Account identifies an account at this Bank. | C_BankAccount_Processor.C_BankAccount_ID<small> numeric(10) <br/> Table Direct</small> |
+| Payment Processor | Payment processor for electronic payments | The Payment Processor indicates the processor to be used for electronic payments | C_BankAccount_Processor.C_PaymentProcessor_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BankAccount_Processor.IsActive<small> character(1) <br/> Yes-No</small> |
+| Partner ID | Partner ID or Account for the Payment Processor | Partner ID (Verisign) or Account ID (Optimal) | C_BankAccount_Processor.PartnerID<small> character varying(60) <br/> String</small> |
+| Vendor ID | Vendor ID for the Payment Processor |  | C_BankAccount_Processor.VendorID<small> character varying(60) <br/> String</small> |
+| User ID | User ID or account number | The User ID identifies a user and allows access to records or processes. | C_BankAccount_Processor.UserID<small> character varying(100) <br/> String</small> |
+| Password | Password of any length (case sensitive) | The Password for this User.  Passwords are required to identify authorized users.  For iDempiere Users, you can change the password via the Process "Reset Password". | C_BankAccount_Processor.Password<small> character varying(60) <br/> String</small> |
+| Accept MasterCard | Accept Master Card | Indicates if Master Cards are accepted  | C_BankAccount_Processor.AcceptMC<small> character(1) <br/> Yes-No</small> |
+| Accept Visa | Accept Visa Cards | Indicates if Visa Cards are accepted  | C_BankAccount_Processor.AcceptVisa<small> character(1) <br/> Yes-No</small> |
+| Accept AMEX | Accept American Express Card | Indicates if American Express Cards are accepted | C_BankAccount_Processor.AcceptAMEX<small> character(1) <br/> Yes-No</small> |
+| Accept Diners | Accept Diner's Club | Indicates if Diner's Club Cards are accepted  | C_BankAccount_Processor.AcceptDiners<small> character(1) <br/> Yes-No</small> |
+| Accept Corporate | Accept Corporate Purchase Cards | Indicates if Corporate Purchase Cards are accepted  | C_BankAccount_Processor.AcceptCorporate<small> character(1) <br/> Yes-No</small> |
+| Accept Discover | Accept Discover Card | Indicates if Discover Cards are accepted | C_BankAccount_Processor.AcceptDiscover<small> character(1) <br/> Yes-No</small> |
+| Accept Direct Deposit | Accept Direct Deposit (payee initiated) | Indicates if Direct Deposits (wire transfers, etc.) are accepted. Direct Deposits are initiated by the payee. | C_BankAccount_Processor.AcceptDirectDeposit<small> character(1) <br/> Yes-No</small> |
+| Accept Direct Debit | Accept Direct Debits (vendor initiated) | Accept Direct Debit transactions. Direct Debits are initiated by the vendor who has permission to deduct amounts from the payee's account. | C_BankAccount_Processor.AcceptDirectDebit<small> character(1) <br/> Yes-No</small> |
+| Accept Electronic Check | Accept ECheck (Electronic Checks) | Indicates if EChecks are accepted | C_BankAccount_Processor.AcceptCheck<small> character(1) <br/> Yes-No</small> |
+| Minimum Amt | Minimum Amount in Document Currency |  | C_BankAccount_Processor.MinimumAmt<small> numeric <br/> Amount</small> |
+| Only Currency | Restrict accepting only this currency | The Only Currency field indicates that this bank account accepts only the currency identified here. | C_BankAccount_Processor.C_Currency_ID<small> numeric(10) <br/> Table Direct</small> |
+| Require Credit Card Verification Code | Require 3/4 digit Credit Verification Code | The Require CC Verification checkbox indicates if this bank accounts requires a verification number for credit card transactions. | C_BankAccount_Processor.RequireVV<small> character(1) <br/> Yes-No</small> |
+
+## Tab: › › Statement Loader
+
+*Tab Level 2 · Created 25/12/2003 · Updated 15/01/2024*
+
+**Description:** Definition of Bank Statement Loader (SWIFT, OFX)
+
+**Comment/Help:** The loader definition provides the parameters to load bank statements from EFT formats like SWIFT (MT940) or OFX. The required parameters depend on the actual statement loader class
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BankStatementLoader.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BankStatementLoader.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Bank Account | Account at the Bank | The Bank Account identifies an account at this Bank. | C_BankStatementLoader.C_BankAccount_ID<small> numeric(10) <br/> Table Direct</small> |
+| Name | Alphanumeric identifier of the entity | The name of an entity (record) is used as an default search option in addition to the search key. The name is up to 60 characters in length. | C_BankStatementLoader.Name<small> character varying(60) <br/> String</small> |
+| Description | Optional short description of the record | A description is limited to 255 characters. | C_BankStatementLoader.Description<small> character varying(255) <br/> String</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BankStatementLoader.IsActive<small> character(1) <br/> Yes-No</small> |
+| Financial Institution ID | The ID of the Financial Institution / Bank | Depending on the loader, it might require a ID of the financial institution | C_BankStatementLoader.FinancialInstitutionID<small> character varying(20) <br/> String</small> |
+| Branch ID | Bank Branch ID | Dependent on the loader, you may have to provide a bank branch ID | C_BankStatementLoader.BranchID<small> character varying(20) <br/> String</small> |
+| Account No | Account Number | The Account Number indicates the Number assigned to this bank account.  | C_BankStatementLoader.AccountNo<small> character varying(20) <br/> String</small> |
+| PIN | Personal Identification Number |  | C_BankStatementLoader.PIN<small> character varying(20) <br/> String</small> |
+| User ID | User ID or account number | The User ID identifies a user and allows access to records or processes. | C_BankStatementLoader.UserID<small> character varying(60) <br/> String</small> |
+| Password | Password of any length (case sensitive) | The Password for this User.  Passwords are required to identify authorized users.  For iDempiere Users, you can change the password via the Process "Reset Password". | C_BankStatementLoader.Password<small> character varying(60) <br/> String</small> |
+| Host Address | Host Address URL or DNS | The Host Address identifies the URL or DNS of the target host | C_BankStatementLoader.HostAddress<small> character varying(60) <br/> String</small> |
+| Host port | Host Communication Port | The Host Port identifies the port to communicate with the host. | C_BankStatementLoader.HostPort<small> numeric(10) <br/> Integer</small> |
+| Proxy address |  Address of your proxy server | The Proxy Address must be defined if you must pass through a firewall to access your payment processor.  | C_BankStatementLoader.ProxyAddress<small> character varying(60) <br/> String</small> |
+| Proxy port | Port of your proxy server | The Proxy Port identifies the port of your proxy server. | C_BankStatementLoader.ProxyPort<small> numeric(10) <br/> Integer</small> |
+| Proxy logon | Logon of your proxy server | The Proxy Logon identifies the Logon ID for your proxy server. | C_BankStatementLoader.ProxyLogon<small> character varying(60) <br/> String</small> |
+| Proxy password | Password of your proxy server | The Proxy Password identifies the password for your proxy server. | C_BankStatementLoader.ProxyPassword<small> character varying(60) <br/> String</small> |
+| File Name | Name of the local file or URL | Name of a file in the local directory space - or URL (file://.., http://.., ftp://..) | C_BankStatementLoader.FileName<small> character varying(120) <br/> String</small> |
+| Statement Loader Class | Class name of the bank statement loader | The name of the actual bank statement loader implementing the interface org.compiere.impexp.BankStatementLoaderInterface | C_BankStatementLoader.StmtLoaderClass<small> character varying(60) <br/> String</small> |
+| Date Format | Date format used in the input format | The date format is usually detected, but sometimes need to be defined. | C_BankStatementLoader.DateFormat<small> character varying(20) <br/> String</small> |
+| Date Last Run | Date the process was last run. | The Date Last Run indicates the last time that a process was run. | C_BankStatementLoader.DateLastRun<small> timestamp without time zone <br/> Date+Time</small> |
+
+## Tab: › › Accounting
+
+*Tab Level 2 · Created 18/12/2000 · Updated 05/03/2013*
+
+**Description:** Maintain Accounting Data
+
+**Comment/Help:** The Accounting Tab is used to define the accounts used for transactions with this Bank.
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Tenant | Tenant for this installation. | A Tenant is a company or a legal entity. You cannot share data between Tenants. | C_BankAccount_Acct.AD_Client_ID<small> numeric(10) <br/> Table Direct</small> |
+| Organization | Organizational entity within tenant | An organization is a unit of your tenant or legal entity - examples are store, department. You can share data between organizations. | C_BankAccount_Acct.AD_Org_ID<small> numeric(10) <br/> Table Direct</small> |
+| Bank Account | Account at the Bank | The Bank Account identifies an account at this Bank. | C_BankAccount_Acct.C_BankAccount_ID<small> numeric(10) <br/> Table Direct</small> |
+| Accounting Schema | Rules for accounting | An Accounting Schema defines the rules used in accounting such as costing method, currency and calendar | C_BankAccount_Acct.C_AcctSchema_ID<small> numeric(10) <br/> Table Direct</small> |
+| Active | The record is active in the system | There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.<br/>There are two reasons for de-activating and not deleting records:<br/>(1) The system requires the record for audit purposes.<br/>(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries. | C_BankAccount_Acct.IsActive<small> character(1) <br/> Yes-No</small> |
+| Bank Asset | Bank Asset Account | The Bank Asset Account identifies the account to be used for booking changes to the balance in this bank account | C_BankAccount_Acct.B_Asset_Acct<small> numeric(10) <br/> Account</small> |
+| Bank In Transit | Bank In Transit Account | The Bank in Transit Account identifies the account to be used for funds which are in transit. | C_BankAccount_Acct.B_InTransit_Acct<small> numeric(10) <br/> Account</small> |
+| Payment Selection | AP Payment Selection Clearing Account |  | C_BankAccount_Acct.B_PaymentSelect_Acct<small> numeric(10) <br/> Account</small> |
+| Unallocated Cash | Unallocated Cash Clearing Account | Receipts not allocated to Invoices | C_BankAccount_Acct.B_UnallocatedCash_Acct<small> numeric(10) <br/> Account</small> |
+| Bank Interest Expense | Bank Interest Expense Account | The Bank Interest Expense Account identifies the account to be used for recording interest expenses. | C_BankAccount_Acct.B_InterestExp_Acct<small> numeric(10) <br/> Account</small> |
+| Bank Interest Revenue | Bank Interest Revenue Account | The Bank Interest Revenue Account identifies the account to be used for recording interest revenue from this Bank. | C_BankAccount_Acct.B_InterestRev_Acct<small> numeric(10) <br/> Account</small> |
+

@@ -1,0 +1,29 @@
+---
+title: 'Revenue Recognition Run'
+sidebar_label: 'Revenue Recognition Run'
+description: 'Generate revenue recognition journal'
+tags: ['Process']
+---
+
+# Revenue Recognition Run
+
+<span className="badge badge--primary">Process</span> <span className="badge badge--secondary">ID 53710</span>
+
+*28/10/2014 → 28/10/2014*
+
+![Revenue Recognition Run](./img/revenue-recognition-run.png)
+
+**Description:** Generate revenue recognition journal
+
+**Comment/Help:** Generate GL journal based on valid revenue recognition run entries
+
+**Classname:** `org.compiere.process.RevenueRecognition`
+
+## Table: Process Parameters
+
+| **Name** | **Description** | **Comment/Help** | **Technical Data** |
+|---|---|---|---|
+| Document Type | Document type or rules | The Document Type determines document sequence and processing rules | C_DocType_ID<br/>Table |
+| Account Date | Accounting Date | The Accounting Date indicates the date to be used on the General Ledger account entries generated from this document. It is also used for any currency conversion. | DateAcct<br/>Date |
+| Revenue Recognition | Method for recording revenue | The Revenue Recognition indicates how revenue will be recognized for this product | C_RevenueRecognition_ID<br/>Table Direct |
+

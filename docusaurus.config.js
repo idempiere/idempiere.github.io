@@ -32,6 +32,26 @@ const config = {
   plugins: [
     require.resolve('docusaurus-lunr-search'),
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'manual',
+        path: 'manual',
+        routeBasePath: 'manual',
+        sidebarPath: require.resolve('./sidebarsManual.js'),
+        editUrl: 'https://github.com/idempiere/idempiere.github.io/tree/main/',
+        lastVersion: '13',
+        versions: {
+          current: {
+            label: '14.x (development)',
+            path: 'next',
+          },
+          '13': {
+            label: '13.x',
+          },
+        },
+      },
+    ],
+    [
       '@docusaurus/plugin-pwa',
       {
         offlineModeActivationStrategies: [
@@ -105,9 +125,17 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
+          {
+            type: 'doc',
+            docId: 'index',
+            docsPluginId: 'manual',
+            position: 'left',
+            label: 'Manual',
+          },
           // Right
           {
             type: 'docsVersionDropdown',
+            docsPluginId: 'manual',
             position: 'right',
             dropdownActiveClassDisabled: true,
           },
