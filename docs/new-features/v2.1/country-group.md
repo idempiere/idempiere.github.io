@@ -2,14 +2,14 @@
 sidebar_position: 2
 title: "Country Group"
 sidebar_label: "Country Group"
-description: "During the [IDempiere Workshop 2014](https://wiki.idempiere.org/en/IDempiere_Workshop_2014) an idea was discussed to enable easier configuration for ta"
+description: "During the [IDempiere Workshop 2014](/docs/new-features/v1.0/idempiere-workshop-2014) an idea was discussed to enable easier configuration for ta"
 tags: [functional]
 ---
 **Goal:** Functional
 
 **Description:**
 
-During the [IDempiere Workshop 2014](https://wiki.idempiere.org/en/IDempiere_Workshop_2014) an idea was discussed to enable easier configuration for taxes between the European Union.  The tax configuration was too complex as it needed to configure all EU countries against all EU countries as a matrix.
+During the [IDempiere Workshop 2014](/docs/new-features/v1.0/idempiere-workshop-2014) an idea was discussed to enable easier configuration for taxes between the European Union.  The tax configuration was too complex as it needed to configure all EU countries against all EU countries as a matrix.
 
 So, as a result it was implemented a Country Group table (initially as a plugin and then integrated into core).
 

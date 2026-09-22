@@ -41,7 +41,7 @@ Now you can configure a QuickInfo widget to appear by any Window/Tab.
 
 **Technical Info:** [IDEMPIERE-1684](http://idempiere.atlassian.net/browse/IDEMPIERE-1684)
 
-**See also:** [Configurable Status Line](https://wiki.idempiere.org/en/NF2.1_Configurable_Status_Line), [Context Help Pane](https://wiki.idempiere.org/en/NF1.0_Context_Help_Pane), [Java Message Format](http://docs.oracle.com/javase/6/docs/api/java/text/MessageFormat.html)
+**See also:** [Configurable Status Line](/docs/new-features/v2.1/configurable-status-line), [Context Help Pane](/docs/new-features/v1.0/context-help-pane), [Java Message Format](http://docs.oracle.com/javase/6/docs/api/java/text/MessageFormat.html)
 
 ---
 

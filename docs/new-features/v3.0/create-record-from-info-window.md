@@ -15,7 +15,7 @@ tags: [user-experience]
 
 Now you can create a new record directly from Info Window like shown in the screenshot.
 
-The table must be configured to use [Quick Entry](https://wiki.idempiere.org/en/NF1.0_QuickEntry)
+The table must be configured to use [Quick Entry](/docs/new-features/v1.0/quickentry)
 
 ![01 CreateFromInfo](pathname:///img/new-features/v3.0/01_CreateFromInfo.png)
 

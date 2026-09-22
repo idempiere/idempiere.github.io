@@ -411,4 +411,4 @@ This ensures your OSGi component definitions are packaged correctly.
 - [IColumnCallout Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/IColumnCallout.java)
 - [IColumnCalloutFactory Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/IColumnCalloutFactory.java)
 - [OSGi Declarative Services](https://wiki.idempiere.org/en/Plugin)
-- [iDempiere 9 Callout Factory](https://wiki.idempiere.org/en/NF9_OSGi_New_Column_Callout_Factory)
+- [iDempiere 9 Callout Factory](/docs/new-features/v9/osgi-new-column-callout-factory)

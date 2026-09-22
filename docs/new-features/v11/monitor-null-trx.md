@@ -11,7 +11,7 @@ tags: [technical]
 
 **Description:**
 
-In version 4.1 it was implemented a way to monitor transactions on idempiereMonitor (see [Monitor_Trx](https://wiki.idempiere.org/en/NF4.1_Monitor_Trx)), but this implementation is able just to monitor explicit transactions.
+In version 4.1 it was implemented a way to monitor transactions on idempiereMonitor (see [Monitor_Trx](/docs/new-features/v4.1/monitor-trx)), but this implementation is able just to monitor explicit transactions.
 
 In many places iDempiere uses a null transaction (an auto-commit transaction intended for short-time operations), and these transactions potentially can have leaks or open cursor problems too.
 

@@ -48,7 +48,7 @@ eg: attachment:AD_UserDef_Theme/custom.css,e3979632-b924-43c9-8771-13c69a81015a
 And you can see the New button has been updated and the selected tab is now red
 
 #### See also
-[NF8.2 Lightweight theme customization](https://wiki.idempiere.org/en/NF8.2_Lightweight_theme_customization)
+[NF8.2 Lightweight theme customization](/docs/new-features/v8.2/lightweight-theme-customization)
 
 ---
 

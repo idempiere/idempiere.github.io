@@ -13,7 +13,7 @@ tags: [user-experience]
 
 **Motivation**
 
-https://wiki.idempiere.org/en/NF4.1_Styles_On_Fields
+/docs/new-features/v4.1/styles-on-fields
 
 **Solution**
 

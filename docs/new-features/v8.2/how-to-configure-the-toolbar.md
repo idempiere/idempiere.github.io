@@ -23,7 +23,7 @@ The changes can be summarized as:
 1. The first noticeable change is the icons, it changed from icon images to font-icons.
 1. The order and layout changed to not display every toolbar button, only those that are most currently used, and access the others through the ‘Show More’ button in the right part of the toolbar. This was made to improve the UX, the toolbar might seem overwhelming for many users with many options that they don’t even know what they do.
 1. A new Select Query list in the toolbar allows the user to choose saved filters directly from the toolbar instead of the old way -> Click on the Find Button -> Choosing a filter from the list -> Click Ok.
-1. The third point becomes powerful especially when you take advantage of the new features of [saving global filters that can be shared among users](https://wiki.idempiere.org/en/NF7.1_Share_Saved_Queries)
+1. The third point becomes powerful especially when you take advantage of the new features of [saving global filters that can be shared among users](/docs/new-features/v7.1/share-saved-queries-with-other-users)
 
 However, part of the magic of iDempiere is that it is highly customizable, so if you don’t like any of the changes, you can adapt it to your own preferences.
 
@@ -45,9 +45,9 @@ Group buttons in the toolbar
 ![GroupMoreToolbar](pathname:///img/new-features/v8.2/GroupMoreToolbar.gif)
 
 External links:
-[NF7.1 Toolbar Improvements](https://wiki.idempiere.org/en/NF7.1_Toolbar_Improvements)
-[NF7.1 Share Saved Queries](https://wiki.idempiere.org/en/NF7.1_Share_Saved_Queries)
-[NF7.1 SQL Search In Windows](https://wiki.idempiere.org/en/NF7.1_SQL_Search_In_Windows)
+[NF7.1 Toolbar Improvements](/docs/new-features/v7.1/improve-toolbar-make-it-more-configurable-and-extend-it)
+[NF7.1 Share Saved Queries](/docs/new-features/v7.1/share-saved-queries-with-other-users)
+[NF7.1 SQL Search In Windows](/docs/new-features/v7.1/sql-searches-in-windows-for-advanced-users)
 
 ---
 

@@ -11,7 +11,7 @@ tags: [user-experience]
 
 **Description:**
 
-This is related to feature [Zoom From URL](https://wiki.idempiere.org/en/NF2.1_Zoom_From_URL)
+This is related to feature [Zoom From URL](/docs/new-features/v2.1/zoom-from-url)
 
 On the Record Info dialog the user can now right click on a Permalink URL and copy the corresponding link to the actual record.
 

@@ -11,7 +11,7 @@ tags: [technical]
 
 **Description:**
 
-Extending the functionality implemented for [Column Toolbar Button](https://wiki.idempiere.org/en/NF1.0_ColumnToolbarButton) you can now define those toolbar buttons to appear both, on toolbar and on the window at the same time.
+Extending the functionality implemented for [Column Toolbar Button](/docs/new-features/v1.0/columntoolbarbutton) you can now define those toolbar buttons to appear both, on toolbar and on the window at the same time.
 
 This is defined at column level:
 

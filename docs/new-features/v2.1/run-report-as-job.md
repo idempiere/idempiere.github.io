@@ -21,7 +21,7 @@ On the dashboard you can see now a "Running Jobs" and if you chose the notice me
 
 **Technical Info:** [IDEMPIERE-1951](http://idempiere.atlassian.net/browse/IDEMPIERE-1951), [IDEMPIERE-2350](http://idempiere.atlassian.net/browse/IDEMPIERE-2350)
 
-**See also:** [Last Run and Saved Parameters](https://wiki.idempiere.org/en/NF2.1_Last_Run_and_Saved_Parameters)
+**See also:** [Last Run and Saved Parameters](/docs/new-features/v2.1/last-run-and-saved-parameters)
 
 ---
 

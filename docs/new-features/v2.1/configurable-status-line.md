@@ -31,7 +31,7 @@ The resulting status line is shown in next screenshot:
 
 **Technical Info:** [IDEMPIERE-1150](http://idempiere.atlassian.net/browse/IDEMPIERE-1150)
 
-**See also:** [Quick Info Widget](https://wiki.idempiere.org/en/NF2.1_Quick_Info_Widget), [Java Message Format](http://docs.oracle.com/javase/6/docs/api/java/text/MessageFormat.html)
+**See also:** [Quick Info Widget](/docs/new-features/v2.1/quick-info-widget), [Java Message Format](http://docs.oracle.com/javase/6/docs/api/java/text/MessageFormat.html)
 
 ---
 

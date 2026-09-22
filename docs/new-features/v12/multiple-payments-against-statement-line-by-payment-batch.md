@@ -47,7 +47,7 @@ Bank statement can be matched manually or using matcher automatically. Earlier i
 
 **See also:**
 
-[NF1.0 Payment Batch](https://wiki.idempiere.org/en/NF1.0_Payment_Batch)
+[NF1.0 Payment Batch](/docs/new-features/v1.0/payment-batch)
 
 ---
 

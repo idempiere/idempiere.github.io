@@ -37,11 +37,11 @@ The same column can be obtained as a Virtual **UI** Column with much less impact
 ## Restrictions
 Because they are calculated on the fly, Virtual UI Columns cannot be exported or printed in reports.
 
-@SQL virtual UI columns cannot be used to find records, but there is a new @SQLFIND that allows it, see [Virtual Search Column](https://wiki.idempiere.org/en/NF7.1_Virtual_Search_Column).
+@SQL virtual UI columns cannot be used to find records, but there is a new @SQLFIND that allows it, see [Virtual Search Column](/docs/new-features/v7.1/virtual-search-column).
 
 Grid usage:  columns are calculated with the context, when record activated. The dependant context values are set only when you select a row.
 
-**See also** [NF7.1 Virtual Search Column](https://wiki.idempiere.org/en/NF7.1_Virtual_Search_Column), [NF8.2 Override Virtual Column In Field](https://wiki.idempiere.org/en/NF8.2_Override_Virtual_Column_In_Field)
+**See also** [NF7.1 Virtual Search Column](/docs/new-features/v7.1/virtual-search-column), [NF8.2 Override Virtual Column In Field](/docs/new-features/v8.2/override-virtual-column-definition-in-field)
 
 **Technical Info:** [IDEMPIERE-3760](https://idempiere.atlassian.net/browse/IDEMPIERE-3760)
 

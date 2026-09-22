@@ -52,7 +52,7 @@ This change is backward compatible and transparent to the user.  No configuratio
 
 :::note
 
-There is no migration of old XML attachments to the new Attachment File approach. The [Migrate Storage Provider](https://wiki.idempiere.org/en/NF7.1_Migrate_Storage_Provider) process can be used for that purpose.
+There is no migration of old XML attachments to the new Attachment File approach. The [Migrate Storage Provider](/docs/new-features/v7.1/migrate-storage-provider) process can be used for that purpose.
 
 :::
 

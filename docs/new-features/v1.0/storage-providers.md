@@ -31,7 +31,7 @@ In the Window "Client" Tab "Client Info" add two new field : Attachment Store an
 
 **Technical Info:** [IDEMPIERE-390](http://idempiere.atlassian.net/browse/IDEMPIERE-390)
 
-If you are migrating an existing database, you should consider migrating the existing attachments/archives. The process [Migrate Storage Provider](https://wiki.idempiere.org/en/NF7.1_Migrate_Storage_Provider) is intended to do that.
+If you are migrating an existing database, you should consider migrating the existing attachments/archives. The process [Migrate Storage Provider](/docs/new-features/v7.1/migrate-storage-provider) is intended to do that.
 
 ---
 

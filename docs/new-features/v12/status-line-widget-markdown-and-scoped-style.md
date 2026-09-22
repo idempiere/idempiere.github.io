@@ -19,7 +19,7 @@ Status line widget can format the output using html tag and inline css style (i.
 This ticket enhance that with markdown and scoped css style (&lt;style&gt;@scope&#123;...&#125;&lt;/style&gt;) support.
 
 ### Scoped CSS Styling with `AD_Style`
-- see CSS Styling with `AD_Style` in [NF12_Document_Search_Customisable_Layout](https://wiki.idempiere.org/en/NF12_Document_Search_Customisable_Layout)
+- see CSS Styling with `AD_Style` in [NF12_Document_Search_Customisable_Layout](/docs/new-features/v12/document-search-customisable-layout)
 - Added Style field to Status Line window
 
 ### Markdown support

@@ -44,7 +44,7 @@ There are two use cases for this process:
 
 **Only Validate:** To do just initial validations and not execute the process.  Like a dry-run.
 
-**Preserve IDs:** Comma separated list of tables that require to preserve IDs.  You must take care that the IDs don't collide.  In case you need to solve ID collisions the process [Migrate ID](https://wiki.idempiere.org/en/NF6.2_Migrate_ID) can help with this task.
+**Preserve IDs:** Comma separated list of tables that require to preserve IDs.  You must take care that the IDs don't collide.  In case you need to solve ID collisions the process [Migrate ID](/docs/new-features/v6.2/migrate-an-id-or-uuid) can help with this task.
 
 **Fallback Records when FK not found:** When moving data from external database is possible to encounter System records in the source database that are not present in the target database, in this case all references to those missing records will error, this parameter helps to solve that problem assigning a fallback System record for the problematic tables/records.  This option is a comma separated list of table=idOrUuid or table.foreignUuid=idOrUuid.  More detailed explanation and examples can be found in the ticket [IDEMPIERE-6441](https://idempiere.atlassian.net/browse/IDEMPIERE-6441?focusedCommentId=53188).  (NOTE: this option was added in [Release-12.2025-04-04](https://wiki.idempiere.org/en/ChangeLog_Release_12#2025-04-04))
 

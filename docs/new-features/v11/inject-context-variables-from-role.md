@@ -31,7 +31,7 @@ Since [Release-12.2025-01-25](https://wiki.idempiere.org/en/ChangeLog_Release_12
 
 **See also:**
 
-[Inject Context Variables From Menu](https://wiki.idempiere.org/en/NF8.2_Inject_Context_Variables_From_Menu)
+[Inject Context Variables From Menu](/docs/new-features/v8.2/inject-context-variables-from-menu)
 
 **Technical Info:** [IDEMPIERE-5647](https://idempiere.atlassian.net/browse/IDEMPIERE-5647)
 

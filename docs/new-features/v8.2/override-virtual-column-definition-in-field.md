@@ -27,9 +27,9 @@ The ColumnSQL used to define virtual columns can be overwritten in the Field def
 | null | no prefix | Virtual  in Field | Y | Y | N | N | N |
 | @SQLFIND= | no prefix | Virtual Find in Column, Virtual in Field | Y | Y | N | Y | Y |
 
-As shown in the table above, the best combination is to define a [virtual search column](https://wiki.idempiere.org/en/NF7.1_Virtual_Search_Column) at Column level and a normal (no prefix) virtual column at Field level.  This kind of configuration doesn't impact the performance of PO.get and is searchable, shown properly in reports, master and grid mode.
+As shown in the table above, the best combination is to define a [virtual search column](/docs/new-features/v7.1/virtual-search-column) at Column level and a normal (no prefix) virtual column at Field level.  This kind of configuration doesn't impact the performance of PO.get and is searchable, shown properly in reports, master and grid mode.
 
-**See also** [NF6.2 Virtual UI Column](https://wiki.idempiere.org/en/NF6.2_Virtual_UI_Column), [NF7.1 Virtual Search Column](https://wiki.idempiere.org/en/NF7.1_Virtual_Search_Column)
+**See also** [NF6.2 Virtual UI Column](/docs/new-features/v6.2/virtual-ui-column), [NF7.1 Virtual Search Column](/docs/new-features/v7.1/virtual-search-column)
 
 **Technical Info:** [IDEMPIERE-4479](https://idempiere.atlassian.net/browse/IDEMPIERE-4479)
 

@@ -36,7 +36,7 @@ This part of the workshop gives an overview of the new features of iDempiere 1.0
 - Frequent List
 - Importer in CSV (that is a very powerful but also dangerous function)
 - Context Help at the right side of the window (a Context must be created in System, connected to a tab and a new message can be created in the Tentant)
-- Status Line (was static, now it can be configured in [NF3.0_Quick_Info_Widget](https://wiki.idempiere.org/en/NF3.0_Quick_Info_Widget) and [NF2.1_Configurable_Status_Line](https://wiki.idempiere.org/en/NF2.1_Configurable_Status_Line)) and shown in the help area at the right side
+- Status Line (was static, now it can be configured in [NF3.0_Quick_Info_Widget](https://wiki.idempiere.org/en/NF3.0_Quick_Info_Widget) and [NF2.1_Configurable_Status_Line](/docs/new-features/v2.1/configurable-status-line)) and shown in the help area at the right side
 - Processes show links to processed documents
 - Saved Parameters in every Process Parameter window
 - The Payment Field changed (if document is not completed, it is now a list; if completed it shows a button. Payment methods are extendable via an osgi plugin)

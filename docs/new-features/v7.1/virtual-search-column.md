@@ -45,7 +45,7 @@ The users will be able to search through that column in simple and advanced sear
 
 ![SQLFINDAVANCED](pathname:///img/new-features/v7.1/SQLFINDAVANCED.jpg)
 
-**See also** [NF6.2 Virtual UI Column](https://wiki.idempiere.org/en/NF6.2_Virtual_UI_Column), [NF8.2 Override Virtual Column In Field](https://wiki.idempiere.org/en/NF8.2_Override_Virtual_Column_In_Field)
+**See also** [NF6.2 Virtual UI Column](/docs/new-features/v6.2/virtual-ui-column), [NF8.2 Override Virtual Column In Field](/docs/new-features/v8.2/override-virtual-column-definition-in-field)
 
 **Technical Info:** [IDEMPIERE-4087](https://idempiere.atlassian.net/browse/IDEMPIERE-4087)
 

@@ -15,7 +15,7 @@ tags: [functional]
 
 **Description:**
 
-In iDempiere 2.1, the functionality to [ask the user for input within a process](https://wiki.idempiere.org/en/NF2.1_Ask_Input_Within_Process) was added. This development extends that feature and allows the system to ask for a secret input (f.i. A password or a TAN), obfuscating the characters that the user types in.
+In iDempiere 2.1, the functionality to [ask the user for input within a process](/docs/new-features/v2.1/ask-input-within-process) was added. This development extends that feature and allows the system to ask for a secret input (f.i. A password or a TAN), obfuscating the characters that the user types in.
 
 The way to use this is the same as before, with the slight difference that you need to call the askForSecretInput method instead.
 

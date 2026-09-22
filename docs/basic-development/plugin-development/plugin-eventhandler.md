@@ -360,4 +360,4 @@ Additional tutorial:
 - [IEventTopics Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/event/IEventTopics.java)
 - [IEventManager Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/event/IEventManager.java)
 - [OSGi Event Admin Framework](https://osgi.org/specification/osgi.cmpn/7.0.0/service.event.html)
-- [iDempiere 9 Event Annotations](https://wiki.idempiere.org/en/NF9_OSGi_New_Process_Factory)
+- [iDempiere 9 Event Annotations](/docs/new-features/v9/osgi-new-process-factory)

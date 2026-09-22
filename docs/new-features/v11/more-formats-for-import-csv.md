@@ -21,10 +21,10 @@ The import CSV template allows now to define more options:
 **Technical Info:** [IDEMPIERE-6040](https://idempiere.atlassian.net/browse/IDEMPIERE-6040)
 
 ## See Also
-- [NF1.0_ImportCSV](https://wiki.idempiere.org/en/NF1.0_ImportCSV)
-- [NF2.1 Import Template](https://wiki.idempiere.org/en/NF2.1_Import_Template)
-- [NF2.1 Import CSV_Process](https://wiki.idempiere.org/en/NF2.1_Import_CSV_Process)
-- [NF3.0 CSV Importer Single Transaction](https://wiki.idempiere.org/en/NF3.0_CSV_Importer_Single_Transaction)
+- [NF1.0_ImportCSV](/docs/new-features/v1.0/importcsv)
+- [NF2.1 Import Template](/docs/new-features/v2.1/import-template)
+- [NF2.1 Import CSV_Process](/docs/new-features/v2.1/import-csv-process)
+- [NF3.0 CSV Importer Single Transaction](/docs/new-features/v3.0/csv-importer-single-transaction)
 
 ---
 

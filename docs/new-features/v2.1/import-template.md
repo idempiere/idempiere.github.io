@@ -31,17 +31,17 @@ For this feature to be enabled you need to define an import template as explaine
 
 ***Running***
 
-- When the user open the tab where the role allows import templates, then the CSV import button is enabled and pushing the button will open a window where the user can choose the template, the mode and upload the file to be imported, the rest of the process works the same way as the usual importer documented at [NF1.0_ImportCSV](https://wiki.idempiere.org/en/NF1.0_ImportCSV)
+- When the user open the tab where the role allows import templates, then the CSV import button is enabled and pushing the button will open a window where the user can choose the template, the mode and upload the file to be imported, the rest of the process works the same way as the usual importer documented at [NF1.0_ImportCSV](/docs/new-features/v1.0/importcsv)
 
 ![02 ImportTemplate](pathname:///img/new-features/v2.1/02_ImportTemplate.png)
 
 **Technical Info:** [IDEMPIERE-2113](http://idempiere.atlassian.net/browse/IDEMPIERE-2113)
 
 ## See Also
-- [NF1.0_ImportCSV](https://wiki.idempiere.org/en/NF1.0_ImportCSV)
-- [NF2.1 Import CSV_Process](https://wiki.idempiere.org/en/NF2.1_Import_CSV_Process)
-- [NF3.0 CSV Importer Single Transaction](https://wiki.idempiere.org/en/NF3.0_CSV_Importer_Single_Transaction)
-- [NF11 More Formats for Import_CSV](https://wiki.idempiere.org/en/NF11_More_Formats_for_Import_CSV)
+- [NF1.0_ImportCSV](/docs/new-features/v1.0/importcsv)
+- [NF2.1 Import CSV_Process](/docs/new-features/v2.1/import-csv-process)
+- [NF3.0 CSV Importer Single Transaction](/docs/new-features/v3.0/csv-importer-single-transaction)
+- [NF11 More Formats for Import_CSV](/docs/new-features/v11/more-formats-for-import-csv)
 
 ---
 

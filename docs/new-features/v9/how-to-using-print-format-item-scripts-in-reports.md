@@ -2,11 +2,11 @@
 sidebar_position: 5
 title: "How To: Using Print Format Item Scripts In Reports"
 sidebar_label: "How To: Using Print Format Item Scripts In Reports"
-description: "This document expands on the information provided in [NF8.2 Print Format Item Script](https://wiki.idempiere.org/en/NF8.2_Print_Format_Item_Script) and"
+description: "This document expands on the information provided in [NF8.2 Print Format Item Script](/docs/new-features/v8.2/print-format-item-script) and"
 tags: [functional]
 ---
 ### Introduction
-This document expands on the information provided in [NF8.2 Print Format Item Script](https://wiki.idempiere.org/en/NF8.2_Print_Format_Item_Script) and incorporates the additional features provided by  [IDEMPIERE-5111 Data type improvements to Print Format Item Script](https://idempiere.atlassian.net/browse/IDEMPIERE-5111) and [IDEMPIERE-5253](https://idempiere.atlassian.net/browse/IDEMPIERE-5253).
+This document expands on the information provided in [NF8.2 Print Format Item Script](/docs/new-features/v8.2/print-format-item-script) and incorporates the additional features provided by  [IDEMPIERE-5111 Data type improvements to Print Format Item Script](https://idempiere.atlassian.net/browse/IDEMPIERE-5111) and [IDEMPIERE-5253](https://idempiere.atlassian.net/browse/IDEMPIERE-5253).
 
 The purpose of this feature is to make it possible to create new columns in a report based on an expression, without having to modify the database. The expressions  can make use of either beanshell or SQL scripts.
 

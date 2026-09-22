@@ -23,7 +23,7 @@ And enjoy the new tree feature:
 
 ![02 TreeOnAnyTable](pathname:///img/new-features/v3.0/02_TreeOnAnyTable.png)
 
-**TIP:** Your new tree can also be [Driven by Search Key](https://wiki.idempiere.org/en/NF2.1_Tree_Driven_by_Search_Key)
+**TIP:** Your new tree can also be [Driven by Search Key](/docs/new-features/v2.1/tree-driven-by-search-key)
 
 **Parent Column:** Version 8.2 introduce Parent Column ([tiket](https://idempiere.atlassian.net/browse/IDEMPIERE-5008)), which allow define for tenant admin the column from custom table. This improve performance.
 

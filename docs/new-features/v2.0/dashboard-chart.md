@@ -11,7 +11,7 @@ tags: [functional]
 
 **Description:**
 
-[NF2.0_CRM](https://wiki.idempiere.org/en/NF2.0_CRM) added configurable chart. This enhancement integrate that to dashboard content.
+[NF2.0_CRM](/docs/new-features/v2.0/crm) added configurable chart. This enhancement integrate that to dashboard content.
 
 ![Dashboard Chart Configuration](pathname:///img/new-features/v2.0/Dashboard_Chart_Configuration.png)
 

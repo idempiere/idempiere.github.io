@@ -13,7 +13,7 @@ tags: [user-experience]
 
 **Description:**
 
-The goal of the ticket is to allow advanced users to share advanced SQL search filter with other users, it is related to [NF7.1 Share Saved Queries](https://wiki.idempiere.org/en/NF7.1_Share_Saved_Queries).
+The goal of the ticket is to allow advanced users to share advanced SQL search filter with other users, it is related to [NF7.1 Share Saved Queries](/docs/new-features/v7.1/share-saved-queries-with-other-users).
 
 The feature improvement was designed as follows:
 

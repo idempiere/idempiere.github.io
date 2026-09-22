@@ -42,7 +42,7 @@ A new method setDisplayName was added to the org.compiere.util.Trx class - it is
 After [release 9.20220805](https://wiki.idempiere.org/en/ChangeLog_Release_9#2022-08-05) the [[System_Configurator_(Window_ID-50006)#TRX_AUTOSET_DISPLAY_NAME|System Configurator TRX_AUTOSET_DISPLAY_NAME] was added (defaults to false).  When enabled it automatically set the class and method from the caller for the methods createTrxName() or createTrxName(null)
 
 ### **See also**
-[NF11 Monitor Null Trx](https://wiki.idempiere.org/en/NF11_Monitor_Null_Trx)
+[NF11 Monitor Null Trx](/docs/new-features/v11/monitor-null-trx)
 
 ---
 

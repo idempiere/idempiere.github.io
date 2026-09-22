@@ -45,7 +45,7 @@ The SysConfig key [FORM_SQL_QUERY_MAX_RECORDS](https://wiki.idempiere.org/en/Sys
 The SysConfig key [FORM_SQL_QUERY_LOG_ISSUE](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#FORM_SQL_QUERY_LOG_ISSUE) defines if the audit log is created in the AD_Issue table.  The default is to create the audit record.
 
 ## Technical Note
-When a [replica database is configured](https://wiki.idempiere.org/en/NF6.2_Reporting_from_Read-Only_Replica), the query is executed against the replica database when possible.
+When a [replica database is configured](/docs/new-features/v6.2/reporting-from-read-only-replica), the query is executed against the replica database when possible.
 
 **Technical Info:** [IDEMPIERE-5451](https://idempiere.atlassian.net/browse/IDEMPIERE-5451)
 

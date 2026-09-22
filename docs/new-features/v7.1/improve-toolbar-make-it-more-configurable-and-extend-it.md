@@ -16,7 +16,7 @@ tags: [user-experience]
 The goal of the new feature is to improve the toolbar and make it more configurable and extend its functionality, with a show More option to hide the less used buttons by default without inactivating them and adding a Combobox with the saved queries to let the user (1) know which query is currently active in the window and (2) changed the filter easily and quick.
 
 ## Show More button
-To know more about the show more button, please check [NF7.1 Show More Button In Toolbar](https://wiki.idempiere.org/en/NF7.1_Show_More_Button_In_Toolbar).
+To know more about the show more button, please check [NF7.1 Show More Button In Toolbar](/docs/new-features/v7.1/improve-toolbar-make-it-more-configurable).
 
 ## Search in the toolbar
 Now you can see the saved searches in the toolbar on any window.

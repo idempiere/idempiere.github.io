@@ -42,7 +42,7 @@ Other notes collected related to this functionality:
 
 **See also:**
 
-[NF12 Multiple Payments against statement line by Payment Batch](https://wiki.idempiere.org/en/NF12_Multiple_Payments_against_statement_line_by_Payment_Batch)
+[NF12 Multiple Payments against statement line by Payment Batch](/docs/new-features/v12/multiple-payments-against-statement-line-by-payment-batch)
 
 ---
 

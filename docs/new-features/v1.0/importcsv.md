@@ -30,7 +30,7 @@ All maintenance and transaction windows have now the ability to import directly 
     1. **NOTE ABOUT (null)**: if the value is empty then iDempiere will assign the default value of the field if any, if the value is (null) then iDempiere will explicitly set the null value, not the default.
 1. **Key Column's Mark:** In all three modes (Insert/Update/Merge) a User is able to mark its own key in order to make every row described in the CSV file unique, this can be done by marking a column's name with /K at the end, please notice that "/K" must be written in capital letter.The main purpose of this design is to give freedom to end-user to define its own keys depending on its business case.
 
-***Check [NF3.0_CSV_Importer_Single_Transaction](https://wiki.idempiere.org/en/NF3.0_CSV_Importer_Single_Transaction) if you want to set up your header to support single transactions***
+***Check [NF3.0_CSV_Importer_Single_Transaction](/docs/new-features/v3.0/csv-importer-single-transaction) if you want to set up your header to support single transactions***
 
 ## CSV Format Supported
 This current version supports the following CSV parameters:
@@ -239,10 +239,10 @@ Check [Talk:NF1.0_ImportCSV](https://wiki.idempiere.org/en/Talk:NF1.0_ImportCSV)
 **Technical Info:** [IDEMPIERE-454](http://idempiere.atlassian.net/browse/IDEMPIERE-454)
 
 ## See Also
-- [NF2.1 Import Template](https://wiki.idempiere.org/en/NF2.1_Import_Template)
-- [NF2.1 Import CSV_Process](https://wiki.idempiere.org/en/NF2.1_Import_CSV_Process)
-- [NF3.0 CSV Importer Single Transaction](https://wiki.idempiere.org/en/NF3.0_CSV_Importer_Single_Transaction)
-- [NF11 More Formats for Import_CSV](https://wiki.idempiere.org/en/NF11_More_Formats_for_Import_CSV)
+- [NF2.1 Import Template](/docs/new-features/v2.1/import-template)
+- [NF2.1 Import CSV_Process](/docs/new-features/v2.1/import-csv-process)
+- [NF3.0 CSV Importer Single Transaction](/docs/new-features/v3.0/csv-importer-single-transaction)
+- [NF11 More Formats for Import_CSV](/docs/new-features/v11/more-formats-for-import-csv)
 
 ---
 

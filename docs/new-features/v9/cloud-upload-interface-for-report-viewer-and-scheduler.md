@@ -12,7 +12,7 @@ tags: [functional]
 **Feature Ticket:** [IDEMPIERE-4771](https://idempiere.atlassian.net/browse/IDEMPIERE-4771)
 
 **Description:**
-Add cloud upload interface for report viewer and scheduler. This is builds on top of the [Configure_OAuth2_EMail](https://wiki.idempiere.org/en/Configure_OAuth2_EMail) models.
+Add cloud upload interface for report viewer and scheduler. This is builds on top of the [Configure_OAuth2_EMail](/docs/new-features/v8.2/implement-oauth2-for-email-authentication) models.
 
 ## Development
 1. Create an OSGi component for the org.adempiere.base.upload.IUploadService interface.

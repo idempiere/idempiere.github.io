@@ -30,7 +30,7 @@ With this feature, system administrators can now configure more than one SSO pro
 1. Run **Cache Reset.**
 
 ### See Also
-- [iDempiere Single SignOn](https://wiki.idempiere.org/en/NF11_Single_SignOn)
+- [iDempiere Single SignOn](/docs/new-features/v11/single-sign-on)
 
 ---
 

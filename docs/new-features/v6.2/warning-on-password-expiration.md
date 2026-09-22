@@ -21,7 +21,7 @@ The result will look like:
 
 **Technical Info:** [IDEMPIERE-3696](https://idempiere.atlassian.net/browse/IDEMPIERE-3696)
 
-See also [User Locking](https://wiki.idempiere.org/en/NF1.0_User_Locking)
+See also [User Locking](/docs/new-features/v1.0/user-locking)
 
 ---
 

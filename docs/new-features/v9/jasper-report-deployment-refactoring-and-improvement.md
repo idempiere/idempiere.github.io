@@ -19,7 +19,7 @@ Refactor and improve the deployment of Jasper Report.
     1. add Report Parameter "RESOURCE_DIR" (type String) with Default Value Expression = ""
     1. Image Expression - $P&#123;RESOURCE_DIR&#125;+"image file name". For e.g $P&#123;RESOURCE_DIR&#125;+"MyCompanyLogo.png".
 1. To Load from AD_Image:
-    1. [NF9_Column_Display_Type_For_Jasper_Report](https://wiki.idempiere.org/en/NF9_Column_Display_Type_For_Jasper_Report)
+    1. [NF9_Column_Display_Type_For_Jasper_Report](/docs/new-features/v9/use-idempiere-displayreference-type-in-jasper-report)
 
 ## Sub Report
 1. add Report Parameter "SUBREPORT_DIR" (type String) with Default Value Expression = ""
@@ -28,7 +28,7 @@ Refactor and improve the deployment of Jasper Report.
 
 ## Resource Bundle
 1. Use resource bundle property file - [Multi-Lingual_Jasper](https://wiki.idempiere.org/en/Multi-Lingual_Jasper)
-1. [NF9_AD_Resource_Bundle_For_Jasper_Report](https://wiki.idempiere.org/en/NF9_AD_Resource_Bundle_For_Jasper_Report)
+1. [NF9_AD_Resource_Bundle_For_Jasper_Report](/docs/new-features/v9/admessageadelement-resource-bundle-for-jasper-report)
 
 ## Deploy as Attachment
 1. Upload all report artifacts as your Jasper Report Process's attachment

@@ -13,7 +13,7 @@ tags: [user-experience]
 
 **Description:**
 
-This new feature extends the functionality of the [CSV Importer](https://wiki.idempiere.org/en/NF1.0_ImportCSV)
+This new feature extends the functionality of the [CSV Importer](/docs/new-features/v1.0/importcsv)
 
 Now you can configure a csv file to manage a single transaction for the whole file instead of a transaction for every line (standard way)
 
@@ -28,10 +28,10 @@ If you set the file to have a single transaction, the process will run until an 
 **Technical Info:** [IDEMPIERE-2878](https://idempiere.atlassian.net/browse/IDEMPIERE-2878)
 
 ## See Also
-- [NF1.0_ImportCSV](https://wiki.idempiere.org/en/NF1.0_ImportCSV)
-- [NF2.1 Import Template](https://wiki.idempiere.org/en/NF2.1_Import_Template)
-- [NF2.1 Import CSV_Process](https://wiki.idempiere.org/en/NF2.1_Import_CSV_Process)
-- [NF11 More Formats for Import_CSV](https://wiki.idempiere.org/en/NF11_More_Formats_for_Import_CSV)
+- [NF1.0_ImportCSV](/docs/new-features/v1.0/importcsv)
+- [NF2.1 Import Template](/docs/new-features/v2.1/import-template)
+- [NF2.1 Import CSV_Process](/docs/new-features/v2.1/import-csv-process)
+- [NF11 More Formats for Import_CSV](/docs/new-features/v11/more-formats-for-import-csv)
 
 ---
 

@@ -13,7 +13,7 @@ tags: [user-experience]
 
 **Background/Motivation**
 
-Quick Info was implemented to define data source with SQL Statement and define HTML through System Message. [Read More](https://wiki.idempiere.org/en/NF2.1_Quick_Info_Widget).
+Quick Info was implemented to define data source with SQL Statement and define HTML through System Message. [Read More](/docs/new-features/v2.1/quick-info-widget).
 
 **Improvement**
 

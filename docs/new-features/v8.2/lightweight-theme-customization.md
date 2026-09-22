@@ -20,7 +20,7 @@ After loading the fragment with the felix console don't forget to refresh 'iDemp
 Additionally the usage of font symbols instead of graphical icons can be configured with ZK_THEME_USE_FONT_ICON_FOR_IMAGE
 
 #### See also
-[NF12 Theme Customization](https://wiki.idempiere.org/en/NF12_Theme_Customization)
+[NF12 Theme Customization](/docs/new-features/v12/theme-customization)
 
 ---
 

@@ -33,7 +33,7 @@ And also you can use @SQL= to define an arbitrary SQL to print a column:
 
 ![03 Script SQL](pathname:///img/new-features/v8.2/03_Script_SQL.png)
 
-##### See also: [How To: Using Print Format Item Scripts In Reports](https://wiki.idempiere.org/en/How_To:_Using_Print_Format_Item_Scripts_In_Reports)
+##### See also: [How To: Using Print Format Item Scripts In Reports](/docs/new-features/v9/how-to-using-print-format-item-scripts-in-reports)
 ## Note about Security
 Please note that the beanshell is too powerful but also too dangerous, the field could be misused for SQL Injection, exposing database sensitive information, or even running scripts in the operating system.
 

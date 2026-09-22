@@ -33,7 +33,7 @@ There are new datatypes to define UUID based relationships:
 - Table (UU): defines a foreign key to an UUID key, equivalent to the Table data type
 - TableDir (UU): defines a foreign key to an UUID key, equivalent to the TableDir data type
 - Search (UU): defines a foreign key to an UUID key, equivalent to the Search data type
-- Record UUID: associated to Record_UU columns, open the [Record ID editor](https://wiki.idempiere.org/en/NF10_Record_ID_Editor) and saves the UUID of the selected record
+- Record UUID: associated to Record_UU columns, open the [Record ID editor](/docs/new-features/v10/record-id-editor) and saves the UUID of the selected record
 
 Note that every iDempiere table has the UUID alternate key, although we implemented recently a way to disable it when required, so it will be very rare to find an iDempiere table without UUID.
 
@@ -53,19 +53,19 @@ For testing purposes two new windows were created:
 - Test UU Detail: to manage/test as master the detail table
 
 ## Changes to "Create/Complete Table" process
-The process [CreateComplete Table](https://wiki.idempiere.org/en/NF8.2_Create/Complete_Table) accepts now to create a table without a KeyColumn.
+The process [CreateComplete Table](/docs/new-features/v8.2/createcomplete-table) accepts now to create a table without a KeyColumn.
 
 Note that implicitly it ALWAYS create the UUID column, and this column has the new UUID data type, it also creates automatically the corresponding entry for the UUID index and constraint.
 
 ## Changes to "Create Window, Tab & Field from Table" process
-The process [Create Window, Tab & Field from Table](https://wiki.idempiere.org/en/NF8.2_Create_Window_From_Table) requires now to define the parent link column when adding a new tab to an existing window with tab level greater than zero.
+The process [Create Window, Tab & Field from Table](/docs/new-features/v8.2/create-window-tab-field-from-table) requires now to define the parent link column when adding a new tab to an existing window with tab level greater than zero.
 
 Previously this was not required as the program automatically discovered a parent link, but because multi-parent links are not a requisite for tables, then is necessary to define explicitly which is the link column to parent tab when creating a new tab.
 
 It is possible also to create translation tables for UUID based tables.
 
 ## Changes to "Migrate ID" process
-The process [Migrate ID](https://wiki.idempiere.org/en/NF6.2_Migrate_ID) now can discover and update children UUID keys.
+The process [Migrate ID](/docs/new-features/v6.2/migrate-an-id-or-uuid) now can discover and update children UUID keys.
 
 There are no changes visible to the user, everything is done automatically.
 
@@ -185,16 +185,16 @@ MTest test = new MTest(ctx, "d08e9de9-39e5-485c-ad50-e8bc7ee0f575", trxName);
 ```
 
 ## New URL shortcut Record_UU
-It has been possible to [Zoom for URL](https://wiki.idempiere.org/en/NF2.1_Zoom_From_URL) using URL parameters AD_Table_ID or TableName and Record_ID.
+It has been possible to [Zoom for URL](/docs/new-features/v2.1/zoom-from-url) using URL parameters AD_Table_ID or TableName and Record_ID.
 
 Additionally is possible now to zoom using the new parameter Record_UU, for example:
 
 https://test.idempiere.org/webui/index.zul?Action=Zoom&AD_Table_ID=200383&Record_UU=4e148b89-bdd9-48a6-8a8a-7609092f965c
 
-Note the Permalink is generated using the [Record Info](https://wiki.idempiere.org/en/NF9_Record_Info_Copy_To_Clipboard_Buttons) dialog.
+Note the Permalink is generated using the [Record Info](/docs/new-features/v9/record-info-copy-to-clipboard-buttons) dialog.
 
 ## SELECT query from button on Record Info dialog
-Also using the [Record Info](https://wiki.idempiere.org/en/NF9_Record_Info_Copy_To_Clipboard_Buttons) dialog is possible to copy to clipboard a query to get the record in a SQL editor, this query can be based now on the UUID column when the table doesn't have an _ID key.
+Also using the [Record Info](/docs/new-features/v9/record-info-copy-to-clipboard-buttons) dialog is possible to copy to clipboard a query to get the record in a SQL editor, this query can be based now on the UUID column when the table doesn't have an _ID key.
 
 **Technical Info:** [IDEMPIERE-5567](https://idempiere.atlassian.net/browse/IDEMPIERE-5567)
 

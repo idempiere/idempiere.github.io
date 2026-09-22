@@ -169,7 +169,7 @@ Since iDempiere 9, there's a new default model factory that automatically detect
 - The default model generator automatically annotates `X_` classes
 
 :::info Learn More
-For detailed information, see [NF9_OSGi_New_Model_Factory](https://wiki.idempiere.org/en/NF9_OSGi_New_Model_Factory) and the [AnnotationBasedModelFactory source code](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/AnnotationBasedModelFactory.java).
+For detailed information, see [NF9_OSGi_New_Model_Factory](/docs/new-features/v9/osgi-new-model-factory) and the [AnnotationBasedModelFactory source code](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/AnnotationBasedModelFactory.java).
 :::
 
 ---

@@ -9,7 +9,7 @@ tags: [technical]
 
 **Description:**
 
-iDempiere allows to define foreign key constraints on database.  In addition to the options implemented with [DB Objects in Dictionary](https://wiki.idempiere.org/en/NF2.0_DB_Objects_in_Dictionary#Foreign_Keys), a new option for Model Cascade has been implemented, so the new list is as follows:
+iDempiere allows to define foreign key constraints on database.  In addition to the options implemented with [DB Objects in Dictionary](/docs/new-features/v2.0/db-objects-in-dictionary#foreign-keys), a new option for Model Cascade has been implemented, so the new list is as follows:
 
 - ***No Action:*** This is the default, when the parent record is deleted it will throw an exception if there are child records
 - ***Do Not Create:*** Do not create this constraint, not recommended, it can lead to data errors, the parent can be deleted without any notice leaving orphan children in the database
