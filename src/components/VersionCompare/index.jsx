@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import {usePluginData} from '@docusaurus/useGlobalData';
 import {useHistory, useLocation} from '@docusaurus/router';
 import ChangeItem from './ChangeItem';
+import UpgradeActions from './UpgradeActions';
 import styles from './styles.module.css';
 
 function compareVersions(a, b) {
@@ -15,6 +16,13 @@ function compareVersions(a, b) {
   return 0;
 }
 
+const AUDIENCES = [
+  {id: 'all', label: 'Everyone'},
+  {id: 'developer', label: 'Developers'},
+  {id: 'consultant', label: 'Consultants and testers'},
+  {id: 'admin', label: 'Admins'},
+];
+
 function readQuery(search, versions, defaults) {
   const params = new URLSearchParams(search);
   const pick = (key) => {
@@ -25,6 +33,10 @@ function readQuery(search, versions, defaults) {
     from: pick('from'),
     to: pick('to'),
     category: params.get('category') || 'all',
+    notes: params.get('notes') === '1',
+    audience: AUDIENCES.some((a) => a.id === params.get('audience'))
+      ? params.get('audience')
+      : 'all',
   };
 }
 
@@ -41,10 +53,10 @@ function CopyLinkButton() {
   return (
     <div className={styles.copyLink}>
       <button type="button" className="button button--secondary button--sm" onClick={copy}>
-        Copy link
+        Copy link to this view
       </button>
       <span role="status" className={styles.copyStatus}>
-        {status}
+        {status || 'Opens this exact comparison, filters included.'}
       </span>
     </div>
   );
@@ -66,7 +78,12 @@ export default function VersionCompare() {
     [versions],
   );
 
-  const [state, setState] = useState({...defaults, category: 'all'});
+  const [state, setState] = useState({
+    ...defaults,
+    category: 'all',
+    audience: 'all',
+    notes: false,
+  });
   const [ready, setReady] = useState(false);
 
   // The page is prerendered without a query string, so the URL is read after
@@ -83,6 +100,8 @@ export default function VersionCompare() {
     params.set('from', state.from);
     params.set('to', state.to);
     if (state.category !== 'all') params.set('category', state.category);
+    if (state.notes) params.set('notes', '1');
+    if (state.notes && state.audience !== 'all') params.set('audience', state.audience);
     const search = `?${params.toString()}`;
     if (search !== location.search) {
       history.replace({...location, search});
@@ -104,7 +123,11 @@ export default function VersionCompare() {
         .map((r) => ({
           ...r,
           changes: r.changes.filter(
-            (c) => state.category === 'all' || c.category === state.category,
+            (c) => state.category === 'all' || c.categories.includes(state.category),
+          ),
+          upgrade: r.upgrade.filter(
+            (a) =>
+              !state.notes || state.audience === 'all' || a.audience.includes(state.audience),
           ),
         })),
     [releases, state],
@@ -116,7 +139,21 @@ export default function VersionCompare() {
   );
 
   const changes = selected.flatMap((r) => r.changes);
-  const countBy = (category) => changes.filter((c) => c.category === category).length;
+  const rangeChanges = useMemo(
+    () =>
+      releases
+        .filter(
+          (r) =>
+            compareVersions(r.version, state.from) > 0 &&
+            compareVersions(r.version, state.to) <= 0,
+        )
+        .flatMap((r) => r.changes),
+    [releases, state.from, state.to],
+  );
+  const actions = selected.flatMap((r) => r.upgrade);
+  const breaking = actions.filter((a) => ['breaking', 'incompatible'].includes(a.type)).length;
+  const countBy = (category) =>
+    rangeChanges.filter((c) => c.categories.includes(category)).length;
 
   return (
     <div className={styles.compare}>
@@ -144,19 +181,6 @@ export default function VersionCompare() {
         <CopyLinkButton />
       </div>
 
-      <div className={styles.chips} role="group" aria-label="Filter by category">
-        {[{id: 'all', label: 'All'}, ...categories].map(({id, label}) => (
-          <button
-            key={id}
-            type="button"
-            aria-pressed={state.category === id}
-            className={clsx(styles.chip, state.category === id && styles.chipActive)}
-            onClick={() => update({category: id})}>
-            {label}
-          </button>
-        ))}
-      </div>
-
       {invalidRange ? (
         <div className="alert alert--danger" role="alert">
           Pick a target version newer than the starting one.
@@ -164,7 +188,7 @@ export default function VersionCompare() {
       ) : (
         <>
           <p className={styles.range}>
-            Features added after iDempiere {state.from}, up to and including {state.to}.
+            Changes after iDempiere {state.from}, up to and including {state.to}.
           </p>
 
           <dl className={styles.summary}>
@@ -173,46 +197,106 @@ export default function VersionCompare() {
               <dd>{selected.length}</dd>
             </div>
             <div className={styles.card}>
-              <dt>Features</dt>
+              <dt>Upgrade actions</dt>
+              <dd>{actions.length}</dd>
+            </div>
+            <div className={styles.card}>
+              <dt>Breaking changes</dt>
+              <dd>{breaking}</dd>
+            </div>
+            <div className={styles.card}>
+              <dt>New features</dt>
               <dd>{changes.length}</dd>
             </div>
-            {state.category === 'all' &&
-              categories
-                .filter(({id}) => countBy(id) > 0)
-                .map(({id, label}) => (
-                  <div key={id} className={styles.card}>
-                    <dt>{label}</dt>
-                    <dd>{countBy(id)}</dd>
-                  </div>
-                ))}
           </dl>
 
-          {changes.length === 0 && (
-            <p>No features in this range match the selected category.</p>
+          <label className={styles.notesToggle} htmlFor="vc-show-notes">
+            <input
+              id="vc-show-notes"
+              type="checkbox"
+              checked={state.notes}
+              onChange={(e) => update({notes: e.target.checked})}
+            />
+            <span>
+              Show upgrade notes
+              <span className={styles.notesHint}>
+                Breaking changes, platform requirements and the steps to take
+                when you migrate.
+              </span>
+            </span>
+          </label>
+
+          {state.notes && (
+            <>
+              <div className={styles.chips} role="group" aria-label="Show upgrade notes for">
+                {AUDIENCES.map(({id, label}) => (
+                  <button
+                    key={id}
+                    type="button"
+                    aria-pressed={state.audience === id}
+                    className={clsx(styles.chip, state.audience === id && styles.chipActive)}
+                    onClick={() => update({audience: id})}>
+                    {label}
+                  </button>
+                ))}
+              </div>
+
+              <UpgradeActions
+                releases={releases}
+                selected={selected}
+                from={state.from}
+                to={state.to}
+                compareVersions={compareVersions}
+              />
+            </>
           )}
 
-          {selected
-            .filter((r) => r.changes.length > 0)
-            .map((release) => (
-              <section key={release.version} className={styles.release}>
-                <h2 id={`v${release.version}`}>
-                  iDempiere {release.version}{' '}
-                  <span className={styles.releaseCount}>
-                    {release.changes.length}{' '}
-                    {release.changes.length === 1 ? 'feature' : 'features'}
-                  </span>
-                </h2>
-                <ul className={styles.changes}>
-                  {release.changes.map((change) => (
-                    <ChangeItem
-                      key={change.id}
-                      change={change}
-                      categoryLabel={labels[change.category] || change.category}
-                    />
-                  ))}
-                </ul>
-              </section>
-            ))}
+          <section aria-labelledby="new-features">
+            <h2 id="new-features">New features</h2>
+            <div className={styles.chips} role="group" aria-label="Filter features by category">
+              {[{id: 'all', label: 'All'}, ...categories].map(({id, label}) => {
+                const count = id === 'all' ? rangeChanges.length : countBy(id);
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    aria-pressed={state.category === id}
+                    disabled={count === 0 && state.category !== id}
+                    className={clsx(styles.chip, state.category === id && styles.chipActive)}
+                    onClick={() => update({category: id})}>
+                    {label} <span className={styles.chipCount}>{count}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {changes.length === 0 && (
+              <p>No features in this range match the selected category.</p>
+            )}
+
+            {selected
+              .filter((r) => r.changes.length > 0)
+              .map((release) => (
+                <div key={release.version} className={styles.release}>
+                  <h3 id={`v${release.version}`}>
+                    iDempiere {release.version}{' '}
+                    <span className={styles.releaseCount}>
+                      {release.changes.length}{' '}
+                      {release.changes.length === 1 ? 'feature' : 'features'}
+                    </span>
+                  </h3>
+                  <ul className={styles.changes}>
+                    {release.changes.map((change) => (
+                      <ChangeItem
+                        key={change.id}
+                        change={change}
+                        labels={labels}
+                      />
+                    ))}
+                  </ul>
+                </div>
+              ))}
+          </section>
         </>
       )}
     </div>

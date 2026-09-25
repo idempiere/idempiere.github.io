@@ -1,11 +1,14 @@
-// Builds the data for the /upgrade/compare page from the existing
-// docs/new-features/v*/ articles. The version comes from the folder name,
-// the category from the article's `tags` front matter and the Jira keys
-// from the article header ("Feature Ticket", "Ticket").
+// Builds the data for the /upgrade/compare page from two sources:
+// - the existing docs/new-features/v*/ articles. The version comes from the
+//   folder name, the categories from the article's `tags` front matter and the
+//   Jira keys from the "Feature Ticket" or "Technical Info" line.
+// - upgrade-notes/<version>.yml for breaking changes, required actions and
+//   platform requirements (see upgradeNotes.js).
 
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
+const {loadUpgradeNotes, NOTES_DIR} = require('./upgradeNotes');
 
 const FEATURES_DIR = 'docs/new-features';
 const VERSION_DIR = /^v(\d+(?:\.\d+)*)$/;
@@ -122,15 +125,20 @@ function loadVersion(siteDir, dirName) {
         title: frontMatter.title || firstHeading(body) || slug,
         description:
           cleanDescription(frontMatter.description) || firstParagraph(body),
-        category:
-          tags.find((t) => !VERSION_DIR.test(t)) ||
-          goalCategory(body) ||
-          'uncategorized',
+        categories: categoriesOf(tags, body),
         jira: jiraKeys(body),
         permalink: `/docs/new-features/${dirName}/${slug}`,
       };
     });
   return {version, changes};
+}
+
+// All tags except version tags such as "v12". Articles without tags fall back
+// to their "Goal" line, then to "uncategorized".
+function categoriesOf(tags, body) {
+  const own = [...new Set(tags.filter((t) => typeof t === 'string' && !VERSION_DIR.test(t)))];
+  if (own.length > 0) return own;
+  return [goalCategory(body) || 'uncategorized'];
 }
 
 // "user-experience" -> "User experience"
@@ -144,8 +152,10 @@ function tagLabel(tag) {
 function collectCategories(releases) {
   const counts = new Map();
   for (const release of releases) {
-    for (const {category} of release.changes) {
-      counts.set(category, (counts.get(category) || 0) + 1);
+    for (const change of release.changes) {
+      for (const category of change.categories) {
+        counts.set(category, (counts.get(category) || 0) + 1);
+      }
     }
   }
   return [...counts]
@@ -165,11 +175,25 @@ module.exports = function versionComparePlugin(context) {
 
     async loadContent() {
       const root = path.join(siteDir, FEATURES_DIR);
-      const releases = fs
+      const features = fs
         .readdirSync(root, {withFileTypes: true})
         .filter((d) => d.isDirectory() && VERSION_DIR.test(d.name))
-        .map((d) => loadVersion(siteDir, d.name))
-        .sort((a, b) => compareVersions(a.version, b.version));
+        .map((d) => loadVersion(siteDir, d.name));
+      const notes = loadUpgradeNotes(siteDir);
+
+      // A release can have feature articles, upgrade notes or both.
+      const versions = new Set([...features.map((r) => r.version), ...notes.keys()]);
+      const releases = [...versions]
+        .sort(compareVersions)
+        .map((version) => {
+          const note = notes.get(version);
+          return {
+            version,
+            changes: features.find((r) => r.version === version)?.changes || [],
+            upgrade: note ? note.upgrade : [],
+            requirements: note ? note.requirements : {},
+          };
+        });
 
       const ids = new Set();
       for (const release of releases) {
@@ -188,7 +212,10 @@ module.exports = function versionComparePlugin(context) {
     },
 
     getPathsToWatch() {
-      return [path.join(siteDir, FEATURES_DIR, 'v*/**/*.{md,mdx}')];
+      return [
+        path.join(siteDir, FEATURES_DIR, 'v*/**/*.{md,mdx}'),
+        path.join(siteDir, NOTES_DIR, '*.{yml,yaml,json}'),
+      ];
     },
   };
 };

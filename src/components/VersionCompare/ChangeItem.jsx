@@ -5,13 +5,15 @@ import styles from './styles.module.css';
 
 const JIRA_BROWSE = 'https://idempiere.atlassian.net/browse/';
 
-export default function ChangeItem({change, categoryLabel}) {
+export default function ChangeItem({change, labels}) {
   return (
     <li className={styles.change}>
       <div className={styles.changeHeader}>
-        <span className={clsx(styles.badge, styles[`badge-${change.category}`])}>
-          {categoryLabel}
-        </span>
+        {change.categories.map((category) => (
+          <span key={category} className={clsx(styles.badge, styles[`badge-${category}`])}>
+            {labels[category] || category}
+          </span>
+        ))}
         <Link to={change.permalink} className={styles.changeTitle}>
           {change.title}
         </Link>

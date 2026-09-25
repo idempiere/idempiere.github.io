@@ -206,3 +206,155 @@
     background: none;
   }
 }
+
+/* Upgrade notes */
+
+.notesToggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-surface-color);
+  font-weight: var(--ifm-font-weight-semibold);
+  cursor: pointer;
+}
+
+.notesToggle input {
+  margin-top: 0.3rem;
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+
+.notesHint {
+  display: block;
+  font-weight: var(--ifm-font-weight-normal);
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.upgrade {
+  margin: 0.5rem 0 2.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-left: 4px solid var(--ifm-color-danger);
+  border-radius: var(--ifm-global-radius);
+}
+
+.upgradeRelease + .upgradeRelease {
+  margin-top: 1.25rem;
+}
+
+.requirements {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.progress,
+.muted {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+}
+
+.area {
+  font-size: 0.75rem;
+  font-weight: var(--ifm-font-weight-semibold);
+  color: var(--ifm-color-emphasis-700);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.audience {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.steps {
+  list-style: decimal;
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.step + .step {
+  margin-top: 0.375rem;
+}
+
+.stepLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.stepLabel input {
+  margin-top: 0.3rem;
+  flex: none;
+}
+
+.stepDone {
+  color: var(--ifm-color-emphasis-600);
+  text-decoration: line-through;
+}
+
+.stepCode {
+  margin-top: 0.375rem;
+  max-width: 100%;
+}
+
+.stepCode pre {
+  overflow-x: auto;
+}
+
+.chipCount {
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 0.75;
+  font-variant-numeric: tabular-nums;
+}
+
+.chip:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.type-breaking,
+.type-incompatible {
+  background: var(--ifm-color-danger-dark);
+}
+
+.type-disruptive,
+.type-action {
+  background: var(--ifm-color-warning-darkest);
+}
+
+.type-requirement {
+  background: var(--ifm-color-info-darkest);
+}
+
+.type-deprecation {
+  background: var(--ifm-color-secondary-darkest);
+}
+
+@media print {
+  .notesToggle {
+    display: none !important;
+  }
+
+  .upgrade {
+    border-left-width: 1px;
+    break-after: page;
+  }
+
+  .stepLabel input {
+    appearance: none;
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 1px solid currentColor;
+  }
+}
