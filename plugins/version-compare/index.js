@@ -133,6 +133,31 @@ function loadVersion(siteDir, dirName) {
   return {version, changes};
 }
 
+// "user-experience" -> "User experience"
+function tagLabel(tag) {
+  const words = tag.replace(/[-_]+/g, ' ').trim();
+  return words.charAt(0).toUpperCase() + words.slice(1);
+}
+
+// Every category found in the articles, most used first, so a new tag gets
+// its own filter without a code change. "uncategorized" always goes last.
+function collectCategories(releases) {
+  const counts = new Map();
+  for (const release of releases) {
+    for (const {category} of release.changes) {
+      counts.set(category, (counts.get(category) || 0) + 1);
+    }
+  }
+  return [...counts]
+    .map(([id, count]) => ({id, label: tagLabel(id), count}))
+    .sort(
+      (a, b) =>
+        (a.id === 'uncategorized') - (b.id === 'uncategorized') ||
+        b.count - a.count ||
+        a.label.localeCompare(b.label),
+    );
+}
+
 module.exports = function versionComparePlugin(context) {
   const {siteDir} = context;
   return {
@@ -155,7 +180,7 @@ module.exports = function versionComparePlugin(context) {
           ids.add(change.id);
         }
       }
-      return {releases};
+      return {releases, categories: collectCategories(releases)};
     },
 
     async contentLoaded({content, actions}) {

@@ -1,17 +1,16 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import {CATEGORY_LABELS} from './categories';
 import styles from './styles.module.css';
 
 const JIRA_BROWSE = 'https://idempiere.atlassian.net/browse/';
 
-export default function ChangeItem({change}) {
+export default function ChangeItem({change, categoryLabel}) {
   return (
     <li className={styles.change}>
       <div className={styles.changeHeader}>
         <span className={clsx(styles.badge, styles[`badge-${change.category}`])}>
-          {CATEGORY_LABELS[change.category] || change.category}
+          {categoryLabel}
         </span>
         <Link to={change.permalink} className={styles.changeTitle}>
           {change.title}

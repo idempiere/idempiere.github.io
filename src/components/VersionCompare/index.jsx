@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import {usePluginData} from '@docusaurus/useGlobalData';
 import {useHistory, useLocation} from '@docusaurus/router';
 import ChangeItem from './ChangeItem';
-import {CATEGORY_LABELS, CATEGORY_ORDER} from './categories';
 import styles from './styles.module.css';
 
 function compareVersions(a, b) {
@@ -52,7 +51,7 @@ function CopyLinkButton() {
 }
 
 export default function VersionCompare() {
-  const {releases} = usePluginData('version-compare');
+  const {releases, categories} = usePluginData('version-compare');
   const location = useLocation();
   const history = useHistory();
 
@@ -111,10 +110,10 @@ export default function VersionCompare() {
     [releases, state],
   );
 
-  const categories = useMemo(() => {
-    const present = new Set(releases.flatMap((r) => r.changes.map((c) => c.category)));
-    return CATEGORY_ORDER.filter((c) => present.has(c));
-  }, [releases]);
+  const labels = useMemo(
+    () => Object.fromEntries(categories.map((c) => [c.id, c.label])),
+    [categories],
+  );
 
   const changes = selected.flatMap((r) => r.changes);
   const countBy = (category) => changes.filter((c) => c.category === category).length;
@@ -146,14 +145,14 @@ export default function VersionCompare() {
       </div>
 
       <div className={styles.chips} role="group" aria-label="Filter by category">
-        {['all', ...categories].map((c) => (
+        {[{id: 'all', label: 'All'}, ...categories].map(({id, label}) => (
           <button
-            key={c}
+            key={id}
             type="button"
-            aria-pressed={state.category === c}
-            className={clsx(styles.chip, state.category === c && styles.chipActive)}
-            onClick={() => update({category: c})}>
-            {c === 'all' ? 'All' : CATEGORY_LABELS[c] || c}
+            aria-pressed={state.category === id}
+            className={clsx(styles.chip, state.category === id && styles.chipActive)}
+            onClick={() => update({category: id})}>
+            {label}
           </button>
         ))}
       </div>
@@ -179,11 +178,11 @@ export default function VersionCompare() {
             </div>
             {state.category === 'all' &&
               categories
-                .filter((c) => countBy(c) > 0)
-                .map((c) => (
-                  <div key={c} className={styles.card}>
-                    <dt>{CATEGORY_LABELS[c] || c}</dt>
-                    <dd>{countBy(c)}</dd>
+                .filter(({id}) => countBy(id) > 0)
+                .map(({id, label}) => (
+                  <div key={id} className={styles.card}>
+                    <dt>{label}</dt>
+                    <dd>{countBy(id)}</dd>
                   </div>
                 ))}
           </dl>
@@ -205,7 +204,11 @@ export default function VersionCompare() {
                 </h2>
                 <ul className={styles.changes}>
                   {release.changes.map((change) => (
-                    <ChangeItem key={change.id} change={change} />
+                    <ChangeItem
+                      key={change.id}
+                      change={change}
+                      categoryLabel={labels[change.category] || change.category}
+                    />
                   ))}
                 </ul>
               </section>
