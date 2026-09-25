@@ -6,8 +6,8 @@
 <title data-rh="true">Legacy ADempiere and early iDempiere migration scripts | iDempiere Open Source ERP</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://idempiere.github.io/img/idempiere-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://idempiere.github.io/img/idempiere-social-card.jpg"><meta data-rh="true" property="og:url" content="https://idempiere.github.io/docs/migration-notes/legacy-adempiere/migration-scripts"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Legacy ADempiere and early iDempiere migration scripts | iDempiere Open Source ERP"><meta data-rh="true" name="description" content="Migration script folders for moving from ADempiere and early iDempiere releases."><meta data-rh="true" property="og:description" content="Migration script folders for moving from ADempiere and early iDempiere releases."><link data-rh="true" rel="icon" href="/img/logo.png"><link data-rh="true" rel="canonical" href="https://idempiere.github.io/docs/migration-notes/legacy-adempiere/migration-scripts"><link data-rh="true" rel="alternate" href="https://idempiere.github.io/docs/migration-notes/legacy-adempiere/migration-scripts" hreflang="en"><link data-rh="true" rel="alternate" href="https://idempiere.github.io/docs/migration-notes/legacy-adempiere/migration-scripts" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Migration Notes","item":"https://idempiere.github.io/docs/category/migration-notes"},{"@type":"ListItem","position":2,"name":"Legacy ADempiere migration","item":"https://idempiere.github.io/docs/category/legacy-adempiere-migration"},{"@type":"ListItem","position":3,"name":"Migration scripts","item":"https://idempiere.github.io/docs/migration-notes/legacy-adempiere/migration-scripts"}]}</script><link rel="icon" href="/img/logo.png">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#0c5f91"><link rel="stylesheet" href="/assets/css/styles.2ad4bd86.css">
-<script src="/assets/js/runtime~main.ff4d9baa.js" defer="defer"></script>
-<script src="/assets/js/main.7acde61d.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.472de35d.js" defer="defer"></script>
+<script src="/assets/js/main.8c501093.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -32,11 +32,10 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-idempiere-10-to-idempiere-20">From iDempiere 1.0 to iDempiere 2.0<a href="#from-idempiere-10-to-idempiere-20" class="hash-link" aria-label="Direct link to From iDempiere 1.0 to iDempiere 2.0" title="Direct link to From iDempiere 1.0 to iDempiere 2.0" translate="no">​</a></h2>
 <p>Apply migration scripts from the following three folders, in order:</p>
 <ul>
-<li class=""><a href="http://bitbucket.org/idempiere/idempiere/src/tip/migration/i1.0c" target="_blank" rel="noopener noreferrer" class="">i1.0c</a> - just the scripts not yet applied</li>
-<li class=""><a href="http://bitbucket.org/idempiere/idempiere/src/tip/migration/i1.0z" target="_blank" rel="noopener noreferrer" class="">i1.0z</a></li>
-<li class=""><a href="http://bitbucket.org/idempiere/idempiere/src/tip/migration/i2.0" target="_blank" rel="noopener noreferrer" class="">i2.0</a></li>
+<li class=""><a href="https://github.com/idempiere/idempiere/tree/master/migration-historic/i1.0c" target="_blank" rel="noopener noreferrer" class="">i1.0c</a> - just the scripts not yet applied</li>
+<li class=""><a href="https://github.com/idempiere/idempiere/tree/master/migration-historic/i1.0z" target="_blank" rel="noopener noreferrer" class="">i1.0z</a></li>
+<li class=""><a href="https://github.com/idempiere/idempiere/tree/master/migration-historic/i2.0" target="_blank" rel="noopener noreferrer" class="">i2.0</a></li>
 </ul>
-<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>These Bitbucket links point to the historic ADempiere-era repository and may no longer resolve.</p></div></div>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-adempiere-360-to-adempiere-361">From ADempiere 360 to ADempiere 361<a href="#from-adempiere-360-to-adempiere-361" class="hash-link" aria-label="Direct link to From ADempiere 360 to ADempiere 361" title="Direct link to From ADempiere 360 to ADempiere 361" translate="no">​</a></h2>
 <p>Apply migration scripts from the following folders, in order:</p>
 <ul>
@@ -47,10 +46,10 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-adempiere-360-to-idempiere-10">From ADempiere 360 to iDempiere 1.0<a href="#from-adempiere-360-to-idempiere-10" class="hash-link" aria-label="Direct link to From ADempiere 360 to iDempiere 1.0" title="Direct link to From ADempiere 360 to iDempiere 1.0" translate="no">​</a></h2>
 <p>Apply migration scripts from the following folders, in order:</p>
 <ul>
-<li class=""><a href="http://bitbucket.org/idempiere/idempiere/src/tip/migration/360lts-i1.0a" target="_blank" rel="noopener noreferrer" class="">360lts-i1.0a</a></li>
-<li class=""><a href="http://bitbucket.org/idempiere/idempiere/src/tip/migration/i1.0a-i1.0b" target="_blank" rel="noopener noreferrer" class="">i1.0a-i1.0b</a></li>
-<li class=""><a href="http://bitbucket.org/idempiere/idempiere/src/tip/migration/i1.0b-i1.0c" target="_blank" rel="noopener noreferrer" class="">i1.0b-i1.0c</a></li>
-<li class=""><a href="http://bitbucket.org/idempiere/idempiere/src/tip/migration/i1.0c" target="_blank" rel="noopener noreferrer" class="">i1.0c</a></li>
+<li class=""><a href="https://github.com/idempiere/idempiere/tree/master/migration-historic/360lts-i1.0a" target="_blank" rel="noopener noreferrer" class="">360lts-i1.0a</a></li>
+<li class=""><a href="https://github.com/idempiere/idempiere/tree/master/migration-historic/i1.0a-i1.0b" target="_blank" rel="noopener noreferrer" class="">i1.0a-i1.0b</a></li>
+<li class=""><a href="https://github.com/idempiere/idempiere/tree/master/migration-historic/i1.0b-i1.0c" target="_blank" rel="noopener noreferrer" class="">i1.0b-i1.0c</a></li>
+<li class=""><a href="https://github.com/idempiere/idempiere/tree/master/migration-historic/i1.0c" target="_blank" rel="noopener noreferrer" class="">i1.0c</a></li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="from-adempiere-361-to-idempiere-10">From ADempiere 361 to iDempiere 1.0<a href="#from-adempiere-361-to-idempiere-10" class="hash-link" aria-label="Direct link to From ADempiere 361 to iDempiere 1.0" title="Direct link to From ADempiere 361 to iDempiere 1.0" translate="no">​</a></h2>
 <p>Apply the same migration scripts as migrating from 360, excluding those already applied when you migrated from 360 to 361.</p>
