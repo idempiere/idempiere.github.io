@@ -1,0 +1,8 @@
+version: "14"
+requirements:
+  java:
+    value: "17"
+    source: https://github.com/idempiere/idempiere/blob/master/org.idempiere.parent/pom.xml
+  zk:
+    value: "10.3.0.1"
+    source: https://github.com/idempiere/idempiere/blob/master/org.idempiere.parent/pom.xml

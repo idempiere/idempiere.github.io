@@ -1,18 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import CodeBlock from '@theme/CodeBlock';
 import styles from './styles.module.css';
 
 const JIRA_BROWSE = 'https://idempiere.atlassian.net/browse/';
 
-export const TYPE_LABELS = {
-  breaking: 'Breaking change',
-  incompatible: 'Backward incompatible',
-  disruptive: 'Disruptive change',
-  action: 'Action needed',
-  requirement: 'Requirement',
-  deprecation: 'Deprecated',
+const REQUIREMENT_LABELS = {
+  java: 'Java',
+  zk: 'ZK',
+  jetty: 'Jetty',
+  postgresql: 'PostgreSQL',
+  oracle: 'Oracle',
 };
 
 const AUDIENCE_PLURALS = {
@@ -21,22 +19,13 @@ const AUDIENCE_PLURALS = {
   admin: 'admins',
 };
 
-const REQUIREMENT_LABELS = {
-  java: 'Java',
-  postgresql: 'PostgreSQL',
-  oracle: 'Oracle',
-  zk: 'ZK',
-};
+const ACRONYMS = new Set(['api', 'sql', 'ui', 'zk', 'uuid', 'jdbc', 'osgi']);
 
-// Renders `code` spans in otherwise plain text.
-function InlineText({text}) {
-  return text.split(/(`[^`]+`)/g).map((part, i) =>
-    part.startsWith('`') && part.endsWith('`') ? (
-      <code key={i}>{part.slice(1, -1)}</code>
-    ) : (
-      <React.Fragment key={i}>{part}</React.Fragment>
-    ),
-  );
+// "breaking-change" -> "Breaking change", "removed-api" -> "Removed API"
+export function tagLabel(tag) {
+  const words = tag.split(/[-_]+/).map((w) => (ACRONYMS.has(w) ? w.toUpperCase() : w));
+  const text = words.join(' ');
+  return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
 // The latest value of each requirement at or below `version`.
@@ -45,7 +34,7 @@ function requirementsAt(releases, version, compareVersions) {
   for (const release of releases) {
     if (compareVersions(release.version, version) > 0) break;
     for (const [key, req] of Object.entries(release.requirements || {})) {
-      result[key] = {...req, version: release.version};
+      result[key] = req;
     }
   }
   return result;
@@ -59,95 +48,31 @@ function RequirementsDelta({releases, from, to, compareVersions}) {
   );
   if (rows.length === 0) return null;
   return (
-    <ul className={styles.requirements}>
-      {rows.map((key) => (
-        <li key={key}>
-          <strong>{REQUIREMENT_LABELS[key]}</strong>{' '}
-          {before[key] ? `${before[key].value} → ${after[key].value}` : after[key].value}{' '}
-          <a href={after[key].source} target="_blank" rel="noopener noreferrer">
-            source
-          </a>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function storageKey(from, to, changeId, index) {
-  return `vc:${from}-${to}:${changeId}:${index}`;
-}
-
-function Step({step, checked, onToggle, id}) {
-  return (
-    <li className={styles.step}>
-      <label className={styles.stepLabel} htmlFor={id}>
-        <input id={id} type="checkbox" checked={checked} onChange={onToggle} />
-        <span className={clsx(checked && styles.stepDone)}>
-          <InlineText text={step.text} />
-        </span>
-      </label>
-      {step.code && (
-        <div className={styles.stepCode}>
-          <CodeBlock language={step.lang || 'text'}>{step.code.trimEnd()}</CodeBlock>
-        </div>
-      )}
-    </li>
-  );
-}
-
-function ActionItem({action, from, to, checked, toggle}) {
-  return (
-    <li className={styles.change}>
-      <div className={styles.changeHeader}>
-        <span className={clsx(styles.badge, styles[`type-${action.type}`])}>
-          {TYPE_LABELS[action.type]}
-        </span>
-        <span className={styles.area}>{action.area}</span>
-        <span className={styles.changeTitle}>{action.title}</span>
-      </div>
-      <p className={styles.changeDescription}>
-        <InlineText text={action.description} />
-      </p>
-      {action.steps.length > 0 && (
-        <ol className={styles.steps}>
-          {action.steps.map((step, i) => {
-            const key = storageKey(from, to, action.id, i);
-            return (
-              <Step
-                key={key}
-                id={key}
-                step={step}
-                checked={!!checked[key]}
-                onToggle={() => toggle(key)}
-              />
-            );
-          })}
-        </ol>
-      )}
-      <div className={styles.refs}>
-        <span className={styles.audience}>
-          For {action.audience.map((x) => AUDIENCE_PLURALS[x]).join(' and ')}
-        </span>
-        {action.refs.jira.map((key) => (
-          <a key={key} href={JIRA_BROWSE + key} target="_blank" rel="noopener noreferrer">
-            {key}
-          </a>
+    <div className={styles.requirementsBox}>
+      <h3>Platform changes</h3>
+      <ul className={styles.requirements}>
+        {rows.map((key) => (
+          <li key={key}>
+            <strong>{REQUIREMENT_LABELS[key]}</strong>{' '}
+            {before[key] ? `${before[key].value} → ${after[key].value}` : after[key].value}{' '}
+            <a href={after[key].source} target="_blank" rel="noopener noreferrer">
+              source
+            </a>
+          </li>
         ))}
-        {action.refs.pr.map((url) => (
-          <a key={url} href={url} target="_blank" rel="noopener noreferrer">
-            {url.replace(/^https?:\/\/(www\.)?github\.com\//, '')}
-          </a>
-        ))}
-        {action.docs && <Link to={action.docs}>Read more</Link>}
-      </div>
-    </li>
+      </ul>
+    </div>
   );
 }
 
-// Checkbox ticks are kept per from/to range in localStorage. All access runs
-// in effects and is wrapped in try/catch, since storage is unavailable during
-// the static build and can be blocked in the browser.
-function useChecklist(from, to, keys) {
+function storageKey(from, to, itemId) {
+  return `vc:${from}-${to}:${itemId}`;
+}
+
+// "Reviewed" ticks are kept per from/to range in localStorage. All access runs
+// in effects or event handlers and is wrapped in try/catch, since storage is
+// unavailable during the static build and can be blocked in the browser.
+function useChecklist(keys) {
   const [checked, setChecked] = useState({});
   const keyList = keys.join('|');
 
@@ -162,7 +87,7 @@ function useChecklist(from, to, keys) {
     }
     setChecked(next);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [from, to, keyList]);
+  }, [keyList]);
 
   const toggle = (key) => {
     setChecked((prev) => {
@@ -179,12 +104,41 @@ function useChecklist(from, to, keys) {
   return [checked, toggle];
 }
 
-export default function UpgradeActions({releases, selected, from, to, compareVersions}) {
-  const withActions = selected.filter((r) => r.upgrade.length > 0);
-  const keys = withActions.flatMap((r) =>
-    r.upgrade.flatMap((a) => a.steps.map((_, i) => storageKey(from, to, a.id, i))),
+function NoteItem({item, checkKey, checked, toggle}) {
+  return (
+    <li className={styles.note}>
+      <input
+        id={checkKey}
+        type="checkbox"
+        checked={checked}
+        onChange={toggle}
+        aria-label={`Reviewed: ${item.title}`}
+      />
+      <div className={clsx(styles.noteBody, checked && styles.noteDone)}>
+        <Link to={item.permalink} className={styles.changeTitle}>
+          {item.title}
+        </Link>
+        {item.summary && <p className={styles.changeDescription}>{item.summary}</p>}
+        {item.jira.length > 0 && (
+          <div className={styles.refs}>
+            {item.jira.map((key) => (
+              <a key={key} href={JIRA_BROWSE + key} target="_blank" rel="noopener noreferrer">
+                {key}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </li>
   );
-  const [checked, toggle] = useChecklist(from, to, keys);
+}
+
+export default function UpgradeActions({releases, selected, from, to, compareVersions}) {
+  const withNotes = selected.filter((r) => r.notes.length > 0);
+  const keys = withNotes.flatMap((r) =>
+    r.notes.flatMap((page) => page.items.map((item) => storageKey(from, to, item.id))),
+  );
+  const [checked, toggle] = useChecklist(keys);
   const done = keys.filter((k) => checked[k]).length;
 
   return (
@@ -196,33 +150,51 @@ export default function UpgradeActions({releases, selected, from, to, compareVer
         to={to}
         compareVersions={compareVersions}
       />
-      {withActions.length === 0 ? (
+      {withNotes.length === 0 ? (
         <p className={styles.muted}>
-          No upgrade notes are recorded for these releases yet. The features
-          below are still worth reading.
+          No migration notes match this range and filter. The features below
+          are still worth reading.
         </p>
       ) : (
         <>
-          {keys.length > 0 && (
-            <p className={styles.progress} role="status">
-              {done} of {keys.length} steps done
-            </p>
-          )}
-          {withActions.map((release) => (
+          <p className={styles.progress} role="status">
+            {done} of {keys.length} notes reviewed. Tick a note once you have
+            checked it for your installation.
+          </p>
+          {withNotes.map((release) => (
             <div key={release.version} className={styles.upgradeRelease}>
               <h3>iDempiere {release.version}</h3>
-              <ul className={styles.changes}>
-                {release.upgrade.map((action) => (
-                  <ActionItem
-                    key={action.id}
-                    action={action}
-                    from={from}
-                    to={to}
-                    checked={checked}
-                    toggle={toggle}
-                  />
-                ))}
-              </ul>
+              {release.notes.map((page) => (
+                <div key={page.id} className={styles.notePage}>
+                  <div className={styles.notePageHeader}>
+                    <Link to={page.permalink} className={styles.notePageTitle}>
+                      {page.kind} notes
+                    </Link>
+                    <span className={styles.audience}>
+                      For {page.audience.map((a) => AUDIENCE_PLURALS[a]).join(', ')}
+                    </span>
+                    {page.tags.map((tag) => (
+                      <span key={tag} className={clsx(styles.badge, styles[`tag-${tag}`])}>
+                        {tagLabel(tag)}
+                      </span>
+                    ))}
+                  </div>
+                  <ul className={styles.notes}>
+                    {page.items.map((item) => {
+                      const key = storageKey(from, to, item.id);
+                      return (
+                        <NoteItem
+                          key={key}
+                          item={item}
+                          checkKey={key}
+                          checked={!!checked[key]}
+                          toggle={() => toggle(key)}
+                        />
+                      );
+                    })}
+                  </ul>
+                </div>
+              ))}
             </div>
           ))}
         </>

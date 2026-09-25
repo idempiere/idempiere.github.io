@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import {usePluginData} from '@docusaurus/useGlobalData';
 import {useHistory, useLocation} from '@docusaurus/router';
 import ChangeItem from './ChangeItem';
-import UpgradeActions from './UpgradeActions';
+import UpgradeActions, {tagLabel} from './UpgradeActions';
 import styles from './styles.module.css';
 
 function compareVersions(a, b) {
@@ -34,6 +34,7 @@ function readQuery(search, versions, defaults) {
     to: pick('to'),
     category: params.get('category') || 'all',
     notes: params.get('notes') === '1',
+    topic: params.get('topic') || 'all',
     audience: AUDIENCES.some((a) => a.id === params.get('audience'))
       ? params.get('audience')
       : 'all',
@@ -83,6 +84,7 @@ export default function VersionCompare() {
     category: 'all',
     audience: 'all',
     notes: false,
+    topic: 'all',
   });
   const [ready, setReady] = useState(false);
 
@@ -102,6 +104,7 @@ export default function VersionCompare() {
     if (state.category !== 'all') params.set('category', state.category);
     if (state.notes) params.set('notes', '1');
     if (state.notes && state.audience !== 'all') params.set('audience', state.audience);
+    if (state.notes && state.topic !== 'all') params.set('topic', state.topic);
     const search = `?${params.toString()}`;
     if (search !== location.search) {
       history.replace({...location, search});
@@ -125,9 +128,11 @@ export default function VersionCompare() {
           changes: r.changes.filter(
             (c) => state.category === 'all' || c.categories.includes(state.category),
           ),
-          upgrade: r.upgrade.filter(
-            (a) =>
-              !state.notes || state.audience === 'all' || a.audience.includes(state.audience),
+          notes: r.notes.filter(
+            (page) =>
+              !state.notes ||
+              ((state.audience === 'all' || page.audience.includes(state.audience)) &&
+                (state.topic === 'all' || page.tags.includes(state.topic))),
           ),
         })),
     [releases, state],
@@ -150,8 +155,20 @@ export default function VersionCompare() {
         .flatMap((r) => r.changes),
     [releases, state.from, state.to],
   );
-  const actions = selected.flatMap((r) => r.upgrade);
-  const breaking = actions.filter((a) => ['breaking', 'incompatible'].includes(a.type)).length;
+  const noteCount = selected.reduce(
+    (n, r) => n + r.notes.reduce((m, page) => m + page.items.length, 0),
+    0,
+  );
+  // Topics are the thematic tags of the migration pages in this range.
+  const topics = useMemo(() => {
+    const found = new Set();
+    for (const r of releases) {
+      if (compareVersions(r.version, state.from) <= 0) continue;
+      if (compareVersions(r.version, state.to) > 0) continue;
+      for (const page of r.notes) page.tags.forEach((t) => found.add(t));
+    }
+    return [...found].sort((a, b) => tagLabel(a).localeCompare(tagLabel(b)));
+  }, [releases, state.from, state.to]);
   const countBy = (category) =>
     rangeChanges.filter((c) => c.categories.includes(category)).length;
 
@@ -197,12 +214,8 @@ export default function VersionCompare() {
               <dd>{selected.length}</dd>
             </div>
             <div className={styles.card}>
-              <dt>Upgrade actions</dt>
-              <dd>{actions.length}</dd>
-            </div>
-            <div className={styles.card}>
-              <dt>Breaking changes</dt>
-              <dd>{breaking}</dd>
+              <dt>Migration notes</dt>
+              <dd>{noteCount}</dd>
             </div>
             <div className={styles.card}>
               <dt>New features</dt>
@@ -218,17 +231,17 @@ export default function VersionCompare() {
               onChange={(e) => update({notes: e.target.checked})}
             />
             <span>
-              Show upgrade notes
+              Show migration notes
               <span className={styles.notesHint}>
-                Breaking changes, platform requirements and the steps to take
-                when you migrate.
+                What to check when you upgrade: breaking changes, removed APIs,
+                database and platform changes, from the Migration Notes docs.
               </span>
             </span>
           </label>
 
           {state.notes && (
             <>
-              <div className={styles.chips} role="group" aria-label="Show upgrade notes for">
+              <div className={styles.chips} role="group" aria-label="Show migration notes for">
                 {AUDIENCES.map(({id, label}) => (
                   <button
                     key={id}
@@ -240,6 +253,23 @@ export default function VersionCompare() {
                   </button>
                 ))}
               </div>
+
+              {topics.length > 0 && (
+                <div className={styles.chips} role="group" aria-label="Filter migration notes by topic">
+                  {[{id: 'all', label: 'All topics'}, ...topics.map((t) => ({id: t, label: tagLabel(t)}))].map(
+                    ({id, label}) => (
+                      <button
+                        key={id}
+                        type="button"
+                        aria-pressed={state.topic === id}
+                        className={clsx(styles.chip, state.topic === id && styles.chipActive)}
+                        onClick={() => update({topic: id})}>
+                        {label}
+                      </button>
+                    ),
+                  )}
+                </div>
+              )}
 
               <UpgradeActions
                 releases={releases}

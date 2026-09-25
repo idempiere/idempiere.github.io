@@ -1,14 +1,17 @@
-// Builds the data for the /upgrade/compare page from two sources:
-// - the existing docs/new-features/v*/ articles. The version comes from the
-//   folder name, the categories from the article's `tags` front matter and the
-//   Jira keys from the "Feature Ticket" or "Technical Info" line.
-// - upgrade-notes/<version>.yml for breaking changes, required actions and
-//   platform requirements (see upgradeNotes.js).
+// Builds the data for the /upgrade/compare page from:
+// - docs/new-features/v*/ articles. The version comes from the folder name,
+//   the categories from the article's `tags` front matter and the Jira keys
+//   from the "Feature Ticket" or "Technical Info" line.
+// - docs/migration-notes/v*/ pages, one note per "## " section
+//   (see migrationNotes.js).
+// - platform-requirements/<version>.yml for Java, ZK, Jetty and database
+//   versions (see requirements.js).
 
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
-const {loadUpgradeNotes, NOTES_DIR} = require('./upgradeNotes');
+const {loadMigrationNotes, NOTES_DIR} = require('./migrationNotes');
+const {loadRequirements, REQUIREMENTS_DIR} = require('./requirements');
 
 const FEATURES_DIR = 'docs/new-features';
 const VERSION_DIR = /^v(\d+(?:\.\d+)*)$/;
@@ -73,7 +76,9 @@ function stripMarkdown(text) {
   return text
     .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
     .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
-    .replace(/[*_`]+/g, '')
+    .replace(/`+/g, '')
+    .replace(/(\*\*|__)(.+?)\1/g, '$2')
+    .replace(/(^|[^\w*])[*_]([^*_\n]+)[*_](?![\w*])/g, '$1$2')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -179,21 +184,24 @@ module.exports = function versionComparePlugin(context) {
         .readdirSync(root, {withFileTypes: true})
         .filter((d) => d.isDirectory() && VERSION_DIR.test(d.name))
         .map((d) => loadVersion(siteDir, d.name));
-      const notes = loadUpgradeNotes(siteDir);
+      const notes = loadMigrationNotes(siteDir);
+      const requirements = loadRequirements(siteDir);
 
-      // A release can have feature articles, upgrade notes or both.
-      const versions = new Set([...features.map((r) => r.version), ...notes.keys()]);
+      // A release can have feature articles, migration notes, requirements or
+      // any mix of them.
+      const versions = new Set([
+        ...features.map((r) => r.version),
+        ...notes.keys(),
+        ...requirements.keys(),
+      ]);
       const releases = [...versions]
         .sort(compareVersions)
-        .map((version) => {
-          const note = notes.get(version);
-          return {
-            version,
-            changes: features.find((r) => r.version === version)?.changes || [],
-            upgrade: note ? note.upgrade : [],
-            requirements: note ? note.requirements : {},
-          };
-        });
+        .map((version) => ({
+          version,
+          changes: features.find((r) => r.version === version)?.changes || [],
+          notes: notes.get(version) || [],
+          requirements: requirements.get(version)?.requirements || {},
+        }));
 
       const ids = new Set();
       for (const release of releases) {
@@ -214,7 +222,8 @@ module.exports = function versionComparePlugin(context) {
     getPathsToWatch() {
       return [
         path.join(siteDir, FEATURES_DIR, 'v*/**/*.{md,mdx}'),
-        path.join(siteDir, NOTES_DIR, '*.{yml,yaml,json}'),
+        path.join(siteDir, NOTES_DIR, 'v*/**/*.{md,mdx}'),
+        path.join(siteDir, REQUIREMENTS_DIR, '*.{yml,yaml,json}'),
       ];
     },
   };

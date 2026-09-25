@@ -14,8 +14,8 @@ export default function ComparePage() {
           Pick the version you run and the version you want to move to. The list
           shows every feature documented in{' '}
           <Link to="/docs/category/new-features">New Features</Link> for the releases
-          in between. Turn on the upgrade notes to see what you need to change
-          when you migrate.
+          in between. Turn on the migration notes to see what you need to check
+          when you upgrade.
         </p>
         <VersionCompare />
       </main>
