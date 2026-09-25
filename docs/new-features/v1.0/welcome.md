@@ -23,7 +23,7 @@ Lookup was moved to the top in order to allow search on the menu even if the lef
 As usual the lookup box also supports slash ( / ) configurable shortcuts - for example test filling lookup with "/O 80001" in GardenWorld (without the quotes)
 
 ## b) Menu
-The menu was moved from the left panel to the top and is now a popup window.  More information about this on [Feature Menu](https://wiki.idempiere.org/en/NF001_Menu)
+The menu was moved from the left panel to the top and is now a popup window.  More information about this on [Feature Menu](/docs/new-features/v1.0/menu)
 
 ## c) Recent Items
 The recent items are direct access to records that the user recently created/updated or touched (meaning with touched the user changed a field, even if not saved)

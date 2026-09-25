@@ -10,7 +10,7 @@ tags: [user-experience]
 **Sponsor:** [Trek Global](https://www.trekglobal.com)
 
 **Description:**
-The new button "Tab Editor" is a [WYSIWYG](http://en.wikipedia.org/wiki/WYSIWYG) application that enables you to see and edit how a tab is going to be displayed. In order to properly arrange the visible fields on a tab, Idempiere takes as a reference the three new fields for web positioning **X Position**, **Column Span** and **Num Lines** ([Form Layout](https://wiki.idempiere.org/en/NF001_FormLayout)), as well as the common used attributes **Sequence**, **Field Group** and **Displayed**.
+The new button "Tab Editor" is a [WYSIWYG](http://en.wikipedia.org/wiki/WYSIWYG) application that enables you to see and edit how a tab is going to be displayed. In order to properly arrange the visible fields on a tab, Idempiere takes as a reference the three new fields for web positioning **X Position**, **Column Span** and **Num Lines** ([Form Layout](/docs/new-features/v1.0/formlayout)), as well as the common used attributes **Sequence**, **Field Group** and **Displayed**.
 
 **Movie Demo:** [Watch on YouTube](https://www.youtube.com/watch?v=3vOmZ0o09KY)
 

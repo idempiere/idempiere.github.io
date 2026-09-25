@@ -11,7 +11,7 @@ tags: [user-experience]
 
 **Description:**
 
-Related to [Import Template](https://wiki.idempiere.org/en/NF2.1_ImportTemplate) there is a process now that can be used to import CSV files.
+Related to [Import Template](/docs/new-features/v2.1/import-template) there is a process now that can be used to import CSV files.
 
 This is interesting as it allows non-UI imports, for example scheduled, or using web services.
 

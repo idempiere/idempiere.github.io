@@ -15,13 +15,7 @@ For release-11, the project moved to the next Long Term Support version of Java.
 
 A number of `Record_UU` columns have been added to core tables, which can represent an increase in storage size and backup size in implementations that have many records in these tables, for example many attachments, or heavy usage of chat, post-it, or labels. The change log can also be affected by size, depending on the System Configurator key `AD_CHANGELOG_SAVE_UUID`.
 
-See the "NF11 UUID Key Tables" wiki page, "Enabled Features for tables with UUID key and without ID key" section, for details.
-
-<!-- TODO: verify — the "NF11 UUID Key Tables" wiki page has not been migrated to Docusaurus yet; linking out to https://wiki.idempiere.org/en/NF11_UUID_Key_Tables until it is. -->
-
-:::note
-See also [Support for pure UUID key tables](/docs/new-features/v11/support-for-pure-uuid-key-tables) for the related feature documentation already migrated to this site.
-:::
+See [Support for pure UUID key tables](/docs/new-features/v11/support-for-pure-uuid-key-tables#enabled-features-for-tables-with-uuid-key-and-without-id-key), "Enabled Features for tables with UUID key and without ID key" section, for details.
 
 ## New MPInstance constructors to manage AD_PInstance.AD_Table_ID
 
@@ -39,9 +33,7 @@ It is also possible that your plugins call processes that fill `AD_PInstance` wi
 
 There was a constructor `MPaymentBatch(Properties, String, String)` that was not used in official core. Its second parameter was the name, and it was intended to create a new record and set the name of the payment batch record.
 
-This constructor conflicts with the new UUID based constructor described in the "NF11 UUID Key Tables" wiki page, so it was replaced by the UUID constructor and its behavior is now completely different.
-
-<!-- TODO: verify — the "NF11 UUID Key Tables" wiki page has not been migrated to Docusaurus yet; linking out to https://wiki.idempiere.org/en/NF11_UUID_Key_Tables#New_UUID_based_constructors until it is. -->
+This constructor conflicts with the new UUID based constructor described in [Support for pure UUID key tables](/docs/new-features/v11/support-for-pure-uuid-key-tables#new-uuid-based-constructors-on-m-model-classes), so it was replaced by the UUID constructor and its behavior is now completely different.
 
 :::warning
 Most likely nobody is using the old constructor, but if you use `MPaymentBatch`'s constructor in your plugins, verify that you are not using this one. If used, change it to a normal constructor with zero as the ID parameter, then set the name separately.

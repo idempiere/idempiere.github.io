@@ -31,9 +31,7 @@ References:
 
 ## Session fingerprinting
 
-Session fingerprinting was added to the ZK Web UI. See the "NF12 Session Fingerprinting" wiki page for the options being checked.
-
-<!-- TODO: verify — the "NF12 Session Fingerprinting" wiki page has not been migrated to Docusaurus yet; linking out to https://wiki.idempiere.org/en/NF12_Session_Fingerprinting until it is. -->
+Session fingerprinting was added to the ZK Web UI.
 
 It is possible your users will be logged out when changing the browser's language during an iDempiere session, or if the browser is updated.
 

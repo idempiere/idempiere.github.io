@@ -19,7 +19,7 @@ When running processes and reports, now you can save the combination of paramete
 
 **Technical Info:** [IDEMPIERE-1572](http://idempiere.atlassian.net/browse/IDEMPIERE-1572)
 
-**See also:** [Run Report as Job](https://wiki.idempiere.org/en/NF2.1_Run_Report_as_Job)
+**See also:** [Run Report as Job](/docs/new-features/v2.1/run-report-as-job)
 
 ---
 

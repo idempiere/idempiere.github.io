@@ -152,7 +152,7 @@ public MTest(Properties ctx, String Test_UU, String trxName)
 ```
 
 ### Problem with MPaymentBatch(Properties, String, String) constructor
-Please refer to the [Migration Notes](https://wiki.idempiere.org/en/Migration_Notes#Constructor_MPaymentBatch.28Properties.2C_String.2C_String.29_changed) for the explanation of an issue found with the MPaymentBatch class.
+Please refer to the [Migration Notes](/docs/migration-notes/v11/technical-notes#constructor-mpaymentbatchproperties-string-string-changed) for the explanation of an issue found with the MPaymentBatch class.
 
 ### Creating a new record
 To create a new record with the _ID constructor, developers used to write:

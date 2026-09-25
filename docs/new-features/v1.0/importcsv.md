@@ -23,7 +23,7 @@ All maintenance and transaction windows have now the ability to import directly 
 1. **Field's Order:** The first line of the CSV file must contain the names of the fields to be imported. Please notice that the order of these fields  is important since field's defaults and CallOuts are going to be applied in the same way.
 1. **Field's Name:** Each column must have a corresponding field's name, this name must be the technical column name on the database (i.e. AD_Org_ID, Name).
 1. **Foreign Fields:** When a column is defined in a foreign table then you can import directly the ID, or you can use a Lookup column enclosed in square brackets, for example AD_Org_ID[Value] will look for the Value column in AD_Org table and AD_Org_ID[Name] will check for the table's name in the AD_Org table.
-1. **Customized Fields:** The exported CSV columns can differ if the user has a customized grid (see [Save Grid Layout](https://wiki.idempiere.org/en/NF001_SaveGridLayout)) then just the customized columns will be exported, otherwise all editable/displayed columns would be exported excepting AD_Client_ID
+1. **Customized Fields:** The exported CSV columns can differ if the user has a customized grid (see [Save Grid Layout](/docs/new-features/v1.0/savegridlayout)) then just the customized columns will be exported, otherwise all editable/displayed columns would be exported excepting AD_Client_ID
 1. **Detail Format Columns:** When a tab is exported with its detail, the generated file will use the character ">" to mark a column as a detail, thus every detail tab is going to be exported in this format  "*Detail_Table_Name>Column_Name*"
 1. **Empty Field:** If for any reason empty fields comes in the cvs file , the importer will just ignore them.
 1. **Clearing a Field's Value:** In case that a value needs to be cleared , the instruction "(null)" can be used to do so.
@@ -216,7 +216,7 @@ Let's create a new Sales Order with three Lines in Insert mode and at the same t
 
 **How to disable this functionality per role and/or window?**
 
-You can disable the export and import buttons per role and/or window using the functionality [Restrict Toolbar Buttons](https://wiki.idempiere.org/en/NF001_RestrictToolbarButtons)
+You can disable the export and import buttons per role and/or window using the functionality [Restrict Toolbar Buttons](/docs/new-features/v1.0/restricttoolbarbuttons)
 
 ## Hints & Tricks
 You can not use the resultset of a joined SQL query for importing. Such a query may contain a record of the main table in more than one rows for every entry of a subtable (e.g.: For a business partner with two locations there are two rows and each one has the fields for c_bpartner filled with the exact same values). This is not allowed. You can circumvent that by using not "import" but "merge" as a process parameter.

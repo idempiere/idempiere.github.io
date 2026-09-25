@@ -54,7 +54,7 @@ Keep this inventory in version control. It will be your checklist during each mi
 
 ### Review Migration Notes
 
-The iDempiere wiki maintains [migration notes](/docs/category/migration-notes) per version. Pay special attention to:
+This site maintains [migration notes](/docs/category/migration-notes) per version. Pay special attention to:
 
 - **Breaking changes:** API removals, deprecations, and behavior changes
 - **Database schema changes:** new mandatory fields and table restructuring

@@ -2,7 +2,7 @@
 sidebar_position: 35
 title: "Model Cascade Delete"
 sidebar_label: "Model Cascade Delete"
-description: "iDempiere allows to define foreign key constraints on database.  In addition to the options implemented with [DB Objects in Dictionary](https://wiki.id"
+description: "iDempiere allows to define foreign key constraints on database."
 tags: [technical]
 ---
 **Goal:** Technical

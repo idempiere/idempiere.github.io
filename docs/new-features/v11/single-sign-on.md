@@ -13,7 +13,7 @@ tags: [functional]
 ## Goal
 iDempiere 11 has added support for single sign-On. Single sign-on on help to get authenticated with third party identity provider like Azure MSAL or AWS cognito server. This remove requirement to store credentials of employee in database and make more secure against threat exposing user data.
 
-iDempiere provides services to implement plugin for any SSO providers. The goal of this How-To is to show how to develop plug-in project to support new SSO provider. For creating blank plugin project, refer guide as [Get Your Plugins Running](https://wiki.idempiere.org/en/Developing_Plug-Ins_-_Get_your_Plug-In_running.Explanations)
+iDempiere provides services to implement plugin for any SSO providers. The goal of this How-To is to show how to develop plug-in project to support new SSO provider. For creating blank plugin project, refer guide as [Get Your Plugins Running](/docs/basic-development/plugin-development/plugin-running-locally)
 
 logilite has developed and made available plugins for MSAL  (Azure) and AWS Cognito.
 

@@ -20,7 +20,7 @@ tags: [functional]
 - Allow definition of info window for any table without any Java coding.
 - Allow opening of info window from application menu.
 - Allow a field to specify which info window to used.
-- Now extended with Process button - [NF3.0_Process_on_Info_Window](https://wiki.idempiere.org/en/NF3.0_Process_on_Info_Window)
+- Now extended with Process button - [NF3.0_Process_on_Info_Window](/docs/new-features/v2.1/info-window-process)
 
 ## Info Window
 ![NF001 InfoWindowHeader](pathname:///img/new-features/v1.0/NF001_InfoWindowHeader.png)

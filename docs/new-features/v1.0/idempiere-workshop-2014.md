@@ -20,7 +20,7 @@ There was a iDempiere workshop in August 2014 held by Carlos Ruiz (organized by 
 ## Overview
 This part of the workshop gives an overview of the new features of iDempiere 1.0, 2.0, 3.0, ... Carlos opened the New Feature Category and we talked about the more interesting points
 
-### [:Category:New_Features_v1.0](https://wiki.idempiere.org/en/:Category:New_Features_v1.0)
+### [:Category:New_Features_v1.0](/docs/category/v10-1)
 - Load Balancing/Hazelcast
 - 2Pack (improvements, usage with the export button, exporting of detail tabs)
 - Fitnesse/ Selenium (not very many tests done yet, but a good tool to do functional tests for your own implementation. Examples are in the plugin)
@@ -36,7 +36,7 @@ This part of the workshop gives an overview of the new features of iDempiere 1.0
 - Frequent List
 - Importer in CSV (that is a very powerful but also dangerous function)
 - Context Help at the right side of the window (a Context must be created in System, connected to a tab and a new message can be created in the Tentant)
-- Status Line (was static, now it can be configured in [NF3.0_Quick_Info_Widget](https://wiki.idempiere.org/en/NF3.0_Quick_Info_Widget) and [NF2.1_Configurable_Status_Line](/docs/new-features/v2.1/configurable-status-line)) and shown in the help area at the right side
+- Status Line (was static, now it can be configured in [NF3.0_Quick_Info_Widget](/docs/new-features/v2.1/quick-info-widget) and [NF2.1_Configurable_Status_Line](/docs/new-features/v2.1/configurable-status-line)) and shown in the help area at the right side
 - Processes show links to processed documents
 - Saved Parameters in every Process Parameter window
 - The Payment Field changed (if document is not completed, it is now a list; if completed it shows a button. Payment methods are extendable via an osgi plugin)
@@ -48,14 +48,14 @@ This part of the workshop gives an overview of the new features of iDempiere 1.0
 
 (See the page for links to most of these features.)
 
-### [:Category:New_Features_v2.0](https://wiki.idempiere.org/en/:Category:New_Features_v2.0)
+### [:Category:New_Features_v2.0](/docs/category/v20)
 - Charts
 - Management of Dashboard Gadgets
 - improved Management of Views in the database and constraints
 - Focus (you can set the default focus field when you open a record)
 - Set the Title of a Tab
 
-### [:Category:New_Features_v3.0](https://wiki.idempiere.org/en/:Category:New_Features_v3.0)
+### [:Category:New_Features_v3.0](/docs/category/v30)
 - new html start page (can be configured with the file home.properties)
 - default chart of accounts and deactivate default accounts
 - process to create requests from email
@@ -75,7 +75,7 @@ This part of the workshop gives an overview of the new features of iDempiere 1.0
     - To see a reference value (e.g. the Invoice Rule "After Invoice Delivered" is written as "O") you can also use the "Value Preference Window"
     - use this page to find informations about fields, tables, processes, etc: http://wiki.idempiere.org/en/Manual
     - Use this to see a analysis of the table relationships in the database: http://globalqss.com/idempiere/2.0_20131230/schemaspy/
-- To migrate a given ADempiere system you can get helping documentation at http://wiki.idempiere.org/en/Migration_Notes
+- To migrate a given ADempiere system you can get helping documentation in the [migration notes](/docs/migration-notes/legacy-adempiere/migration-scripts)
 - You can change the look & feel and the branding by changing the theme. Nicolas wrote [Add_your_theme](https://wiki.idempiere.org/en/Add_your_theme)
 - To allow smaller units of measure than in your main uom: There is a System Configuration Value ProductUOMConversionRateValidate. Opening this option can lead to rounding problems in the inventory. (These problems lead to funny values but will not break the functionality.)
 
@@ -203,18 +203,18 @@ Both ways to export a 2Pack file (using the Windo or the Export Button) use 2Pac
 ## Code
 We followed the documentation done by Jan Thielemann at [:Category:Plug-In_Development](https://wiki.idempiere.org/en/:Category:Plug-In_Development). We used the following documents in our workshop:
 
-- [Developing_plug-ins_without_affecting_the_trunk](https://wiki.idempiere.org/en/Developing_plug-ins_without_affecting_the_trunk)
-- [Developing_Plug-Ins_-_Get_your_Plug-In_running](https://wiki.idempiere.org/en/Developing_Plug-Ins_-_Get_your_Plug-In_running)
+- [Developing_plug-ins_without_affecting_the_trunk](/docs/basic-development/plugin-development/developing-plugins)
+- [Developing_Plug-Ins_-_Get_your_Plug-In_running](/docs/basic-development/plugin-development/plugin-running-locally)
 
 We want that in the tax table it is not possible to set a CountryGroup and a Country at the very same time. To get this there are different ways:
 
-- http://wiki.idempiere.org/en/Developing_Plug-Ins_-_IModelFactory
+- [Developing_Plug-Ins_-_IModelFactory](/docs/basic-development/plugin-development/plugin-modelfactory)
 : With that you can create a whole new model class. We can use this for our own tables like C_CountryGroup (Using the GenerateModel Launch Configuration insode Eclipse). There is also a way to use this for extended trunk classes. For that you can use GenerateModel to only create the Interface of C_Tax. Then you can extend the trunk Tax class implementing your new interface. You have to extend the getters and setters by hand. This is a bit dangerous because
 
-- http://wiki.idempiere.org/en/Developing_Plug-Ins_-_ModelValidator
+- [Developing_Plug-Ins_-_ModelValidator](/docs/basic-development/plugin-development/plugin-modelvalidator)
 : This is like the old ADempiere way of validating a model. There are events for some different points in the lifetime of a record.
 
-- http://wiki.idempiere.org/en/Developing_Plug-Ins_-_Model_Events
+- [Developing_Plug-Ins_-_Model_Events](/docs/basic-development/plugin-development/plugin-eventhandler)
 : This is the most powerful way to set events in the lifetime of objects but it also takes events about login, windows, etc.
 
 ## Results

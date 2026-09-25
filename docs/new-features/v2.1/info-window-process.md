@@ -26,7 +26,7 @@ tags: [technical]
 ![InfoWindowProcess](pathname:///img/new-features/v2.1/InfoWindowProcess.jpg)
 
 ## Description
-- As extension of [NF001_Info_Window](https://wiki.idempiere.org/en/NF001_Info_Window), now with an extra Process button that is configured in the Info Window to a defined process.
+- As extension of [NF001_Info_Window](/docs/new-features/v1.0/info-window), now with an extra Process button that is configured in the Info Window to a defined process.
 - The Process class has to access the T_Selection table which stores the selected multiple records in the Info Window.
 - This is very simple and convenient to use as the Info Window can be configured to display a set of records in a SQL JOIN plan.
 - If only single record selected the Zoom button will enable for Look-Up.
