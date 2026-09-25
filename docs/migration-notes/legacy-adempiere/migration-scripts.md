@@ -2,7 +2,7 @@
 sidebar_label: "Migration scripts"
 sidebar_position: 1
 description: "Migration script folders for moving from ADempiere and early iDempiere releases."
-tags: [features, migration, installation, development, developer-documentation, reference]
+tags: [features, migration, installation, development, developer-documentation, reference, adempiere, database]
 ---
 
 # Legacy ADempiere and early iDempiere migration scripts

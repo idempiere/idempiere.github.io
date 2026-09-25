@@ -2,7 +2,7 @@
 sidebar_label: "Functional notes"
 sidebar_position: 2
 description: "Functional migration notes for upgrading to iDempiere 1.0."
-tags: [features, migration, installation, development, developer-documentation, reference]
+tags: [features, migration, installation, development, developer-documentation, reference, v1.0, breaking-change, deprecation, security]
 ---
 
 # Migration notes - iDempiere 1.0 (functional)

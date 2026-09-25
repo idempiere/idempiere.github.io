@@ -2,7 +2,7 @@
 sidebar_label: "Removed deprecated APIs"
 sidebar_position: 2
 description: "Reference list of classes and methods removed in iDempiere 13 that had been deprecated for more than two major releases."
-tags: [features, migration, installation, development, developer-documentation, reference]
+tags: [features, migration, installation, development, developer-documentation, reference, v13, removed-api, breaking-change]
 ---
 
 # Removed deprecated APIs - iDempiere 13

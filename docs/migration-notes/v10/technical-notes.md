@@ -2,7 +2,7 @@
 sidebar_label: "Technical notes"
 sidebar_position: 1
 description: "Technical migration notes for upgrading to iDempiere 10."
-tags: [features, migration, installation, development, developer-documentation, reference]
+tags: [features, migration, installation, development, developer-documentation, reference, v10, breaking-change, deprecation, configuration, performance]
 ---
 
 # Migration notes - iDempiere 10 (technical)

@@ -2,7 +2,7 @@
 sidebar_label: "Technical notes"
 sidebar_position: 1
 description: "Technical migration notes for upgrading to iDempiere 14."
-tags: [features, migration, installation, development, developer-documentation, reference]
+tags: [features, migration, installation, development, developer-documentation, reference, v14, breaking-change, architecture, configuration]
 ---
 
 # Migration notes - iDempiere 14 (technical)

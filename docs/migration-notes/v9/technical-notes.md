@@ -2,7 +2,7 @@
 sidebar_label: "Technical notes"
 sidebar_position: 1
 description: "Technical migration notes for upgrading to iDempiere 9 Horizon."
-tags: [features, migration, installation, development, developer-documentation, reference]
+tags: [features, migration, installation, development, developer-documentation, reference, v9, breaking-change, deprecation, database, security]
 ---
 
 # Migration notes - iDempiere 9 Horizon (technical)
