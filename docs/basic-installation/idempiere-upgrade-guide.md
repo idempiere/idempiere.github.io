@@ -19,7 +19,7 @@ Successful migration requires careful planning, thorough testing, and systematic
 
 Review these artifacts before starting your upgrade:
 
-- [Release notes for your target version](https://wiki.idempiere.org/en/Migration_Notes#Version_iDempiere_13)
+- [Release notes for your target version](/docs/category/migration-notes)
 - Migration notes for every version jump
 - Installation guide for the target iDempiere version
 
@@ -54,7 +54,7 @@ Keep this inventory in version control. It will be your checklist during each mi
 
 ### Review Migration Notes
 
-The iDempiere wiki maintains [migration notes](https://wiki.idempiere.org/en/Migration_Notes#Version_iDempiere_13) per version. Pay special attention to:
+The iDempiere wiki maintains [migration notes](/docs/category/migration-notes) per version. Pay special attention to:
 
 - **Breaking changes:** API removals, deprecations, and behavior changes
 - **Database schema changes:** new mandatory fields and table restructuring

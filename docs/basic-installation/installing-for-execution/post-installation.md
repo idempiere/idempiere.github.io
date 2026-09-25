@@ -10,7 +10,7 @@ These are probably not that important if your server is not open to the internet
 
 ## Recommended minimal steps
 
-- When coming from an old version take a look to the [Migration Notes](https://wiki.idempiere.org/en/Migration_Notes)
+- When coming from an old version take a look to the [Migration Notes](/docs/category/migration-notes)
 - Install an http server to be used a proxy for iDempiere - most used are nginx or apache. See [Proxy iDempiere Through Nginx](https://wiki.idempiere.org/en/Proxy_iDempiere_Through_Nginx)
     - Configure your proxy to publish just /webui - iDempiere by default has several other services published
     - if you plan to use SOAP webservices externally you must publish also /ADInterface

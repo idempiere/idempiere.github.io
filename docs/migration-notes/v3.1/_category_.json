@@ -1,0 +1,8 @@
+{
+  "label": "v3.1",
+  "position": 9,
+  "link": {
+    "type": "generated-index",
+    "description": "Migration notes for upgrading to iDempiere 3.1."
+  }
+}
