@@ -36,7 +36,3 @@ And this is the resulting order based on the recurring run of the example:
 ![05 Recurring](pathname:///img/new-features/v2.1/05_Recurring.png)
 
 **Technical Info:** [IDEMPIERE-2100](http://idempiere.atlassian.net/browse/IDEMPIERE-2100)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Recurring_Run_Automation)_

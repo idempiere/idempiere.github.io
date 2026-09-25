@@ -33,7 +33,3 @@ _BOM Formula field at Production window_
 1. * ![Create Production BOM Formula 1250](pathname:///img/new-features/v9/Create_Production_BOM_Formula_1250.png)
 
 _BOM Formula field at Create Production dialog_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Multi_BOM_Mfg_Light)_

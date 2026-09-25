@@ -28,7 +28,3 @@ In the mail dialog window you can see the result of enabling this functionality 
 ![03 MailSignature](pathname:///img/new-features/v2.1/03_MailSignature.png)
 
 **Technical Info:** [IDEMPIERE-1899](http://idempiere.atlassian.net/browse/IDEMPIERE-1899)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Mail_Signature_And_Images)_

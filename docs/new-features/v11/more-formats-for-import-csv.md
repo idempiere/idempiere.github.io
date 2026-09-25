@@ -25,7 +25,3 @@ The import CSV template allows now to define more options:
 - [NF2.1 Import Template](/docs/new-features/v2.1/import-template)
 - [NF2.1 Import CSV_Process](/docs/new-features/v2.1/import-csv-process)
 - [NF3.0 CSV Importer Single Transaction](/docs/new-features/v3.0/csv-importer-single-transaction)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_More_Formats_for_Import_CSV)_

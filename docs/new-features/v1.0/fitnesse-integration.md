@@ -47,7 +47,3 @@ Allow user and developer to create and execute Fitnesse test within the iDempier
 - Starter guide [Fitnesse.HowTo](https://wiki.idempiere.org/en/Fitnesse.HowTo)
 - Tested working on [SLIM](http://red1.org/adempiere/viewtopic.php?f=45&t=1777)
 - [Plugin:_FitNesse_RollBack](https://wiki.idempiere.org/en/Plugin:_FitNesse_RollBack)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Fitnesse_Integration)_

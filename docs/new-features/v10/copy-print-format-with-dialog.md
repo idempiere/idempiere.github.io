@@ -17,7 +17,3 @@ tags: [user-experience]
 
 - Avoid make random print formats  - new dialog ask for new print format name (validate new name existence, adding timestamp if necessary)
 ![Copy format by dialog](pathname:///img/new-features/v10/Copy_format_by_dialog.gif)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Copy_Print_format_With_Dialog)_

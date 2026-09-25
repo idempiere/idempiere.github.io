@@ -32,7 +32,3 @@ Click on the day, in which you want to create the new request
 It is possible to see the summary of the request by clicking on items in the calendar. For more detailed information you can click on the "Zoom" button , this will display the request in "Request All" window
 
 **Technical Info:** [IDEMPIERE-357](http://idempiere.atlassian.net/browse/IDEMPIERE-357)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Request_Calendar_Dashboard)_

@@ -25,7 +25,3 @@ A new System Configuration record was added: USE_ESC_FOR_TAB_CLOSING. If it is s
 - Y - use ESC for closing tabs
 
 - N - use Alt+X for closing tabs
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_ESC/Alt+X_Shortcut_for_Closing_Tabs)_

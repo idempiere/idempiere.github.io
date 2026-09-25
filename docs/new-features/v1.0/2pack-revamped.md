@@ -45,7 +45,3 @@ With the revamped 2Pack you can:
 ![01 PackIn](pathname:///img/new-features/v1.0/01_PackIn.png)
 
 **Technical Info:** [IDEMPIERE-254](http://idempiere.atlassian.net/browse/IDEMPIERE-254)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_2Pack_Revamped)_

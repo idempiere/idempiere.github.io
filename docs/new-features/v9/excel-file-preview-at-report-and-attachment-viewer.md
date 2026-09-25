@@ -32,7 +32,3 @@ Example for attachment:
 ![4801 Attachment Preview](pathname:///img/new-features/v9/4801_Attachment_Preview.png)
 
 _View Attached Excel File_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Excel_File_Preview)_

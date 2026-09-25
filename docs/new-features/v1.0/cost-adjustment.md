@@ -46,7 +46,3 @@ The standard cost update process have been modify to create cost adjustment docu
 ![Cost Adjustment Standard Cost Update](pathname:///img/new-features/v1.0/Cost_Adjustment_Standard_Cost_Update.png)
 
 **Technical Info:** [IDEMPIERE-1180](http://idempiere.atlassian.net/browse/IDEMPIERE-1180)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Cost_Adjustment)_

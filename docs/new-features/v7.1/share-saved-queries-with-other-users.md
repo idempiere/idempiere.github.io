@@ -36,7 +36,3 @@ The save and share button are disabled when a search filter that does not belong
 ![DisableQueryButtons](pathname:///img/new-features/v7.1/DisableQueryButtons.jpg)
 
 **Technical Info:** [IDEMPIERE-2837](https://idempiere.atlassian.net/browse/IDEMPIERE-2837)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_Share_Saved_Queries)_

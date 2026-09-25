@@ -24,7 +24,3 @@ Click in the button appear a popup with the columns that can choose what columns
 ![custom3](pathname:///img/new-features/v1.0/custom3.png)
 
 **Technical Info:** [IDEMPIERE-177](http://idempiere.atlassian.net/browse/IDEMPIERE-177)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_WindowCustomization)_

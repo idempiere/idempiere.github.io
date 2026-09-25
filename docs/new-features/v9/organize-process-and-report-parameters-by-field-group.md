@@ -29,7 +29,3 @@ _Process Customization Window_
 ![1994 Example](pathname:///img/new-features/v9/1994_Example.png)
 
 _Business Partner Detail Example_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Process_Parameter_Field_Group)_

@@ -66,7 +66,3 @@ Several actions can be done in several ways by using the options described above
 ***Notice: Any change on the form will be only saved  if the green tick is pressed.***
 
 **Technical Info:** [IDEMPIERE-457](http://idempiere.atlassian.net/browse/IDEMPIERE-457)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_TabEditor)_

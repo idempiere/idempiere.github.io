@@ -33,7 +33,3 @@ One or many virtual columns can passed on as parameters after the trxName parame
  new Query(Env.getCtx(), MTest.Table_Name, MTest.COLUMNNAME_Test_ID + "=?", getTrxName())
    .setVirtualColumns(I_Test.COLUMNNAME_TestVirtualQty).first();
 ```
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Virtual_Column_Lazy_Loading)_

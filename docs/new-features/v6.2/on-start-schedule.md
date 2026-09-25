@@ -18,7 +18,3 @@ The configuration is simply to define a Schedule and leave the Scheduler Type fi
 ![StartSchedule](pathname:///img/new-features/v6.2/StartSchedule.png)
 
 **Technical Info:** [IDEMPIERE-3823](https://idempiere.atlassian.net/browse/IDEMPIERE-3823)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_On_Start_Schedule)_

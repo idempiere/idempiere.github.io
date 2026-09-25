@@ -34,7 +34,3 @@ The Client (not System) roles can inherit from Master Role, In the tab "Included
 Is it possible also to configure Document Action Access on System Master Roles to be inherited to roles, to do that you must create base documents on System.
 
 **Technical Info:** [IDEMPIERE-366](http://idempiere.atlassian.net/browse/IDEMPIERE-366)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Role_Inheritance)_

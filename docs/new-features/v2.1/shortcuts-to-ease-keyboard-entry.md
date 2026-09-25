@@ -22,7 +22,3 @@ In order to ease data entry without using the mouse, some new shortcuts were imp
 You can see the full list of shortcuts and swipe events implemented at this [link](https://wiki.idempiere.org/en/Shortcuts)
 
 **Technical Info:** [IDEMPIERE-2112](http://idempiere.atlassian.net/browse/IDEMPIERE-2112)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Shortcuts_To_Ease_Keyboard_Entry)_

@@ -34,7 +34,3 @@ It is also possible to override this configuration in the "Field" tab of the "Wi
 **Technical Info:** [IDEMPIERE-686](http://idempiere.atlassian.net/browse/IDEMPIERE-686)
 
 NOTE the column configuration also affects the copied columns when you programatically calls a PO.copyValues - if you want a column to be copied with PO.copyValues but not in a window, then you must allow copy on column and disallow it on field.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Configurable_Copy_Fields)_

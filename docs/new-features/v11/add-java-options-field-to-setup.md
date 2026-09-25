@@ -24,7 +24,3 @@ Scripts that depends on the number of parameters read by console-setup.sh will n
 
 ### Limitation
 Changes to *Java Options* field will not be added to idempiere.ini file. Therefore, if you start your server using the native executable (for e.g "./idempiere") instead of the shell script (for e.g "./idempiere-server.sh"), you will still need to edit idempiere.ini to add JVM options.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Add_Java_Options_Field_To_Setup)_

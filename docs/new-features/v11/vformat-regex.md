@@ -38,7 +38,3 @@ And now the user would see the error like:
 ![04 Error](pathname:///img/new-features/v11/04_Error.png)
 
 **Technical Info:** [IDEMPIERE-6096](https://idempiere.atlassian.net/browse/IDEMPIERE-6096)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_VFormat_RegEx)_

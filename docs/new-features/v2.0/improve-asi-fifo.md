@@ -20,7 +20,3 @@ Also, a field "Use Warranty Date for Material Policy" was added to the ASI defin
 ![01 Improve ASI FIFO](pathname:///img/new-features/v2.0/01_Improve_ASI_FIFO.png)
 
 **Technical Info:** [IDEMPIERE-386](http://idempiere.atlassian.net/browse/IDEMPIERE-386)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Improve_ASI_FIFO)_

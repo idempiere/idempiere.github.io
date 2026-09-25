@@ -120,7 +120,3 @@ Example to show the ConvertedAmt on a report based on RV_Payment:
 Please note that the beanshell interpreter is a very powerful tool, but also very dangerous. The script field could be misused for SQL Injection, exposing database sensitive information, or even running scripts in the operating system.
 
 That's why the script field is protected, just to be configured by advanced roles.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/How_To:_Using_Print_Format_Item_Scripts_In_Reports)_

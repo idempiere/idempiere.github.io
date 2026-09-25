@@ -44,7 +44,3 @@ Now you can configure preferences based on each user/client in the preference po
 - Now you have your new preference for users.
 
 **Technical Info:** [IDEMPIERE-2556](https://idempiere.atlassian.net/browse/IDEMPIERE-2556)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF3.0_User_Preference)_

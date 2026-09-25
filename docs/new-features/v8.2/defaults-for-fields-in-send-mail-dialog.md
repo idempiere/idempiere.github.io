@@ -103,7 +103,3 @@ protected void doHandleEvent(Event event) {
 ```
 
 **Technical Info:** [IDEMPIERE-4986](https://idempiere.atlassian.net/browse/IDEMPIERE-4986)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Defaults_for_Fields_in_Send_Mail_Dialog)_

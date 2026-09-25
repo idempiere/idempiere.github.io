@@ -25,7 +25,3 @@ The process will only add the new permission that automatic role doesn't have ye
 ![role1 1](pathname:///img/new-features/v1.0/role1-1.png)
 
 **Technical Info:** [IDEMPIERE-162](http://idempiere.atlassian.net/browse/IDEMPIERE-162)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Role_Access_Update_Improved)_

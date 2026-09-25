@@ -25,7 +25,3 @@ Manufacturing Light is intended to provide the opportunity for a staged implemen
 and skills.
 
 Please refer to documentation from Adaxa for further information: [HowTo Manufacturing Light v3](http://docs.google.com/a/trekglobal.com/folder/d/0B3bIqlUcP8LccElYY25nNkNCMlU/edit?pli=1&docId=0ByPzKfdoZESTZnB3SFRQcnZMRm8)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Manufacturing_Light)_

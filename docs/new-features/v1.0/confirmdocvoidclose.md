@@ -26,7 +26,3 @@ And then when a user tries to close or void it's asked to confirm:
 ![NF10ConfirmDocVoidClose03](pathname:///img/new-features/v1.0/NF10ConfirmDocVoidClose03.png)
 
 **Technical Info:** [IDEMPIERE-1442](http://idempiere.atlassian.net/browse/IDEMPIERE-1442)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_ConfirmDocVoidClose)_

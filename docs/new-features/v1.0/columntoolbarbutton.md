@@ -29,7 +29,3 @@ Option to display column button as part of the window toolbar instead of in the 
 **Result**
 
 ![NF001 ColumnToolbarButton003](pathname:///img/new-features/v1.0/NF001_ColumnToolbarButton003.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_ColumnToolbarButton)_

@@ -22,7 +22,3 @@ Should have migrated existing configuration of Role or user on PA_DocumentStatus
 If no record in Access table then consider access is available to all Role considering current Window and form access to work as it is.
 
 xtab mattermost design discussion → https://mattermost.idempiere.org/idempiere/pl/ipw7ha1hh38j7c5xaf6e5i349a
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Add_Access_Tab_Document_Status_Activity)_

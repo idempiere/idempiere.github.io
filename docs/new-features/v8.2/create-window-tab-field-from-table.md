@@ -46,7 +46,3 @@ Notes:
 - If the table's Window column is empty, the process will set AD_Window_ID = created window ID.
 
 **Technical Info:** [IDEMPIERE-1026](https://idempiere.atlassian.net/browse/IDEMPIERE-1026)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Create_Window_From_Table)_

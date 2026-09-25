@@ -32,7 +32,3 @@ Result in these records:
 - Please note that the conversion of SQL statements are cached in memory, if a LIKE query was executed previously will be converted to LIKE again until the user executes the "Cache Reset" process.
 
 - PostgreSQL documentation about SIMILAR TO can be found [on this link](https://www.postgresql.org/docs/9.6/static/functions-matching.html#FUNCTIONS-SIMILARTO-REGEXP)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF5.1_FindSimilarTo)_

@@ -18,7 +18,3 @@ NOTE the java implementation checks many, but not all, syntax rules. Also note t
 ![NF20ValidateEMail](pathname:///img/new-features/v2.0/NF20ValidateEMail.png)
 
 **Technical Info:** [IDEMPIERE-1409](http://idempiere.atlassian.net/browse/IDEMPIERE-1409) [InternetAddress validate](http://docs.oracle.com/javaee/1.4/api/javax/mail/internet/InternetAddress.html#validate())
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Validate_EMail_Format)_

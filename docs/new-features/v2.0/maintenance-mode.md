@@ -20,7 +20,3 @@ The normal users will see a window like this:
 Please note just Advanced roles are able to login in maintenance mode.
 
 **Technical Info:** [IDEMPIERE-1717](http://idempiere.atlassian.net/browse/IDEMPIERE-1717)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Maintenance_Mode)_

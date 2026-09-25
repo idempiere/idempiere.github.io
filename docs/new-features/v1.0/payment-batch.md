@@ -27,14 +27,6 @@ And then when reconciling bank statement, you can choose to reconcile based on a
 
 Other notes collected related to this functionality:
 
-[changeset 8ea10ec](http://bitbucket.org/idempiere/idempiere-historic/commits/8ea10ec)
-
-[changeset ee19655](http://bitbucket.org/idempiere/idempiere-historic/commits/ee19655)
-
-[changeset 4a08fa4](http://bitbucket.org/idempiere/idempiere-historic/commits/4a08fa4)
-
-[changeset 1cd8330](http://bitbucket.org/idempiere/idempiere-historic/commits/1cd8330)
-
 - http://adempiere.com/wiki/images/b/ba/Batch_AR_Receipts.pdf - Description of the feature from Alejandro Falcone
 - http://sourceforge.net/p/adempiere/discussion/610546/thread/a74be921/?limit=25&page=1#17a5/d3c9/5018 - First mention of this feature in the ADempiere forums I could find
 - http://sourceforge.net/p/adempiere/discussion/611161/thread/a434e7f1 - another discussion that deals with similar things and talks about this feature
@@ -43,7 +35,3 @@ Other notes collected related to this functionality:
 **See also:**
 
 [NF12 Multiple Payments against statement line by Payment Batch](/docs/new-features/v12/multiple-payments-against-statement-line-by-payment-batch)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Payment_Batch)_

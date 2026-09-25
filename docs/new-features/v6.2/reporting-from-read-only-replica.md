@@ -54,7 +54,3 @@ In such cases, the following postgresql.conf parameters can help:
 See [runtime-config-replication on PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-replication.html#GUC-MAX-STANDBY-ARCHIVE-DELAY)
 
 **Technical Info:** [IDEMPIERE-3850](https://idempiere.atlassian.net/browse/IDEMPIERE-3850)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Reporting_from_Read-Only_Replica)_

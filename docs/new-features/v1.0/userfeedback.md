@@ -39,7 +39,3 @@ Add user feedback menu to make it easier for user to create support request or c
 1. List of attachment for the email. The system will auto add the system log and a screenshot of current page here. You can use the X button to remove any attachment that you don't want to include (except the system log).
 1. Enter the description of your issue or request here.
 1. Use the attachment button to add additional document or image to the email.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_UserFeedback)_

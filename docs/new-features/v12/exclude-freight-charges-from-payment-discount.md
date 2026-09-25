@@ -17,7 +17,3 @@ To improve the accuracy of payment discounts, a new flag *IsExcludedFromDiscount
 NOTE this calculation works just when the [Tenant Info](https://wiki.idempiere.org/en/Tenant_(Window_ID-109)#Tab:_Tenant_Info) flag "Discount calculated from Line Amounts" is enabled.
 
 ![NewChargeFlag](pathname:///img/new-features/v12/NewChargeFlag.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Exclude_Charges_From_Payment_Discount)_

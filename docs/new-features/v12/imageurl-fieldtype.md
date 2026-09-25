@@ -83,7 +83,3 @@ _the imageurl editor allow click on field, and enter web url_
 ![Info window grid hover](pathname:///img/new-features/v12/Info-window-grid-hover.png)
 
 _the screen shows how the user can zoom in on the details of the image by on hover_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_ImageURL_Fieldtype)_

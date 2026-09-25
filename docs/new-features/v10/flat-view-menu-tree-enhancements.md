@@ -35,7 +35,3 @@ _ZK_FLAT_VIEW_MENU_TREE Tenant Config_
 ![5213 FlatViewMenuTree](pathname:///img/new-features/v10/5213_FlatViewMenuTree.png)
 
 _Flat View Menu Tree_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Flat_View_Menu_Tree_Enhancement)_

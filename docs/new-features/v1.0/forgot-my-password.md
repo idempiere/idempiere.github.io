@@ -45,7 +45,3 @@ The second time the user use "Forgot my Password" ,the dialog displays the secur
 ![Screenshot12](pathname:///img/new-features/v1.0/Screenshot12.png)
 
 **Technical Info:** [IDEMPIERE-375](http://idempiere.atlassian.net/browse/IDEMPIERE-375)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Forgot_My_Password)_

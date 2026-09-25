@@ -39,7 +39,3 @@ _Zoom across from Shipment Line to Production_
 - ![Production Shipment Line 5031](pathname:///img/new-features/v9/Production_Shipment_Line_5031.png)
 
 _Shipment Line reference at Production_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Auto_Produce_Mfg_Light)_

@@ -59,7 +59,3 @@ public class MyBankStatementMatcherFactory extends MappedByNameFactory<BankState
 ```
 
 **Technical Info:** [IDEMPIERE-4704](https://idempiere.atlassian.net/browse/IDEMPIERE-4704)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_OSGi_New_Mapped_By_Name_Factory)_

@@ -18,7 +18,3 @@ Now you can create a new record directly from Info Window like shown in the scre
 The table must be configured to use [Quick Entry](/docs/new-features/v1.0/quickentry)
 
 ![01 CreateFromInfo](pathname:///img/new-features/v3.0/01_CreateFromInfo.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF3.0_Create_Record_From_Info_Window)_

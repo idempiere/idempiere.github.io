@@ -36,7 +36,3 @@ _Example Search Definition_
 The number of records shown is limited by the System Configuration value MAX_RESULTS_PER_SEARCH_IN_DOCUMENT_CONTROLLER (with a default of 3).
 
 **Technical Info:** [IDEMPIERE-2050](http://idempiere.atlassian.net/browse/IDEMPIERE-2050)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Document_Search_on_Menu_Lookup)_

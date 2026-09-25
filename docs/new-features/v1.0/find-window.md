@@ -58,7 +58,3 @@ Now you can order the fields on the search window.
 ![search8](pathname:///img/new-features/v1.0/search8.png)
 
 **Technical Info:** [IDEMPIERE-377](http://idempiere.atlassian.net/browse/IDEMPIERE-377)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Find_Window)_

@@ -63,7 +63,3 @@ for(int idx = 0; idx `<=` 100; idx+=10) {
 }
 
 ```
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Improve_Process_Log_for_more_advanced_logging_options)_

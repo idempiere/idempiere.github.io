@@ -20,7 +20,3 @@ This enhancement aligns the functionality of Inventory Move with documents like 
 ![InventoryMoveLineUOM](pathname:///img/new-features/v12/InventoryMoveLineUOM.png)
 
 **Technical Info:** [IDEMPIERE-4925](https://idempiere.atlassian.net/browse/IDEMPIERE-4925)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Support_UOM_On_Inventory_Move)_

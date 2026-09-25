@@ -20,7 +20,3 @@ Edwin Ang contributed a manual available at [iDempiere FA User Manual](/img/new-
 **Technical Info:** [IDEMPIERE-197](http://idempiere.atlassian.net/browse/IDEMPIERE-197)
 
 [Fixed Assets, a practical example](https://wiki.idempiere.org/en/Fixed_Assets,_a_practical_example)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Fixed_Assets)_

@@ -16,7 +16,3 @@ tags: [technical]
 *As you can see on this example, all users were drinking beer ! :D*
 
 **Technical Info:** [IDEMPIERE-2225](http://idempiere.atlassian.net/browse/IDEMPIERE-2225)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Monitor_Information_About_Sessions)_

@@ -44,7 +44,3 @@ Grid usage:  columns are calculated with the context, when record activated. The
 **See also** [NF7.1 Virtual Search Column](/docs/new-features/v7.1/virtual-search-column), [NF8.2 Override Virtual Column In Field](/docs/new-features/v8.2/override-virtual-column-definition-in-field)
 
 **Technical Info:** [IDEMPIERE-3760](https://idempiere.atlassian.net/browse/IDEMPIERE-3760)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Virtual_UI_Column)_

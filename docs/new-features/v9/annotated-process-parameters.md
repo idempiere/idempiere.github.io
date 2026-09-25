@@ -87,7 +87,3 @@ In case the class attribute name doesn't match the parameter name, we can use th
    @Parameter(name = "declaredName")
    private String parameter = null;
 ```
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Annotated_Process_Parameters)_

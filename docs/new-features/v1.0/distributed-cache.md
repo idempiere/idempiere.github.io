@@ -45,7 +45,3 @@ If you have several server instances on one machine or in one lan they will dist
 **Best Practices:**
 
 Norbert Bede experience - version 7.1 - hazelcast makes group by database username. This was a problem for me when i had application servers with multiple postgres users in same cluster. As CarlosRuiz suggested, this can be done by changing hazelcast-template.xml around line 35--&gt; DEFAULT is: &lt;name&gt;@ADEMPIERE_DB_USER@.@ADEMPIERE_DB_NAME@/@ADEMPIERE_DB_SERVER@&lt;/name&gt; Can be changed to &lt;name&gt;@ADEMPIERE_DB_NAME@/@ADEMPIERE_DB_SERVER@&lt;/name&gt;
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Distributed_Cache)_

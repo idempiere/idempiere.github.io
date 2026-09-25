@@ -16,7 +16,7 @@ The homepage for iDempiere is now customizable and themeable.
 ![01 CustomHomepage](pathname:///img/new-features/v2.1/01_CustomHomepage.png)
 
 ## How to change the homepage theme?
-It's recommended that you create a home.properties file in your IDEMPIERE_HOME folder (you can copy it from sources at org.adempiere.server/src/main/home/org/bmlaurus/home/home.properties or on server you can find it within plugins/org.adempiere.server_*.jar, or download it from [bitbucket](http://bitbucket.org/idempiere/idempiere/raw/tip/org.adempiere.server/src/main/home/org/bmlaurus/home/home.properties)
+It's recommended that you create a home.properties file in your IDEMPIERE_HOME folder (you can copy it from sources at org.adempiere.server/src/main/home/org/bmlaurus/home/home.properties or on server you can find it within plugins/org.adempiere.server_*.jar.
 
 In that file you can customize some variables.
 
@@ -58,7 +58,3 @@ The theme must simply define the associated images:
 You just create a folder with your theme name and create the corresponding images according to the tree, and your own template.css
 
 **Technical Info:** [IDEMPIERE-1325](http://idempiere.atlassian.net/browse/IDEMPIERE-1325)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Custom_Homepage)_

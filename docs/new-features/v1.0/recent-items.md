@@ -22,7 +22,3 @@ It is possible to delete a item of the list (drag item to trash).  The list of i
 Additionally, a record can be edited without saving changes and it will be automatically added to the stack list.
 
 **Technical Info:** [IDEMPIERE-127](http://idempiere.atlassian.net/browse/IDEMPIERE-127)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Recent_Items)_

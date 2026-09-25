@@ -31,7 +31,3 @@ Add markdown text support for html email template.
 <#md>**Bold Text**</#md>
 ```
 - Support auto link and table markdown extension.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Email_Template_Markdown_Text)_

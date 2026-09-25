@@ -42,7 +42,3 @@ For this feature to be enabled you need to define an import template as explaine
 - [NF2.1 Import CSV_Process](/docs/new-features/v2.1/import-csv-process)
 - [NF3.0 CSV Importer Single Transaction](/docs/new-features/v3.0/csv-importer-single-transaction)
 - [NF11 More Formats for Import_CSV](/docs/new-features/v11/more-formats-for-import-csv)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Import_Template)_

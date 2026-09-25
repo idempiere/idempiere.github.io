@@ -27,7 +27,3 @@ You have to open the user preference window, there you will see the 'Toggle on D
 - If the option is checked it means that when double click on a field it will open the single record view with the selected record.
 
 **Technical Info:** [IDEMPIERE-2896](https://idempiere.atlassian.net/browse/IDEMPIERE-2896)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF3.0_Toggle_on_Double_Click)_

@@ -23,7 +23,3 @@ Behaviour is defined in User Preferences :
 ![GridAfterFind UserPreference](pathname:///img/new-features/v7.1/GridAfterFind_UserPreference.png)
 
 **Technical Info:** [IDEMPIERE-4005](https://idempiere.atlassian.net/browse/IDEMPIERE-4005)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_Force_Grid_After_Find)_

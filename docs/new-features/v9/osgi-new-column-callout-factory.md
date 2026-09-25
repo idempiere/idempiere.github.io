@@ -105,7 +105,3 @@ IColumnCalloutFactory.class).
 ```
 
 **Technical Info:** [IDEMPIERE-4690](https://idempiere.atlassian.net/browse/IDEMPIERE-4690), [IDEMPIERE-5015](https://idempiere.atlassian.net/browse/IDEMPIERE-5015)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_OSGi_New_Column_Callout_Factory)_

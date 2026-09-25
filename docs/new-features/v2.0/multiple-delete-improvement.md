@@ -22,7 +22,3 @@ Note you cannot select more records than those shown in the page, the number of 
 ![NF20MultiDelete](pathname:///img/new-features/v2.0/NF20MultiDelete.png)
 
 **Technical Info:** [IDEMPIERE-583](http://idempiere.atlassian.net/browse/IDEMPIERE-583)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Multiple_Delete_Improvement)_

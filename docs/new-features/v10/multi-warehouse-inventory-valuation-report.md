@@ -16,7 +16,3 @@ Now the inventory valuation report can be executed for multiple warehouses, the 
 ![01 InventoryValuation](pathname:///img/new-features/v10/01_InventoryValuation.png)
 
 **Technical Info:** [IDEMPIERE-5739](https://idempiere.atlassian.net/browse/IDEMPIERE-5739)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Multi_Warehouse_Inventory_Valuation_Report)_

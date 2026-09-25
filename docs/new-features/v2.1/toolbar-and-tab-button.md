@@ -22,7 +22,3 @@ As a result on the example you're able to complete a Sales Order from the window
 ![02 BothButton](pathname:///img/new-features/v2.1/02_BothButton.png)
 
 **Technical Info:** [IDEMPIERE-2064](http://idempiere.atlassian.net/browse/IDEMPIERE-2064)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Toolbar_and_Tab_Button)_

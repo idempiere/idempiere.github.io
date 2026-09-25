@@ -23,7 +23,3 @@ In iDempiere the storage table was split in two: on-hand storage (m_storageonhan
 ![storage1 1](pathname:///img/new-features/v1.0/storage1-1.png)
 
 **Technical Info:** [IDEMPIERE-385](http://idempiere.atlassian.net/browse/IDEMPIERE-385)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Storage_Improvements)_

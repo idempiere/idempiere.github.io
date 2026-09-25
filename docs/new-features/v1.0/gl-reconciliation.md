@@ -28,7 +28,3 @@ Adaxa provided a good PDF document explaining the feature:
 Please note this is a local copy of the original file provided by Adaxa here: [How to GL Reconciliation Module](https://www.adaxa.com/wp-content/uploads/HowToPDF/GLReconciliationModule.pdf)
 
 **Technical Info:** [IDEMPIERE-137](http://idempiere.atlassian.net/browse/IDEMPIERE-137)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_GL_Reconciliation)_

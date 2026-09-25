@@ -86,7 +86,3 @@ To generate the GL Journal you must push the **Generate GL Journal** toolbar gea
 ![NF001 GLJournalGenerator004](pathname:///img/new-features/v1.0/NF001_GLJournalGenerator004.png)
 
 **Technical Info:** [IDEMPIERE-207](https://idempiere.atlassian.net/browse/IDEMPIERE-207)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_GLJournalGenerator)_

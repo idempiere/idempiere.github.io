@@ -49,7 +49,3 @@ And you can see the New button has been updated and the selected tab is now red
 
 #### See also
 [NF8.2 Lightweight theme customization](/docs/new-features/v8.2/lightweight-theme-customization)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Theme_Customization)_

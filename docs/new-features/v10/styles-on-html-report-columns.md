@@ -30,7 +30,3 @@ You will be able to change css style of data in single cells of HTML report, bas
 The report **Storage by product**, include custom individual column indicates the product ABC classification A, B, C on a specific warehouse.
 
 Condition: A=Green B. Orange C. Red - meaning the column have colorised classification text for better visual controll.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Styles_On_HTML_Report_columns)_

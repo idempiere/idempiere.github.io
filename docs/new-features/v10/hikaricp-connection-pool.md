@@ -61,7 +61,3 @@ The timeout is set to 30 seconds by default, it can be changed using the [SysCon
 
 ## Possibility of using c3p0
 Probably not necessary, but is still possible to use the old c3p0 plugin, the plugin is preserved at [github org.idempiere.db.c3p0.provider](https://github.com/CarlosRuiz-globalqss/org.idempiere.db.c3p0.provider), the replacement is not trivial, but it can be done, it's documented [in this comment in ticket](https://idempiere.atlassian.net/browse/IDEMPIERE-5013?focusedCommentId=48695).
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_HikariCP)_

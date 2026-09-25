@@ -48,7 +48,3 @@ PasswordProtected.png|Encrypted
 
 - Open user window and set value of "Mail Receive Test" for "EMail Address" of some users
 - run process "Sent Salary Email" with tick and un-tick "Encrypted"
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/Extend_Jasper_Engine)_

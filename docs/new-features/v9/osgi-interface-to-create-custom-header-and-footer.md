@@ -39,7 +39,3 @@ _Business Partner Details with Standard Header and Footer_
 ![4894 BusinessPartnerDetail ExamplePrintHeaderFooter](pathname:///img/new-features/v9/4894_BusinessPartnerDetail_ExamplePrintHeaderFooter.png)
 
 _Business Partner Detail Example Header and Footer_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Print_Format_Custom_Header_Footer)_

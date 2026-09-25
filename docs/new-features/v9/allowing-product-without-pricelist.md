@@ -17,7 +17,3 @@ tags: [user-experience]
 
 As shown below, Allow Product without price list added on Doc type. When Allow Product Without price list is marked, Product exists in price list check is ignored.
 ![NoPricelistProduct](pathname:///img/new-features/v9/NoPricelistProduct.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Product_Without_Pricelist)_

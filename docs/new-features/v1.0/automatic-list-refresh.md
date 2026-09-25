@@ -17,7 +17,3 @@ For example, when you are on Sales Order Line, zoom to Charge and create a new o
 
 **Technical Info:**
 [IDEMPIERE-663](https://idempiere.atlassian.net/browse/IDEMPIERE-663)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Automatic_List_Refresh)_

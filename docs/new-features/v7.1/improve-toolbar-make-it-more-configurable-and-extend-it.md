@@ -43,7 +43,3 @@ The update between Find and this Combobox is both ways - if you modify the searc
 ''
 
 **Technical Info:** [IDEMPIERE-4084](https://idempiere.atlassian.net/browse/IDEMPIERE-4084) - **Technical Info:** [IDEMPIERE-4085](https://idempiere.atlassian.net/browse/IDEMPIERE-4085)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_Toolbar_Improvements)_

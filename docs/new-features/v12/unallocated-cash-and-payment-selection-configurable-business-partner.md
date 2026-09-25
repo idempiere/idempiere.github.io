@@ -32,7 +32,3 @@ Below are changes done in this enhancement
 
 Link to the start of mattermost discussion:
 https://mattermost.idempiere.org/idempiere/pl/he13t3j8kbb55m3p77nmc3stke
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Unallocated_Cash_and_Payment_Selection_Configurable_Business_Partner)_

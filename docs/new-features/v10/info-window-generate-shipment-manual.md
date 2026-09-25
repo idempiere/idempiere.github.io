@@ -38,7 +38,3 @@ tags: [functional]
 - you can add/remove columns and filters (configure info window) by editing Application Dictionary => info window
 - you can add new custom process to additional data processing - development required
 - info window customisation without development  [NF8.2_Info_Window_Customisation](/docs/new-features/v8.2/info-window-customisation)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Info_Window_Generate_Shipment_(manual))_

@@ -88,7 +88,3 @@ https://groups.google.com/d/msg/idempiere/71jiFIWeQMk/C90NGaBgrMoJ
 But there was no answer from community about.
 
 JIRA ticket: https://idempiere.atlassian.net/browse/IDEMPIERE-2668
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/FS_Exclude_Locators_for_Demand_Operations)_

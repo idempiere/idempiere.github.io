@@ -32,7 +32,3 @@ _Dashboard-row-concept_
 ![Row orientation example](pathname:///img/new-features/v10/Row-orientation_example.png)
 
 _Row-orientation example including charts_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Dashboard_Row_Orientation)_

@@ -52,7 +52,3 @@ If you take look on Margin total for Actual and Budgeted month, you will find th
 But if you take look at Var Mth on Margin total, it will not match the Revenue Total - COGS Total but still value shows on Margin total is correct. You may noticed that **there is no impact of sign changes on Calculated Row.** it is important that we do not use sign switch on segment line which are similar in nature. Also advisable to use Allow Opposite Sign on calculated columns only.
 
 **Technical Info:** [IDEMPIERE-4065](https://idempiere.atlassian.net/browse/IDEMPIERE-4065)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Reverse_Sign_In_Financial_Report_Cell)_

@@ -31,15 +31,9 @@ Apply migration scripts from the following three folders, in order:
 
 Apply migration scripts from the following three folders, in order:
 
-- [i1.0c](http://bitbucket.org/idempiere/idempiere/src/tip/migration/i1.0c) - just the scripts not yet applied
-- [i1.0z](http://bitbucket.org/idempiere/idempiere/src/tip/migration/i1.0z)
-- [i2.0](http://bitbucket.org/idempiere/idempiere/src/tip/migration/i2.0)
-
-:::note
-These Bitbucket links point to the historic ADempiere-era repository and may no longer resolve.
-
-<!-- TODO: verify — confirm whether these historic Bitbucket paths are still reachable, or whether an archived/GitHub mirror should be linked instead. -->
-:::
+- [i1.0c](https://github.com/idempiere/idempiere/tree/master/migration-historic/i1.0c) - just the scripts not yet applied
+- [i1.0z](https://github.com/idempiere/idempiere/tree/master/migration-historic/i1.0z)
+- [i2.0](https://github.com/idempiere/idempiere/tree/master/migration-historic/i2.0)
 
 ## From ADempiere 360 to ADempiere 361
 
@@ -53,10 +47,10 @@ Apply migration scripts from the following folders, in order:
 
 Apply migration scripts from the following folders, in order:
 
-- [360lts-i1.0a](http://bitbucket.org/idempiere/idempiere/src/tip/migration/360lts-i1.0a)
-- [i1.0a-i1.0b](http://bitbucket.org/idempiere/idempiere/src/tip/migration/i1.0a-i1.0b)
-- [i1.0b-i1.0c](http://bitbucket.org/idempiere/idempiere/src/tip/migration/i1.0b-i1.0c)
-- [i1.0c](http://bitbucket.org/idempiere/idempiere/src/tip/migration/i1.0c)
+- [360lts-i1.0a](https://github.com/idempiere/idempiere/tree/master/migration-historic/360lts-i1.0a)
+- [i1.0a-i1.0b](https://github.com/idempiere/idempiere/tree/master/migration-historic/i1.0a-i1.0b)
+- [i1.0b-i1.0c](https://github.com/idempiere/idempiere/tree/master/migration-historic/i1.0b-i1.0c)
+- [i1.0c](https://github.com/idempiere/idempiere/tree/master/migration-historic/i1.0c)
 
 ## From ADempiere 361 to iDempiere 1.0
 

@@ -32,7 +32,3 @@ As shown in the table above, the best combination is to define a [virtual search
 **See also** [NF6.2 Virtual UI Column](/docs/new-features/v6.2/virtual-ui-column), [NF7.1 Virtual Search Column](/docs/new-features/v7.1/virtual-search-column)
 
 **Technical Info:** [IDEMPIERE-4479](https://idempiere.atlassian.net/browse/IDEMPIERE-4479)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Override_Virtual_Column_In_Field)_

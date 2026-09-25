@@ -72,7 +72,3 @@ tags: [functional]
 
 **Technical Info:**
 [IDEMPIERE-325](http://idempiere.atlassian.net/browse/IDEMPIERE-325)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Info_Window)_

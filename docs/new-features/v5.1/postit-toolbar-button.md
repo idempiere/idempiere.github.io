@@ -18,7 +18,3 @@ A new button to add comments to records, like a PostIt, has been added to the to
 The difference with the Record Comments button (Chat) is that the PostIt is a single record and is editable.
 
 **Technical Info:** [IDEMPIERE-905](http://idempiere.atlassian.net/browse/IDEMPIERE-905)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF5.1_PostIt)_

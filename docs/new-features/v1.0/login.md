@@ -27,7 +27,3 @@ After the user authenticated the second box was improved to invert the order, no
 ![login2](pathname:///img/new-features/v1.0/login2.png)
 
 **Technical Info:** [IDEMPIERE-354](http://idempiere.atlassian.net/browse/IDEMPIERE-354) [IDEMPIERE-358](http://idempiere.atlassian.net/browse/IDEMPIERE-358)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Login)_

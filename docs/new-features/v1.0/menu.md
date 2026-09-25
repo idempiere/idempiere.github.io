@@ -20,7 +20,3 @@ tags: [user-experience]
 ![NF001 UX Menu](pathname:///img/new-features/v1.0/NF001_UX_Menu.png)
 
 **Technical Info:** [IDEMPIERE-357](http://idempiere.atlassian.net/browse/IDEMPIERE-357)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Menu)_

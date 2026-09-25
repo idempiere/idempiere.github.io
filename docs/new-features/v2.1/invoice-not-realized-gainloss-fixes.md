@@ -28,7 +28,3 @@ Invoice Not Realized Gain/Loss report and process serves two purposes. You can s
 You will often attach the PDF report to the generated GL Journal for future reference (defend the results).
 
 **Technical Info:** [IDEMPIERE-1695](http://idempiere.atlassian.net/browse/IDEMPIERE-1695)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Invoice_Not_Realized_Gain/Loss_Fixes)_

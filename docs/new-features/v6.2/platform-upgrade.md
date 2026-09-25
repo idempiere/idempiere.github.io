@@ -33,7 +33,3 @@ Assembly of the project was moved from buckminster to maven
 - Many libraries updated
 
 **Technical Info:** [IDEMPIERE-3531](http://idempiere.atlassian.net/browse/IDEMPIERE-3531), [IDEMPIERE-3688](http://idempiere.atlassian.net/browse/IDEMPIERE-3688), [IDEMPIERE-3687](http://idempiere.atlassian.net/browse/IDEMPIERE-3687), [IDEMPIERE-3552](http://idempiere.atlassian.net/browse/IDEMPIERE-3552)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Platform_Upgrade)_

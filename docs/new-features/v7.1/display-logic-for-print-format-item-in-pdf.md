@@ -32,7 +32,3 @@ The display logic follows the normal convention for the display logic field:
 ![DisplayLogicPrintFormatItem](pathname:///img/new-features/v7.1/DisplayLogicPrintFormatItem.png)
 
 **Technical Info:** [IDEMPIERE-3996](https://idempiere.atlassian.net/browse/IDEMPIERE-3996)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_Display_Logic_for_Print_Format_Item)_

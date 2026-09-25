@@ -24,7 +24,3 @@ When you click on the link, it opens the window attached to the record:
 ![BroadcastMessageLink Window](pathname:///img/new-features/v9/BroadcastMessageLink_Window.png)
 
 Adding link is not easy for end users, is better to add them programmaticaly, you can find an example in the [ticket](https://idempiere.atlassian.net/browse/IDEMPIERE-5135).
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Links_in_Broadcast_Messages)_

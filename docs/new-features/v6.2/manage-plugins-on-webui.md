@@ -24,7 +24,3 @@ For example, to start the org.adempiere.report.jasper plugin you can follow thes
 ![ManagePluginsFromWebUI](pathname:///img/new-features/v6.2/ManagePluginsFromWebUI.png)
 
 **Technical Info:** [IDEMPIERE-3545](https://idempiere.atlassian.net/browse/IDEMPIERE-3545), [IDEMPIERE-4601](https://idempiere.atlassian.net/browse/IDEMPIERE-4601), [IDEMPIERE-4647](https://idempiere.atlassian.net/browse/IDEMPIERE-4647)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Manage_Plugins_WebUI)_

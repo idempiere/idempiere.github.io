@@ -22,7 +22,3 @@ In these cases is possible to use this new flag:
 ![ResetAccountingAlsoWithoutPostings](pathname:///img/new-features/v9/ResetAccountingAlsoWithoutPostings.png)
 
 **Technical Info:** [IDEMPIERE-3219](https://idempiere.atlassian.net/browse/IDEMPIERE-3219)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Reset_Accounting_Also_Without_Postings)_

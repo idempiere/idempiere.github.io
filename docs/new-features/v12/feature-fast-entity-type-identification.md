@@ -28,7 +28,3 @@ Once activated, you can check the entity type of the selected field in Tool Tip 
 
 You can see the entity type of a field in the changelog as its current value as well
 ![EntityType ChangeLog](pathname:///img/new-features/v12/EntityType_ChangeLog.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Plugins_Extension_Entity_Type_Identification)_

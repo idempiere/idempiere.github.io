@@ -26,7 +26,3 @@ The new field has the following values:
 According to the description before, all the reports have been set to 'Disallow multiple executions with the same parameters' by default in iDempiere.
 
 **Technical Info:** [IDEMPIERE-3799](https://idempiere.atlassian.net/browse/IDEMPIERE-3799)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Avoid_re-running_processes)_

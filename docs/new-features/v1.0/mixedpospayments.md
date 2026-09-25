@@ -58,7 +58,3 @@ When the sales order is completed then the corresponding payment(s) are created:
     - No account defined for this organization / currency Create an account on the bank account window for the organization / currency, the POS payments will be created on the defined account
 
 **Technical Info:** [IDEMPIERE-387](http://idempiere.atlassian.net/browse/IDEMPIERE-387)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_MixedPOSPayments)_

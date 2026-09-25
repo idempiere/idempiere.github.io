@@ -94,7 +94,3 @@ Log in with another user. Where value of "Date Last Login" is more than 10 days 
 **Technical Info:** [IDEMPIERE-373](http://idempiere.atlassian.net/browse/IDEMPIERE-373)
 
 See also [Warning on Password Expiration](/docs/new-features/v6.2/warning-on-password-expiration)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_User_Locking)_

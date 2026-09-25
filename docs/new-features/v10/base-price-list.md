@@ -18,7 +18,3 @@ The base price list must be in the same currency.
 ![01 BasePriceList](pathname:///img/new-features/v10/01_BasePriceList.png)
 
 **Technical Info:** [IDEMPIERE-5687](https://idempiere.atlassian.net/browse/IDEMPIERE-5687)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Base_Price_List)_

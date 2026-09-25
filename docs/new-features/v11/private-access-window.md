@@ -30,7 +30,3 @@ In this window the users are able to search for their own locked records, and al
 In this window the records can be deleted or inactivated, but not added.  Note also that users can just delete their own locks, and admins can delete any lock.
 
 **Technical Info:** [IDEMPIERE-4819](https://idempiere.atlassian.net/browse/IDEMPIERE-4819)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Private_Access_Window)_

@@ -26,7 +26,3 @@ And this is the result in excel as shown with libreoffice:
 Please note that PDF has always shown the parameters, and CSV is not showing parameters as CSV format is used many times for information exchange with other systems.
 
 **Technical Info:** [IDEMPIERE-3993](https://idempiere.atlassian.net/browse/IDEMPIERE-3993), [IDEMPIERE-3994](https://idempiere.atlassian.net/browse/IDEMPIERE-3994)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_Show_Report_Parameters)_

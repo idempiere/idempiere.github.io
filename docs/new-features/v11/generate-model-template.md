@@ -36,7 +36,3 @@ There, you can select a template and it will populate fields.
 ![GenerateModelTemplates ProcessPanel](pathname:///img/new-features/v11/GenerateModelTemplates_ProcessPanel.png)
 
 Output can be read on Eclipse console
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Generate_Model_Template)_

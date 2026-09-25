@@ -22,7 +22,3 @@ And after that you can set up taxes for country group vs countries, or country v
 ![02 CountryGroup](pathname:///img/new-features/v2.1/02_CountryGroup.png)
 
 **Technical Info:** [IDEMPIERE-2127](http://idempiere.atlassian.net/browse/IDEMPIERE-2127)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Country_Group)_

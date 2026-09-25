@@ -30,7 +30,3 @@ But even better, users can now save their own preferences per window on the grid
 ![NF001 UX SaveGridLayout03](pathname:///img/new-features/v1.0/NF001_UX_SaveGridLayout03.png)
 
 **Technical Info:** [IDEMPIERE-364](http://idempiere.atlassian.net/browse/IDEMPIERE-364)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_SaveGridLayout)_

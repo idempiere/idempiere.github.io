@@ -37,7 +37,3 @@ You can also restrict some buttons for a role in a window/tab. To do it open the
 As a result for the configuration shown above, you will not longer see the save button in the Sales Order window - order line tab.
 
 **Technical Info:** [IDEMPIERE-2895](https://idempiere.atlassian.net/browse/IDEMPIERE-2895)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF3.0_Detail_ToolBar)_

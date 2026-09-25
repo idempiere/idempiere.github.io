@@ -18,7 +18,3 @@ The documents Production and Bank Statement can be configured now to use differe
 ![02 DocTypeBS](pathname:///img/new-features/v10/02_DocTypeBS.png)
 
 **Technical Info:** [IDEMPIERE-5746](https://idempiere.atlassian.net/browse/IDEMPIERE-5746)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Document_Type_for_Production_and_Bank_Statement)_

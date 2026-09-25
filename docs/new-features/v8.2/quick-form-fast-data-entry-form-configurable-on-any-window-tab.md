@@ -21,7 +21,3 @@ The blog about this feature is available at [here on logilite](https://logilite.
 This feature is developed considering user experience for users familiar to work without mouse. Mostly CSR who has to enter bigger order or entering many lines on documents, they loves to work with keyboard only while holding phone receiver on anther hand. Goal is to enable easy navigation across records and fields using keyboard and auto saving records as user keep entering or updating records.
 
 [This page edition in progress]
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Quick_Form)_

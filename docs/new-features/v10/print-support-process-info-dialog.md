@@ -24,7 +24,3 @@ tags: [user-experience]
 - the print is not automatic, but user choice
 
 ![Print info dialog](pathname:///img/new-features/v10/Print_info_dialog.gif)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Print_Support_Process_Info_Dialog)_

@@ -47,7 +47,3 @@ The exporter doesn't handle binary type (image, blob, etc).
 Attached to https://idempiere.atlassian.net/browse/IDEMPIERE-5624:
 - Orders.zip - With **Export current row only** off.
 - OrderAndLines.zip - With **Export current row only** on and Order Lines selected.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Export_SQL_Insert_Scripts)_

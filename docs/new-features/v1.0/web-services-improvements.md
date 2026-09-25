@@ -325,7 +325,3 @@ tags: [technical]
 1. Below shows how we have configured **M_Product_ID** column on **CreateUpdateOrderLine** service.
 
 ![Reference OverRiding](pathname:///img/new-features/v1.0/Reference_OverRiding.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Web_Services_Improvements)_

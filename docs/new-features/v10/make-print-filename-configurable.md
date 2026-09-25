@@ -27,7 +27,3 @@ The solution supports default printformat item and translations ​ as well as s
 1. * A. invoice_@DocumentNo@
 1. * B. rechnung_@DocumentNo@ (on _trl)
 1. * C. SO_@DocumentNo@_@C_BPartner_ID&lt;Name&gt;@_@#AD_User_ID&lt;Name&gt;@
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Make_print_filename_configurable)_

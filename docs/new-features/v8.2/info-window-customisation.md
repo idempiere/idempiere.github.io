@@ -46,7 +46,3 @@ _Column Customisations_
 ![InfoWinfowBPartner Tab Changed](pathname:///img/new-features/v8.2/InfoWinfowBPartner_Tab_Changed.png)
 
 ***Technical Info:** [IDEMPIERE-4459](https://idempiere.atlassian.net/browse/IDEMPIERE-4459)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Info_Window_Customisation)_

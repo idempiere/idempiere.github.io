@@ -17,7 +17,3 @@ This enhancement adds multi-select capability to the Document Type parameter in 
 Additionally, it supports the negate button to choose to print all invoices but the ones with the selected document type.
 
 ![PrintInvoicesMulti](pathname:///img/new-features/v12/PrintInvoicesMulti.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Enhance_Print_Invoices_Process_With_Multiselection_Document_Type)_

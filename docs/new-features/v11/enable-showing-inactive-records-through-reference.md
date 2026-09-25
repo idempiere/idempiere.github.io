@@ -28,7 +28,3 @@ For example:
 Note that the list shows the inactive records surrounded by tilde characters (~), like:
 
 ![ShowingUOMInactive](pathname:///img/new-features/v11/ShowingUOMInactive.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Enable_Showing_Inactive_Records_through_Reference)_

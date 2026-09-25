@@ -17,7 +17,3 @@ Currently, users always receive a popup message indicating "Insufficient Invento
 With this improvement, a flag was added to the Warehouse window to control this behavior. When enabled, the system does not show the warning dialog.
 
 ![WarehouseNewFlag](pathname:///img/new-features/v12/WarehouseNewFlag.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Disable_Insufficient_Inventory_Popup)_

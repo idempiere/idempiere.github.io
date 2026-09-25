@@ -21,7 +21,3 @@ Add JSON request and response support to Web Services call:
 
 ## Syntax of JSON request and response
 1. See JSON Data Format.odt at https://idempiere.atlassian.net/browse/IDEMPIERE-4955
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_JSON_Web_Services)_

@@ -42,7 +42,3 @@ Review accounting entries without interrupting your workflow—the Accounting Vi
 ![account6](pathname:///img/new-features/v1.0/account6.png)
 
 **Technical Info:** [IDEMPIERE-119](http://idempiere.atlassian.net/browse/IDEMPIERE-119) [IDEMPIERE-660](http://idempiere.atlassian.net/browse/IDEMPIERE-660) [IDEMPIERE-131](http://idempiere.atlassian.net/browse/IDEMPIERE-131)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Accounting_Viewer_Improvements)_

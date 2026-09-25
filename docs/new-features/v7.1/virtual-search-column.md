@@ -48,7 +48,3 @@ The users will be able to search through that column in simple and advanced sear
 **See also** [NF6.2 Virtual UI Column](/docs/new-features/v6.2/virtual-ui-column), [NF8.2 Override Virtual Column In Field](/docs/new-features/v8.2/override-virtual-column-definition-in-field)
 
 **Technical Info:** [IDEMPIERE-4087](https://idempiere.atlassian.net/browse/IDEMPIERE-4087)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_Virtual_Search_Column)_

@@ -26,7 +26,3 @@ Format field is hidden by default, if will appear only when a Process is selecte
 
 ### Note
 To render a report in the dashboard, the Embed Report Content field must be checked.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Allow_to_Specify_Print_Format_for_Dashboard_Content_Report)_

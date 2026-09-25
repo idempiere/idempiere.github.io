@@ -20,7 +20,3 @@ tags: [functional]
 ## See Also
 - [Plugin:_Chart_Maker](https://wiki.idempiere.org/en/Plugin:_Chart_Maker)
 - [Plugin:_Sales_CRM](https://wiki.idempiere.org/en/Plugin:_Sales_CRM)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Dashboard_Chart)_

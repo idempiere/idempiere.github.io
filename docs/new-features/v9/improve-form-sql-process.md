@@ -42,7 +42,3 @@ As part of the improvements the SQL statements executed are now logged in the AD
 ![02 AuditIssue](pathname:///img/new-features/v9/02_AuditIssue.png)
 
 **Technical Info:** [IDEMPIERE-5450](https://idempiere.atlassian.net/browse/IDEMPIERE-5450)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Improve_Form_SQL_Process)_

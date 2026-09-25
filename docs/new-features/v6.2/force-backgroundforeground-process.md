@@ -29,7 +29,3 @@ The user can select the following values:
 - When 'Force Background', the 'Run as Job' checkbox is shown checked, the user cannot modify it.
 
 **Technical Info:** [IDEMPIERE-2816](https://idempiere.atlassian.net/browse/IDEMPIERE-2816), [IDEMPIERE-2351](https://idempiere.atlassian.net/browse/IDEMPIERE-2351)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Force_Background/Foreground_Process)_

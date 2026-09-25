@@ -170,7 +170,3 @@ The columns AD_User.Password and AD_User.Salt are cleared, so initially there ar
 
 ## Known Issues
 - Alex reported that copying a big tenant from another postgresql got error "java.net.SocketException: Connection timed out (Read failed)".  Changed tcp_keepalives_idle in postgresql.conf to 300 sec and the process didn't hang anymore.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/HowTo:_Copy_or_Move_Tenant)_

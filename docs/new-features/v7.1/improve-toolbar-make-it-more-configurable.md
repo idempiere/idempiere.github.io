@@ -36,7 +36,3 @@ If you click on a button that shows an additional popup like Archived documents 
 In mobile mode, the new button replaces the arrows that were being displayed previously. It behaves similarly to how it does currently if the screen is not big enough to show all buttons, it will show the rest of the buttons in the more button. In bigger screen as tablets, even when the screen is big enough to display the buttons, it will show a more button on the right of the toolbar.
 
 **Technical Info:** [IDEMPIERE-4084](https://idempiere.atlassian.net/browse/IDEMPIERE-4084)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_Show_More_Button_In_Toolbar)_

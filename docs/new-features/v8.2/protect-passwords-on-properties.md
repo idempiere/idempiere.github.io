@@ -50,7 +50,3 @@ In case you want to disable this feature, for example when running in a developm
 ```
 
 **Technical Info:** [IDEMPIERE-4602](https://idempiere.atlassian.net/browse/IDEMPIERE-4602), [IDEMPIERE-4618](https://idempiere.atlassian.net/browse/IDEMPIERE-4618)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Protect_Passwords_On_Properties)_

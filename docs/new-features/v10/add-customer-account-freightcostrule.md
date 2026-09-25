@@ -35,7 +35,3 @@ _Sales Order Freight Cost Rule_
 ![5083 CustomerShipment](pathname:///img/new-features/v10/5083_CustomerShipment.png)
 
 _Customer Shipment Default_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Add_Customer_Account_FreightCostRule)_

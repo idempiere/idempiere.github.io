@@ -20,7 +20,3 @@ This feature allows to suspend a workflow upto the actual transaction is committ
 This is especially useful before a jasperreport is to be started by a workflow to ensure it sees all changes done. Or if you want to send an e-mail you'll probably make sure the e-mail doesn't tell anything which may be rolled back due to later errors.
 
 ![WorkflowWaitCommit](pathname:///img/new-features/v8.2/WorkflowWaitCommit.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Suspend_workflow_until_commit)_

@@ -20,7 +20,3 @@ But there are some cases where you need to make a field updatable on processed r
 For example, the following configuration allows just the SuperUser user to be able to change the currency field on processed records in Test table:
 
 ![01 AlwaysUpdatableLogic.png](pathname:///img/new-features/v10/01_AlwaysUpdatableLogic.png.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Add_Always_Updatable_Logic_Override_Flag)_

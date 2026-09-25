@@ -39,7 +39,3 @@ If is present, the import will fail.
 ![ExportTreeDefinition TreeNode](pathname:///img/new-features/v12/ExportTreeDefinition_TreeNode.png)
 
 Then you can export the 2Pack and import it into the destination iDempiere instance
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Export_Tree_Definition)_

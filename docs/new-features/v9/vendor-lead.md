@@ -23,7 +23,3 @@ A new checkbox (IsVendorLead) was added and IsSalesLead was shown to allow corre
 The ConvertLead process has been updated in order that the newly created Business Partner will be set as :
 - a customer (if lead is a sales lead)
 - a vendor (if lead is a purchases lead)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Vendor_Lead)_

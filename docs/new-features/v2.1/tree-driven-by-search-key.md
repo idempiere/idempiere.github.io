@@ -22,7 +22,3 @@ When you define the tree to be driven by search key, then new records will be *a
 **NOTE:** If your Chart of Accounts is organized by the search key (account) then it's possible now to import directly the CSV from the Account Element window and the tree will be self-organized when defined this way.
 
 **Technical Info:** [IDEMPIERE-1425](http://idempiere.atlassian.net/browse/IDEMPIERE-1425)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Tree_Driven_by_Search_Key)_

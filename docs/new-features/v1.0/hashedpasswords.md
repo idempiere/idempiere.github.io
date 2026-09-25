@@ -36,7 +36,3 @@ That's all, at the end of this process your old passwords will be hashed, the sy
 NOTE: There is no way to go back and "un-hash" passwords, precisely because the algorithm is one-way.
 
 **Technical Info:** [IDEMPIERE-347](http://idempiere.atlassian.net/browse/IDEMPIERE-347)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_HashedPasswords)_

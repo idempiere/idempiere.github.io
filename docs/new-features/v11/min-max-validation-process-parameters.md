@@ -18,7 +18,3 @@ Now you can define minimum and maximum for process parameters with type Integer,
 Configuration is as usual:
 
 ![01 MinMaxProcessPara](pathname:///img/new-features/v11/01_MinMaxProcessPara.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Min_Max_Validation_Process_Parameters)_

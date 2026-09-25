@@ -24,7 +24,3 @@ This is interesting as it allows non-UI imports, for example scheduled, or using
 - [NF2.1 Import Template](/docs/new-features/v2.1/import-template)
 - [NF3.0 CSV Importer Single Transaction](/docs/new-features/v3.0/csv-importer-single-transaction)
 - [NF11 More Formats for Import_CSV](/docs/new-features/v11/more-formats-for-import-csv)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Import_CSV_Process)_

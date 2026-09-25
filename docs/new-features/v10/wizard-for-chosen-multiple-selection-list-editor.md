@@ -26,7 +26,3 @@ The panel shows all available items. And you can drag-and-drop (or double-click)
 After validation :
 
 ![NF10 WizardMultipleListResult](pathname:///img/new-features/v10/NF10_WizardMultipleListResult.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Wizard_for_Chosen_Multiple_Selection_List_editor)_

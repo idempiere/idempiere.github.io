@@ -26,7 +26,3 @@ It is possible to use "d" for days, "m" for months and "y" for years.
 If suffix is not added then days is assumed.
 
 **Technical Info:** [IDEMPIERE-1952](http://idempiere.atlassian.net/browse/IDEMPIERE-1952)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Scheduler_Variable_Date_Parameter)_

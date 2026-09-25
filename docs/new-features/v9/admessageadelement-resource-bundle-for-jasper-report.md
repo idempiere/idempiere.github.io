@@ -24,7 +24,3 @@ Tip for concatenation with a field:```java
 (str("IsDefault") != null ? str("IsDefault") : "str(IsDefault)") + ": " + $F&#123;IsDefaultField&#125;
 
 ```
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_AD_Resource_Bundle_For_Jasper_Report)_

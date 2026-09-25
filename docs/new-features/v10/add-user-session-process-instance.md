@@ -14,7 +14,3 @@ tags: [functional]
 
 ### Description
 Add session reference on process instance to analyze/audit process and users action sequence from process audit.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Add_User_Session_Process_Instance)_

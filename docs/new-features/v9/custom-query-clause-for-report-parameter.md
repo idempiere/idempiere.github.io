@@ -26,7 +26,3 @@ tags: [development]
 ![4904 Process Parameter](pathname:///img/new-features/v9/4904_Process_Parameter.png)
 
 _Report parameter query field example_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Custom_Query_Clause_For_Report_Parameter)_

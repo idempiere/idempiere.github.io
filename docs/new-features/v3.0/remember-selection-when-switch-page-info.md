@@ -28,7 +28,3 @@ In version v10 we migrate form to info window ->  Generate Shipment (Invoice).
 Then run process which generates invoices.
 
 **Tip**: If the page size does not meet your needs, the administrator can allow you to change as SuperUser in the definition field of the Info window: Page size, for example. change page size from 25 to 50
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF3.0_Remember_Selection_When_Switch_Page_Info)_

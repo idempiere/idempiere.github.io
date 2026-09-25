@@ -58,7 +58,3 @@ _Scheduler timestamp with time zone fields_
 Before this ticket when you had a schedule configured to run at 9AM, the job was executed at 9AM of the server timezone.
 
 This ticket changed this behavior and now the job is executed at 9AM **of the tenant timezone** where the job is defined.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Tenant_Time_Zone_For_Cron_Scheduler)_

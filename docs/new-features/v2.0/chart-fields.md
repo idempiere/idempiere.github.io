@@ -28,7 +28,3 @@ The resulting screen is like this:
 ![Salesmgm](pathname:///img/new-features/v2.0/Salesmgm.png)
 
 **Technical Info:** [IDEMPIERE-1157](http://idempiere.atlassian.net/browse/IDEMPIERE-1157)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Chart_Fields)_

@@ -32,7 +32,3 @@ You can also find the same Attribute tab on Material Receipt, Physical Inventory
 **Technical Info:** [IDEMPIERE-1770](http://idempiere.atlassian.net/browse/IDEMPIERE-1770)
 
 **See also:** [Last Run](/docs/new-features/v2.1/last-run-and-saved-parameters)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Manual_ASI)_

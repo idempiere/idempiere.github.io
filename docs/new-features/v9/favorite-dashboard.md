@@ -29,7 +29,3 @@ Below screen show shows enhanced user favorite panel. This enhancement available
 [This page edition in progress]
 
 Reference: [Logilite Blog](https://logilite.com/user-favorite-panel-idempiere-logiliteerp/)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Favourite_Dashboard)_

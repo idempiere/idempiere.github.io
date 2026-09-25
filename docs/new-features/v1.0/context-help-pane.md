@@ -26,7 +26,3 @@ As part of an improved user experience for training, was created a Help pane tha
 ![Screenshot43](pathname:///img/new-features/v1.0/Screenshot43.png)
 
 **Technical Info:** [IDEMPIERE-626](http://idempiere.atlassian.net/browse/IDEMPIERE-626)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Context_Help_Pane)_

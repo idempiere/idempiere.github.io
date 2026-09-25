@@ -22,7 +22,3 @@ The "Payment Selection" process and the corresponding "Payment Selection (manual
     - calling the "generate payments" at the end of payment selection is now configurable
 
 **Technical Info:** [IDEMPIERE-1881](http://idempiere.atlassian.net/browse/IDEMPIERE-1881), [IDEMPIERE-2134](http://idempiere.atlassian.net/browse/IDEMPIERE-2134), [IDEMPIERE-2135](http://idempiere.atlassian.net/browse/IDEMPIERE-2135)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Payment_Selection_Improvements)_

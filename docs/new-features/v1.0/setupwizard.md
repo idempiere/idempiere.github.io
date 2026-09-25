@@ -46,7 +46,3 @@ The elements in the window are:
 - When a task are in status (finished o skipped  ) the task highlight Green .
 
 **Technical Info:** [IDEMPIERE-393](http://idempiere.atlassian.net/browse/IDEMPIERE-393)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_SetupWizard)_

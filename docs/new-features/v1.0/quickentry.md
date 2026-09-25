@@ -35,7 +35,3 @@ The resulting Charge Quick Entry window looks like this:
 There is also a plugin contributed that configure quick entry for many windows, you can check it at:
 ***Plugin Tool:** [Plugin:_QuickEntry](https://wiki.idempiere.org/en/Plugin:_QuickEntry)
 ***Movie:** [Watch on YouTube](https://www.youtube.com/watch?v=F4FN6yFwzDQ) by Red1 ([talk](https://wiki.idempiere.org/en/User_talk:Red1)).
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_QuickEntry)_

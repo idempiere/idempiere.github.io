@@ -30,7 +30,3 @@ When the user edits this field (using right click Edit or double click), the HTM
 **Additional info:** In addition to this, we can also take into account the HTML formatting of IDempiere in a jasper report.
 
 To do this, you must specify in the jasper report that the field is in 'html'
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Inline_HTML_Field)_

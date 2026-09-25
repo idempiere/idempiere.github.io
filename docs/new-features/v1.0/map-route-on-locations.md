@@ -32,7 +32,3 @@ You can use different providers by changing the value to the "Configured Value" 
 - Mapquest = http://www.mapquest.com/?q=
 
 **Technical Info:** [IDEMPIERE-147](http://idempiere.atlassian.net/browse/IDEMPIERE-147)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Map_Route_On_Locations)_

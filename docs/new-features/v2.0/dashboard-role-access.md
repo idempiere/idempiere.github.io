@@ -16,7 +16,3 @@ You can restrict now the dashboard panels per user or role, please note that if 
 ![01 DashboardContentAccess](pathname:///img/new-features/v2.0/01_DashboardContentAccess.png)
 
 **Technical Info:** [IDEMPIERE-1064](http://idempiere.atlassian.net/browse/IDEMPIERE-1064)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Dashboard_Role_Access)_

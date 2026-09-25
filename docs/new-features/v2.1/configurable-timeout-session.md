@@ -28,7 +28,3 @@ Possible values for ZK_SESSION_TIMEOUT_IN_SECONDS:
 - **Positive value**: Number of seconds to timeout
 
 **Technical Info:** [IDEMPIERE-2110](http://idempiere.atlassian.net/browse/IDEMPIERE-2110)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Configurable_Timeout_Session)_

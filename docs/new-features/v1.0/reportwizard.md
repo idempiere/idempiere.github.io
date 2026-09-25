@@ -38,7 +38,3 @@ And finally user can select the aggregate functions on the displayed fields:
 Don't forget to save the changes and then you can run the report.
 
 **Technical Info:** [IDEMPIERE-379](http://idempiere.atlassian.net/browse/IDEMPIERE-379)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_ReportWizard)_

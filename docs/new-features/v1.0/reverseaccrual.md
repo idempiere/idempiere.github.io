@@ -20,7 +20,3 @@ Implement reverse accrual for shipment, invoice, inventory and payment document.
 
 
 **Technical Info:** [IDEMPIERE-378](http://idempiere.atlassian.net/browse/IDEMPIERE-378)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_ReverseAccrual)_

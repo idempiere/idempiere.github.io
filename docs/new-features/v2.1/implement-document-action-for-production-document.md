@@ -14,7 +14,3 @@ Now the Production document behaves fully as an iDempiere document, with the cor
 ![01 DocActionProd](pathname:///img/new-features/v2.1/01_DocActionProd.png)
 
 **Technical Info:** [IDEMPIERE-1715](http://idempiere.atlassian.net/browse/IDEMPIERE-1715)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_DocAction_Production)_

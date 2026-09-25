@@ -33,7 +33,3 @@ Added 2 new checkboxes to Document Type window (Generate Invoice, Generate Shipm
 
 - Generate Invoice: On Credit Order, POS Order, Prepay Order
 - Generate Shipment: On Credit Order, POS Order, Prepay Order, Warehouse Order
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Prepay_Order_Configurable_Shipment_and_Invoicing)_

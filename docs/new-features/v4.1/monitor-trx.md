@@ -43,7 +43,3 @@ After [release 9.20220805](https://wiki.idempiere.org/en/ChangeLog_Release_9#202
 
 ### **See also**
 [NF11 Monitor Null Trx](/docs/new-features/v11/monitor-null-trx)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF4.1_Monitor_Trx)_

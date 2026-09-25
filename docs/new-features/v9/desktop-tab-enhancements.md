@@ -45,7 +45,3 @@ _Auto shrink desktop tab_
 1. * ZK_DESKTOP_TAB_MAX_TITLE_LENGTH
 1. ** Integer type Client level System Config entry, default to 30.
 1. ** Set the maximum length of desktop tab title/label.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Desktop_Tab_Enhancements)_

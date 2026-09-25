@@ -29,7 +29,3 @@ Posting and Re-Submit posting Action
     - state=document closed => period control check does period is document closed, allow post/resubmit
     - state=closed period control check does period is document closed, disallow post/resubmit
     - state=permanently closed period =>  control check does period is document closed, disallow post/resubmit
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Period_Control_Document_Close)_

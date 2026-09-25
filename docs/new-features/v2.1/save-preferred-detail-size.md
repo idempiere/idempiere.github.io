@@ -22,7 +22,3 @@ This information is saved as a preference:
 ![02 DetailSize](pathname:///img/new-features/v2.1/02_DetailSize.png)
 
 **Technical Info:** [IDEMPIERE-581](http://idempiere.atlassian.net/browse/IDEMPIERE-581)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Save_Preferred_Detail_Size)_

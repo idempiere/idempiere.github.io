@@ -20,7 +20,3 @@ When the preference is set the sessions opened by the user are read-only - he/sh
 ![01 Read Only Session](pathname:///img/new-features/v11/01_Read-Only-Session.png)
 
 **Technical Info:** [IDEMPIERE-6188](https://idempiere.atlassian.net/browse/IDEMPIERE-6188)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Read-Only_Session)_

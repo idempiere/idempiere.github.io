@@ -40,7 +40,3 @@ However, there is the possibility to inject context variables also attached to t
 [NF11 Inject Context Variables From Role](/docs/new-features/v11/inject-context-variables-from-role)
 
 **Technical Info:** [IDEMPIERE-4713](https://idempiere.atlassian.net/browse/IDEMPIERE-4713)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Inject_Context_Variables_From_Menu)_

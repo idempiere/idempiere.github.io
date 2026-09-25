@@ -261,7 +261,3 @@ This can be resolved similar to the ZK.2 use case from Norbert described above.
 
 ## Technical Info
 [IDEMPIERE-6013](https://idempiere.atlassian.net/browse/IDEMPIERE-6013)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Dynamic_Filter_per_Table)_

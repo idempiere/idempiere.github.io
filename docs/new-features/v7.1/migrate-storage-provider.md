@@ -51,7 +51,3 @@ There are intermediate commits in the process every time a table is migrated suc
 - Note that migrating from/to a DB storage provider is a destructive action that cannot be recovered, it implies deleting the old/existing files.
 
 **Technical Info:** [IDEMPIERE-4191](https://idempiere.atlassian.net/browse/IDEMPIERE-4191)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_Migrate_Storage_Provider)_

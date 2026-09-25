@@ -23,7 +23,3 @@ This improvement disallows to close or permanently close the period, if any un-p
 
 1. **Open/Close all (on tab Period)**  checks for all un-posted documents between Period Start Date and End Date
 1. **Open/Close (on tab Period Control)**  checks only the documents with Document Base Type from the Period Control (for this purpose a Document Base Type column was added to the RV_UnPosted report)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Period_Close_Disallow_When_Unposted_Documents_Exists)_

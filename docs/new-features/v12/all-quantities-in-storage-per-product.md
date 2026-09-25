@@ -22,7 +22,3 @@ With this update, the Storage Per Product report now displays all quantities sum
 _Storage Per Product_
 
 **Technical Info:** [IDEMPIERE-6375](https://idempiere.atlassian.net/browse/IDEMPIERE-6375)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_All_Quantities_In_Storage_Per_Product)_

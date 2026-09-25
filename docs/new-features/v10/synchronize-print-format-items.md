@@ -32,7 +32,3 @@ Just select :
 And that's it !
 
 Missing Print Format Items are added (but not visible) ; user has to add them (using the Wizard for instance)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Sync_Print_Format_Items)_

@@ -22,7 +22,3 @@ PO.updateTranslations and Synchronize Doc Translation were changed to synchroniz
 ![lenguage1](pathname:///img/new-features/v1.0/lenguage1.png)
 
 **Technical Info:** [IDEMPIERE-136](http://idempiere.atlassian.net/browse/IDEMPIERE-136) [IDEMPIERE-489](http://idempiere.atlassian.net/browse/IDEMPIERE-489)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Base_Language_Flexible)_

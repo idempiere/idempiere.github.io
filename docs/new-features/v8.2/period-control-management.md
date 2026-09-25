@@ -28,7 +28,3 @@ When the *ReQuery* button is pressed, the window shows the periods matching the 
 ![01 PeriodControlManagement](pathname:///img/new-features/v8.2/01_PeriodControlManagement.png)
 
 **Technical Info:** [IDEMPIERE-2901](https://idempiere.atlassian.net/browse/IDEMPIERE-2901)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Period_Control_Management)_

@@ -37,7 +37,3 @@ This ticket enhance that with markdown and scoped css style (&lt;style&gt;@scope
 <#md>**Bold Text**</#md>
 ```
 - Support auto link and table markdown extension.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Status_Line_Widget_Markdown_And_Scoped_Style)_

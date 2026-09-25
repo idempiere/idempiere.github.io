@@ -38,7 +38,3 @@ in order to be able to use the new function added into idempiere-util.dsp.tld ; 
 
 ```
 You also need to create a System Configurator key to store the name of the image.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Use_System_Configurator_from_css_files)_

@@ -24,7 +24,3 @@ To call e.g. the standard Process_Shipment from Process_InOutConfirm you add it'
 Then you add a parameter named Record_ID in the Attribute Name field. Make sure Process Parameter is left empty. Add Attribute Value to tell where to get the record_id.
 
 ![RecordParameter](pathname:///img/new-features/v8.2/RecordParameter.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Starting_other_workflows_within_a_workflow)_

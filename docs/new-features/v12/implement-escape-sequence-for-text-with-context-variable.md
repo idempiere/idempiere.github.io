@@ -42,7 +42,3 @@ or to this another mail test2@@test.com
 The escape sequence is not needed for logic expression (display logic, readonly logic, etc).
 
 For logic expression, you use “`@EMail@=test@idempiere`.com” or “`@EMail@='test@idempiere`.com'“, not “`@EMail@=test@@idempiere`.com”
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Escape_Sequence_For_Context_Variable)_

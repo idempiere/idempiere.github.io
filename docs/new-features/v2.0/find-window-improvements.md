@@ -33,7 +33,3 @@ With the improvements mentioned now the user can construct more complex queries 
 ![NF20 03SearchSimpleSaved](pathname:///img/new-features/v2.0/NF20_03SearchSimpleSaved.png)
 
 **Technical Info:** [IDEMPIERE-1535](http://idempiere.atlassian.net/browse/IDEMPIERE-1535), [IDEMPIERE-1579](http://idempiere.atlassian.net/browse/IDEMPIERE-1579), [IDEMPIERE-1608](http://idempiere.atlassian.net/browse/IDEMPIERE-1608)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Find_Window_Improvements)_

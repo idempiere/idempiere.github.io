@@ -42,7 +42,3 @@ WHERE C_Order_ID = ANY(string_to_array('@_IWInfoIDs_Selected@',',')::NUMERIC[])
 - create a new Status Line, and set the new message on it
 - define an SQL select, where you can use the context variables, as described above
 - in the Used In tab, create a new record and select the desired Info Window
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Support_Quick_Info_Widget_for_Info_Windows)_

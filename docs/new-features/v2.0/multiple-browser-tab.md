@@ -16,7 +16,3 @@ NOTE that all tabs must be on the same session (user+role), multiple sessions wi
 ![MultiBrowserTab](pathname:///img/new-features/v2.0/MultiBrowserTab.png)
 
 **Technical Info:** [IDEMPIERE-1550](http://idempiere.atlassian.net/browse/IDEMPIERE-1550)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Multiple_Browser_Tab)_

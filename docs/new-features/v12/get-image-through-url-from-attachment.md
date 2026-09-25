@@ -27,7 +27,3 @@ Example AD_PrintFormatItem.ImageURL:**attachment:test/emoji*.png,103**
 **When to use**
 &lt;p&gt;
 if  company  want to store their image asset as attachment eg. for product or categories, (storage provider)  then they want to print on documents.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Get_image_through_url_from_attachment)_

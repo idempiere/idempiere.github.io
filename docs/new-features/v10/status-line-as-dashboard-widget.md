@@ -143,7 +143,3 @@ where ad_client_id=@#AD_Client_ID@ and issotrx='Y'
 GROUP BY month
 ) kpidata
 &lt;/syntaxhighlight&gt;
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Status_Line_As_Dashboard_Widget)_

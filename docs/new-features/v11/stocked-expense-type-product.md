@@ -25,7 +25,3 @@ Now on Product window, even selecting product type expense, stocked flag can be 
 When material received, storage are updated to records stock for stocked expense type of product but it debit expense account instead of inventory asset account.
 
 Customer Shipment, Movement, Physical Inventory and Internal Use inventory impact on-hand stock but do not generate any GL posting.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Stocked_Expense_Type_Product)_

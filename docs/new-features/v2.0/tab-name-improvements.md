@@ -30,7 +30,3 @@ You can show indirect column from related tables, for example if you set on "GL 
 Note also the &lt;&gt; notation can be used to format dates, number or messages like @DateColumn&lt;dateformat&gt;@
 
 **Technical Info:** [IDEMPIERE-1328](http://idempiere.atlassian.net/browse/IDEMPIERE-1328)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Tab_Name_Improvements)_

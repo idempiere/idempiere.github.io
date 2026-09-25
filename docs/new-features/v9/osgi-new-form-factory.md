@@ -109,7 +109,3 @@ public class WAllocation extends Allocation implements IFormController, EventLis
 ```
 
 **Technical Info:** [IDEMPIERE-4773](https://idempiere.atlassian.net/browse/IDEMPIERE-4773), [IDEMPIERE-5012](https://idempiere.atlassian.net/browse/IDEMPIERE-5012)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_OSGi_New_Form_Factory)_

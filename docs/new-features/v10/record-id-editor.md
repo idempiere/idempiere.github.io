@@ -30,7 +30,3 @@ When creating or modifying a Window, the AD_Table_ID field is always set to read
 **Setup**
 
 The Record ID editor can be used on tables which has both AD_Table_ID and Record_ID columns. In this case you can set the Reference field to "Record ID" on the Record_ID Column of the given Table in System.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Record_ID_Editor)_

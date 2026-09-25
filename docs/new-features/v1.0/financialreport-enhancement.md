@@ -42,7 +42,3 @@ tags: [functional]
 ![NF001 Multi Percentage Example](pathname:///img/new-features/v1.0/NF001_Multi_Percentage_Example.png)
 
 **Technical Info:** [IDEMPIERE-673](http://idempiere.atlassian.net/browse/IDEMPIERE-673) [IDEMPIERE-674](http://idempiere.atlassian.net/browse/IDEMPIERE-674) [IDEMPIERE-726](http://idempiere.atlassian.net/browse/IDEMPIERE-726)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_FinancialReport_Enhancement)_

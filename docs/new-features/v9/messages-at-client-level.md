@@ -33,7 +33,3 @@ Execute Cache Reset process to force the reload of messages.
 And you can see the result, "Home" has been translated for "Home of Garden World"
 
 ![ClientLevelMessage Home](pathname:///img/new-features/v9/ClientLevelMessage_Home.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Messages_at_Client_Level)_

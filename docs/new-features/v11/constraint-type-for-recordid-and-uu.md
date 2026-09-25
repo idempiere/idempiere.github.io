@@ -36,7 +36,3 @@ you will not be able to delete the record (in our case the sales order), if any 
 on all referencing records the Record_ID column will be cleared (set to NULL)
 
 **Technical:** The record constraints will be only activated when deleting through java model classes (through PO.java).
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Constraint_Type_for_RecordID_and_UU)_

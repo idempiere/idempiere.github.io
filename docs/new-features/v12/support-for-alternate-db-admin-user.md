@@ -25,7 +25,3 @@ export ADEMPIERE_DB_SYSTEM_USER=myCustomDBAdmin
 And then run the setup script as usual.
 
 **Technical Info:** [IDEMPIERE-6648](https://idempiere.atlassian.net/browse/IDEMPIERE-6648)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Support_for_Alternate_DB_Admin_User)_

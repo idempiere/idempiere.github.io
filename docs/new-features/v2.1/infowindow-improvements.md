@@ -38,7 +38,3 @@ same default logic field at standard window
 ![Infowindow displayLogicProcess](pathname:///img/new-features/v2.1/Infowindow_displayLogicProcess.png)
 
 **Technical Info:** [IDEMPIERE-1378](http://idempiere.atlassian.net/browse/IDEMPIERE-1378), [IDEMPIERE-1792](http://idempiere.atlassian.net/browse/IDEMPIERE-1792), [IDEMPIERE-1972](http://idempiere.atlassian.net/browse/IDEMPIERE-1972), [IDEMPIERE-1973](http://idempiere.atlassian.net/browse/IDEMPIERE-1973)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_InfoWindow_Improvements)_

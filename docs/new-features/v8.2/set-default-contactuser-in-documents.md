@@ -24,7 +24,3 @@ In the 'User' window or in the 'User/Contact' tab on the Business Partner window
 When you create a Sales Order, Purchase Order, Invoice, or Shipment document. The system will set the user marked as Ship contact for the User/Contact field and the user marked as Invoice Contact in the 'Invoice Contact' field. If no user has those flags checked it will behave as before and set the user with the highest ID or the one selected in the User Info Window when choosing a Business Partner.
 
 **Technical Info:** [IDEMPIERE-4490](https://idempiere.atlassian.net/browse/IDEMPIERE-4490)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Set_default_Contact/User_in_Documents)_

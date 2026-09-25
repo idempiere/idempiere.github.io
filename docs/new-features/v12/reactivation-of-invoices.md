@@ -34,7 +34,3 @@ If is ticked and role has been granted to reactive it (via Document Action Acces
 You'll find the Re-activate item on Document Action :
 
 ![ReactivationInvoice DocAction](pathname:///img/new-features/v12/ReactivationInvoice_DocAction.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Reactivation_of_Invoices)_

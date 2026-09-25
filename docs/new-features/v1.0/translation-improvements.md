@@ -18,7 +18,3 @@ Samely for export you can choose a server folder, or a zip file and download dir
 ![01 Translation Improvements](pathname:///img/new-features/v1.0/01_Translation_Improvements.png)
 
 **Technical Info:** [IDEMPIERE-810](http://idempiere.atlassian.net/browse/IDEMPIERE-810), [IDEMPIERE-1345](http://idempiere.atlassian.net/browse/IDEMPIERE-1345), [IDEMPIERE-1452](http://idempiere.atlassian.net/browse/IDEMPIERE-1452)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Translation_Improvements)_

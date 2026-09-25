@@ -60,7 +60,3 @@ APPLICATION_DATABASE_VERSION
 ```
 
 **Technical Info:** [IDEMPIERE-2259](http://idempiere.atlassian.net/browse/IDEMPIERE-2259)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Configurable_Info_Login)_

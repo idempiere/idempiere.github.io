@@ -17,7 +17,3 @@ I have prepared an OSGI Service that allows to use a customized WQuickEdit dialo
 Our immediate requirement was to block the dialog from trying to create a new table record that would violate an existing unique constraint. Instead it was meant to load the existing record from the database.
 That was very easy to implement once I had the service in place.
 Apart from that I can think of numerous other useful ways to customize the WQuickEntry dialog that are made possible by the proposed feature enhancement.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_IQuickEntry_OSGI_Service)_

@@ -32,7 +32,3 @@ You can set per tenant the System Configurator [ZOOM_ACROSS_QUERY_TIMEOUT](http:
 ![04 SysConfigZoomTimeout](pathname:///img/new-features/v5.1/04_SysConfigZoomTimeout.png)
 
 **Technical Info:** [IDEMPIERE-3580](http://idempiere.atlassian.net/browse/IDEMPIERE-3580)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF5.1_DetailedZoomAcross)_

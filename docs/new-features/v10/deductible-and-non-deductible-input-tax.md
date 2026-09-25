@@ -57,7 +57,3 @@ _Example Material Receipt Posting_
 ![5057 Invoice Posting](pathname:///img/new-features/v10/5057_Invoice_Posting.png)
 
 _Example Vendor Invoice Posting_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Deductible_And_Non_Deductible_Input_Tax)_

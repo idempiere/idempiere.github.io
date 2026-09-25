@@ -111,7 +111,3 @@ The better way is to use @Component, @Reference and @Activator instead.
 ```
 
 **Technical Info:** [IDEMPIERE-4689](https://idempiere.atlassian.net/browse/IDEMPIERE-4689), [IDEMPIERE-5001](https://idempiere.atlassian.net/browse/IDEMPIERE-5001)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_OSGi_New_Process_Factory)_

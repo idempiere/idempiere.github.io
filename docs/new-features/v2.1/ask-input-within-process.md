@@ -53,7 +53,3 @@ _String input in WebUI_
 ![AksForInput3](pathname:///img/new-features/v2.1/AksForInput3.jpg)
 
 _Parameters read during the process and logged with addLog()_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Ask_Input_Within_Process)_

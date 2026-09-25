@@ -16,7 +16,3 @@ Now iDempiere can show the Record Info (audit changes for a record) in Time Line
 ![TimeLineRecordInfo](pathname:///img/new-features/v7.1/TimeLineRecordInfo.png)
 
 **Technical Info:** [IDEMPIERE-3562](https://idempiere.atlassian.net/browse/IDEMPIERE-3562)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_Time_Line_Record_Info)_

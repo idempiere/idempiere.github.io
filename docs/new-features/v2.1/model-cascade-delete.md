@@ -21,7 +21,3 @@ Also to change the behavior on children records you can use:
 ![01 ModelCascadeDelete](pathname:///img/new-features/v2.1/01_ModelCascadeDelete.png)
 
 **Technical Info:** [IDEMPIERE-2060](http://idempiere.atlassian.net/browse/IDEMPIERE-2060)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Model_Cascade_Delete)_

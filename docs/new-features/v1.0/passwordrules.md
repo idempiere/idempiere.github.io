@@ -26,7 +26,3 @@ tags: [security]
 ![NF001 SEC PasswordRules](pathname:///img/new-features/v1.0/NF001_SEC_PasswordRules.png)
 
 **Technical Info:** [IDEMPIERE-221](http://idempiere.atlassian.net/browse/IDEMPIERE-221)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_PasswordRules)_

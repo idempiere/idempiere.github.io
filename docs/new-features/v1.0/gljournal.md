@@ -25,7 +25,3 @@ tags: [functional]
 ![NF001 UX GLJournal](pathname:///img/new-features/v1.0/NF001_UX_GLJournal.png)
 
 **Technical Info:** [IDEMPIERE-344](http://idempiere.atlassian.net/browse/IDEMPIERE-344)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_GLJournal)_

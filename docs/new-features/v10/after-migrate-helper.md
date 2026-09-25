@@ -66,7 +66,3 @@ When a record is ignored it will not be reported again in subsequents executions
 
 ## Technical Info
 [IDEMPIERE-5229](https://idempiere.atlassian.net/browse/IDEMPIERE-5229)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_After_Migrate_Helper)_

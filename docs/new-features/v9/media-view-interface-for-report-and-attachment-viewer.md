@@ -19,7 +19,3 @@ Add media view interface for Report and Attachment Viewer. This allows plugin to
 1. Create concrete implementation of org.idempiere.ui.zk.media.IMediaView interface.
 1. Use service.ranking > 0 to override core viewer implementation (For e.g, to provide excel viewer using LibreOffice Online).
 1. See org.idempiere.keikai project for reference.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Media_View_Interface)_

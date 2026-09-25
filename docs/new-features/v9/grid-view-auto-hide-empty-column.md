@@ -33,7 +33,3 @@ Grid View with Auto Hide Empty Column turn on:
 ![4835 With AutoHide](pathname:///img/new-features/v9/4835_With_AutoHide.png)
 
 _Grid View with Auto Hide Empty Column turn on_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Grid_View_Auto_Hide_Empty_Column)_

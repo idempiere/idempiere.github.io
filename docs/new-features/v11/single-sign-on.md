@@ -332,7 +332,3 @@ public class MSSOPrinciple implements ISSOPrincipalService
 **Technical Info:** [IDEMPIERE-5346](https://idempiere.atlassian.net/browse/IDEMPIERE-5346)
 ### See Also
 - [NF12_Multiple_SSO_Provider_Support](/docs/new-features/v12/multiple-sso-provider-support)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Single_SignOn)_

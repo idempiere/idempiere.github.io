@@ -16,7 +16,3 @@ Additionally to save PDF documents as Archive, you have now the possibility to s
 ![SaveDocumentToAttachment](pathname:///img/new-features/v9/SaveDocumentToAttachment.png)
 
 **Technical Info:** [IDEMPIERE-5222](https://idempiere.atlassian.net/browse/IDEMPIERE-5222)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Save_Document_To_Attachment)_

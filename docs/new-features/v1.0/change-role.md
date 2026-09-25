@@ -20,7 +20,3 @@ Click in the link "Change Role"  and go to second login dialog box.
 ![crole2](pathname:///img/new-features/v1.0/crole2.png)
 
 **Technical Info:** [IDEMPIERE-356](http://idempiere.atlassian.net/browse/IDEMPIERE-356)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Change_Role)_

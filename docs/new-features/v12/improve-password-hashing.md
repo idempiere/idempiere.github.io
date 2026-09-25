@@ -35,7 +35,3 @@ _Convert password to hashes process_
 - User's password will be rehashed using the newly set algorithm when they login next time.
 
 **Technical Info:** [IDEMPIERE-6712](https://idempiere.atlassian.net/browse/IDEMPIERE-6712)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Improve_Password_Hashing)_

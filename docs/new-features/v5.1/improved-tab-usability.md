@@ -19,7 +19,3 @@ For a better user experience, some improvements were made to tab behavior:
 ![01 TabDrag](pathname:///img/new-features/v5.1/01_TabDrag.png)
 
 **Technical Info:** [IDEMPIERE-3426](http://idempiere.atlassian.net/browse/IDEMPIERE-3426)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF5.1_Improved_Tab_Usability)_

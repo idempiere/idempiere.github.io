@@ -28,7 +28,3 @@ And enjoy the new tree feature:
 **Parent Column:** Version 8.2 introduce Parent Column ([tiket](https://idempiere.atlassian.net/browse/IDEMPIERE-5008)), which allow define for tenant admin the column from custom table. This improve performance.
 
 **Technical Info:** [IDEMPIERE-2675](http://idempiere.atlassian.net/browse/IDEMPIERE-2675)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF3.0_Tree_On_Any_Table)_

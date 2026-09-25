@@ -28,7 +28,3 @@ _Attached Document to EMail_
 
 - *Add context variable (@...@) support to **Subject** field of Mail Template. Access is provided to global variables (for e.g @#AD_Client_ID@), PO column (for e.g, @DocumentNo@) and bean property (for e.g @=summary@)*
 - *Add support for a fake context variable @_noDocInfo_@  When this variable is present on the subject or the text of the mail template, then, no extra information is added by the workflow processor.*
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Workflow_EMail_Enhancement)_

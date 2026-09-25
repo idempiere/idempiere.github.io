@@ -24,7 +24,3 @@ If you fill it with an email address, the server will only be used when an email
 If you fill it with a domain, the server will be used for all email with a 'from' address using this domain.
 
 nb: the program starts to check for the EMail address and if not found, check for the domain.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Multiple_SMTP_Per_Tenant)_

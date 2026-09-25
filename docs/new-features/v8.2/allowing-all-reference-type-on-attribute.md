@@ -30,7 +30,3 @@ Below is how attribute dialog looks with different editor.
 ![Attribute Panel](pathname:///img/new-features/v8.2/Attribute-Panel.PNG)
 
 **Technical Info:** [IDEMPIERE-2999](http://idempiere.atlassian.net/browse/IDEMPIERE-2999)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Attribute_All_Reference)_

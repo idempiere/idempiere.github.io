@@ -35,7 +35,3 @@ _Bank/Cash Transfer Window_
 ![5088 BankCashTransferPayments](pathname:///img/new-features/v10/5088_BankCashTransferPayments.png)
 
 _Bank/Cash Transfer Payments_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_BankCash_Transfer_Document)_

@@ -17,7 +17,3 @@ tags: [user-experience]
 1. We recently added a field and the order of items was important as it was used elsewhere.
 1. We added a wizard for helping user to change ordering of items.
 1. And I think is better to implement it in a generic way as the need can be for each field
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Wizard_Chosen_Multiple_Selection_List_Editor)_

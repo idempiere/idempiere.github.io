@@ -34,7 +34,3 @@ Users can also assign a CSS style to a Label Category so labels inherit its styl
 Finally, users can use the Label Assignment window to perform common actions with labels, e.g. generate usage reports or perform batch actions (e.g. record deletions):
 
 ![LabelAssignmentWindow](pathname:///img/new-features/v10/LabelAssignmentWindow.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Label_Feature)_

@@ -49,7 +49,3 @@ The result looks like this:
 ![ResutlCSS](pathname:///img/new-features/v4.1/ResutlCSS.png)
 
 **Technical Info:** [IDEMPIERE-3115](http://idempiere.atlassian.net/browse/IDEMPIERE-3115), [IDEMPIERE-3617](http://idempiere.atlassian.net/browse/IDEMPIERE-3617)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF4.1_Styles_On_Fields)_

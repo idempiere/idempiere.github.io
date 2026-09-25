@@ -22,7 +22,3 @@ The result will look like:
 **Technical Info:** [IDEMPIERE-3696](https://idempiere.atlassian.net/browse/IDEMPIERE-3696)
 
 See also [User Locking](/docs/new-features/v1.0/user-locking)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Warning_on_Password_Expiration)_

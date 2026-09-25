@@ -48,7 +48,3 @@ Bank statement can be matched manually or using matcher automatically. Earlier i
 **See also:**
 
 [NF1.0 Payment Batch](/docs/new-features/v1.0/payment-batch)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Multiple_Payments_against_statement_line_by_Payment_Batch)_

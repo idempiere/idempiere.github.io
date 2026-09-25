@@ -20,7 +20,3 @@ In order to ease the initial setup of a new tenant three options were added to t
 ![01 Client Setup](pathname:///img/new-features/v2.1/01_Client_Setup.png)
 
 **Technical Info:** [IDEMPIERE-1685](http://idempiere.atlassian.net/browse/IDEMPIERE-1685)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Ease_Initial_Client_Setup)_

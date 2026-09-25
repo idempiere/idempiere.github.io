@@ -27,7 +27,3 @@ This enhancement allows you to add dashboard content with a new Goal type - "**G
 ![Dashboard content goal indicator](pathname:///img/new-features/v10/Dashboard-content-goal-indicator.png)
 
 _Dashboard-content-goal-indicator_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Dashboard_Content_Goal_Indicator)_

@@ -44,7 +44,3 @@ Upload Dialog for Google Drive plugin above:
 Cloud Upload field at Scheduler Recipient (Upload, Authorization Account and File Name):
 
 ![SchedulerRecipient](pathname:///img/new-features/v9/SchedulerRecipient.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Cloud_Upload_Interface)_

@@ -22,7 +22,3 @@ https://idempiere.atlassian.net/browse/IDEMPIERE-6147 adds a HTML listbox (visib
 ![HTML Field](pathname:///img/new-features/v12/HTML_Field.png)
 
 So now, you can have a column which can be displayed as plain text or HTML according to the setup done on the field !
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Define_HTML_field_at_field_level)_

@@ -26,7 +26,3 @@ When you add a new gadget in *Dashboard Content* window, you can define if the g
 ![NF20UserDashboard03](pathname:///img/new-features/v2.0/NF20UserDashboard03.png)
 
 **Technical Info:** [IDEMPIERE-1362](http://idempiere.atlassian.net/browse/IDEMPIERE-1362)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_User_Configurable_Dashboard)_

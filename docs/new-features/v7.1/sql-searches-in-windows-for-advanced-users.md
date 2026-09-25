@@ -34,7 +34,3 @@ If the user selects a regular saved query, the advanced panel is shown normally.
 ![SQLAdvanceFindWindowTab](pathname:///img/new-features/v7.1/SQLAdvanceFindWindowTab.jpg)
 
 **Technical Info:** [IDEMPIERE-2836](https://idempiere.atlassian.net/browse/IDEMPIERE-2836)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_SQL_Search_In_Windows)_

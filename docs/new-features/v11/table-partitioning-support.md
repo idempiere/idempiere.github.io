@@ -182,7 +182,3 @@ For e.g:
 - Set C_Order.AD_Client_ID as Partition Key Column with sequence of 10 and Partition Method of List
 - Set C_Order.Created as Partition Key Column with sequence of 20 and Partition Method of Range
 - With this configuration, C_Order.AD_Client_ID is the first List partition and C_Order.Created is the Range sub-partition of the C_Order.AD_Client_ID partition
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/Table_Partitioning)_

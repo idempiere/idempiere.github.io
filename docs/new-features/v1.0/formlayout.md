@@ -32,7 +32,3 @@ To achieve this result:
 Please **NOTE** that for swing client the usual configuration is done using the Display Length and Same Line fields.
 
 **Technical Info:** [IDEMPIERE-368](http://idempiere.atlassian.net/browse/IDEMPIERE-368)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_FormLayout)_

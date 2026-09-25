@@ -70,7 +70,3 @@ update m_product_category_acct set p_landedcostclearing_acct = (select ac.p_land
 ![EstimatedLandedCost Product Cost 2](pathname:///img/new-features/v2.0/EstimatedLandedCost_Product_Cost_2.png)
 
 **Technical Info:** [IDEMPIERE-1285](http://idempiere.atlassian.net/browse/IDEMPIERE-1285)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Estimated_Landed_Cost)_

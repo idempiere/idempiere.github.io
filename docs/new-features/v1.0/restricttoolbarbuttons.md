@@ -44,7 +44,3 @@ As the old adage says: "A picture is worth a thousand words", some examples:
 ![NF001 ToolbarButtonRestrict006](pathname:///img/new-features/v1.0/NF001_ToolbarButtonRestrict006.png)
 
 **Technical Info:** [IDEMPIERE-129](http://idempiere.atlassian.net/browse/IDEMPIERE-129) [IDEMPIERE-446](http://idempiere.atlassian.net/browse/IDEMPIERE-446)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_RestrictToolbarButtons)_

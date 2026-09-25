@@ -24,7 +24,3 @@ Simply set the desired value to the new added field "Exclude Adjustment Periods"
 - All Adjustment Periods
 
 ![FinReportExcludeAdjustmentPeriod](pathname:///img/new-features/v8.2/FinReportExcludeAdjustmentPeriod.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Financial_Report_Exclude_Adjustment_Periods)_

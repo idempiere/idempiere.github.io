@@ -20,7 +20,3 @@ For this it was implemented a simple solution, just add the suffix `_NOCACHE` to
 ![SysConfig NOCACHE](pathname:///img/new-features/v6.2/SysConfig_NOCACHE.png)
 
 **Technical Info:** [IDEMPIERE-3967](https://idempiere.atlassian.net/browse/IDEMPIERE-3967)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_SysConfig_Without_Cache)_

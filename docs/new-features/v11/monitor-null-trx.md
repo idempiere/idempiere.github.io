@@ -26,7 +26,3 @@ and disable it with:
 WARNING: This option can have a big performance impact and must be used with care on production just temporarily to trace problematic connection slowness or leaks.
 
 **Technical Info:** [IDEMPIERE-6125](https://idempiere.atlassian.net/browse/IDEMPIERE-6125)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Monitor_Null_Trx)_

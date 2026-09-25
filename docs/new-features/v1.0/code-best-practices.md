@@ -102,7 +102,3 @@ To make iDempiere safer is better to replace all unattended save calls with save
 [IDEMPIERE-308](http://idempiere.atlassian.net/browse/IDEMPIERE-308)
 [IDEMPIERE-312](http://idempiere.atlassian.net/browse/IDEMPIERE-312)
 [IDEMPIERE-314](http://idempiere.atlassian.net/browse/IDEMPIERE-314)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Code_Best_Practices)_

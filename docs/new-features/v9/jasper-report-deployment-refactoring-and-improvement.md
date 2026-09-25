@@ -66,7 +66,3 @@ Refactor and improve the deployment of Jasper Report.
 1. **Jasper Report Field = "bundle:Full path to the Jasper Report File"**, for e.g "bundle:/org/hengsin/jasper/reports/Order.jasper".
 1. The "RESOURCE_DIR" and "SUBREPORT_DIR" will be set to the parent path of the main jasper report file. Using the example above, it will be set to "bundle:/org/hengsin/jasper/reports/" (bundle: will be replaced by the actual bundle entries prefix, for e.g bundleentry://3.fwk1882395698/). If your Subreport expression is $P&#123;SUBREPORT_DIR&#125;+"OrderLine.jasper", it will be resolved to "bundle:org/hengsin/jasper/reports/OrderLine.jasper" (Similar translation happen for Image expression).
 1. Since v11 (https://idempiere.atlassian.net/browse/IDEMPIERE-5922), we have added a new syntax of **Jasper Report Field = "bundle:bundle symbolic name:Full path to the Jasper Report File"** (e.g bundle:org.idempiere.test:/AR_Invoice_Bundle.jrxml). With the new syntax, you don't have to create your plugin as fragment of "org.adempiere.report.jasper".
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Jasper_Report_Deployment)_

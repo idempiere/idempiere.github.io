@@ -32,7 +32,3 @@ Examples:
 ![01 ZoomFromURL](pathname:///img/new-features/v2.1/01_ZoomFromURL.png)
 
 **Technical Info:** [IDEMPIERE-2334](http://idempiere.atlassian.net/browse/IDEMPIERE-2334)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Zoom_From_URL)_

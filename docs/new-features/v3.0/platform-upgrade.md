@@ -46,7 +46,3 @@ Release 3.0 represents an important upgrade:
 You can find some hints collected from Hieplq in the page [Update your development environment zk7 branch](https://wiki.idempiere.org/en/Update_your_development_environment_zk7_branch)
 
 **Technical Info:** [IDEMPIERE-2245](http://idempiere.atlassian.net/browse/IDEMPIERE-2245)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF3.0_Platform_Upgrade)_

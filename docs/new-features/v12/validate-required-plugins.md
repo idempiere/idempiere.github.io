@@ -22,7 +22,3 @@ This is how the error in console looks when a plugin is not found:
 ![01 ServerTerminated](pathname:///img/new-features/v12/01_ServerTerminated.png)
 
 **Technical Info:** [IDEMPIERE-6471](https://idempiere.atlassian.net/browse/IDEMPIERE-6471)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Validate_Required_Plugins)_

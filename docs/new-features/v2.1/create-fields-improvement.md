@@ -24,7 +24,3 @@ When you run the **Create Fields** process from the Tab tab in the Window, Tab a
 The reason behind this is, that many default tables have more columns in the DB than they have in iDempiere (window: Table and Column). Therefore when you add a new field to one of the default tables and create the columns from the db, you may end up having 10 new columns. If you then generate the fields, you would have 10 new fields.
 
 **Technical Info:** [IDEMPIERE-1851](http://idempiere.atlassian.net/browse/IDEMPIERE-1851)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Create_Fields_Improvement)_

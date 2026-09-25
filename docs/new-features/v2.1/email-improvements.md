@@ -18,7 +18,3 @@ The following columns were added to the table AD_UserMail in order to improve th
 ![01 EmailImprovements](pathname:///img/new-features/v2.1/01_EmailImprovements.png)
 
 **Technical Info:** [IDEMPIERE-1828](http://idempiere.atlassian.net/browse/IDEMPIERE-1828)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_EMail_Improvements)_

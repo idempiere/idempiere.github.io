@@ -117,7 +117,3 @@ In order to have a better control of what is 2Pack executing a logging option wa
 ![02 2PackLogging](pathname:///img/new-features/v8.2/02_2PackLogging.png)
 
 **Technical Info:** [IDEMPIERE-4968](https://idempiere.atlassian.net/browse/IDEMPIERE-4968)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Run_Script_With_2Pack)_

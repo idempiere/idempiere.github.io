@@ -37,7 +37,3 @@ Should only copy :
 ![Screenshot32](pathname:///img/new-features/v1.0/Screenshot32.png)
 
 **Technical Info:** [IDEMPIERE-448](http://idempiere.atlassian.net/browse/IDEMPIERE-448)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Copy_From_Bank_Statement)_

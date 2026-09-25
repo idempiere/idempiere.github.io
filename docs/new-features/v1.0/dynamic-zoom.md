@@ -41,7 +41,3 @@ The zoom condition records are evaluated ordered by seqno, firstly the ZoomLogic
 ![Zoom Logic](pathname:///img/new-features/v1.0/Zoom_Logic.jpg)
 
 **Technical Info:** [IDEMPIERE-528](http://idempiere.atlassian.net/browse/IDEMPIERE-528)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Dynamic_Zoom)_

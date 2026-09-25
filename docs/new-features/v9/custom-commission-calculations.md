@@ -75,7 +75,3 @@ public class CUSTOM_CommissionCalc extends CommissionCalc  &#123;
 &#125;
 
 ```
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Extending_CommissionCalc)_

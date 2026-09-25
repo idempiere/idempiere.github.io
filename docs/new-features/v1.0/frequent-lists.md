@@ -32,7 +32,3 @@ To enable the full list user just needs to right-click and toggle to full list:
 ![04 ToggleShortList](pathname:///img/new-features/v1.0/04_ToggleShortList.png)
 
 **Technical Info:** [IDEMPIERE-90](http://idempiere.atlassian.net/browse/IDEMPIERE-90)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Frequent_Lists)_

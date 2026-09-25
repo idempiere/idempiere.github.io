@@ -34,7 +34,3 @@ For example the following screenshot shows an other way to define the same condi
 Both cases uses the current workflow record being processed to replace context variables.
 
 **Technical Info:** [IDEMPIERE-4900](https://idempiere.atlassian.net/browse/IDEMPIERE-4900)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_SQL_Workflow_Condition)_

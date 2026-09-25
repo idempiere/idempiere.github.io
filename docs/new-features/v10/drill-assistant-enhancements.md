@@ -80,7 +80,3 @@ _allow drilling from window_
 1. Implement favorites same in the menu, so user will able set print format as favorites - then filter by tab/dropdown
 1. Sorting drill rules by popularity not name (another ticket, implement statistics, how often the reports are started -  then filter by tab/dropdown
 1. Parameter inheritance from actual to drilled report
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_DrillAssistant)_

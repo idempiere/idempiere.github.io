@@ -26,7 +26,3 @@ You can now define new process/form toolbar button for a window tab without the 
 **3) Result**
 
 ![NF001 WindowToolbarButton003](pathname:///img/new-features/v1.0/NF001_WindowToolbarButton003.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_WindowTabToolbarButton)_

@@ -34,7 +34,3 @@ This process will create a payment with the information of the online process
 ![payment7](pathname:///img/new-features/v1.0/payment7.png)
 
 **Technical Info:** [IDEMPIERE-392](http://idempiere.atlassian.net/browse/IDEMPIERE-392)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_PaymentField)_

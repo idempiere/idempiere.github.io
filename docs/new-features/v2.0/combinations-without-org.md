@@ -16,7 +16,3 @@ Now you can create combinations with the * organization (previously an organizat
 ![01 Combination](pathname:///img/new-features/v2.0/01_Combination.png)
 
 **Technical Info:** [IDEMPIERE-159](http://idempiere.atlassian.net/browse/IDEMPIERE-159)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_Combinations_Without_Org)_

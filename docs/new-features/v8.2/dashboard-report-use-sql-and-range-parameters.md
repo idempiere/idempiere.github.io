@@ -30,7 +30,3 @@ It means that the report will filter data
 **Postgres Example** &lt;blockquote&gt;@SQL=SELECT date_trunc('month', NOW()) + interval '1 month' - interval '1 second'&lt;/blockquote&gt;
 
 **Technical Info:** [IDEMPIERE-4781](https://idempiere.atlassian.net/browse/IDEMPIERE-4781)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Dashboard_Report_Use_Sql_And_Range_Parameters)_

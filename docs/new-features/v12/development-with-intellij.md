@@ -106,7 +106,3 @@ _Updated module dependencies of com.trekglobal.idempiere.rest.api_
 _Run configuration for com.trekglobal.idempiere.rest.api_
 &lt;p&gt;
 5. Run/Debug the newly created run configuration to test
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/Development_With_Intellij)_

@@ -41,7 +41,3 @@ A new "Inv Sub Type" field was created in the "Document Type" window, which is v
 *Note: When you need to create a new type of inventory document, you need to set manually the inventory document subtype for your inventory documents*
 
 **Technical Info:** [IDEMPIERE-281](http://idempiere.atlassian.net/browse/IDEMPIERE-281) [IDEMPIERE-675](http://idempiere.atlassian.net/browse/IDEMPIERE-675)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Inventory_Documents)_

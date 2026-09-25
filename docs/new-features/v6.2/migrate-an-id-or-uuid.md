@@ -63,7 +63,3 @@ Be careful when changing the AD_Client_ID key when using keystore encryption (id
 If you have encrypted columns and use the keystore approach (idempiere.ks), the encryption key is based on the AD_Client_ID, so, changing the AD_Client_ID can make your encrypted data useless.
 
 **Technical Info:** [IDEMPIERE-3916](https://idempiere.atlassian.net/browse/IDEMPIERE-3916)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Migrate_ID)_

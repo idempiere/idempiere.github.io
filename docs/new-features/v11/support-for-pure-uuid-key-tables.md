@@ -197,7 +197,3 @@ Note the Permalink is generated using the [Record Info](/docs/new-features/v9/re
 Also using the [Record Info](/docs/new-features/v9/record-info-copy-to-clipboard-buttons) dialog is possible to copy to clipboard a query to get the record in a SQL editor, this query can be based now on the UUID column when the table doesn't have an _ID key.
 
 **Technical Info:** [IDEMPIERE-5567](https://idempiere.atlassian.net/browse/IDEMPIERE-5567)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_UUID_Key_Tables)_

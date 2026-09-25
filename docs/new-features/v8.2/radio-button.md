@@ -24,7 +24,3 @@ And the editor looks like this when used:
 ![02 FieldGroupRadioButton](pathname:///img/new-features/v8.2/02_FieldGroupRadioButton.png)
 
 **Technical Info:** [IDEMPIERE-2902](https://idempiere.atlassian.net/browse/IDEMPIERE-2902)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Radio_Button)_

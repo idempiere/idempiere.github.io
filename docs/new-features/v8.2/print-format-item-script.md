@@ -41,7 +41,3 @@ That's why the script field is protected, just to be configured by advanced role
 
 ## Technical Info
 [IDEMPIERE-4709](https://idempiere.atlassian.net/browse/IDEMPIERE-4709)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Print_Format_Item_Script)_

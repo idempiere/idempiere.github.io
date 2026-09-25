@@ -57,7 +57,3 @@ Resolved an issue in `AD Window` list view:
   - Fixed broken list view display when field content includes single or double quotation marks.
 
 This update brings enhanced search result customization and improved list view stability.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Document_Search_Customisable_Layout)_

@@ -20,7 +20,3 @@ Now the output of some processes that create new documents or records in other t
 ![Screenshot39](pathname:///img/new-features/v1.0/Screenshot39.png)
 
 **Technical Info:** [IDEMPIERE-370](http://idempiere.atlassian.net/browse/IDEMPIERE-370)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Link_End_Process_With_Next_Record)_

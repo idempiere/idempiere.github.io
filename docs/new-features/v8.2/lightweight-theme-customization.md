@@ -21,7 +21,3 @@ Additionally the usage of font symbols instead of graphical icons can be configu
 
 #### See also
 [NF12 Theme Customization](/docs/new-features/v12/theme-customization)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Lightweight_theme_customization)_

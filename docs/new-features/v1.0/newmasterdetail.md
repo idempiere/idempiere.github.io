@@ -69,7 +69,3 @@ New master detail implementation to improve usability.
 **11) Header and detail tab share the save and ignore toolbar button**
 
 ![NF001 MasterDetail007](pathname:///img/new-features/v1.0/NF001_MasterDetail007.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_NewMasterDetail)_

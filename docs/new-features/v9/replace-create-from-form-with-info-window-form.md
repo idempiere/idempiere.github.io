@@ -77,7 +77,3 @@ _Material Receipt Create Lines From Info Window_
 - The configure process is render as a button to the left of the "X" button.
 - User will select order, execute search, select order lines and click the **Create lines from Shipment/Receipt** button to  create new Material Receipt lines from selected Order lines.
 - The other windows (Invoice (Vendor), Vendor RMA, etc) will follows the same configuration and usage pattern.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Replace_CreateFrom_With_InfoWindow_Process)_

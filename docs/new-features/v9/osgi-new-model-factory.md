@@ -124,7 +124,3 @@ The better way is to use @Component, @Reference and @Activator instead.
 **Technical Info:**
 
 [IDEMPIERE-4675](https://idempiere.atlassian.net/browse/IDEMPIERE-4675), [IDEMPIERE-5004](https://idempiere.atlassian.net/browse/IDEMPIERE-5004), [IDEMPIERE-4842](https://idempiere.atlassian.net/browse/IDEMPIERE-4842)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_OSGi_New_Model_Factory)_

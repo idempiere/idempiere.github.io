@@ -27,7 +27,3 @@ Example for edit of check print format:
 ![1994 PrintFormat Editor](pathname:///img/new-features/v9/1994_PrintFormat_Editor.png)
 
 _Print format editor window_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Print_Format_Editor)_

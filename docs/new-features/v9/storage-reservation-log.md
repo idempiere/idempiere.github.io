@@ -23,7 +23,3 @@ Implement movement log for QtyReserved and QtyOrder:
 1. * ![Reserved Quantity Log 5021](pathname:///img/new-features/v9/Reserved_Quantity_Log_5021.png)
 
 _Qty Reserved Log_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Storage_Reservation_Log)_

@@ -62,7 +62,3 @@ Class ExportAction is implements interface org.adempiere.webui.action.IAction
 **Result**
 
 ![NF001 CustomWindowToolbarButton009](pathname:///img/new-features/v1.0/NF001_CustomWindowToolbarButton009.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_CustomWindowToolbarButton)_

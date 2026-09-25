@@ -22,7 +22,3 @@ Until now, tabular reports are opened in new tab - as result opening many tabs. 
 - New sysconfig: ZK_REPORT_TABLE_OPEN_IN_NEW_TAB - allow setup legacy behavior
 
 ![NF10 Tabular Report Re Run](pathname:///img/new-features/v10/NF10_Tabular_Report_Re_Run.gif)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Tabular_Report_Re_Run)_

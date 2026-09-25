@@ -47,7 +47,3 @@ If you set the parenthesis it will look like this
  select 1
  from M_Product_PO
  where M_Product_PO.M_Product_ID = M_Product.M_Product_ID and (C_BPartner_ID = 1006812 and IsCurrentVendor = 'Y')))
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Advanced_Search_Enhancements)_

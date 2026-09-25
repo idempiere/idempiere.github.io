@@ -31,7 +31,3 @@ Enhancements for boolean logic expressions (readonly, display and mandatory):
     1. Example: `@Identifier@ ~ '^([a-zA-Z_$][a-zA-Z\\d_$]*)$'`
     1. Note: to avoid parsing issues, always quote your regular expression with ' or ""
     1. It is fix to the format of &lt;Input String&gt; ~ '&lt;Regular Expressions&gt;', i.e you must always put your regular expression after the ~ operator.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Boolean_Logic_Enhancements)_

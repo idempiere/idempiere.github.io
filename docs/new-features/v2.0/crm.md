@@ -25,7 +25,3 @@ tags: [functional]
 
 ## Review
 - Ongoing enhancement, testing and review in [red1 forum](http://red1.org/adempiere/viewtopic.php?f=45&t=1822) sponsored by SYSNOVA.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_CRM)_

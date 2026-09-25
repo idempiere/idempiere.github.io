@@ -20,7 +20,3 @@ Also, the Date field can become read-only if the SysConfig key [System_Configura
 ![NewRolePanel](pathname:///img/new-features/v6.2/NewRolePanel.png)
 
 **Technical Info:** [IDEMPIERE-1311](https://idempiere.atlassian.net/browse/IDEMPIERE-1311)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Role_Panel)_

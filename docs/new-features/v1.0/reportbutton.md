@@ -40,7 +40,3 @@ Also a flag was added to include "All columns" when generating a new print forma
 ![report7](pathname:///img/new-features/v1.0/report7.png)
 
 **Technical Info:** [IDEMPIERE-270](http://idempiere.atlassian.net/browse/IDEMPIERE-270)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_ReportButton)_

@@ -34,7 +34,3 @@ Additionally to the timeout in seconds, there are also SysConfig keys to configu
 - **GLOBAL_MAX_REPORT_RECORDS:** This is the maximum number allowed to list when running a report.  It can be defined per Tenant and default is 100.000 records.
 
 **Technical Info:** [IDEMPIERE-6123](https://idempiere.atlassian.net/browse/IDEMPIERE-6123)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Tuning_Windows_Performance)_

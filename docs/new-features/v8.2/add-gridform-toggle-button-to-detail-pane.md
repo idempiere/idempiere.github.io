@@ -22,7 +22,3 @@ The goal of the ticket is to allow users to switch between grid and form view at
 ![GridToggleAtDetailPane](pathname:///img/new-features/v8.2/GridToggleAtDetailPane.png)
 
 **Technical Info:** [IDEMPIERE-4705](https://idempiere.atlassian.net/browse/IDEMPIERE-4705)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Add_Grid_Form_Toggle_Button_To_Detail_Pane)_

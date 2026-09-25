@@ -20,7 +20,3 @@ When opened in libreoffice you'll find the detail in a different tab:
 ![ExcelExportSalesOrderResult](pathname:///img/new-features/v7.1/ExcelExportSalesOrderResult.png)
 
 **Technical Info:** [IDEMPIERE-3995](https://idempiere.atlassian.net/browse/IDEMPIERE-3995)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_Excel_Master_Detail_Export)_

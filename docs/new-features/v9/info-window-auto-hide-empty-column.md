@@ -29,7 +29,3 @@ Info Window View with Auto Hide Empty Column turn on:
 ![4841 With Auto Hide](pathname:///img/new-features/v9/4841_With_Auto_Hide.png)
 
 _Info Window with Auto Hide_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Info_Window_Auto_Hide_Empty_Column)_

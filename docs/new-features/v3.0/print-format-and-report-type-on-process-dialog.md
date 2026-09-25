@@ -20,7 +20,3 @@ When running processes and reports, now you can selection of Print format and Re
 **Technical Info:** [IDEMPIERE-2389](http://idempiere.atlassian.net/browse/IDEMPIERE-2389)
 
 **See also:** [Run Report as Job](/docs/new-features/v2.1/run-report-as-job)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF3.0_Print_Format_and_Report_Type_on_Process_Dialog)_

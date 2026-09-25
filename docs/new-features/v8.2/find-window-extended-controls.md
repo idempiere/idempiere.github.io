@@ -42,7 +42,3 @@ In short this improvement will allow you to:
 ![IDEMPIERE 3981 E](pathname:///img/new-features/v8.2/IDEMPIERE-3981-E.png)
 
 **Technical Info:** [IDEMPIERE-3981](https://idempiere.atlassian.net/browse/IDEMPIERE-3981)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Find_Window_Extended_Controls)_

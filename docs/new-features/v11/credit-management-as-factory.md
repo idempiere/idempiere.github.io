@@ -127,7 +127,3 @@ public class CreditStatus
 ```
 
 **Technical Info:** [IDEMPIERE-5768](https://idempiere.atlassian.net/browse/IDEMPIERE-5768)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Credit_Management_Factory)_

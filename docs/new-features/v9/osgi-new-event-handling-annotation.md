@@ -107,7 +107,3 @@ public void bindService(IEventManager eventManager) {
 ```
 
 **Technical Info:** [IDEMPIERE-4694](https://idempiere.atlassian.net/browse/IDEMPIERE-4694), [IDEMPIERE-5019](https://idempiere.atlassian.net/browse/IDEMPIERE-5019)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_OSGi_New_Event_Handling_Annotation)_

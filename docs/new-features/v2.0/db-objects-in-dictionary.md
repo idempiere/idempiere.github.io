@@ -53,7 +53,3 @@ The Constraint Type options will modify the behavior of the constraint this way:
 ![NF20Constraint](pathname:///img/new-features/v2.0/NF20Constraint.png)
 
 **Technical Info:** [IDEMPIERE-1132](http://idempiere.atlassian.net/browse/IDEMPIERE-1132)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.0_DB_Objects_in_Dictionary)_

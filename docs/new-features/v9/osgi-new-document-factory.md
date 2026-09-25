@@ -57,7 +57,3 @@ public class MyDocFactory extends MappedDocumentFactory {
 }
 ```
 **Technical Info:** [IDEMPIERE-4695](https://idempiere.atlassian.net/browse/IDEMPIERE-4695)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_OSGi_New_Document_Factory)_

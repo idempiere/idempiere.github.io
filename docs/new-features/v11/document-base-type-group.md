@@ -25,7 +25,3 @@ Instead of this the user could now quickly select one from the predefined groups
 ![Doctype Group Period Control](pathname:///img/new-features/v11/Doctype_Group_Period_Control.png)
 
 **Technical Info:** [IDEMPIERE-5659](https://idempiere.atlassian.net/browse/IDEMPIERE-5659)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_Document_Base_Type_Group)_

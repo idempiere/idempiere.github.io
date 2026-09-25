@@ -41,7 +41,3 @@ The result looks like this:
 ![03 Activities](pathname:///img/new-features/v4.1/03_Activities.png)
 
 **Technical Info:** [IDEMPIERE-3338](http://idempiere.atlassian.net/browse/IDEMPIERE-3338)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF4.1_Configurable_Activities_Dashboard)_

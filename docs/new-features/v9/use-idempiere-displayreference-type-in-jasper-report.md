@@ -46,7 +46,3 @@ Allow the use of iDempiere's Display/Reference Type based rendering of data in J
 
 **Update:**
 :[IDEMPIERE-6048](https://idempiere.atlassian.net/browse/IDEMPIERE-6048) added support for attachment ("attachment/table name/index" or "attachment/table name/file name").
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Column_Display_Type_For_Jasper_Report)_

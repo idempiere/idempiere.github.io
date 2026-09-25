@@ -42,7 +42,3 @@ Note also the new price tab:
 [IDEMPIERE-191](http://idempiere.atlassian.net/browse/IDEMPIERE-191)
 [IDEMPIERE-337](http://idempiere.atlassian.net/browse/IDEMPIERE-337)
 [IDEMPIERE-339](http://idempiere.atlassian.net/browse/IDEMPIERE-339)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_InfoProduct)_

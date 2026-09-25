@@ -29,7 +29,3 @@ When you create your adjusting GL Journal entry, be sure to set the Period field
 When you produce your Financial Reports, you can choose between the 'Dec-14' and 'Dec-14-Adj' periods. If you choose 'Dec-14', then you will get results for all periods except the adjusting period. If you choose 'Dec-14-Adj', then you will get results for all periods including the adjusting period.
 
 **Technical Info:** [IDEMPIERE-2184](http://idempiere.atlassian.net/browse/IDEMPIERE-2184)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Improve_Accounting_Adjustment_Periods)_

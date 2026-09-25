@@ -34,7 +34,3 @@ public void onInit(ProcessParameterPanel parameterPanel) {
 }
 
 ```
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_IProcessParameterListener_onInit)_

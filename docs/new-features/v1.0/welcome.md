@@ -60,7 +60,3 @@ and the performance indicator can be opened using this button.
 
 ## Known Issue
 - New created dashboard content will not appear in the dashboard if the dashboard preference for the specified user and role already exists
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Welcome)_

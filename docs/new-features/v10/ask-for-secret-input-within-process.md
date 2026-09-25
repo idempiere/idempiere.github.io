@@ -36,7 +36,3 @@ Here is an example of how to use the askForSecretInput() method:
 ```
 
 ![Secret input dialog within a process](pathname:///img/new-features/v10/Secret_input_dialog_within_a_process.jpg)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Ask_For_Secret_Input_Within_Process)_

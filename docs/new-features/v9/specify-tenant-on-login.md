@@ -59,7 +59,3 @@ Now, the MFA page is shown to the user when the tenant is defined, so, in the ca
 This is mostly transparent for the user, the only difference is that previously the MFA page was shown after the tenant/role selection page, and now is shown before when the tenant is defined.
 
 **Technical Info:** [IDEMPIERE-5408](https://idempiere.atlassian.net/browse/IDEMPIERE-5408)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Specify_Tenant_on_Login)_

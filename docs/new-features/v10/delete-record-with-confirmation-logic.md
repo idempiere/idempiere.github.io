@@ -50,7 +50,3 @@ Validation syntax follow iDempiere convention, example
 
 ##### **Translation: Spain Translation of Delete**
 ![Deleteconfirm logic translation](pathname:///img/new-features/v10/Deleteconfirm-logic-translation.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Delete_Record_with_Confirmation_Logic)_

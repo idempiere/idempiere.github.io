@@ -233,8 +233,6 @@ To "merge" a table which has subtables you do not only have to mark the keycolum
 
 [Some warning about AccessNotDeleteable ReadOnlyRecord](https://idempiere.atlassian.net/browse/IDEMPIERE-3017?focusedCommentId=33600&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-33600)
 
-Check [Talk:NF1.0_ImportCSV](https://wiki.idempiere.org/en/Talk:NF1.0_ImportCSV)
-
 ## Technical Info
 **Technical Info:** [IDEMPIERE-454](http://idempiere.atlassian.net/browse/IDEMPIERE-454)
 
@@ -243,7 +241,3 @@ Check [Talk:NF1.0_ImportCSV](https://wiki.idempiere.org/en/Talk:NF1.0_ImportCSV)
 - [NF2.1 Import CSV_Process](/docs/new-features/v2.1/import-csv-process)
 - [NF3.0 CSV Importer Single Transaction](/docs/new-features/v3.0/csv-importer-single-transaction)
 - [NF11 More Formats for Import_CSV](/docs/new-features/v11/more-formats-for-import-csv)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_ImportCSV)_

@@ -20,7 +20,3 @@ After that windows will look like:
 ![FontIcons](pathname:///img/new-features/v6.2/FontIcons.png)
 
 **Technical Info:** [IDEMPIERE-3535](https://idempiere.atlassian.net/browse/IDEMPIERE-3535)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Font_Icons)_

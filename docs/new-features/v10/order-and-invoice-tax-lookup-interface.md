@@ -29,7 +29,3 @@ _TAX_LOOKUP_SERVICE System Configurator record_
 - *Create new OSGI component that implement the **org.adempiere.base.ITaxLookup** interface.*
 - *If the new service is for all tenant, change the System tenant's **TAX_LOOKUP_SERVICE** system configurator record value to the new OSGI component name.*
 - *If the new service is for a particular tenant, create a new **TAX_LOOKUP_SERVICE** system configurator record for that particular tenant with the new OSGI component name as value.*
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Tax_Lookup_Interface)_

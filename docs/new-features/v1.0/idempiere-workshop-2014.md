@@ -220,7 +220,3 @@ We want that in the tax table it is not possible to set a CountryGroup and a Cou
 ## Results
 - The example code we did can be found at [CarlosRuiz_globalqss/workshop-burg-2014](https://archive.softwareheritage.org/browse/origin/directory/?origin_url=https://bitbucket.org/CarlosRuiz_globalqss/workshop-burg-2014)
 - Our idea was so good that Carlos decided to move it into trunk. https://idempiere.atlassian.net/browse/IDEMPIERE-2127
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/IDempiere_Workshop_2014)_

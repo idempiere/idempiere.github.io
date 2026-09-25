@@ -53,7 +53,3 @@ When used in windows, take into account that the value is saved in the database 
 
 ### Link to JIRA Ticket
 [IDEMPIERE-3413](https://idempiere.atlassian.net/browse/IDEMPIERE-3413)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_Multi_Select)_

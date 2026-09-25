@@ -22,7 +22,3 @@ This feature allows users to negate a multiple selection component value in para
 ![Negatebuttonpressed](pathname:///img/new-features/v10/Negatebuttonpressed.png)
 
 To identify if a parameter is negated in jasper, create a parameter in .jrxml file named as columnName + "_NOT" (String "Y"/"N"). To use in java code process, call isNotClause method from ProcessInfoParameter.java
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Negate_Option_for_Chosen_Multiple_Component_parameter)_

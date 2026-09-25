@@ -18,7 +18,3 @@ The codes can be consulted at https://service.unece.org/trade/uncefact/vocabular
 ![00 UOM UN CEFACT](pathname:///img/new-features/v11/00_UOM_UN_CEFACT.png)
 
 **Technical Info:** [IDEMPIERE-6068](https://idempiere.atlassian.net/browse/IDEMPIERE-6068)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_UOM_UN_CEFACT)_

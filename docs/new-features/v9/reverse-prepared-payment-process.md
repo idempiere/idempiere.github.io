@@ -32,7 +32,3 @@ If no payment have been generated, it will:
 
 It will be as if you never run the "Create Payment" process.
 It will be possible to add/remove records from the Payment Selection Line tab and execute the Prepare Payment process again.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Reverse_Prepared_Payment_Process)_

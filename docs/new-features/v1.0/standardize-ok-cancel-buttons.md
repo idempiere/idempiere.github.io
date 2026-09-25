@@ -22,7 +22,3 @@ Before this change, buttons would sometimes appear organized in certain position
 ![Screenshot33](pathname:///img/new-features/v1.0/Screenshot33.png)
 
 **Technical Info:** [IDEMPIERE-77](http://idempiere.atlassian.net/browse/IDEMPIERE-77)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Standardize_OK_Cancel_Buttons)_

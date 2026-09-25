@@ -38,7 +38,3 @@ Within the OSGi console you can set the variable with:
 
 And reset it back to not use it anymore with:
  setprop org.idempiere.FileLogPrefix=""
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Add_Context_Variables_in_log_entries)_

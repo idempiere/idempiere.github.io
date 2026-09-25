@@ -20,7 +20,3 @@ When running processes and reports, now you can save the combination of paramete
 **Technical Info:** [IDEMPIERE-1572](http://idempiere.atlassian.net/browse/IDEMPIERE-1572)
 
 **See also:** [Run Report as Job](/docs/new-features/v2.1/run-report-as-job)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Last_Run_and_Saved_Parameters)_

@@ -48,7 +48,3 @@ The SysConfig key [FORM_SQL_QUERY_LOG_ISSUE](https://wiki.idempiere.org/en/Syste
 When a [replica database is configured](/docs/new-features/v6.2/reporting-from-read-only-replica), the query is executed against the replica database when possible.
 
 **Technical Info:** [IDEMPIERE-5451](https://idempiere.atlassian.net/browse/IDEMPIERE-5451)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Form_SQL_Query)_

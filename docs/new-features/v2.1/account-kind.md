@@ -16,7 +16,3 @@ In order to identify if an account is managing business partners (like Accounts 
 ![01 AccountKind](pathname:///img/new-features/v2.1/01_AccountKind.png)
 
 **Technical Info:** [IDEMPIERE-1148](http://idempiere.atlassian.net/browse/IDEMPIERE-1148)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Account_Kind)_

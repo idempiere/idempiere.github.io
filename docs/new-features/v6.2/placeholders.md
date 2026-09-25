@@ -56,7 +56,3 @@ For example when entering a location this is what the user can see:
 ![PlaceholderCountryExecution](pathname:///img/new-features/v6.2/PlaceholderCountryExecution.png)
 
 **Technical Info:** [IDEMPIERE-3639](https://idempiere.atlassian.net/browse/IDEMPIERE-3639), [IDEMPIERE-3643](https://idempiere.atlassian.net/browse/IDEMPIERE-3643)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF6.2_Placeholders)_

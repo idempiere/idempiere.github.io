@@ -62,7 +62,3 @@ At the end it shows the SQL statements executed to rename all the columns found 
 ![10 RenameColumnsResult](pathname:///img/new-features/v8.2/10_RenameColumnsResult.png)
 
 **Technical Info:** [IDEMPIERE-4358](https://idempiere.atlassian.net/browse/IDEMPIERE-4358)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Drop_Rename_DB_Objects)_

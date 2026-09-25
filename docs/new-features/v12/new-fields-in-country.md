@@ -22,7 +22,3 @@ The official list can be found at https://www.iso.org/obp/ui/#search
 ![01 NewFieldsCountry](pathname:///img/new-features/v12/01_NewFieldsCountry.png)
 
 **Technical Info:** [IDEMPIERE-6349](https://idempiere.atlassian.net/browse/IDEMPIERE-6349)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_New_Fields_in_Country)_

@@ -39,7 +39,3 @@ _Run Maven build_
     - Import of projects will auto continue after restart of Eclipse.
     - Import Progress Dialog Video - see **Import project2.webm** attachment at [IDEMPIERE-5655](https://idempiere.atlassian.net/browse/IDEMPIERE-5655)
     - The import process will took a while. At the end, click **Finish** again to complete the process.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_OOMPH_Import_Projects)_

@@ -49,7 +49,3 @@ Below image show look up window with default lookup fields
 ![killsession timeout panel](pathname:///img/new-features/v1.0/killsession_timeout_panel.png)
 
 **Technical Info:** [IDEMPIERE-293](http://idempiere.atlassian.net/browse/IDEMPIERE-293)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_ActiveSessionList)_

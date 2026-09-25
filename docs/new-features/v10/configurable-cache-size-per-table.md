@@ -20,7 +20,3 @@ Set the cache size for AD_Column to 15.000 records
 Formerly the cache size was configured programatically.  You can check the cache details and sizes in the idempiereMonitor?CacheDetails=Yes page
 
 **Technical Info:** [IDEMPIERE-5267](https://idempiere.atlassian.net/browse/IDEMPIERE-5267)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Configurable_Cache_Size_Per_Table)_

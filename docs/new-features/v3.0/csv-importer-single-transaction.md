@@ -32,7 +32,3 @@ If you set the file to have a single transaction, the process will run until an 
 - [NF2.1 Import Template](/docs/new-features/v2.1/import-template)
 - [NF2.1 Import CSV_Process](/docs/new-features/v2.1/import-csv-process)
 - [NF11 More Formats for Import_CSV](/docs/new-features/v11/more-formats-for-import-csv)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF3.0_CSV_Importer_Single_Transaction)_

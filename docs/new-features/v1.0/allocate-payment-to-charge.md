@@ -32,7 +32,3 @@ Assume an invoice of USD100 is allocated against a Payment of USD103 leaving a U
 ![allocation7](pathname:///img/new-features/v1.0/allocation7.png)
 
 **Technical Info:** [IDEMPIERE-217](http://idempiere.atlassian.net/browse/IDEMPIERE-217)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Allocate_Payment_To_Charge)_

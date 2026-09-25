@@ -31,7 +31,3 @@ With this feature, system administrators can now configure more than one SSO pro
 
 ### See Also
 - [iDempiere Single SignOn](/docs/new-features/v11/single-sign-on)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF12_Multiple_SSO_Provider_Support)_

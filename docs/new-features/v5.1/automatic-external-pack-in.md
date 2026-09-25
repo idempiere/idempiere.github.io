@@ -87,7 +87,3 @@ In order to get notifications (success or failure) of every applied 2Pack you ne
 - Configure the SysConfig key **[EMAIL_NOTIFY_2PACK](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#EMAIL_NOTIFY_2PACK)**: This key defines an email or list of emails separated by comma (,). When defined the application of a 2Pack zip file (automatic or manual) will send a notification email to the emails on the list. This key can be configured by tenant and for System, the emails configured for System will be added to the list when processing a tenant.
 
 **Technical Info:** [IDEMPIERE-3551](http://idempiere.atlassian.net/browse/IDEMPIERE-3551), [IDEMPIERE-3660](http://idempiere.atlassian.net/browse/IDEMPIERE-3660)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF5.1_Automatic_External_Packin)_

@@ -18,7 +18,3 @@ tags: [user-experience]
 some query with a lot join let slow when init. Now, you can configuration it per info window, by new checkbox "Load Page Num" at info window
 
 query for counter only performance when user reach to page end or out of page range.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF3.0_Configuration_For_Dont_Get_Page_Count_InfoPanel)_

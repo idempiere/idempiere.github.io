@@ -34,7 +34,3 @@ On Scheduler window a new field Schedule was added to choose  the schedule to th
 The Schedule can also be used in all tables requiring a schedule, like accounting processor, alert processor, etc.
 
 **Technical Info:** [IDEMPIERE-391](http://idempiere.atlassian.net/browse/IDEMPIERE-391)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Scheduler_Improvements)_

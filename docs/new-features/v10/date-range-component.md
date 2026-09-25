@@ -88,7 +88,3 @@ _Illustrates how the user able to select a specific date ranges with 2 calendar 
 **Ago** - defines a time interval in the past, in the length of the specified unit
 
 ![DatePickerAgo](pathname:///img/new-features/v10/DatePickerAgo.png)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Date_Range_Component)_

@@ -20,7 +20,3 @@ Before this enhancement, Inventory move has no restriction on warehouse. As part
 ![Warehouse Inventory Move](pathname:///img/new-features/v9/Warehouse-Inventory-Move.png)
 
 Warehouse on header are not mandatory. if not selected, it let you use locator from all warehouse.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Inventory_Move_Warehouse_To)_

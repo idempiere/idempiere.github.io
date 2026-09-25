@@ -118,7 +118,3 @@ Additionally, the plugin must add the method provided to the list in *MFA_Method
 
 ## Technical Info
 See [IDEMPIERE-4782](https://idempiere.atlassian.net/browse/IDEMPIERE-4782)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/Configure_MFA)_

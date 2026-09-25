@@ -36,7 +36,3 @@ For backward compatibility, in Oracle, it is stored as a CLOB column with a chec
 - altering from another datatype to JSON is not supported at this moment, you would need first to drop the old column and then create it again with the JSON datatype
 
 - On Oracle: altering the column from JSON to Text Long is not removing the JSON constraint, workaround here is to drop the column first and then recreate it with the new datatype
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_JSON_Field_Type)_

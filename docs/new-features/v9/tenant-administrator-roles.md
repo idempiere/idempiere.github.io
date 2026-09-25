@@ -26,7 +26,3 @@ It can be used in display logics or anywhere else.
 Eg: you can use the following logic to display a field for 'Advanced', 'Support' and 'Tenant Administrator' roles.
 
   @#ShowAdvanced@ = Y | @#AD_Role_Type@ = SS | @#IsClientAdministrator@ = Y
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Tenant_Administrator_Roles)_

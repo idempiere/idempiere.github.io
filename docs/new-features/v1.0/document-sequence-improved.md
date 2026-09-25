@@ -24,7 +24,3 @@ For Restart sequence every month use a flag : "Restart sequence every month" thi
 ![sequence2](pathname:///img/new-features/v1.0/sequence2.png)
 
 **Technical Info:** [IDEMPIERE-332](http://idempiere.atlassian.net/browse/IDEMPIERE-332)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_Document_Sequence_Improved)_

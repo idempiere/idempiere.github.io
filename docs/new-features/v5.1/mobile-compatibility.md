@@ -44,7 +44,3 @@ And is responsive, adapting to changes from portrait to landscape and viceversa:
 - Chrome Android: For better user experience, goes to chrome://flags and turn on "Enable OSK Overscroll"
 
 **Technical Info:** [IDEMPIERE-3518](http://idempiere.atlassian.net/browse/IDEMPIERE-3518)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF5.1_Mobile_Compatibility)_

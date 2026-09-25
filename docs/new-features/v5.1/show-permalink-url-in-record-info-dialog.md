@@ -23,7 +23,3 @@ You can set the SysConfig variable [APPLICATION_URL](https://wiki.idempiere.org/
 - APPLICATION_URL = https://test.idempiere.org/webui/
 
 **Technical Info:** [IDEMPIERE-2970](http://idempiere.atlassian.net/browse/IDEMPIERE-2970), [IDEMPIERE-2361](http://idempiere.atlassian.net/browse/IDEMPIERE-2361)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF5.1_RecordPermalink)_

@@ -48,7 +48,3 @@ External links:
 [NF7.1 Toolbar Improvements](/docs/new-features/v7.1/improve-toolbar-make-it-more-configurable-and-extend-it)
 [NF7.1 Share Saved Queries](/docs/new-features/v7.1/share-saved-queries-with-other-users)
 [NF7.1 SQL Search In Windows](/docs/new-features/v7.1/sql-searches-in-windows-for-advanced-users)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/How_To_Configure_The_Toolbar)_

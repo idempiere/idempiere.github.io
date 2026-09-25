@@ -28,7 +28,3 @@ INFO_PRODUCT_SHOW_PRODUCTS_WITHOUT_PRICE = Y
 **Known Issues:** This is not working when there are prices for the product in other price list versions.
 
 As a workaround you can use UsePriceListInProductInfo=N in the predefined context variables of the window.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Show_Products_Not_On_Price_List)_

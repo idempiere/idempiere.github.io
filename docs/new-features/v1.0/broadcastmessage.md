@@ -39,7 +39,3 @@ Go to the Broadcast Message window and define the scope you can push the "Test" 
 ![message4](pathname:///img/new-features/v1.0/message4.png)
 
 **Technical Info:** [IDEMPIERE-294](http://idempiere.atlassian.net/browse/IDEMPIERE-294)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF1.0_BroadcastMessage)_

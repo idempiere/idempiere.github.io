@@ -86,7 +86,3 @@ http://idempiere.atlassian.net/browse/IDEMPIERE-1334
 
 - Present definition of Layout Type default layout type is set at:
     - Table AD_InfoProcess, Column LayoutType, Default Logic set to B (button)where you can change to your preferred mode.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Process_on_Info_Window)_

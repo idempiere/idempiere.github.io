@@ -24,7 +24,3 @@ As an example, you can check the logic used on 'Web Service Security' > Web Serv
 *nb: the :0 is here to handle null cases (see IDEMPIERE-194)*
 
 **Technical Info:** [IDEMPIERE-3917](https://idempiere.atlassian.net/browse/IDEMPIERE-3917)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF7.1_@SQL_notation_for_display_logic)_

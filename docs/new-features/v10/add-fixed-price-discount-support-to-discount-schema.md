@@ -42,7 +42,3 @@ _Order line with Quantity=1_
 ![5260 Price 20](pathname:///img/new-features/v10/5260_Price_20.png)
 
 _Order Line with Quantity=20_
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF10_Fixed_Price_Discount)_

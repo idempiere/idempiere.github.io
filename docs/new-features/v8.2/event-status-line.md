@@ -94,7 +94,3 @@ Of course this code must be added in a plugin with the corresponding OSGi defini
 ![04 ResultInTest](pathname:///img/new-features/v8.2/04_ResultInTest.png)
 
 **Technical Info:** [IDEMPIERE-4798](https://idempiere.atlassian.net/browse/IDEMPIERE-4798)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF8.2_Event_Status_Line)_

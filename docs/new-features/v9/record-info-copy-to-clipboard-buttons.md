@@ -16,7 +16,3 @@ The record info dialog now shows two buttons that copy directly to the clipboard
 ![RecordInfoCopyToClipboard](pathname:///img/new-features/v9/RecordInfoCopyToClipboard.png)
 
 **Technical Info:** [IDEMPIERE-5218](https://idempiere.atlassian.net/browse/IDEMPIERE-5218)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF9_Record_Info_Copy_To_Clipboard_Buttons)_

@@ -37,7 +37,3 @@ java.lang.Exception: Apparent connection leak detected
 which gives no clue about the origin of the error.
 
 Now, the *org.idempiere.FullExceptionTraceInLog* (if set to true) allow to get the full trace log.
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF11_SystemPropertyToAvoidCuttingLog)_

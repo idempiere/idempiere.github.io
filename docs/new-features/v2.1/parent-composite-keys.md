@@ -23,7 +23,3 @@ This is now REQUIRED for translation tables.
 ![01 CompositeKeys](pathname:///img/new-features/v2.1/01_CompositeKeys.png)
 
 **Technical Info:** [IDEMPIERE-1901](http://idempiere.atlassian.net/browse/IDEMPIERE-1901)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF2.1_Composite_Keys)_

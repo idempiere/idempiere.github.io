@@ -33,7 +33,3 @@ Many libraries updated
 You can find some hints collected from Hieplq in the page [Note Update To 5.1](https://wiki.idempiere.org/en/Note_Update_To_5.1)
 
 **Technical Info:** [IDEMPIERE-3353](http://idempiere.atlassian.net/browse/IDEMPIERE-3353)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/NF5.1_Platform_Upgrade)_

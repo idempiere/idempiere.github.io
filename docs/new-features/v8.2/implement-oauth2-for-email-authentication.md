@@ -226,7 +226,3 @@ Samely, when using the process [Request EMail Processor](https://wiki.idempiere.
 
 ## Technical Info
 See [IDEMPIERE-3101](https://idempiere.atlassian.net/browse/IDEMPIERE-3101)
-
----
-
-_Source: [Wiki](https://wiki.idempiere.org/en/Configure_OAuth2_EMail)_
