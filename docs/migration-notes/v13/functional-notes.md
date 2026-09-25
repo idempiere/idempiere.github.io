@@ -2,7 +2,7 @@
 sidebar_label: "Functional notes"
 sidebar_position: 3
 description: "Functional migration notes for upgrading to iDempiere 13."
-tags: [features, migration, installation, development, developer-documentation, reference]
+tags: [features, migration, installation, development, developer-documentation, reference, v13, breaking-change]
 ---
 
 # Migration notes - iDempiere 13 (functional)
