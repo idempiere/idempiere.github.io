@@ -80,4 +80,4 @@ If your plugin only references **model classes** (e.g., `MInvoice`, `MOrder`) an
 
 ## Related Resources
 
-- [iDempiere Migration Notes](https://wiki.idempiere.org/en/Migration_Notes)
+- [iDempiere Migration Notes](/docs/migration-notes/v14/technical-notes)

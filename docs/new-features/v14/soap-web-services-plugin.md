@@ -73,4 +73,4 @@ Failing to update your plugin dependencies will result in **compilation errors**
 
 - 🔗 [Plugin Repository](https://github.com/idempiere/idempiere-soap-webservices)
 - 🔗 [iDempiere REST API](https://wiki.idempiere.org/en/REST_Web_Services)
-- 🔗 [Migration Notes](https://wiki.idempiere.org/en/Migration_Notes)
+- 🔗 [Migration Notes](/docs/migration-notes/v14/technical-notes)

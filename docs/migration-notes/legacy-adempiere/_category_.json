@@ -1,0 +1,8 @@
+{
+  "label": "Legacy ADempiere migration",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "description": "Migration scripts for moving from ADempiere and early iDempiere releases (2.0, 2.1, 3.1 and earlier)."
+  }
+}
