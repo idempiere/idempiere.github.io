@@ -44,6 +44,12 @@ function loadRequirements(siteDir) {
     if (!validate(data)) {
       throw new Error(formatErrors(rel, validate.errors));
     }
+    const stem = file.replace(/\.ya?ml$/, '');
+    if (stem !== data.version) {
+      throw new Error(
+        `[version-compare] ${rel}: version "${data.version}" does not match the file name. Rename the file to ${data.version}.yml or fix the version.`,
+      );
+    }
     if (result.has(data.version)) {
       throw new Error(
         `[version-compare] ${rel}: version "${data.version}" is also used in ${result.get(data.version).file}`,

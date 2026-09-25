@@ -40,6 +40,17 @@ function readQuery(search, versions, defaults) {
   };
 }
 
+// The query string for a view. Filters at their default value are left out.
+function toSearch(state) {
+  const params = new URLSearchParams();
+  params.set('from', state.from);
+  params.set('to', state.to);
+  if (state.category !== 'all') params.set('category', state.category);
+  if (state.notes) params.set('notes', '1');
+  if (state.notes && state.audience !== 'all') params.set('audience', state.audience);
+  return `?${params.toString()}`;
+}
+
 function CopyLinkButton() {
   const [status, setStatus] = useState(null);
   const copy = async () => {
@@ -87,22 +98,20 @@ export default function VersionCompare() {
   const [ready, setReady] = useState(false);
 
   // The page is prerendered without a query string, so the URL is read after
-  // hydration instead of during render.
+  // hydration instead of during render. It is read again whenever the query
+  // changes while the page stays open, for example through the navbar link.
+  // Only a query that describes a different view updates the state, so the
+  // URL written below doesn't feed back into it.
   useEffect(() => {
-    setState(readQuery(location.search, versions, defaults));
+    const next = readQuery(location.search, versions, defaults);
+    setState((current) => (toSearch(next) === toSearch(current) ? current : next));
     setReady(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [location.search]);
 
   useEffect(() => {
     if (!ready) return;
-    const params = new URLSearchParams();
-    params.set('from', state.from);
-    params.set('to', state.to);
-    if (state.category !== 'all') params.set('category', state.category);
-    if (state.notes) params.set('notes', '1');
-    if (state.notes && state.audience !== 'all') params.set('audience', state.audience);
-    const search = `?${params.toString()}`;
+    const search = toSearch(state);
     if (search !== location.search) {
       history.replace({...location, search});
     }

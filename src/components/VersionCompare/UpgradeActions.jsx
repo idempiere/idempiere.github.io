@@ -81,17 +81,17 @@ function useChecklist(keys) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [keyList]);
 
+  // Storage is written in the event handler, not in the state updater,
+  // because React may run an updater more than once.
   const toggle = (key) => {
-    setChecked((prev) => {
-      const value = !prev[key];
-      try {
-        if (value) window.localStorage.setItem(key, '1');
-        else window.localStorage.removeItem(key);
-      } catch {
-        // Storage blocked: keep the tick in memory only.
-      }
-      return {...prev, [key]: value};
-    });
+    const value = !checked[key];
+    setChecked((prev) => ({...prev, [key]: value}));
+    try {
+      if (value) window.localStorage.setItem(key, '1');
+      else window.localStorage.removeItem(key);
+    } catch {
+      // Storage blocked: keep the tick in memory only.
+    }
   };
   return [checked, toggle];
 }
