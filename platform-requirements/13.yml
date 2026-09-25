@@ -1,0 +1,11 @@
+version: "13"
+requirements:
+  java:
+    value: "17"
+    source: https://github.com/idempiere/idempiere/blob/release-13/org.idempiere.parent/pom.xml
+  zk:
+    value: "10.3.0.1"
+    source: https://idempiere.atlassian.net/browse/IDEMPIERE-6899
+  postgresql:
+    value: "13 or newer (11 and 12 need the pgcrypto extension)"
+    source: https://github.com/idempiere/idempiere.github.io/blob/main/docs/migration-notes/v13/technical-notes.md

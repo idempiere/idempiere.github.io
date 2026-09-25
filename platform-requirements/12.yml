@@ -1,0 +1,11 @@
+version: "12"
+requirements:
+  java:
+    value: "17"
+    source: https://github.com/idempiere/idempiere/blob/release-12/org.idempiere.parent/pom.xml
+  zk:
+    value: "10.0.1"
+    source: https://idempiere.atlassian.net/browse/IDEMPIERE-6179
+  jetty:
+    value: "12.0 (ee8)"
+    source: https://idempiere.atlassian.net/browse/IDEMPIERE-6088

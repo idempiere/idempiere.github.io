@@ -1,0 +1,367 @@
+.compare {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: var(--ifm-font-size-small, 0.875rem);
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+.field select {
+  min-width: 7rem;
+  padding: 0.375rem 0.5rem;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  font-weight: var(--ifm-font-weight-normal);
+}
+
+.copyLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copyStatus {
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chip {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.chip:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.chipActive {
+  border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+}
+
+.range {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  gap: 0.75rem;
+  margin: 0 0 2rem;
+}
+
+.card {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-card-border-radius, 0.5rem);
+  background: var(--ifm-background-surface-color);
+}
+
+.card dt {
+  font-size: 0.8125rem;
+  font-weight: var(--ifm-font-weight-normal);
+  color: var(--ifm-color-emphasis-700);
+}
+
+.card dd {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: var(--ifm-font-weight-bold);
+}
+
+.release {
+  margin-bottom: 2rem;
+}
+
+.releaseCount {
+  font-size: 0.875rem;
+  font-weight: var(--ifm-font-weight-normal);
+  color: var(--ifm-color-emphasis-700);
+}
+
+.changes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.change {
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.changeHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.changeTitle {
+  font-weight: var(--ifm-font-weight-semibold);
+  overflow-wrap: anywhere;
+}
+
+.changeDescription {
+  margin: 0.375rem 0 0;
+  font-size: 0.9375rem;
+}
+
+.refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.375rem;
+  font-size: 0.8125rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.0625rem 0.5rem;
+  border-radius: var(--ifm-global-radius);
+  font-size: 0.75rem;
+  font-weight: var(--ifm-font-weight-semibold);
+  white-space: nowrap;
+  color: var(--ifm-color-white);
+  background: var(--ifm-color-secondary-darkest);
+}
+
+.badge-functional {
+  background: var(--ifm-color-success-dark);
+}
+
+.badge-user-experience {
+  background: var(--ifm-color-primary-dark);
+}
+
+.badge-technical {
+  background: var(--ifm-color-secondary-darkest);
+}
+
+.badge-development {
+  background: var(--ifm-color-info-darkest);
+}
+
+.badge-security {
+  background: var(--ifm-color-danger-dark);
+}
+
+.badge-architecture {
+  background: var(--ifm-color-warning-darkest);
+}
+
+@media print {
+  .controls,
+  .chips,
+  :global(.navbar),
+  :global(.footer) {
+    display: none !important;
+  }
+
+  .compare {
+    max-width: none;
+  }
+
+  .release {
+    break-inside: auto;
+  }
+
+  .change {
+    break-inside: avoid;
+  }
+
+  .badge {
+    border: 1px solid currentColor;
+    color: inherit;
+    background: none;
+  }
+}
+
+/* Upgrade notes */
+
+.notesToggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-surface-color);
+  font-weight: var(--ifm-font-weight-semibold);
+  cursor: pointer;
+}
+
+.notesToggle input {
+  margin-top: 0.3rem;
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+
+.notesHint {
+  display: block;
+  font-weight: var(--ifm-font-weight-normal);
+  font-size: 0.875rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.upgrade {
+  margin: 0.5rem 0 2.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-left: 4px solid var(--ifm-color-danger);
+  border-radius: var(--ifm-global-radius);
+}
+
+.upgradeRelease + .upgradeRelease {
+  margin-top: 1.25rem;
+}
+
+.requirements {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.progress,
+.muted {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.875rem;
+}
+
+.area {
+  font-size: 0.75rem;
+  font-weight: var(--ifm-font-weight-semibold);
+  color: var(--ifm-color-emphasis-700);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.audience {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.chipCount {
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 0.75;
+  font-variant-numeric: tabular-nums;
+}
+
+.chip:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.requirementsBox h2,
+.upgradeRelease h3 {
+  margin-bottom: 0.5rem;
+}
+
+.requirementsBox {
+  margin-bottom: 1.25rem;
+}
+
+.notePage + .notePage {
+  margin-top: 1rem;
+}
+
+.notePageHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.375rem 0.75rem;
+  padding-bottom: 0.375rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 0.875rem;
+}
+
+.notePageTitle {
+  font-weight: var(--ifm-font-weight-bold);
+}
+
+.notes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.note input {
+  margin-top: 0.35rem;
+  width: 1rem;
+  height: 1rem;
+  flex: none;
+}
+
+.noteBody {
+  min-width: 0;
+}
+
+.noteDone .changeTitle,
+.noteDone .changeDescription {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.noteDone .changeTitle {
+  text-decoration: line-through;
+}
+
+@media print {
+  .notesToggle {
+    display: none !important;
+  }
+
+  .upgrade {
+    border-left-width: 1px;
+    break-after: page;
+  }
+
+  .note input {
+    appearance: none;
+    width: 0.9rem;
+    height: 0.9rem;
+    border: 1px solid currentColor;
+  }
+}

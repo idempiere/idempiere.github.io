@@ -58,6 +58,7 @@ const config = {
         ],
       },
     ],
+    './plugins/version-compare',
 ],
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -104,6 +105,11 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Docs',
+          },
+          {
+            to: '/upgrade/compare',
+            position: 'left',
+            label: 'Compare versions',
           },
           // Right
           {
