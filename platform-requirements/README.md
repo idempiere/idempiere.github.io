@@ -1,11 +1,11 @@
 # Platform requirements
 
-These files feed the "Platform changes" box of the [Compare versions](https://docs.idempiere.org/upgrade/compare) page. When someone compares two versions, the page shows every value that differs, for example "Java 11 → 17".
+These files feed the "Platform changes" box of the [Compare versions](https://docs.idempiere.org/upgrade/compare) page. It is shown for every comparison and lists each value that differs between the two versions, for example "Java 11 → 17".
 
 The rest of the page is built from the docs and needs no extra data:
 
 - New features come from `docs/new-features/v<version>/`.
-- Migration notes come from `docs/migration-notes/v<version>/`. Every `## ` section of a page is one note. The page's thematic tags (for example `breaking-change`, `database`) become the topic filter.
+- Migration notes come from `docs/migration-notes/v<version>/`. Every `## ` section of a page is one note.
 
 There is one file per release, named after the release: `13.yml`, `14.yml`, and so on. The build checks every file against `_schema.json` and stops with the file name and field if something is wrong.
 

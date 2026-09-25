@@ -19,15 +19,6 @@ const AUDIENCE_PLURALS = {
   admin: 'admins',
 };
 
-const ACRONYMS = new Set(['api', 'sql', 'ui', 'zk', 'uuid', 'jdbc', 'osgi']);
-
-// "breaking-change" -> "Breaking change", "removed-api" -> "Removed API"
-export function tagLabel(tag) {
-  const words = tag.split(/[-_]+/).map((w) => (ACRONYMS.has(w) ? w.toUpperCase() : w));
-  const text = words.join(' ');
-  return text.charAt(0).toUpperCase() + text.slice(1);
-}
-
 // The latest value of each requirement at or below `version`.
 function requirementsAt(releases, version, compareVersions) {
   const result = {};
@@ -40,7 +31,8 @@ function requirementsAt(releases, version, compareVersions) {
   return result;
 }
 
-function RequirementsDelta({releases, from, to, compareVersions}) {
+// Shown for every comparison, above the migration notes toggle.
+export function RequirementsDelta({releases, from, to, compareVersions}) {
   const before = requirementsAt(releases, from, compareVersions);
   const after = requirementsAt(releases, to, compareVersions);
   const rows = Object.keys(REQUIREMENT_LABELS).filter(
@@ -49,7 +41,7 @@ function RequirementsDelta({releases, from, to, compareVersions}) {
   if (rows.length === 0) return null;
   return (
     <div className={styles.requirementsBox}>
-      <h3>Platform changes</h3>
+      <h2>Platform changes</h2>
       <ul className={styles.requirements}>
         {rows.map((key) => (
           <li key={key}>
@@ -133,7 +125,7 @@ function NoteItem({item, checkKey, checked, toggle}) {
   );
 }
 
-export default function UpgradeActions({releases, selected, from, to, compareVersions}) {
+export default function UpgradeActions({selected, from, to}) {
   const withNotes = selected.filter((r) => r.notes.length > 0);
   const keys = withNotes.flatMap((r) =>
     r.notes.flatMap((page) => page.items.map((item) => storageKey(from, to, item.id))),
@@ -144,12 +136,6 @@ export default function UpgradeActions({releases, selected, from, to, compareVer
   return (
     <section className={styles.upgrade} aria-labelledby="before-you-upgrade">
       <h2 id="before-you-upgrade">Before you upgrade</h2>
-      <RequirementsDelta
-        releases={releases}
-        from={from}
-        to={to}
-        compareVersions={compareVersions}
-      />
       {withNotes.length === 0 ? (
         <p className={styles.muted}>
           No migration notes match this range and filter. The features below
@@ -173,11 +159,6 @@ export default function UpgradeActions({releases, selected, from, to, compareVer
                     <span className={styles.audience}>
                       For {page.audience.map((a) => AUDIENCE_PLURALS[a]).join(', ')}
                     </span>
-                    {page.tags.map((tag) => (
-                      <span key={tag} className={clsx(styles.badge, styles[`tag-${tag}`])}>
-                        {tagLabel(tag)}
-                      </span>
-                    ))}
                   </div>
                   <ul className={styles.notes}>
                     {page.items.map((item) => {

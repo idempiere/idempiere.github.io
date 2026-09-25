@@ -1,6 +1,7 @@
 // Reads docs/migration-notes/v*/ pages. Every "## " section of a page is one
 // migration note. It links to the section anchor, so the page shows the
-// summary and the docs keep the full explanation.
+// summary and the docs keep the full explanation. Page tags are not used:
+// they describe the whole page, not a single note.
 
 const fs = require('fs');
 const path = require('path');
@@ -80,22 +81,6 @@ function frontMatterOf(source) {
   return (fm && yaml.load(fm[1])) || {};
 }
 
-// Tags that every migration page carries, and version tags such as "v13".
-// They say nothing about a single page, so they are not shown or filtered on.
-const GENERIC_TAGS = new Set([
-  'features',
-  'migration',
-  'installation',
-  'development',
-  'developer-documentation',
-  'reference',
-]);
-
-function themeTagsOf(frontMatter) {
-  const tags = Array.isArray(frontMatter.tags) ? frontMatter.tags : [];
-  return tags.filter((t) => typeof t === 'string' && !GENERIC_TAGS.has(t) && !VERSION_DIR.test(t));
-}
-
 function loadMigrationNotes(siteDir) {
   const root = path.join(siteDir, NOTES_DIR);
   const notes = new Map();
@@ -132,7 +117,6 @@ function loadMigrationNotes(siteDir) {
         id: `${dir.name}/${slug}`,
         kind: kind.label,
         audience: kind.audience,
-        tags: themeTagsOf(frontMatter),
         permalink,
         items,
       });
