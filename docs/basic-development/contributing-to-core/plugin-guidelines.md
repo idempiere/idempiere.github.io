@@ -24,7 +24,7 @@ Every community plugin should cover the following baseline requirements.
 - List of plugin dependencies.
 - List of similar or related solutions.
 
-:::important Open source expectation
+:::warning Open source expectation
 The community expects real open source maintenance. Repositories that are rarely updated publicly while active development happens in a private repository are not aligned with that expectation.
 :::
 
@@ -63,5 +63,6 @@ Recommended peer-review checks:
 
 - At least one reviewer who is not the developer.
 - No hardcoded IDs.
-- JDBC resources and cursors are properly closed.
+- JDBC resources and cursors are closed in "finally" blocks.
+- Prepared statements are closed to avoid memory leaks.
 - Security-focused review confirms no obvious vulnerabilities were introduced.
