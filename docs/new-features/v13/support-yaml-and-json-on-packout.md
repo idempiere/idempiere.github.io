@@ -3,6 +3,8 @@ title: Support YAML and JSON on PackOut
 sidebar_label: YAML and JSON on PackOut
 sidebar_position: 5
 description: Adds YAML and JSON as peer export/import formats for the 2Pack packaging system, alongside the existing XML format.
+tags:
+  - technical
 ---
 
 * **Goal:** Technical
