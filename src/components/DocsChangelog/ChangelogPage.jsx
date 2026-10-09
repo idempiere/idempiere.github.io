@@ -1,11 +1,11 @@
 import React from 'react';
 import Layout from '@theme/Layout';
-import {usePluginData} from '@docusaurus/useGlobalData';
-import DocsChangelog, {SoftwareChangesLinks} from '@site/src/components/DocsChangelog';
+import DocsChangelog, {SoftwareChangesLinks} from './index';
 
-export default function ChangelogPage() {
-  const {releaseNotesUrl, compareUrl} = usePluginData('docs-changelog');
-  const hasSoftwareLinks = Boolean(releaseNotesUrl || compareUrl);
+// Route component registered by plugins/docs-changelog. `changelog` is the
+// data module the plugin created, so only this page loads it.
+export default function ChangelogPage({changelog}) {
+  const {releaseNotesUrl, compareUrl} = changelog;
   return (
     <Layout
       title="Docs changelog"
@@ -16,14 +16,15 @@ export default function ChangelogPage() {
           <p>
             What changed in this documentation, and in which section. Open an
             entry to see the pages.
-            {hasSoftwareLinks && (
+            {(releaseNotesUrl || compareUrl) && (
               <>
-                {' '}For changes to the software itself, see <SoftwareChangesLinks />.
+                {' '}For changes to the software itself, see{' '}
+                <SoftwareChangesLinks releaseNotesUrl={releaseNotesUrl} compareUrl={compareUrl} />.
               </>
             )}
           </p>
         </div>
-        <DocsChangelog />
+        <DocsChangelog data={changelog} />
       </main>
     </Layout>
   );

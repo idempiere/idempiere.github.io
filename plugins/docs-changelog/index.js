@@ -5,10 +5,14 @@
 // the navigation.
 //
 // A change can carry a note for readers, in either place:
-// - trailers in the commit message:
+// - a trailer in the commit message:
 //     Change-Note: one sentence for readers
-//     Answers: S1, A1   (reader question IDs)
 // - changelog-notes.yml, keyed by commit hash, for commits already pushed.
+//
+// History is read along the first parent, so a merged pull request is one
+// entry with all its pages, and the commits inside it are not repeated.
+//
+// The data is written with createData and only the /changelog route loads it.
 //
 // Commits that only touch release notes become one entry per month.
 // The build needs the full git history (actions/checkout fetch-depth: 0).
@@ -18,6 +22,7 @@
 // organizationName and projectName, the rest from the options.
 //
 // Options (all optional):
+//   routeBasePath     URL of the page. Default: 'changelog'.
 //   docsPath          Folder of the docs. Default: 'docs'.
 //   releaseNotesPath  Folder of the release notes, for example
 //                     'docs/release-notes'. Changes that only touch it are
@@ -31,7 +36,6 @@
 //                     sidebar section that holds the release notes.
 //   compareUrl        A page that compares software versions, linked next to
 //                     the release notes. Default: none.
-//   questionsUrl      Where the reader question IDs (Answers:) are listed.
 //   smallChangeLimit  Below this many pages, a change without a note that only
 //                     updates pages is collapsed. Default: 5.
 
@@ -39,6 +43,7 @@ const {execFileSync} = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
+const {normalizeUrl} = require('@docusaurus/utils');
 const {compareVersions} = require('../version-compare');
 
 const VERBS = {A: 'Added', M: 'Updated', R: 'Moved', D: 'Removed'};
@@ -48,12 +53,22 @@ const START = '\x1e';
 
 function readCommits(siteDir, docsPath) {
   // START opens each record, so the --name-status list stays with its commit.
-  const format = START + ['%H', '%h', '%ad', '%an', '%s', '%b'].join(SEP);
+  const format = START + ['%H', '%h', '%P', '%ad', '%an', '%s', '%b'].join(SEP);
   let out;
   try {
     out = execFileSync(
       'git',
-      ['log', '--date=short', `--format=${format}`, '--name-status', '-M', '--', docsPath],
+      [
+        'log',
+        '--first-parent',
+        '--diff-merges=first-parent',
+        '--date=short',
+        `--format=${format}`,
+        '--name-status',
+        '-M',
+        '--',
+        docsPath,
+      ],
       {cwd: siteDir, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024},
     );
   } catch (error) {
@@ -66,7 +81,7 @@ function readCommits(siteDir, docsPath) {
     .map((chunk) => chunk.trim())
     .filter(Boolean)
     .map((chunk) => {
-      const [hash, short, date, author, subject, rest = ''] = chunk.split(SEP);
+      const [hash, short, parents, date, author, subject, rest = ''] = chunk.split(SEP);
       const lines = rest.split('\n');
       const changes = lines
         .filter(isChange)
@@ -76,9 +91,20 @@ function readCommits(siteDir, docsPath) {
         })
         .filter((c) => /\.mdx?$/.test(c.file));
       const body = lines.filter((line) => !isChange(line)).join('\n');
-      return {hash, short, date, author, subject, body, changes};
+      return {hash, short, parents: parents.split(' '), date, author, subject, body, changes};
     })
-    .filter((commit) => commit.changes.length);
+    .filter((commit) => commit.changes.length)
+    .map((commit) => {
+      // A merge commit's own message is usually the pull request title, so
+      // the note is looked up in the commits the merge brought in.
+      if (commit.parents.length < 2 || trailer(commit.body, 'Change-Note')) return commit;
+      const merged = execFileSync(
+        'git',
+        ['log', '--format=%B', `${commit.parents[0]}..${commit.parents[1]}`],
+        {cwd: siteDir, encoding: 'utf8', maxBuffer: 16 * 1024 * 1024},
+      );
+      return {...commit, body: `${commit.body}\n${merged}`};
+    });
 }
 
 function trailer(body, name) {
@@ -86,10 +112,6 @@ function trailer(body, name) {
   return match ? match[1].trim() : null;
 }
 
-function splitIds(value) {
-  if (!value) return [];
-  return (Array.isArray(value) ? value : String(value).split(/[,\s]+/)).filter(Boolean);
-}
 
 function loadNotes(siteDir, notesFile) {
   const file = path.join(siteDir, notesFile);
@@ -147,7 +169,9 @@ function countByStatus(changes) {
 
 function source(commit, settings) {
   const {repoUrl, tickets} = settings;
-  const pr = commit.subject.match(/^Merge pull request #(\d+)/);
+  // "Merge pull request #12 from …" or a squash merge "Title (#12)".
+  const pr =
+    commit.subject.match(/^Merge pull request #(\d+)/) || commit.subject.match(/\(#(\d+)\)$/);
   const keys = tickets ? commit.subject.match(new RegExp(tickets.pattern, 'g')) || [] : [];
   return {
     commit: commit.short,
@@ -172,7 +196,6 @@ function changeEntry(commit, extra, settings) {
     kind: note || structural || changes.length >= smallChangeLimit ? 'change' : 'small',
     note: note ? note.replace(/\.$/, '') : null,
     counts,
-    answers: splitIds((extra && extra.answers) || trailer(commit.body, 'Answers')),
     pages: changes.map(({status, file}) => ({
       status,
       file: status === 'D' ? file : resolve(file),
@@ -206,7 +229,6 @@ function releaseNoteEntries(commits, resolve) {
         `Release notes: ${files.size} page${files.size === 1 ? '' : 's'}` +
         (range ? ` (${range})` : ''),
       counts: {A: added.size, M: files.size - added.size, R: 0, D: 0},
-      answers: [],
       pages: [],
       sampleFile: resolve([...files][0]),
       source: null,
@@ -260,7 +282,8 @@ function sectionUrl(section, docById) {
 }
 
 module.exports = function docsChangelogPlugin(context, options = {}) {
-  const {siteDir, siteConfig} = context;
+  const {siteDir, siteConfig, baseUrl} = context;
+  const routeBasePath = options.routeBasePath || 'changelog';
   const docsPath = options.docsPath || 'docs';
   const notesFile = options.notesFile || 'changelog-notes.yml';
   const {organizationName, projectName} = siteConfig;
@@ -368,14 +391,22 @@ module.exports = function docsChangelogPlugin(context, options = {}) {
       );
       const releaseSection = releaseDoc && sections.find((s) => s.id === sectionOfDoc.get(releaseDoc.id));
       const used = new Set(out.flatMap((e) => e.sections));
-      actions.setGlobalData({
-        entries: out,
-        sections: sections.filter((s) => used.has(s.id)).map(({id, label}) => ({id, label})),
-        releaseNotesUrl:
-          options.releaseNotesUrl ||
-          (releaseSection ? sectionUrl(releaseSection, docById) : null),
-        compareUrl: options.compareUrl || null,
-        questionsUrl: options.questionsUrl || null,
+      const data = await actions.createData(
+        'changelog.json',
+        JSON.stringify({
+          entries: out,
+          sections: sections.filter((s) => used.has(s.id)).map(({id, label}) => ({id, label})),
+          releaseNotesUrl:
+            options.releaseNotesUrl ||
+            (releaseSection ? sectionUrl(releaseSection, docById) : null),
+          compareUrl: options.compareUrl || null,
+        }),
+      );
+      actions.addRoute({
+        path: normalizeUrl([baseUrl, routeBasePath]),
+        component: '@site/src/components/DocsChangelog/ChangelogPage',
+        modules: {changelog: data},
+        exact: true,
       });
     },
 

@@ -1,7 +1,6 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import {usePluginData} from '@docusaurus/useGlobalData';
 import {useHistory, useLocation} from '@docusaurus/router';
 import styles from './styles.module.css';
 
@@ -37,8 +36,7 @@ function SectionTags({sections, labels}) {
 
 // Links to where changes to the software itself are listed, joined with
 // "and". Null when the site configures neither.
-export function SoftwareChangesLinks() {
-  const {releaseNotesUrl, compareUrl} = usePluginData('docs-changelog');
+export function SoftwareChangesLinks({releaseNotesUrl, compareUrl}) {
   const links = [
     releaseNotesUrl && <Link key="notes" to={releaseNotesUrl}>Release notes</Link>,
     compareUrl && <Link key="compare" to={compareUrl}>Compare versions</Link>,
@@ -47,12 +45,12 @@ export function SoftwareChangesLinks() {
   return links.length === 2 ? <>{links[0]} and {links[1]}</> : links[0];
 }
 
-function Details({entry}) {
+function Details({entry, links}) {
   if (entry.kind === 'release-notes') {
     return (
       <p className={styles.detailText}>
         Release notes describe changes to the software itself. See{' '}
-        <SoftwareChangesLinks />.
+        <SoftwareChangesLinks {...links} />.
       </p>
     );
   }
@@ -101,7 +99,7 @@ function Details({entry}) {
   );
 }
 
-function Entry({entry, compact, labels, questionsUrl}) {
+function Entry({entry, compact, labels, links}) {
   const day = Number(entry.date.slice(8, 10));
   return (
     <li className={clsx(styles.entry, compact && styles.compact)}>
@@ -109,27 +107,9 @@ function Entry({entry, compact, labels, questionsUrl}) {
       <details className={styles.body}>
         <summary className={styles.summary}>
           <span className={styles.title}>{entry.title}</span>
-          <span className={styles.meta}>
-            {summary(entry.counts)}
-            {entry.answers.length > 0 && (
-              <>
-                {' · answers '}
-                {entry.answers.map((id) =>
-                  questionsUrl ? (
-                    <a key={id} href={questionsUrl} className={styles.answer}>
-                      {id}
-                    </a>
-                  ) : (
-                    <span key={id} className={styles.answer}>
-                      {id}
-                    </span>
-                  ),
-                )}
-              </>
-            )}
-          </span>
+          <span className={styles.meta}>{summary(entry.counts)}</span>
         </summary>
-        <Details entry={entry} />
+        <Details entry={entry} links={links} />
       </details>
       <span className={styles.tags}>
         <SectionTags sections={entry.sections} labels={labels} />
@@ -165,8 +145,10 @@ function Month({label, entries, ...rest}) {
   );
 }
 
-export default function DocsChangelog() {
-  const {entries, sections, questionsUrl} = usePluginData('docs-changelog');
+// `data` is the changelog.json module the plugin passes to the route.
+export default function DocsChangelog({data}) {
+  const {entries, sections, releaseNotesUrl, compareUrl} = data;
+  const links = {releaseNotesUrl, compareUrl};
   const chips = [{id: 'all', label: 'All'}, ...sections];
   const labels = Object.fromEntries(sections.map((s) => [s.id, s.label]));
   const location = useLocation();
@@ -216,7 +198,7 @@ export default function DocsChangelog() {
           label={monthLabel(`${key}-01`)}
           entries={list}
           labels={labels}
-          questionsUrl={questionsUrl}
+          links={links}
         />
       ))}
     </div>

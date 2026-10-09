@@ -95,12 +95,6 @@
   font-size: 0.875rem;
 }
 
-.answer {
-  margin-left: 0.25rem;
-  font-family: var(--ifm-font-family-monospace);
-  font-size: 0.8125rem;
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;
