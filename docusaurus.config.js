@@ -123,7 +123,7 @@ const config = {
             label: 'Compare versions',
           },
           {
-            to: '/changelog',
+            to: '/updates',
             position: 'left',
             label: 'Docs changelog',
           },

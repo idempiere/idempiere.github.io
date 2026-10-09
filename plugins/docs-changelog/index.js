@@ -1,4 +1,4 @@
-// Builds the data for the /changelog page from git history.
+// Builds the data for the /updates page from git history.
 //
 // This is a changelog of the documentation, not of the software. Each entry
 // says which pages were added, updated, moved or removed, and in which part of
@@ -12,7 +12,7 @@
 // History is read along the first parent, so a merged pull request is one
 // entry with all its pages, and the commits inside it are not repeated.
 //
-// The data is written with createData and only the /changelog route loads it.
+// The data is written with createData and only the /updates route loads it.
 //
 // Commits that only touch release notes become one entry per month.
 // The build needs the full git history (actions/checkout fetch-depth: 0).
@@ -22,7 +22,7 @@
 // organizationName and projectName, the rest from the options.
 //
 // Options (all optional):
-//   routeBasePath     URL of the page. Default: 'changelog'.
+//   routeBasePath     URL of the page. Default: 'updates'.
 //   docsPath          Folder of the docs. Default: 'docs'.
 //   releaseNotesPath  Folder of the release notes, for example
 //                     'docs/release-notes'. Changes that only touch it are
@@ -283,7 +283,7 @@ function sectionUrl(section, docById) {
 
 module.exports = function docsChangelogPlugin(context, options = {}) {
   const {siteDir, siteConfig, baseUrl} = context;
-  const routeBasePath = options.routeBasePath || 'changelog';
+  const routeBasePath = options.routeBasePath || 'updates';
   const docsPath = options.docsPath || 'docs';
   const notesFile = options.notesFile || 'changelog-notes.yml';
   const {organizationName, projectName} = siteConfig;
