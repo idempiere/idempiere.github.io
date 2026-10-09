@@ -19,7 +19,7 @@ This error is OK most of the times, but in certain scenarios is unnecessary, for
 - when there is a plugin that manages prices in tables different than the core
 - when there is a mechanism to automatically create the price after saving the order line
 
-Now this is possible to be configured at Client level with the [System Configurator key](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#INFO_PRODUCT_SHOW_PRODUCTS_WITHOUT_PRICE):
+Now this is possible to be configured at Client level with the [System Configurator key](../../basic-development/system-configurator.md#INFO_PRODUCT_SHOW_PRODUCTS_WITHOUT_PRICE):
 
 INFO_PRODUCT_SHOW_PRODUCTS_WITHOUT_PRICE = Y
 

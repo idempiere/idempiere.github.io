@@ -13,7 +13,7 @@ tags: [user-experience]
 
 iDempiere can use now font icons.
 
-Configuration is simply to set the System Configurator flag [ZK_THEME_USE_FONT_ICON_FOR_IMAGE](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#ZK_THEME_USE_FONT_ICON_FOR_IMAGE) = Y, and then execute a Cache Reset.
+Configuration is simply to set the System Configurator flag [ZK_THEME_USE_FONT_ICON_FOR_IMAGE](../../basic-development/system-configurator.md#ZK_THEME_USE_FONT_ICON_FOR_IMAGE) = Y, and then execute a Cache Reset.
 
 After that windows will look like:
 

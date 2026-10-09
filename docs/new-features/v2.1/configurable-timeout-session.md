@@ -2,14 +2,14 @@
 sidebar_position: 31
 title: "Configurable Timeout Session"
 sidebar_label: "Configurable Timeout Session"
-description: "A new sysconfig key [ZK_SESSION_TIMEOUT_IN_SECONDS](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#ZK_SESSION_TIMEOUT_IN_SECONDS) "
+description: "A new sysconfig key [ZK_SESSION_TIMEOUT_IN_SECONDS](/docs/basic-development/system-configurator#ZK_SESSION_TIMEOUT_IN_SECONDS) "
 tags: [technical]
 ---
 **Goal:** Technical
 
 **Description:**
 
-A new sysconfig key [ZK_SESSION_TIMEOUT_IN_SECONDS](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#ZK_SESSION_TIMEOUT_IN_SECONDS) was defined to allow configuring the timeout in seconds per tenant - or system wide in case it's not defined for the tenant.
+A new sysconfig key [ZK_SESSION_TIMEOUT_IN_SECONDS](../../basic-development/system-configurator.md#ZK_SESSION_TIMEOUT_IN_SECONDS) was defined to allow configuring the timeout in seconds per tenant - or system wide in case it's not defined for the tenant.
 
 There is no ZK_SESSION_TIMEOUT_IN_SECONDS entry in the System Configurator by default. If you wish to use it, you must create it yourself. Below is an example of a timeout of 120 minutes for all clients in the system:
 - Log in as the System Administrator role

@@ -28,11 +28,11 @@ To solve these limitations, an additional mechanism named **Automatic External P
 There are two ways to use this new feature:**Automatic on server restart:**
 
 The automatic application on server restart is driven by the following SysConfig keys:
-- [AUTOMATIC_PACKIN_FOLDERS](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#AUTOMATIC_PACKIN_FOLDERS): This key defines a folder, or a set of folders separated by semicolon (;). When starting the plugin org.adempiere.plugin.utils, it searchs for new packins to apply present on these folders and applies them automatically
-- [AUTOMATIC_PACKIN_INITIAL_DELAY](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#AUTOMATIC_PACKIN_INITIAL_DELAY): Time in seconds that org.adempiere.plugin.utils waits before starting to process the AUTOMATIC_PACKIN_FOLDERS, this is useful in order to wait for the internal plugins to be processed first
-- [AUTOMATIC_PACKIN_RETRIES](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#AUTOMATIC_PACKIN_RETRIES): When applying automatically a 2Pack, this defines the number of retries to wait for the semaphore when other plugins are applying 2Packs, this is used in combination with AUTOMATIC_PACKIN_TIMEOUT
-- [AUTOMATIC_PACKIN_TIMEOUT](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#AUTOMATIC_PACKIN_TIMEOUT): When applying automatically a 2Pack, this defines the waiting time to try to get the semaphore when other plugins are applying 2packs, this is used in combination with AUTOMATIC_PACKIN_RETRIES
-- [AUTOMATIC_PACKIN_PROCESSING](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#AUTOMATIC_PACKIN_PROCESSING): This key is used internally by the automatic application of 2Packs as a semaphore to indicate that another 2Pack is being applied, is not intended to be managed by user, but automatically managed by the system.
+- [AUTOMATIC_PACKIN_FOLDERS](../../basic-development/system-configurator.md#AUTOMATIC_PACKIN_FOLDERS): This key defines a folder, or a set of folders separated by semicolon (;). When starting the plugin org.adempiere.plugin.utils, it searchs for new packins to apply present on these folders and applies them automatically
+- [AUTOMATIC_PACKIN_INITIAL_DELAY](../../basic-development/system-configurator.md#AUTOMATIC_PACKIN_INITIAL_DELAY): Time in seconds that org.adempiere.plugin.utils waits before starting to process the AUTOMATIC_PACKIN_FOLDERS, this is useful in order to wait for the internal plugins to be processed first
+- [AUTOMATIC_PACKIN_RETRIES](../../basic-development/system-configurator.md#AUTOMATIC_PACKIN_RETRIES): When applying automatically a 2Pack, this defines the number of retries to wait for the semaphore when other plugins are applying 2Packs, this is used in combination with AUTOMATIC_PACKIN_TIMEOUT
+- [AUTOMATIC_PACKIN_TIMEOUT](../../basic-development/system-configurator.md#AUTOMATIC_PACKIN_TIMEOUT): When applying automatically a 2Pack, this defines the waiting time to try to get the semaphore when other plugins are applying 2packs, this is used in combination with AUTOMATIC_PACKIN_RETRIES
+- [AUTOMATIC_PACKIN_PROCESSING](../../basic-development/system-configurator.md#AUTOMATIC_PACKIN_PROCESSING): This key is used internally by the automatic application of 2Packs as a semaphore to indicate that another 2Pack is being applied, is not intended to be managed by user, but automatically managed by the system.
 
 **Running "Apply Pack In from Folder" Process:**
 
@@ -84,6 +84,6 @@ Both processes work the same way:
 
 In order to get notifications (success or failure) of every applied 2Pack you need to:
 - Configure properly the EMail on the tenants you want to be notified - the Request EMail must be configured as well as this is used for the From in the EMail
-- Configure the SysConfig key **[EMAIL_NOTIFY_2PACK](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#EMAIL_NOTIFY_2PACK)**: This key defines an email or list of emails separated by comma (,). When defined the application of a 2Pack zip file (automatic or manual) will send a notification email to the emails on the list. This key can be configured by tenant and for System, the emails configured for System will be added to the list when processing a tenant.
+- Configure the SysConfig key **[EMAIL_NOTIFY_2PACK](../../basic-development/system-configurator.md#EMAIL_NOTIFY_2PACK)**: This key defines an email or list of emails separated by comma (,). When defined the application of a 2Pack zip file (automatic or manual) will send a notification email to the emails on the list. This key can be configured by tenant and for System, the emails configured for System will be added to the list when processing a tenant.
 
 **Technical Info:** [IDEMPIERE-3551](http://idempiere.atlassian.net/browse/IDEMPIERE-3551), [IDEMPIERE-3660](http://idempiere.atlassian.net/browse/IDEMPIERE-3660)

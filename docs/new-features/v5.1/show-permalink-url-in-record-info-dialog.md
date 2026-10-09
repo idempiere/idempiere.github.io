@@ -19,7 +19,7 @@ This is useful to pass direct URL information to access a record to other users 
 
 ![01 Permalink](pathname:///img/new-features/v5.1/01_Permalink.png)
 
-You can set the SysConfig variable [APPLICATION_URL](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#APPLICATION_URL) to define your server URL in case the server is behind a proxy, for example:
+You can set the SysConfig variable [APPLICATION_URL](../../basic-development/system-configurator.md#APPLICATION_URL) to define your server URL in case the server is behind a proxy, for example:
 - APPLICATION_URL = https://test.idempiere.org/webui/
 
 **Technical Info:** [IDEMPIERE-2970](http://idempiere.atlassian.net/browse/IDEMPIERE-2970), [IDEMPIERE-2361](http://idempiere.atlassian.net/browse/IDEMPIERE-2361)

@@ -30,7 +30,7 @@ The recent items are direct access to records that the user recently created/upd
 
 You can delete items from your recent items dragging them to the bin below.
 
-The number of items shown can be  configured via [System Configurator](https://wiki.idempiere.org/en/System_Configurator), as well as the number of items saved.
+The number of items shown can be  configured via [System Configurator](../../basic-development/system-configurator.md), as well as the number of items saved.
 
 ## d) Portlets position preserved
 The portlets can now be moved by the user from the dashboard to the left panel and viceversa, and positioned around the columns and lines.  The preference of the dashboards is preserved between sessions per user.  Portlets collapse status is also preserved.

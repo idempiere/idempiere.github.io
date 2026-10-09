@@ -25,7 +25,7 @@ This new feature implements one-way SHA-512 hashed and salted passwords which is
 
 **How to:**
 
-Backward compatibility is achieved using a [System Configurator](https://wiki.idempiere.org/en/System_Configurator) key *USER_PASSWORD_HASH* - but be careful, this key must not be changed directly (you'll end with a system where the users cannot log in).
+Backward compatibility is achieved using a [System Configurator](../../basic-development/system-configurator.md) key *USER_PASSWORD_HASH* - but be careful, this key must not be changed directly (you'll end with a system where the users cannot log in).
 
 To enable this key you must run the process *Convert passwords to hashes*
 

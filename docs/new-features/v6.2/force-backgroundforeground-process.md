@@ -14,7 +14,7 @@ tags: [user-experience]
 **Description:**
 
 The Execution Type field has been added to Report & Process to force execution in background/foreground - this can be useful for slow reports for instance.
-**If the SysConfig [BACKGROUND_JOB_ALLOWED](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#BACKGROUND_JOB_ALLOWED) = 'N', the value of the new field is ignored.**
+**If the SysConfig [BACKGROUND_JOB_ALLOWED](../../basic-development/system-configurator.md#BACKGROUND_JOB_ALLOWED) = 'N', the value of the new field is ignored.**
 
 ![ExecutionTypeField](pathname:///img/new-features/v6.2/ExecutionTypeField.png)
 

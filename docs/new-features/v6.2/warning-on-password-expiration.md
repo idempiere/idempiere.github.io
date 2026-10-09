@@ -11,9 +11,9 @@ tags: [user-experience]
 
 **Description:**
 
-When defined a maximum password age (in [USER_LOCKING_MAX_PASSWORD_AGE_DAY](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#USER_LOCKING_MAX_PASSWORD_AGE_DAY)), the system can now also issue a warning to the user several days before the expiration, in order to let them know about the change that will be required.
+When defined a maximum password age (in [USER_LOCKING_MAX_PASSWORD_AGE_DAY](../../basic-development/system-configurator.md#USER_LOCKING_MAX_PASSWORD_AGE_DAY)), the system can now also issue a warning to the user several days before the expiration, in order to let them know about the change that will be required.
 
-In order to define that simply update the System Configurator key [USER_LOCKING_PASSWORD_NOTIFY_DAY](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#USER_LOCKING_PASSWORD_NOTIFY_DAY) with the number of days desired to start notifying users.
+In order to define that simply update the System Configurator key [USER_LOCKING_PASSWORD_NOTIFY_DAY](../../basic-development/system-configurator.md#USER_LOCKING_PASSWORD_NOTIFY_DAY) with the number of days desired to start notifying users.
 
 The result will look like:
 

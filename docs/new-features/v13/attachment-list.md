@@ -46,9 +46,9 @@ This change is backward compatible and transparent to the user.  No configuratio
 
 - The default ZIP method in Database doesn't use the AttachmentFile approach, but the list is always queried in the ZIP file, because adding/updating/removing an attachment file always update the ZIP file, then the gain on performance is null.  This means also, if the attachment table is heavily used it is better to manage a different Storage Provider instead of the default ZIP method.
 
-- A new SysConfig key [ATTACHMENT_SAVE_LIST_IN_AD_ATTACHMENTFILE](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#ATTACHMENT_SAVE_LIST_IN_AD_ATTACHMENTFILE) has been added to preserve backward compatibility in case is needed to keep the old XML approach (for example if there is already some report extracting the list from the XML file).  The default of this SysConfig is TRUE, so, by default the new Attachment File is going to be used unless explicitly disabled in this SysConfig.
+- A new SysConfig key [ATTACHMENT_SAVE_LIST_IN_AD_ATTACHMENTFILE](../../basic-development/system-configurator.md#ATTACHMENT_SAVE_LIST_IN_AD_ATTACHMENTFILE) has been added to preserve backward compatibility in case is needed to keep the old XML approach (for example if there is already some report extracting the list from the XML file).  The default of this SysConfig is TRUE, so, by default the new Attachment File is going to be used unless explicitly disabled in this SysConfig.
 
-- The SysConfig [ZK_MAX_UPLOAD_SIZE](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#ZK_MAX_UPLOAD_SIZE) has been changed to Tenant level
+- The SysConfig [ZK_MAX_UPLOAD_SIZE](../../basic-development/system-configurator.md#ZK_MAX_UPLOAD_SIZE) has been changed to Tenant level
 
 :::note
 

@@ -16,7 +16,7 @@ tags: [user-experience]
 Now iDempiere can automatically switch to grid mode when the Find panel closes.
 
 Behaviour is defined in User Preferences :
-1. Default : use the value set in the SysConfig [ZK_GRID_AFTER_FIND](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#ZK_GRID_AFTER_FIND)
+1. Default : use the value set in the SysConfig [ZK_GRID_AFTER_FIND](../../basic-development/system-configurator.md#ZK_GRID_AFTER_FIND)
 1. Always in grid view : force the tab to switch to grid
 1. According to a threshold : the tab will switch if the number of records exceeds the threeshold
 

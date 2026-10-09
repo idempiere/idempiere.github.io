@@ -20,9 +20,9 @@ In order to relieve the production database from the stress of some heavy report
 **Configuration:**
 
 Configuring this new feature is simply filling properly the following SysConfig parameters:
-- **[DB_READ_REPLICA_URLS](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#DB_READ_REPLICA_URLS):** In this you can define one or several JDBC URLs pointing to the replica database(s), if there are more than one URL, they must be separated by the pipe character (|)
-- **[DB_READ_REPLICA_NORMAL_TIMEOUT_IN_MILLISECONDS](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#DB_READ_REPLICA_NORMAL_TIMEOUT_IN_MILLISECONDS):** Timeout in milliseconds to wait between discoveries of a synchronized read-only replica.  To give time to the replicas to synchronize with master.
-- **[DB_READ_REPLICA_NORMAL_MAX_ITERATIONS](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#DB_READ_REPLICA_NORMAL_MAX_ITERATIONS):** Number of iterations to check that the replica is synchronized before giving up.
+- **[DB_READ_REPLICA_URLS](../../basic-development/system-configurator.md#DB_READ_REPLICA_URLS):** In this you can define one or several JDBC URLs pointing to the replica database(s), if there are more than one URL, they must be separated by the pipe character (|)
+- **[DB_READ_REPLICA_NORMAL_TIMEOUT_IN_MILLISECONDS](../../basic-development/system-configurator.md#DB_READ_REPLICA_NORMAL_TIMEOUT_IN_MILLISECONDS):** Timeout in milliseconds to wait between discoveries of a synchronized read-only replica.  To give time to the replicas to synchronize with master.
+- **[DB_READ_REPLICA_NORMAL_MAX_ITERATIONS](../../basic-development/system-configurator.md#DB_READ_REPLICA_NORMAL_MAX_ITERATIONS):** Number of iterations to check that the replica is synchronized before giving up.
 
 **Verification of replica synchronization:**
 

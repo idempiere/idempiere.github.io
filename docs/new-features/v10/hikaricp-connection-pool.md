@@ -54,7 +54,7 @@ You can define or fine-tune the following properties in the properties file, the
 ## New SysConfig MSEQUENCE_GETNEXT_TIMEOUT
 Under heavy conditions is common to get timeout error waiting for document numbers on AD_Sequence.
 
-The timeout is set to 30 seconds by default, it can be changed using the [SysConfig MSEQUENCE_GETNEXT_TIMEOUT](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#MSEQUENCE_GETNEXT_TIMEOUT)
+The timeout is set to 30 seconds by default, it can be changed using the [SysConfig MSEQUENCE_GETNEXT_TIMEOUT](../../basic-development/system-configurator.md#MSEQUENCE_GETNEXT_TIMEOUT)
 
 ## Technical Info
 [IDEMPIERE-5013](https://idempiere.atlassian.net/browse/IDEMPIERE-5013)

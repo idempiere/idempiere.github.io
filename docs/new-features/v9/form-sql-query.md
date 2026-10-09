@@ -28,7 +28,7 @@ The SQL statement executed is logged in the AD_Issue table as shown here:
 
 ## Configuration
 ### SysConfig FORM_SQL_QUERY_ALLOWED_KEYWORDS
-The allowed commands are defined in the SysConfig key [FORM_SQL_QUERY_ALLOWED_KEYWORDS](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#FORM_SQL_QUERY_ALLOWED_KEYWORDS), by default the form is enabled to execute the following commands:
+The allowed commands are defined in the SysConfig key [FORM_SQL_QUERY_ALLOWED_KEYWORDS](../../basic-development/system-configurator.md#FORM_SQL_QUERY_ALLOWED_KEYWORDS), by default the form is enabled to execute the following commands:
 - SELECT
 - WITH
 - SHOW
@@ -36,13 +36,13 @@ The allowed commands are defined in the SysConfig key [FORM_SQL_QUERY_ALLOWED_KE
 Restricting one of those commands to be executed can be simply done by removing it from this SysConfig whitelist.
 
 ### SysConfig FORM_SQL_QUERY_TIMEOUT_IN_SECONDS
-The SysConfig key [FORM_SQL_QUERY_TIMEOUT_IN_SECONDS](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#FORM_SQL_QUERY_TIMEOUT_IN_SECONDS) defines the timeout in seconds allowed to run the query, by default is 120 seconds (2 minutes).
+The SysConfig key [FORM_SQL_QUERY_TIMEOUT_IN_SECONDS](../../basic-development/system-configurator.md#FORM_SQL_QUERY_TIMEOUT_IN_SECONDS) defines the timeout in seconds allowed to run the query, by default is 120 seconds (2 minutes).
 
 ### SysConfig FORM_SQL_QUERY_MAX_RECORDS
-The SysConfig key [FORM_SQL_QUERY_MAX_RECORDS](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#FORM_SQL_QUERY_MAX_RECORDS) defines the maximum number of records allowed to be queries with this tool, by default is set to 500 records.
+The SysConfig key [FORM_SQL_QUERY_MAX_RECORDS](../../basic-development/system-configurator.md#FORM_SQL_QUERY_MAX_RECORDS) defines the maximum number of records allowed to be queries with this tool, by default is set to 500 records.
 
 ### SysConfig FORM_SQL_QUERY_LOG_ISSUE
-The SysConfig key [FORM_SQL_QUERY_LOG_ISSUE](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#FORM_SQL_QUERY_LOG_ISSUE) defines if the audit log is created in the AD_Issue table.  The default is to create the audit record.
+The SysConfig key [FORM_SQL_QUERY_LOG_ISSUE](../../basic-development/system-configurator.md#FORM_SQL_QUERY_LOG_ISSUE) defines if the audit log is created in the AD_Issue table.  The default is to create the audit record.
 
 ## Technical Note
 When a [replica database is configured](/docs/new-features/v6.2/reporting-from-read-only-replica), the query is executed against the replica database when possible.

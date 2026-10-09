@@ -17,7 +17,7 @@ In grid mode you can select all the records that you want to delete and then pus
 
 If you push the delete button without records selected then it deletes the actual record (as usual).
 
-Note you cannot select more records than those shown in the page, the number of records in the page is defined by the [System Configurator](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)) key ZK_PAGING_SIZE
+Note you cannot select more records than those shown in the page, the number of records in the page is defined by the [System Configurator](../../basic-development/system-configurator.md) key ZK_PAGING_SIZE
 
 ![NF20MultiDelete](pathname:///img/new-features/v2.0/NF20MultiDelete.png)
 

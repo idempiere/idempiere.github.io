@@ -13,7 +13,7 @@ tags: [technical]
 
 The form [SQL Process](https://wiki.idempiere.org/en/SQL_Process_(Form_ID-111)) has been improved to allow executing a configurable set of commands.
 
-The configuration is defined in the SysConfig key [FORM_SQL_PROCESS_ALLOWED_KEYWORDS](https://wiki.idempiere.org/en/System_Configurator_(Window_ID-50006)#FORM_SQL_PROCESS_ALLOWED_KEYWORDS), by default the form is enabled to execute the following commands:
+The configuration is defined in the SysConfig key [FORM_SQL_PROCESS_ALLOWED_KEYWORDS](../../basic-development/system-configurator.md#FORM_SQL_PROCESS_ALLOWED_KEYWORDS), by default the form is enabled to execute the following commands:
 - ALTER
 - ANALYZE
 - COMMENT

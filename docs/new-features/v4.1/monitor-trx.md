@@ -39,7 +39,7 @@ However, if you need to trace in more detailed way it is possible to create in S
 #### **For Developers**
 A new method setDisplayName was added to the org.compiere.util.Trx class - it is recommended whenever you use the createTrxName also set some additional information to display - the information set with setDisplayName is shown in the idempiereMonitor page.
 
-After [release 9.20220805](https://wiki.idempiere.org/en/ChangeLog_Release_9#2022-08-05) the [[System_Configurator_(Window_ID-50006)#TRX_AUTOSET_DISPLAY_NAME|System Configurator TRX_AUTOSET_DISPLAY_NAME] was added (defaults to false).  When enabled it automatically set the class and method from the caller for the methods createTrxName() or createTrxName(null)
+After [release 9.20220805](https://wiki.idempiere.org/en/ChangeLog_Release_9#2022-08-05) the [System Configurator TRX_AUTOSET_DISPLAY_NAME](../../basic-development/system-configurator.md#TRX_AUTOSET_DISPLAY_NAME) was added (defaults to false).  When enabled it automatically set the class and method from the caller for the methods createTrxName() or createTrxName(null)
 
 ### **See also**
 [NF11 Monitor Null Trx](/docs/new-features/v11/monitor-null-trx)
