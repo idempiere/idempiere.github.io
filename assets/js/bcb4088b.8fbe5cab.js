@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkidempiere_id_github_io=globalThis.webpackChunkidempiere_id_github_io||[]).push([[19606],{37359(e){e.exports=JSON.parse('{"name":"docs-changelog","id":"default"}')}}]);
