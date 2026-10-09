@@ -1,0 +1,5 @@
+# Change notes for the Docs changelog (/changelog), for commits that were
+# pushed without a "Change-Note:" trailer. Key: commit hash (7+ characters).
+#
+#   <hash>:
+#     note: One sentence for readers about what they can now find or do.
