@@ -38,8 +38,6 @@
 //                     the release notes. Default: none.
 //   smallChangeLimit  Below this many pages, a change without a note that only
 //                     updates pages is collapsed. Default: 5.
-//   redirectFrom      Old URLs of the page, for example ['/changelog']. The
-//                     build writes a redirect page for each. Default: none.
 
 const {execFileSync} = require('child_process');
 const fs = require('fs');
@@ -410,26 +408,6 @@ module.exports = function docsChangelogPlugin(context, options = {}) {
         modules: {changelog: data},
         exact: true,
       });
-    },
-
-    // Static redirect pages, so old links work without JavaScript.
-    async postBuild({outDir}) {
-      const target = normalizeUrl([baseUrl, routeBasePath]);
-      const html = `<!DOCTYPE html>
-<html><head><meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=${target}">
-<link rel="canonical" href="${target}">
-</head><body><script>window.location.replace(${JSON.stringify(target)} + window.location.search + window.location.hash)</script></body></html>
-`;
-      for (const from of options.redirectFrom || []) {
-        const name = from.replace(/^\/+|\/+$/g, '');
-        const file =
-          siteConfig.trailingSlash === false
-            ? path.join(outDir, `${name}.html`)
-            : path.join(outDir, name, 'index.html');
-        fs.mkdirSync(path.dirname(file), {recursive: true});
-        fs.writeFileSync(file, html);
-      }
     },
 
     getPathsToWatch() {

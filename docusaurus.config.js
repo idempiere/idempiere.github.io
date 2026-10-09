@@ -64,8 +64,6 @@ const config = {
       {
         releaseNotesPath: 'docs/new-features',
         compareUrl: '/upgrade/compare',
-        // The page was at /changelog before it moved to /updates.
-        redirectFrom: ['/changelog'],
         tickets: {
           pattern: 'IDEMPIERE-\\d+',
           url: 'https://idempiere.atlassian.net/browse/',
