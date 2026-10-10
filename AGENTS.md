@@ -4,7 +4,7 @@ This file provides guidance to AI coding agents (Claude Code, Gemini CLI, Qwen C
 
 ## Project Overview
 
-This is the developer documentation site for [iDempiere](https://idempiere.github.io), an open-source ERP/CRM/SCM system. Built with Docusaurus 3 and deployed to GitHub Pages.
+This is the developer documentation site for [iDempiere](https://www.idempiere.org), published at https://docs.idempiere.org, an open-source ERP/CRM/SCM system. Built with Docusaurus 3 and deployed to GitHub Pages.
 
 ## Skills
 
@@ -48,13 +48,14 @@ All documentation lives in `docs/`. The sidebar is **auto-generated** from the f
 
 - `src/components/HomepageFeatures/` — Feature cards on the home page
 - `src/theme/DocItem/` — Swizzled Docusaurus DocItem (adds Giscus comments)
-- `src/theme/SearchBar/` — Swizzled SearchBar (integrates `docusaurus-lunr-search`)
+- `src/theme/DocItem/Content/` — Adds the "Copy page as Markdown" and "View as Markdown" buttons
 
 ### Plugins
 
 - `docusaurus-lunr-search` — Offline full-text search (no Algolia dependency)
 - `@docusaurus/plugin-pwa` — PWA support with offline mode
 - `@giscus/react` — GitHub Discussions-based comments on doc pages
+- `docusaurus-plugin-llms` — Builds `/llms.txt`, `/llms-full.txt` and a Markdown copy of each page
 
 ***
 
@@ -78,58 +79,9 @@ All documentation lives in `docs/`. The sidebar is **auto-generated** from the f
 
 ## Documentation Writing Standards
 
-From `docs/documentation-standards.md`:
+The writing and formatting rules for all contributors are on the public page [`docs/documentation-standards.md`](docs/documentation-standards.md) (https://docs.idempiere.org/docs/documentation-standards). Read it before writing or editing a page. It covers frontmatter, naming, writing style, banned words, punctuation, lists, headings, admonitions, code examples, screenshots and page templates.
 
-- **iDempiere entities**: Capitalize the first letter of named entities (Business Partner, Sales Order, Product).
-- **Specific records**: Wrap in quotes ("Azalea Bush" Product, "System" Tenant).
-- **Window navigation**: Use `=>` for subtab paths (Sales Order window => Order Line subtab). Use "subtab" (one word) for tabs with Tab Level > 0.
-- **Heading hierarchy**: First `#` is the page title (rendered by Docusaurus). All subsequent headings must be `##` or deeper.
-
-### Voice and tone
-
-- Write like a person, not a marketing bot.
-- Be direct and factual. Avoid filler phrases.
-- Use active voice where possible.
-- Short sentences are better than long compound ones.
-
-### Words and phrases to avoid
-
-Do not use the following overused AI-generated terms:
-
-- seamlessly
-- streamline / streamlines / streamlined
-- leverage (as a verb)
-- robust
-- utilize (use "use" instead)
-- empower / empowers
-- cutting-edge
-- game-changer
-- comprehensive (as filler)
-- dive deep / dive into
-- delve
-- unlock potential
-- out of the box (unless referring to a literal software default)
-- best-in-class
-- revolutionize
-
-### Punctuation
-
-- Do NOT use em dashes (—). Replace with a period, a comma, or a short new sentence.
-- Avoid parenthetical asides where a new sentence works better.
-- Use plain hyphens (-) for compound adjectives only.
-
-### Lists and structure
-
-- Use numbered lists when order or sequence matters.
-- Use bullet points for unordered sets of 3 or more items.
-- Do not nest bullets more than one level deep. If sub-points are complex, give them their own section.
-- Each bullet should be one idea. Do not pack multiple facts into one bullet.
-
-### Headings
-
-- Use sentence case for headings (e.g., "Basic installation", not "Basic Installation") unless it is a proper noun.
-- Keep headings short (under 6 words when possible).
-- Do not use a heading for every paragraph.
+Start new pages from a template in `docs/_templates/`.
 
 ***
 
@@ -138,27 +90,3 @@ Do not use the following overused AI-generated terms:
 1. Stop. Do not guess.
 2. Add a comment: `<!-- TODO: verify — [your question here] -->`
 3. Tell the user what is unclear and ask for clarification before proceeding.
-
-## Admonitions
-
-Use Docusaurus admonitions instead of bold text or inline warnings.
-
-Available types:
-
-- `:::note` — extra context that is helpful but not critical
-- `:::tip` — a best practice or shortcut worth highlighting
-- `:::info` — important background information
-- `:::warning` — something the user should be careful about
-- `:::danger` — an action that could break something or cause data loss
-
-Do NOT use `:::caution`. It is deprecated in Docusaurus v3 and will be removed in v4. Use `:::warning` instead.
-
-Always leave an empty line after the opening `:::` and before the closing `:::` to avoid Prettier formatting issues.
-
-Example:
-
-:::warning
-This step will overwrite existing configuration. Back up your files first.
-:::
-
-Do not overuse admonitions. If every other paragraph is a callout, none of them stand out. Use them for genuinely exceptional content, not as a substitute for clear writing.
