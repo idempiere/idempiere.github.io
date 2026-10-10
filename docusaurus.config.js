@@ -70,7 +70,55 @@ const config = {
         },
       },
     ],
+    [
+      'docusaurus-plugin-llms',
+      {
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: true,
+        generateMarkdownFiles: true,
+        docsDir: 'docs',
+        title: 'iDempiere Documentation',
+        description:
+          'Documentation for iDempiere, an open source ERP: installation, OSGi plug-in development, 2Pack, functional guides and release notes.',
+        // Current material first; release notes before iDempiere 9 are left out.
+        includeOrder: [
+          'basic-development/plugin-development/**',
+          'migration-notes/v14/**',
+          'migration-notes/v13/**',
+          'migration-notes/v12/**',
+          'basic-installation/**',
+        ],
+        ignoreFiles: [
+          'new-features/v1.0/**',
+          'new-features/v2.*/**',
+          'new-features/v3.*/**',
+          'new-features/v4.*/**',
+          'new-features/v5.*/**',
+          'new-features/v6.*/**',
+          'new-features/v7.*/**',
+          'new-features/v8.*/**',
+        ],
+      },
+    ],
 ],
+
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: { type: 'application/ld+json' },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'iDempiere Documentation',
+        url: 'https://docs.idempiere.org',
+        publisher: {
+          '@type': 'Organization',
+          name: 'iDempiere',
+          url: 'https://www.idempiere.org',
+        },
+      }),
+    },
+  ],
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
