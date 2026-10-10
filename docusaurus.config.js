@@ -85,12 +85,18 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        blog: false,
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/idempiere/idempiere.github.io/tree/main/',
+          showLastUpdateTime: true,
+        },
+        sitemap: {
+          lastmod: 'date',
+          ignorePatterns: ['/docs/tags/**'],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -128,11 +134,6 @@ const config = {
             label: 'Docs changelog',
           },
           // Right
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-          },
           {
             href: 'https://github.com/idempiere/idempiere',
             label: 'GitHub',
