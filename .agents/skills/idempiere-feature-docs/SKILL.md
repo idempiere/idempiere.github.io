@@ -7,7 +7,7 @@ description: Writing iDempiere New Feature pages and migration notes in the docu
 
 The core pull request template asks for documentation when a change is a new feature, a breaking change, or an improvement that changes how users work or what a process produces. This skill covers writing that documentation here.
 
-All rules in `AGENTS.md` apply: do not invent facts, follow the writing standards, no em dashes, no banned words.
+All rules in `AGENTS.md` and `docs/documentation-standards.md` apply: do not invent facts, follow the writing standards, no em dashes, no banned words.
 
 ## 1. Gather the facts first
 
@@ -27,7 +27,7 @@ Never guess window names, field names, SysConfig keys, default values or version
 - Location: `docs/new-features/in-development/` while the core pull request is not merged.
 - File name: short kebab-case, e.g. `avoid-sequence-locks.md`.
 - `sidebar_position`: look at the sibling pages and pick the next free number.
-- Start from `references/new-feature-template.md`. It follows the structure of existing pages such as `docs/new-features/v14/default-view-detail-tabs.md` and `docs/new-features/in-development/avoid-sequence-locks.md`.
+- Start from `docs/_templates/new-feature.md`. It follows the structure of existing pages such as `docs/new-features/v14/default-view-detail-tabs.md` and `docs/new-features/in-development/avoid-sequence-locks.md`.
 - Keep the "Not Yet in Stable Release" warning at the top while the page is in `in-development`.
 - Set `tags` in the front matter, using only the values already in use: `functional`, `user-experience`, `technical`, `development`, `security`, `architecture`. The version compare page (`/upgrade/compare`) builds its category filters from these tags, so a new tag value creates a new filter. Ask the user before introducing one.
 - Keep the `**Feature Ticket:**` line in the header block, before the first `##` heading. The version compare page reads the Jira key from it.
@@ -51,6 +51,7 @@ Writing tips specific to feature pages:
 
 If the change alters existing behavior, removes something, or requires action from implementers or plugin developers:
 
+- Start from `docs/_templates/migration-note.md`.
 - Use the folder of the version currently in development, e.g. `docs/migration-notes/v14/`.
 - Pick the file by audience. The version compare page labels notes by file name:
   - `technical-notes.md`: developers and administrators.
@@ -73,7 +74,7 @@ If the change alters existing behavior, removes something, or requires action fr
 ## 6. Check before committing
 
 1. Run `npm run build` and confirm it succeeds. Read the warnings for broken markdown links.
-2. Search the changed files for em dashes and banned words from `AGENTS.md`, e.g. `grep -n "—" <file>`.
+2. Search the changed files for em dashes and banned words from `docs/documentation-standards.md`, e.g. `grep -n "—" <file>`.
 3. Headings are sentence case, `##` or deeper, and short.
 4. Admonitions have an empty line after the opening and before the closing `:::`. No `:::caution`.
 5. No TODO comments left that the user has not seen.
