@@ -1,6 +1,8 @@
 # iDempiere Documentation
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator. It is published at https://docs.idempiere.org.
+
+Before you write or edit a page, read the [Documentation standards](https://docs.idempiere.org/docs/documentation-standards).
 
 ## Contributing to Documentation
 
@@ -58,7 +60,7 @@ npm install
 npm start #builds and launches the site locally
 ```
 
-Want to edit documents on "idempiere.github.io/docs" and see your changes instantly in the browser? Here's how:
+Want to edit documents on "docs.idempiere.org/docs" and see your changes instantly in the browser? Here's how:
 
 1. Run `npm start`.
 2. Open the document in your preferred text editor, then edit and save it.
