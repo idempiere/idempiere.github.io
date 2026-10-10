@@ -1,53 +1,66 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+// Docusaurus 3 exports useDoc from the docs plugin's client entry. Check this
+// import when upgrading Docusaurus.
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import styles from './styles.module.css';
 
 // docusaurus-plugin-llms writes a Markdown copy of each page to <permalink>.md
-// at build time. Older release notes are excluded, and the files do not exist
-// in `npm start`, so the button only shows when the file is there.
+// at build time, except for the folders in llmsExcludedDirs. The check runs on
+// the source path, so the buttons render on the server with no extra request
+// and no layout shift. The files do not exist in `npm start`.
+function hasMarkdownCopy(source, excludedDirs) {
+  if (process.env.NODE_ENV === 'development') {
+    return false;
+  }
+  const docPath = source.replace(/^@site\/docs\//, '');
+  return !excludedDirs.some((dir) => docPath.startsWith(`${dir}/`));
+}
+
+async function writeToClipboard(textPromise) {
+  if (typeof ClipboardItem !== 'undefined') {
+    try {
+      // Passing a promise keeps the user gesture alive in Safari.
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          'text/plain': textPromise.then((t) => new Blob([t], { type: 'text/plain' })),
+        }),
+      ]);
+      return;
+    } catch (e) {
+      // Fall through to writeText.
+    }
+  }
+  await navigator.clipboard.writeText(await textPromise);
+}
+
 export default function CopyMarkdown() {
   const { metadata } = useDoc();
-  const mdUrl = `${metadata.permalink}.md`;
-  const [available, setAvailable] = useState(false);
+  const { siteConfig } = useDocusaurusContext();
   const [status, setStatus] = useState('idle');
+  const resetTimer = useRef(null);
 
-  useEffect(() => {
-    let cancelled = false;
-    fetch(mdUrl, { method: 'HEAD' })
-      .then((res) => {
-        if (!cancelled) setAvailable(res.ok);
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  }, [mdUrl]);
+  useEffect(() => () => clearTimeout(resetTimer.current), []);
 
-  if (!available) {
+  if (!hasMarkdownCopy(metadata.source, siteConfig.customFields.llmsExcludedDirs)) {
     return null;
   }
 
+  const mdUrl = `${metadata.permalink}.md`;
+
   const copy = async () => {
+    const text = fetch(mdUrl).then((res) => {
+      if (!res.ok) throw new Error(res.statusText);
+      return res.text();
+    });
     try {
-      const text = fetch(mdUrl).then((res) => {
-        if (!res.ok) throw new Error(res.statusText);
-        return res.text();
-      });
-      if (typeof ClipboardItem !== 'undefined') {
-        // Passing a promise keeps the user gesture alive in Safari.
-        await navigator.clipboard.write([
-          new ClipboardItem({
-            'text/plain': text.then((t) => new Blob([t], { type: 'text/plain' })),
-          }),
-        ]);
-      } else {
-        await navigator.clipboard.writeText(await text);
-      }
+      await writeToClipboard(text);
       setStatus('copied');
     } catch (e) {
       setStatus('failed');
     }
-    setTimeout(() => setStatus('idle'), 2000);
+    clearTimeout(resetTimer.current);
+    resetTimer.current = setTimeout(() => setStatus('idle'), 2000);
   };
 
   const label =

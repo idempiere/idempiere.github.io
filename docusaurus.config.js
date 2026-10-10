@@ -3,6 +3,25 @@
 
 const { themes: prismThemes } = require('prism-react-renderer');
 
+// Docs folders left out of llms.txt and the per-page Markdown copies:
+// release notes and migration notes before iDempiere 9. Also passed to the
+// client so the copy-as-Markdown buttons know which pages have no .md file.
+const llmsExcludedDirs = [
+  'new-features/v1.0',
+  'new-features/v2.0',
+  'new-features/v2.1',
+  'new-features/v3.0',
+  'new-features/v4.1',
+  'new-features/v5.1',
+  'new-features/v6.2',
+  'new-features/v7.1',
+  'new-features/v8.2',
+  'migration-notes/v1.0',
+  'migration-notes/v3.1',
+  'migration-notes/v7.1',
+  'migration-notes/v8.2',
+];
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'iDempiere Open Source ERP',
@@ -80,7 +99,7 @@ const config = {
         title: 'iDempiere Documentation',
         description:
           'Documentation for iDempiere, an open source ERP: installation, OSGi plug-in development, 2Pack, functional guides and release notes.',
-        // Current material first; release notes before iDempiere 9 are left out.
+        // Current material first.
         includeOrder: [
           'basic-development/plugin-development/**',
           'migration-notes/v14/**',
@@ -88,19 +107,14 @@ const config = {
           'migration-notes/v12/**',
           'basic-installation/**',
         ],
-        ignoreFiles: [
-          'new-features/v1.0/**',
-          'new-features/v2.*/**',
-          'new-features/v3.*/**',
-          'new-features/v4.*/**',
-          'new-features/v5.*/**',
-          'new-features/v6.*/**',
-          'new-features/v7.*/**',
-          'new-features/v8.*/**',
-        ],
+        ignoreFiles: llmsExcludedDirs.map((dir) => `${dir}/**`),
       },
     ],
 ],
+
+  customFields: {
+    llmsExcludedDirs,
+  },
 
   headTags: [
     {
