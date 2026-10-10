@@ -1,0 +1,282 @@
+# iDempiere Documentation
+
+> Documentation for iDempiere, an open source ERP: installation, OSGi plug-in development, 2Pack, functional guides and release notes.
+
+This file contains links to documentation sections following the llmstxt.org standard.
+
+## Table of Contents
+
+- [Simplify Plug-in Development with DS Annotations](https://docs.idempiere.org/docs/basic-development/plugin-development/annotations-instead-xml.md): Learn how to use OSGi Declarative Service annotations to simplify plug-in development in iDempiere.
+- [Developing Plug-ins Without Affecting the Core](https://docs.idempiere.org/docs/basic-development/plugin-development/developing-plugins.md): How to develop iDempiere plug-ins independently from the core codebase
+- [Distributing and Installing Plug-ins in iDempiere](https://docs.idempiere.org/docs/basic-development/plugin-development/distributing-plugins.md): Guide to distribute and install plug-ins in iDempiere.
+- [Contributing an Extension to the Registry](https://docs.idempiere.org/docs/basic-development/plugin-development/extension-registry-contributing.md): How to publish a plug-in to the official iDempiere Extension Registry so any iDempiere 14+ instance can find and install it.
+- [Testing an Extension Locally](https://docs.idempiere.org/docs/basic-development/plugin-development/extension-registry-local-testing.md): Point an iDempiere instance at a local file: extension provider to test the full install, update, disable, and uninstall cycle before publishing.
+- [Extension Registry Worked Example](https://docs.idempiere.org/docs/basic-development/plugin-development/extension-registry-worked-example.md): A real plug-in submitted to the Extension Registry from start to finish, including the mistakes and open items it surfaced.
+- [Using IAboutWindowTabFactory in Plug-ins](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-about-window-tab.md): Learn how to add custom tabs to the iDempiere WebUI About window using IAboutWindowTabFactory.
+- [Developing Plug-in Callouts](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-callouts.md): Learn how to implement column callouts in iDempiere plug-ins using modern best practices.
+- [Custom Credit Management in Plug-ins](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-credit-manager-factory.md): Learn how to customize iDempiere's credit management behavior using ICreditManagerFactory and ICreditManager.
+- [Developing Dashboard Panel Fragments](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-dashboard-panels.md): Learn how to create custom Dashboard Panels for the iDempiere WebUI using OSGi fragment projects.
+- [OSGi and MANIFEST.MF Background](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-development-background.md): Background reference on MANIFEST.MF, plugin.xml, OSGi concepts, and key iDempiere plug-in projects.
+- [Using IDocFactory for Custom Accounting](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-doc-factory.md): Learn how to implement custom accounting for core documents in iDempiere using the IDocFactory service.
+- [IEditorFactory and IDisplayTypeFactory](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-editor-factory.md): Learn how to create custom field editors and display types for the iDempiere WebUI using IEditorFactory and IDisplayTypeFactory.
+- [Developing Plug-in Event Handlers](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-eventhandler.md): Learn how to implement event handlers in iDempiere plug-ins to intercept and respond to model events.
+- [Developing Plug-in Forms](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-forms.md): Learn how to create custom forms in iDempiere plug-ins using the IFormFactory service.
+- [Building iDempiere Plug-ins with Maven](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-maven-build.md): Learn how to build iDempiere plug-ins using Maven (Tycho), the build system adopted from iDempiere 6.1 onward.
+- [Using IModelFactory in Plug-ins](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-modelfactory.md): Learn how to use the IModelFactory service to provide custom model classes in your iDempiere plug-in
+- [Developing Plug-in Model Validators](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-modelvalidator.md): Learn how to create model validators in iDempiere plug-ins to add custom validation logic.
+- [Developing Plug-in Processes](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-process.md): Learn how to create and manage custom processes in iDempiere plug-ins.
+- [Custom Product Pricing in Plug-ins](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-product-pricing.md): Learn how to extend product pricing in iDempiere using IProductPricingFactory.
+- [Running Plug-ins Locally in iDempiere](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-running-locally.md): Guide to configure and run plug-ins locally in iDempiere.
+- [Server Push in Plug-ins](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-server-push.md): Learn how to use ServerPushTemplate, IServerPushCallback, and ITopicSubscriber to broadcast real-time messages between iDempiere WebUI sessions.
+- [Using ITaxProviderFactory in Plug-ins](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-tax-provider-factory.md): Learn how to implement a custom tax provider in iDempiere using the ITaxProviderFactory service.
+- [Using IUserPanelMenuFactory in Plug-ins](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-user-panel-menu.md): Learn how to add custom menu entries to the iDempiere WebUI user panel using IUserPanelMenuFactory.
+- [Developing WebUI Themes](https://docs.idempiere.org/docs/basic-development/plugin-development/plugin-webui-themes.md): Learn how to create custom WebUI themes for iDempiere using OSGi fragment projects.
+- [Migration notes - iDempiere 14 (technical)](https://docs.idempiere.org/docs/migration-notes/v14/technical-notes.md): Technical migration notes for upgrading to iDempiere 14.
+- [Migration notes - iDempiere 13 (functional)](https://docs.idempiere.org/docs/migration-notes/v13/functional-notes.md): Functional migration notes for upgrading to iDempiere 13.
+- [Removed deprecated APIs - iDempiere 13](https://docs.idempiere.org/docs/migration-notes/v13/removed-deprecated-apis.md): Reference list of classes and methods removed in iDempiere 13 that had been deprecated for more than two major releases.
+- [Migration notes - iDempiere 13 (technical)](https://docs.idempiere.org/docs/migration-notes/v13/technical-notes.md): Technical migration notes for upgrading to iDempiere 13.
+- [Migration notes - iDempiere 12 (functional)](https://docs.idempiere.org/docs/migration-notes/v12/functional-notes.md): Functional migration notes for upgrading to iDempiere 12.
+- [Migration notes - iDempiere 12 (technical)](https://docs.idempiere.org/docs/migration-notes/v12/technical-notes.md): Technical migration notes for upgrading to iDempiere 12.
+- [Docker](https://docs.idempiere.org/docs/basic-installation/docker.md): The purpose of this page is to help you get iDempiere up and running with docker. For more advanced iDempiere docker topic see the idempiere-docker...
+- [Best Practices for Migrating to New iDempiere Versions](https://docs.idempiere.org/docs/basic-installation/idempiere-upgrade-guide.md): Best practices for upgrading between iDempiere versions.
+- [Fast Linux Development Setup (Alternative)](https://docs.idempiere.org/docs/basic-installation/installing-for-development/fast-linux-dev-setup.md): There is an alternative for quickly creating an iDempiere development environment on Linux, maintained by Heng Sin:
+- [Applying Additional Migration Scripts](https://docs.idempiere.org/docs/basic-installation/installing-for-development/manual-install/applying-additional-migration-scripts.md): In the console, go to the `$IDEMPIERE_REPOSITORY` folder and execute:
+- [Building iDempiere without Eclipse](https://docs.idempiere.org/docs/basic-installation/installing-for-development/manual-install/building-idempiere-without-eclipse.md): It is possible to build iDempiere without Eclipse; you just need `openjdk-17-jdk`.
+- [Configuring iDempiere within Eclipse](https://docs.idempiere.org/docs/basic-installation/installing-for-development/manual-install/configuring-idempiere-within-eclipse.md): To run iDempiere from within Eclipse you must configure parameters first. This is done by running a preconfigured application called `install.app`.
+- [Download the Code](https://docs.idempiere.org/docs/basic-installation/installing-for-development/manual-install/download-the-code.md): iDempiere sources are hosted at GitHub. You can download the complete project with:
+- [Importing DB Seed Manually](https://docs.idempiere.org/docs/basic-installation/installing-for-development/manual-install/importing-db-seed-manually.md): Let's check the steps to create an iDempiere PostgreSQL database:
+- [Install Development Prerequisites](https://docs.idempiere.org/docs/basic-installation/installing-for-development/manual-install/install-development-prerequisites.md): These prerequisites apply both for release 13 and for development.
+- [Running iDempiere within Eclipse](https://docs.idempiere.org/docs/basic-installation/installing-for-development/manual-install/running-idempiere-within-eclipse.md): - Navigate to **Run > Run Configurations > Eclipse Application** - Select `server.product` and click **Run**
+- [Setting up Eclipse](https://docs.idempiere.org/docs/basic-installation/installing-for-development/manual-install/setting-up-eclipse.md): On the operating system, navigate to the folder where you cloned the code, named below as `$IDEMPIERE_REPOSITORY` (e.g.,...
+- [Downloading Installer](https://docs.idempiere.org/docs/basic-installation/installing-for-execution/downloading-installer.md): iDempiere version 13 is maintained and stable. This is the recommended version to install for implementation and production purposes.
+- [Install Prerequisites](https://docs.idempiere.org/docs/basic-installation/installing-for-execution/install-prerequisites.md): The examples on this guide are using the following versions: - Ubuntu 24.04 64 bits - PostgreSQL 17 - OpenJDK 17
+- [Installing from Installers](https://docs.idempiere.org/docs/basic-installation/installing-for-execution/installing-from-installers.md): It is recommended to run the iDempiere server as a user created for such purpose, usually idempiere, instead of running as root.
+- [Post Installation](https://docs.idempiere.org/docs/basic-installation/installing-for-execution/post-installation.md): Now that you have your server configured, it is recommended to follow some security measures.
+- [Running iDempiere from Installers](https://docs.idempiere.org/docs/basic-installation/installing-for-execution/running-idempiere-from-installers.md): Once installed and configured the iDempiere server you can start it with:
+- [Purpose](https://docs.idempiere.org/docs/basic-installation/introduction.md): The purpose of this chapter is to get your own copy of iDempiere up and running for your learning and playing experience. Please note that producti...
+- [Contribute Quick Info Widgets](https://docs.idempiere.org/docs/Widgets%20%26%20Quick%20Info/how-to-cotribute.md): 1. Place your `.zip` files in the `static/downloads/` folder. 2. Place your images in the `static/downloads/img/quick-infos` folder. 3. Add an entr...
+- [Quick Info 2packs](https://docs.idempiere.org/docs/Widgets%20%26%20Quick%20Info/quick-info-2packs.md): Quick Info widgets provide **contextual, real-time information** inside iDempiere without navigating away from the record you’re working on. They a...
+- [Field Event Rules](https://docs.idempiere.org/docs/available-plugins/field-event-rules.md): - **Maintainer:** Diego Ruiz - BX Service GmbH - **Sponsor:** Energy Kinetics, Inc. - **Status:** Beta, not tested in production - **License:** GPL...
+- [Automatic External Pack In](https://docs.idempiere.org/docs/basic-development/2pack/automatic-external-packin.md): Automatically install 2Pack files at startup across tenants using a shared folder and naming conventions.
+- [Using 2Pack to Transfer Data and Automate Plug-in Setup](https://docs.idempiere.org/docs/basic-development/2pack/packin-packout-guide.md): Learn how to use iDempiere's 2Pack functionality to transfer configuration and automate setup using plug-ins.
+- [Run Script with 2Pack](https://docs.idempiere.org/docs/basic-development/2pack/run-script-with-2pack.md): Learn how to execute shell or JSR223 scripts automatically during 2Pack installation.
+- [What is a 2Pack in iDempiere?](https://docs.idempiere.org/docs/basic-development/2pack/what-is-2pack.md): Learn what a 2Pack is, how it works, and why it's essential for configuration migration in iDempiere.
+- [Bug Reporting Guidelines](https://docs.idempiere.org/docs/basic-development/contributing-to-core/bug-reporting-guidelines.md): How to report bugs in iDempiere so the community can reproduce and fix them efficiently
+- [Changing the Database](https://docs.idempiere.org/docs/basic-development/contributing-to-core/changing-the-database.md): Guidelines for safely updating the iDempiere database schema
+- [Common Issues](https://docs.idempiere.org/docs/basic-development/contributing-to-core/common-issues.md): Common problems and mistakes to avoid when contributing
+- [Contributing to iDempiere](https://docs.idempiere.org/docs/basic-development/contributing-to-core/contributing-to-idempiere.md): Overview of how to get involved with the iDempiere project and where to start
+- [Fork and Branch Git Workflow](https://docs.idempiere.org/docs/basic-development/contributing-to-core/git-workflow.md): The recommended Git workflow for contributing to the iDempiere core repository
+- [How to Contribute](https://docs.idempiere.org/docs/basic-development/contributing-to-core/how-to-contribute.md): Step-by-step checklist and workflow for contributing to the iDempiere core
+- [How to Report a Vulnerability](https://docs.idempiere.org/docs/basic-development/contributing-to-core/how-to-report-a-vulnerability.md): Responsible process for reporting security vulnerabilities in iDempiere
+- [New Feature Suggestion Guidelines](https://docs.idempiere.org/docs/basic-development/contributing-to-core/new-feature-suggestion-guidelines.md): How to propose enhancements and new features for iDempiere in a way the community can evaluate effectively
+- [Plugin Guidelines](https://docs.idempiere.org/docs/basic-development/contributing-to-core/plugin-guidelines.md): Community checklist to evaluate plugin quality, documentation, installation, and maintenance readiness
+- [Pull Request Review](https://docs.idempiere.org/docs/basic-development/contributing-to-core/pull-request-review.md): How to review and test iDempiere pull requests so good changes move faster and risky changes are caught early
+- [Using AI Agents](https://docs.idempiere.org/docs/basic-development/contributing-to-core/using-ai-agents.md): How the iDempiere repositories guide AI coding agents, and what contributors remain responsible for
+- [Creating a New Window in iDempiere](https://docs.idempiere.org/docs/basic-development/creating-windows.md): This guide walks you through the complete process of creating a new Window in iDempiere, from database table creation to menu integration.
+- [Purpose](https://docs.idempiere.org/docs/basic-development/introduction.md): The purpose of this site is to help you learn, configure, enhance, deploy, scale and support an iDempiere instance and the iDempiere community as a...
+- [System Configurator](https://docs.idempiere.org/docs/basic-development/system-configurator.md): Global parameters stored in the AD_SysConfig table and the list of keys used by iDempiere
+- [Business Partner](https://docs.idempiere.org/docs/basic-functional/business_partner.md): A customer is a subject or entity that accesses resources, products or services provided by another. For business, the customer is the individual w...
+- [Purpose](https://docs.idempiere.org/docs/basic-functional/introduction.md): The purpose of this section is to help you get started using iDempiere. We will focus on basic vocabulary and tools that most people use regardless...
+- [Login - Access to the system](https://docs.idempiere.org/docs/basic-functional/login.md): The first step of the login process focuses on authentication (who are you) and language preference.
+- [System overview](https://docs.idempiere.org/docs/basic-functional/menue_overview.md): The first areas **System Admin** and **Application Dictionary** contain many technical aspects. But you may also find generally important definitio...
+- [Vocabulary](https://docs.idempiere.org/docs/basic-functional/vocabulary.md): This page defines basic terms you should know when using iDempiere. Consider bookmarking this page for future reference. Note that the order of ter...
+- [Window handling](https://docs.idempiere.org/docs/basic-functional/window_handling.md): Some important areas are: - Favorites - Recent items - Activities - Views not seen above further right are - Calendar - Performance (Dashboard) - H...
+- [Documentation Standards](https://docs.idempiere.org/docs/documentation-standards.md): The purpose of this page is to help encourage standards when creating and updating this site.
+- [Getting Started](https://docs.idempiere.org/docs/getting-started.md): Welcome to iDempiere! This guide will help you quickly get started with the system by walking you through the essential first steps.
+- [Purpose](https://docs.idempiere.org/docs/introduction.md): The purpose of this site is to help you learn, configure, enhance, deploy, scale and support an iDempiere instance and the iDempiere community as a...
+- [Legacy ADempiere and early iDempiere migration scripts](https://docs.idempiere.org/docs/migration-notes/legacy-adempiere/migration-scripts.md): Migration script folders for moving from ADempiere and early iDempiere releases.
+- [Migration notes - iDempiere 10 (technical)](https://docs.idempiere.org/docs/migration-notes/v10/technical-notes.md): Technical migration notes for upgrading to iDempiere 10.
+- [Migration notes - iDempiere 11 (technical)](https://docs.idempiere.org/docs/migration-notes/v11/technical-notes.md): Technical migration notes for upgrading to iDempiere 11.
+- [Migration notes - iDempiere 9 Horizon (technical)](https://docs.idempiere.org/docs/migration-notes/v9/technical-notes.md): Technical migration notes for upgrading to iDempiere 9 Horizon.
+- [Support Report Source in Report Columns and Add User1/User2 as Report Sources](https://docs.idempiere.org/docs/new-features/in-development/Report-Source-for-Report-Column.md): Support Report Source in Report Columns and Add User1/User2 as Report Sources
+- [Avoid Sequence Locks in Document Numbers](https://docs.idempiere.org/docs/new-features/in-development/avoid-sequence-locks.md): Introduces UUID-based document sequences and Allow Gaps setting to eliminate sequence lock contention under concurrent document creation.
+- [User Task Type Node Action](https://docs.idempiere.org/docs/new-features/in-development/user-task-workflow-node.md): Introduces the new User Task workflow node action for explicit task confirmation and non-aborting approval handling.
+- [Add Always Updatable Logic Override Flag](https://docs.idempiere.org/docs/new-features/v10/add-always-updatable-logic-override-flag.md): **Developer:** Deepak Pansheriya
+- [Add Context Variables in log entries](https://docs.idempiere.org/docs/new-features/v10/add-context-variables-in-log-entries.md): **Developers:** Nicolas Micoud, Hengsin, Carlos Ruiz
+- [Add Customer Account FreightCostRule](https://docs.idempiere.org/docs/new-features/v10/add-customer-account-freightcostrule.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Add Fixed Price Discount Support to Discount Schema](https://docs.idempiere.org/docs/new-features/v10/add-fixed-price-discount-support-to-discount-schema.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Add User Session Process Instance](https://docs.idempiere.org/docs/new-features/v10/add-user-session-process-instance.md): **Developer:** Deepak Pansheriya
+- [After Migrate Helper](https://docs.idempiere.org/docs/new-features/v10/after-migrate-helper.md): **Developer:** Carlos Ruiz
+- [Ask For Secret Input Within Process](https://docs.idempiere.org/docs/new-features/v10/ask-for-secret-input-within-process.md): **Goal:** UX - Security - Development
+- [Attach Files using Drag and Drop](https://docs.idempiere.org/docs/new-features/v10/attach-files-using-drag-and-drop.md): **Goal:** User Experience
+- [Auto Save Current Tab Changes](https://docs.idempiere.org/docs/new-features/v10/auto-save-current-tab-changes.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Bank/Cash Transfer Document](https://docs.idempiere.org/docs/new-features/v10/bankcash-transfer-document.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Base Price List](https://docs.idempiere.org/docs/new-features/v10/base-price-list.md): **Developer:** Carlos Ruiz
+- [Configurable Cache Size per Table](https://docs.idempiere.org/docs/new-features/v10/configurable-cache-size-per-table.md): **Developer:** Carlos Ruiz
+- [Consider prepared shipments as no longer available](https://docs.idempiere.org/docs/new-features/v10/consider-prepared-shipments-as-no-longer-available.md): **Goal:** UX/Functional
+- [Copy Print format With Dialog](https://docs.idempiere.org/docs/new-features/v10/copy-print-format-with-dialog.md): **Goal:** UX/Functional
+- [Dashboard Content Goal Indicator](https://docs.idempiere.org/docs/new-features/v10/dashboard-content-goal-indicator.md): **Goal:** UX/Functional
+- [Dashboard Row Orientation](https://docs.idempiere.org/docs/new-features/v10/dashboard-row-orientation.md): **Goal:** UX/Functional
+- [Date Range Component](https://docs.idempiere.org/docs/new-features/v10/date-range-component.md): **Goal:** UX/Functional
+- [Deductible and Non Deductible Input Tax](https://docs.idempiere.org/docs/new-features/v10/deductible-and-non-deductible-input-tax.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Define DB views with DISTINCT](https://docs.idempiere.org/docs/new-features/v10/define-db-views-with-distinct.md): **Developer:** Nicolas Micoud
+- [Delete Record with Confirmation Logic](https://docs.idempiere.org/docs/new-features/v10/delete-record-with-confirmation-logic.md): **Goal:** UX/Functional
+- [Document Type for Production and Bank Statement](https://docs.idempiere.org/docs/new-features/v10/document-type-for-production-and-bank-statement.md): **Developer:** Carlos Ruiz
+- [Drill Assistant Enhancements](https://docs.idempiere.org/docs/new-features/v10/drill-assistant-enhancements.md): **Goal:** UX/Functional
+- [Flat View Menu Tree Enhancements](https://docs.idempiere.org/docs/new-features/v10/flat-view-menu-tree-enhancements.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [HikariCP Connection Pool](https://docs.idempiere.org/docs/new-features/v10/hikaricp-connection-pool.md): **Developers:** Jasper Siepkes, Heng Sin Low, Carlos Ruiz
+- [Info Window Generate Invoice (manual)](https://docs.idempiere.org/docs/new-features/v10/info-window-generate-invoice-manual.md): **Feature:** Generate invoice (manual) migrated to info window
+- [Info Window Generate Shipment (manual)](https://docs.idempiere.org/docs/new-features/v10/info-window-generate-shipment-manual.md): **Feature:** Generate shipments (manual) migrated to info window
+- [Label Feature](https://docs.idempiere.org/docs/new-features/v10/label-feature.md): **Developer:** Alan.lesc1 ([talk](https://wiki.idempiere.org/en/User_talk:Alan.lesc1))
+- [Make print filename configurable](https://docs.idempiere.org/docs/new-features/v10/make-print-filename-configurable.md): **Goal:** UX/Functional
+- [Multi Warehouse Inventory Valuation Report](https://docs.idempiere.org/docs/new-features/v10/multi-warehouse-inventory-valuation-report.md): **Developer:** Carlos Ruiz
+- [Negate Option for Chosen Multiple Component parameter](https://docs.idempiere.org/docs/new-features/v10/negate-option-for-chosen-multiple-component-parameter.md): **Developer:** Matheus.marcelino ([talk](https://wiki.idempiere.org/en/User_talk:Matheus.marcelino))
+- [Order and Invoice: Tax Lookup Interface](https://docs.idempiere.org/docs/new-features/v10/order-and-invoice-tax-lookup-interface.md): **Goal:** Development
+- [Print Support Process Info Dialog](https://docs.idempiere.org/docs/new-features/v10/print-support-process-info-dialog.md): **Goal:** UX/Functional
+- [Record ID Editor](https://docs.idempiere.org/docs/new-features/v10/record-id-editor.md): **Goal:** UX/Functional
+- [Status Line As Dashboard Widget](https://docs.idempiere.org/docs/new-features/v10/status-line-as-dashboard-widget.md): **Goal:** UX/Functional
+- [Styles On HTML Report columns](https://docs.idempiere.org/docs/new-features/v10/styles-on-html-report-columns.md): **Goal:** UX/Functional
+- [Support Readonly Logic Set Pressed Logic Custom Toolbar Button](https://docs.idempiere.org/docs/new-features/v10/support-readonly-logic-set-pressed-logic-custom-toolbar-button.md): **Goal:** Development
+- [Synchronize Print Format Items](https://docs.idempiere.org/docs/new-features/v10/synchronize-print-format-items.md): **Developer:** Nicolas Micoud
+- [Tabular Report Re-Run Enhancements](https://docs.idempiere.org/docs/new-features/v10/tabular-report-re-run-enhancements.md): **Goal:** UX/Functional
+- [Tenant Time Zone for Cron Scheduler](https://docs.idempiere.org/docs/new-features/v10/tenant-time-zone-for-cron-scheduler.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Wizard for Chosen Multiple Selection List editor](https://docs.idempiere.org/docs/new-features/v10/wizard-for-chosen-multiple-selection-list-editor.md): **Developer:** Nicolas Micoud
+- [Workflow EMail Notification Enhancements](https://docs.idempiere.org/docs/new-features/v10/workflow-email-notification-enhancements.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Add Java Options Field To Setup](https://docs.idempiere.org/docs/new-features/v11/add-java-options-field-to-setup.md): **Goal:** UX/Functional
+- [Allow to Specify Print Format for Dashboard Content Report](https://docs.idempiere.org/docs/new-features/v11/allow-to-specify-print-format-for-dashboard-content-report.md): **Ticket:** [IDEMPIERE-5490](https://idempiere.atlassian.net/browse/IDEMPIERE-5490)
+- [Constraint Type for RecordID and UU](https://docs.idempiere.org/docs/new-features/v11/constraint-type-for-recordid-and-uu.md): **Developer**: cloudempiere, Takacs Peter
+- [Credit Management as Factory](https://docs.idempiere.org/docs/new-features/v11/credit-management-as-factory.md): **Goal:** Customizibility, Extendibility
+- [Delete Trace Logs](https://docs.idempiere.org/docs/new-features/v11/delete-trace-logs.md): **Developer**: Zuhri Utama, A.
+- [Disable OSGi Event Handler](https://docs.idempiere.org/docs/new-features/v11/disable-osgi-event-handler.md): **Goal:** UX/Functional
+- [Document Base Type Group](https://docs.idempiere.org/docs/new-features/v11/document-base-type-group.md): **Developer:** cloudempiere, takacs peter
+- [Dynamic Validation per Table](https://docs.idempiere.org/docs/new-features/v11/dynamic-validation-per-table.md): **Goal:** Dynamically restrict records that user can see
+- [Enable Showing Inactive Records through Reference](https://docs.idempiere.org/docs/new-features/v11/enable-showing-inactive-records-through-reference.md): **Ticket:** [IDEMPIERE-5573](https://idempiere.atlassian.net/browse/IDEMPIERE-5573)
+- [Export SQL Insert Scripts](https://docs.idempiere.org/docs/new-features/v11/export-sql-insert-scripts.md): **Goal:** UX/Functional
+- [Generate Model Template](https://docs.idempiere.org/docs/new-features/v11/generate-model-template.md): **Developers:** Nicolas Micoud
+- [Improve Process Log for more advanced logging options](https://docs.idempiere.org/docs/new-features/v11/improve-process-log-for-more-advanced-logging-options.md): **Initiator**: Norbert Bede, Cloudempiere
+- [Inject Context Variables From Role](https://docs.idempiere.org/docs/new-features/v11/inject-context-variables-from-role.md): **Developer:** muriloht
+- [JSON Field Type](https://docs.idempiere.org/docs/new-features/v11/json-field-type.md): **Developer:** Diego Ruiz - [BX Service GmbH](https://www.bx-service.com/)
+- [Min Max Validation Process Parameters](https://docs.idempiere.org/docs/new-features/v11/min-max-validation-process-parameters.md): **Developer:** Zuhri Utama, Hieplq
+- [Monitor Null Trx](https://docs.idempiere.org/docs/new-features/v11/monitor-null-trx.md): **Developer:** Carlos Ruiz
+- [More Formats for Import CSV](https://docs.idempiere.org/docs/new-features/v11/more-formats-for-import-csv.md): **Developer:** Carlos Ruiz
+- [OOMPH Import Projects](https://docs.idempiere.org/docs/new-features/v11/oomph-import-projects.md): **Goal:** UX/Functional
+- [Period Close Disallow When Unposted Documents Exists](https://docs.idempiere.org/docs/new-features/v11/period-close-disallow-when-unposted-documents-exists.md): **Goal:** Controlling Improvment
+- [Period Control Document Close](https://docs.idempiere.org/docs/new-features/v11/period-control-document-close.md): **Developer:** cloudempiere, Takacs Peter, Igor Pojzl
+- [Private Access Window](https://docs.idempiere.org/docs/new-features/v11/private-access-window.md): **Developer:** Carlos Ruiz
+- [Read-Only Session](https://docs.idempiere.org/docs/new-features/v11/read-only-session.md): **Developer:** Carlos Ruiz
+- [Refactor ESC/Alt+X Shortcut for Closing Tabs](https://docs.idempiere.org/docs/new-features/v11/refactor-escaltx-shortcut-for-closing-tabs.md): **Ticket:** &lt;https://idempiere.atlassian.net/browse/IDEMPIERE-5786&gt;(http://IDEMPIERE-5786)
+- [Single Sign-On](https://docs.idempiere.org/docs/new-features/v11/single-sign-on.md): **Developer:** [Logilite Technologies](http://www.logilite.com/)
+- [Stocked Expense Type Product](https://docs.idempiere.org/docs/new-features/v11/stocked-expense-type-product.md): **Developer: Deepak Pansheriya [Logilite Technologies](http://www.logilite.com/)**
+- [Support for pure UUID key tables](https://docs.idempiere.org/docs/new-features/v11/support-for-pure-uuid-key-tables.md): **Developer:** Carlos Ruiz
+- [Support Quick Info Widget for Info Windows](https://docs.idempiere.org/docs/new-features/v11/support-quick-info-widget-for-info-windows.md): **Ticket:** [IDEMPIERE-5772](https://idempiere.atlassian.net/browse/IDEMPIERE-5772)
+- [System Property to avoid cutting log](https://docs.idempiere.org/docs/new-features/v11/system-property-to-avoid-cutting-log.md): **Developers:** Nicolas Micoud
+- [Table Partitioning Support](https://docs.idempiere.org/docs/new-features/v11/table-partitioning-support.md): **Initial idea, sponsorship:** Norbert Bede, Cloudempiere
+- [Tax Rate Tab in Tax Category](https://docs.idempiere.org/docs/new-features/v11/tax-rate-tab-in-tax-category.md): **Developer:** Zuhri Utama
+- [Timezone By Organization](https://docs.idempiere.org/docs/new-features/v11/timezone-by-organization.md): **Developer:** Matheus E. Marcelino
+- [Tuning Windows Performance](https://docs.idempiere.org/docs/new-features/v11/tuning-windows-performance.md): **Developer:** Carlos Ruiz
+- [UN CEFACT Code in UOM](https://docs.idempiere.org/docs/new-features/v11/un-cefact-code-in-uom.md): **Developer:** Carlos Ruiz
+- [VFormat RegEx](https://docs.idempiere.org/docs/new-features/v11/vformat-regex.md): **Developer:** Carlos Ruiz
+- [Add option to Disable "Insufficient Inventory" Popup](https://docs.idempiere.org/docs/new-features/v12/add-option-to-disable-insufficient-inventory-popup.md): **Goal:** User experience - Usability
+- [All Quantities in Storage Per Product](https://docs.idempiere.org/docs/new-features/v12/all-quantities-in-storage-per-product.md): **Developer:** Diego Ruiz
+- [Context Variable HTML REPORT THEME](https://docs.idempiere.org/docs/new-features/v12/context-variable-html-report-theme.md): **Developer:** Deepak Pansheriya
+- [Copy or Move Tenant](https://docs.idempiere.org/docs/new-features/v12/copy-or-move-tenant.md): **Developers:** Carlos Ruiz
+- [Define HTML field at field level](https://docs.idempiere.org/docs/new-features/v12/define-html-field-at-field-level.md): **Developer:** Nicolas Micoud
+- [Development With Intellij](https://docs.idempiere.org/docs/new-features/v12/development-with-intellij.md): **Goal:** Development
+- [Document Search Customisable Layout](https://docs.idempiere.org/docs/new-features/v12/document-search-customisable-layout.md): **Feature:** Allow Define Customisable Layout for search result
+- [Email Template Markdown Text](https://docs.idempiere.org/docs/new-features/v12/email-template-markdown-text.md): **Feature:** Implement markdown text support for email template
+- [Enhance Print Invoices Process to Support Multi-Select Document Type Parameter](https://docs.idempiere.org/docs/new-features/v12/enhance-print-invoices-process-to-support-multi-select-document-type-parameter.md): **Goal:** User experience - Usability
+- [Exclude Freight Charges from Payment Discount](https://docs.idempiere.org/docs/new-features/v12/exclude-freight-charges-from-payment-discount.md): **Developer:** Diego Ruiz [BX Service GmbH](https://www.bx-service.com/)
+- [Export Tree Definition](https://docs.idempiere.org/docs/new-features/v12/export-tree-definition.md): **Developer:** Carlos Ruiz
+- [FEATURE: Fast entity type identification](https://docs.idempiere.org/docs/new-features/v12/feature-fast-entity-type-identification.md): **Developer:** Murilo H. Torquato
+- [Get image through url from attachment](https://docs.idempiere.org/docs/new-features/v12/get-image-through-url-from-attachment.md): **Developer:** Hengsin,
+- [ImageURL Fieldtype](https://docs.idempiere.org/docs/new-features/v12/imageurl-fieldtype.md): **Developer:** Hengsin, Deep Testing, Carlos Ruiz.
+- [Implement escape sequence for text with context variable](https://docs.idempiere.org/docs/new-features/v12/implement-escape-sequence-for-text-with-context-variable.md): **Developer:** Takacs Peter, Hengsin
+- [Improve Password Hashing](https://docs.idempiere.org/docs/new-features/v12/improve-password-hashing.md): **Developer:** Carlos Ruiz Heng Sin
+- [IProcessParameterListener - add onInit method](https://docs.idempiere.org/docs/new-features/v12/iprocessparameterlistener-add-oninit-method.md): **Developer:** Nicolas Micoud
+- [Multiple Payments against statement line by Payment Batch](https://docs.idempiere.org/docs/new-features/v12/multiple-payments-against-statement-line-by-payment-batch.md): **Feature:** Tag Payment Into Batch to Bank Statement Line and Document Workflow Support for Payment Into Batch
+- [Multiple SSO Provider Support](https://docs.idempiere.org/docs/new-features/v12/multiple-sso-provider-support.md): **Developer:** Deepak Pansheriya [Logilite Technologies](https://www.logilite.com)
+- [New Fields in Country](https://docs.idempiere.org/docs/new-features/v12/new-fields-in-country.md): **Developer:** Carlos Ruiz
+- [Prepay Order Configurable Shipment and Invoicing](https://docs.idempiere.org/docs/new-features/v12/prepay-order-configurable-shipment-and-invoicing.md): **Goal:** Sales Process
+- [Reactivation of Invoices](https://docs.idempiere.org/docs/new-features/v12/reactivation-of-invoices.md): **Developer:** Nicolas Micoud
+- [Status Line Widget Markdown And Scoped Style](https://docs.idempiere.org/docs/new-features/v12/status-line-widget-markdown-and-scoped-style.md): **Feature:** Implement markdown and scoped style support for status line widget
+- [Support for Alternate DB Admin User](https://docs.idempiere.org/docs/new-features/v12/support-for-alternate-db-admin-user.md): **Developer:** Carlos Ruiz
+- [Support UOM On Inventory Move](https://docs.idempiere.org/docs/new-features/v12/support-uom-on-inventory-move.md): **Developer:** Diego Ruiz
+- [Theme Customization](https://docs.idempiere.org/docs/new-features/v12/theme-customization.md): **Developer:** Nicolas Micoud
+- [Unallocated Cash and Payment Selection Configurable Business Partner](https://docs.idempiere.org/docs/new-features/v12/unallocated-cash-and-payment-selection-configurable-business-partner.md): &lt;h2 style='color:red'&gt;NOTE: This is not yet integrated into core&lt;/h2&gt;
+- [Use System Configurator from css files](https://docs.idempiere.org/docs/new-features/v12/use-system-configurator-from-css-files.md): **Developer:** Nicolas Micoud
+- [Validate Required Plugins](https://docs.idempiere.org/docs/new-features/v12/validate-required-plugins.md): **Developer:** Carlos Ruiz
+- [Virtual Column as Report Parameter](https://docs.idempiere.org/docs/new-features/v12/virtual-column-as-report-parameter.md): **Developer:** Paul Bowden (Adaxa)
+- [Account Info Customization](https://docs.idempiere.org/docs/new-features/v13/account-info-customization.md): Added new feature to allow customization of Account Info window with custom plugin for enhancement or modification of default account info.
+- [Accounting Schema Valid Range](https://docs.idempiere.org/docs/new-features/v13/accounting-schema-valid-range.md): The goal of this enhancement is to enable accounting schema to validate within a provided range of time, so that the documents having accounting da...
+- [Adding ability to Copy BOM to Copy Product process](https://docs.idempiere.org/docs/new-features/v13/adding-ability-to-copy-bom-to-copy-product-process.md): The Copy Product process, now copies the following details:
+- [Advanced Options For Saved Queries](https://docs.idempiere.org/docs/new-features/v13/advanced-options-for-saved-queries.md): A new feature has been added to the Find Window that allows users to manage saved queries more efficiently.
+- [Attachment List](https://docs.idempiere.org/docs/new-features/v13/attachment-list.md): The list of attachment files has been usually stored in a ZIP file in the database (the default), or as an XML file for FileSystem and DB_LOB (Data...
+- [Code-based password reset](https://docs.idempiere.org/docs/new-features/v13/code-based-password-reset.md): Redesigned Forgot Password flow that emails a one-time numeric code and resets the password through a shared, swappable core service.
+- [Configurable Keikai editable](https://docs.idempiere.org/docs/new-features/v13/configurable-keikai-editable.md): Make the Keikai spreadsheet viewer read-only state configurable per context via SysConfig keys
+- [Custom key of document sequence](https://docs.idempiere.org/docs/new-features/v13/custom-key-of-document-sequence.md): This change allows to define a custom key for a Document Sequence, using values from the context of the document.
+- [DisplaySQL and Display Identifier in Table Validation](https://docs.idempiere.org/docs/new-features/v13/displaysql-and-display-identifier-in-table-validation.md): Before this ticket, in search and list type of reference field, it shows identifier columns if Display column is same at _ID column of table.
+- [Extensible Report Content Generation](https://docs.idempiere.org/docs/new-features/v13/extensible-report-content-generation.md): UI-independent OSGi extension points for report rendering and post-processing.
+- [Form Customization](https://docs.idempiere.org/docs/new-features/v13/form-customization.md): Allow cosmetic customization on forms at tenant level
+- [New Accounting Dimensions](https://docs.idempiere.org/docs/new-features/v13/new-accounting-dimensions.md): in iDempiere, Activity use for cost center as well as department.
+- [Override Workflow Responsible](https://docs.idempiere.org/docs/new-features/v13/override-workflow-responsible.md): Workflow are normally defined at system tenant.
+- [Read Access To Tables Not In Role Table Access List](https://docs.idempiere.org/docs/new-features/v13/read-access-to-tables-not-in-role-table-access-list.md): When using the Role Table Access Include list (i.e uncheck the Exclude checkbox) for Read Write access, the current behaviour is hard coded as the ...
+- [Record attributes For Decluttering Configuration](https://docs.idempiere.org/docs/new-features/v13/record-attributes-for-decluttering-configuration.md): In Application dictionary object like Tab, Table or Column, if we have to add any configuration which are rarely have value, then we keep adding co...
+- [Storage Validator OSGI Service](https://docs.idempiere.org/docs/new-features/v13/storage-validator-osgi-service.md): This enhancement introduces a new Storage Validator extension point to iDempiere.
+- [Support UOM and QtyEntered on Inventory Documents](https://docs.idempiere.org/docs/new-features/v13/uom-qtyentered-physical-inventory.md): Adds UOM and QtyEntered fields to Physical Inventory and Inventory Increase/Decrease windows.
+- [WEditor Dynamic Display OSGi Service](https://docs.idempiere.org/docs/new-features/v13/weditor-dynamic-display-service.md): This enhancement exposes the existing WEditor.DynamicDisplayListener interface as an OSGi service
+- [BPartner and Account column in Statement of Account report](https://docs.idempiere.org/docs/new-features/v14/BPartner-Account-Column-in-Statement-of-Account.md): Adding Business Partner and Account column in Statement of account report.
+- [Accounting Implementation Classes Extracted to org.idempiere.acct](https://docs.idempiere.org/docs/new-features/v14/accounting-plugin.md): Accounting-related implementation classes have been moved from iDempiere core to a dedicated bundle, making it possible to run iDempiere without th...
+- [CKEditor : allow override config files in a plugin](https://docs.idempiere.org/docs/new-features/v14/ckeditor-allow-overrideconfig-files-in-plugin.md): Allow to override config.js and config-min.js in a plugin
+- [Customization of email sent when server starts](https://docs.idempiere.org/docs/new-features/v14/customization-email-at-server-start.md): Allow to customize the content of the email sent when the iDempiere service starts
+- [Default Display Mode for Detail Tabs](https://docs.idempiere.org/docs/new-features/v14/default-view-detail-tabs.md): Allow users to configure the default display mode of Detail tabs
+- [iDempiere Extension Management](https://docs.idempiere.org/docs/new-features/v14/extension-management.md): It provides a centralized service to discover, validate, install, and update OSGi-based plugins and database extensions directly within the iDempie...
+- [Sales Pipelines](https://docs.idempiere.org/docs/new-features/v14/opportunities-sales-pipelines.md): Allow the use of a list of Sales Stage per Sales Pipeline
+- [Redis as Distributed Cache Backend](https://docs.idempiere.org/docs/new-features/v14/redis-distributed-cache.md): Introduces org.idempiere.redis.service, an optional Redis-backed alternative to the Hazelcast distributed cache bundle.
+- [Reusable Web Session for Scheduler](https://docs.idempiere.org/docs/new-features/v14/reusable-session-for-scheduler.md): Allow reuse of an existing session for schedulers
+- [SOAP Web Services Plugin](https://docs.idempiere.org/docs/new-features/v14/soap-web-services-plugin.md): The SOAP Web Services bundle has been extracted from iDempiere core and is now available as a standalone optional plugin.
+- [Add Access Tab Document Status Activity](https://docs.idempiere.org/docs/new-features/v9/add-access-tab-document-status-activity.md): **Developer:** Deepak Pansheriya
+- [Add links in Broadcast Messages](https://docs.idempiere.org/docs/new-features/v9/add-links-in-broadcast-messages.md): **Developer:** Nicolas Micoud - original credits go to Matheus E. Marcelino and Murilo H. Torquato
+- [AD_Message+AD_Element Resource Bundle for Jasper Report](https://docs.idempiere.org/docs/new-features/v9/admessageadelement-resource-bundle-for-jasper-report.md): **Goal:** Development
+- [Advanced Search Enhancements](https://docs.idempiere.org/docs/new-features/v9/advanced-search-enhancements.md): **Developer:** Igor Pojzl
+- [Allowing Product Without Pricelist](https://docs.idempiere.org/docs/new-features/v9/allowing-product-without-pricelist.md): **Developer:** Logilite Technologies
+- [Annotated Process Parameters](https://docs.idempiere.org/docs/new-features/v9/annotated-process-parameters.md): **Goal:** Development
+- [Auto Produce for Mfg Light](https://docs.idempiere.org/docs/new-features/v9/auto-produce-for-mfg-light.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Boolean Logic Expression Enhancements](https://docs.idempiere.org/docs/new-features/v9/boolean-logic-expression-enhancements.md): **Goal:** Development
+- [Cloud Upload Interface for Report Viewer and Scheduler](https://docs.idempiere.org/docs/new-features/v9/cloud-upload-interface-for-report-viewer-and-scheduler.md): **Goal:** Development
+- [Confirm Panel With Checkbox](https://docs.idempiere.org/docs/new-features/v9/confirm-panel-with-checkbox.md): **Goal:** Development
+- [Custom Commission calculations](https://docs.idempiere.org/docs/new-features/v9/custom-commission-calculations.md): **Goal:** Extensibility
+- [Custom Query Clause for Report Parameter](https://docs.idempiere.org/docs/new-features/v9/custom-query-clause-for-report-parameter.md): **Goal:** Development
+- [CustomsTariffNumber in Products and enhanced import](https://docs.idempiere.org/docs/new-features/v9/customstariffnumber-in-products-and-enhanced-import.md): **Developer:** Martin Schönbeck
+- [Desktop Tab Enhancements](https://docs.idempiere.org/docs/new-features/v9/desktop-tab-enhancements.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Enable Save Column Width WListBox](https://docs.idempiere.org/docs/new-features/v9/enable-save-column-width-wlistbox.md): **Developer:** Flemming Birch
+- [Excel File Preview at Report and Attachment Viewer](https://docs.idempiere.org/docs/new-features/v9/excel-file-preview-at-report-and-attachment-viewer.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Favorite Dashboard](https://docs.idempiere.org/docs/new-features/v9/favorite-dashboard.md): **Developer:** Logilite Technologies
+- [Form SQL Query](https://docs.idempiere.org/docs/new-features/v9/form-sql-query.md): **Developer:** Carlos Ruiz
+- [Grid View Auto Hide Empty Column](https://docs.idempiere.org/docs/new-features/v9/grid-view-auto-hide-empty-column.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [How To: Using Print Format Item Scripts In Reports](https://docs.idempiere.org/docs/new-features/v9/how-to-using-print-format-item-scripts-in-reports.md): This document expands on the information provided in [NF8.2 Print Format Item Script](/docs/new-features/v8.2/print-format-item-script) and
+- [Improve Form SQL Process](https://docs.idempiere.org/docs/new-features/v9/improve-form-sql-process.md): **Developer:** Carlos Ruiz
+- [Info Window Auto Hide Empty Column](https://docs.idempiere.org/docs/new-features/v9/info-window-auto-hide-empty-column.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Info Window Select DeSelect All](https://docs.idempiere.org/docs/new-features/v9/info-window-select-deselect-all.md): **Developer:** Carlos Ruiz
+- [IQuickEntry OSGI Service](https://docs.idempiere.org/docs/new-features/v9/iquickentry-osgi-service.md): **Goal:** Development
+- [Jasper Report Deployment Refactoring and Improvement](https://docs.idempiere.org/docs/new-features/v9/jasper-report-deployment-refactoring-and-improvement.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [JSON request and response support for Web Services](https://docs.idempiere.org/docs/new-features/v9/json-request-and-response-support-for-web-services.md): **Goal:** Development
+- [Media View Interface for Report and Attachment Viewer](https://docs.idempiere.org/docs/new-features/v9/media-view-interface-for-report-and-attachment-viewer.md): **Goal:** Development
+- [Messages at Client Level](https://docs.idempiere.org/docs/new-features/v9/messages-at-client-level.md): **Developer:** Nicolas Micoud
+- [Multiple BOM support for Mfg Light](https://docs.idempiere.org/docs/new-features/v9/multiple-bom-support-for-mfg-light.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Multiple SMTP Per Tenant](https://docs.idempiere.org/docs/new-features/v9/multiple-smtp-per-tenant.md): **Developer:** Nicolas Micoud
+- [Organize process and report parameters by Field Group](https://docs.idempiere.org/docs/new-features/v9/organize-process-and-report-parameters-by-field-group.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [OSGi Interface to Create Custom Header and Footer](https://docs.idempiere.org/docs/new-features/v9/osgi-interface-to-create-custom-header-and-footer.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [OSGi New Column Callout Factory](https://docs.idempiere.org/docs/new-features/v9/osgi-new-column-callout-factory.md): **Feature:** OSGi New Column Callout Factory
+- [OSGi New Document Factory](https://docs.idempiere.org/docs/new-features/v9/osgi-new-document-factory.md): **Goal:** Development
+- [OSGi New Event Handling Annotation](https://docs.idempiere.org/docs/new-features/v9/osgi-new-event-handling-annotation.md): **Feature:** OSGi New Event Handling Annotation
+- [OSGi New Form Factory](https://docs.idempiere.org/docs/new-features/v9/osgi-new-form-factory.md): **Feature:** New Form Factory and Form Annotations
+- [OSGi New Mapped By Name Factory](https://docs.idempiere.org/docs/new-features/v9/osgi-new-mapped-by-name-factory.md): **Goal:** Development
+- [OSGi New Model Factory](https://docs.idempiere.org/docs/new-features/v9/osgi-new-model-factory.md): **Feature:** OSGi New Model Factory and Model Annotations
+- [OSGi New Process Factory](https://docs.idempiere.org/docs/new-features/v9/osgi-new-process-factory.md): **Feature:** New Process Factory and Process Annotations
+- [PostgreSQL Default to Native Dialect](https://docs.idempiere.org/docs/new-features/v9/postgresql-default-to-native-dialect.md): **Goal:** Development
+- [Print Format Editor](https://docs.idempiere.org/docs/new-features/v9/print-format-editor.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Record Info Copy To Clipboard Buttons](https://docs.idempiere.org/docs/new-features/v9/record-info-copy-to-clipboard-buttons.md): **Developer:** Carlos Ruiz
+- [Replace Create From Form With Info Window Form](https://docs.idempiere.org/docs/new-features/v9/replace-create-from-form-with-info-window-form.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin)), Elaine Tan (etantg)
+- [Reset Accounting Documents also without Postings](https://docs.idempiere.org/docs/new-features/v9/reset-accounting-documents-also-without-postings.md): **Developer:** Carlos Ruiz
+- [Reverse Prepared Payment Process](https://docs.idempiere.org/docs/new-features/v9/reverse-prepared-payment-process.md): **Developer:** Nicolas Micoud
+- [Save Document to Attachment](https://docs.idempiere.org/docs/new-features/v9/save-document-to-attachment.md): **Developer:** Carlos Ruiz
+- [Shipment On Availability When Products Available](https://docs.idempiere.org/docs/new-features/v9/shipment-on-availability-when-products-available.md): **Developer:** Lukas Heidbreder
+- [Specify Tenant on Login](https://docs.idempiere.org/docs/new-features/v9/specify-tenant-on-login.md): **Developer:** Carlos Ruiz
+- [SQL Workflow Condition](https://docs.idempiere.org/docs/new-features/v9/sql-workflow-condition.md): **Developers:** Anton Mostovenko, Heng Sin Low
+- [Storage Reservation Log](https://docs.idempiere.org/docs/new-features/v9/storage-reservation-log.md): **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+- [Tenant Administrator Roles](https://docs.idempiere.org/docs/new-features/v9/tenant-administrator-roles.md): **Developer:** Nicolas Micoud
+- [Use iDempiere Display/Reference Type In Jasper Report](https://docs.idempiere.org/docs/new-features/v9/use-idempiere-displayreference-type-in-jasper-report.md): **Goal:** Development
+- [Vendor Lead](https://docs.idempiere.org/docs/new-features/v9/vendor-lead.md): **Developer:** Nicolas Micoud
+- [Virtual Column Lazy Loading](https://docs.idempiere.org/docs/new-features/v9/virtual-column-lazy-loading.md): **Goal:** Development
+- [Warehouse on Inventory Move to filter Locators](https://docs.idempiere.org/docs/new-features/v9/warehouse-on-inventory-move-to-filter-locators.md): **Developer:** Logilite Technologies
+- [Wizard Chosen Multiple Selection List Editor](https://docs.idempiere.org/docs/new-features/v9/wizard-chosen-multiple-selection-list-editor.md): **Developer:** Nicolas Micoud

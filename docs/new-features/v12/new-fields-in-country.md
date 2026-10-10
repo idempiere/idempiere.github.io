@@ -1,0 +1,19 @@
+# New Fields in Country
+
+> **Developer:** Carlos Ruiz
+
+**Goal:** Functional
+
+**Sponsor:** [FH](https://www.fh.com.br/)
+
+**Description:**
+
+Two new fields have been added to the Country table:
+- **M49 Code**: standard country codes for statistical use (M49) defined by the United Nations
+- **ISO Alpha-3 Code**: a three-letter code that represents a country name, which is usually more closely related to the country name than the Alpha-2
+
+The official list can be found at https://www.iso.org/obp/ui/#search
+
+![01 NewFieldsCountry](pathname:///img/new-features/v12/01_NewFieldsCountry.png)
+
+**Technical Info:** [IDEMPIERE-6349](https://idempiere.atlassian.net/browse/IDEMPIERE-6349)

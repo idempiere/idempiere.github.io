@@ -1,0 +1,33 @@
+# Ask For Secret Input Within Process
+
+> **Goal:** UX - Security - Development
+
+![SecretInputGif](pathname:///img/new-features/v10/SecretInputGif.gif)
+
+**Developer:** Diego Ruiz - [BX Service GmbH](https://www.bx-service.com/)
+
+**Technical Info:** [IDEMPIERE-2205](https://idempiere.atlassian.net/browse/IDEMPIERE-2205)
+
+**Description:**
+
+In iDempiere 2.1, the functionality to [ask the user for input within a process](/docs/new-features/v2.1/ask-input-within-process) was added. This development extends that feature and allows the system to ask for a secret input (f.i. A password or a TAN), obfuscating the characters that the user types in.
+
+The way to use this is the same as before, with the slight difference that you need to call the askForSecretInput method instead.
+
+Here is an example of how to use the askForSecretInput() method:
+```java
+```
+		final StringBuffer answer = new StringBuffer();
+```
+		final StringBuffer retVal = new StringBuffer();
+		processUI.askForSecretInput("Please enter some String", new Callback<String>() {
+			@Override
+			public void onCallback(String result) {
+				addLog("You entered: " + result);
+				retVal.append(result);
+				answer.append("done");
+			}
+		});
+```
+
+![Secret input dialog within a process](pathname:///img/new-features/v10/Secret_input_dialog_within_a_process.jpg)
