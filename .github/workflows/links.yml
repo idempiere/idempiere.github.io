@@ -1,0 +1,30 @@
+name: External link check
+
+# Weekly check of external links in the docs. Reports broken links in the
+# run summary and never fails.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    if: github.repository_owner == 'idempiere' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          # Only web links; internal links are checked by the build.
+          args: >-
+            --no-progress
+            --scheme https --scheme http
+            --exclude-path docs/_templates
+            --max-concurrency 8
+            'docs/**/*.md' 'docs/**/*.mdx'
+          fail: false
+          jobSummary: true

@@ -1,0 +1,20 @@
+# Words to avoid: docs/documentation-standards.md#words-to-avoid
+extends: existence
+message: "Avoid '%s'. Say it plainly. See the Documentation standards, Words to avoid."
+level: warning
+ignorecase: true
+tokens:
+  - seamless(ly)?
+  - streamlin(e|es|ed|ing)
+  - leverag(e|es|ed|ing)
+  - robust
+  - utili[sz](e|es|ed|ing|ation)
+  - empower(s|ed|ing)?
+  - cutting-edge
+  - game-changer
+  - dive deep
+  - dive into
+  - delv(e|es|ed|ing)
+  - unlock(s|ed|ing)? (the |its |your )?potential
+  - best-in-class
+  - revolutioni[sz](e|es|ed|ing)

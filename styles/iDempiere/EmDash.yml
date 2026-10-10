@@ -1,0 +1,7 @@
+# docs/documentation-standards.md#punctuation
+extends: existence
+message: "Do not use em dashes. Use a period, a comma or a new sentence."
+level: warning
+nonword: true
+tokens:
+  - '—'

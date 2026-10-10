@@ -161,6 +161,8 @@ Never guess a key name or default value. Look it up in the System Configurator w
 
 These words add nothing or sound like generated text. The automatic check flags them.
 
+<!-- vale off -->
+
 - seamlessly
 - streamline, streamlines, streamlined
 - leverage (as a verb)
@@ -177,11 +179,17 @@ These words add nothing or sound like generated text. The automatic check flags 
 - best-in-class
 - revolutionize
 
+<!-- vale on -->
+
 ### Punctuation
+
+<!-- vale iDempiere.EmDash = NO -->
 
 - Do not use em dashes (—). Use a period, a comma or a new sentence.
 - Prefer a new sentence to a long aside in brackets.
 - Use hyphens only for compound adjectives, such as "multi-tenant setup".
+
+<!-- vale iDempiere.EmDash = YES -->
 
 ### Lists
 

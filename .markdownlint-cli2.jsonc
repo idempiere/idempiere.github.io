@@ -1,0 +1,26 @@
+// markdownlint rules for docs pages. See docs/documentation-standards.md.
+// Rule list: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+{
+  "config": {
+    "default": true,
+    // Heading levels: one # title, no skipped levels.
+    "MD001": true,
+    // A frontmatter title counts as the page title (New Feature pages use it).
+    // Whether a page may have both is still open; see the standards page.
+    "MD025": { "front_matter_title": "" },
+    // The same heading text is fine under different parents.
+    "MD024": { "siblings_only": true },
+    // One bullet style per page.
+    "MD004": { "style": "consistent" },
+    // No trailing spaces, except two spaces for a line break.
+    "MD009": { "br_spaces": 2 },
+    // Tabs are fine inside code blocks.
+    "MD010": { "code_blocks": false },
+    // Off: long lines, inline HTML and JSX (MDX), bare URLs, table pipe alignment.
+    "MD013": false,
+    "MD060": false,
+    "MD033": false,
+    "MD034": false
+  },
+  "ignores": ["node_modules/**", "build/**", "docs/_templates/**"]
+}
