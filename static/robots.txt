@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Intentional: names the AI crawlers explicitly so the policy is clear.
+# The rules match the * group above; do not remove as a duplicate.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://docs.idempiere.org/sitemap.xml

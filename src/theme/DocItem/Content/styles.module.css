@@ -1,0 +1,33 @@
+/* Sits at the right end of the title row; the H1 wraps around it. */
+.bar {
+  float: right;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.9rem 0 0.5rem 1rem;
+}
+
+.button {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.8rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-button-border-radius);
+  background: transparent;
+  color: var(--ifm-color-emphasis-800);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.button:hover {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+/* On narrow screens there is no room beside the title. */
+@media (max-width: 996px) {
+  .bar {
+    float: none;
+    justify-content: flex-end;
+    margin: 0 0 0.5rem;
+  }
+}

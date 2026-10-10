@@ -3,6 +3,25 @@
 
 const { themes: prismThemes } = require('prism-react-renderer');
 
+// Docs folders left out of llms.txt and the per-page Markdown copies:
+// release notes and migration notes before iDempiere 9. Also passed to the
+// client so the copy-as-Markdown buttons know which pages have no .md file.
+const llmsExcludedDirs = [
+  'new-features/v1.0',
+  'new-features/v2.0',
+  'new-features/v2.1',
+  'new-features/v3.0',
+  'new-features/v4.1',
+  'new-features/v5.1',
+  'new-features/v6.2',
+  'new-features/v7.1',
+  'new-features/v8.2',
+  'migration-notes/v1.0',
+  'migration-notes/v3.1',
+  'migration-notes/v7.1',
+  'migration-notes/v8.2',
+];
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'iDempiere Open Source ERP',
@@ -10,7 +29,7 @@ const config = {
   favicon: 'img/logo.png',
 
   // Set the production url of your site here
-  url: 'https://idempiere.github.io',
+  url: 'https://docs.idempiere.org',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -70,7 +89,50 @@ const config = {
         },
       },
     ],
+    [
+      'docusaurus-plugin-llms',
+      {
+        generateLLMsTxt: true,
+        generateLLMsFullTxt: true,
+        generateMarkdownFiles: true,
+        docsDir: 'docs',
+        title: 'iDempiere Documentation',
+        description:
+          'Documentation for iDempiere, an open source ERP: installation, OSGi plug-in development, 2Pack, functional guides and release notes.',
+        // Current material first.
+        includeOrder: [
+          'basic-development/plugin-development/**',
+          'migration-notes/v14/**',
+          'migration-notes/v13/**',
+          'migration-notes/v12/**',
+          'basic-installation/**',
+        ],
+        ignoreFiles: llmsExcludedDirs.map((dir) => `${dir}/**`),
+      },
+    ],
 ],
+
+  customFields: {
+    llmsExcludedDirs,
+  },
+
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: { type: 'application/ld+json' },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'iDempiere Documentation',
+        url: 'https://docs.idempiere.org',
+        publisher: {
+          '@type': 'Organization',
+          name: 'iDempiere',
+          url: 'https://www.idempiere.org',
+        },
+      }),
+    },
+  ],
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -85,12 +147,18 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        blog: false,
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/idempiere/idempiere.github.io/tree/main/',
+          showLastUpdateTime: true,
+        },
+        sitemap: {
+          lastmod: 'date',
+          ignorePatterns: ['/docs/tags/**'],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -128,11 +196,6 @@ const config = {
             label: 'Docs changelog',
           },
           // Right
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true,
-          },
           {
             href: 'https://github.com/idempiere/idempiere',
             label: 'GitHub',
@@ -177,7 +240,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'http://www.twitter.com/idempiere',
+                href: 'https://x.com/idempiere',
               },
               {
                 label: 'Youtube',
