@@ -1,10 +1,11 @@
 ---
 sidebar_position: 31
-title: "Configurable Timeout Session"
 sidebar_label: "Configurable Timeout Session"
-description: "A new sysconfig key [ZK_SESSION_TIMEOUT_IN_SECONDS](/docs/basic-development/system-configurator#ZK_SESSION_TIMEOUT_IN_SECONDS) "
+description: "A new sysconfig key ZKSESSIONTIMEOUTINSECONDS"
 tags: [technical]
 ---
+# Configurable Timeout Session
+
 **Goal:** Technical
 
 **Description:**

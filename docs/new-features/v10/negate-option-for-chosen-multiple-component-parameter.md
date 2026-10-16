@@ -1,10 +1,11 @@
 ---
 sidebar_position: 18
-title: "Negate Option for Chosen Multiple Component parameter"
 sidebar_label: "Negate Option for Chosen Multiple Component parameter"
-description: "**Developer:** Matheus.marcelino ([talk](https://wiki.idempiere.org/en/User_talk:Matheus.marcelino))"
+description: "Negate Option for Chosen Multiple Component parameter: a New Feature in iDempiere 10."
 tags: [functional]
 ---
+# Negate Option for Chosen Multiple Component parameter
+
 **Goal:** Functional
 
 **Developer:** Matheus.marcelino ([talk](https://wiki.idempiere.org/en/User_talk:Matheus.marcelino))

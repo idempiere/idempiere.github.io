@@ -1,10 +1,11 @@
 ---
 sidebar_position: 64
-title: "Improved Role Access Update"
 sidebar_label: "Improved Role Access Update"
-description: "**Contributor:** Hesham S. Ahmed"
+description: "In the process Role Access Update preserve the changes made to automatic roles"
 tags: [security]
 ---
+# Improved Role Access Update
+
 **Goal:** Security
 
 **Contributor:** Hesham S. Ahmed

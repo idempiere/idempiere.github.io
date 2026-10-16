@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Print Format Item Script"
 sidebar_label: "Print Format Item Script"
-description: "**Developers:** Murilo Habermann Torquato, Igor Pojzl"
+description: "Now you can do numeric calculations over the columns of a print format, and even execute SQL to obtain values to print."
 tags: [functional]
 ---
+# Print Format Item Script
+
 **Goal:** Functional
 
 **Developers:** Murilo Habermann Torquato, Igor Pojzl

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 33
-title: "Warehouse on Inventory Move to filter Locators"
 sidebar_label: "Warehouse on Inventory Move to filter Locators"
-description: "**Developer:**  Logilite Technologies"
+description: "Before this enhancement, Inventory move has no restriction on warehouse."
 tags: [user-experience]
 ---
+# Warehouse on Inventory Move to filter Locators
+
 **Goal:** Functional
 
 **Developer:**  Logilite Technologies

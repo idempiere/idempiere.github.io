@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Configurable Activities Dashboard"
 sidebar_label: "Configurable Activities Dashboard"
-description: "**Contributor:** Adaxa"
+description: "Ashley Ramdass, Deepak Pansheriya, Murilo Habermann Torquato, Carlos Ruiz"
 tags: [user-experience]
 ---
+# Configurable Activities Dashboard
+
 **Goal:** Usability
 
 **Contributor:** Adaxa

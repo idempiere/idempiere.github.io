@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Virtual UI Column"
 sidebar_label: "Virtual UI Column"
-description: "**Developers:** Carlos Ruiz"
+description: "Legacy virtual DB columns can represent a big issue in terms of performance, for example writing complex SQL statements that bring SUM of records accessing..."
 tags: [functional]
 ---
+# Virtual UI Column
+
 **Goal:** Technical
 
 **Developers:** Carlos Ruiz

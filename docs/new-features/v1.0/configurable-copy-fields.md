@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Configurable Copy Fields"
 sidebar_label: "Configurable Copy Fields"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "The system administrator can determin which fields are copied When you copy a register using the \"Copy Record\" option in any window."
 tags: [functional]
 ---
+# Configurable Copy Fields
+
 **Goal:** Functional
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

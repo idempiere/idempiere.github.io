@@ -1,10 +1,11 @@
 ---
 sidebar_position: 9
-title: "Consider prepared shipments as no longer available"
 sidebar_label: "Consider prepared shipments as no longer available"
-description: "**Goal:** UX/Functional"
+description: "Consider prepared shipments as no longer available: a New Feature in iDempiere 10."
 tags: [functional]
 ---
+# Consider prepared shipments as no longer available
+
 **Goal:** UX/Functional
 
 **Developer:** Martin Schönbeck, Lukas Heidbreder

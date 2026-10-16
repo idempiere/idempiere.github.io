@@ -1,10 +1,11 @@
 ---
 sidebar_position: 22
-title: "Quick Info Widget"
 sidebar_label: "Quick Info Widget"
-description: "**Contributor:** [Quality Systems & Solutions (GlobalQSS)](http://globalqss.com)"
+description: "Quick Info Widget: a New Feature in iDempiere 2.1."
 tags: [user-experience]
 ---
+# Quick Info Widget
+
 **Goal:** Usability
 
 **Contributor:** [Quality Systems & Solutions (GlobalQSS)](http://globalqss.com)

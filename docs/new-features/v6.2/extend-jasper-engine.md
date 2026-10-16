@@ -1,10 +1,11 @@
 ---
 sidebar_position: 16
-title: "Extend Jasper Engine"
 sidebar_label: "Extend Jasper Engine"
-description: "- **License:** [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)"
+description: "Want to run a report per user, protect pdf file by password and sent email to user"
 tags: [development]
 ---
+# Extend Jasper Engine
+
 - **Maintainer:**
 - **Sponsored:**
 - **License:** [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)

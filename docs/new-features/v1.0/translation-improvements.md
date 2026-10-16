@@ -1,10 +1,11 @@
 ---
 sidebar_position: 57
-title: "Translation Improvements"
 sidebar_label: "Translation Improvements"
-description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
+description: "Now you can import/export translation directly from the webui client, to import you can choose a server folder to import the translation, or upload a zipped..."
 tags: [technical]
 ---
+# Translation Improvements
+
 **Goal:** Technical
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

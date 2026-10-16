@@ -1,10 +1,11 @@
 ---
 sidebar_position: 18
-title: "Dashboard Role Access"
 sidebar_label: "Dashboard Role Access"
-description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
+description: "You can restrict now the dashboard panels per user or role, please note that if there is no access definition, then the dashboard is considered public and..."
 tags: [security]
 ---
+# Dashboard Role Access
+
 **Goal:** Security
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

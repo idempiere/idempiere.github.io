@@ -1,10 +1,11 @@
 ---
 sidebar_position: 30
-title: "Record Info Copy To Clipboard Buttons"
 sidebar_label: "Record Info Copy To Clipboard Buttons"
-description: "**Developer:** Carlos Ruiz"
+description: "Record Info Copy To Clipboard Buttons: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
+# Record Info Copy To Clipboard Buttons
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

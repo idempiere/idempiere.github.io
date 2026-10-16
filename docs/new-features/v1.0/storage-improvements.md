@@ -1,10 +1,11 @@
 ---
 sidebar_position: 25
-title: "Storage Improvements"
 sidebar_label: "Storage Improvements"
-description: "**Functional:** Material Management"
+description: "A big old issue inherited from Compiere times is that storage was recording reservations and on-hand quantities on the same table with different needs, for..."
 tags: [functional]
 ---
+# Storage Improvements
+
 **Goal:** Functional
 
 **Functional:** Material Management

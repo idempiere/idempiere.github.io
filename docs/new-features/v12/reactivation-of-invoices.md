@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Reactivation of Invoices"
 sidebar_label: "Reactivation of Invoices"
-description: "**Developer:**  Nicolas Micoud"
+description: "Reactivation is configurable per Role and Document Type."
 tags: [functional]
 ---
+# Reactivation of Invoices
+
 **Goal:** Functional
 
 **Developer:**  Nicolas Micoud

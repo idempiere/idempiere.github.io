@@ -1,10 +1,11 @@
 ---
 sidebar_position: 13
-title: "Tab Name Improvements"
 sidebar_label: "Tab Name Improvements"
-description: "**Goal:** User Experience"
+description: "The name of the tab was improved to show a configurable description of the record, like the next screenshot shows."
 tags: [user-experience]
 ---
+# Tab Name Improvements
+
 **Goal:** User Experience
 
 **Developer:** Nicolas Micoud

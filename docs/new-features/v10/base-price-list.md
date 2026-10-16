@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Base Price List"
 sidebar_label: "Base Price List"
-description: "**Developer:** Carlos Ruiz"
+description: "Now a base price list can be defined for any price list."
 tags: [functional]
 ---
+# Base Price List
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

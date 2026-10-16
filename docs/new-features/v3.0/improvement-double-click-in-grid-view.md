@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: "Improvement: Double Click in Grid View"
 sidebar_label: "Improvement: Double Click in Grid View"
-description: "**Sponsor:** Integratio"
+description: "In iDempiere when you are in grid mode and double click on a field the view changes to a single record view."
 tags: [user-experience]
 ---
+# Improvement: Double Click in Grid View
+
 ## **Improvement:** Double Click in Grid View
 **Goal:** Usability
 

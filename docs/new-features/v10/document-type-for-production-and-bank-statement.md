@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Document Type for Production and Bank Statement"
 sidebar_label: "Document Type for Production and Bank Statement"
-description: "**Developer:** Carlos Ruiz"
+description: "The documents Production and Bank Statement can be configured now to use different bank statements, this provides better flexibility to configure the..."
 tags: [functional]
 ---
+# Document Type for Production and Bank Statement
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

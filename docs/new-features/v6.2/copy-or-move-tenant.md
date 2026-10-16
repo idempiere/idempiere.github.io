@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Copy or Move Tenant"
 sidebar_label: "Copy or Move Tenant"
-description: "**Developers:** Carlos Ruiz"
+description: "This feature was introduced in version 6.2 and it has received improvements and bug fixes in different versions."
 tags: [functional]
 ---
+# Copy or Move Tenant
+
 **Goal:** Technical
 
 **Developers:** Carlos Ruiz

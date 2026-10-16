@@ -1,10 +1,11 @@
 ---
 sidebar_position: 14
-title: "Timezone By Organization"
 sidebar_label: "Timezone By Organization"
-description: "**Developer:** Matheus E. Marcelino"
+description: "In ticket IDEMPIERE-5093, the possibility of define a timezone in tenant was implemented."
 tags: [functional]
 ---
+# Timezone By Organization
+
 **Goal:** Functional
 
 **Developer:** Matheus E. Marcelino

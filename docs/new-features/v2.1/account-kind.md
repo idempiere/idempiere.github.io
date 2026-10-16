@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Account Kind"
 sidebar_label: "Account Kind"
-description: "**Developer:** Nicolas Micoud"
+description: "In order to identify if an account is managing business partners (like Accounts Receivable), or managing products (like Depreciation)."
 tags: [functional]
 ---
+# Account Kind
+
 **Goal:** Functional
 
 **Developer:** Nicolas Micoud

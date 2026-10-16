@@ -1,10 +1,11 @@
 ---
 sidebar_position: 20
-title: "Last Run and Saved Parameters"
 sidebar_label: "Last Run and Saved Parameters"
-description: "**Goal:** User Experience"
+description: "Last Run and Saved Parameters: a New Feature in iDempiere 2.1."
 tags: [user-experience]
 ---
+# Last Run and Saved Parameters
+
 **Goal:** User Experience
 
 **Contributor:** Adaxa , [Logilite Technologies](http://www.logilite.com)

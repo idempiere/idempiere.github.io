@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
-title: "Suspend workflow until commit"
 sidebar_label: "Suspend workflow until commit"
-description: "**Developer:**  Martin Schönbeck"
+description: "This feature allows to suspend a workflow upto the actual transaction is committed."
 tags: [functional]
 ---
+# Suspend workflow until commit
+
 **Goal:** Functional
 
 **Developer:**  Martin Schönbeck

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 41
-title: "Report Button"
 sidebar_label: "Report Button"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "The Report inherit the search filter from the window"
 tags: [user-experience]
 ---
+# Report Button
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

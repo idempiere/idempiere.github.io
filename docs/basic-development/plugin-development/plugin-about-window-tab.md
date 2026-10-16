@@ -1,5 +1,4 @@
 ---
-title: Using IAboutWindowTabFactory in Plug-ins
 sidebar_label: About Window Tab Factory
 sidebar_position: 13
 description: Learn how to add custom tabs to the iDempiere WebUI About window using IAboutWindowTabFactory.

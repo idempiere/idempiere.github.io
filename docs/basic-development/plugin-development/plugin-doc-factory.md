@@ -1,5 +1,4 @@
 ---
-title: Using IDocFactory for Custom Accounting
 sidebar_label: Document Factory
 sidebar_position: 11
 description: Learn how to implement custom accounting for core documents in iDempiere using the IDocFactory service.

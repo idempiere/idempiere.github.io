@@ -1,10 +1,11 @@
 ---
 sidebar_position: 28
-title: "Drill Assistant Enhancements"
 sidebar_label: "Drill Assistant Enhancements"
-description: "**Goal:** UX/Functional"
+description: "This enhancement allows to define Drill Rules for admins, then users are allowed to run new reports with predefined parameters by Drill Assistant from..."
 tags: [user-experience]
 ---
+# Drill Assistant Enhancements
+
 **Goal:** UX/Functional
 
 **Developer:** cloudempiere, review by @hengsin

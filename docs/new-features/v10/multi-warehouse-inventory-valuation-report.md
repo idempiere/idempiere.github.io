@@ -1,10 +1,11 @@
 ---
 sidebar_position: 17
-title: "Multi Warehouse Inventory Valuation Report"
 sidebar_label: "Multi Warehouse Inventory Valuation Report"
-description: "**Developer:** Carlos Ruiz"
+description: "Now the inventory valuation report can be executed for multiple warehouses, the parameter warehouse was changed to support multiple selection, when the..."
 tags: [functional]
 ---
+# Multi Warehouse Inventory Valuation Report
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

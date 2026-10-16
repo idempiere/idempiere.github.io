@@ -1,10 +1,11 @@
 ---
 sidebar_position: 14
-title: "User Configurable Dashboard"
 sidebar_label: "User Configurable Dashboard"
-description: "**Goal:** User Experience"
+description: "Now the users can add/remove the dashboard elements (gadgets) they want to see on the Home Screen."
 tags: [user-experience]
 ---
+# User Configurable Dashboard
+
 **Goal:** User Experience
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

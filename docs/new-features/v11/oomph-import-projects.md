@@ -1,10 +1,11 @@
 ---
 sidebar_position: 33
-title: "OOMPH Import Projects"
 sidebar_label: "OOMPH Import Projects"
-description: "**Goal:** UX/Functional"
+description: "Added idempiere.setup to utilsdev/oomph to support import of iDempiere projects into a new Eclipse workspace through the use of Oomph Import feature."
 tags: [development]
 ---
+# OOMPH Import Projects
+
 **Goal:** UX/Functional
 
 **Developer:** Hengsin

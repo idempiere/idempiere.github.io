@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Configuration For Dont Get Page Count InfoPanel"
 sidebar_label: "Configuration For Dont Get Page Count InfoPanel"
-description: "**Goal:** User Experience"
+description: "For info window, when query data, it also do a query for get total page."
 tags: [user-experience]
 ---
+# Configuration For Dont Get Page Count InfoPanel
+
 **Goal:** User Experience
 
 **Contributor:** MULTIMAGE

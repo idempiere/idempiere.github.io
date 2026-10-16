@@ -1,8 +1,9 @@
 {
-  "label": "In Development",
+  "label": "In development",
   "position": 1,
   "link": {
     "type": "generated-index",
+    "slug": "/new-features/in-development",
     "description": "Features under active development that are not yet integrated into iDempiere core."
   }
 }

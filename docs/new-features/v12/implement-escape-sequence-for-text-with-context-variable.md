@@ -1,10 +1,11 @@
 ---
 sidebar_position: 21
-title: "Implement escape sequence for text with context variable"
 sidebar_label: "Implement escape sequence for text with context variable"
-description: "**Developer:**  Takacs Peter, Hengsin"
+description: "We use a pair of @ character for context variable, for e.g @COrderID@."
 tags: [technical]
 ---
+# Implement escape sequence for text with context variable
+
 **Goal:** Technical
 
 **Developer:**  Takacs Peter, Hengsin

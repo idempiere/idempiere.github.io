@@ -1,5 +1,4 @@
 ---
-title: "Form Customization"
 sidebar_label: "Form Customization"
 sidebar_position: 2
 description: "Allow cosmetic customization on forms at tenant level"

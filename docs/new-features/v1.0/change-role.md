@@ -1,10 +1,11 @@
 ---
 sidebar_position: 28
-title: "Change Role"
 sidebar_label: "Change Role"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "The user that have several role can change the role without login out of the system."
 tags: [user-experience]
 ---
+# Change Role
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

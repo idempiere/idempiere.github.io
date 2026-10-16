@@ -1,5 +1,4 @@
 ---
-title: Developing Plug-ins Without Affecting the Core
 sidebar_label: Plugin Workflow (Isolated from Core)
 sidebar_position: 1
 description: How to develop iDempiere plug-ins independently from the core codebase
@@ -15,7 +14,7 @@ This guide explains how to develop plug-ins **separately from the iDempiere core
 
 ---
 
-## 🧰 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have:
 
@@ -28,7 +27,7 @@ Before you begin, ensure you have:
 Instead of starting from scratch, you might want to use the scaffolding tool from [iDempiere Plugin Scaffold](https://github.com/saulojg/idempiere-plugin-scaffold/) instead. This tool provides a pre-configured structure to help you quickly set up your plug-in project, saving time and effort.
 :::
 
-## 📚 Recommended Workflow
+## Recommended Workflow
 
 1. In Eclipse, go to:
 

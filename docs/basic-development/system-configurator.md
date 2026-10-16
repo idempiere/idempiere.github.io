@@ -370,7 +370,7 @@ Enable client Accounting
 
 #### COPY_TENANT_BATCH_FLUSH_SIZE {#COPY_TENANT_BATCH_FLUSH_SIZE}
 
-[Copy Tenant](../new-features/v12/copy-or-move-tenant.md) feature now insert into batches, this configurator defines the batch size for the insert
+[Copy Tenant](../new-features/v6.2/copy-or-move-tenant.md) feature now insert into batches, this configurator defines the batch size for the insert
 
 - Values: default 10000
 - Scope: System

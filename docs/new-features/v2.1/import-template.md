@@ -1,10 +1,11 @@
 ---
 sidebar_position: 18
-title: "Import Template"
 sidebar_label: "Import Template"
-description: "**Developer:** Carlos Ruiz"
+description: "Now you can enable CSV import in any window/tab in a controlled way for end-users."
 tags: [user-experience]
 ---
+# Import Template
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

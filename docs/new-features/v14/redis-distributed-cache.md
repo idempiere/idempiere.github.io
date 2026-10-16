@@ -1,9 +1,9 @@
 ---
-title: Redis as Distributed Cache Backend
 sidebar_label: Redis as Distributed Cache Backend
 sidebar_position: 3
 description: Introduces org.idempiere.redis.service, an optional Redis-backed alternative to the Hazelcast distributed cache bundle.
 ---
+# Redis as Distributed Cache Backend
 
 **Goal:** Technical  
 **Developer:** [Norbert Bede](https://github.com/norbertbede), [Peter Takacs](https://github.com/PeterTakacs300)  

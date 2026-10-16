@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Warning on Password Expiration"
 sidebar_label: "Warning on Password Expiration"
-description: "**Goal:** User Experience (Usability)"
+description: "When defined a maximum password age (in USERLOCKINGMAXPASSWORDAGE_DAY), the system can now also issue a warning to the user several days before the..."
 tags: [user-experience]
 ---
+# Warning on Password Expiration
+
 **Goal:** User Experience (Usability)
 
 **Developer:** Nicolas Micoud

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: "Confirm Document Void / Close"
 sidebar_label: "Confirm Document Void / Close"
-description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
+description: "Closing and Voiding documents can be a dangerous not-reversible operation."
 tags: [functional]
 ---
+# Confirm Document Void / Close
+
 **Goal:** Functional
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

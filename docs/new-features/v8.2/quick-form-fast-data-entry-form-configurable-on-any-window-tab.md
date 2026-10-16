@@ -1,10 +1,11 @@
 ---
 sidebar_position: 20
-title: "Quick Form - Fast data entry form configurable on any window tab"
 sidebar_label: "Quick Form - Fast data entry form configurable on any window tab"
-description: "**Developer:**  Logilite Technologies"
+description: "Quick Form - Fast data entry form configurable on any window tab: a New Feature in iDempiere 8.2."
 tags: [user-experience]
 ---
+# Quick Form - Fast data entry form configurable on any window tab
+
 **Goal:** Functional
 
 **Developer:**  Logilite Technologies

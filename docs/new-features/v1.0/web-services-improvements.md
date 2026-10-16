@@ -1,10 +1,11 @@
 ---
 sidebar_position: 58
-title: "Web Services Improvements"
 sidebar_label: "Web Services Improvements"
-description: "**Goal:** Technical improvement of [Web services](https://wiki.idempiere.org/en/Web_services)"
+description: "&lt;web:ModelCRUD&gt; &lt;adin:serviceType&gt;CreateBPartner&lt;/adin:serviceType&gt; &lt;adin:TableName&gt;C_BPartner&lt;/adin:TableName&gt..."
 tags: [technical]
 ---
+# Web Services Improvements
+
 **Goal:** Technical improvement of [Web services](https://wiki.idempiere.org/en/Web_services)
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 46
-title: "OSGi New Column Callout Factory"
 sidebar_label: "OSGi New Column Callout Factory"
-description: "**Feature:** OSGi New Column Callout Factory"
+description: "OSGi New Column Callout Factory"
 tags: [development]
 ---
+# OSGi New Column Callout Factory
+
 **Feature:** OSGi New Column Callout Factory
 
 **Goal:** Development

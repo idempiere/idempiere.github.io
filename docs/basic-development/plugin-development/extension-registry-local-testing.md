@@ -1,5 +1,4 @@
 ---
-title: Testing an Extension Locally
 sidebar_label: Testing Extensions Locally
 sidebar_position: 24
 description: "Point an iDempiere instance at a local file: extension provider to test the full install, update, disable, and uninstall cycle before publishing."

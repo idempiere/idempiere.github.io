@@ -1,10 +1,11 @@
 ---
 sidebar_position: 47
-title: "User Feedback"
 sidebar_label: "User Feedback"
-description: "**Goal:** User Experience"
+description: "Add user feedback menu to make it easier for user to create support request or contact support through email."
 tags: [user-experience]
 ---
+# User Feedback
+
 **Goal:** User Experience
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

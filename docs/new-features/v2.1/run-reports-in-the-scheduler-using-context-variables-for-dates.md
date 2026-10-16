@@ -1,10 +1,11 @@
 ---
 sidebar_position: 39
-title: "Run reports in the scheduler using context variables for dates"
 sidebar_label: "Run reports in the scheduler using context variables for dates"
-description: "**Developer:** Heng Sin Low"
+description: "This feature gives users the ability to schedule a process/report with variable date parameters."
 tags: [technical]
 ---
+# Run reports in the scheduler using context variables for dates
+
 **Goal:** Technical
 
 **Developer:** Heng Sin Low

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Placeholders"
 sidebar_label: "Placeholders"
-description: "**Developer:** Nicolas Micoud"
+description: "&lt;cite&gt;Placeholder specifies a short hint that describes the expected value of an input field (e.g."
 tags: [user-experience]
 ---
+# Placeholders
+
 **Goal:** Usability
 
 **Developer:** Nicolas Micoud

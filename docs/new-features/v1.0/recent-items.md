@@ -1,10 +1,11 @@
 ---
 sidebar_position: 40
-title: "Recent Items Dashboard"
 sidebar_label: "Recent Items Dashboard"
-description: "**Contributor:** Quality Systems & Solutions (GlobalQSS)"
+description: "This feature shows the user a history of recent records that been have created or updated."
 tags: [user-experience]
 ---
+# Recent Items Dashboard
+
 **Goal:** Usability
 
 **Contributor:** Quality Systems & Solutions (GlobalQSS)

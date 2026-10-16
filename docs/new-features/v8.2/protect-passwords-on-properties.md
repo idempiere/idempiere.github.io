@@ -1,10 +1,11 @@
 ---
 sidebar_position: 30
-title: "Protect Passwords on Properties"
 sidebar_label: "Protect Passwords on Properties"
-description: "**Developer:** Carlos Ruiz"
+description: "Historically *mpiere has saved some sensitive information in the files idempiereEnv.properties, idempiere.properties, myEnvironment.sh and myEnvironment.sav..."
 tags: [security]
 ---
+# Protect Passwords on Properties
+
 **Goal:** Security
 
 **Developer:** Carlos Ruiz

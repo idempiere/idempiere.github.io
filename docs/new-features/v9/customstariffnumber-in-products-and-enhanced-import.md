@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "CustomsTariffNumber in Products and enhanced import"
 sidebar_label: "CustomsTariffNumber in Products and enhanced import"
-description: "**Developer:**  Martin Schönbeck"
+description: "Because it's often necessary for statistical and customs reasons to know the customs tariff number (often also known harmonized system number) or similar..."
 tags: [functional]
 ---
+# CustomsTariffNumber in Products and enhanced import
+
 **Goal:** Functional
 
 **Developer:**  Martin Schönbeck

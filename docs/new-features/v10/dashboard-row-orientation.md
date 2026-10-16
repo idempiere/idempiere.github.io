@@ -1,10 +1,11 @@
 ---
 sidebar_position: 26
-title: "Dashboard Row Orientation"
 sidebar_label: "Dashboard Row Orientation"
-description: "**Goal:** UX/Functional"
+description: "cloudempiere, Takacs Peter, Design: Norbert Bede Review: Hengsin Low"
 tags: [user-experience]
 ---
+# Dashboard Row Orientation
+
 **Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, **Design**: Norbert Bede **Review**: Hengsin Low

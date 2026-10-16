@@ -1,10 +1,11 @@
 ---
 sidebar_position: 54
-title: "Distributed Cache"
 sidebar_label: "Distributed Cache"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "iDempiere have build in support for distributed cache for a load balance environment."
 tags: [technical]
 ---
+# Distributed Cache
+
 **Goal:** Technical
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

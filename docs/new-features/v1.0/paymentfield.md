@@ -1,10 +1,11 @@
 ---
 sidebar_position: 38
-title: "Payment Field"
 sidebar_label: "Payment Field"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "The \"payment method\" field is now a list on Sales Order, Purchase Order, Customer Invoice and Vendor Invoice"
 tags: [user-experience]
 ---
+# Payment Field
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

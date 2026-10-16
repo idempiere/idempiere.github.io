@@ -1,10 +1,11 @@
 ---
 sidebar_position: 38
-title: "HikariCP Connection Pool"
 sidebar_label: "HikariCP Connection Pool"
-description: "**Developers:** Jasper Siepkes, Heng Sin Low, Carlos Ruiz"
+description: "The connection pool library has been replaced with HikariCP"
 tags: [technical]
 ---
+# HikariCP Connection Pool
+
 **Goal:** Technical
 
 **Developers:** Jasper Siepkes, Heng Sin Low, Carlos Ruiz

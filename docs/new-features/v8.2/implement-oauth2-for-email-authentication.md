@@ -1,10 +1,11 @@
 ---
 sidebar_position: 29
-title: "Implement OAuth2 for EMail Authentication"
 sidebar_label: "Implement OAuth2 for EMail Authentication"
-description: "**Developer:** Carlos Ruiz"
+description: "The goal of OAuth2 is to avoid having the password of the user saved in the database, with the actual plain password authentication, when a database is..."
 tags: [security]
 ---
+# Implement OAuth2 for EMail Authentication
+
 **Goal:** Security
 
 **Developer:** Carlos Ruiz

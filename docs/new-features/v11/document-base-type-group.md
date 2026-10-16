@@ -1,10 +1,11 @@
 ---
 sidebar_position: 22
-title: "Document Base Type Group"
 sidebar_label: "Document Base Type Group"
-description: "**Developer:** cloudempiere, takacs peter"
+description: "Now you can define new Document Base Type Groups, for example: document types for costing, for accounting, for AR etc."
 tags: [technical]
 ---
+# Document Base Type Group
+
 **Goal:** Business
 
 **Developer:** cloudempiere, takacs peter

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 19
-title: "Manufacturing Light"
 sidebar_label: "Manufacturing Light"
-description: "**Sponsor:** [Adaxa](http://www.adaxa.com/)"
+description: "What is 'iDempiere Manufacturing Light'?"
 tags: [functional]
 ---
+# Manufacturing Light
+
 **Goal:** Functional
 
 **Sponsor:** [Adaxa](http://www.adaxa.com/)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: "Bank/Cash Transfer Document"
 sidebar_label: "Bank/Cash Transfer Document"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Add CBankTransfer table and MBankTransfer DocAction model class."
 tags: [functional]
 ---
+# Bank/Cash Transfer Document
+
 **Goal:** Functional
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

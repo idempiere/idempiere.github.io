@@ -1,10 +1,11 @@
 ---
 sidebar_position: 13
-title: "Tax Rate Tab in Tax Category"
 sidebar_label: "Tax Rate Tab in Tax Category"
-description: "**Developer:** Zuhri Utama"
+description: "There's a new tab in the Tax Category window that allows users to work with tax rates directly from this window."
 tags: [functional]
 ---
+# Tax Rate Tab in Tax Category
+
 **Goal:** Functional
 
 **Developer:** Zuhri Utama

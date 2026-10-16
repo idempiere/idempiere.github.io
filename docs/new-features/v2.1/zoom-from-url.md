@@ -1,10 +1,11 @@
 ---
 sidebar_position: 29
-title: "Zoom from URL"
 sidebar_label: "Zoom from URL"
 description: "Now you can pass parameters directly to the URL and zoom into a specific window or a record within a window."
 tags: [user-experience]
 ---
+# Zoom from URL
+
 **Goal:** Usability
 
 **Description:**

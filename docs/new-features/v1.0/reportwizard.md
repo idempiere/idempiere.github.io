@@ -1,10 +1,11 @@
 ---
 sidebar_position: 42
-title: "Report Wizard"
 sidebar_label: "Report Wizard"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Report Wizard: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
+# Report Wizard
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

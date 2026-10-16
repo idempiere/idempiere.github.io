@@ -1,9 +1,9 @@
 ---
-title: Code-based password reset
 sidebar_label: Code-based password reset
 sidebar_position: 5
 description: Redesigned Forgot Password flow that emails a one-time numeric code and resets the password through a shared, swappable core service.
 ---
+# Code-based password reset
 
 * **Goal:** Security  
 * **Developer:** [Diego Ruiz](https://github.com/d-ruiz/)([BX Service GmbH](https://www.bx-service.com/))

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 40
-title: "Toolbar and Tab Button"
 sidebar_label: "Toolbar and Tab Button"
-description: "**Developer:** Carlos Ruiz"
+description: "Extending the functionality implemented for Column Toolbar Button you can now define those toolbar buttons to appear both, on toolbar and on the window at..."
 tags: [technical]
 ---
+# Toolbar and Tab Button
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

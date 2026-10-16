@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: "On Start Schedule"
 sidebar_label: "On Start Schedule"
-description: "**Developer:** Carlos Ruiz"
+description: "There is a new scheduler type configurable to run just when the server starts, this can be interesting in case there is the need to run a process on every..."
 tags: [functional]
 ---
+# On Start Schedule
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

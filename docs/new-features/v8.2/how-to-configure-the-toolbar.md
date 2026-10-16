@@ -1,10 +1,11 @@
 ---
 sidebar_position: 9
-title: "How To Configure The Toolbar"
 sidebar_label: "How To Configure The Toolbar"
-description: "This tutorial is brought to you by Diego Ruiz from [BX Service GmbH](http://www.bx-service.com/). If you have questions, criticism, or improvement sugg"
+description: "This tutorial is brought to you by Diego Ruiz from BX Service GmbH. If you have questions, criticism, or improvement sugg"
 tags: [functional]
 ---
+# How To Configure The Toolbar
+
 This tutorial is brought to you by Diego Ruiz from [BX Service GmbH](http://www.bx-service.com/). If you have questions, criticism, or improvement suggestions, feel free to write to me in the forums.
 
 ## Goal of this tutorial

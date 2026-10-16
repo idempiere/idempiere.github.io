@@ -1,10 +1,11 @@
 ---
 sidebar_position: 29
-title: "Make print filename configurable"
 sidebar_label: "Make print filename configurable"
-description: "**Goal:** UX/Functional"
+description: "cloudempiere, Takacs Peter, Design: Norbert Bede Review: Hengsin Low/CarlosRuiz"
 tags: [user-experience]
 ---
+# Make print filename configurable
+
 **Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, **Design**: Norbert Bede **Review**: Hengsin Low/CarlosRuiz

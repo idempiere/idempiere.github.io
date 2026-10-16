@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "Reverse Sign In Financial Report Cell"
 sidebar_label: "Reverse Sign In Financial Report Cell"
-description: "**Developer:** Paul Bowden, Deepak Pansheriya"
+description: "Reverse Sign In Financial Report Cell: a New Feature in iDempiere 8.2."
 tags: [functional]
 ---
+# Reverse Sign In Financial Report Cell
+
 **Goal:** Functional
 
 **Developer:** Paul Bowden, Deepak Pansheriya

@@ -1,15 +1,14 @@
 ---
-title: Automatic External Pack In
 sidebar_label: Automatic External Pack In
 description: Automatically install 2Pack files at startup across tenants using a shared folder and naming conventions.
 sidebar_position: 3
 ---
 
-# ⚙️ Automatic External Pack In
+# Automatic External Pack In
 
 This feature allows 2Pack files to be installed automatically at server startup from an external folder—without requiring them to be embedded in a plug-in.
 
-## 📝 Background
+## Background
 
 iDempiere supports several ways to install 2Packs from within plug-ins:
 
@@ -28,7 +27,7 @@ iDempiere supports several ways to install 2Packs from within plug-ins:
 
 To overcome the limitations above, the **Automatic External Pack In** mechanism was introduced.
 
-### 🔁 Automatic on Server Restart
+### Automatic on Server Restart
 
 This is driven by several **SysConfig** keys:
 
@@ -42,7 +41,7 @@ This is driven by several **SysConfig** keys:
 
 ---
 
-### 🧩 ZIP File Naming Convention
+### ZIP File Naming Convention
 
 Files must follow this naming pattern:
 
@@ -76,7 +75,7 @@ The `ClientValue` component determines which client(s) will receive the 2Pack in
 - Use `ALL-CLIENTS-[SeedClient]` when you need to establish UUID mappings for cross-client record references
 :::
 
-### 📦 Examples
+### Examples
 
 - `201803161725_SYSTEM_CreateNewColumn.zip` → Installs on System
 - `201803161735_GardenWorld_CreateNewTax.zip` → Just GardenWorld
@@ -119,7 +118,7 @@ Emails are sent **per tenant** and also for **System** if applicable.
 
 ---
 
-## 📚 References
+## References
 
 - [IDEMPIERE-3551](https://idempiere.atlassian.net/browse/IDEMPIERE-3551)
 - [IDEMPIERE-3660](https://idempiere.atlassian.net/browse/IDEMPIERE-3660)

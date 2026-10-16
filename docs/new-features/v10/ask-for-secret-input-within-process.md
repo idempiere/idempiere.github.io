@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Ask For Secret Input Within Process"
 sidebar_label: "Ask For Secret Input Within Process"
-description: "**Goal:** UX - Security - Development"
+description: "In iDempiere 2.1, the functionality to ask the user for input within a process was added."
 tags: [functional]
 ---
+# Ask For Secret Input Within Process
+
 ![SecretInputGif](pathname:///img/new-features/v10/SecretInputGif.gif)
 
 **Goal:** UX - Security - Development

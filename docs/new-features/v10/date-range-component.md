@@ -1,10 +1,11 @@
 ---
 sidebar_position: 27
-title: "Date Range Component"
 sidebar_label: "Date Range Component"
-description: "**Goal:** UX/Functional"
+description: "cloudempiere, Takacs Peter, Design: Norbert Bede Review: Hengsin Low, CarlosRuiz"
 tags: [user-experience]
 ---
+# Date Range Component
+
 **Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, **Design**: Norbert Bede **Review**: Hengsin Low, CarlosRuiz

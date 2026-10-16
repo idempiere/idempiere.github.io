@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Payment Selection Improvements"
 sidebar_label: "Payment Selection Improvements"
 description: "The 'Payment Selection' process and the corresponding 'Payment Selection (manual)' has been improved:"
 tags: [functional]
 ---
+# Payment Selection Improvements
+
 **Goal:** Functional
 
 **Description:**

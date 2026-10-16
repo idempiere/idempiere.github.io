@@ -1,10 +1,11 @@
 ---
 sidebar_position: 34
-title: "Dynamic Validation per Table"
 sidebar_label: "Dynamic Validation per Table"
-description: "**Goal:** Dynamically restrict records that user can see"
+description: "iDempiere allows to restrict access to records using the Table Access#Tab:TableAccess), Record Access#Tab:RecordAccess) or Private Access."
 tags: [security]
 ---
+# Dynamic Validation per Table
+
 **Goal:** Dynamically restrict records that user can see
 
 **Developer:** Carlos Ruiz

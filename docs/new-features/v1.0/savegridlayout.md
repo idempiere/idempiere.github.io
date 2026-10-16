@@ -1,10 +1,11 @@
 ---
 sidebar_position: 43
-title: "Configurable Grid Layout"
 sidebar_label: "Configurable Grid Layout"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Implementors can now set configure a better disposition of the fields on grid layout per window, to achieve this two new configuration options where created..."
 tags: [user-experience]
 ---
+# Configurable Grid Layout
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

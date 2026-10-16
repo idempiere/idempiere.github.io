@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: "Copy From Bank Statement"
 sidebar_label: "Copy From Bank Statement"
-description: "**Contributor:** Nicolas Micoud"
+description: "This new feature adds CopyFrom on Bank Statement."
 tags: [functional]
 ---
+# Copy From Bank Statement
+
 **Goal:** Functional
 
 **Contributor:** Nicolas Micoud

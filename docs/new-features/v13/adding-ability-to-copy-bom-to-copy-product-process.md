@@ -1,5 +1,4 @@
 ---
-title: "Adding ability to Copy BOM to Copy Product process"
 sidebar_label: "Adding ability to Copy BOM to Copy Product process"
 sidebar_position: 3
 description: "The Copy Product process, now copies the following details:"

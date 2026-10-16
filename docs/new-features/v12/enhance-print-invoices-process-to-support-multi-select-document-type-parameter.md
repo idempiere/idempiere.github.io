@@ -1,10 +1,11 @@
 ---
 sidebar_position: 13
-title: "Enhance Print Invoices Process to Support Multi-Select Document Type Parameter"
 sidebar_label: "Enhance Print Invoices Process to Support Multi-Select Document Type Parameter"
-description: "**Goal:** User experience - Usability"
+description: "This enhancement adds multi-select capability to the Document Type parameter in the Print Invoices process, allowing users to print invoices for multiple..."
 tags: [user-experience]
 ---
+# Enhance Print Invoices Process to Support Multi-Select Document Type Parameter
+
 **Goal:** User experience - Usability
 
 **Developer:**  Diego Ruiz

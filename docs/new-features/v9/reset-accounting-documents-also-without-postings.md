@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Reset Accounting Documents also without Postings"
 sidebar_label: "Reset Accounting Documents also without Postings"
-description: "**Developer:** Carlos Ruiz"
+description: "By default, the Reset Accounting) process doesn't reset documents that don't have postings."
 tags: [functional]
 ---
+# Reset Accounting Documents also without Postings
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

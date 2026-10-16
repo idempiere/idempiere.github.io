@@ -1,10 +1,11 @@
 ---
 sidebar_position: 16
-title: "Info Window"
 sidebar_label: "Info Window"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Info Window: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
+# Info Window
+
 **Goal:** Usability
 
 **Contributors:**

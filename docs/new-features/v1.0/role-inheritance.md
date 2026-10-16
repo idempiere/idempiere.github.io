@@ -1,10 +1,11 @@
 ---
 sidebar_position: 65
-title: "Role Inheritance"
 sidebar_label: "Role Inheritance"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Actually iDempiere supports role inheritance - a role can be composed by included roles, and in such case it inherits the configuration for menu access..."
 tags: [security]
 ---
+# Role Inheritance
+
 **Goal:** Security
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

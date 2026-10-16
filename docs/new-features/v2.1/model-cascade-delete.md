@@ -1,10 +1,11 @@
 ---
 sidebar_position: 35
-title: "Model Cascade Delete"
 sidebar_label: "Model Cascade Delete"
 description: "iDempiere allows to define foreign key constraints on database."
 tags: [technical]
 ---
+# Model Cascade Delete
+
 **Goal:** Technical
 
 **Description:**

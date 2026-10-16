@@ -1,10 +1,11 @@
 ---
 sidebar_position: 30
-title: "Context Help Pane"
 sidebar_label: "Context Help Pane"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Context Help Pane: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
+# Context Help Pane
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

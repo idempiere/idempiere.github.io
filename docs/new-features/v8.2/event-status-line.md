@@ -1,10 +1,11 @@
 ---
 sidebar_position: 27
-title: "Event Status Line"
 sidebar_label: "Event Status Line"
-description: "**Goal:** Development"
+description: "Now you can add complex things in the Quick Info panel using java code capturing the event MStatusLine.BEFOREPARSESTATUS_LINE."
 tags: [development]
 ---
+# Event Status Line
+
 **Goal:** Development
 
 **Developer:** Carlos Ruiz

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: "EMail Improvements"
 sidebar_label: "EMail Improvements"
 description: "The following columns were added to the table AD_UserMail in order to improve the monitoring of emails:"
 tags: [functional]
 ---
+# EMail Improvements
+
 **Goal:** Functional
 
 **Description:**

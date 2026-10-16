@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Enhanced vendor specific price list generation"
 sidebar_label: "Enhanced vendor specific price list generation"
-description: "**Developer:**  Martin Schönbeck"
+description: "To better support the generation of vendor specific price lists it was necessary, to allow prices to be included where the vendor is not the current vendor."
 tags: [functional]
 ---
+# Enhanced vendor specific price list generation
+
 **Goal:** Functional
 
 **Developer:**  Martin Schönbeck

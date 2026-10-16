@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Multiple Browser Tab"
 sidebar_label: "Multiple Browser Tab"
-description: "**Goal:** User Experience"
+description: "Now you can open several browser tabs and have different windows open on each tab."
 tags: [user-experience]
 ---
+# Multiple Browser Tab
+
 **Goal:** User Experience
 
 **Description:**

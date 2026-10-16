@@ -1,10 +1,11 @@
 ---
 sidebar_position: 52
-title: "Code Best Practices"
 sidebar_label: "Code Best Practices"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "fb-contrib™ is an extra detector plugin to be used with the static bug finder FindBugs™."
 tags: [technical]
 ---
+# Code Best Practices
+
 **Goal:** Technical
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

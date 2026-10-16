@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: "Period Close Disallow When Unposted Documents Exists"
 sidebar_label: "Period Close Disallow When Unposted Documents Exists"
-description: "**Goal:** Controlling Improvment"
+description: "The purpose of this change better controlling between period close and un-posted documents."
 tags: [functional]
 ---
+# Period Close Disallow When Unposted Documents Exists
+
 **Goal:** Controlling Improvment
 
 **Developer:** cloudempiere, Takacs Peter
