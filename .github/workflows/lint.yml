@@ -1,0 +1,103 @@
+name: Docs checks
+
+# Checks pages changed in a pull request against the Documentation standards
+# (docs/documentation-standards.md). All checks only warn for now: findings
+# show up as annotations and never fail the pull request.
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'styles/**'
+      - '.vale.ini'
+      - '.markdownlint-cli2.jsonc'
+      - 'scripts/check-frontmatter.js'
+      - 'scripts/frontmatter.schema.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: read
+
+jobs:
+  changed:
+    name: Find changed pages
+    runs-on: ubuntu-latest
+    outputs:
+      files: ${{ steps.diff.outputs.files }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: diff
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          # On a manual run, check every page.
+          if [ -n "$BASE_REF" ]; then
+            git diff --name-only --diff-filter=ACMR "origin/$BASE_REF...HEAD" -- 'docs/*.md' 'docs/*.mdx' > files.txt
+          else
+            git ls-files -- 'docs/*.md' 'docs/*.mdx' > files.txt
+          fi
+          grep -v '^docs/_' files.txt > pages.txt || true
+          echo "Pages to check: $(wc -l < pages.txt)"
+          {
+            echo 'files<<EOF'
+            cat pages.txt
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+  markdownlint:
+    name: markdownlint
+    needs: changed
+    if: needs.changed.outputs.files != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # v24 runs markdownlint-cli2 0.23.2, the same version as npm run lint:md.
+      - uses: DavidAnson/markdownlint-cli2-action@v24
+        # Warn only: keep the annotations, do not fail the job.
+        continue-on-error: true
+        with:
+          globs: ${{ needs.changed.outputs.files }}
+
+  frontmatter:
+    name: Frontmatter
+    needs: changed
+    if: needs.changed.outputs.files != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # Install only the two libraries the check needs, not the whole site.
+      - name: Install js-yaml and ajv
+        run: npm install --no-save --no-package-lock --prefix "$RUNNER_TEMP/fm" js-yaml@^4.3.2 ajv@^8.20.0
+      - name: Check frontmatter
+        env:
+          FILES: ${{ needs.changed.outputs.files }}
+          NODE_PATH: ${{ runner.temp }}/fm/node_modules
+        run: |
+          mapfile -t pages <<< "$FILES"
+          node scripts/check-frontmatter.js "${pages[@]}"
+
+  vale:
+    name: Vale
+    needs: changed
+    if: needs.changed.outputs.files != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: errata-ai/vale-action@v3.0.0
+        with:
+          version: 3.24.0
+          files: docs
+          # Only report lines the pull request adds or changes. The default
+          # reporter (github-pr-annotations) writes workflow commands and
+          # needs no write access to the pull request.
+          filter_mode: added
+          fail_on_error: false
