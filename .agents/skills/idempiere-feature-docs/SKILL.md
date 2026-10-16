@@ -27,8 +27,9 @@ Never guess window names, field names, SysConfig keys, default values or version
 - Location: `docs/new-features/in-development/` while the core pull request is not merged.
 - File name: short kebab-case, e.g. `avoid-sequence-locks.md`.
 - `sidebar_position`: look at the sibling pages and pick the next free number.
-- Start from `docs/_templates/new-feature.md`. It follows the structure of existing pages such as `docs/new-features/v14/default-view-detail-tabs.md` and `docs/new-features/in-development/avoid-sequence-locks.md`.
+- Start from `docs/_templates/new-feature.md`. It follows the section structure of existing pages such as `docs/new-features/v14/default-view-detail-tabs.md` and `docs/new-features/in-development/avoid-sequence-locks.md`. Do not copy their `title:` frontmatter field. The first `#` heading is the title.
 - Keep the "Not Yet in Stable Release" warning at the top while the page is in `in-development`.
+- While the page is in `in-development`, set the **Version:** line and `applies_to` to the release the core pull request targets. Update both when the page moves.
 - Set `tags` in the front matter, using only the values already in use: `functional`, `user-experience`, `technical`, `development`, `security`, `architecture`. The version compare page (`/upgrade/compare`) builds its category filters from these tags, so a new tag value creates a new filter. Ask the user before introducing one.
 - Keep the `**Feature Ticket:**` line in the header block, before the first `##` heading. The version compare page reads the Jira key from it.
 - In the header block, end each line with two spaces (or separate them with blank lines) so they render on separate lines.
@@ -68,6 +69,7 @@ If the change alters existing behavior, removes something, or requires action fr
 
 - Move the page: `git mv docs/new-features/in-development/<page>.md docs/new-features/v14/<page>.md`.
 - Remove the "Not Yet in Stable Release" warning.
+- Set the **Version:** line and `applies_to` to the release folder, for example `**Version:** iDempiere 14` and `applies_to: ">=14"`.
 - Check `sidebar_position` against the pages in the target folder.
 - Search for links to the old path and update them: `grep -rn "in-development/<page>" docs`.
 
