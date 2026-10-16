@@ -1,10 +1,11 @@
 ---
 sidebar_position: 63
-title: "Restrict Toolbar Buttons"
 sidebar_label: "Restrict Toolbar Buttons"
 description: "**Goal:** Security / Usability"
 tags: [security]
 ---
+# Restrict Toolbar Buttons
+
 **Goal:** Security / Usability
 
 **Initial Contributor:** Nicolas Micoud

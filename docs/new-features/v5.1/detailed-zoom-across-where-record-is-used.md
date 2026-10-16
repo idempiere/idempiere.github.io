@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Detailed Zoom Across (Where record is used)"
 sidebar_label: "Detailed Zoom Across (Where record is used)"
 description: "**Developer:** Carlos Ruiz"
 tags: [user-experience]
 ---
+# Detailed Zoom Across (Where record is used)
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

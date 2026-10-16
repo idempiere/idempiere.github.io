@@ -1,10 +1,11 @@
 ---
 sidebar_position: 13
-title: "Simplified GL Journal"
 sidebar_label: "Simplified GL Journal"
 description: "**Functional:** Accounting"
 tags: [functional]
 ---
+# Simplified GL Journal
+
 **Goal:** Usability
 
 **Functional:** Accounting

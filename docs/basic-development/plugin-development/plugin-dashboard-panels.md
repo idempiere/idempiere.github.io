@@ -1,5 +1,4 @@
 ---
-title: Developing Dashboard Panel Fragments
 sidebar_label: Dashboard Panels
 sidebar_position: 17
 description: Learn how to create custom Dashboard Panels for the iDempiere WebUI using OSGi fragment projects.

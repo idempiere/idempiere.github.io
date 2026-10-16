@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: "After Migrate Helper"
 sidebar_label: "After Migrate Helper"
 description: "**Developer:** Carlos Ruiz"
 tags: [functional]
 ---
+# After Migrate Helper
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

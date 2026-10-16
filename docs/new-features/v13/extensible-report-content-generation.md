@@ -1,5 +1,4 @@
 ---
-title: "Extensible Report Content Generation"
 sidebar_label: "Extensible Report Content Generation"
 sidebar_position: 15
 description: "UI-independent OSGi extension points for report rendering and post-processing."

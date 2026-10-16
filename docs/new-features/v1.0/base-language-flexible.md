@@ -1,10 +1,11 @@
 ---
 sidebar_position: 51
-title: "Base Language Flexible"
 sidebar_label: "Base Language Flexible"
 description: "**Seed Contributor:** Kenos"
 tags: [technical]
 ---
+# Base Language Flexible
+
 **Goal:** Technical
 
 **Seed Contributor:** Kenos

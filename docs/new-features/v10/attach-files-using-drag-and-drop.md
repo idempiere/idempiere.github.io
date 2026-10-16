@@ -1,10 +1,11 @@
 ---
 sidebar_position: 22
-title: "Attach Files using Drag and Drop"
 sidebar_label: "Attach Files using Drag and Drop"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Attach Files using Drag and Drop
+
 **Goal:** User Experience
 
 **Developer:** Deepak Pansheriya

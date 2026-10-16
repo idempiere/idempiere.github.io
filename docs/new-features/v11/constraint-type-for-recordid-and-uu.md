@@ -1,10 +1,11 @@
 ---
 sidebar_position: 20
-title: "Constraint Type for RecordID and UU"
 sidebar_label: "Constraint Type for RecordID and UU"
 description: "**Developer**: cloudempiere, Takacs Peter"
 tags: [technical]
 ---
+# Constraint Type for RecordID and UU
+
 **Developer**: cloudempiere, Takacs Peter
 
 **Design**: Carlos Ruiz/Norbert Bede

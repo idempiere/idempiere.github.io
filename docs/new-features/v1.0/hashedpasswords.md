@@ -1,10 +1,11 @@
 ---
 sidebar_position: 61
-title: "Hashed Passwords"
 sidebar_label: "Hashed Passwords"
 description: "**Sponsor:** [Adaxa](http://www.adaxa.com/)"
 tags: [security]
 ---
+# Hashed Passwords
+
 **Goal:** Security
 
 **Sponsor:** [Adaxa](http://www.adaxa.com/)

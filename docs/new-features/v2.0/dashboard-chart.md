@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Dashboard Chart"
 sidebar_label: "Dashboard Chart"
 description: "**Sponsor:** [Adaxa](http://www.adaxa.com/), [Trek Global](http://www.trekglobal.com/)"
 tags: [functional]
 ---
+# Dashboard Chart
+
 **Goal:** Functional
 
 **Sponsor:** [Adaxa](http://www.adaxa.com/), [Trek Global](http://www.trekglobal.com/)

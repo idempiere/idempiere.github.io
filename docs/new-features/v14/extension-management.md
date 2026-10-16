@@ -1,9 +1,9 @@
 ---
-title: iDempiere Extension Management
 sidebar_label: Extension Management
 sidebar_position: 1
 description: It provides a centralized service to discover, validate, install, and update OSGi-based plugins and database extensions directly within the iDempiere environment.
 ---
+# iDempiere Extension Management
 
 * **Goal:** Technical  
 * **Developer:** [hengsin](https://github.com/hengsin)([TrekGlobal](https://www.trekglobal.com/))

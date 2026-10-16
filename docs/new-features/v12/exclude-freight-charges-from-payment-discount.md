@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Exclude Freight Charges from Payment Discount"
 sidebar_label: "Exclude Freight Charges from Payment Discount"
 description: "**Developer:** Diego Ruiz [BX Service GmbH](https://www.bx-service.com/)"
 tags: [functional]
 ---
+# Exclude Freight Charges from Payment Discount
+
 **Goal:** Functional
 
 **Developer:** Diego Ruiz [BX Service GmbH](https://www.bx-service.com/)

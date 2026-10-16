@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Improved Tab Usability"
 sidebar_label: "Improved Tab Usability"
 description: "**Developer:** Le Quy Hiep"
 tags: [user-experience]
 ---
+# Improved Tab Usability
+
 **Goal:** Usability
 
 **Developer:** Le Quy Hiep

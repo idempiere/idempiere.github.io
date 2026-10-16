@@ -1,5 +1,4 @@
 ---
-title: IEditorFactory and IDisplayTypeFactory
 sidebar_label: Custom Editors
 sidebar_position: 19
 description: Learn how to create custom field editors and display types for the iDempiere WebUI using IEditorFactory and IDisplayTypeFactory.

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 26
-title: "Tab Selection When Exporting CSV"
 sidebar_label: "Tab Selection When Exporting CSV"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Tab Selection When Exporting CSV
+
 **Goal:** User Experience
 
 **Developer:** Hiep L Q

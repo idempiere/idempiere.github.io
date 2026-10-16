@@ -1,10 +1,11 @@
 ---
 sidebar_position: 49
-title: "OSGi New Form Factory"
 sidebar_label: "OSGi New Form Factory"
 description: "**Feature:** New Form Factory and Form Annotations"
 tags: [development]
 ---
+# OSGi New Form Factory
+
 **Feature:** New Form Factory and Form Annotations
 
 **Goal:** Development

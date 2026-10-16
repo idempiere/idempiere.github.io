@@ -1,9 +1,9 @@
 ---
-title: Fork and Branch Git Workflow
 sidebar_label: Git Workflow
 sidebar_position: 8
 description: The recommended Git workflow for contributing to the iDempiere core repository
 ---
+# Fork and Branch Git Workflow
 
 This is the official Git workflow used by the iDempiere project.  
 It follows a **fork-and-branch model** using GitHub pull requests and JIRA ticket tracking.

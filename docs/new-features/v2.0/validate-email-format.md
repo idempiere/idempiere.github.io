@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Validate EMail Format"
 sidebar_label: "Validate EMail Format"
 description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
 tags: [functional]
 ---
+# Validate EMail Format
+
 **Goal:** Functional
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

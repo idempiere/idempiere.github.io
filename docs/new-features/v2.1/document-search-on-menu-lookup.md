@@ -1,10 +1,11 @@
 ---
 sidebar_position: 16
-title: "Document Search on Menu Lookup"
 sidebar_label: "Document Search on Menu Lookup"
 description: "**Developer:** Heng Sin Low, Carlos Ruiz"
 tags: [user-experience]
 ---
+# Document Search on Menu Lookup
+
 **Goal:** Functional
 
 **Developer:** Heng Sin Low, Carlos Ruiz

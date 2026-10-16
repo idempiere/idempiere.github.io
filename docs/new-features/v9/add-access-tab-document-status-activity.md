@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Add Access Tab Document Status Activity"
 sidebar_label: "Add Access Tab Document Status Activity"
 description: "**Developer:** Deepak Pansheriya"
 tags: [functional]
 ---
+# Add Access Tab Document Status Activity
+
 **Goal:** Functional
 
 **Developer:** Deepak Pansheriya

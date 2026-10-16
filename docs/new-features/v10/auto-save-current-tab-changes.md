@@ -1,10 +1,11 @@
 ---
 sidebar_position: 23
-title: "Auto Save Current Tab Changes"
 sidebar_label: "Auto Save Current Tab Changes"
 description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
 tags: [user-experience]
 ---
+# Auto Save Current Tab Changes
+
 **Goal:** Usability
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

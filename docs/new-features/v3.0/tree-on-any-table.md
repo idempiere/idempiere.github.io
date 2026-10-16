@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: "Tree On Any Table"
 sidebar_label: "Tree On Any Table"
 description: "**Developers:** Deepak Pansheriya, Carlos Ruiz"
 tags: [functional]
 ---
+# Tree On Any Table
+
 **Goal:** Functional
 
 **Developers:** Deepak Pansheriya, Carlos Ruiz

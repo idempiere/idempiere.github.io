@@ -1,5 +1,4 @@
 ---
-title: Developing Plug-in Model Validators
 sidebar_label: Model Validators
 description: Learn how to create model validators in iDempiere plug-ins to add custom validation logic.
 sidebar_position: 8

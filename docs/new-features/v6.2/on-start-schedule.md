@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: "On Start Schedule"
 sidebar_label: "On Start Schedule"
 description: "**Developer:** Carlos Ruiz"
 tags: [functional]
 ---
+# On Start Schedule
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

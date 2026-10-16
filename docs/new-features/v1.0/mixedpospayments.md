@@ -1,10 +1,11 @@
 ---
 sidebar_position: 21
-title: "Mixed POS Payments on Sales Order"
 sidebar_label: "Mixed POS Payments on Sales Order"
 description: "**Functional:** Sales"
 tags: [functional]
 ---
+# Mixed POS Payments on Sales Order
+
 **Goal:** Usability
 
 **Functional:** Sales

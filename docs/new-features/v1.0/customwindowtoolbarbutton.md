@@ -1,10 +1,10 @@
 ---
 sidebar_position: 53
-title: "Custom Window Toolbar Buttons"
 sidebar_label: "Custom Window Toolbar Buttons"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [technical]
 ---
+# Custom Window Toolbar Buttons
 
 **Goal:** Technical
 

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 53
-title: "PostgreSQL Default to Native Dialect"
 sidebar_label: "PostgreSQL Default to Native Dialect"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# PostgreSQL Default to Native Dialect
+
 **Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

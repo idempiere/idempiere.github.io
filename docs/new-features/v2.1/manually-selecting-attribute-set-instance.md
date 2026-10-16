@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Manually Selecting Attribute Set Instance"
 sidebar_label: "Manually Selecting Attribute Set Instance"
 description: "**Contributor:** [Logilite Technologies](http://www.logilite.com)"
 tags: [functional]
 ---
+# Manually Selecting Attribute Set Instance
+
 **Goal:** Functional
 
 **Contributor:** [Logilite Technologies](http://www.logilite.com)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: "Find Similar To"
 sidebar_label: "Find Similar To"
 description: "**Developer:** Carlos Ruiz"
 tags: [user-experience]
 ---
+# Find Similar To
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

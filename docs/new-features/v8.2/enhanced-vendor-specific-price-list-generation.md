@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Enhanced vendor specific price list generation"
 sidebar_label: "Enhanced vendor specific price list generation"
 description: "**Developer:**  Martin Schönbeck"
 tags: [functional]
 ---
+# Enhanced vendor specific price list generation
+
 **Goal:** Functional
 
 **Developer:**  Martin Schönbeck

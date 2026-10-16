@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Improve toolbar, make it more configurable and extend it"
 sidebar_label: "Improve toolbar, make it more configurable and extend it"
 description: "**Goal:** Functional - Usability"
 tags: [user-experience]
 ---
+# Improve toolbar, make it more configurable and extend it
+
 **Goal:** Functional - Usability
 
 **Developer:** Diego Ruiz

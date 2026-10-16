@@ -1,10 +1,11 @@
 ---
 sidebar_position: 43
-title: "OSGi Factory for BankStatementMatcher"
 sidebar_label: "OSGi Factory for BankStatementMatcher"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# OSGi Factory for BankStatementMatcher
+
 **Goal:** Development
 
 **Developer:** Tomas Svikruha

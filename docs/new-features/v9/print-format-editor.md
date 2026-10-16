@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Print Format Editor"
 sidebar_label: "Print Format Editor"
 description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
 tags: [functional]
 ---
+# Print Format Editor
+
 **Goal:** Functional
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

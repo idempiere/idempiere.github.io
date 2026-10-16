@@ -1,10 +1,11 @@
 ---
 sidebar_position: 14
-title: "Starting other workflows within a workflow"
 sidebar_label: "Starting other workflows within a workflow"
 description: "**Developer:**  Heng Sin Low, Martin Schönbeck"
 tags: [functional]
 ---
+# Starting other workflows within a workflow
+
 **Goal:** Functional
 
 **Developer:**  Heng Sin Low, Martin Schönbeck

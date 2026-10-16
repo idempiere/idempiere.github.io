@@ -1,10 +1,11 @@
 ---
 sidebar_position: 23
-title: "Request Calendar Dashboard"
 sidebar_label: "Request Calendar Dashboard"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [functional]
 ---
+# Request Calendar Dashboard
+
 **Goal:** Functional
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Dynamic Zoom"
 sidebar_label: "Dynamic Zoom"
 description: "**Contributor:**  Nicolas Micoud"
 tags: [functional]
 ---
+# Dynamic Zoom
+
 **Goal:** Functional
 
 **Contributor:**  Nicolas Micoud

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: "Export SQL Insert Scripts"
 sidebar_label: "Export SQL Insert Scripts"
 description: "**Goal:** UX/Functional"
 tags: [functional]
 ---
+# Export SQL Insert Scripts
+
 **Goal:** UX/Functional
 
 **Developer:** Hengsin

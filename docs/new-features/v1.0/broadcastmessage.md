@@ -1,10 +1,11 @@
 ---
 sidebar_position: 27
-title: "Broadcast Message"
 sidebar_label: "Broadcast Message"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [user-experience]
 ---
+# Broadcast Message
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

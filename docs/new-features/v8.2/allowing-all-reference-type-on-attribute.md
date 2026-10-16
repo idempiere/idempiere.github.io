@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: "Allowing all reference type on attribute"
 sidebar_label: "Allowing all reference type on attribute"
 description: "**Contributor:** [Logilite Technologies](http://www.logilite.com)"
 tags: [functional]
 ---
+# Allowing all reference type on attribute
+
 **Goal:** Functional
 
 **Contributor:** [Logilite Technologies](http://www.logilite.com)

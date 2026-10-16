@@ -1,10 +1,11 @@
 ---
 sidebar_position: 23
-title: "Run Report as Job"
 sidebar_label: "Run Report as Job"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Run Report as Job
+
 **Goal:** User Experience
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

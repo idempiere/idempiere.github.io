@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "GL Reconciliation"
 sidebar_label: "GL Reconciliation"
 description: "**Sponsor:** [Adaxa](http://www.adaxa.com/)"
 tags: [functional]
 ---
+# GL Reconciliation
+
 **Goal:** Functional
 
 **Sponsor:** [Adaxa](http://www.adaxa.com/)

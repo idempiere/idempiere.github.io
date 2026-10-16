@@ -1,10 +1,11 @@
 ---
 sidebar_position: 22
-title: "Payment Batch"
 sidebar_label: "Payment Batch"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [functional]
 ---
+# Payment Batch
+
 **Goal:** Functional
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

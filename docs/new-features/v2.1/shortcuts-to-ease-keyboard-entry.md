@@ -1,10 +1,11 @@
 ---
 sidebar_position: 25
-title: "Shortcuts To Ease Keyboard Entry"
 sidebar_label: "Shortcuts To Ease Keyboard Entry"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Shortcuts To Ease Keyboard Entry
+
 **Goal:** User Experience
 
 **Description:**

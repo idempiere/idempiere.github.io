@@ -1,10 +1,11 @@
 ---
 sidebar_position: 23
-title: "Inject Context Variables From Menu"
 sidebar_label: "Inject Context Variables From Menu"
 description: "**Developer:** Carlos Ruiz"
 tags: [technical]
 ---
+# Inject Context Variables From Menu
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

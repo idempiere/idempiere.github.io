@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Configurable Copy Fields"
 sidebar_label: "Configurable Copy Fields"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [functional]
 ---
+# Configurable Copy Fields
+
 **Goal:** Functional
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

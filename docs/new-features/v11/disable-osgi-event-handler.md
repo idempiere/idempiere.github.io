@@ -1,10 +1,11 @@
 ---
 sidebar_position: 32
-title: "Disable OSGi Event Handler"
 sidebar_label: "Disable OSGi Event Handler"
 description: "**Goal:** UX/Functional"
 tags: [development]
 ---
+# Disable OSGi Event Handler
+
 **Goal:** UX/Functional
 
 **Developer:** Hengsin

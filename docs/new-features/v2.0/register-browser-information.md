@@ -1,10 +1,11 @@
 ---
 sidebar_position: 17
-title: "Register Browser Information"
 sidebar_label: "Register Browser Information"
 description: "**Contributor:** Quality Systems & Solutions (GlobalQSS)"
 tags: [technical]
 ---
+# Register Browser Information
+
 **Goal:** Technical
 
 **Contributor:** Quality Systems & Solutions (GlobalQSS)

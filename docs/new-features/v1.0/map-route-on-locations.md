@@ -1,10 +1,11 @@
 ---
 sidebar_position: 20
-title: "Map Route On Locations"
 sidebar_label: "Map Route On Locations"
 description: "**Contributor:** Kenos"
 tags: [functional]
 ---
+# Map Route On Locations
+
 **Goal:** Functional
 
 **Contributor:** Kenos

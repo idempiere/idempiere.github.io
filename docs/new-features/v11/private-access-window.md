@@ -1,10 +1,11 @@
 ---
 sidebar_position: 9
-title: "Private Access Window"
 sidebar_label: "Private Access Window"
 description: "**Developer:** Carlos Ruiz"
 tags: [functional]
 ---
+# Private Access Window
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

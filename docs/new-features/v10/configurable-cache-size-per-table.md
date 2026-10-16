@@ -1,10 +1,11 @@
 ---
 sidebar_position: 36
-title: "Configurable Cache Size per Table"
 sidebar_label: "Configurable Cache Size per Table"
 description: "**Developer:** Carlos Ruiz"
 tags: [technical]
 ---
+# Configurable Cache Size per Table
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 41
-title: "Support Readonly Logic Set Pressed Logic Custom Toolbar Button"
 sidebar_label: "Support Readonly Logic Set Pressed Logic Custom Toolbar Button"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# Support Readonly Logic Set Pressed Logic Custom Toolbar Button
+
 **Goal:** Development
 
 **Developer:** Deepak Pansheriya

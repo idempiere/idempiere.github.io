@@ -1,10 +1,11 @@
 ---
 sidebar_position: 26
-title: "Run Script with 2Pack"
 sidebar_label: "Run Script with 2Pack"
 description: "**Developer:** Carlos Ruiz"
 tags: [technical]
 ---
+# Run Script with 2Pack
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

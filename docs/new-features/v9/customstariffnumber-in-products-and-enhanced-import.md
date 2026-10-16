@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "CustomsTariffNumber in Products and enhanced import"
 sidebar_label: "CustomsTariffNumber in Products and enhanced import"
 description: "**Developer:**  Martin Schönbeck"
 tags: [functional]
 ---
+# CustomsTariffNumber in Products and enhanced import
+
 **Goal:** Functional
 
 **Developer:**  Martin Schönbeck

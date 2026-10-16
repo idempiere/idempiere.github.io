@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: "Styles On Fields"
 sidebar_label: "Styles On Fields"
 description: "**Contributor:** [TrekGlobal](http://www.trekglobal.com/)"
 tags: [user-experience]
 ---
+# Styles On Fields
+
 **Goal:** Usability
 
 **Contributor:** [TrekGlobal](http://www.trekglobal.com/)

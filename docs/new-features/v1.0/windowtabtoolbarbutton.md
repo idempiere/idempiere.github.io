@@ -1,10 +1,11 @@
 ---
 sidebar_position: 59
-title: "Window Tab Toolbar Buttons"
 sidebar_label: "Window Tab Toolbar Buttons"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [technical]
 ---
+# Window Tab Toolbar Buttons
+
 **Goal:** Technical
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: "Drop Rename DB Objects"
 sidebar_label: "Drop Rename DB Objects"
 description: "**Goal:** Development - Usability"
 tags: [functional]
 ---
+# Drop Rename DB Objects
+
 **Goal:** Development - Usability
 
 **Developer:** Carlos Ruiz

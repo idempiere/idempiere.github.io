@@ -1,10 +1,11 @@
 ---
 sidebar_position: 17
-title: "Info Window Customisation"
 sidebar_label: "Info Window Customisation"
 description: "**Goal:** Allow customize Info Window Component, make it really"
 tags: [user-experience]
 ---
+# Info Window Customisation
+
 **Goal:** Allow customize Info Window Component, make it really
 
 **Developer:** Igor Pojzl

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 13
-title: "Tax Rate Tab in Tax Category"
 sidebar_label: "Tax Rate Tab in Tax Category"
 description: "**Developer:** Zuhri Utama"
 tags: [functional]
 ---
+# Tax Rate Tab in Tax Category
+
 **Goal:** Functional
 
 **Developer:** Zuhri Utama

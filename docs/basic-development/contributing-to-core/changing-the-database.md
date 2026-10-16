@@ -1,9 +1,9 @@
 ---
-title: Changing the Database
 sidebar_label: Changing the Database
 sidebar_position: 9
 description: Guidelines for safely updating the iDempiere database schema
 ---
+# Changing the Database
 
 If your contribution includes **changes to the database**, follow these steps to ensure consistency across environments:
 

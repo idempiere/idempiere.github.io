@@ -1,10 +1,11 @@
 ---
 sidebar_position: 20
-title: "Allowing Product Without Pricelist"
 sidebar_label: "Allowing Product Without Pricelist"
 description: "**Developer:**  Logilite Technologies"
 tags: [user-experience]
 ---
+# Allowing Product Without Pricelist
+
 **Goal:** Functional
 
 **Developer:**  Logilite Technologies

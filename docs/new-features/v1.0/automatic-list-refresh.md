@@ -1,10 +1,11 @@
 ---
 sidebar_position: 26
-title: "Automatic List Refresh"
 sidebar_label: "Automatic List Refresh"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Automatic List Refresh
+
 **Goal:** User Experience
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

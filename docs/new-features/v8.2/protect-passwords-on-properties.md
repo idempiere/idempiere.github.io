@@ -1,10 +1,11 @@
 ---
 sidebar_position: 30
-title: "Protect Passwords on Properties"
 sidebar_label: "Protect Passwords on Properties"
 description: "**Developer:** Carlos Ruiz"
 tags: [security]
 ---
+# Protect Passwords on Properties
+
 **Goal:** Security
 
 **Developer:** Carlos Ruiz

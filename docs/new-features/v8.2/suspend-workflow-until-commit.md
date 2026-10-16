@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
-title: "Suspend workflow until commit"
 sidebar_label: "Suspend workflow until commit"
 description: "**Developer:**  Martin Schönbeck"
 tags: [functional]
 ---
+# Suspend workflow until commit
+
 **Goal:** Functional
 
 **Developer:**  Martin Schönbeck

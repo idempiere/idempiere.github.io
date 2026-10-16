@@ -1,10 +1,11 @@
 ---
 sidebar_position: 24
-title: "Reverse Accrual"
 sidebar_label: "Reverse Accrual"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [functional]
 ---
+# Reverse Accrual
+
 **Goal:** Functional
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

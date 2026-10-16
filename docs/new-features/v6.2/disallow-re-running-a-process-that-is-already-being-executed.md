@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: "Disallow re-running a process that is already being executed"
 sidebar_label: "Disallow re-running a process that is already being executed"
 description: "**Developers:** Diego Ruiz"
 tags: [functional]
 ---
+# Disallow re-running a process that is already being executed
+
 **Goal:** Usability
 
 **Developers:** Diego Ruiz

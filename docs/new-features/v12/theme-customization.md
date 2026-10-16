@@ -1,10 +1,11 @@
 ---
 sidebar_position: 26
-title: "Theme Customization"
 sidebar_label: "Theme Customization"
 description: "**Developer:**  Nicolas Micoud"
 tags: [technical]
 ---
+# Theme Customization
+
 **Goal:** Technical
 
 **Developer:**  Nicolas Micoud

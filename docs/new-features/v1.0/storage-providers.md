@@ -1,10 +1,11 @@
 ---
 sidebar_position: 56
-title: "Storage Providers"
 sidebar_label: "Storage Providers"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [technical]
 ---
+# Storage Providers
+
 **Goal:** Technical
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

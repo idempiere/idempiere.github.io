@@ -1,5 +1,4 @@
 ---
-title: "DisplaySQL and Display Identifier in Table Validation"
 sidebar_label: "DisplaySQL and Display Identifier in Table Validation"
 sidebar_position: 7
 description: "Before this ticket, in search and list type of reference field, it shows identifier columns if Display column is same at _ID column of table."

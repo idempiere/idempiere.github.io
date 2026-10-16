@@ -1,10 +1,11 @@
 ---
 sidebar_position: 56
-title: "Specify Tenant on Login"
 sidebar_label: "Specify Tenant on Login"
 description: "**Developer:** Carlos Ruiz"
 tags: [security]
 ---
+# Specify Tenant on Login
+
 **Goal:** Security
 
 **Developer:** Carlos Ruiz

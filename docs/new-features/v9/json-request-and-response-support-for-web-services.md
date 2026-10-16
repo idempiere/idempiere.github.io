@@ -1,10 +1,11 @@
 ---
 sidebar_position: 44
-title: "JSON request and response support for Web Services"
 sidebar_label: "JSON request and response support for Web Services"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# JSON request and response support for Web Services
+
 **Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

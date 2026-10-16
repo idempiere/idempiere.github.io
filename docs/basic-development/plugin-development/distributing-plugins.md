@@ -1,5 +1,4 @@
 ---
-title: Distributing and Installing Plug-ins in iDempiere
 sidebar_label: Distributing Plug-ins
 description: Guide to distribute and install plug-ins in iDempiere.
 sidebar_position: 3

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Remember Selection When Switch Page Info"
 sidebar_label: "Remember Selection When Switch Page Info"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Remember Selection When Switch Page Info
+
 **Goal:** User Experience
 
 **Contributor:** MULTIMAGE (cloudempiere)

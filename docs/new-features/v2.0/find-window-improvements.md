@@ -1,10 +1,11 @@
 ---
 sidebar_position: 9
-title: "Find Window Improvements"
 sidebar_label: "Find Window Improvements"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Find Window Improvements
+
 **Goal:** User Experience
 
 **Sponsor:** [Trek Global](http://www.trekglobal.com/)

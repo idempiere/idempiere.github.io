@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Show Permalink URL in Record Info Dialog"
 sidebar_label: "Show Permalink URL in Record Info Dialog"
 description: "**Developer:** Carlos Ruiz"
 tags: [user-experience]
 ---
+# Show Permalink URL in Record Info Dialog
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

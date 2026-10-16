@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "SQL Searches in windows for advanced users"
 sidebar_label: "SQL Searches in windows for advanced users"
 description: "**Goal:** Functional - Usability"
 tags: [user-experience]
 ---
+# SQL Searches in windows for advanced users
+
 **Goal:** Functional - Usability
 
 **Developer:** Diego Ruiz

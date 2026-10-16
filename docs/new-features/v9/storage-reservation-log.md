@@ -1,10 +1,11 @@
 ---
 sidebar_position: 32
-title: "Storage Reservation Log"
 sidebar_label: "Storage Reservation Log"
 description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
 tags: [user-experience]
 ---
+# Storage Reservation Log
+
 **Goal:** Usability
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

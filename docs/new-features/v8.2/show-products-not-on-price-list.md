@@ -1,10 +1,11 @@
 ---
 sidebar_position: 13
-title: "Show Products Not On Price List"
 sidebar_label: "Show Products Not On Price List"
 description: "One of the most common problems when entering sales or purchase order lines is hitting the error:"
 tags: [functional]
 ---
+# Show Products Not On Price List
+
 **Goal:** Functional
 
 Carlos Ruiz

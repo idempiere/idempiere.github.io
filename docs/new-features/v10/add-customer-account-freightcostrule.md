@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: "Add Customer Account FreightCostRule"
 sidebar_label: "Add Customer Account FreightCostRule"
 description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
 tags: [functional]
 ---
+# Add Customer Account FreightCostRule
+
 **Goal:** Functional
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

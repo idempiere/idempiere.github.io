@@ -1,10 +1,11 @@
 ---
 sidebar_position: 36
-title: "Monitor Information About Sessions"
 sidebar_label: "Monitor Information About Sessions"
 description: "**Developer:** Nicolas Micoud"
 tags: [technical]
 ---
+# Monitor Information About Sessions
+
 **Goal:** Technical
 
 **Developer:** Nicolas Micoud

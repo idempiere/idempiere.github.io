@@ -1,10 +1,11 @@
 ---
 sidebar_position: 21
-title: "Delete Trace Logs"
 sidebar_label: "Delete Trace Logs"
 description: "**Developer**: Zuhri Utama, A."
 tags: [technical]
 ---
+# Delete Trace Logs
+
 **Developer**: Zuhri Utama, A.
 
 **Review**: Carlos Ruiz

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 35
-title: "Login Improvements"
 sidebar_label: "Login Improvements"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [user-experience]
 ---
+# Login Improvements
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

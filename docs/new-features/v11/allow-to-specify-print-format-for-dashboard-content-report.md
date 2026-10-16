@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: "Allow to Specify Print Format for Dashboard Content Report"
 sidebar_label: "Allow to Specify Print Format for Dashboard Content Report"
 description: "**Ticket:** [IDEMPIERE-5490](https://idempiere.atlassian.net/browse/IDEMPIERE-5490)"
 tags: [functional]
 ---
+# Allow to Specify Print Format for Dashboard Content Report
+
 ## Allow to Specify Print Format for Dashboard Content Report
 **Ticket:** [IDEMPIERE-5490](https://idempiere.atlassian.net/browse/IDEMPIERE-5490)
 

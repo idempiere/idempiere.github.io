@@ -1,10 +1,11 @@
 ---
 sidebar_position: 52
-title: "OSGi New Process Factory"
 sidebar_label: "OSGi New Process Factory"
 description: "**Feature:** New Process Factory and Process Annotations"
 tags: [development]
 ---
+# OSGi New Process Factory
+
 **Feature:** New Process Factory and Process Annotations
 
 **Goal:** Development

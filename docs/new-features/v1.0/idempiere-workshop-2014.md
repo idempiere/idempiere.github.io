@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
-title: "iDempiere workshop August 2014"
 sidebar_label: "iDempiere workshop August 2014"
 description: "There was a iDempiere workshop in August 2014 held by Carlos Ruiz (organized by Thomas Bayen)"
 tags: [functional]
 ---
+# iDempiere workshop August 2014
+
 ## iDempiere workshop August 2014
 There was a iDempiere workshop in August 2014 held by Carlos Ruiz (organized by Thomas Bayen)
 

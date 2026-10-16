@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "Role Panel Modified"
 sidebar_label: "Role Panel Modified"
 description: "**Developers:** Deepak Pansheriya, Carlos Ruiz"
 tags: [user-experience]
 ---
+# Role Panel Modified
+
 **Goal:** Usability
 
 **Developers:** Deepak Pansheriya, Carlos Ruiz

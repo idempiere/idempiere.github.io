@@ -1,9 +1,9 @@
 ---
-title: User Task Type Node Action
 sidebar_label: User Task Type Node Action
 sidebar_position: 1
 description: Introduces the new User Task workflow node action for explicit task confirmation and non-aborting approval handling.
 ---
+# User Task Type Node Action
 
 :::warning Not Yet in Stable Release
 This feature is not yet part of a stable iDempiere release and may change.

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 9
-title: "Support UOM On Inventory Move"
 sidebar_label: "Support UOM On Inventory Move"
 description: "**Developer:** Diego Ruiz"
 tags: [functional]
 ---
+# Support UOM On Inventory Move
+
 **Goal:** Functional
 
 **Developer:** Diego Ruiz

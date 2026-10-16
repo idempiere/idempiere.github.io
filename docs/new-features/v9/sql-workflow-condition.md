@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
-title: "SQL Workflow Condition"
 sidebar_label: "SQL Workflow Condition"
 description: "**Developers:** Anton Mostovenko, Heng Sin Low"
 tags: [functional]
 ---
+# SQL Workflow Condition
+
 **Goal:** Functional
 
 **Developers:** Anton Mostovenko, Heng Sin Low

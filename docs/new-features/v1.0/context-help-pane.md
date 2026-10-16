@@ -1,10 +1,11 @@
 ---
 sidebar_position: 30
-title: "Context Help Pane"
 sidebar_label: "Context Help Pane"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [user-experience]
 ---
+# Context Help Pane
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

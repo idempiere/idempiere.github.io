@@ -1,10 +1,11 @@
 ---
 sidebar_position: 24
-title: "Copy Print format With Dialog"
 sidebar_label: "Copy Print format With Dialog"
 description: "**Goal:** UX/Functional"
 tags: [user-experience]
 ---
+# Copy Print format With Dialog
+
 **Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter

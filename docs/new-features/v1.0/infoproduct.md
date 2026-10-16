@@ -1,10 +1,11 @@
 ---
 sidebar_position: 17
-title: "Improved Info Product"
 sidebar_label: "Improved Info Product"
 description: "**Functional:** Material Management, Info Views"
 tags: [functional]
 ---
+# Improved Info Product
+
 **Goal:** Usability
 
 **Functional:** Material Management, Info Views

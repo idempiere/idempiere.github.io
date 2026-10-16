@@ -1,10 +1,11 @@
 ---
 sidebar_position: 24
-title: "Improve Process Log for more advanced logging options"
 sidebar_label: "Improve Process Log for more advanced logging options"
 description: "**Initiator**: Norbert Bede, Cloudempiere"
 tags: [technical]
 ---
+# Improve Process Log for more advanced logging options
+
 **Initiator**: Norbert Bede, Cloudempiere
 
 **Developer**: Peter Takács, Cloudempiere

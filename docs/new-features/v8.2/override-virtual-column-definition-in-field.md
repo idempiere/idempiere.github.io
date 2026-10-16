@@ -1,10 +1,11 @@
 ---
 sidebar_position: 25
-title: "Override Virtual Column Definition in Field"
 sidebar_label: "Override Virtual Column Definition in Field"
 description: "**Developer:** Igor Pojzl"
 tags: [technical]
 ---
+# Override Virtual Column Definition in Field
+
 **Goal:** Technical
 
 **Developer:** Igor Pojzl

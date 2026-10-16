@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Platform Upgrade"
 sidebar_label: "Platform Upgrade"
 description: "**Goal:** User Experience"
 tags: [architecture]
 ---
+# Platform Upgrade
+
 **Goal:** User Experience
 
 **Description:**

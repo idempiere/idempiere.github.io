@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "User Preferences"
 sidebar_label: "User Preferences"
 description: "**Contributor:** Diego Ruiz - Thomas Bayen - BXService GmbH, Krefeld"
 tags: [user-experience]
 ---
+# User Preferences
+
 **Goal:** Usability
 
 **Contributor:** Diego Ruiz - Thomas Bayen - BXService GmbH, Krefeld

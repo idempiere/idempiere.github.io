@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: "FEATURE: Fast entity type identification"
 sidebar_label: "FEATURE: Fast entity type identification"
 description: "**Developer:** Murilo H. Torquato"
 tags: [functional]
 ---
+# FEATURE: Fast entity type identification
+
 ## **FEATURE: Fast entity type identification**
 **Goal:** Technical
 

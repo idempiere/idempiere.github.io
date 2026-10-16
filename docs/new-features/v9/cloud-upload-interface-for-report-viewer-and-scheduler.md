@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: "Cloud Upload Interface for Report Viewer and Scheduler"
 sidebar_label: "Cloud Upload Interface for Report Viewer and Scheduler"
 description: "**Goal:** Development"
 tags: [functional]
 ---
+# Cloud Upload Interface for Report Viewer and Scheduler
+
 **Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

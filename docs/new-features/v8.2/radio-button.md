@@ -1,10 +1,11 @@
 ---
 sidebar_position: 21
-title: "Radio Button"
 sidebar_label: "Radio Button"
 description: "**Developer:** Heng Sin Low"
 tags: [user-experience]
 ---
+# Radio Button
+
 **Goal:** Usability
 
 **Developer:** Heng Sin Low

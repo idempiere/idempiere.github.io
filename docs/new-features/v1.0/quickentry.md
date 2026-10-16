@@ -1,10 +1,11 @@
 ---
 sidebar_position: 39
-title: "Configurable Quick Entry"
 sidebar_label: "Configurable Quick Entry"
 description: "***Goal:** User Experience"
 tags: [user-experience]
 ---
+# Configurable Quick Entry
+
 ***Goal:** User Experience
 ***Sponsor:** [Trek Global](https://www.trekglobal.com)
 ***Technical Info:** [IDEMPIERE-498](http://idempiere.atlassian.net/browse/IDEMPIERE-498)

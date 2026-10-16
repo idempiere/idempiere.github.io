@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "Fixed Assets Stabilization"
 sidebar_label: "Fixed Assets Stabilization"
 description: "**Contributor:** Edwin Ang"
 tags: [functional]
 ---
+# Fixed Assets Stabilization
+
 **Goal:** Functional
 
 **Contributor:** Edwin Ang

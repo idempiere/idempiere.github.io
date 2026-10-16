@@ -1,10 +1,11 @@
 ---
 sidebar_position: 30
-title: "Ask Input Within Process"
 sidebar_label: "Ask Input Within Process"
 description: "_String input in Swing_"
 tags: [technical]
 ---
+# Ask Input Within Process
+
 ![Prozess3](pathname:///img/new-features/v2.1/Prozess3.jpg)
 
 _String input in Swing_

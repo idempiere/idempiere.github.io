@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Create Window, Tab & Field from Table"
 sidebar_label: "Create Window, Tab & Field from Table"
 description: "**Goal:** Development - Usability"
 tags: [functional]
 ---
+# Create Window, Tab & Field from Table
+
 **Goal:** Development - Usability
 
 **Developer:** Diego Ruiz

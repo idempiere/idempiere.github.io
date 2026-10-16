@@ -1,5 +1,4 @@
 ---
-title: Simplify Plug-in Development with DS Annotations
 sidebar_label: Service Annotations
 sidebar_position: 4
 description: Learn how to use OSGi Declarative Service annotations to simplify plug-in development in iDempiere.

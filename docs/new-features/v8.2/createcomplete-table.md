@@ -1,10 +1,11 @@
 ---
 sidebar_position: 22
-title: "Create/Complete Table"
 sidebar_label: "Create/Complete Table"
 description: "**Developers:** Nicolas Micoud, Carlos Ruiz"
 tags: [technical]
 ---
+# Create/Complete Table
+
 **Goal:** Technical
 
 **Developers:** Nicolas Micoud, Carlos Ruiz

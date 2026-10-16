@@ -1,5 +1,4 @@
 ---
-title: Custom Credit Management in Plug-ins
 sidebar_label: Credit Manager Factory
 sidebar_position: 22
 description: Learn how to customize iDempiere's credit management behavior using ICreditManagerFactory and ICreditManager.

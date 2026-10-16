@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Improvement: Detail Panel ToolBar"
 sidebar_label: "Improvement: Detail Panel ToolBar"
 description: "**Sponsor:** Integratio"
 tags: [user-experience]
 ---
+# Improvement: Detail Panel ToolBar
+
 ## **Improvement:** Detail Panel ToolBar
 **Goal:** Usability
 

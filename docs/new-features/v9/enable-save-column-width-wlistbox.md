@@ -1,10 +1,11 @@
 ---
 sidebar_position: 23
-title: "Enable Save Column Width WListBox"
 sidebar_label: "Enable Save Column Width WListBox"
 description: "**Developer:** Flemming Birch"
 tags: [user-experience]
 ---
+# Enable Save Column Width WListBox
+
 **Goal:** Usability
 
 **Developer:** Flemming Birch

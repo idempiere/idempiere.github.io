@@ -1,10 +1,11 @@
 ---
 sidebar_position: 9
-title: "OSGi Interface to Create Custom Header and Footer"
 sidebar_label: "OSGi Interface to Create Custom Header and Footer"
 description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
 tags: [functional]
 ---
+# OSGi Interface to Create Custom Header and Footer
+
 **Goal:** Functional
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

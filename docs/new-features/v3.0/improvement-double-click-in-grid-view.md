@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: "Improvement: Double Click in Grid View"
 sidebar_label: "Improvement: Double Click in Grid View"
 description: "**Sponsor:** Integratio"
 tags: [user-experience]
 ---
+# Improvement: Double Click in Grid View
+
 ## **Improvement:** Double Click in Grid View
 **Goal:** Usability
 

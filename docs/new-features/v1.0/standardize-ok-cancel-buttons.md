@@ -1,10 +1,11 @@
 ---
 sidebar_position: 45
-title: "Standardize OK Cancel Buttons"
 sidebar_label: "Standardize OK Cancel Buttons"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [user-experience]
 ---
+# Standardize OK Cancel Buttons
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

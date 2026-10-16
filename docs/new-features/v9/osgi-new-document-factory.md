@@ -1,10 +1,11 @@
 ---
 sidebar_position: 47
-title: "OSGi New Document Factory"
 sidebar_label: "OSGi New Document Factory"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# OSGi New Document Factory
+
 **Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

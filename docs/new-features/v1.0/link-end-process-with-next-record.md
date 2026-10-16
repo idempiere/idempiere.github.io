@@ -1,10 +1,11 @@
 ---
 sidebar_position: 34
-title: "Link End Process With Next Record"
 sidebar_label: "Link End Process With Next Record"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [user-experience]
 ---
+# Link End Process With Next Record
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

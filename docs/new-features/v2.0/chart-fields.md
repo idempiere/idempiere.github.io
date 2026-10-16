@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: "Chart Fields"
 sidebar_label: "Chart Fields"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Chart Fields
+
 **Goal:** User Experience
 
 **Sponsor:** [Adaxa](http://www.adaxa.com/)

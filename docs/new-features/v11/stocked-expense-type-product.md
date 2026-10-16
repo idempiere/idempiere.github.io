@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "Stocked Expense Type Product"
 sidebar_label: "Stocked Expense Type Product"
 description: "**Developer: Deepak Pansheriya [Logilite Technologies](http://www.logilite.com/)**"
 tags: [functional]
 ---
+# Stocked Expense Type Product
+
 **Goal:** Functional
 
 **Developer: Deepak Pansheriya [Logilite Technologies](http://www.logilite.com/)**

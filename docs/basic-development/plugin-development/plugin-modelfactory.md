@@ -1,5 +1,4 @@
 ---
-title: Using IModelFactory in Plug-ins
 sidebar_label: Model Factory
 sidebar_position: 6
 description: Learn how to use the IModelFactory service to provide custom model classes in your iDempiere plug-in

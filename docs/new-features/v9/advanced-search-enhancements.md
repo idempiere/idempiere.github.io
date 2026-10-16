@@ -1,10 +1,11 @@
 ---
 sidebar_position: 19
-title: "Advanced Search Enhancements"
 sidebar_label: "Advanced Search Enhancements"
 description: "**Developer:** Igor Pojzl"
 tags: [user-experience]
 ---
+# Advanced Search Enhancements
+
 **Goal:** Usability
 
 **Developer:** Igor Pojzl

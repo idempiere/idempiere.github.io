@@ -1,10 +1,11 @@
 ---
 sidebar_position: 28
-title: "Validate Required Plugins"
 sidebar_label: "Validate Required Plugins"
 description: "**Developer:** Carlos Ruiz"
 tags: [technical]
 ---
+# Validate Required Plugins
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: "Force grid mode when Find panel closes"
 sidebar_label: "Force grid mode when Find panel closes"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Force grid mode when Find panel closes
+
 **Goal:** User Experience
 
 **Developer:** Nicolas Micoud

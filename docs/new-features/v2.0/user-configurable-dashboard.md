@@ -1,10 +1,11 @@
 ---
 sidebar_position: 14
-title: "User Configurable Dashboard"
 sidebar_label: "User Configurable Dashboard"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# User Configurable Dashboard
+
 **Goal:** User Experience
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

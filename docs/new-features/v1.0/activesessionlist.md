@@ -1,10 +1,11 @@
 ---
 sidebar_position: 50
-title: "Active Login Session List"
 sidebar_label: "Active Login Session List"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [technical]
 ---
+# Active Login Session List
+
 **Goal:** Technical
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 17
-title: "Read-Only Session"
 sidebar_label: "Read-Only Session"
 description: "**Developer:** Carlos Ruiz"
 tags: [user-experience]
 ---
+# Read-Only Session
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 9
-title: "Print Format and Report Type on Process Dialog"
 sidebar_label: "Print Format and Report Type on Process Dialog"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Print Format and Report Type on Process Dialog
+
 **Goal:** User Experience
 
 **Contributor:** Adaxa , [Logilite Technologies](http://www.logilite.com)

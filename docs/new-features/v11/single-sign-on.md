@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Single Sign-On"
 sidebar_label: "Single Sign-On"
 description: "**Developer:** [Logilite Technologies](http://www.logilite.com/)"
 tags: [functional]
 ---
+# Single Sign-On
+
 **Goal:** Security
 
 **Developer:** [Logilite Technologies](http://www.logilite.com/)

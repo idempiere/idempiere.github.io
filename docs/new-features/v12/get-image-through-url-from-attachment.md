@@ -1,10 +1,11 @@
 ---
 sidebar_position: 19
-title: "Get image through url from attachment"
 sidebar_label: "Get image through url from attachment"
 description: "**Developer:**  Hengsin,"
 tags: [technical]
 ---
+# Get image through url from attachment
+
 **Goal:** Technical
 
 **Developer:**  Hengsin,

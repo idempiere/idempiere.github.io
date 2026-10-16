@@ -1,10 +1,11 @@
 ---
 sidebar_position: 18
-title: "Lightweight theme customization"
 sidebar_label: "Lightweight theme customization"
 description: "**Developer:** Carlos Ruiz"
 tags: [user-experience]
 ---
+# Lightweight theme customization
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

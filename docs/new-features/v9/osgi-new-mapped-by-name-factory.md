@@ -1,10 +1,11 @@
 ---
 sidebar_position: 50
-title: "OSGi New Mapped By Name Factory"
 sidebar_label: "OSGi New Mapped By Name Factory"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# OSGi New Mapped By Name Factory
+
 **Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

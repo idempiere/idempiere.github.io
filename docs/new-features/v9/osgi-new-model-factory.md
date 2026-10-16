@@ -1,10 +1,11 @@
 ---
 sidebar_position: 51
-title: "OSGi New Model Factory"
 sidebar_label: "OSGi New Model Factory"
 description: "**Feature:** OSGi New Model Factory and Model Annotations"
 tags: [development]
 ---
+# OSGi New Model Factory
+
 **Feature:** OSGi New Model Factory and Model Annotations
 
 **Goal:** Development

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Account Kind"
 sidebar_label: "Account Kind"
 description: "**Developer:** Nicolas Micoud"
 tags: [functional]
 ---
+# Account Kind
+
 **Goal:** Functional
 
 **Developer:** Nicolas Micoud

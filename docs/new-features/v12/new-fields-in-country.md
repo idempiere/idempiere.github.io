@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "New Fields in Country"
 sidebar_label: "New Fields in Country"
 description: "**Developer:** Carlos Ruiz"
 tags: [functional]
 ---
+# New Fields in Country
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

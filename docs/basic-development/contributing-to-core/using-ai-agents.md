@@ -1,9 +1,9 @@
 ---
-title: Using AI Agents
 sidebar_label: Using AI Agents
 sidebar_position: 11
 description: How the iDempiere repositories guide AI coding agents, and what contributors remain responsible for
 ---
+# Using AI Agents
 
 Many contributors work with AI coding agents in the terminal, such as Claude Code, Gemini CLI, Qwen Code, Codex or OpenCode. The iDempiere core repository and this documentation repository include instructions for these agents, so they follow the same rules as human contributors.
 

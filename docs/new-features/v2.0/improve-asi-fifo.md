@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: "Improve ASI FIFO"
 sidebar_label: "Improve ASI FIFO"
 description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
 tags: [functional]
 ---
+# Improve ASI FIFO
+
 **Goal:** Functional
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

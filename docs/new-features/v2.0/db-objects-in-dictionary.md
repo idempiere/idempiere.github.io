@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
-title: "DB Objects in Dictionary"
 sidebar_label: "DB Objects in Dictionary"
 description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
 tags: [technical]
 ---
+# DB Objects in Dictionary
+
 **Goal:** Technical
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

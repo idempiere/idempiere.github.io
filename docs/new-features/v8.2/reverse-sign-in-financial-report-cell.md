@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "Reverse Sign In Financial Report Cell"
 sidebar_label: "Reverse Sign In Financial Report Cell"
 description: "**Developer:** Paul Bowden, Deepak Pansheriya"
 tags: [functional]
 ---
+# Reverse Sign In Financial Report Cell
+
 **Goal:** Functional
 
 **Developer:** Paul Bowden, Deepak Pansheriya

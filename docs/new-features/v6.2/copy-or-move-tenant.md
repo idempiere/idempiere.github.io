@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Copy or Move Tenant"
 sidebar_label: "Copy or Move Tenant"
 description: "**Developers:** Carlos Ruiz"
 tags: [functional]
 ---
+# Copy or Move Tenant
+
 **Goal:** Technical
 
 **Developers:** Carlos Ruiz

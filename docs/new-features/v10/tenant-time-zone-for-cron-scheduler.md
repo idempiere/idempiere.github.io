@@ -1,10 +1,11 @@
 ---
 sidebar_position: 20
-title: "Tenant Time Zone for Cron Scheduler"
 sidebar_label: "Tenant Time Zone for Cron Scheduler"
 description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
 tags: [functional]
 ---
+# Tenant Time Zone for Cron Scheduler
+
 **Goal:** Functional
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

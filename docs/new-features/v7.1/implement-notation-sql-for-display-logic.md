@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: "Implement notation @SQL for display logic"
 sidebar_label: "Implement notation @SQL for display logic"
 description: "**Developer:** Hieplq"
 tags: [functional]
 ---
+# Implement notation @SQL for display logic
+
 **Goal:** Technical
 
 **Developer:** Hieplq

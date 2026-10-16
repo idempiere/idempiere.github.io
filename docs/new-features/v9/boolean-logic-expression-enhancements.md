@@ -1,10 +1,11 @@
 ---
 sidebar_position: 39
-title: "Boolean Logic Expression Enhancements"
 sidebar_label: "Boolean Logic Expression Enhancements"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# Boolean Logic Expression Enhancements
+
 **Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

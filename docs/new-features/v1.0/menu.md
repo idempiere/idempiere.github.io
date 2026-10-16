@@ -1,10 +1,11 @@
 ---
 sidebar_position: 36
-title: "Menu"
 sidebar_label: "Menu"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [user-experience]
 ---
+# Menu
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

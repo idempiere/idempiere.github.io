@@ -1,10 +1,11 @@
 ---
 sidebar_position: 42
-title: "Configurable Jasper Plugin"
 sidebar_label: "Configurable Jasper Plugin"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# Configurable Jasper Plugin
+
 **Goal:** Development
 
 **Developer:** Thomas Bayen

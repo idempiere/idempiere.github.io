@@ -1,10 +1,11 @@
 ---
 sidebar_position: 19
-title: "Record ID Editor"
 sidebar_label: "Record ID Editor"
 description: "**Goal:** UX/Functional"
 tags: [functional]
 ---
+# Record ID Editor
+
 **Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, Design: Norbert Bede

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Print Format Item Script"
 sidebar_label: "Print Format Item Script"
 description: "**Developers:** Murilo Habermann Torquato, Igor Pojzl"
 tags: [functional]
 ---
+# Print Format Item Script
+
 **Goal:** Functional
 
 **Developers:** Murilo Habermann Torquato, Igor Pojzl

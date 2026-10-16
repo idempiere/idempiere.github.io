@@ -1,10 +1,11 @@
 ---
 sidebar_position: 19
-title: "Period Control Management"
 sidebar_label: "Period Control Management"
 description: "**Goal:** User Experience (Usability)"
 tags: [user-experience]
 ---
+# Period Control Management
+
 **Goal:** User Experience (Usability)
 
 **Developer:** Carlos Ruiz

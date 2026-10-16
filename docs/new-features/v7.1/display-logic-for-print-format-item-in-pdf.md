@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Display Logic for Print Format Item in PDF"
 sidebar_label: "Display Logic for Print Format Item in PDF"
 description: "**Developer:** Heng Sin Low"
 tags: [functional]
 ---
+# Display Logic for Print Format Item in PDF
+
 **Goal:** Functional
 
 **Developer:** Heng Sin Low

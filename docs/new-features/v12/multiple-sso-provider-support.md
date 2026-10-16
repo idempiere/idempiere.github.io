@@ -1,10 +1,11 @@
 ---
 sidebar_position: 23
-title: "Multiple SSO Provider Support"
 sidebar_label: "Multiple SSO Provider Support"
 description: "**Developer:** Deepak Pansheriya [Logilite Technologies](https://www.logilite.com)"
 tags: [technical]
 ---
+# Multiple SSO Provider Support
+
 **Developer:** Deepak Pansheriya [Logilite Technologies](https://www.logilite.com)
 
 **Feature Ticket:** [IDEMPIERE-6304](https://idempiere.atlassian.net/browse/IDEMPIERE-6304)

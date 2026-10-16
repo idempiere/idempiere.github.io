@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: "Automatic External Pack In"
 sidebar_label: "Automatic External Pack In"
 description: "**Developers:** Diego Ruiz, Carlos Ruiz"
 tags: [technical]
 ---
+# Automatic External Pack In
+
 **Goal:** Technical
 
 **Developers:** Diego Ruiz, Carlos Ruiz

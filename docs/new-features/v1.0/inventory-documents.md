@@ -1,10 +1,11 @@
 ---
 sidebar_position: 18
-title: "Inventory Documents"
 sidebar_label: "Inventory Documents"
 description: "**Contributor:** Edwin Ang"
 tags: [functional]
 ---
+# Inventory Documents
+
 **Goal:** Functional
 
 **Contributor:** Edwin Ang

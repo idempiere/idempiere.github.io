@@ -1,10 +1,11 @@
 ---
 sidebar_position: 55
-title: "Scheduler Improvements"
 sidebar_label: "Scheduler Improvements"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [technical]
 ---
+# Scheduler Improvements
+
 **Goal:** Technical
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

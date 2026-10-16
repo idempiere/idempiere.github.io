@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Platform Upgrade"
 sidebar_label: "Platform Upgrade"
 description: "**Goal:** Architecture"
 tags: [architecture]
 ---
+# Platform Upgrade
+
 **Goal:** Architecture
 
 **Developers:** Le Quy Hiep,  Heng Sin Low

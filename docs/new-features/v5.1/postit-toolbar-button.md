@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: "PostIt Toolbar Button"
 sidebar_label: "PostIt Toolbar Button"
 description: "**Developers:** Nicolas Micoud"
 tags: [user-experience]
 ---
+# PostIt Toolbar Button
+
 **Goal:** Usability
 
 **Developers:** Nicolas Micoud

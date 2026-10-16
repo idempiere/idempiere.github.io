@@ -1,10 +1,11 @@
 ---
 sidebar_position: 25
-title: "Support for Alternate DB Admin User"
 sidebar_label: "Support for Alternate DB Admin User"
 description: "**Developer:** Carlos Ruiz"
 tags: [technical]
 ---
+# Support for Alternate DB Admin User
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

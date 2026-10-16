@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Time Line Record Info"
 sidebar_label: "Time Line Record Info"
 description: "**Developer:** Heng Sin Low"
 tags: [user-experience]
 ---
+# Time Line Record Info
+
 **Goal:** Usability
 
 **Developer:** Heng Sin Low

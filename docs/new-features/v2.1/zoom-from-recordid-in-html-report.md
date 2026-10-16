@@ -1,10 +1,11 @@
 ---
 sidebar_position: 28
-title: "Zoom from RecordID in HTML Report"
 sidebar_label: "Zoom from RecordID in HTML Report"
 description: "**Developer:** Deepak Pansheriya"
 tags: [user-experience]
 ---
+# Zoom from RecordID in HTML Report
+
 **Goal:** Usability
 
 **Developer:** Deepak Pansheriya

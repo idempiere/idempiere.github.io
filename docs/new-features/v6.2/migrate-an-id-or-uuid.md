@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Migrate an ID or UUID"
 sidebar_label: "Migrate an ID or UUID"
 description: "**Developers:** Carlos Ruiz"
 tags: [functional]
 ---
+# Migrate an ID or UUID
+
 **Goal:** Technical
 
 **Developers:** Carlos Ruiz

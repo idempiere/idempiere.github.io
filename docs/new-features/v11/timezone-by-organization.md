@@ -1,10 +1,11 @@
 ---
 sidebar_position: 14
-title: "Timezone By Organization"
 sidebar_label: "Timezone By Organization"
 description: "**Developer:** Matheus E. Marcelino"
 tags: [functional]
 ---
+# Timezone By Organization
+
 **Goal:** Functional
 
 **Developer:** Matheus E. Marcelino

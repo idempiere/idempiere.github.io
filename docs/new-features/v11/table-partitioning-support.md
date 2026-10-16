@@ -1,10 +1,11 @@
 ---
 sidebar_position: 29
-title: "Table Partitioning Support"
 sidebar_label: "Table Partitioning Support"
 description: "**Initial idea, sponsorship:** Norbert Bede, Cloudempiere"
 tags: [technical]
 ---
+# Table Partitioning Support
+
 **Goal:** Technical
 
 **Initial idea, sponsorship:** Norbert Bede, Cloudempiere

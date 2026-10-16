@@ -1,10 +1,11 @@
 ---
 sidebar_position: 17
-title: "Vendor Lead"
 sidebar_label: "Vendor Lead"
 description: "**Developer:**  Nicolas Micoud"
 tags: [functional]
 ---
+# Vendor Lead
+
 **Goal:** Functional
 
 **Developer:**  Nicolas Micoud

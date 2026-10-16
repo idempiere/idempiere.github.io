@@ -1,10 +1,11 @@
 ---
 sidebar_position: 28
-title: "System Property to avoid cutting log"
 sidebar_label: "System Property to avoid cutting log"
 description: "**Developers:** Nicolas Micoud"
 tags: [technical]
 ---
+# System Property to avoid cutting log
+
 **Goal:** Technical
 
 **Developers:** Nicolas Micoud

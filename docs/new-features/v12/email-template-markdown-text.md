@@ -1,10 +1,11 @@
 ---
 sidebar_position: 17
-title: "Email Template Markdown Text"
 sidebar_label: "Email Template Markdown Text"
 description: "**Feature:** Implement markdown text support for email template"
 tags: [technical]
 ---
+# Email Template Markdown Text
+
 **Feature:** Implement markdown text support for email template
 
 **Goal:** Technical

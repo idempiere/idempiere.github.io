@@ -1,10 +1,11 @@
 ---
 sidebar_position: 17
-title: "Import CSV Process"
 sidebar_label: "Import CSV Process"
 description: "**Developers:** Hiep Le Quy, Thomas Bayen, Carlos Ruiz"
 tags: [user-experience]
 ---
+# Import CSV Process
+
 **Goal:** Usability
 
 **Developers:** Hiep Le Quy, Thomas Bayen, Carlos Ruiz

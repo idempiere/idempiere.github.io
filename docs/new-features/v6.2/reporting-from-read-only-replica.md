@@ -1,10 +1,11 @@
 ---
 sidebar_position: 14
-title: "Reporting from Read-Only Replica"
 sidebar_label: "Reporting from Read-Only Replica"
 description: "**Goal:** Technical (Performance)"
 tags: [technical]
 ---
+# Reporting from Read-Only Replica
+
 **Goal:** Technical (Performance)
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

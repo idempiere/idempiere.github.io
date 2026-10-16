@@ -1,10 +1,11 @@
 ---
 sidebar_position: 28
-title: "Configure MFA"
 sidebar_label: "Configure MFA"
 description: "**Developer:** Carlos Ruiz"
 tags: [security]
 ---
+# Configure MFA
+
 **Goal:** Security
 
 **Developer:** Carlos Ruiz

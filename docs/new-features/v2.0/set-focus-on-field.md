@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Set Focus On Field"
 sidebar_label: "Set Focus On Field"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Set Focus On Field
+
 **Goal:** User Experience
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 44
-title: "Setup Wizard"
 sidebar_label: "Setup Wizard"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [user-experience]
 ---
+# Setup Wizard
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

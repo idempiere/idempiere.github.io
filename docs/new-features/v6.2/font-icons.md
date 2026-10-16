@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: "Font Icons"
 sidebar_label: "Font Icons"
 description: "**Developer:** Heng Sin Low"
 tags: [user-experience]
 ---
+# Font Icons
+
 **Goal:** Usability
 
 **Developer:** Heng Sin Low

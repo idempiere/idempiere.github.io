@@ -1,10 +1,11 @@
 ---
 sidebar_position: 60
-title: "Forgot My Password"
 sidebar_label: "Forgot My Password"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [security]
 ---
+# Forgot My Password
+
 **Goal:** Security
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

@@ -1,5 +1,4 @@
 ---
-title: Developing Plug-in Event Handlers
 sidebar_label: Event Handlers
 description: Learn how to implement event handlers in iDempiere plug-ins to intercept and respond to model events.
 sidebar_position: 6

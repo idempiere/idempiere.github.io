@@ -1,10 +1,11 @@
 ---
 sidebar_position: 54
-title: "Use iDempiere Display/Reference Type In Jasper Report"
 sidebar_label: "Use iDempiere Display/Reference Type In Jasper Report"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# Use iDempiere Display/Reference Type In Jasper Report
+
 **Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

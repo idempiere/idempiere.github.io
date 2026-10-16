@@ -1,5 +1,4 @@
 ---
-title: Developing Plug-ins Without Affecting the Core
 sidebar_label: Plugin Workflow (Isolated from Core)
 sidebar_position: 1
 description: How to develop iDempiere plug-ins independently from the core codebase

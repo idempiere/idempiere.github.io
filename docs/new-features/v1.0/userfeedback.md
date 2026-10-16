@@ -1,10 +1,11 @@
 ---
 sidebar_position: 47
-title: "User Feedback"
 sidebar_label: "User Feedback"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# User Feedback
+
 **Goal:** User Experience
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

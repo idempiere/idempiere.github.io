@@ -1,10 +1,11 @@
 ---
 sidebar_position: 22
-title: "Quick Info Widget"
 sidebar_label: "Quick Info Widget"
 description: "**Contributor:** [Quality Systems & Solutions (GlobalQSS)](http://globalqss.com)"
 tags: [user-experience]
 ---
+# Quick Info Widget
+
 **Goal:** Usability
 
 **Contributor:** [Quality Systems & Solutions (GlobalQSS)](http://globalqss.com)

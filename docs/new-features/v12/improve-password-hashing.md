@@ -1,10 +1,11 @@
 ---
 sidebar_position: 30
-title: "Improve Password Hashing"
 sidebar_label: "Improve Password Hashing"
 description: "**Developer:** Carlos Ruiz Heng Sin"
 tags: [security]
 ---
+# Improve Password Hashing
+
 **Goal:** Security
 
 **Developer:** Carlos Ruiz Heng Sin

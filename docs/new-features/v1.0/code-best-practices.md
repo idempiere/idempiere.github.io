@@ -1,10 +1,11 @@
 ---
 sidebar_position: 52
-title: "Code Best Practices"
 sidebar_label: "Code Best Practices"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [technical]
 ---
+# Code Best Practices
+
 **Goal:** Technical
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

@@ -1,5 +1,4 @@
 ---
-title: Developing Plug-in Forms
 sidebar_label: Forms
 description: Learn how to create custom forms in iDempiere plug-ins using the IFormFactory service.
 sidebar_position: 7

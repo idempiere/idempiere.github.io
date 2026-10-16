@@ -1,10 +1,11 @@
 ---
 sidebar_position: 23
-title: "Generate Model Template"
 sidebar_label: "Generate Model Template"
 description: "**Developers:** Nicolas Micoud"
 tags: [technical]
 ---
+# Generate Model Template
+
 **Goal:** Technical
 
 **Developers:** Nicolas Micoud

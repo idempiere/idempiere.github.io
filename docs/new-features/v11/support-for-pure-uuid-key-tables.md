@@ -1,10 +1,11 @@
 ---
 sidebar_position: 27
-title: "Support for pure UUID key tables"
 sidebar_label: "Support for pure UUID key tables"
 description: "**Developer:** Carlos Ruiz"
 tags: [technical]
 ---
+# Support for pure UUID key tables
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

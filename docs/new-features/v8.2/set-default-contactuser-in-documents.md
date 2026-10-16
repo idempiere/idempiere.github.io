@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Set default Contact/User in Documents"
 sidebar_label: "Set default Contact/User in Documents"
 description: "**Developer:** Diego Ruiz"
 tags: [functional]
 ---
+# Set default Contact/User in Documents
+
 **Goal:** Usability
 
 **Developer:** Diego Ruiz

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
-title: "SysConfig without Cache"
 sidebar_label: "SysConfig without Cache"
 description: "**Developer:** Carlos Ruiz"
 tags: [technical]
 ---
+# SysConfig without Cache
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

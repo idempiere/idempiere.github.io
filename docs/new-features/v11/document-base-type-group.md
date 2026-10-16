@@ -1,10 +1,11 @@
 ---
 sidebar_position: 22
-title: "Document Base Type Group"
 sidebar_label: "Document Base Type Group"
 description: "**Developer:** cloudempiere, takacs peter"
 tags: [technical]
 ---
+# Document Base Type Group
+
 **Goal:** Business
 
 **Developer:** cloudempiere, takacs peter

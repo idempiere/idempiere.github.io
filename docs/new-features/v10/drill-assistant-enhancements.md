@@ -1,10 +1,11 @@
 ---
 sidebar_position: 28
-title: "Drill Assistant Enhancements"
 sidebar_label: "Drill Assistant Enhancements"
 description: "**Goal:** UX/Functional"
 tags: [user-experience]
 ---
+# Drill Assistant Enhancements
+
 **Goal:** UX/Functional
 
 **Developer:** cloudempiere, review by @hengsin

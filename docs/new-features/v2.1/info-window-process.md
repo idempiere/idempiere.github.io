@@ -1,10 +1,11 @@
 ---
 sidebar_position: 34
-title: "Info Window Process"
 sidebar_label: "Info Window Process"
 description: "**Include Sub-Info tabs, IDEMPIERE-1045 by Xolali**"
 tags: [technical]
 ---
+# Info Window Process
+
 **Include Sub-Info tabs, IDEMPIERE-1045 by Xolali**
 
 **Goal:** Technical improvement

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 41
-title: "Callout on Navigate"
 sidebar_label: "Callout on Navigate"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# Callout on Navigate
+
 **Goal:** Development
 
 **Developer:** Carlos Ruiz

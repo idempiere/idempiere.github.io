@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "Multiple Delete Improvement"
 sidebar_label: "Multiple Delete Improvement"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Multiple Delete Improvement
+
 **Goal:** User Experience
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

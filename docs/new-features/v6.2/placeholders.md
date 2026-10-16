@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Placeholders"
 sidebar_label: "Placeholders"
 description: "**Developer:** Nicolas Micoud"
 tags: [user-experience]
 ---
+# Placeholders
+
 **Goal:** Usability
 
 **Developer:** Nicolas Micoud

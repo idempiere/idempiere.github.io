@@ -1,10 +1,11 @@
 ---
 sidebar_position: 35
-title: "Form SQL Query"
 sidebar_label: "Form SQL Query"
 description: "**Developer:** Carlos Ruiz"
 tags: [technical]
 ---
+# Form SQL Query
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

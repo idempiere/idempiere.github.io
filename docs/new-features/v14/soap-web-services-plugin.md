@@ -1,5 +1,4 @@
 ---
-title: SOAP Web Services Plugin
 sidebar_label: SOAP Web Services
 sidebar_position: 4
 description: The SOAP Web Services bundle has been extracted from iDempiere core and is now available as a standalone optional plugin.

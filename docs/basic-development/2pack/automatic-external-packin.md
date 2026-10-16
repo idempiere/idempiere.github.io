@@ -1,5 +1,4 @@
 ---
-title: Automatic External Pack In
 sidebar_label: Automatic External Pack In
 description: Automatically install 2Pack files at startup across tenants using a shared folder and naming conventions.
 sidebar_position: 3

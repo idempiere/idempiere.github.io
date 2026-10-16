@@ -1,10 +1,11 @@
 ---
 sidebar_position: 27
-title: "Unaccented menu search"
 sidebar_label: "Unaccented menu search"
 description: "**Developer:** Carlos Ruiz"
 tags: [user-experience]
 ---
+# Unaccented menu search
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

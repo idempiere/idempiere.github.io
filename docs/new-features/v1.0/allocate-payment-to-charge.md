@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: "Allocate Payment To Charge"
 sidebar_label: "Allocate Payment To Charge"
 description: "**Sponsor:** [Adaxa](http://www.adaxa.com/)"
 tags: [functional]
 ---
+# Allocate Payment To Charge
+
 **Goal:** Functional
 
 **Sponsor:** [Adaxa](http://www.adaxa.com/)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Inventory Cost Adjustment"
 sidebar_label: "Inventory Cost Adjustment"
 description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
 tags: [functional]
 ---
+# Inventory Cost Adjustment
+
 **Goal:** Functional
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

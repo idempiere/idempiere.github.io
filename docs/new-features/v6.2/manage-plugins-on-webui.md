@@ -1,10 +1,11 @@
 ---
 sidebar_position: 13
-title: "Manage Plugins on WebUI"
 sidebar_label: "Manage Plugins on WebUI"
 description: "**Developer:** Carlos Ruiz"
 tags: [technical]
 ---
+# Manage Plugins on WebUI
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

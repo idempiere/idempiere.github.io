@@ -1,10 +1,11 @@
 ---
 sidebar_position: 27
-title: "Use System Configurator from css files"
 sidebar_label: "Use System Configurator from css files"
 description: "**Developer:**  Nicolas Micoud"
 tags: [technical]
 ---
+# Use System Configurator from css files
+
 **Goal:** Technical
 
 **Developer:**  Nicolas Micoud

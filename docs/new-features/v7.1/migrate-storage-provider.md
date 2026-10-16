@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Migrate Storage Provider"
 sidebar_label: "Migrate Storage Provider"
 description: "**Developers:** Carlos Ruiz"
 tags: [functional]
 ---
+# Migrate Storage Provider
+
 **Goal:** Technical
 
 **Developers:** Carlos Ruiz

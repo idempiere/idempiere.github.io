@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "EMail Jasper Reports"
 sidebar_label: "EMail Jasper Reports"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# EMail Jasper Reports
+
 **Goal:** User Experience
 
 **Contributor:** nTier Software Services

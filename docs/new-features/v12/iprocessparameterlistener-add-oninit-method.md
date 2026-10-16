@@ -1,10 +1,11 @@
 ---
 sidebar_position: 22
-title: "IProcessParameterListener - add onInit method"
 sidebar_label: "IProcessParameterListener - add onInit method"
 description: "**Developer:**  Nicolas Micoud"
 tags: [technical]
 ---
+# IProcessParameterListener - add onInit method
+
 **Goal:** Technical
 
 **Developer:**  Nicolas Micoud

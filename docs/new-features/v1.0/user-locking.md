@@ -1,10 +1,11 @@
 ---
 sidebar_position: 67
-title: "User Locking"
 sidebar_label: "User Locking"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [security]
 ---
+# User Locking
+
 **Goal:** Security
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

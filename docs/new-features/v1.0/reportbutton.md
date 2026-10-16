@@ -1,10 +1,11 @@
 ---
 sidebar_position: 41
-title: "Report Button"
 sidebar_label: "Report Button"
 description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
 tags: [user-experience]
 ---
+# Report Button
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 19
-title: "VFormat RegEx"
 sidebar_label: "VFormat RegEx"
 description: "**Developer:** Carlos Ruiz"
 tags: [user-experience]
 ---
+# VFormat RegEx
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "All Quantities in Storage Per Product"
 sidebar_label: "All Quantities in Storage Per Product"
 description: "**Developer:** Diego Ruiz"
 tags: [functional]
 ---
+# All Quantities in Storage Per Product
+
 **Goal:** Functional
 
 **Developer:** Diego Ruiz

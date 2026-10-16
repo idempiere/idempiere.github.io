@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Period Control Document Close"
 sidebar_label: "Period Control Document Close"
 description: "**Developer:** cloudempiere, Takacs Peter, Igor Pojzl"
 tags: [functional]
 ---
+# Period Control Document Close
+
 **Goal:** Functional
 
 **Developer:** cloudempiere, Takacs Peter, Igor Pojzl

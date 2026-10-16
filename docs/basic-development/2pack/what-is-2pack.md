@@ -1,5 +1,4 @@
 ---
-title: What is a 2Pack in iDempiere?
 sidebar_label: 2Packs
 description: Learn what a 2Pack is, how it works, and why it's essential for configuration migration in iDempiere.
 sidebar_position: 1

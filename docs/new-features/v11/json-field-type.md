@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: "JSON Field Type"
 sidebar_label: "JSON Field Type"
 description: "**Developer:** Diego Ruiz - [BX Service GmbH](https://www.bx-service.com/)"
 tags: [functional]
 ---
+# JSON Field Type
+
 **Developer:** Diego Ruiz - [BX Service GmbH](https://www.bx-service.com/)
 
 **Sponsor:** [Cloudempiere](https://www.cloudempiere.com/)

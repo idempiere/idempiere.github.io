@@ -1,10 +1,11 @@
 ---
 sidebar_position: 40
-title: "Confirm Panel With Checkbox"
 sidebar_label: "Confirm Panel With Checkbox"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# Confirm Panel With Checkbox
+
 **Goal:** Development
 
 **Developer:** Andreas Sumerauer

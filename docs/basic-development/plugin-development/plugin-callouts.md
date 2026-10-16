@@ -1,5 +1,4 @@
 ---
-title: Developing Plug-in Callouts
 sidebar_label: Callouts
 description: Learn how to implement column callouts in iDempiere plug-ins using modern best practices.
 sidebar_position: 5

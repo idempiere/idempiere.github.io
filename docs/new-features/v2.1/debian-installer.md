@@ -1,10 +1,11 @@
 ---
 sidebar_position: 33
-title: "Debian Installer"
 sidebar_label: "Debian Installer"
 description: "The new [IDempiere Debian Installer](https://wiki.idempiere.org/en/IDempiere_Debian_Installer) allows an almost automatic installation in Debian and Ub"
 tags: [technical]
 ---
+# Debian Installer
+
 **Goal:** Technical
 
 **Description:**

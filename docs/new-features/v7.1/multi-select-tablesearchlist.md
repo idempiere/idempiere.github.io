@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Multi Select Table/Search/List"
 sidebar_label: "Multi Select Table/Search/List"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Multi Select Table/Search/List
+
 **Goal:** User Experience
 
 **Developer:** Heng Sin Low

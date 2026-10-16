@@ -1,10 +1,11 @@
 ---
 sidebar_position: 46
-title: "Tab Editor"
 sidebar_label: "Tab Editor"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Tab Editor
+
 **Goal:** User Experience
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

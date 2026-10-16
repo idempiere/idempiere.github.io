@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: "Invoice Not Realized Gain/Loss Fixes"
 sidebar_label: "Invoice Not Realized Gain/Loss Fixes"
 description: "**Developer:** Carlos Ruiz"
 tags: [functional]
 ---
+# Invoice Not Realized Gain/Loss Fixes
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

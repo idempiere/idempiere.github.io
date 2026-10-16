@@ -1,10 +1,11 @@
 ---
 sidebar_position: 25
-title: "Dashboard Content Goal Indicator"
 sidebar_label: "Dashboard Content Goal Indicator"
 description: "**Goal:** UX/Functional"
 tags: [user-experience]
 ---
+# Dashboard Content Goal Indicator
+
 **Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, Norbert Bede

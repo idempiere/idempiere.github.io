@@ -1,10 +1,11 @@
 ---
 sidebar_position: 34
-title: "Wizard Chosen Multiple Selection List Editor"
 sidebar_label: "Wizard Chosen Multiple Selection List Editor"
 description: "**Developer:** Nicolas Micoud"
 tags: [user-experience]
 ---
+# Wizard Chosen Multiple Selection List Editor
+
 **Goal:** Usability
 
 **Developer:** Nicolas Micoud

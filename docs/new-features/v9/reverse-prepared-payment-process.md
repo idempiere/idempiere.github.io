@@ -1,10 +1,11 @@
 ---
 sidebar_position: 13
-title: "Reverse Prepared Payment Process"
 sidebar_label: "Reverse Prepared Payment Process"
 description: "**Developer:**  Nicolas Micoud"
 tags: [functional]
 ---
+# Reverse Prepared Payment Process
+
 **Goal:** Functional
 
 **Developer:**  Nicolas Micoud

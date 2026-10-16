@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Support Quick Info Widget for Info Windows"
 sidebar_label: "Support Quick Info Widget for Info Windows"
 description: "**Ticket:** [IDEMPIERE-5772](https://idempiere.atlassian.net/browse/IDEMPIERE-5772)"
 tags: [functional]
 ---
+# Support Quick Info Widget for Info Windows
+
 **Ticket:** [IDEMPIERE-5772](https://idempiere.atlassian.net/browse/IDEMPIERE-5772)
 
 **Developer:** Peter Takacs, Cloudempiere

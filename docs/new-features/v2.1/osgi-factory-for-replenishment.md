@@ -1,10 +1,11 @@
 ---
 sidebar_position: 44
-title: "OSGi Factory for Replenishment"
 sidebar_label: "OSGi Factory for Replenishment"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# OSGi Factory for Replenishment
+
 **Goal:** Development
 
 **Developer:** Tomas Svikruha

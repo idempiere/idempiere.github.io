@@ -1,5 +1,4 @@
 ---
-title: Developing Plug-in Processes
 sidebar_label: Processes
 description: Learn how to create and manage custom processes in iDempiere plug-ins.
 sidebar_position: 4

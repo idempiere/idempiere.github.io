@@ -1,10 +1,11 @@
 ---
 sidebar_position: 38
-title: "Annotated Process Parameters"
 sidebar_label: "Annotated Process Parameters"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# Annotated Process Parameters
+
 **Goal:** Development
 
 **Developer:** Saulo Gil

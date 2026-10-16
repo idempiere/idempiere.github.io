@@ -1,10 +1,11 @@
 ---
 sidebar_position: 21
-title: "Mail Signature And Images"
 sidebar_label: "Mail Signature And Images"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Mail Signature And Images
+
 **Goal:** User Experience
 
 **Developer:** Nicolas Micoud

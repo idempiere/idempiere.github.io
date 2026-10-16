@@ -1,9 +1,9 @@
 ---
-title: How to Contribute
 sidebar_label: How to Contribute
 sidebar_position: 7
 description: Step-by-step checklist and workflow for contributing to the iDempiere core
 ---
+# How to Contribute
 
 This is a checklist of the **minimum steps** required to submit high-quality pull requests to the iDempiere core:
 

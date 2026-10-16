@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Improve Accounting Adjustment Periods"
 sidebar_label: "Improve Accounting Adjustment Periods"
 description: "**Developer:** Carlos Ruiz"
 tags: [functional]
 ---
+# Improve Accounting Adjustment Periods
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

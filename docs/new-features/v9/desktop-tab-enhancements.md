@@ -1,10 +1,11 @@
 ---
 sidebar_position: 22
-title: "Desktop Tab Enhancements"
 sidebar_label: "Desktop Tab Enhancements"
 description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
 tags: [user-experience]
 ---
+# Desktop Tab Enhancements
+
 **Goal:** Usability
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

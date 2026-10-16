@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Unallocated Cash and Payment Selection Configurable Business Partner"
 sidebar_label: "Unallocated Cash and Payment Selection Configurable Business Partner"
 description: "&lt;h2 style='color:red'&gt;NOTE: This is not yet integrated into core&lt;/h2&gt;"
 tags: [functional]
 ---
+# Unallocated Cash and Payment Selection Configurable Business Partner
+
 &lt;h2 style="color:red"&gt;NOTE: This is not yet integrated into core&lt;/h2&gt;
 
 **Goal:** Functional

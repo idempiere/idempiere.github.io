@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Info Windows Have Their Own Icon"
 sidebar_label: "Info Windows Have Their Own Icon"
 description: "**Contributor:** Nicolas Micoud"
 tags: [user-experience]
 ---
+# Info Windows Have Their Own Icon
+
 **Contributor:** Nicolas Micoud
 
 **Developer:** Le Quy Hiep

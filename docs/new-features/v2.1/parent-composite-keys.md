@@ -1,10 +1,11 @@
 ---
 sidebar_position: 37
-title: "Parent Composite Keys"
 sidebar_label: "Parent Composite Keys"
 description: "Previously, in order to create a composite key you needed to define all composite columns as parent, but that didn't work properly.  Now you can define"
 tags: [technical]
 ---
+# Parent Composite Keys
+
 **Goal:** Technical
 
 **Description:**

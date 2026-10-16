@@ -1,10 +1,11 @@
 ---
 sidebar_position: 14
-title: "GL Journal Generator"
 sidebar_label: "GL Journal Generator"
 description: "**Functional:** Accounting"
 tags: [functional]
 ---
+# GL Journal Generator
+
 **Goal:** Usability
 
 **Functional:** Accounting

@@ -1,5 +1,4 @@
 ---
-title: Running Plug-ins Locally in iDempiere
 sidebar_label: Running Plug-ins Locally
 description: Guide to configure and run plug-ins locally in iDempiere.
 sidebar_position: 2

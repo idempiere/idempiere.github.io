@@ -1,9 +1,9 @@
 ---
-title: Bug Reporting Guidelines
 sidebar_label: Bug Reporting
 sidebar_position: 2
 description: How to report bugs in iDempiere so the community can reproduce and fix them efficiently
 ---
+# Bug Reporting Guidelines
 
 This page is part of the list of contribution paths described in [Contributing to iDempiere](./contributing-to-idempiere).
 

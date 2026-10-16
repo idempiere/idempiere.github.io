@@ -1,10 +1,11 @@
 ---
 sidebar_position: 14
-title: "Configurable Status Line"
 sidebar_label: "Configurable Status Line"
 description: "**Developer:** Nicolas Micoud"
 tags: [user-experience]
 ---
+# Configurable Status Line
+
 **Goal:** Usability
 
 **Developer:** Nicolas Micoud

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Warning on Password Expiration"
 sidebar_label: "Warning on Password Expiration"
 description: "**Goal:** User Experience (Usability)"
 tags: [user-experience]
 ---
+# Warning on Password Expiration
+
 **Goal:** User Experience (Usability)
 
 **Developer:** Nicolas Micoud

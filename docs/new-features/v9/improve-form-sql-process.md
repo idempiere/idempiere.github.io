@@ -1,10 +1,11 @@
 ---
 sidebar_position: 36
-title: "Improve Form SQL Process"
 sidebar_label: "Improve Form SQL Process"
 description: "**Developer:** Carlos Ruiz"
 tags: [technical]
 ---
+# Improve Form SQL Process
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

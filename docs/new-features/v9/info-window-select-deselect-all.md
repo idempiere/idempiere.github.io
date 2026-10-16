@@ -1,10 +1,11 @@
 ---
 sidebar_position: 27
-title: "Info Window Select DeSelect All"
 sidebar_label: "Info Window Select DeSelect All"
 description: "**Developer:** Carlos Ruiz"
 tags: [user-experience]
 ---
+# Info Window Select DeSelect All
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

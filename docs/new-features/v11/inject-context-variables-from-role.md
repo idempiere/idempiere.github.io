@@ -1,10 +1,11 @@
 ---
 sidebar_position: 25
-title: "Inject Context Variables From Role"
 sidebar_label: "Inject Context Variables From Role"
 description: "**Developer:** muriloht"
 tags: [technical]
 ---
+# Inject Context Variables From Role
+
 **Goal:** Technical
 
 **Developer:** muriloht

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 9
-title: "Share saved queries with other users"
 sidebar_label: "Share saved queries with other users"
 description: "**Goal:** Functional - Usability"
 tags: [user-experience]
 ---
+# Share saved queries with other users
+
 **Goal:** Functional - Usability
 
 **Developer:** Diego Ruiz

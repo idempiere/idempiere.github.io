@@ -1,10 +1,11 @@
 ---
 sidebar_position: 21
-title: "Workflow EMail Notification Enhancements"
 sidebar_label: "Workflow EMail Notification Enhancements"
 description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
 tags: [functional]
 ---
+# Workflow EMail Notification Enhancements
+
 **Goal:** Functional
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

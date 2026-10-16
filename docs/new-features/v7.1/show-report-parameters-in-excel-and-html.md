@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Show Report Parameters in Excel and HTML"
 sidebar_label: "Show Report Parameters in Excel and HTML"
 description: "**Goal:** User Experience"
 tags: [user-experience]
 ---
+# Show Report Parameters in Excel and HTML
+
 **Goal:** User Experience
 
 **Developer:** Heng Sin Low

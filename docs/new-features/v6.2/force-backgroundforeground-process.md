@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Force Background/Foreground Process"
 sidebar_label: "Force Background/Foreground Process"
 description: "**Developer:** Diego Ruiz"
 tags: [user-experience]
 ---
+# Force Background/Foreground Process
+
 **Goal:** Usability
 
 **Developer:** Diego Ruiz

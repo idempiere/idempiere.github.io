@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Add Java Options Field To Setup"
 sidebar_label: "Add Java Options Field To Setup"
 description: "**Goal:** UX/Functional"
 tags: [functional]
 ---
+# Add Java Options Field To Setup
+
 **Goal:** UX/Functional
 
 **Developer:** Hengsin

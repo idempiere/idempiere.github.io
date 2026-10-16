@@ -1,10 +1,11 @@
 ---
 sidebar_position: 29
-title: "Development With Intellij"
 sidebar_label: "Development With Intellij"
 description: "**Goal:** Development"
 tags: [development]
 ---
+# Development With Intellij
+
 **Goal:** Development
 
 **Developer:** Hengsin

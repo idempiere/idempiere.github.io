@@ -1,10 +1,11 @@
 ---
 sidebar_position: 40
-title: "Recent Items Dashboard"
 sidebar_label: "Recent Items Dashboard"
 description: "**Contributor:** Quality Systems & Solutions (GlobalQSS)"
 tags: [user-experience]
 ---
+# Recent Items Dashboard
+
 **Goal:** Usability
 
 **Contributor:** Quality Systems & Solutions (GlobalQSS)

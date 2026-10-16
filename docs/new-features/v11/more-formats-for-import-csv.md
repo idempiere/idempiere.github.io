@@ -1,10 +1,11 @@
 ---
 sidebar_position: 16
-title: "More Formats for Import CSV"
 sidebar_label: "More Formats for Import CSV"
 description: "**Developer:** Carlos Ruiz"
 tags: [user-experience]
 ---
+# More Formats for Import CSV
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz
