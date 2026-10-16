@@ -217,15 +217,15 @@ const config = {
             items: [
               {
                 label: 'Basic Installation Guide',
-                to: '/docs/introduction',
+                to: '/docs/basic-installation',
               },
               {
                 label: 'Basic Functional Guide',
-                to: '/docs/introduction',
+                to: '/docs/basic-functional',
               },
               {
                 label: 'Basic Developer Guide',
-                to: '/docs/introduction',
+                to: '/docs/basic-development',
               },
             ],
           },

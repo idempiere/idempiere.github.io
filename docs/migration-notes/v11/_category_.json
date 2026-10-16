@@ -3,6 +3,7 @@
   "position": 4,
   "link": {
     "type": "generated-index",
+    "slug": "/migration-notes/v11",
     "description": "Migration notes for upgrading to iDempiere 11."
   }
 }

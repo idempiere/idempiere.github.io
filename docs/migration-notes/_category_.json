@@ -3,6 +3,7 @@
   "position": 52,
   "link": {
     "type": "generated-index",
+    "slug": "/migration-notes",
     "description": "Technical and functional notes to review when upgrading between iDempiere versions, organized by target version."
   }
 }

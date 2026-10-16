@@ -3,6 +3,7 @@
   "position": 51,
   "link": {
     "type": "generated-index",
+    "slug": "/release-changelogs",
     "description": "Bug fixes and non-disruptive features integrated into each stable iDempiere release, listed by date."
   }
 }
