@@ -3,6 +3,7 @@
   "position": 6,
   "link": {
     "type": "generated-index",
+    "title": "Migration notes for iDempiere 9",
     "slug": "/migration-notes/v9",
     "description": "Migration notes for upgrading to iDempiere 9 Horizon."
   }

@@ -4,7 +4,9 @@ sidebar_label: "Automatic External Pack In"
 description: "iDempiere architecture provides a way to install automatically 2Pack files that are inside plugins with several mechanisms depending on the plugin activator..."
 tags: [technical]
 ---
-# Automatic External Pack In
+# Automatic External Pack In (iDempiere 5.1)
+
+This page describes the feature as introduced in iDempiere 5.1. For the current guide, see [Automatic External Pack In](/docs/basic-development/2pack/automatic-external-packin).
 
 **Goal:** Technical
 

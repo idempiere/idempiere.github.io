@@ -3,6 +3,7 @@
   "position": 11,
   "link": {
     "type": "generated-index",
+    "title": "Migration notes for iDempiere 1.0",
     "slug": "/migration-notes/v1-0",
     "description": "Migration notes for upgrading to iDempiere 1.0."
   }
