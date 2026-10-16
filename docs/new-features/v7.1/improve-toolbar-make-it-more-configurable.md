@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: "Improve toolbar, make it more configurable"
-description: "**Goal:** Functional - Usability"
+description: "The goal of the ticket is to improve the toolbar and make it more configurable, with a show More option to hide the less used buttons by default without..."
 tags: [user-experience]
 ---
 # Improve toolbar, make it more configurable

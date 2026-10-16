@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: "PostIt Toolbar Button"
-description: "**Developers:** Nicolas Micoud"
+description: "A new button to add comments to records, like a PostIt, has been added to the toolbar in every window."
 tags: [user-experience]
 ---
 # PostIt Toolbar Button

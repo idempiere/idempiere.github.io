@@ -1,7 +1,7 @@
 ---
 sidebar_position: 23
 sidebar_label: "Auto Save Current Tab Changes"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Auto Save Current Tab Changes: a New Feature in iDempiere 10."
 tags: [user-experience]
 ---
 # Auto Save Current Tab Changes

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 21
 sidebar_label: "Mail Signature And Images"
-description: "**Goal:** User Experience"
+description: "In the mail template you can now add images and use context variables (based on the user sending the email)."
 tags: [user-experience]
 ---
 # Mail Signature And Images

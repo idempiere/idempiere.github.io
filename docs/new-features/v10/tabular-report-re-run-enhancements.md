@@ -1,7 +1,7 @@
 ---
 sidebar_position: 33
 sidebar_label: "Tabular Report Re-Run Enhancements"
-description: "**Goal:** UX/Functional"
+description: "Until now, tabular reports are opened in new tab - as result opening many tabs."
 tags: [user-experience]
 ---
 # Tabular Report Re-Run Enhancements

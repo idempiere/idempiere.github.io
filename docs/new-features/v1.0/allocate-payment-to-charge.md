@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: "Allocate Payment To Charge"
-description: "**Sponsor:** [Adaxa](http://www.adaxa.com/)"
+description: "Allocate Payment To Charge: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
 # Allocate Payment To Charge

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: "Deductible and Non Deductible Input Tax"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Implement support for https://techconcepthub.com/deductible-tax-and-non-deductible-tax/"
 tags: [functional]
 ---
 # Deductible and Non Deductible Input Tax

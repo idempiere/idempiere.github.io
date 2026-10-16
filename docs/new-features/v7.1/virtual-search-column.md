@@ -1,7 +1,7 @@
 ---
 sidebar_position: 13
 sidebar_label: "Virtual Search Column"
-description: "**Developer:** Diego Ruiz"
+description: "The goal of the ticket is to allow the configuration of virtual search columns."
 tags: [technical]
 ---
 # Virtual Search Column

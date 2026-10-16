@@ -1,7 +1,7 @@
 ---
 sidebar_position: 55
 sidebar_label: "Scheduler Improvements"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "This feature enable to define a schedule that can be used in any of the scheduled processes."
 tags: [technical]
 ---
 # Scheduler Improvements

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 23
 sidebar_label: "Multiple SSO Provider Support"
-description: "**Developer:** Deepak Pansheriya [Logilite Technologies](https://www.logilite.com)"
+description: "This enhancement introduces the ability to configure and support multiple Single Sign-On (SSO) providers in iDempiere."
 tags: [technical]
 ---
 # Multiple SSO Provider Support

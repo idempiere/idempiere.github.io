@@ -1,7 +1,7 @@
 ---
 sidebar_position: 15
 sidebar_label: "DB Objects in Dictionary"
-description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
+description: "Now you can define and maintain database indexes directly in the dictionary."
 tags: [technical]
 ---
 # DB Objects in Dictionary

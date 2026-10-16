@@ -1,7 +1,7 @@
 ---
 sidebar_position: 35
 sidebar_label: "Add Context Variables in log entries"
-description: "**Developers:** Nicolas Micoud, Hengsin, Carlos Ruiz"
+description: "It is now possible to use any Context Variables in the log."
 tags: [technical]
 ---
 # Add Context Variables in log entries

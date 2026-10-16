@@ -1,7 +1,7 @@
 ---
 sidebar_position: 61
 sidebar_label: "Hashed Passwords"
-description: "**Sponsor:** [Adaxa](http://www.adaxa.com/)"
+description: "The default plain passwords configured in vanilla iDempiere are very unsafe, access to the database will expose all passwords."
 tags: [security]
 ---
 # Hashed Passwords

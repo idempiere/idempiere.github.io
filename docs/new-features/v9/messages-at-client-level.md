@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: "Messages at Client Level"
-description: "**Developer:**  Nicolas Micoud"
+description: "Messages are defined and translated at System level."
 tags: [functional]
 ---
 # Messages at Client Level

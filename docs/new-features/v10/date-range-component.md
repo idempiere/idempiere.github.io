@@ -1,7 +1,7 @@
 ---
 sidebar_position: 27
 sidebar_label: "Date Range Component"
-description: "**Goal:** UX/Functional"
+description: "cloudempiere, Takacs Peter, Design: Norbert Bede Review: Hengsin Low, CarlosRuiz"
 tags: [user-experience]
 ---
 # Date Range Component

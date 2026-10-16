@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: "Last Run and Saved Parameters"
-description: "**Goal:** User Experience"
+description: "Last Run and Saved Parameters: a New Feature in iDempiere 2.1."
 tags: [user-experience]
 ---
 # Last Run and Saved Parameters

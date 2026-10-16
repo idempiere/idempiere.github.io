@@ -1,7 +1,7 @@
 ---
 sidebar_position: 23
 sidebar_label: "Inject Context Variables From Menu"
-description: "**Developer:** Carlos Ruiz"
+description: "Inject Context Variables From Menu: a New Feature in iDempiere 8.2."
 tags: [technical]
 ---
 # Inject Context Variables From Menu

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: "Prepay Order Configurable Shipment and Invoicing"
-description: "**Goal:** Sales Process"
+description: "cloudempiere, Takacs Peter, Design: Igor Pojzl, Norbert Bede Review: CarlosRuiz, Hengsin"
 tags: [functional]
 ---
 # Prepay Order Configurable Shipment and Invoicing

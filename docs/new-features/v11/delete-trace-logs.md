@@ -1,7 +1,7 @@
 ---
 sidebar_position: 21
 sidebar_label: "Delete Trace Logs"
-description: "**Developer**: Zuhri Utama, A."
+description: "The purpose of this improvement is to delete old trace logs periodically that generated daily."
 tags: [technical]
 ---
 # Delete Trace Logs

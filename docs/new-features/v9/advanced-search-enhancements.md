@@ -1,7 +1,7 @@
 ---
 sidebar_position: 19
 sidebar_label: "Advanced Search Enhancements"
-description: "**Developer:** Igor Pojzl"
+description: "Advanced Search Enhancements: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
 # Advanced Search Enhancements

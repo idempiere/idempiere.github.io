@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: "New Fields in Country"
-description: "**Developer:** Carlos Ruiz"
+description: "New Fields in Country: a New Feature in iDempiere 12."
 tags: [functional]
 ---
 # New Fields in Country

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 68
 sidebar_label: "2Pack Revamped"
-description: "**Goal:** Architecture"
+description: "2Pack Revamped: a New Feature in iDempiere 1.0."
 tags: [architecture]
 ---
 # 2Pack Revamped

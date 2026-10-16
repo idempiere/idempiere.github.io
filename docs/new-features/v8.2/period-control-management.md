@@ -1,7 +1,7 @@
 ---
 sidebar_position: 19
 sidebar_label: "Period Control Management"
-description: "**Goal:** User Experience (Usability)"
+description: "A new easier way to manage the financial periods is implemented with the window Period Control Management."
 tags: [user-experience]
 ---
 # Period Control Management

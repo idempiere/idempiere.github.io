@@ -1,7 +1,7 @@
 ---
 sidebar_position: 25
 sidebar_label: "Override Virtual Column Definition in Field"
-description: "**Developer:** Igor Pojzl"
+description: "Override Virtual Column Definition in Field: a New Feature in iDempiere 8.2."
 tags: [technical]
 ---
 # Override Virtual Column Definition in Field

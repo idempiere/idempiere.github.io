@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: "Info Windows Have Their Own Icon"
-description: "**Contributor:** Nicolas Micoud"
+description: "Info Windows Have Their Own Icon: a New Feature in iDempiere 3.0."
 tags: [user-experience]
 ---
 # Info Windows Have Their Own Icon

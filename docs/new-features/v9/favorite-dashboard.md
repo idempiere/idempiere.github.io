@@ -1,7 +1,7 @@
 ---
 sidebar_position: 24
 sidebar_label: "Favorite Dashboard"
-description: "**Developer:**  Logilite Technologies"
+description: "Logilite has developed user organizable favorite tree dashboard widget in Adaxa suite."
 tags: [user-experience]
 ---
 # Favorite Dashboard

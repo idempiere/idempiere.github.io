@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: "Font Icons"
-description: "**Developer:** Heng Sin Low"
+description: "Configuration is simply to set the System Configurator flag ZKTHEMEUSEFONTICONFORIMAGE = Y, and then execute a Cache Reset."
 tags: [user-experience]
 ---
 # Font Icons

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 34
 sidebar_label: "Wizard Chosen Multiple Selection List Editor"
-description: "**Developer:** Nicolas Micoud"
+description: "Wizard Chosen Multiple Selection List Editor: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
 # Wizard Chosen Multiple Selection List Editor

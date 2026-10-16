@@ -1,7 +1,7 @@
 ---
 sidebar_position: 42
 sidebar_label: "Configurable Jasper Plugin"
-description: "**Goal:** Development"
+description: "Configurable Jasper Plugin: a New Feature in iDempiere 2.1."
 tags: [development]
 ---
 # Configurable Jasper Plugin

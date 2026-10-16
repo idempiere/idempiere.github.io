@@ -1,7 +1,7 @@
 ---
 sidebar_position: 31
 sidebar_label: "Status Line As Dashboard Widget"
-description: "**Goal:** UX/Functional"
+description: "cloudempiere, Takacs Peter, Design: Norbert Bede Review: Hengsin Low"
 tags: [user-experience]
 ---
 # Status Line As Dashboard Widget

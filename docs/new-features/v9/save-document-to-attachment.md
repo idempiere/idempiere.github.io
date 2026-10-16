@@ -1,7 +1,7 @@
 ---
 sidebar_position: 31
 sidebar_label: "Save Document to Attachment"
-description: "**Developer:** Carlos Ruiz"
+description: "Save Document to Attachment: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
 # Save Document to Attachment

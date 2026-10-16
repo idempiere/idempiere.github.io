@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: "Exclude Locators for Demand Operations"
-description: "- Sponsor: Norbert Bede [MULTIMAGE Ltd](http://www.multimageconsult.com/)"
+description: "On the process of managing items on a warehouse is required to mark some locators to be excluded from the count and from the process of demand operations..."
 tags: [functional]
 ---
 # Exclude Locators for Demand Operations

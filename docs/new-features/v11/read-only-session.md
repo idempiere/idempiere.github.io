@@ -1,7 +1,7 @@
 ---
 sidebar_position: 17
 sidebar_label: "Read-Only Session"
-description: "**Developer:** Carlos Ruiz"
+description: "This feature is to implement a user preference to make his/her sessions read-only until the preference is unchecked again."
 tags: [user-experience]
 ---
 # Read-Only Session

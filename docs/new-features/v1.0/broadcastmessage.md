@@ -1,7 +1,7 @@
 ---
 sidebar_position: 27
 sidebar_label: "Broadcast Message"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Broadcast Message: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
 # Broadcast Message

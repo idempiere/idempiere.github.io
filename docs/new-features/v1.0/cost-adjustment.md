@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: "Inventory Cost Adjustment"
-description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
+description: "A new window to allow the entering of cost adjustment for product."
 tags: [functional]
 ---
 # Inventory Cost Adjustment

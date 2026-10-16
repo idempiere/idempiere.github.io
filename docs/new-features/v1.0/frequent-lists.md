@@ -1,7 +1,7 @@
 ---
 sidebar_position: 32
 sidebar_label: "Frequent lists"
-description: "**Goal:** User Experience"
+description: "If you add a IsShortList column on a table, the field (Table/TableDir) will have a new feature: ability to show only the records marked as 'frequently used'..."
 tags: [user-experience]
 ---
 # Frequent lists

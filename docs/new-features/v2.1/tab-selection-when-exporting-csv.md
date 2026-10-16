@@ -1,7 +1,7 @@
 ---
 sidebar_position: 26
 sidebar_label: "Tab Selection When Exporting CSV"
-description: "**Goal:** User Experience"
+description: "Tab Selection When Exporting CSV: a New Feature in iDempiere 2.1."
 tags: [user-experience]
 ---
 # Tab Selection When Exporting CSV

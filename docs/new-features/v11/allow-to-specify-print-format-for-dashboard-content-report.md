@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: "Allow to Specify Print Format for Dashboard Content Report"
-description: "**Ticket:** [IDEMPIERE-5490](https://idempiere.atlassian.net/browse/IDEMPIERE-5490)"
+description: "After this change, when adding a report to the dashboard by creating a new Dashboard Content, you can define, which Print Format will be used to render the..."
 tags: [functional]
 ---
 # Allow to Specify Print Format for Dashboard Content Report

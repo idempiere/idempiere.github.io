@@ -1,7 +1,7 @@
 ---
 sidebar_position: 28
 sidebar_label: "Configure MFA"
-description: "**Developer:** Carlos Ruiz"
+description: "The goal of multi-factor authentication is security, protecting the user from an unknown person trying to access their data."
 tags: [security]
 ---
 # Configure MFA

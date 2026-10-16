@@ -1,7 +1,7 @@
 ---
 sidebar_position: 16
 sidebar_label: "Tenant Administrator Roles"
-description: "**Developer:**  Nicolas Micoud"
+description: "Messages are defined and translated at System level."
 tags: [functional]
 ---
 # Tenant Administrator Roles

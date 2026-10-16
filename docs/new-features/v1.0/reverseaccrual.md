@@ -1,7 +1,7 @@
 ---
 sidebar_position: 24
 sidebar_label: "Reverse Accrual"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Implement reverse accrual for shipment, invoice, inventory and payment document."
 tags: [functional]
 ---
 # Reverse Accrual

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 28
 sidebar_label: "Zoom from RecordID in HTML Report"
-description: "**Developer:** Deepak Pansheriya"
+description: "Now is possible to zoom from reports that include Table and Record ID columns (columnnames ADTableID and Record_ID)."
 tags: [user-experience]
 ---
 # Zoom from RecordID in HTML Report

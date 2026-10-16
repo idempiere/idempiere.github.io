@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: "Constraint Type for RecordID and UU"
-description: "**Developer**: cloudempiere, Takacs Peter"
+description: "The purpose of this improvement is to avoid storing IDs of deleted records in the RecordID column."
 tags: [technical]
 ---
 # Constraint Type for RecordID and UU

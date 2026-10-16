@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: "Min Amount For Create Invoices"
-description: "The ***Generate Invoices*** process can now be restricted to generate just invoices which total is greater or equal than a specified minimum amount."
+description: "The Generate Invoices process can now be restricted to generate just invoices which total is greater or equal than a specified minimum amount."
 tags: [functional]
 ---
 # Min Amount For Create Invoices

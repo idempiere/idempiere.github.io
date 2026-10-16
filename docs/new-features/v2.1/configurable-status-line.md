@@ -1,7 +1,7 @@
 ---
 sidebar_position: 14
 sidebar_label: "Configurable Status Line"
-description: "**Developer:** Nicolas Micoud"
+description: "Configurable Status Line: a New Feature in iDempiere 2.1."
 tags: [user-experience]
 ---
 # Configurable Status Line

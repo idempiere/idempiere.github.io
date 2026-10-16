@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: "Print Support Process Info Dialog"
-description: "**Goal:** UX/Functional"
+description: "Print Support Process Info Dialog: a New Feature in iDempiere 10."
 tags: [user-experience]
 ---
 # Print Support Process Info Dialog

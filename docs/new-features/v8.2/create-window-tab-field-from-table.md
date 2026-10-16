@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: "Create Window, Tab & Field from Table"
-description: "**Goal:** Development - Usability"
+description: "The goal of the ticket is to allow system users to create the Window, Tab & Field records automatically from the Table and Column window."
 tags: [functional]
 ---
 # Create Window, Tab & Field from Table

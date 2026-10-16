@@ -1,7 +1,7 @@
 ---
 sidebar_position: 24
 sidebar_label: "Copy Print format With Dialog"
-description: "**Goal:** UX/Functional"
+description: "Copy Print format With Dialog: a New Feature in iDempiere 10."
 tags: [user-experience]
 ---
 # Copy Print format With Dialog

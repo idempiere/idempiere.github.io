@@ -1,7 +1,7 @@
 ---
 sidebar_position: 32
 sidebar_label: "Disable OSGi Event Handler"
-description: "**Goal:** UX/Functional"
+description: "Disable OSGi Event Handler: a New Feature in iDempiere 11."
 tags: [development]
 ---
 # Disable OSGi Event Handler

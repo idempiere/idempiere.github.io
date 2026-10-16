@@ -1,7 +1,7 @@
 ---
 sidebar_position: 39
 sidebar_label: "Synchronize Print Format Items"
-description: "**Developer:** Nicolas Micoud"
+description: "Especially in SaaS environnment, it is time consuming to add some columns in Report Views and make them available in reports."
 tags: [technical]
 ---
 # Synchronize Print Format Items

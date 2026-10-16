@@ -1,7 +1,7 @@
 ---
 sidebar_position: 11
 sidebar_label: "Replace Create From Form With Info Window Form"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin)), Elaine Tan (etantg)"
+description: "Use Info Window and Process to replace existing Create From custom form."
 tags: [functional]
 ---
 # Replace Create From Form With Info Window Form

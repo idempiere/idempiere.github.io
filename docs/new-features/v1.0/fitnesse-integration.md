@@ -1,7 +1,7 @@
 ---
 sidebar_position: 69
 sidebar_label: "Fitnesse Integration"
-description: "**Goal:** Functional Testing"
+description: "Fitnesse Integration: a New Feature in iDempiere 1.0."
 tags: [architecture]
 ---
 # Fitnesse Integration

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 13
 sidebar_label: "Flat View Menu Tree Enhancements"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Add ZKFLATVIEWMENUTREE system config, tenant level and default to N."
 tags: [functional]
 ---
 # Flat View Menu Tree Enhancements

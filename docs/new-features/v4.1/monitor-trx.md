@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: "Monitor Trx"
-description: "**Contributor:** [TrekGlobal](http://www.trekglobal.com/)"
+description: "Databases sometimes hit hard to trace conditions, like locks or connection leaks."
 tags: [technical]
 ---
 # Monitor Trx

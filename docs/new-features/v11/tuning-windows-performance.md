@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: "Tuning Windows Performance"
-description: "**Developer:** Carlos Ruiz"
+description: "iDempiere performance can have problems when trying to open windows with too many records, or windows pointing to complex views."
 tags: [technical]
 ---
 # Tuning Windows Performance

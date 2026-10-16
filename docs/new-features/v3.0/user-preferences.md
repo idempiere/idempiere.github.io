@@ -1,7 +1,7 @@
 ---
 sidebar_position: 11
 sidebar_label: "User Preferences"
-description: "**Contributor:** Diego Ruiz - Thomas Bayen - BXService GmbH, Krefeld"
+description: "Now you can configure preferences based on each user/client in the preference popup and the user preference's window."
 tags: [user-experience]
 ---
 # User Preferences

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 41
 sidebar_label: "Callout on Navigate"
-description: "**Goal:** Development"
+description: "The usual callouts are triggered when a field is changed."
 tags: [development]
 ---
 # Callout on Navigate

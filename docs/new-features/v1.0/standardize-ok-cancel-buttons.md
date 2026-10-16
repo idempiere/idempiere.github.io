@@ -1,7 +1,7 @@
 ---
 sidebar_position: 45
 sidebar_label: "Standardize OK Cancel Buttons"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "For usability is important to always see the OK and Cancel buttons in the same order."
 tags: [user-experience]
 ---
 # Standardize OK Cancel Buttons

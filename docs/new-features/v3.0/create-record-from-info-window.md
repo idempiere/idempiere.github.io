@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: "Create Record From Info Window"
-description: "**Contributor:** Nicolas Micoud"
+description: "Now you can create a new record directly from Info Window like shown in the screenshot."
 tags: [user-experience]
 ---
 # Create Record From Info Window

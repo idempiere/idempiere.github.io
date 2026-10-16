@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: "Manually Selecting Attribute Set Instance"
-description: "**Contributor:** [Logilite Technologies](http://www.logilite.com)"
+description: "We find it a bit hard to work with serially managed products in iDempiere as we need to create 1 line per serial number."
 tags: [functional]
 ---
 # Manually Selecting Attribute Set Instance

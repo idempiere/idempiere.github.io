@@ -1,7 +1,7 @@
 ---
 sidebar_position: 25
 sidebar_label: "Shortcuts To Ease Keyboard Entry"
-description: "**Goal:** User Experience"
+description: "Shortcuts To Ease Keyboard Entry: a New Feature in iDempiere 2.1."
 tags: [user-experience]
 ---
 # Shortcuts To Ease Keyboard Entry

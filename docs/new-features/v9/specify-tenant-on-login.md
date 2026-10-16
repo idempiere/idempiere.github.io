@@ -1,7 +1,7 @@
 ---
 sidebar_position: 56
 sidebar_label: "Specify Tenant on Login"
-description: "**Developer:** Carlos Ruiz"
+description: "Traditionally the login flow of iDempiere has allowed the user to enter username and password and select the tenant to login in a second page."
 tags: [security]
 ---
 # Specify Tenant on Login

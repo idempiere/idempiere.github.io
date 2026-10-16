@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: "Add Java Options Field To Setup"
-description: "**Goal:** UX/Functional"
+description: "Added a new field to the iDempiere server setup dialog, Java Options."
 tags: [functional]
 ---
 # Add Java Options Field To Setup

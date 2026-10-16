@@ -1,7 +1,7 @@
 ---
 sidebar_position: 24
 sidebar_label: "Operating System Variables in Context"
-description: "**Developer:** Carlos Ruiz"
+description: "You can use now operating system environment variables in the context using the prefix $env."
 tags: [technical]
 ---
 # Operating System Variables in Context

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: "Financial Report Enhancement"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Financial Report Enhancement: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
 # Financial Report Enhancement

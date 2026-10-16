@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: "Force grid mode when Find panel closes"
-description: "**Goal:** User Experience"
+description: "Now iDempiere can automatically switch to grid mode when the Find panel closes."
 tags: [user-experience]
 ---
 # Force grid mode when Find panel closes

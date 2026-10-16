@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: "Platform Upgrade"
-description: "**Goal:** Architecture"
+description: "Platform Upgrade: a New Feature in iDempiere 5.1."
 tags: [architecture]
 ---
 # Platform Upgrade

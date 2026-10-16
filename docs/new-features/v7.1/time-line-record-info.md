@@ -1,7 +1,7 @@
 ---
 sidebar_position: 12
 sidebar_label: "Time Line Record Info"
-description: "**Developer:** Heng Sin Low"
+description: "Now iDempiere can show the Record Info (audit changes for a record) in Time Line view mode."
 tags: [user-experience]
 ---
 # Time Line Record Info

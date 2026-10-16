@@ -1,7 +1,7 @@
 ---
 sidebar_position: 37
 sidebar_label: "Define DB views with DISTINCT"
-description: "**Developer:** Nicolas Micoud"
+description: "A 'Distinct' checkbox has been added on the View Component tab."
 tags: [technical]
 ---
 # Define DB views with DISTINCT

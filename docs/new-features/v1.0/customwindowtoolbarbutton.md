@@ -1,7 +1,7 @@
 ---
 sidebar_position: 53
 sidebar_label: "Custom Window Toolbar Buttons"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Create custom toolbar button for window using OSGi dynamic service."
 tags: [technical]
 ---
 # Custom Window Toolbar Buttons

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: "How To: Using Print Format Item Scripts In Reports"
-description: "This document expands on the information provided in [NF8.2 Print Format Item Script](/docs/new-features/v8.2/print-format-item-script) and"
+description: "This document expands on the information provided in NF8.2 Print Format Item Script and"
 tags: [functional]
 ---
 # How To: Using Print Format Item Scripts In Reports

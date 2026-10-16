@@ -1,7 +1,7 @@
 ---
 sidebar_position: 14
 sidebar_label: "GL Journal Generator"
-description: "**Functional:** Accounting"
+description: "GL Journal Generator allows you to configure the generation of GL Journals based on previous journals movements."
 tags: [functional]
 ---
 # GL Journal Generator

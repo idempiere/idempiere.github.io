@@ -1,7 +1,7 @@
 ---
 sidebar_position: 34
 sidebar_label: "Wizard for Chosen Multiple Selection List editor"
-description: "**Developer:** Nicolas Micoud"
+description: "Selecting items from a multiple selection list field can be time consuming, especially if you want to order it properly."
 tags: [user-experience]
 ---
 # Wizard for Chosen Multiple Selection List editor

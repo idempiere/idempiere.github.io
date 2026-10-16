@@ -1,7 +1,7 @@
 ---
 sidebar_position: 25
 sidebar_label: "Dashboard Content Goal Indicator"
-description: "**Goal:** UX/Functional"
+description: "Until now, performance indicators were rendered via Dashboard Content/performance.zul without the ability to select a specific target to display."
 tags: [user-experience]
 ---
 # Dashboard Content Goal Indicator

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 21
 sidebar_label: "Radio Button"
-description: "**Developer:** Heng Sin Low"
+description: "Now lists can be configured as Radio Buttons."
 tags: [user-experience]
 ---
 # Radio Button

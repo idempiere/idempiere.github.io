@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: "Multiple Payments against statement line by Payment Batch"
-description: "**Feature:** Tag Payment Into Batch to Bank Statement Line and Document Workflow Support for Payment Into Batch"
+description: "Tag Payment Into Batch to Bank Statement Line and Document Workflow Support for Payment Into Batch"
 tags: [functional]
 ---
 # Multiple Payments against statement line by Payment Batch

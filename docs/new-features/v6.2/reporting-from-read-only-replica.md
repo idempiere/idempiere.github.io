@@ -1,7 +1,7 @@
 ---
 sidebar_position: 14
 sidebar_label: "Reporting from Read-Only Replica"
-description: "**Goal:** Technical (Performance)"
+description: "Some reports can create huge CPU and disk stress on the database, the reporting engine from iDempiere provides an ad-hoc way for users to create and shape..."
 tags: [technical]
 ---
 # Reporting from Read-Only Replica

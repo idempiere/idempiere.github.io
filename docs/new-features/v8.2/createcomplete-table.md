@@ -1,7 +1,7 @@
 ---
 sidebar_position: 22
 sidebar_label: "Create/Complete Table"
-description: "**Developers:** Nicolas Micoud, Carlos Ruiz"
+description: "Traditionally it has been complicated to create a document table with all the required columns, dependencies, workflow, etc."
 tags: [technical]
 ---
 # Create/Complete Table

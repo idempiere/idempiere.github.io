@@ -1,7 +1,7 @@
 ---
 sidebar_position: 46
 sidebar_label: "Tab Editor"
-description: "**Goal:** User Experience"
+description: "The new button \"Tab Editor\" is a WYSIWYG application that enables you to see and edit how a tab is going to be displayed."
 tags: [user-experience]
 ---
 # Tab Editor

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 47
 sidebar_label: "OSGi New Document Factory"
-description: "**Goal:** Development"
+description: "Implement a new document factory base class (MappedDocumentFactory class and IMappedDocumentFactory interface)."
 tags: [development]
 ---
 # OSGi New Document Factory

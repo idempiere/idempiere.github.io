@@ -1,7 +1,7 @@
 ---
 sidebar_position: 42
 sidebar_label: "Custom Query Clause for Report Parameter"
-description: "**Goal:** Development"
+description: "Custom Query Clause for Report Parameter: a New Feature in iDempiere 9."
 tags: [development]
 ---
 # Custom Query Clause for Report Parameter

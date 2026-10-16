@@ -1,7 +1,7 @@
 ---
 sidebar_position: 16
 sidebar_label: "Document Search Customisable Layout"
-description: "**Feature:** Allow Define Customisable Layout for search result"
+description: "Allow Define Customisable Layout for search result"
 tags: [technical]
 ---
 # Document Search Customisable Layout

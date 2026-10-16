@@ -1,7 +1,7 @@
 ---
 sidebar_position: 22
 sidebar_label: "Attach Files using Drag and Drop"
-description: "**Goal:** User Experience"
+description: "Attach Files using Drag and Drop: a New Feature in iDempiere 10."
 tags: [user-experience]
 ---
 # Attach Files using Drag and Drop

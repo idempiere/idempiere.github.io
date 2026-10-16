@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: "Dashboard Report Use Sql And Range Parameters"
-description: "**Developer:** Nicolas Micoud and Carlos Ruiz"
+description: "It is now possible to use @SQL= notation and set range parameters for embedded report on the home page."
 tags: [functional]
 ---
 # Dashboard Report Use Sql And Range Parameters

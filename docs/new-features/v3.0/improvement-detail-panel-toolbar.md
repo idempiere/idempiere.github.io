@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: "Improvement: Detail Panel ToolBar"
-description: "**Sponsor:** Integratio"
+description: "The process is the same as with the window toolbar buttons, open \"Toolbar Button\" window and create a record with the button you want."
 tags: [user-experience]
 ---
 # Improvement: Detail Panel ToolBar

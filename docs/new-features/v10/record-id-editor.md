@@ -1,7 +1,7 @@
 ---
 sidebar_position: 19
 sidebar_label: "Record ID Editor"
-description: "**Goal:** UX/Functional"
+description: "The Record ID field type allows two actions - select Table and Record, and zoom to the selected record."
 tags: [functional]
 ---
 # Record ID Editor

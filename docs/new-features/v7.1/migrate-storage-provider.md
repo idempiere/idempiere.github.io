@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: "Migrate Storage Provider"
-description: "**Developers:** Carlos Ruiz"
+description: "This functionality migrates files between storage providers"
 tags: [functional]
 ---
 # Migrate Storage Provider

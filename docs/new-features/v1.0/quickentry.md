@@ -1,7 +1,7 @@
 ---
 sidebar_position: 39
 sidebar_label: "Configurable Quick Entry"
-description: "***Goal:** User Experience"
+description: "Configurable Quick Entry: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
 # Configurable Quick Entry

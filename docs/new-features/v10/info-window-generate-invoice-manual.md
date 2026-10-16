@@ -1,7 +1,7 @@
 ---
 sidebar_position: 14
 sidebar_label: "Info Window Generate Invoice (manual)"
-description: "**Feature:** Generate invoice (manual) migrated to info window"
+description: "Generate invoice (manual) migrated to info window"
 tags: [functional]
 ---
 # Info Window Generate Invoice (manual)

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 15
 sidebar_label: "Custom Homepage"
-description: "**Goal:** User Experience"
+description: "The homepage for iDempiere is now customizable and themeable."
 tags: [user-experience]
 ---
 # Custom Homepage

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: "Display Logic for Print Format Item in PDF"
-description: "**Developer:** Heng Sin Low"
+description: "Now is possible to set a Display Logic for a Print Format Item rendered as PDF format."
 tags: [functional]
 ---
 # Display Logic for Print Format Item in PDF

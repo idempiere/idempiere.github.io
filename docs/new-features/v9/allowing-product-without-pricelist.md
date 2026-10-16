@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: "Allowing Product Without Pricelist"
-description: "**Developer:**  Logilite Technologies"
+description: "As shown below, Allow Product without price list added on Doc type."
 tags: [user-experience]
 ---
 # Allowing Product Without Pricelist

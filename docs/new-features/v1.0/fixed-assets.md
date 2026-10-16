@@ -1,7 +1,7 @@
 ---
 sidebar_position: 11
 sidebar_label: "Fixed Assets Stabilization"
-description: "**Contributor:** Edwin Ang"
+description: "With the release 1.0 of iDempiere the Fixed Assets extension was fully integrated and a stabilization effort was contributed."
 tags: [functional]
 ---
 # Fixed Assets Stabilization

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 37
 sidebar_label: "New Master Detail Implementation"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "New master detail implementation to improve usability."
 tags: [user-experience]
 ---
 # New Master Detail Implementation

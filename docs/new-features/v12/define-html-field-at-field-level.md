@@ -1,7 +1,7 @@
 ---
 sidebar_position: 15
 sidebar_label: "Define HTML field at field level"
-description: "**Developer:**  Nicolas Micoud"
+description: "https://idempiere.atlassian.net/browse/IDEMPIERE-6147 adds a HTML listbox (visible when Reference Overwrite is filled) on"
 tags: [technical]
 ---
 # Define HTML field at field level

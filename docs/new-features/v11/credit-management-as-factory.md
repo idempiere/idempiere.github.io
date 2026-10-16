@@ -1,7 +1,7 @@
 ---
 sidebar_position: 31
 sidebar_label: "Credit Management as Factory"
-description: "**Goal:** Customizibility, Extendibility"
+description: "The goal of this How-To guide is to demonstrate how to utilize the ICreditManagerFactory service in your plug-in project."
 tags: [development]
 ---
 # Credit Management as Factory

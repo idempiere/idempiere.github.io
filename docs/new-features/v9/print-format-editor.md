@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: "Print Format Editor"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Print Format Editor: a New Feature in iDempiere 9."
 tags: [functional]
 ---
 # Print Format Editor

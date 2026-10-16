@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: "EMail Jasper Reports"
-description: "**Goal:** User Experience"
+description: "Now you can send the PDF output for jasper reports directly from the viewer."
 tags: [user-experience]
 ---
 # EMail Jasper Reports

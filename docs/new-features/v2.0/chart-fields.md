@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: "Chart Fields"
-description: "**Goal:** User Experience"
+description: "Chart Fields: a New Feature in iDempiere 2.0."
 tags: [user-experience]
 ---
 # Chart Fields

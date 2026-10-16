@@ -1,7 +1,7 @@
 ---
 sidebar_position: 28
 sidebar_label: "System Property to avoid cutting log"
-description: "**Developers:** Nicolas Micoud"
+description: "Current code is cutting trace log in a hardcoded way."
 tags: [technical]
 ---
 # System Property to avoid cutting log

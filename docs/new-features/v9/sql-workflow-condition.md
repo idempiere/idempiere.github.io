@@ -1,7 +1,7 @@
 ---
 sidebar_position: 15
 sidebar_label: "SQL Workflow Condition"
-description: "**Developers:** Anton Mostovenko, Heng Sin Low"
+description: "SQL Workflow Condition: a New Feature in iDempiere 9."
 tags: [functional]
 ---
 # SQL Workflow Condition

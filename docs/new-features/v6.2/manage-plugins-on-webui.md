@@ -1,7 +1,7 @@
 ---
 sidebar_position: 13
 sidebar_label: "Manage Plugins on WebUI"
-description: "**Developer:** Carlos Ruiz"
+description: "Now basic plugin information can be seen directly on the webui (as System Administrator), &lt;s&gt;clicking on the About button and navigating to the..."
 tags: [technical]
 ---
 # Manage Plugins on WebUI

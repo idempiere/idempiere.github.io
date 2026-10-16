@@ -1,7 +1,7 @@
 ---
 sidebar_position: 22
 sidebar_label: "Desktop Tab Enhancements"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Desktop Tab Enhancements: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
 # Desktop Tab Enhancements

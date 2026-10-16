@@ -1,7 +1,7 @@
 ---
 sidebar_position: 14
 sidebar_label: "Context Variable HTML REPORT THEME"
-description: "**Developer:** Deepak Pansheriya"
+description: "report.css path is configurable using system configuration named HTMLREPORTTHEME."
 tags: [technical]
 ---
 # Context Variable HTML REPORT THEME

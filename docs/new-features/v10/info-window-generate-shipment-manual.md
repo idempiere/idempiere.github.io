@@ -1,7 +1,7 @@
 ---
 sidebar_position: 15
 sidebar_label: "Info Window Generate Shipment (manual)"
-description: "**Feature:** Generate shipments (manual) migrated to info window"
+description: "Generate shipments (manual) migrated to info window"
 tags: [functional]
 ---
 # Info Window Generate Shipment (manual)

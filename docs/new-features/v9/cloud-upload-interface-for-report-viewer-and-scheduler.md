@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: "Cloud Upload Interface for Report Viewer and Scheduler"
-description: "**Goal:** Development"
+description: "Add cloud upload interface for report viewer and scheduler."
 tags: [functional]
 ---
 # Cloud Upload Interface for Report Viewer and Scheduler

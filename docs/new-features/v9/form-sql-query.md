@@ -1,7 +1,7 @@
 ---
 sidebar_position: 35
 sidebar_label: "Form SQL Query"
-description: "**Developer:** Carlos Ruiz"
+description: "The new form SQL Query allows admin users to execute queries in the database."
 tags: [technical]
 ---
 # Form SQL Query

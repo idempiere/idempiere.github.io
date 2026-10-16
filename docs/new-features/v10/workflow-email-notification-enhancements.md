@@ -1,7 +1,7 @@
 ---
 sidebar_position: 21
 sidebar_label: "Workflow EMail Notification Enhancements"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Make attachment of PDF document to Workflow EMail Notification optional."
 tags: [functional]
 ---
 # Workflow EMail Notification Enhancements

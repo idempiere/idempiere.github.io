@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: "Automatic External Pack In"
-description: "**Developers:** Diego Ruiz, Carlos Ruiz"
+description: "iDempiere architecture provides a way to install automatically 2Pack files that are inside plugins with several mechanisms depending on the plugin activator..."
 tags: [technical]
 ---
 # Automatic External Pack In

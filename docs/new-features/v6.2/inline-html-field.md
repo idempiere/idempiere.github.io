@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: "Inline HTML Field"
-description: "**Goal:** User Experience"
+description: "iDempiere allows now to define HTML fields that render HTML directly for user viewing."
 tags: [user-experience]
 ---
 # Inline HTML Field

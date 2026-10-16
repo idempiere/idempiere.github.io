@@ -1,7 +1,7 @@
 ---
 sidebar_position: 36
 sidebar_label: "Configurable Cache Size per Table"
-description: "**Developer:** Carlos Ruiz"
+description: "Configurable Cache Size per Table: a New Feature in iDempiere 10."
 tags: [technical]
 ---
 # Configurable Cache Size per Table

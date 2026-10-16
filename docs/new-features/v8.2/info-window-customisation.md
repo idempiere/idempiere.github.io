@@ -1,7 +1,7 @@
 ---
 sidebar_position: 17
 sidebar_label: "Info Window Customisation"
-description: "**Goal:** Allow customize Info Window Component, make it really"
+description: "Now you can configure an Info Window Customisation to change system Info Window behavior."
 tags: [user-experience]
 ---
 # Info Window Customisation

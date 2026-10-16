@@ -1,7 +1,7 @@
 ---
 sidebar_position: 25
 sidebar_label: "Inject Context Variables From Role"
-description: "**Developer:** muriloht"
+description: "Inject Context Variables From Role: a New Feature in iDempiere 11."
 tags: [technical]
 ---
 # Inject Context Variables From Role

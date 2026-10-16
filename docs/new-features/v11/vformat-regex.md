@@ -1,7 +1,7 @@
 ---
 sidebar_position: 19
 sidebar_label: "VFormat RegEx"
-description: "**Developer:** Carlos Ruiz"
+description: "Now you can add validation for Strings based on regular expressions using the VFormat definition."
 tags: [user-experience]
 ---
 # VFormat RegEx

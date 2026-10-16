@@ -1,7 +1,7 @@
 ---
 sidebar_position: 21
 sidebar_label: "Auto Produce for Mfg Light"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Zoom across from Shipment Line to Production"
 tags: [user-experience]
 ---
 # Auto Produce for Mfg Light

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 13
 sidebar_label: "Simplified GL Journal"
-description: "**Functional:** Accounting"
+description: "Simplified GL Journal: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
 # Simplified GL Journal

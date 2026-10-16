@@ -1,7 +1,7 @@
 ---
 sidebar_position: 11
 sidebar_label: "Delete Record with Confirmation Logic"
-description: "**Goal:** UX/Functional"
+description: "The goal of this improvement is to implement new parametrisable Delete Confirmation Logic, which defines what string must be entered before the system..."
 tags: [functional]
 ---
 # Delete Record with Confirmation Logic

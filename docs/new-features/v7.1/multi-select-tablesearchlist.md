@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: "Multi Select Table/Search/List"
-description: "**Goal:** User Experience"
+description: "Now is possible to have window fields, and also report and process parameters that can contain reference to multiple foreign records."
 tags: [user-experience]
 ---
 # Multi Select Table/Search/List

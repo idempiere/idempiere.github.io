@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: "Add Customer Account FreightCostRule"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Add FREIGHTCOSTRULE_CustomerAccount where freight cost should be charged to the receiver/customer shipper account."
 tags: [functional]
 ---
 # Add Customer Account FreightCostRule

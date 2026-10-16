@@ -1,7 +1,7 @@
 ---
 sidebar_position: 13
 sidebar_label: "Reverse Prepared Payment Process"
-description: "**Developer:**  Nicolas Micoud"
+description: "This process was implemented to be able to fix a processed Payment Selection record without the need to hack DB."
 tags: [functional]
 ---
 # Reverse Prepared Payment Process

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 36
 sidebar_label: "Improve Form SQL Process"
-description: "**Developer:** Carlos Ruiz"
+description: "The form SQL Process) has been improved to allow executing a configurable set of commands."
 tags: [technical]
 ---
 # Improve Form SQL Process

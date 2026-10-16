@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: "Invoice Not Realized Gain/Loss Fixes"
-description: "**Developer:** Carlos Ruiz"
+description: "Invoice Not Realized Gain/Loss Fixes: a New Feature in iDempiere 2.1."
 tags: [functional]
 ---
 # Invoice Not Realized Gain/Loss Fixes

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 18
 sidebar_label: "Refactor ESC/Alt+X Shortcut for Closing Tabs"
-description: "**Ticket:** &lt;https://idempiere.atlassian.net/browse/IDEMPIERE-5786&gt;(http://IDEMPIERE-5786)"
+description: "&lt;https://idempiere.atlassian.net/browse/IDEMPIERE-5786&gt;(http://IDEMPIERE-5786)"
 tags: [user-experience]
 ---
 # Refactor ESC/Alt+X Shortcut for Closing Tabs

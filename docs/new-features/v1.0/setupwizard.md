@@ -1,7 +1,7 @@
 ---
 sidebar_position: 44
 sidebar_label: "Setup Wizard"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "We want to extend the setup workflows to allow setting up more friendly setup wizards."
 tags: [user-experience]
 ---
 # Setup Wizard

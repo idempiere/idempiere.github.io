@@ -1,7 +1,7 @@
 ---
 sidebar_position: 29
 sidebar_label: "Table Partitioning Support"
-description: "**Initial idea, sponsorship:** Norbert Bede, Cloudempiere"
+description: "Configure the partition information at Table and Column window"
 tags: [technical]
 ---
 # Table Partitioning Support

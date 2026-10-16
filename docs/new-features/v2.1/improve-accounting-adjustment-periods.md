@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: "Improve Accounting Adjustment Periods"
-description: "**Developer:** Carlos Ruiz"
+description: "The purpose of this enhancement is to give accounting users the ability to create GL Journal entries against an \"Adjustment Period\"."
 tags: [functional]
 ---
 # Improve Accounting Adjustment Periods

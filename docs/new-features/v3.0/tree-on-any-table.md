@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: "Tree On Any Table"
-description: "**Developers:** Deepak Pansheriya, Carlos Ruiz"
+description: "Now you can define a tree for any table that has Summary Level field (column name IsSummary)."
 tags: [functional]
 ---
 # Tree On Any Table

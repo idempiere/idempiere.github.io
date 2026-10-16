@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: "Support UOM On Inventory Move"
-description: "**Developer:** Diego Ruiz"
+description: "This new feature introduces the UOM and Qty Entered fields in Inventory Move Line."
 tags: [functional]
 ---
 # Support UOM On Inventory Move

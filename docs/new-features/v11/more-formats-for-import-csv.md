@@ -1,7 +1,7 @@
 ---
 sidebar_position: 16
 sidebar_label: "More Formats for Import CSV"
-description: "**Developer:** Carlos Ruiz"
+description: "More Formats for Import CSV: a New Feature in iDempiere 11."
 tags: [user-experience]
 ---
 # More Formats for Import CSV

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: "Improve toolbar, make it more configurable and extend it"
-description: "**Goal:** Functional - Usability"
+description: "The goal of the new feature is to improve the toolbar and make it more configurable and extend its functionality, with a show More option to hide the less..."
 tags: [user-experience]
 ---
 # Improve toolbar, make it more configurable and extend it

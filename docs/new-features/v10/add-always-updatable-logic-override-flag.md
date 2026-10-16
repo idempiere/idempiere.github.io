@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: "Add Always Updatable Logic Override Flag"
-description: "**Developer:** Deepak Pansheriya"
+description: "When defining a column you can define if a value is updatable or always updatable (when you want to update it even if the record is marked as processed)."
 tags: [functional]
 ---
 # Add Always Updatable Logic Override Flag

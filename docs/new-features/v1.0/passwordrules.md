@@ -1,7 +1,7 @@
 ---
 sidebar_position: 62
 sidebar_label: "Password Rules"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Supported on vt-password and vt-dictionary libraries by Middleware Services at Virginia Tech."
 tags: [security]
 ---
 # Password Rules

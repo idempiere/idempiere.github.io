@@ -1,7 +1,7 @@
 ---
 sidebar_position: 41
 sidebar_label: "Support Readonly Logic Set Pressed Logic Custom Toolbar Button"
-description: "**Goal:** Development"
+description: "Support Readonly Logic Set Pressed Logic Custom Toolbar Button: a New Feature in iDempiere 10."
 tags: [development]
 ---
 # Support Readonly Logic Set Pressed Logic Custom Toolbar Button

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: "Improved Document Sequence"
-description: "**Contributor:** Nicolas Micoud"
+description: "Sequences can restart every month and can be maintain by organization"
 tags: [functional]
 ---
 # Improved Document Sequence

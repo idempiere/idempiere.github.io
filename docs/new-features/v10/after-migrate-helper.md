@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: "After Migrate Helper"
-description: "**Developer:** Carlos Ruiz"
+description: "This process helps to find potential problems after migration scripts are applied."
 tags: [functional]
 ---
 # After Migrate Helper

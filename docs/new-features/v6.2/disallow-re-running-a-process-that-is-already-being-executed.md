@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: "Disallow re-running a process that is already being executed"
-description: "**Developers:** Diego Ruiz"
+description: "Sometimes when a user runs a heavy report/process more than once, the perfomance cost is really expensive."
 tags: [functional]
 ---
 # Disallow re-running a process that is already being executed

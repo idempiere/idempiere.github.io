@@ -1,7 +1,7 @@
 ---
 sidebar_position: 12
 sidebar_label: "Tree Driven by Search Key"
-description: "**Developer:** Nicolas Micoud, Carlos Ruiz"
+description: "Now you can define a tree to be driven by its Search key"
 tags: [functional]
 ---
 # Tree Driven by Search Key

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 28
 sidebar_label: "Validate Required Plugins"
-description: "**Developer:** Carlos Ruiz"
+description: "There are cases where a plugin is absolutely critical for the correct behavior of a server, if the plugin is missing or didn't start correctly the..."
 tags: [technical]
 ---
 # Validate Required Plugins

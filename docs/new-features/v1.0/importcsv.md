@@ -1,7 +1,7 @@
 ---
 sidebar_position: 33
 sidebar_label: "ImportCSV"
-description: "**Feature: Easy Import/Export CSV**"
+description: "Easy Import/Export CSV"
 tags: [user-experience]
 ---
 # ImportCSV

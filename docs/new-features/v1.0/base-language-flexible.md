@@ -1,7 +1,7 @@
 ---
 sidebar_position: 51
 sidebar_label: "Base Language Flexible"
-description: "**Seed Contributor:** Kenos"
+description: "Please refer &lt;http://sourceforge.net/p/adempiere/discussion/611158/thread/506d18af&gt;"
 tags: [technical]
 ---
 # Base Language Flexible

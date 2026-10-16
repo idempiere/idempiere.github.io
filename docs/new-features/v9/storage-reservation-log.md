@@ -1,7 +1,7 @@
 ---
 sidebar_position: 32
 sidebar_label: "Storage Reservation Log"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Storage Reservation Log: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
 # Storage Reservation Log

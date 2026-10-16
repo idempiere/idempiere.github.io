@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: "Implement notation @SQL for display logic"
-description: "**Developer:** Hieplq"
+description: "It is possible to base a display logic on a sql query, according to its result."
 tags: [functional]
 ---
 # Implement notation @SQL for display logic

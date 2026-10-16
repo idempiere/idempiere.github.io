@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: "Styles On Fields"
-description: "**Contributor:** [TrekGlobal](http://www.trekglobal.com/)"
+description: "Now you can set special css styles for fields in Windows."
 tags: [user-experience]
 ---
 # Styles On Fields

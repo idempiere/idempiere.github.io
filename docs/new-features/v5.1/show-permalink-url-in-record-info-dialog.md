@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: "Show Permalink URL in Record Info Dialog"
-description: "**Developer:** Carlos Ruiz"
+description: "This is related to feature Zoom From URL"
 tags: [user-experience]
 ---
 # Show Permalink URL in Record Info Dialog

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: "Show Report Parameters in Excel and HTML"
-description: "**Goal:** User Experience"
+description: "iDempiere can show now the execution parameters when reports are exported to excel and HTML."
 tags: [user-experience]
 ---
 # Show Report Parameters in Excel and HTML

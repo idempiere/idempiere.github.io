@@ -1,7 +1,7 @@
 ---
 sidebar_position: 49
 sidebar_label: "Window Customization"
-description: "**Contributor:** Dirk Niemeyer"
+description: "Customize for user the columns to show and the order in the window on grid mode"
 tags: [user-experience]
 ---
 # Window Customization

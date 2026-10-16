@@ -1,7 +1,7 @@
 ---
 sidebar_position: 54
 sidebar_label: "Use iDempiere Display/Reference Type In Jasper Report"
-description: "**Goal:** Development"
+description: "Allow the use of iDempiere's Display/Reference Type based rendering of data in Jasper Report."
 tags: [development]
 ---
 # Use iDempiere Display/Reference Type In Jasper Report

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 44
 sidebar_label: "JSON request and response support for Web Services"
-description: "**Goal:** Development"
+description: "JSON request and response support for Web Services: a New Feature in iDempiere 9."
 tags: [development]
 ---
 # JSON request and response support for Web Services

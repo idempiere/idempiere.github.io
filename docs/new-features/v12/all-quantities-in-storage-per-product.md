@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: "All Quantities in Storage Per Product"
-description: "**Developer:** Diego Ruiz"
+description: "When you want to know how many items of a product you have on hand, you can use the Storage Per Product report."
 tags: [functional]
 ---
 # All Quantities in Storage Per Product

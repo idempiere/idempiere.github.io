@@ -1,7 +1,7 @@
 ---
 sidebar_position: 16
 sidebar_label: "Label Feature"
-description: "**Developer:** Alan.lesc1 ([talk](https://wiki.idempiere.org/en/User_talk:Alan.lesc1))"
+description: "This feature should allow users to assign metadata (labels) to any iDempiere record."
 tags: [functional]
 ---
 # Label Feature

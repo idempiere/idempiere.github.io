@@ -1,7 +1,7 @@
 ---
 sidebar_position: 31
 sidebar_label: "Improved Form Layout"
-description: "**Goal:** User Experience"
+description: "Improved Form Layout: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
 # Improved Form Layout

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 56
 sidebar_label: "Storage Providers"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "This feature opens the posssibility to have more ways to save the attachments and archives in the system."
 tags: [technical]
 ---
 # Storage Providers

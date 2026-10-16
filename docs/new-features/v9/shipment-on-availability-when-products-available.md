@@ -1,7 +1,7 @@
 ---
 sidebar_position: 14
 sidebar_label: "Shipment On Availability When Products Available"
-description: "**Developer:** Lukas Heidbreder"
+description: "Shipment On Availability When Products Available: a New Feature in iDempiere 9."
 tags: [functional]
 ---
 # Shipment On Availability When Products Available

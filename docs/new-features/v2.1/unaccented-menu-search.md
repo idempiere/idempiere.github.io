@@ -1,7 +1,7 @@
 ---
 sidebar_position: 27
 sidebar_label: "Unaccented menu search"
-description: "**Developer:** Carlos Ruiz"
+description: "Unaccented menu search: a New Feature in iDempiere 2.1."
 tags: [user-experience]
 ---
 # Unaccented menu search

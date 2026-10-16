@@ -1,7 +1,7 @@
 ---
 sidebar_position: 66
 sidebar_label: "Safe Logout"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Safe Logout: a New Feature in iDempiere 1.0."
 tags: [security]
 ---
 # Safe Logout

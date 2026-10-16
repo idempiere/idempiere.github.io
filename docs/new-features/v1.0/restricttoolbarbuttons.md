@@ -1,7 +1,7 @@
 ---
 sidebar_position: 63
 sidebar_label: "Restrict Toolbar Buttons"
-description: "**Goal:** Security / Usability"
+description: "You can now easily restrict a toolbar button for a specific role, or a role in a window, or even for all windows ( system administrator only)."
 tags: [security]
 ---
 # Restrict Toolbar Buttons

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 23
 sidebar_label: "Request Calendar Dashboard"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "The \"Request Calendar\" allows the user to create, view and query quickly any request."
 tags: [functional]
 ---
 # Request Calendar Dashboard

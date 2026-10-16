@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: "Validate EMail Format"
-description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
+description: "In order to increase the data quality and avoid mistakes a basic validation is done now on EMail address to ensure it conforms to the syntax rules of RFC 822."
 tags: [functional]
 ---
 # Validate EMail Format

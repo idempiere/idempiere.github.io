@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: "Migrate an ID or UUID"
-description: "**Developers:** Carlos Ruiz"
+description: "This functionality allows to change the ID or UUID of a record."
 tags: [functional]
 ---
 # Migrate an ID or UUID

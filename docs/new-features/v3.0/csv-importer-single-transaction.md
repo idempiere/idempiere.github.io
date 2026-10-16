@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: "CSV Importer Single Transaction"
-description: "**Contributor:** Diego Ruiz - Thomas Bayen - BXService GmbH, Krefeld"
+description: "This new feature extends the functionality of the CSV Importer"
 tags: [user-experience]
 ---
 # CSV Importer Single Transaction

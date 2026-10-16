@@ -1,7 +1,7 @@
 ---
 sidebar_position: 23
 sidebar_label: "Run Report as Job"
-description: "**Goal:** User Experience"
+description: "Now the users can run reports and processes in background, just select the \"Run as Job\" flag and define your preferred notification method."
 tags: [user-experience]
 ---
 # Run Report as Job

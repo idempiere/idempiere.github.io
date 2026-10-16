@@ -1,7 +1,7 @@
 ---
 sidebar_position: 45
 sidebar_label: "Media View Interface for Report and Attachment Viewer"
-description: "**Goal:** Development"
+description: "Add media view interface for Report and Attachment Viewer."
 tags: [development]
 ---
 # Media View Interface for Report and Attachment Viewer

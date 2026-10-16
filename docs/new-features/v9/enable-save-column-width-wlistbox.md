@@ -1,7 +1,7 @@
 ---
 sidebar_position: 23
 sidebar_label: "Enable Save Column Width WListBox"
-description: "**Developer:** Flemming Birch"
+description: "Enable Save Column Width WListBox: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
 # Enable Save Column Width WListBox

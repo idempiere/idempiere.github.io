@@ -1,7 +1,7 @@
 ---
 sidebar_position: 38
 sidebar_label: "Annotated Process Parameters"
-description: "**Goal:** Development"
+description: "This feature was created in order to simplify the task of reading process parameters by using the new @Parameter annotation."
 tags: [development]
 ---
 # Annotated Process Parameters

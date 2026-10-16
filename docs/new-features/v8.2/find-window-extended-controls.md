@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: "Find Window Extended Controls"
-description: "**Goal:** Development - Usability"
+description: "Find Window Extended Controls: a New Feature in iDempiere 8.2."
 tags: [functional]
 ---
 # Find Window Extended Controls

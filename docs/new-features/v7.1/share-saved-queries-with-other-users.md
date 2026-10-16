@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: "Share saved queries with other users"
-description: "**Goal:** Functional - Usability"
+description: "The goal is to allow users to share some search filters with other users."
 tags: [user-experience]
 ---
 # Share saved queries with other users

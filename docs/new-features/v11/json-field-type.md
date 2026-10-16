@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 sidebar_label: "JSON Field Type"
-description: "**Developer:** Diego Ruiz - [BX Service GmbH](https://www.bx-service.com/)"
+description: "JSON is a commonly used data format with diverse applications in data interchange, including web applications communicating with servers."
 tags: [functional]
 ---
 # JSON Field Type

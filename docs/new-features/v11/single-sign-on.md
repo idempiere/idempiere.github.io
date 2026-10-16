@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: "Single Sign-On"
-description: "**Developer:** [Logilite Technologies](http://www.logilite.com/)"
+description: "iDempiere 11 has added support for single sign-On."
 tags: [functional]
 ---
 # Single Sign-On

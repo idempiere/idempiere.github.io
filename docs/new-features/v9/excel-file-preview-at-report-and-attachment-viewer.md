@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: "Excel File Preview at Report and Attachment Viewer"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Add Excel file (xls, xlsx and csv) preview support to report and attachment viewer."
 tags: [functional]
 ---
 # Excel File Preview at Report and Attachment Viewer

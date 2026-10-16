@@ -1,7 +1,7 @@
 ---
 sidebar_position: 27
 sidebar_label: "Info Window Select DeSelect All"
-description: "**Developer:** Carlos Ruiz"
+description: "The user can now select or de-select all records from all pages in the Info Windows."
 tags: [user-experience]
 ---
 # Info Window Select DeSelect All

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 26
 sidebar_label: "Theme Customization"
-description: "**Developer:**  Nicolas Micoud"
+description: "Objective of the ticket is to allow minor variations on themes."
 tags: [technical]
 ---
 # Theme Customization

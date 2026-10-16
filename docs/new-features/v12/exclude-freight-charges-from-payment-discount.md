@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: "Exclude Freight Charges from Payment Discount"
-description: "**Developer:** Diego Ruiz [BX Service GmbH](https://www.bx-service.com/)"
+description: "To improve the accuracy of payment discounts, a new flag IsExcludedFromDiscount was introduced on the Charge (C_Charge) table."
 tags: [functional]
 ---
 # Exclude Freight Charges from Payment Discount

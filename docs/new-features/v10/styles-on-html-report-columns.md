@@ -1,7 +1,7 @@
 ---
 sidebar_position: 32
 sidebar_label: "Styles On HTML Report columns"
-description: "**Goal:** UX/Functional"
+description: "cloudempiere, Takacs Peter, Design: Norbert Bede Review: CarlosRuiz"
 tags: [user-experience]
 ---
 # Styles On HTML Report columns

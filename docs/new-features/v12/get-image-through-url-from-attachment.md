@@ -1,7 +1,7 @@
 ---
 sidebar_position: 19
 sidebar_label: "Get image through url from attachment"
-description: "**Developer:**  Hengsin,"
+description: "This feature allow define in print format items image source from attachment with the next pattern."
 tags: [technical]
 ---
 # Get image through url from attachment

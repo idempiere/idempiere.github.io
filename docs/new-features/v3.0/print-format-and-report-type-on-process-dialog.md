@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: "Print Format and Report Type on Process Dialog"
-description: "**Goal:** User Experience"
+description: "Print Format and Report Type on Process Dialog: a New Feature in iDempiere 3.0."
 tags: [user-experience]
 ---
 # Print Format and Report Type on Process Dialog

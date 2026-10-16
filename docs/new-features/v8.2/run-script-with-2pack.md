@@ -1,7 +1,7 @@
 ---
 sidebar_position: 26
 sidebar_label: "Run Script with 2Pack"
-description: "**Developer:** Carlos Ruiz"
+description: "Pack In (2Pack) is now able to run scripts when being imported, two types of scripts are supported: Shell Scripts and JSR223 Scripts."
 tags: [technical]
 ---
 # Run Script with 2Pack

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 17
 sidebar_label: "Register Browser Information"
-description: "**Contributor:** Quality Systems & Solutions (GlobalQSS)"
+description: "Now you can find browser/timezone/screen information on the description of the AD_Session table."
 tags: [technical]
 ---
 # Register Browser Information

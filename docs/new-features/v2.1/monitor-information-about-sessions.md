@@ -1,7 +1,7 @@
 ---
 sidebar_position: 36
 sidebar_label: "Monitor Information About Sessions"
-description: "**Developer:** Nicolas Micoud"
+description: "Monitor Information About Sessions: a New Feature in iDempiere 2.1."
 tags: [technical]
 ---
 # Monitor Information About Sessions

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 53
 sidebar_label: "PostgreSQL Default to Native Dialect"
-description: "**Goal:** Development"
+description: "PostgreSQL Default to Native Dialect: a New Feature in iDempiere 9."
 tags: [development]
 ---
 # PostgreSQL Default to Native Dialect

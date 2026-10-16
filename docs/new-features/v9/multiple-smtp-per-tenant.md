@@ -1,7 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: "Multiple SMTP Per Tenant"
-description: "**Developer:**  Nicolas Micoud"
+description: "Since v9, is possible to define several SMTP servers per tenant."
 tags: [functional]
 ---
 # Multiple SMTP Per Tenant

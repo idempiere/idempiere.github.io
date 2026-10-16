@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: "Add User Session Process Instance"
-description: "**Developer:** Deepak Pansheriya"
+description: "Add session reference on process instance to analyze/audit process and users action sequence from process audit."
 tags: [functional]
 ---
 # Add User Session Process Instance

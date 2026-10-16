@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: "Export SQL Insert Scripts"
-description: "**Goal:** UX/Functional"
+description: "Export Current Row to SQL Insert Scripts"
 tags: [functional]
 ---
 # Export SQL Insert Scripts
