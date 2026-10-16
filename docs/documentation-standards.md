@@ -4,7 +4,6 @@ description: How to write and format pages for the iDempiere documentation, incl
 tags: [development]
 applies_to: all
 last_reviewed: 2026-10-10
-owner: norbertbede
 ---
 # Documentation standards
 
@@ -18,9 +17,9 @@ The rules apply to people and AI agents alike. Agents also follow the extra rule
 - All other headings are `##` or deeper. Do not skip levels, for example from `##` to `####`.
 - Open the page with one or two sentences that say what the page covers and who it is for.
 - After the opening sentences, state which iDempiere versions the page applies to, for example "Applies to iDempiere 9 and later."
+- New Feature pages are the exception: their **Version:** line states the version, so they do not need the sentence.
+- Do not set `title` in the frontmatter. It would duplicate the first heading. Many older pages still set it and will be cleaned up later.
 - Start from a [page template](#page-templates) when you create a new page.
-
-<!-- TODO: verify: about 445 pages also set `title` in frontmatter, and the New Feature template does too. Decide whether `title` in frontmatter is allowed, and if so, whether it must match the first heading. -->
 
 ## Frontmatter
 
@@ -33,7 +32,6 @@ description: Learn how to register a column callout in an iDempiere plug-in.
 tags: [development]
 applies_to: ">=9"
 last_reviewed: 2026-10-10
-owner: github-username
 ---
 ```
 
@@ -45,7 +43,6 @@ owner: github-username
 | `tags` | List of tag values | Groups pages on tag pages and on the version compare page. See [Tags](#tags). |
 | `applies_to` | Version range, see below | The iDempiere versions the page is valid for. |
 | `last_reviewed` | Date, `YYYY-MM-DD` | The last time someone checked the page against the current release. |
-| `owner` | GitHub username | The person to ask about the page. |
 
 ### Optional fields
 
@@ -55,6 +52,7 @@ owner: github-username
 | `sidebar_label` | Short text | Sidebar text when the title is too long. |
 | `deprecated_in` | Version, for example `"14"` | The release that deprecated the feature or approach. |
 | `superseded_by` | Path of the replacement page | Where readers should go instead. |
+| `owner` | GitHub username | Someone who knows the topic and can answer questions. Anyone can still change the page. |
 
 ### Version ranges
 
@@ -116,13 +114,19 @@ Write the name and give the code in code format the first time it appears: Compl
 | --- | --- |
 | Drafted | `DR` |
 | In Progress | `IP` |
+| Waiting Payment | `WP` |
+| Waiting Confirmation | `WC` |
+| Approved | `AP` |
+| Not Approved | `NA` |
 | Completed | `CO` |
 | Closed | `CL` |
 | Voided | `VO` |
 | Reversed | `RE` |
 | Invalid | `IN` |
-| Approved | `AP` |
-| Not Approved | `NA` |
+| Activated | `AC` |
+| Suspended | `SU` |
+| Canceled | `CA` |
+| Unknown | `??` |
 
 | Document action | Code |
 | --- | --- |
@@ -130,13 +134,21 @@ Write the name and give the code in code format the first time it appears: Compl
 | Prepare | `PR` |
 | Approve | `AP` |
 | Reject | `RJ` |
+| Post | `PO` |
 | Void | `VO` |
 | Close | `CL` |
 | Reverse - Correct | `RC` |
 | Reverse - Accrual | `RA` |
 | Re-activate | `RE` |
+| Invalidate | `IN` |
+| Unlock | `XL` |
+| Wait Complete | `WC` |
+| Activate | `AC` |
+| Suspend | `SU` |
+| Cancel | `CA` |
+| &lt;None&gt; | `--` |
 
-<!-- TODO: verify: confirm both lists against the current AD reference lists (_Document Status, _Document Action) before merge. -->
+The lists match the `_Document Status` and `_Document Action` reference lists in the Application Dictionary.
 
 ### System Configurator keys
 
@@ -231,15 +243,12 @@ Use Docusaurus admonitions for content that needs to stand out:
 - For SQL, say whether it is for PostgreSQL, Oracle or both. Show PostgreSQL first when only one is given.
 - Do not leave trailing spaces or runs of blank lines in code.
 
-## Screenshots and diagrams
+## Screenshots
 
 - Take screenshots in the GardenWorld demo Tenant, with the default theme and the `en_US` language, so pages look alike.
 - Crop to the part of the screen that matters.
 - Write alt text that says what the screenshot shows. Alt text is required.
-- Put images under `static/img/docs/<section>/` and reference them as `/img/docs/<section>/<file>.png`.
-- Prefer diagrams written as text over image files, so others can edit them.
-
-<!-- TODO: verify: Mermaid is not enabled on this site yet (@docusaurus/theme-mermaid). Enable it before requiring Mermaid diagrams. -->
+- Put images under `static/img/docs/<section>/` and reference them as `/img/docs/<section>/<file>.png`. Pages since iDempiere 13 use this path. Older pages under `static/img/new-features/` stay where they are.
 
 ## Page templates
 
@@ -262,46 +271,3 @@ Each pull request runs these checks on the pages it changes. For now they only w
 - **Vale** checks the words to avoid, em dashes and sentence-case headings. Rules: `styles/iDempiere/`.
 - **Frontmatter check** reports missing or invalid frontmatter fields. Run it locally with `npm run lint:frontmatter`.
 - **Link check** runs once a week on external links and reports broken ones.
-
-## Process
-
-:::info Proposal
-
-This section is a proposal for discussion in the community. It is not agreed yet.
-
-:::
-
-### Review
-
-A reviewer checks that a pull request:
-
-1. Follows this page.
-2. Has correct facts for the versions in `applies_to`.
-3. Builds without errors (`npm run build`).
-4. Has screenshots and code that match the text.
-
-### Ownership and review cycle
-
-- Each section of the site has one or more owners who review its pull requests.
-- The `owner` field names the person to ask about a page.
-- Owners review their pages at least every 12 months and update `last_reviewed`.
-
-### Deprecation
-
-When a feature or approach is deprecated:
-
-1. Set `deprecated_in` and, if there is one, `superseded_by` in the frontmatter.
-2. Add a `:::warning` at the top of the page that links to the replacement.
-3. Keep the page while supported releases still use the feature.
-
-### Docs or wiki
-
-- New and updated documentation goes on this site.
-- The [wiki](https://wiki.idempiere.org) keeps historical material, meeting notes and community pages.
-- When a wiki page moves here, link from the wiki page to the new page.
-
-### AI-assisted contributions
-
-- You may use AI tools to draft or edit pages.
-- You are responsible for every fact in the pull request. Check names, versions, keys and code against iDempiere before you open it.
-- Mark anything you could not check with `<!-- TODO: verify: ... -->` and mention it in the pull request.

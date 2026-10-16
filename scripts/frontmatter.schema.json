@@ -3,7 +3,7 @@
   "title": "Docs page frontmatter",
   "description": "See docs/documentation-standards.md#frontmatter.",
   "type": "object",
-  "required": ["description", "tags", "applies_to", "last_reviewed", "owner"],
+  "required": ["description", "tags", "applies_to", "last_reviewed"],
   "properties": {
     "description": { "type": "string", "minLength": 50, "maxLength": 160 },
     "tags": {

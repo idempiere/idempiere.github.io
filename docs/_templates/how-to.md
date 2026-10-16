@@ -4,7 +4,6 @@ description: <One sentence, 50 to 160 characters, that says what the reader can 
 tags: [<development | functional | technical>]
 applies_to: "<all | 12 | >=9 | 9-12>"
 last_reviewed: <YYYY-MM-DD>
-owner: <github-username>
 ---
 # <Task in the imperative, for example "Register a column callout in a plug-in">
 

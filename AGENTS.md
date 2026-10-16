@@ -83,6 +83,15 @@ The writing and formatting rules for all contributors are on the public page [`d
 
 Start new pages from a template in `docs/_templates/`.
 
+The rules agents break most often, as a summary. The standards page wins if the two differ.
+
+- Do not use em dashes (—). Use a period, a comma or a new sentence.
+- Do not use these words: seamlessly, streamline, leverage (as a verb), robust, utilize, empower, cutting-edge, game-changer, comprehensive (as filler), dive deep, dive into, delve, unlock potential, out of the box (unless it means a literal software default), best-in-class, revolutionize.
+- The first `#` heading is the page title. Do not set `title` in frontmatter. All other headings are `##` or deeper.
+- Use sentence case for headings. Proper nouns keep their capitals.
+- Capitalize iDempiere entities (Business Partner, Sales Order). Put a specific record in quotes ("Azalea Bush" Product). Use `=>` for subtab paths.
+- Use admonitions (`:::note`, `:::tip`, `:::info`, `:::warning`, `:::danger`), not bold warnings. Never use `:::caution`. Leave an empty line after the opening `:::` and before the closing `:::`.
+
 ***
 
 ## What to Do When Unsure

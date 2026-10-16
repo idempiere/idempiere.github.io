@@ -4,7 +4,6 @@ description: <One sentence, 50 to 160 characters, that says what the plug-in let
 tags: [<functional | technical | development>]
 applies_to: "<supported iDempiere versions, for example >=12>"
 last_reviewed: <YYYY-MM-DD>
-owner: <github-username>
 ---
 # <Plug-in name>
 

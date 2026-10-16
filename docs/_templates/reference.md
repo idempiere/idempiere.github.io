@@ -4,7 +4,6 @@ description: <One sentence, 50 to 160 characters, that says what this reference 
 tags: [<development | technical>]
 applies_to: "<all | 12 | >=9 | 9-12>"
 last_reviewed: <YYYY-MM-DD>
-owner: <github-username>
 ---
 # <What is listed, for example "Model factory settings">
 

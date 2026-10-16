@@ -4,7 +4,6 @@ description: <One sentence, 50 to 160 characters, that says what the reader will
 tags: [<development | functional | technical | architecture>]
 applies_to: "<all | 12 | >=9 | 9-12>"
 last_reviewed: <YYYY-MM-DD>
-owner: <github-username>
 ---
 # <Name of the concept, for example "Model factories">
 

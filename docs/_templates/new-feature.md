@@ -1,5 +1,4 @@
 ---
-title: <Feature title>
 sidebar_label: <Short label>
 sidebar_position: <next free number in the folder>
 description: <One sentence describing what the feature does.>
@@ -7,8 +6,9 @@ tags:
   - <functional | user-experience | technical | development | security | architecture>
 applies_to: "<first release with the feature, for example >=14>"
 last_reviewed: <YYYY-MM-DD>
-owner: <github-username>
 ---
+
+# <Feature title>
 
 :::warning Not Yet in Stable Release
 
