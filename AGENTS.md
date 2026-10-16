@@ -36,7 +36,7 @@ All documentation lives in `docs/`. The sidebar is **auto-generated** from the f
 - `docs/basic-development/` — Plugin development, contributing to core, 2Pack (position 40)
 - `docs/new-features/` — Features organized by version (`v13/`, `v14/`, `in-development/`) (position 50)
 - `docs/basic-functional/` — End-user guides (position 70)
-- `docs/Widgets & Quick Info/` — Widget and Quick Info 2pack documentation
+- `docs/widgets-quick-info/` — Widget and Quick Info 2pack documentation
 
 ### Category and Ordering
 
