@@ -123,9 +123,6 @@ Write the name and give the code in code format the first time it appears: Compl
 | Voided | `VO` |
 | Reversed | `RE` |
 | Invalid | `IN` |
-| Activated | `AC` |
-| Suspended | `SU` |
-| Canceled | `CA` |
 | Unknown | `??` |
 
 | Document action | Code |
@@ -143,12 +140,9 @@ Write the name and give the code in code format the first time it appears: Compl
 | Invalidate | `IN` |
 | Unlock | `XL` |
 | Wait Complete | `WC` |
-| Activate | `AC` |
-| Suspend | `SU` |
-| Cancel | `CA` |
 | &lt;None&gt; | `--` |
 
-The lists match the `_Document Status` and `_Document Action` reference lists in the Application Dictionary.
+The lists match the document status and action codes in iDempiere core (`DocAction.java`).
 
 ### System Configurator keys
 
