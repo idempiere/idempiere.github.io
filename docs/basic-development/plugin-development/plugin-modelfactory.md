@@ -9,7 +9,7 @@ description: Learn how to use the IModelFactory service to provide custom model 
 
 This guide explains how to use the **IModelFactory service** in your plug-in project to provide custom model classes for your tables.
 
-## 🎯 Goal
+## Goal
 
 The IModelFactory service allows you to provide your own model classes for custom tables. When properly configured, iDempiere will:
 
@@ -19,7 +19,7 @@ The IModelFactory service allows you to provide your own model classes for custo
 
 ---
 
-## 📚 Understanding Model Classes
+## Understanding Model Classes
 
 ### Class Naming Conventions: X_, I_, and M
 
@@ -67,7 +67,7 @@ Using your 3-letter table prefix (e.g., "EVE") makes it easier to identify custo
 
 ---
 
-## 🛠️ Implementing a Model Factory
+## Implementing a Model Factory
 
 ### What You Need
 
@@ -174,7 +174,7 @@ For detailed information, see [NF9_OSGi_New_Model_Factory](/docs/new-features/v9
 
 ---
 
-## 🗺️ Alternative: Map-Based Factory
+## Alternative: Map-Based Factory
 
 With a map-based factory, you declare associations using method references:
 
@@ -207,7 +207,7 @@ This approach provides a clean, declarative way to register multiple models.
 
 ---
 
-## 🔧 Generating Models for Custom Tables
+## Generating Models for Custom Tables
 
 If you're creating models for your own custom tables:
 
@@ -242,7 +242,7 @@ Make sure you use the correct upper/lower case when specifying the table name!
 
 ---
 
-## ❗ Troubleshooting
+## Troubleshooting
 
 If your model factory isn't working:
 
@@ -253,7 +253,7 @@ If your model factory isn't working:
 - ✅ **Console logs**: Check for any OSGi service registration errors
 ---
 
-## 📹 Video Tutorials
+## Video Tutorials
 
 For visual learners, check out these video explanations:
 
@@ -262,7 +262,7 @@ For visual learners, check out these video explanations:
 
 ---
 
-## 📖 Related Topics
+## Related Topics
 
 - [Creating Windows](../creating-windows.md)
 - [Plugin Process](plugin-process.md)

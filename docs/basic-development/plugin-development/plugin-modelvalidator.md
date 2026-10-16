@@ -7,7 +7,7 @@ sidebar_position: 8
 
 # Developing Plug-in Model Validators
 
-## 🎯 Goal
+## Goal
 
 This tutorial shows you how to develop **model validators** in your own plug-in, enabling you to add custom validation and business logic that executes during model operations.
 
@@ -32,7 +32,7 @@ For new development, consider using [Event Handlers](./plugin-eventhandler) as t
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 Before starting, review:
 
@@ -43,14 +43,14 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-## 🎥 Video Tutorial
+## Video Tutorial
 
 Watch this video walkthrough:  
 [https://www.youtube.com/watch?v=Dwjl8p1Xguw](https://www.youtube.com/watch?v=Dwjl8p1Xguw)
 
 ---
 
-## 📋 Creating a Model Validator
+## Creating a Model Validator
 
 ### Step 1: Create the Model Validator Class
 
@@ -177,7 +177,7 @@ The `type` parameter in `modelChange()` can be:
 
 ---
 
-## 🔧 Registering Your Model Validator
+## Registering Your Model Validator
 
 ### Using a Model Validator Factory
 
@@ -263,7 +263,7 @@ The `service.ranking` property determines the priority for OSGi service lookup. 
 
 ---
 
-## ⚙️ Configuring Your Model Validator in iDempiere
+## Configuring Your Model Validator in iDempiere
 
 ### Creating a Model Validator Record
 
@@ -280,7 +280,7 @@ The validator will be automatically activated when the system starts.
 
 ---
 
-## 🧪 Testing Your Model Validator
+## Testing Your Model Validator
 
 1. Deploy your plug-in to iDempiere
 2. Ensure your plug-in is set to auto-start in the Run Configuration
@@ -299,7 +299,7 @@ log.warning("Validation failed: Missing required field");
 
 ---
 
-## 🔄 Model Validator vs Event Handler
+## Model Validator vs Event Handler
 
 Both approaches serve similar purposes but have different characteristics:
 
@@ -317,7 +317,7 @@ For new plug-in development, consider using **[Event Handlers](./plugin-eventhan
 
 ---
 
-## 🔗 Related Resources
+## Related Resources
 
 - [ModelValidator Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/compiere/model/ModelValidator.java)
 - [IModelValidatorFactory Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/IModelValidatorFactory.java)

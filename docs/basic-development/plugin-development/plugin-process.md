@@ -7,7 +7,7 @@ sidebar_position: 4
 
 # Developing Plug-in Processes
 
-## 🎯 Goal
+## Goal
 
 This tutorial shows you how to develop **processes** within your own plug-in, enabling you to create custom business logic that users can execute on demand.
 
@@ -31,7 +31,7 @@ A **process** in iDempiere is a unit of business logic that performs specific op
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 Before starting, review:
 
@@ -42,7 +42,7 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-## 📋 Creating a Process
+## Creating a Process
 
 ### Step 1: Create the Process Class
 
@@ -98,7 +98,7 @@ For a complete working example, see:
 
 ---
 
-## 📋 Registering Your Process
+## Registering Your Process
 
 ### Modern Approach (iDempiere 9+): Mapped Process Factory
 
@@ -288,7 +288,7 @@ Service-Component: OSGI-INF/*.xml
 
 ---
 
-## 📥 Reading Process Parameters
+## Reading Process Parameters
 
 ### Using @Parameter Annotation (Recommended)
 
@@ -355,7 +355,7 @@ public class MyProcess extends SvrProcess {
 
 ---
 
-## 📝 Logging Information
+## Logging Information
 
 ### Using CLogger
 
@@ -410,7 +410,7 @@ If the table ID and record ID are valid, this creates a clickable link in the pr
 
 ---
 
-## ⚠️ Error Handling
+## Error Handling
 
 ### Returning Status Messages
 
@@ -450,7 +450,7 @@ In the **Process Audit** window:
 
 ---
 
-## 💬 Interacting with Users
+## Interacting with Users
 
 ### Asking Yes/No Questions
 
@@ -555,7 +555,7 @@ The `askForSecretInput()` method works exactly like `askForInput()`, but display
 
 ---
 
-## 🧪 Testing Your Process
+## Testing Your Process
 
 1. Deploy your plug-in to iDempiere
 2. Create a new process record in the **Process** window (`AD_Process`)
@@ -566,7 +566,7 @@ The `askForSecretInput()` method works exactly like `askForInput()`, but display
 
 ---
 
-## 📦 Exporting Your Plug-in
+## Exporting Your Plug-in
 
 Before exporting:
 
@@ -576,14 +576,14 @@ Before exporting:
 
 ---
 
-## 🎥 Video Tutorial
+## Video Tutorial
 
 Watch this video walkthrough:  
 [https://www.youtube.com/watch?v=5SDqnbYrpQc](https://www.youtube.com/watch?v=5SDqnbYrpQc)
 
 ---
 
-## 🔗 Related Resources
+## Related Resources
 
 - [SvrProcess Class](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/compiere/process/SvrProcess.java)
 - [IProcessFactory Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/IProcessFactory.java)

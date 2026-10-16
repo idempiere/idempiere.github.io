@@ -11,7 +11,7 @@ This guide explains how to use **OSGi Declarative Service (DS) annotations** to 
 
 ---
 
-## 📖 Reference Links
+## Reference Links
 
 - [Improvements in Declarative Services from Eclipse Oxygen](https://www.eclipse.org/eclipse/news/4.7/platform.php#ds-annotations)
 - [OSGi Declarative Services Annotations Documentation](https://docs.osgi.org/specification/osgi.cmpn/7.0.0/service.component.html)
@@ -21,7 +21,7 @@ Eclipse has also modified the Felix SCR (Service Component Runtime) to make the 
 
 ---
 
-## 🛠️ How to Use DS Annotations
+## How to Use DS Annotations
 
 ### 1. Eclipse Version
 

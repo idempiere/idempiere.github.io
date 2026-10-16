@@ -163,7 +163,7 @@ git push origin main
 
 ---
 
-## ✅ Best Practices
+## Best Practices
 
 - Create one branch per feature or fix.
 - Keep commit messages short and descriptive.

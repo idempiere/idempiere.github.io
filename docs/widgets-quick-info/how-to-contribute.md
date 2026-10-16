@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 # Contribute Quick Info Widgets
 
-## 📂 File Structure
+## File Structure
 
 1. Place your `.zip` files in the `static/downloads/` folder.
 2. Place your images in the `static/downloads/img/quick-infos` folder.
