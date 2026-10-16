@@ -1,0 +1,40 @@
+# Sentence-case headings: docs/documentation-standards.md#headings
+# iDempiere entity names keep their capitals, so they are listed as exceptions.
+extends: capitalization
+message: "Use sentence case for '%s'."
+level: warning
+scope: heading
+match: $sentence
+exceptions:
+  - ADempiere
+  - AI
+  - API
+  - Application Dictionary
+  - Business Partner
+  - Compiere
+  - CSV
+  - Docker
+  - Docusaurus
+  - Eclipse
+  - GardenWorld
+  - Git
+  - GitHub
+  - IDEMPIERE
+  - iDempiere
+  - Java
+  - JasperReports
+  - Jira
+  - Maven
+  - Oracle
+  - Organization
+  - OSGi
+  - PostgreSQL
+  - Product
+  - REST
+  - Sales Order
+  - SQL
+  - System Configurator
+  - Tenant
+  - Tycho
+  - ZK
+  - 2Pack
