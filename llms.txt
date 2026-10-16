@@ -281,3 +281,7 @@ This file contains links to documentation sections following the llmstxt.org sta
 - [Virtual Column Lazy Loading](https://docs.idempiere.org/docs/new-features/v9/virtual-column-lazy-loading.md): **Goal:** Development
 - [Warehouse on Inventory Move to filter Locators](https://docs.idempiere.org/docs/new-features/v9/warehouse-on-inventory-move-to-filter-locators.md): **Developer:** Logilite Technologies
 - [Wizard Chosen Multiple Selection List Editor](https://docs.idempiere.org/docs/new-features/v9/wizard-chosen-multiple-selection-list-editor.md): **Developer:** Nicolas Micoud
+- [iDempiere 10 changelog](https://docs.idempiere.org/docs/release-changelogs/v10.md): Bug fixes and non-disruptive features integrated into the iDempiere 10 stable release, listed by date from newest to oldest.
+- [iDempiere 11 changelog](https://docs.idempiere.org/docs/release-changelogs/v11.md): Bug fixes and non-disruptive features integrated into the iDempiere 11 stable release, listed by date from newest to oldest.
+- [iDempiere 12 changelog](https://docs.idempiere.org/docs/release-changelogs/v12.md): Bug fixes and non-disruptive features integrated into the iDempiere 12 stable release, listed by date from newest to oldest.
+- [iDempiere 13 changelog](https://docs.idempiere.org/docs/release-changelogs/v13.md): Bug fixes and non-disruptive features integrated into the iDempiere 13 stable release, listed by date from newest to oldest.
