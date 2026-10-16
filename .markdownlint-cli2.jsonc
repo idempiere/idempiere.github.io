@@ -5,8 +5,8 @@
     "default": true,
     // Heading levels: one # title, no skipped levels.
     "MD001": true,
-    // A frontmatter title counts as the page title (New Feature pages use it).
-    // Whether a page may have both is still open; see the standards page.
+    // The first # heading is the page title. Ignore a frontmatter title, so
+    // older pages that still set one are not flagged for two titles.
     "MD025": { "front_matter_title": "" },
     // The same heading text is fine under different parents.
     "MD024": { "siblings_only": true },

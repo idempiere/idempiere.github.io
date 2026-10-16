@@ -57,6 +57,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # v24 runs markdownlint-cli2 0.23.2, the same version as npm run lint:md.
       - uses: DavidAnson/markdownlint-cli2-action@v24
         # Warn only: keep the annotations, do not fail the job.
         continue-on-error: true
@@ -73,11 +74,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
+      # Install only the two libraries the check needs, not the whole site.
+      - name: Install js-yaml and ajv
+        run: npm install --no-save --no-package-lock --prefix "$RUNNER_TEMP/fm" js-yaml@^4.3.2 ajv@^8.20.0
       - name: Check frontmatter
         env:
           FILES: ${{ needs.changed.outputs.files }}
+          NODE_PATH: ${{ runner.temp }}/fm/node_modules
         run: |
           mapfile -t pages <<< "$FILES"
           node scripts/check-frontmatter.js "${pages[@]}"
@@ -93,6 +96,8 @@ jobs:
         with:
           version: 3.24.0
           files: docs
-          # Only report lines the pull request adds or changes.
+          # Only report lines the pull request adds or changes. The default
+          # reporter (github-pr-annotations) writes workflow commands and
+          # needs no write access to the pull request.
           filter_mode: added
           fail_on_error: false
