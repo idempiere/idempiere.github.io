@@ -51,6 +51,12 @@ const config = {
   plugins: [
     require.resolve('docusaurus-lunr-search'),
     [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: require('./redirects.js'),
+      },
+    ],
+    [
       '@docusaurus/plugin-pwa',
       {
         offlineModeActivationStrategies: [
