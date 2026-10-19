@@ -81,6 +81,7 @@ If the change alters existing behavior, removes something, or requires action fr
 3. Headings are sentence case, `##` or deeper, and short.
 4. Admonitions have an empty line after the opening and before the closing `:::`. No `:::caution`.
 5. No TODO comments left that the user has not seen.
+6. A new page must pass the pull request checks. Run `node scripts/check-frontmatter.js --strict <page>` and `npx --yes markdownlint-cli2@0.23.2 <page>`, and fix every problem they report.
 
 ## 7. Commit and pull request
 

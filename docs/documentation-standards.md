@@ -28,7 +28,7 @@ The rules apply to people and AI agents alike. Agents also follow the extra rule
 
 ## Frontmatter
 
-Every page starts with a YAML frontmatter block. The automatic check reports missing or invalid fields as warnings.
+Every page starts with a YAML frontmatter block. The automatic check reports missing or invalid fields. See [What blocks a merge](#what-blocks-a-merge).
 
 ```yaml title="docs/basic-development/plugin-development/plugin-callouts.md"
 ---
@@ -264,9 +264,24 @@ Copy a template from [`docs/_templates/`](https://github.com/idempiere/idempiere
 
 ## Automatic checks
 
-Each pull request runs these checks on the pages it changes. For now they only warn and do not block the merge.
+Each pull request runs these checks on the pages it changes. Findings show up as annotations on the pull request.
 
 - **markdownlint** checks heading levels, list style and trailing spaces. Configuration: `.markdownlint-cli2.jsonc`.
 - **Vale** checks the words to avoid, em dashes and sentence-case headings. Rules: `styles/iDempiere/`.
 - **Frontmatter check** reports missing or invalid frontmatter fields. Run it locally with `npm run lint:frontmatter`.
 - **Link check** runs once a week on external links and reports broken ones.
+
+### What blocks a merge
+
+A new page must pass all checks:
+
+- markdownlint finds no problems.
+- The frontmatter has every required field, in the right format.
+- Vale finds no em dashes and no words to avoid.
+
+On a page that already exists, the pull request only has to keep its own changes clean:
+
+- Vale finds no em dashes and no words to avoid on the lines you add or change.
+- Frontmatter fields that are set have the right format, for example `last_reviewed: 2026-10-19` or `applies_to: ">=9"`.
+
+Everything else on an existing page, such as a missing frontmatter field or an older markdownlint problem, is a warning. Fix it when you can, but it does not block the merge. Set `applies_to` and `last_reviewed` only after you have checked the page against the current release.
