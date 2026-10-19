@@ -78,13 +78,17 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v24
         with:
           globs: ${{ needs.changed.outputs.new }}
+      # Warn only. The action reports every finding as a failure annotation,
+      # so run the CLI and turn its findings into warnings.
       - name: Changed pages
-        if: needs.changed.outputs.changed != ''
-        uses: DavidAnson/markdownlint-cli2-action@v24
-        # Warn only: keep the annotations, do not fail the job.
-        continue-on-error: true
-        with:
-          globs: ${{ needs.changed.outputs.changed }}
+        if: ${{ !cancelled() && needs.changed.outputs.changed != '' }}
+        env:
+          FILES: ${{ needs.changed.outputs.changed }}
+        run: |
+          mapfile -t pages <<< "$FILES"
+          npx --yes markdownlint-cli2@0.23.2 "${pages[@]}" 2>&1 \
+            | sed -nE 's/^([^: ]+):([0-9]+)(:[0-9]+)? error (.*)$/::warning file=\1,line=\2,title=markdownlint::\4/p' \
+            || true
 
   frontmatter:
     name: Frontmatter
@@ -108,7 +112,7 @@ jobs:
           mapfile -t pages <<< "$FILES"
           node scripts/check-frontmatter.js --strict "${pages[@]}"
       - name: Changed pages
-        if: needs.changed.outputs.changed != ''
+        if: ${{ !cancelled() && needs.changed.outputs.changed != '' }}
         env:
           FILES: ${{ needs.changed.outputs.changed }}
           NODE_PATH: ${{ runner.temp }}/fm/node_modules
