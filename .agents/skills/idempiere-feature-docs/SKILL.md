@@ -58,7 +58,7 @@ If the change alters existing behavior, removes something, or requires action fr
   - `technical-notes.md`: developers and administrators.
   - `functional-notes.md`: consultants and functional users.
   - `removed-deprecated-apis.md`: removed or deprecated APIs, for plugin developers.
-- If the file does not exist yet for that version, ask the user before creating it. Copy the front matter style from the same file in the previous version folder.
+- If the file does not exist yet for that version, ask the user before creating it. Copy the front matter style from the same file in the previous version folder, and add `applies_to: "<NN>"` and `last_reviewed: <today>`. Older files lack these two fields, and the checks fail a new page without them.
 - Add one `##` section per change. The version compare page treats each `##` section as one note.
 - Start the section with one plain prose paragraph that summarizes the change. The compare page shows that first paragraph as the summary and skips lists, code, tables and admonitions.
 - After the summary, explain who is affected and the required action, as numbered steps when order matters.
