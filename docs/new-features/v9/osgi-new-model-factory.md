@@ -1,7 +1,7 @@
 ---
+description: "A model factory base class backed by a map and lambdas, and a @Model annotation that registers model classes in a plug-in automatically."
 sidebar_position: 51
 sidebar_label: "OSGi New Model Factory"
-description: "OSGi New Model Factory and Model Annotations"
 tags: [development]
 ---
 # OSGi New Model Factory

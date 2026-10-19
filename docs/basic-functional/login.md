@@ -1,5 +1,5 @@
 ---
-description: "Understand the iDempiere login concepts so you can log in to the system."
+description: "Log in to iDempiere and choose your Tenant, Role and Organization."
 sidebar_position: 10
 ---
 
