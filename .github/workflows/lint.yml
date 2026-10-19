@@ -1,8 +1,14 @@
 name: Docs checks
 
 # Checks pages changed in a pull request against the Documentation standards
-# (docs/documentation-standards.md). All checks only warn for now: findings
-# show up as annotations and never fail the pull request.
+# (docs/documentation-standards.md). Findings show up as annotations.
+#
+# What fails the pull request:
+# - New pages: every markdownlint and frontmatter problem.
+# - All pages: Vale errors (em dashes, words to avoid) on the lines the pull
+#   request adds, and frontmatter in the wrong format or not valid YAML.
+# Everything else on pages that already existed only warns, so a small fix
+# to an older page does not have to clean up the whole page.
 
 on:
   pull_request:
@@ -28,6 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       files: ${{ steps.diff.outputs.files }}
+      new: ${{ steps.diff.outputs.new }}
+      changed: ${{ steps.diff.outputs.changed }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -36,19 +44,26 @@ jobs:
         env:
           BASE_REF: ${{ github.base_ref }}
         run: |
-          # On a manual run, check every page.
+          # On a manual run, check every page and treat none as new.
           if [ -n "$BASE_REF" ]; then
             git diff --name-only --diff-filter=ACMR "origin/$BASE_REF...HEAD" -- 'docs/*.md' 'docs/*.mdx' > files.txt
+            git diff --name-only --diff-filter=A "origin/$BASE_REF...HEAD" -- 'docs/*.md' 'docs/*.mdx' > added.txt
           else
             git ls-files -- 'docs/*.md' 'docs/*.mdx' > files.txt
+            : > added.txt
           fi
-          grep -v '^docs/_' files.txt > pages.txt || true
-          echo "Pages to check: $(wc -l < pages.txt)"
-          {
-            echo 'files<<EOF'
-            cat pages.txt
-            echo 'EOF'
-          } >> "$GITHUB_OUTPUT"
+          # Files and folders that start with _ are not published.
+          grep -v '/_' files.txt > pages.txt || true
+          grep -v '/_' added.txt > new.txt || true
+          grep -vxF -f new.txt pages.txt > changed.txt || true
+          echo "Pages to check: $(wc -l < pages.txt), new: $(wc -l < new.txt)"
+          for name in files:pages new:new changed:changed; do
+            {
+              echo "${name%%:*}<<EOF"
+              cat "${name#*:}.txt"
+              echo 'EOF'
+            } >> "$GITHUB_OUTPUT"
+          done
 
   markdownlint:
     name: markdownlint
@@ -58,11 +73,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # v24 runs markdownlint-cli2 0.23.2, the same version as npm run lint:md.
-      - uses: DavidAnson/markdownlint-cli2-action@v24
+      - name: New pages
+        if: needs.changed.outputs.new != ''
+        uses: DavidAnson/markdownlint-cli2-action@v24
+        with:
+          globs: ${{ needs.changed.outputs.new }}
+      - name: Changed pages
+        if: needs.changed.outputs.changed != ''
+        uses: DavidAnson/markdownlint-cli2-action@v24
         # Warn only: keep the annotations, do not fail the job.
         continue-on-error: true
         with:
-          globs: ${{ needs.changed.outputs.files }}
+          globs: ${{ needs.changed.outputs.changed }}
 
   frontmatter:
     name: Frontmatter
@@ -77,13 +99,22 @@ jobs:
       # Install only the two libraries the check needs, not the whole site.
       - name: Install js-yaml and ajv
         run: npm install --no-save --no-package-lock --prefix "$RUNNER_TEMP/fm" js-yaml@^4.3.2 ajv@^8.20.0
-      - name: Check frontmatter
+      - name: New pages
+        if: needs.changed.outputs.new != ''
         env:
-          FILES: ${{ needs.changed.outputs.files }}
+          FILES: ${{ needs.changed.outputs.new }}
           NODE_PATH: ${{ runner.temp }}/fm/node_modules
         run: |
           mapfile -t pages <<< "$FILES"
-          node scripts/check-frontmatter.js "${pages[@]}"
+          node scripts/check-frontmatter.js --strict "${pages[@]}"
+      - name: Changed pages
+        if: needs.changed.outputs.changed != ''
+        env:
+          FILES: ${{ needs.changed.outputs.changed }}
+          NODE_PATH: ${{ runner.temp }}/fm/node_modules
+        run: |
+          mapfile -t pages <<< "$FILES"
+          node scripts/check-frontmatter.js --fail-invalid "${pages[@]}"
 
   vale:
     name: Vale
@@ -100,4 +131,6 @@ jobs:
           # reporter (github-pr-annotations) writes workflow commands and
           # needs no write access to the pull request.
           filter_mode: added
-          fail_on_error: false
+          # Fails on rules with level: error (EmDash, AvoidWords). Warnings
+          # and suggestions stay annotations.
+          fail_on_error: true
