@@ -6,6 +6,8 @@ tags: [development]
 ---
 # OSGi New Model Factory
 
+This page describes the feature as introduced in iDempiere 9. For the current guide, see [Using IModelFactory in Plug-ins](/docs/basic-development/plugin-development/plugin-modelfactory).
+
 **Feature:** OSGi New Model Factory and Model Annotations
 
 **Goal:** Development
