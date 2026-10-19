@@ -1,17 +1,6 @@
 # Business Partner
 
-> A customer is a subject or entity that accesses resources, products or services
-> provided by another. For business, the customer is the individual who, through a
-> financial transaction, acquires a product and / or
-> service of any kind (technological, gastronomic, decorative, furniture or property,
-> etc.). A customer is synonymous with a buyer or consumer.
-> A customer corresponds to a business partner with whom the company makes
-> sales transactions and of which special information such as account statements,
-> credit quota, discounts granted, price list, among others are needed. In
-> iDempiere, the qualification of the Customer is granted to a business
-> partner created, for which you will see that the windows and the concepts will
-> always refer to the Business Partner. The above means that a Business Partner can
-> be marked as a customer and in turn as an employee and as a vendor (supplier).
+> What a Business Partner is in iDempiere (vendors, customers, employees and more) and how to create one.
 
 ## Introduction
 Business Partner is the generic name for all the people/companies with a business
@@ -33,6 +22,19 @@ Menu: **Partner Relations -> Business Partner Rules -> Business Partner **
 ## Customers
 
 ### Introduction
+
+A customer is a subject or entity that accesses resources, products or services
+provided by another. For business, the customer is the individual who, through a
+financial transaction, acquires a product and / or
+service of any kind (technological, gastronomic, decorative, furniture or property,
+etc.). A customer is synonymous with a buyer or consumer.
+A customer corresponds to a business partner with whom the company makes
+sales transactions and of which special information such as account statements,
+credit quota, discounts granted, price list, among others are needed. In
+iDempiere, the qualification of the Customer is granted to a business
+partner created, for which you will see that the windows and the concepts will
+always refer to the Business Partner. The above means that a Business Partner can
+be marked as a customer and in turn as an employee and as a vendor (supplier).
 
 ### Business Partner Group
 

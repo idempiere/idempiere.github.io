@@ -1,10 +1,12 @@
 # Field Event Rules
 
-> - **Maintainer:** Diego Ruiz - BX Service GmbH
-> - **Sponsor:** [Energy Kinetics, Inc.](https://energykinetics.com/)
-> - **Status:** Beta, not tested in production
-> - **License:** GPLv2
-> - **Sources:** [GitHub](https://github.com/bxservice/de.bxservice.fieldEventRules)
+> Field Event Rules let you define "when this field changes, do that" logic in the Application Dictionary without writing Java code.
+
+- **Maintainer:** Diego Ruiz - BX Service GmbH
+- **Sponsor:** [Energy Kinetics, Inc.](https://energykinetics.com/)
+- **Status:** Beta, not tested in production
+- **License:** GPLv2
+- **Sources:** [GitHub](https://github.com/bxservice/de.bxservice.fieldEventRules)
 
 Field Event Rules let you define "when this field changes, do that" logic directly inside the iDempiere Application Dictionary without writing Java code, installing plugins, or touching an IDE.
 

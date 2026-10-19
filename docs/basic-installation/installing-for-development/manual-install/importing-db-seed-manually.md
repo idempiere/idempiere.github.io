@@ -1,10 +1,12 @@
 # Importing DB Seed Manually
 
-> Let's check the steps to create an iDempiere PostgreSQL database:
+> Import the iDempiere seed database manually when you set up iDempiere to run in Eclipse.
 
 :::info
 This procedure is intended for technical people wanting to configure iDempiere to run in Eclipse. There is an easier mechanism on the installers to create the database.
 :::
+
+Let's check the steps to create an iDempiere PostgreSQL database:
 
 ## Set a Password for the postgres User
 

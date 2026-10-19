@@ -1,6 +1,8 @@
 # Building iDempiere without Eclipse
 
-> It is possible to build iDempiere without Eclipse; you just need `openjdk-17-jdk`.
+> Clone the iDempiere code and build it from the command line without Eclipse.
+
+It is possible to build iDempiere without Eclipse; you just need `openjdk-17-jdk`.
 
 ## Clone iDempiere code
 

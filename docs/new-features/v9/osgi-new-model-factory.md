@@ -1,6 +1,8 @@
 # OSGi New Model Factory
 
-> OSGi New Model Factory and Model Annotations
+> A model factory base class backed by a map and lambdas, and a @Model annotation that registers model classes in a plug-in automatically.
+
+This page describes the feature as introduced in iDempiere 9. For the current guide, see [Using IModelFactory in Plug-ins](/docs/basic-development/plugin-development/plugin-modelfactory).
 
 **Feature:** OSGi New Model Factory and Model Annotations
 

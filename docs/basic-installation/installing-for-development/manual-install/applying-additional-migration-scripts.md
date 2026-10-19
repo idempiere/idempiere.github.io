@@ -1,8 +1,10 @@
 # Applying Additional Migration Scripts
 
-> In the console, go to the `$IDEMPIERE_REPOSITORY` folder and execute:
+> Apply additional migration scripts to your development database, either the automated way or manually.
 
 ## Automated way
+
+In the console, go to the `$IDEMPIERE_REPOSITORY` folder and execute:
 
 ```bash
 bash RUN_SyncDBDev.sh

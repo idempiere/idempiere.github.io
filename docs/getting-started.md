@@ -1,6 +1,8 @@
 # Getting Started
 
-> Welcome to iDempiere! This guide will help you quickly get started with the system by walking you through the essential first steps.
+> A first walk through iDempiere: the home screen, basic actions and where to get help.
+
+Welcome to iDempiere! This guide will help you quickly get started with the system by walking you through the essential first steps.
 
 If you have questions, comments or concerns about this page, please add them at the bottom of this page. We review all discussion notes weekly.
 

@@ -1,6 +1,8 @@
 # Downloading Installer
 
-> iDempiere version 13 is maintained and stable. This is the recommended version to install for implementation and production purposes.
+> Where to download the iDempiere installers: the current stable release, daily development builds and previous releases.
+
+iDempiere version 13 is maintained and stable. This is the recommended version to install for implementation and production purposes.
 
 You can find daily installers for this version at [https://sourceforge.net/projects/idempiere/files/v13/daily-server/](https://sourceforge.net/projects/idempiere/files/v13/daily-server/)
 

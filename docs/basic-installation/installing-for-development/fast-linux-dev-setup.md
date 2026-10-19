@@ -1,6 +1,8 @@
 # Fast Linux Development Setup (Alternative)
 
-> There is an alternative for quickly creating an iDempiere development environment on Linux, maintained by Heng Sin:
+> An alternative way to create an iDempiere development environment on Linux, with scripts maintained by Heng Sin.
+
+There is an alternative for quickly creating an iDempiere development environment on Linux, maintained by Heng Sin:
 
 - [hengsin/idempiere-dev-setup](https://github.com/hengsin/idempiere-dev-setup)
 

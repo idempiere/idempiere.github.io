@@ -1,7 +1,9 @@
 # Quick Info 2packs
 
-> Quick Info widgets provide **contextual, real-time information** inside iDempiere without navigating away from the record you’re working on.  
-> They are installed using **2pack files** and can be enabled per window or table.
+> The available Quick Info widget 2Packs from the community, which show contextual information inside iDempiere without leaving the record.
+
+Quick Info widgets provide **contextual, real-time information** inside iDempiere without navigating away from the record you’re working on.  
+They are installed using **2pack files** and can be enabled per window or table.
 
 ## Getting Started
 

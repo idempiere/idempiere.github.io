@@ -1,11 +1,15 @@
 # Docker
 
-> The purpose of this page is to help you get iDempiere up and running with docker. For more advanced iDempiere docker topic see the [idempiere-docker](https://github.com/idempiere/idempiere-docker) github page.
+> Get iDempiere up and running with Docker or Docker Compose.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+
+
 ## Purpose
+
+The purpose of this page is to help you get iDempiere up and running with docker. For more advanced iDempiere docker topic see the [idempiere-docker](https://github.com/idempiere/idempiere-docker) github page.
 
 ## Docker Quick Start
 iDempiere Docker uses a postgres admin password and user to create a clean database, example `POSTGRES_PASSWORD=postgres`

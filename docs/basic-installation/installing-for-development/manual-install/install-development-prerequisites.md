@@ -1,6 +1,8 @@
 # Install Development Prerequisites
 
-> These prerequisites apply both for release 13 and for development.
+> Install the prerequisites for iDempiere development: Ubuntu, PostgreSQL 17, git, OpenJDK 17 and Eclipse.
+
+These prerequisites apply both for release 13 and for development.
 
 The examples on this guide are using the following versions:
 

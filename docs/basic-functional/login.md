@@ -1,6 +1,6 @@
 # Login - Access to the system
 
-> The first step of the login process focuses on authentication (who are you) and language preference.
+> Log in to iDempiere and choose your Tenant, Role and Organization.
 
 The purpose of this page is to help you understand login concepts. As a result of reading this page, you should be able to log into iDempiere.
 Navigation in iDempiere is one of the great benefits that it offers since its interface is very
@@ -10,6 +10,8 @@ system you may use any browser (Chrome, Firefox, Safari ...) by entering the URL
 provided.
 
 ## Login to the system - Authentication
+
+The first step of the login process focuses on authentication (who are you) and language preference.
 
 You have to enter your User name (or EMail in some cases) and a Password. It must be correct including look at capital and small letters.
 

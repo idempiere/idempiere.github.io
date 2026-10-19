@@ -1,6 +1,8 @@
 # Creating a New Window in iDempiere
 
-> This guide walks you through the complete process of creating a new Window in iDempiere, from database table creation to menu integration.
+> Create a new window in iDempiere: create the table, configure the columns, build the window, add it to the menu and give roles access.
+
+This guide walks you through the complete process of creating a new Window in iDempiere, from database table creation to menu integration.
 
 ## Overview
 

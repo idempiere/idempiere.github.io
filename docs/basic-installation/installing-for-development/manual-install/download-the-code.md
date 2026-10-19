@@ -1,8 +1,10 @@
 # Download the Code
 
-> iDempiere sources are hosted at [GitHub](https://github.com/idempiere/idempiere). You can download the complete project with:
+> Clone the iDempiere source code from GitHub, set the working version and keep your copy up to date.
 
 ## Cloning iDempiere
+
+iDempiere sources are hosted at [GitHub](https://github.com/idempiere/idempiere). You can download the complete project with:
 
 ```bash
 cd $HOME/sources

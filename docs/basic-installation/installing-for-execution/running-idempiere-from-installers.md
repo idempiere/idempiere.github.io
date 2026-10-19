@@ -1,8 +1,10 @@
 # Running iDempiere from Installers
 
-> Once installed and configured the iDempiere server you can start it with:
+> Start an iDempiere server installed from the installers, manually or as a service, and fix common problems.
 
 ## Manual running
+
+Once installed and configured the iDempiere server you can start it with:
 
 ```shell
 su - idempiere  # not necessary if you're already as user idempiere

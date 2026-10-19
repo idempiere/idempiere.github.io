@@ -1,9 +1,11 @@
 # SQL Query Enhanced
 
-> - **Maintainer:** Sergio Oropeza
-> - **Status:** Stable, used in production
-> - **License:** GPLv2
-> - **Sources:** [GitHub](https://github.com/sergioropeza/com.soropeza.sqlquery)
+> SQL Query Enhanced replaces the standard SQL Query form with a code editor, a statement history and tools to copy and export the results.
+
+- **Maintainer:** Sergio Oropeza
+- **Status:** Stable, used in production
+- **License:** GPLv2
+- **Sources:** [GitHub](https://github.com/sergioropeza/com.soropeza.sqlquery)
 
 SQL Query Enhanced replaces the standard SQL Query form with a version that adds a code editor, a statement history and tools to copy and export the results.
 

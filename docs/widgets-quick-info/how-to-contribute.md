@@ -1,13 +1,15 @@
 # Contribute Quick Info Widgets
 
-> 1. Place your `.zip` files in the `static/downloads/` folder.
-> 2. Place your images in the `static/downloads/img/quick-infos` folder.
-> 3. Add an entry to the `quick-info-2packs.md` file in this repository.  
->    - Include the `.zip` file.  
->    - Add a screenshot of the outcome.  
->    - Provide a short description of the Quick Info.
+> How to add a Quick Info widget 2Pack to this site: where the files go and what the entry needs.
 
 ## File Structure
+
+1. Place your `.zip` files in the `static/downloads/` folder.
+2. Place your images in the `static/downloads/img/quick-infos` folder.
+3. Add an entry to the `quick-info-2packs.md` file in this repository.  
+   - Include the `.zip` file.  
+   - Add a screenshot of the outcome.  
+   - Provide a short description of the Quick Info.
 
 :::tip 💡  
 If you're not familiar with Docusaurus, share your intention to contribute in the documentation channel.  

@@ -1,11 +1,15 @@
 # Installing from Installers
 
-> It is recommended to run the iDempiere server as a user created for such purpose, usually idempiere, instead of running as root.
+> Install the iDempiere server from the installers: create the user, install the server, and import and update the database.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+
+
 ## Create user
+
+It is recommended to run the iDempiere server as a user created for such purpose, usually idempiere, instead of running as root.
 
 ```shell
 adduser idempiere

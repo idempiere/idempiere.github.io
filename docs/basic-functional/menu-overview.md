@@ -1,12 +1,6 @@
 # System overview
 
-> The first areas **System Admin** and **Application Dictionary** contain many technical aspects.
-> But you may also find generally important definitions for example the tenant/client or the users. 
-> Other areas like **Partner Relations**, **Material Management and Pricing** and **Performance Analysis and Accounting**
-> are crucial to set up necessary master data for iDempiere to work. 
-> The business is conducted mainly in the functional areas of **Quote-to-Invoice (Sales)**, 
-> **Requisition-to-Invoice (Purchasing)**, **Returns**, **Open Items (Financial Movements and Aging)** and **Project Management**.
-> More complex functions like **Assets** or **Manufacturing** will not be part of this guide.
+> A tour of the iDempiere demo system of the GardenWorld company and the ERP functions it covers.
 
 ## Some remarks
 This guide should help to explore the iDempiere Demo System of the company GardenWorld.
@@ -29,6 +23,14 @@ as they can be found in the menu when you login as GardenAdmin:
 - Performance Analysis and Accounting
 - Assets
 - Manufacturing 
+
+The first areas **System Admin** and **Application Dictionary** contain many technical aspects.
+But you may also find generally important definitions for example the tenant/client or the users. 
+Other areas like **Partner Relations**, **Material Management and Pricing** and **Performance Analysis and Accounting**
+are crucial to set up necessary master data for iDempiere to work. 
+The business is conducted mainly in the functional areas of **Quote-to-Invoice (Sales)**, 
+**Requisition-to-Invoice (Purchasing)**, **Returns**, **Open Items (Financial Movements and Aging)** and **Project Management**.
+More complex functions like **Assets** or **Manufacturing** will not be part of this guide.
 
 In iDempiere, navigating the menu is very simple since it was created as an explorer and has a tree structure.
 

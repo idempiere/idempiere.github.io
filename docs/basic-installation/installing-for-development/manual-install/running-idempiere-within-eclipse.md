@@ -1,9 +1,11 @@
 # Running iDempiere within Eclipse
 
-> - Navigate to **Run > Run Configurations > Eclipse Application**
-> - Select `server.product` and click **Run**
+> Start the iDempiere server from Eclipse and open it in your browser.
 
 ## Running Server
+
+- Navigate to **Run > Run Configurations > Eclipse Application**
+- Select `server.product` and click **Run**
 
 After a very quick start, you can navigate in your preferred browser to:
 

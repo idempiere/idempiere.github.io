@@ -1,6 +1,8 @@
 # Vocabulary
 
-> This page defines basic terms you should know when using iDempiere. Consider bookmarking this page for future reference. Note that the order of terms is prioritized by relevance and importance to your learning (not the alphabet).
+> Definitions of the basic iDempiere terms, such as Tenant, that you need to know when you use the system.
+
+This page defines basic terms you should know when using iDempiere. Consider bookmarking this page for future reference. Note that the order of terms is prioritized by relevance and importance to your learning (not the alphabet).
 
 ## Tenant Definition and Usage {#tenant}
 

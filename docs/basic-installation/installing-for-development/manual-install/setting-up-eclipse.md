@@ -1,8 +1,10 @@
 # Setting up Eclipse
 
-> On the operating system, navigate to the folder where you cloned the code, named below as `$IDEMPIERE_REPOSITORY` (e.g., `/home/carlos/sources/idempiere`), and run:
+> Build iDempiere and set up the Eclipse workspace: import the projects and set the target platform.
 
 ## Materialize and Build
+
+On the operating system, navigate to the folder where you cloned the code, named below as `$IDEMPIERE_REPOSITORY` (e.g., `/home/carlos/sources/idempiere`), and run:
 
 ```bash
 cd $HOME/sources/idempiere

@@ -1,14 +1,6 @@
 # Window handling
 
-> Some important areas are:
-> - Favorites
-> - Recent items
-> - Activities
-> - Views
-> not seen above further right are
-> - Calendar
-> - Performance (Dashboard)
-> - Help / Quick Info area (optionally displayable)
+> The parts of an iDempiere window: favorites, recent items, activities, views, calendar, performance and the functions of data entry windows.
 
 Navigation in iDempiere is one of the great benefits that it offers since its interface is very
 friendly, it allows configuration in multiple languages and when placing the mouse pointer
@@ -18,6 +10,16 @@ provided.
 
 ## Components of iDempiere Window
 ![Components of main/home page of iDempiere](./PNGs/Screen_basicplane.png)
+
+Some important areas are:
+- Favorites
+- Recent items
+- Activities
+- Views
+not seen above further right are
+- Calendar
+- Performance (Dashboard)
+- Help / Quick Info area (optionally displayable)
 
 ## Favorites
 The favorites are user specific. In this view you can add processes and / or documents to which you can access

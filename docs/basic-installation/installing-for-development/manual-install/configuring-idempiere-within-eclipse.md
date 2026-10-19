@@ -1,12 +1,14 @@
 # Configuring iDempiere within Eclipse
 
-> To run iDempiere from within Eclipse you must configure parameters first. This is done by running a preconfigured application called `install.app`.
+> Configure iDempiere to run inside Eclipse for development.
 
 :::info
 This procedure is intended for technical users configuring iDempiere to run inside Eclipse.
 :::
 
 ## Configuring
+
+To run iDempiere from within Eclipse you must configure parameters first. This is done by running a preconfigured application called `install.app`.
 
 1. Open Eclipse.
 2. Navigate to **Run > Run Configurations > Eclipse Application**.

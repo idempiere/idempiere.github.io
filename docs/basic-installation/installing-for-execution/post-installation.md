@@ -1,6 +1,8 @@
 # Post Installation
 
-> Now that you have your server configured, it is recommended to follow some security measures.
+> Recommended security steps after installing the iDempiere server, and how to keep it up to date.
+
+Now that you have your server configured, it is recommended to follow some security measures.
 
 These are probably not that important if your server is not open to the internet, or if it's a demo/test server. But, if you server contains production data you are warned that iDempiere default configuration is too open and is a MUST to secure it.
 

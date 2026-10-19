@@ -1,12 +1,16 @@
 # Install Prerequisites
 
-> The examples on this guide are using the following versions:
-> - Ubuntu 24.04 64 bits
-> - PostgreSQL 17
-> - OpenJDK 17
+> Install the prerequisites for running the iDempiere server: Ubuntu, PostgreSQL 17 and OpenJDK 17.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+
+
+The examples on this guide are using the following versions:
+- Ubuntu 24.04 64 bits
+- PostgreSQL 17
+- OpenJDK 17
 
 :::note
 
