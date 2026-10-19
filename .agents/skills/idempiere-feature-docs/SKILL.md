@@ -27,7 +27,7 @@ Never guess window names, field names, SysConfig keys, default values or version
 - Location: `docs/new-features/in-development/` while the core pull request is not merged.
 - File name: short kebab-case, e.g. `avoid-sequence-locks.md`.
 - `sidebar_position`: look at the sibling pages and pick the next free number.
-- Start from `docs/_templates/new-feature.md`. It follows the section structure of existing pages such as `docs/new-features/v14/default-view-detail-tabs.md` and `docs/new-features/in-development/avoid-sequence-locks.md`. Do not copy their `title:` frontmatter field. The first `#` heading is the title.
+- Start from `docs/_templates/new-feature.md`. It follows the section structure of existing pages such as `docs/new-features/v14/default-view-detail-tabs.md` and `docs/new-features/in-development/avoid-sequence-locks.md`. The first `#` heading is the title. Do not set `title:` in the frontmatter.
 - Keep the "Not Yet in Stable Release" warning at the top while the page is in `in-development`.
 - While the page is in `in-development`, set the **Version:** line and `applies_to` to the release the core pull request targets. Update both when the page moves.
 - Set `tags` in the front matter, using only the values already in use: `functional`, `user-experience`, `technical`, `development`, `security`, `architecture`. The version compare page (`/upgrade/compare`) builds its category filters from these tags, so a new tag value creates a new filter. Ask the user before introducing one.
@@ -68,6 +68,7 @@ If the change alters existing behavior, removes something, or requires action fr
 ## 5. After the core pull request is merged
 
 - Move the page: `git mv docs/new-features/in-development/<page>.md docs/new-features/v14/<page>.md`.
+- If the version folder does not exist yet, copy `_category_.json` from the previous version folder and change `label`, `position`, `link.title`, `link.description` and `link.slug`. Set `link.slug` to the folder path, for example `"slug": "/new-features/v15"`. Without it, the category page moves to `/docs/category/v15`.
 - Remove the "Not Yet in Stable Release" warning.
 - Set the **Version:** line and `applies_to` to the release folder, for example `**Version:** iDempiere 14` and `applies_to: ">=14"`.
 - Check `sidebar_position` against the pages in the target folder.
