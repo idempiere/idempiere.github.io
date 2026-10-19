@@ -10,7 +10,7 @@ on each of its icons or buttons, it clearly shows the name and/or role it plays.
 system you may use any browser (Chrome, Firefox, Safari ...) by entering the URL
 provided.
 
-# Components of iDempiere Window
+## Components of iDempiere Window
 ![Components of main/home page of iDempiere](./PNGs/Screen_basicplane.png)
 
 Some important areas are:
@@ -23,32 +23,32 @@ not seen above further right are
 - Performance (Dashboard)
 - Help / Quick Info area (optionally displayable)
 
-# Favorites
+## Favorites
 The favorites are user specific. In this view you can add processes and / or documents to which you can access
 more frequently, gaining time and accessing more quickly. You can also remove them
 using the delete icon.
 You can define new favorites just by dragging & dropping the items (using your mouse)
 from the menu to this area.  For a better organization, favorites can be ordered like a tree within folders, and with the "Automatic Launch" button you can define options that are automatically opened when you start a session.
 
-# Recent items
+## Recent items
 In this view you can see the records or documents that were recently modified by the
 logged-in user. In the same way they can be deleted dragging and dropping the recent item into delete icon.
 :::tip
 You can add a record to the Recent Items by editing a field of the record and then canceling the edition.
 :::
 
-# Activities
+## Activities
 Here you can quickly review some statistics number configured in your system.  They are shown as a title and a number indicating the number of records that are present in this type of activity.  Some of them
 are: Notice, Request, Workflow Activities and Unprocessed Documents.  This list be different vary depending on your role and the configuration of your system.
 
-# Views
+## Views
 Here you can see the direct links to the most frequent info windows, among them
 Business Partner and others. Info windows are quick ways to access crucial data from the ERP-system.
 
-# Calendar
+## Calendar
 The calendar can be used to display important dates for the user which must be defined in the respective business activities using the Requests feature.
 
-# Performance (Dashboard)
+## Performance (Dashboard)
 Here you can see computed values in graphical charts of important business data. They usually are tailored for each company and often for single user groups.
 
 ![Further components of main/home page of iDempiere](./PNGs/Screen_basicrightpart.png)
@@ -57,7 +57,7 @@ There are different types of windows you can access from the menu, a) Windows fo
 
 Most important are data entry and display windows.
 
-# Main items and functions in data and order entry windows
+## Main items and functions in data and order entry windows
 
 ![Items and functions in data entry windows](./PNGs/FunctionsOnDataEditWindows_Open.png)
 
@@ -92,7 +92,7 @@ This allows to define and see Labels or Tags associated to the current record.
 17. More options:
 
 
-# More options (for functions in data and order entry windows
+## More options (for functions in data and order entry windows
 
 ![More options for functions in data entry windows](./PNGs/FunctionsOnDataEditWindows_HiddenExtras.png)
 

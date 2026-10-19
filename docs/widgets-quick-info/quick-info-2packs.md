@@ -6,7 +6,7 @@ sidebar_position: 1
 Quick Info widgets provide **contextual, real-time information** inside iDempiere without navigating away from the record you’re working on.  
 They are installed using **2pack files** and can be enabled per window or table.
 
-# Getting Started
+## Getting Started
 
 <details>
   <summary>📥 How to Install the 2pack</summary>
@@ -23,7 +23,7 @@ They are installed using **2pack files** and can be enabled per window or table.
 
 ---
 
-## Available Quick Info 2packs
+### Available Quick Info 2packs
 
 <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start', gap: '1rem', margin: '2rem 0' }}>
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '2rem 0' }}>
