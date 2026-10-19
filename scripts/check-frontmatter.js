@@ -1,10 +1,15 @@
 #!/usr/bin/env node
 // Checks docs page frontmatter against scripts/frontmatter.schema.json.
 //
-// Usage: node scripts/check-frontmatter.js [--strict] [file ...]
-// With no files, checks every page under docs/. Only reports warnings and
-// exits 0, unless --strict is given. In GitHub Actions the warnings show up
-// as annotations on the pull request.
+// Usage: node scripts/check-frontmatter.js [--strict | --fail-invalid] [file ...]
+// With no files, checks every page under docs/. By default it only reports
+// warnings and exits 0.
+//   --strict        every problem is an error (used for new pages).
+//   --fail-invalid  YAML that does not parse, or a field in the wrong format
+//                   (date, version range, type), is an error; a missing field
+//                   or a description of the wrong length stays a warning (used
+//                   for changed pages).
+// In GitHub Actions the problems show up as annotations on the pull request.
 
 const fs = require('fs');
 const path = require('path');
@@ -17,6 +22,7 @@ const validate = new Ajv({ allErrors: true }).compile(schema);
 
 const args = process.argv.slice(2);
 const strict = args.includes('--strict');
+const failInvalid = args.includes('--fail-invalid');
 const inGitHub = process.env.GITHUB_ACTIONS === 'true';
 
 // Docusaurus does not publish files or folders that start with _.
@@ -48,6 +54,14 @@ function readFrontmatter(file) {
   return data;
 }
 
+// With --strict every problem is an error. With --fail-invalid only a field
+// in the wrong format is; missing fields and length are left to the author.
+const SOFT = new Set(['required', 'minLength', 'maxLength', 'minItems']);
+function isError(error) {
+  if (strict) return true;
+  return failInvalid && !SOFT.has(error.keyword);
+}
+
 function describe(error) {
   if (error.keyword === 'required') return `missing \`${error.params.missingProperty}\``;
   const field = error.instancePath.replace(/^\//, '').split('/')[0];
@@ -58,27 +72,34 @@ const files = args.filter((a) => !a.startsWith('--'));
 const pages = files.length ? files.filter((f) => fs.existsSync(f) && isPage(f)) : listPages(DOCS_DIR);
 
 let problems = 0;
+let errors = 0;
 let pagesWithProblems = 0;
 for (const file of pages) {
-  let messages;
+  let found;
   try {
     const data = readFrontmatter(file);
-    messages = validate(data) ? [] : validate.errors.map(describe);
+    found = validate(data) ? [] : validate.errors.map((e) => ({ text: describe(e), error: isError(e) }));
   } catch (e) {
-    messages = [`frontmatter is not valid YAML: ${e.message.split('\n')[0]}`];
+    const text = `frontmatter is not valid YAML: ${e.message.split('\n')[0]}`;
+    found = [{ text, error: strict || failInvalid }];
   }
-  if (!messages.length) continue;
+  if (!found.length) continue;
   pagesWithProblems += 1;
-  problems += messages.length;
-  if (inGitHub) {
-    console.log(`::warning file=${file},line=1,title=Frontmatter::${messages.join('; ')}`);
-  } else {
-    console.log(`${file}\n  - ${messages.join('\n  - ')}`);
+  problems += found.length;
+  errors += found.filter((p) => p.error).length;
+  for (const level of ['error', 'warning']) {
+    const messages = found.filter((p) => p.error === (level === 'error')).map((p) => p.text);
+    if (!messages.length) continue;
+    if (inGitHub) {
+      console.log(`::${level} file=${file},line=1,title=Frontmatter::${messages.join('; ')}`);
+    } else {
+      console.log(`${file} (${level})\n  - ${messages.join('\n  - ')}`);
+    }
   }
 }
 
 console.log(
-  `\nFrontmatter: ${pages.length} pages checked, ${pagesWithProblems} with problems, ${problems} problems.` +
+  `\nFrontmatter: ${pages.length} pages checked, ${pagesWithProblems} with problems, ${problems} problems, ${errors} errors.` +
     ' See https://docs.idempiere.org/docs/documentation-standards#frontmatter',
 );
-process.exit(strict && problems ? 1 : 0);
+process.exit(errors ? 1 : 0);
