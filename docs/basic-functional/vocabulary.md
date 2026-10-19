@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: "This page defines basic terms you should know when using iDempiere."
 ---
 # Vocabulary {#vocabulary}
 
