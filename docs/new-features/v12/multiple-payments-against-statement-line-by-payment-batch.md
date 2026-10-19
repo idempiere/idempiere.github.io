@@ -1,6 +1,8 @@
 # Multiple Payments against statement line by Payment Batch
 
-> **Feature:** Tag Payment Into Batch to Bank Statement Line and Document Workflow Support for Payment Into Batch
+> Tag Payment Into Batch to Bank Statement Line and Document Workflow Support for Payment Into Batch
+
+**Feature:** Tag Payment Into Batch to Bank Statement Line and Document Workflow Support for Payment Into Batch
 
 **Goal:** Functional
 

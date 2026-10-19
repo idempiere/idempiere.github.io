@@ -1,14 +1,14 @@
 # Dashboard Content Goal Indicator
 
-> **Goal:** UX/Functional
+> Until now, performance indicators were rendered via Dashboard Content/performance.zul without the ability to select a specific target to display.
+
+**Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, Norbert Bede
 
 **Feature Ticket: [IDEMPIERE-5400](https://idempiere.atlassian.net/browse/IDEMPIERE-5400)**
 
 **Improvement**
-
-Until now, performance indicators were rendered via Dashboard Content/performance.zul without the ability to select a specific target to display.
 
 This enhancement allows you to add dashboard content with a new Goal type - "**Goal**" option  (**Gauge Indicator**)- when you select this option, the goal indicator will be rendered.
 

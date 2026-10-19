@@ -1,6 +1,8 @@
 # Add Java Options Field To Setup
 
-> **Goal:** UX/Functional
+> Added a new field to the iDempiere server setup dialog, Java Options.
+
+**Goal:** UX/Functional
 
 **Developer:** Hengsin
 

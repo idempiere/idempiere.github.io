@@ -1,14 +1,14 @@
 # Add Access Tab Document Status Activity
 
-> **Developer:** Deepak Pansheriya
+> Currently Document status can be assigned single role or user but there is no way to configure multiple role or user assignment to document status.
 
 **Goal:** Functional
+
+**Developer:** Deepak Pansheriya
 
 **Feature** **Ticket:** [IDEMPIERE-4836](https://idempiere.atlassian.net/browse/IDEMPIERE-4836)
 
 ### Description
-Currently Document status can be assigned single role or user but there is no way to configure multiple role or user assignment to document status.
-
 Goal is to make document status to work as it is but for deciding access, instead of using Role and User on Document status, use Access tab (PA_DocumentStatusAccess)  and consider role or user access configured there.
 
 Should have migrated existing configuration of Role or user on PA_DocumentStatus and create records in PA_DocumentStatusAccess table. Then Role and User from PA_DocumentStatus should be dropped. New logic will not use Role and User on PA_DocumentStatus.

@@ -1,8 +1,10 @@
 # Single Sign-On
 
-> **Developer:** [Logilite Technologies](http://www.logilite.com/)
+> iDempiere 11 has added support for single sign-On.
 
 **Goal:** Security
+
+**Developer:** [Logilite Technologies](http://www.logilite.com/)
 
 ## Goal
 iDempiere 11 has added support for single sign-On. Single sign-on on help to get authenticated with third party identity provider like Azure MSAL or AWS cognito server. This remove requirement to store credentials of employee in database and make more secure against threat exposing user data.

@@ -1,8 +1,10 @@
 # Add Context Variables in log entries
 
-> **Developers:** Nicolas Micoud, Hengsin, Carlos Ruiz
+> It is now possible to use any Context Variables in the log.
 
 **Goal:** Technical
+
+**Developers:** Nicolas Micoud, Hengsin, Carlos Ruiz
 
 **Tester**: Norbert Bede
 
@@ -11,8 +13,6 @@
 **Feature Ticket:** [IDEMPIERE-5608](https://idempiere.atlassian.net/browse/IDEMPIERE-5608)
 
 **Description:**
-
-It is now possible to use any Context Variables in the log.
 
 You just need to add a VM argument ( eg: `-Dorg.idempiere.FileLogPrefix=@#AD_Client_Name@/lang=@#AD_Language@/@#AD_User_Name@` ) to get those additional information in logs.  **IMPORTANT NOTE:** do not use quotes when defining the variable in setup or idempiereEnv.properties
 

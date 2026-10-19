@@ -1,8 +1,10 @@
 # All Quantities in Storage Per Product
 
-> **Developer:** Diego Ruiz
+> When you want to know how many items of a product you have on hand, you can use the Storage Per Product report.
 
 **Goal:** Functional
+
+**Developer:** Diego Ruiz
 
 **Sponsor:** [BX Service GmbH](https://www.bx-service.com/)
 

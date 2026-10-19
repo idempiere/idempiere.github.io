@@ -8,7 +8,7 @@ This is a checklist of the **minimum steps** required to submit high-quality pul
 If your contribution includes database changes, follow the [Changing the Database](./changing-the-database) instructions **before writing any code**.
 :::
 
-## ✅ Contribution Checklist
+## Contribution Checklist
 
 - **Every commit must be related to a JIRA ticket.**  
   Please **do not mix unrelated commits**. For example, if your change includes a refactoring, submit:
@@ -42,7 +42,7 @@ If your contribution includes database changes, follow the [Changing the Databas
 - **Avoid common pitfalls**:  
   Review the list of [Common Issues](./common-issues) before submitting your patch.
 
-## 📦 Final Step: Create the pull request
+## Final Step: Create the pull request
 
 When your code is ready, create a [Pull Request](./git-workflow) with a **commit message that includes the JIRA ticket number** (e.g., `IDEMPIERE-1234 Fix XYZ`).  
 This will allow automatic linking between the Git repository and the JIRA ticket.

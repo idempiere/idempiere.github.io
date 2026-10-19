@@ -1,16 +1,16 @@
 # Theme Customization
 
-> **Developer:**  Nicolas Micoud
+> Objective of the ticket is to allow minor variations on themes.
 
 **Goal:** Technical
+
+**Developer:**  Nicolas Micoud
 
 **Feature Ticket:** [IDEMPIERE-6293](https://idempiere.atlassian.net/browse/IDEMPIERE-6293)
 
 **Sponsor:** [TGI](http://tgi.eu)
 
 **Description:**
-
-Objective of the ticket is to allow minor variations on themes.
 
 Sometimes, only several toolbar buttons or little variations on css are needed and there is no other way but to duplicate the whole theme which is time consuming to maintain.
 

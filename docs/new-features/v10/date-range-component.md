@@ -1,6 +1,8 @@
 # Date Range Component
 
-> **Goal:** UX/Functional
+> Date Range Component: a New Feature in iDempiere 10.
+
+**Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, **Design**: Norbert Bede **Review**: Hengsin Low, CarlosRuiz
 

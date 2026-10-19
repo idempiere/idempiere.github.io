@@ -2,7 +2,7 @@
 
 > Learn how to implement event handlers in iDempiere plug-ins to intercept and respond to model events.
 
-## 🎯 Goal
+## Goal
 
 This tutorial shows you how to develop **event handlers** in your own plug-in, enabling you to intercept and respond to data model events throughout the iDempiere system.
 
@@ -35,7 +35,7 @@ Use **event handlers** when you need logic that applies regardless of how data i
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 Before starting, review:
 
@@ -46,13 +46,13 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-## 📋 Overview
+## Overview
 
 iDempiere's event handling system is built on top of the **OSGi Event Admin Framework**. The `IEventManager` service, provided by the `org.adempiere.base` bundle, enables you to register event handlers that replace the legacy `AD_ModelValidator` table and `ModelValidator` interface approach.
 
 ---
 
-## 📋 Implementation Methods
+## Implementation Methods
 
 ### Modern Approach (iDempiere 9+): Event Annotation {#event-annotations-idempiere-9}
 
@@ -220,7 +220,7 @@ Instead of throwing an exception, you can call `addErrorMessage(String message)`
 
 ---
 
-## 🔧 Registering as an OSGi Component
+## Registering as an OSGi Component
 
 ### Option A: Using Annotations (Recommended)
 
@@ -318,7 +318,7 @@ bin.includes = META-INF/,\
 
 ---
 
-## 🧪 Testing Your Event Handler
+## Testing Your Event Handler
 
 1. Deploy your plug-in to iDempiere
 2. Start the iDempiere server
@@ -328,7 +328,7 @@ bin.includes = META-INF/,\
 
 ---
 
-## 📦 Exporting Your Plug-in
+## Exporting Your Plug-in
 
 Before exporting your plug-in as a JAR:
 
@@ -339,7 +339,7 @@ Before exporting your plug-in as a JAR:
 
 ---
 
-## 🎥 Video Tutorial
+## Video Tutorial
 
 Watch this video walkthrough:  
 [https://www.youtube.com/watch?v=zc_Ye8WZ-jc](https://www.youtube.com/watch?v=zc_Ye8WZ-jc)
@@ -349,7 +349,7 @@ Additional tutorial:
 
 ---
 
-## 🔗 Related Resources
+## Related Resources
 
 - [AbstractEventHandler Class](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/event/AbstractEventHandler.java)
 - [IEventTopics Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/event/IEventTopics.java)

@@ -1,12 +1,12 @@
 # Support for Alternate DB Admin User
 
-> **Developer:** Carlos Ruiz
+> Normally there are fixed admin users for Oracle (SYSTEM) and for PostgreSQL (postgres).
 
 **Goal:** Technical
 
-**Description:**
+**Developer:** Carlos Ruiz
 
-Normally there are fixed admin users for Oracle (SYSTEM) and for PostgreSQL (postgres).
+**Description:**
 
 However, there are scenarios where a different admin user is required.  For example running the installation on a cloud provider.
 

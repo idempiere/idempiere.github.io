@@ -1,12 +1,12 @@
 # Tuning Windows Performance
 
-> **Developer:** Carlos Ruiz
+> iDempiere performance can have problems when trying to open windows with too many records, or windows pointing to complex views.
 
 **Goal:** Technical
 
-**Description:**
+**Developer:** Carlos Ruiz
 
-iDempiere performance can have problems when trying to open windows with too many records, or windows pointing to complex views.
+**Description:**
 
 When opening a window the system first tries to execute a SELECT COUNT to know beforehand with how many records is dealing.
 

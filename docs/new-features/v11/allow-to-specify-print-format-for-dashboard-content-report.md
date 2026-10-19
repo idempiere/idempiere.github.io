@@ -1,6 +1,9 @@
 # Allow to Specify Print Format for Dashboard Content Report
 
-> **Ticket:** [IDEMPIERE-5490](https://idempiere.atlassian.net/browse/IDEMPIERE-5490)
+> Allow to Specify Print Format for Dashboard Content Report: a New Feature in iDempiere 11.
+
+## Allow to Specify Print Format for Dashboard Content Report
+**Ticket:** [IDEMPIERE-5490](https://idempiere.atlassian.net/browse/IDEMPIERE-5490)
 
 **Developer:** Peter Takacs, Cloudempiere
 

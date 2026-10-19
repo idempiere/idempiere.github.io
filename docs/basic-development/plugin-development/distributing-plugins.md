@@ -6,15 +6,15 @@ This guide explains how to distribute and install your plug-ins in iDempiere. Wh
 
 ---
 
-## 🎯 Goal
+## Goal
 
 Once your plug-in is ready, you need to distribute and install it in your iDempiere environment. This guide explains the different methods available for deploying plug-ins.
 
 ---
 
-## 📦 Distributing Plug-ins
+## Distributing Plug-ins
 
-### 📡 Install via p2 Repository (Recommended)
+### Install via p2 Repository (Recommended)
 
 This is the recommended way when you have a p2 repository. 
 
@@ -52,7 +52,7 @@ Now you have a JAR file that you can install in your iDempiere installations.
 
 ---
 
-## 🔧 Apache Felix Gogo Console (if no p2 repository)
+## Apache Felix Gogo Console (if no p2 repository)
 
 The Apache Felix Gogo Console allows you to manage OSGi bundles directly. To access the console, connect via Telnet:
 
@@ -112,7 +112,7 @@ sta com.trekglobal.idempiere.rest.api
 
 ---
 
-## 🌐 Apache Felix Web Console
+## Apache Felix Web Console
 
 Visit:
 
@@ -131,6 +131,6 @@ Click **Install or Update**, then verify the bundle is active. Use the "play" bu
 
 ---
 
-## 🔚 Conclusion
+## Conclusion
 
 By following this guide, you can distribute and install your plug-ins in iDempiere efficiently. For more advanced topics, explore the other plug-in development guides in this documentation.

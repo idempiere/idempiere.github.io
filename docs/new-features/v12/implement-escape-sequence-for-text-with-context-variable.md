@@ -1,8 +1,10 @@
 # Implement escape sequence for text with context variable
 
-> **Developer:**  Takacs Peter, Hengsin
+> Implement escape sequence for text with context variable: a New Feature in iDempiere 12.
 
 **Goal:** Technical
+
+**Developer:**  Takacs Peter, Hengsin
 
 **Feature Ticket:** [IDEMPIERE-6116](https://idempiere.atlassian.net/browse/IDEMPIERE-6116)
 

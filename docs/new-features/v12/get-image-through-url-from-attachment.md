@@ -1,8 +1,10 @@
 # Get image through url from attachment
 
-> **Developer:**  Hengsin,
+> Get image through url from attachment: a New Feature in iDempiere 12.
 
 **Goal:** Technical
+
+**Developer:**  Hengsin,
 
 **Feature Ticket:** [IDEMPIERE-6256](https://idempiere.atlassian.net/browse/IDEMPIERE-6256)
 

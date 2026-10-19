@@ -1,4 +1,4 @@
-# Accounting Implementation Classes Extracted to org.idempiere.acct
+# Accounting Implementation Classes Extracted to `org.idempiere.acct`
 
 > Accounting-related implementation classes have been moved from iDempiere core to a dedicated bundle, making it possible to run iDempiere without the accounting engine.
 

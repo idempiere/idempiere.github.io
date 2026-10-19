@@ -1,6 +1,8 @@
 # Print Support Process Info Dialog
 
-> **Goal:** UX/Functional
+> Print Support Process Info Dialog: a New Feature in iDempiere 10.
+
+**Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, Review: CarlosRuiz, HengsinLow
 

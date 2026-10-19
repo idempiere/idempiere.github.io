@@ -1,8 +1,10 @@
 # More Formats for Import CSV
 
-> **Developer:** Carlos Ruiz
+> More Formats for Import CSV: a New Feature in iDempiere 11.
 
 **Goal:** Usability
+
+**Developer:** Carlos Ruiz
 
 **Description:**
 

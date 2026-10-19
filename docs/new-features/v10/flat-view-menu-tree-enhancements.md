@@ -1,8 +1,10 @@
 # Flat View Menu Tree Enhancements
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Add ZKFLATVIEWMENUTREE system config, tenant level and default to N.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-5213](https://idempiere.atlassian.net/browse/IDEMPIERE-5213)
 

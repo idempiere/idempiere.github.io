@@ -1,6 +1,8 @@
 # Boolean Logic Expression Enhancements
 
-> **Goal:** Development
+> Boolean Logic Expression Enhancements: a New Feature in iDempiere 9.
+
+**Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 

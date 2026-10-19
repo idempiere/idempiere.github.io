@@ -1,6 +1,8 @@
 # Enhance Print Invoices Process to Support Multi-Select Document Type Parameter
 
-> **Goal:** User experience - Usability
+> Enhance Print Invoices Process to Support Multi-Select Document Type Parameter: a New Feature in iDempiere 12.
+
+**Goal:** User experience - Usability
 
 **Developer:**  Diego Ruiz
 

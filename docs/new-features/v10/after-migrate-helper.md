@@ -1,14 +1,14 @@
 # After Migrate Helper
 
-> **Developer:** Carlos Ruiz
+> This process helps to find potential problems after migration scripts are applied.
 
 **Goal:** Functional
+
+**Developer:** Carlos Ruiz
 
 **Sponsor:** [FH](https://www.fh.com.br/)
 
 ## Description
-This process helps to find potential problems after migration scripts are applied.
-
 ## Verify Migration Process
 After applying migration scripts (or applying 2Packs) you can run this process to generate verification records:
 

@@ -1,8 +1,10 @@
 # Deductible and Non Deductible Input Tax
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Deductible and Non Deductible Input Tax: a New Feature in iDempiere 10.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-5057](https://idempiere.atlassian.net/browse/IDEMPIERE-5057)
 

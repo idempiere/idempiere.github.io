@@ -1,14 +1,14 @@
 # Jasper Report Deployment Refactoring and Improvement
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Refactor and improve the deployment of Jasper Report.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-4873](https://idempiere.atlassian.net/browse/IDEMPIERE-4873)
 
 **Description:**
-Refactor and improve the deployment of Jasper Report.
-
 ## Images
 1. To Load from File:
     1. add Report Parameter "RESOURCE_DIR" (type String) with Default Value Expression = ""

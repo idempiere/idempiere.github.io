@@ -6,7 +6,7 @@
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  
 **Feature Ticket:** [IDEMPIERE-6063](https://idempiere.atlassian.net/browse/IDEMPIERE-6063)
 
-
+## Customization of email sent when server starts
 
 Idea is to allow implementors to define which informations should be set in the email sent at server start.
 

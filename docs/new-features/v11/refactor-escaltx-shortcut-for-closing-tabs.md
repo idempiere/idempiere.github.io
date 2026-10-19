@@ -1,6 +1,9 @@
 # Refactor ESC/Alt+X Shortcut for Closing Tabs
 
-> **Ticket:** &lt;https://idempiere.atlassian.net/browse/IDEMPIERE-5786&gt;(http://IDEMPIERE-5786)
+> Refactor ESC/Alt+X Shortcut for Closing Tabs: a New Feature in iDempiere 11.
+
+## Refactor ESC/Alt+X Shortcut for Closing Tabs
+**Ticket:** &lt;https://idempiere.atlassian.net/browse/IDEMPIERE-5786&gt;(http://IDEMPIERE-5786)
 
 **Developer:** Peter Takacs, Cloudempiere
 

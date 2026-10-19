@@ -1,6 +1,8 @@
 # Annotated Process Parameters
 
-> **Goal:** Development
+> This feature was created in order to simplify the task of reading process parameters by using the new @Parameter annotation.
+
+**Goal:** Development
 
 **Developer:** Saulo Gil
 

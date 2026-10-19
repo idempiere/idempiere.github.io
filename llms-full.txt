@@ -4,15 +4,13 @@
 
 This file contains all documentation content in a single document following the llmstxt.org standard.
 
-## Simplify Plug-in Development with DS Annotations
-
 ## Ditch XML: Declare Service Annotations and Simplify Plug-in Development
 
 This guide explains how to use **OSGi Declarative Service (DS) annotations** to simplify plug-in development by eliminating the need for XML configuration. By leveraging DS annotations, you can optimize your development process and improve maintainability.
 
 ---
 
-### 📖 Reference Links
+### Reference Links
 
 - [Improvements in Declarative Services from Eclipse Oxygen](https://www.eclipse.org/eclipse/news/4.7/platform.php#ds-annotations)
 - [OSGi Declarative Services Annotations Documentation](https://docs.osgi.org/specification/osgi.cmpn/7.0.0/service.component.html)
@@ -22,7 +20,7 @@ Eclipse has also modified the Felix SCR (Service Component Runtime) to make the 
 
 ---
 
-### 🛠️ How to Use DS Annotations
+### How to Use DS Annotations
 
 #### 1. Eclipse Version
 
@@ -108,7 +106,7 @@ This guide explains how to develop plug-ins **separately from the iDempiere core
 
 ---
 
-### 🧰 Prerequisites
+### Prerequisites
 
 Before you begin, ensure you have:
 
@@ -121,7 +119,7 @@ Before you begin, ensure you have:
 Instead of starting from scratch, you might want to use the scaffolding tool from [iDempiere Plugin Scaffold](https://github.com/saulojg/idempiere-plugin-scaffold/) instead. This tool provides a pre-configured structure to help you quickly set up your plug-in project, saving time and effort.
 :::
 
-### 📚 Recommended Workflow
+### Recommended Workflow
 
 1. In Eclipse, go to:
 
@@ -171,15 +169,15 @@ This guide explains how to distribute and install your plug-ins in iDempiere. Wh
 
 ---
 
-### 🎯 Goal
+### Goal
 
 Once your plug-in is ready, you need to distribute and install it in your iDempiere environment. This guide explains the different methods available for deploying plug-ins.
 
 ---
 
-### 📦 Distributing Plug-ins
+### Distributing Plug-ins
 
-#### 📡 Install via p2 Repository (Recommended)
+#### Install via p2 Repository (Recommended)
 
 This is the recommended way when you have a p2 repository. 
 
@@ -217,7 +215,7 @@ Now you have a JAR file that you can install in your iDempiere installations.
 
 ---
 
-### 🔧 Apache Felix Gogo Console (if no p2 repository)
+### Apache Felix Gogo Console (if no p2 repository)
 
 The Apache Felix Gogo Console allows you to manage OSGi bundles directly. To access the console, connect via Telnet:
 
@@ -277,7 +275,7 @@ sta com.trekglobal.idempiere.rest.api
 
 ---
 
-### 🌐 Apache Felix Web Console
+### Apache Felix Web Console
 
 Visit:
 
@@ -296,7 +294,7 @@ Click **Install or Update**, then verify the bundle is active. Use the "play" bu
 
 ---
 
-### 🔚 Conclusion
+### Conclusion
 
 By following this guide, you can distribute and install your plug-ins in iDempiere efficiently. For more advanced topics, explore the other plug-in development guides in this documentation.
 
@@ -1602,7 +1600,7 @@ Open the About window and you should see your new tab:
 
 ## Developing Plug-in Callouts
 
-### 🎯 Goal
+### Goal
 
 This tutorial shows you how to develop **callouts** in your own plug-in. 
 
@@ -1653,7 +1651,7 @@ For **earlier versions**, use the **CalloutFactory** approach.
 
 ---
 
-### ✅ Prerequisites
+### Prerequisites
 
 Before starting, review:
 
@@ -1664,7 +1662,7 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-### 📋 Implementation Methods
+### Implementation Methods
 
 #### Modern Approach (iDempiere 9+): Mapped Column Callout Factory
 
@@ -1965,7 +1963,7 @@ bin.includes = META-INF/,\
 
 ---
 
-### 🧪 Testing Your Callout
+### Testing Your Callout
 
 1. Start the iDempiere client
 2. Log in as **GardenAdmin** to **GardenWorld**
@@ -1982,14 +1980,14 @@ New value: [your entered text]
 
 ---
 
-### 🎥 Video Tutorial
+### Video Tutorial
 
 Watch this video walkthrough:  
 [https://www.youtube.com/watch?v=twC6Dy8R5g4](https://www.youtube.com/watch?v=twC6Dy8R5g4)
 
 ---
 
-### 📦 Exporting Your Plug-in
+### Exporting Your Plug-in
 
 Before exporting your plug-in as a JAR:
 
@@ -2001,7 +1999,7 @@ This ensures your OSGi component definitions are packaged correctly.
 
 ---
 
-### 🔗 Related Resources
+### Related Resources
 
 - [IColumnCallout Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/IColumnCallout.java)
 - [IColumnCalloutFactory Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/IColumnCalloutFactory.java)
@@ -2589,7 +2587,7 @@ The editor is automatically disabled when the record is in read-only mode:
 
 ## Developing Plug-in Event Handlers
 
-### 🎯 Goal
+### Goal
 
 This tutorial shows you how to develop **event handlers** in your own plug-in, enabling you to intercept and respond to data model events throughout the iDempiere system.
 
@@ -2622,7 +2620,7 @@ Use **event handlers** when you need logic that applies regardless of how data i
 
 ---
 
-### ✅ Prerequisites
+### Prerequisites
 
 Before starting, review:
 
@@ -2633,13 +2631,13 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-### 📋 Overview
+### Overview
 
 iDempiere's event handling system is built on top of the **OSGi Event Admin Framework**. The `IEventManager` service, provided by the `org.adempiere.base` bundle, enables you to register event handlers that replace the legacy `AD_ModelValidator` table and `ModelValidator` interface approach.
 
 ---
 
-### 📋 Implementation Methods
+### Implementation Methods
 
 #### Modern Approach (iDempiere 9+): Event Annotation {#event-annotations-idempiere-9}
 
@@ -2807,7 +2805,7 @@ Instead of throwing an exception, you can call `addErrorMessage(String message)`
 
 ---
 
-### 🔧 Registering as an OSGi Component
+### Registering as an OSGi Component
 
 #### Option A: Using Annotations (Recommended)
 
@@ -2905,7 +2903,7 @@ bin.includes = META-INF/,\
 
 ---
 
-### 🧪 Testing Your Event Handler
+### Testing Your Event Handler
 
 1. Deploy your plug-in to iDempiere
 2. Start the iDempiere server
@@ -2915,7 +2913,7 @@ bin.includes = META-INF/,\
 
 ---
 
-### 📦 Exporting Your Plug-in
+### Exporting Your Plug-in
 
 Before exporting your plug-in as a JAR:
 
@@ -2926,7 +2924,7 @@ Before exporting your plug-in as a JAR:
 
 ---
 
-### 🎥 Video Tutorial
+### Video Tutorial
 
 Watch this video walkthrough:  
 [https://www.youtube.com/watch?v=zc_Ye8WZ-jc](https://www.youtube.com/watch?v=zc_Ye8WZ-jc)
@@ -2936,7 +2934,7 @@ Additional tutorial:
 
 ---
 
-### 🔗 Related Resources
+### Related Resources
 
 - [AbstractEventHandler Class](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/event/AbstractEventHandler.java)
 - [IEventTopics Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/event/IEventTopics.java)
@@ -2948,7 +2946,7 @@ Additional tutorial:
 
 ## Developing Plug-in Forms
 
-### 🎯 Goal
+### Goal
 
 This tutorial shows you how to use the **IFormFactory** service in your plug-in project to create custom forms in iDempiere.
 
@@ -2964,7 +2962,7 @@ A **form** in iDempiere is a custom user interface component that provides speci
 
 ---
 
-### ✅ Prerequisites
+### Prerequisites
 
 Before starting, review:
 
@@ -2975,7 +2973,7 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-### 📋 Implementation Methods
+### Implementation Methods
 
 #### Modern Approach (iDempiere 9+): Mapped Form Factory
 
@@ -3134,7 +3132,7 @@ For a complete working example of a custom form with annotation-based registrati
 
 ---
 
-### 🔧 Creating a Custom Form (Step by Step)
+### Creating a Custom Form (Step by Step)
 
 #### Step 1: Create Your Form Controller Class
 
@@ -3264,7 +3262,7 @@ The `service.ranking` property determines the priority for OSGi service lookup. 
 
 ---
 
-### ⚙️ Configuring Your Form in iDempiere
+### Configuring Your Form in iDempiere
 
 #### Step 1: Create a Form Record
 
@@ -3295,7 +3293,7 @@ The `service.ranking` property determines the priority for OSGi service lookup. 
 
 ---
 
-### 🧪 Testing Your Form
+### Testing Your Form
 
 1. Deploy your plug-in to iDempiere
 2. Ensure your plug-in is set to auto-start in the Run Configuration
@@ -3314,7 +3312,7 @@ If the form doesn't appear:
 
 ---
 
-### 🔗 Related Resources
+### Related Resources
 
 - [IFormFactory Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.ui.zk/WEB-INF/src/org/adempiere/webui/factory/IFormFactory.java)
 - [IFormController Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.ui.zk/WEB-INF/src/org/adempiere/webui/panel/IFormController.java)
@@ -3572,7 +3570,7 @@ Install using the [distributing plug-ins](./distributing-plugins) guide, pointin
 
 This guide explains how to use the **IModelFactory service** in your plug-in project to provide custom model classes for your tables.
 
-### 🎯 Goal
+### Goal
 
 The IModelFactory service allows you to provide your own model classes for custom tables. When properly configured, iDempiere will:
 
@@ -3582,7 +3580,7 @@ The IModelFactory service allows you to provide your own model classes for custo
 
 ---
 
-### 📚 Understanding Model Classes
+### Understanding Model Classes
 
 #### Class Naming Conventions: X_, I_, and M
 
@@ -3630,7 +3628,7 @@ Using your 3-letter table prefix (e.g., "EVE") makes it easier to identify custo
 
 ---
 
-### 🛠️ Implementing a Model Factory
+### Implementing a Model Factory
 
 #### What You Need
 
@@ -3737,7 +3735,7 @@ For detailed information, see [NF9_OSGi_New_Model_Factory](/docs/new-features/v9
 
 ---
 
-### 🗺️ Alternative: Map-Based Factory
+### Alternative: Map-Based Factory
 
 With a map-based factory, you declare associations using method references:
 
@@ -3770,7 +3768,7 @@ This approach provides a clean, declarative way to register multiple models.
 
 ---
 
-### 🔧 Generating Models for Custom Tables
+### Generating Models for Custom Tables
 
 If you're creating models for your own custom tables:
 
@@ -3805,7 +3803,7 @@ Make sure you use the correct upper/lower case when specifying the table name!
 
 ---
 
-### ❗ Troubleshooting
+### Troubleshooting
 
 If your model factory isn't working:
 
@@ -3816,7 +3814,7 @@ If your model factory isn't working:
 - ✅ **Console logs**: Check for any OSGi service registration errors
 ---
 
-### 📹 Video Tutorials
+### Video Tutorials
 
 For visual learners, check out these video explanations:
 
@@ -3825,7 +3823,7 @@ For visual learners, check out these video explanations:
 
 ---
 
-### 📖 Related Topics
+### Related Topics
 
 - [Creating Windows](../creating-windows.md)
 - [Plugin Process](plugin-process.md)
@@ -3835,7 +3833,7 @@ For visual learners, check out these video explanations:
 
 ## Developing Plug-in Model Validators
 
-### 🎯 Goal
+### Goal
 
 This tutorial shows you how to develop **model validators** in your own plug-in, enabling you to add custom validation and business logic that executes during model operations.
 
@@ -3860,7 +3858,7 @@ For new development, consider using [Event Handlers](./plugin-eventhandler) as t
 
 ---
 
-### ✅ Prerequisites
+### Prerequisites
 
 Before starting, review:
 
@@ -3871,14 +3869,14 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-### 🎥 Video Tutorial
+### Video Tutorial
 
 Watch this video walkthrough:  
 [https://www.youtube.com/watch?v=Dwjl8p1Xguw](https://www.youtube.com/watch?v=Dwjl8p1Xguw)
 
 ---
 
-### 📋 Creating a Model Validator
+### Creating a Model Validator
 
 #### Step 1: Create the Model Validator Class
 
@@ -4005,7 +4003,7 @@ The `type` parameter in `modelChange()` can be:
 
 ---
 
-### 🔧 Registering Your Model Validator
+### Registering Your Model Validator
 
 #### Using a Model Validator Factory
 
@@ -4091,7 +4089,7 @@ The `service.ranking` property determines the priority for OSGi service lookup. 
 
 ---
 
-### ⚙️ Configuring Your Model Validator in iDempiere
+### Configuring Your Model Validator in iDempiere
 
 #### Creating a Model Validator Record
 
@@ -4108,7 +4106,7 @@ The validator will be automatically activated when the system starts.
 
 ---
 
-### 🧪 Testing Your Model Validator
+### Testing Your Model Validator
 
 1. Deploy your plug-in to iDempiere
 2. Ensure your plug-in is set to auto-start in the Run Configuration
@@ -4127,7 +4125,7 @@ log.warning("Validation failed: Missing required field");
 
 ---
 
-### 🔄 Model Validator vs Event Handler
+### Model Validator vs Event Handler
 
 Both approaches serve similar purposes but have different characteristics:
 
@@ -4145,7 +4143,7 @@ For new plug-in development, consider using **[Event Handlers](./plugin-eventhan
 
 ---
 
-### 🔗 Related Resources
+### Related Resources
 
 - [ModelValidator Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/compiere/model/ModelValidator.java)
 - [IModelValidatorFactory Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/IModelValidatorFactory.java)
@@ -4156,7 +4154,7 @@ For new plug-in development, consider using **[Event Handlers](./plugin-eventhan
 
 ## Developing Plug-in Processes
 
-### 🎯 Goal
+### Goal
 
 This tutorial shows you how to develop **processes** within your own plug-in, enabling you to create custom business logic that users can execute on demand.
 
@@ -4180,7 +4178,7 @@ A **process** in iDempiere is a unit of business logic that performs specific op
 
 ---
 
-### ✅ Prerequisites
+### Prerequisites
 
 Before starting, review:
 
@@ -4191,7 +4189,7 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-### 📋 Creating a Process
+### Creating a Process
 
 #### Step 1: Create the Process Class
 
@@ -4247,7 +4245,7 @@ For a complete working example, see:
 
 ---
 
-### 📋 Registering Your Process
+### Registering Your Process
 
 #### Modern Approach (iDempiere 9+): Mapped Process Factory
 
@@ -4437,7 +4435,7 @@ Service-Component: OSGI-INF/*.xml
 
 ---
 
-### 📥 Reading Process Parameters
+### Reading Process Parameters
 
 #### Using @Parameter Annotation (Recommended)
 
@@ -4504,7 +4502,7 @@ public class MyProcess extends SvrProcess {
 
 ---
 
-### 📝 Logging Information
+### Logging Information
 
 #### Using CLogger
 
@@ -4559,7 +4557,7 @@ If the table ID and record ID are valid, this creates a clickable link in the pr
 
 ---
 
-### ⚠️ Error Handling
+### Error Handling
 
 #### Returning Status Messages
 
@@ -4599,7 +4597,7 @@ In the **Process Audit** window:
 
 ---
 
-### 💬 Interacting with Users
+### Interacting with Users
 
 #### Asking Yes/No Questions
 
@@ -4704,7 +4702,7 @@ The `askForSecretInput()` method works exactly like `askForInput()`, but display
 
 ---
 
-### 🧪 Testing Your Process
+### Testing Your Process
 
 1. Deploy your plug-in to iDempiere
 2. Create a new process record in the **Process** window (`AD_Process`)
@@ -4715,7 +4713,7 @@ The `askForSecretInput()` method works exactly like `askForInput()`, but display
 
 ---
 
-### 📦 Exporting Your Plug-in
+### Exporting Your Plug-in
 
 Before exporting:
 
@@ -4725,14 +4723,14 @@ Before exporting:
 
 ---
 
-### 🎥 Video Tutorial
+### Video Tutorial
 
 Watch this video walkthrough:  
 [https://www.youtube.com/watch?v=5SDqnbYrpQc](https://www.youtube.com/watch?v=5SDqnbYrpQc)
 
 ---
 
-### 🔗 Related Resources
+### Related Resources
 
 - [SvrProcess Class](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/compiere/process/SvrProcess.java)
 - [IProcessFactory Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/IProcessFactory.java)
@@ -4813,7 +4811,7 @@ This guide explains how to configure and run your plug-ins locally in iDempiere.
 
 ---
 
-### 🎯 Goal
+### Goal
 
 After setting up your plug-in project, you might wonder: **How do I make it work within iDempiere?**
 
@@ -4821,7 +4819,7 @@ To avoid merge conflicts and keep customizations maintainable, plug-ins should b
 
 ---
 
-### ✅ Prerequisites
+### Prerequisites
 
 Before continuing, we strongly recommend reading:
 
@@ -4831,7 +4829,7 @@ This guide explains best practices for clean, modular plug-in development.
 
 ---
 
-### ⚙️ Workflow
+### Workflow
 
 After creating your plug-in project, open the `MANIFEST.MF` file.
 
@@ -4874,7 +4872,7 @@ start <bundle_number>
 
 ---
 
-### 🚀 Additional Features
+### Additional Features
 
 :::tip Automatically Start Your Plug-in
 - Set **Autostart = true** in Run Configurations.
@@ -4885,7 +4883,7 @@ For integrating `ModelValidators`, `Processes`, `Callouts`, and more, refer to t
 
 ---
 
-### 🔚 Conclusion
+### Conclusion
 
 By following this guide, you can configure and run your plug-ins locally in iDempiere. For the next step, learn how to distribute and install your plug-ins in the [Distributing Plug-ins](./distributing-plugins) guide.
 
@@ -5989,7 +5987,7 @@ Successful migration requires careful planning, thorough testing, and systematic
 
 Review these artifacts before starting your upgrade:
 
-- [Release notes for your target version](/docs/category/migration-notes)
+- [Release notes for your target version](/docs/migration-notes)
 - Migration notes for every version jump
 - Installation guide for the target iDempiere version
 
@@ -6024,7 +6022,7 @@ Keep this inventory in version control. It will be your checklist during each mi
 
 #### Review Migration Notes
 
-This site maintains [migration notes](/docs/category/migration-notes) per version. Pay special attention to:
+This site maintains [migration notes](/docs/migration-notes) per version. Pay special attention to:
 
 - **Breaking changes:** API removals, deprecations, and behavior changes
 - **Database schema changes:** new mandatory fields and table restructuring
@@ -7447,7 +7445,7 @@ These are probably not that important if your server is not open to the internet
 
 ### Recommended minimal steps
 
-- When coming from an old version take a look to the [Migration Notes](/docs/category/migration-notes)
+- When coming from an old version take a look to the [Migration Notes](/docs/migration-notes)
 - Install an http server to be used a proxy for iDempiere - most used are nginx or apache. See [Proxy iDempiere Through Nginx](https://wiki.idempiere.org/en/Proxy_iDempiere_Through_Nginx)
     - Configure your proxy to publish just /webui - iDempiere by default has several other services published
     - if you plan to use SOAP webservices externally you must publish also /ADInterface
@@ -7564,76 +7562,17 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 ---
 
-## Purpose
+## Introduction to installing iDempiere
 
 The purpose of this chapter is to get your own copy of iDempiere up and running for your learning and playing experience. Please note that production-quality installation instructions will be covered in a future chapter.
 
-## iDempiere Installation
+### iDempiere installation
 
 The easiest way to install iDempiere is using Docker assuming you have access and knowledge with docker.
 
 The next easiest way to install iDempiere is using an installation script. You can use this script in any location (local or in the cloud) running Ubuntu 24.04.
 
 The last option to install iDempiere is via manual steps.
-
----
-
-## Contribute Quick Info Widgets
-
-### 📂 File Structure
-
-1. Place your `.zip` files in the `static/downloads/` folder.
-2. Place your images in the `static/downloads/img/quick-infos` folder.
-3. Add an entry to the `quick-info-2packs.md` file in this repository.  
-   - Include the `.zip` file.  
-   - Add a screenshot of the outcome.  
-   - Provide a short description of the Quick Info.
-
-:::tip 💡  
-If you're not familiar with Docusaurus, share your intention to contribute in the documentation channel.  
-We will guide you through the process and assist you.  
-Simply share the `.zip` file with us, and we’ll be glad to help!  
-:::
-
----
-
----
-
-## Quick Info 2packs
-
-Quick Info widgets provide **contextual, real-time information** inside iDempiere without navigating away from the record you’re working on.  
-They are installed using **2pack files** and can be enabled per window or table.
-
-## Getting Started
-
-<details>
-  <summary>📥 How to Install the 2pack</summary>
-
-1. Download the `.zip` file for the Quick Info you want.
-2. Log In to iDempiere as System
-3. Open the _Pack In_ window
-4. Create a new record
-5. Attach the zip file to the created record
-6. Click the _PackIn_ button
-7. Run _Cache Reset_
-
-</details>
-
----
-
-### 📦 Available Quick Info 2packs
-
-Last Product Price
-
-        ![Last Product Price Quick Info Preview](/img/quick-infos/QuickInfo_LastProductPrice.png)
-
-This Quick Info shows the last purchased price for the products selected in purchase orders. It can be configured by vendor.
-Author: Diego Ruiz - BX Service GmbH
-
-        Purchasing
-        Products
-
-        ⬇ Download
 
 ---
 
@@ -8021,11 +7960,9 @@ Stop or uninstall the bundle from the Felix web console. The standard SQL Query 
 
 ## Automatic External Pack In
 
-## ⚙️ Automatic External Pack In
-
 This feature allows 2Pack files to be installed automatically at server startup from an external folder—without requiring them to be embedded in a plug-in.
 
-### 📝 Background
+### Background
 
 iDempiere supports several ways to install 2Packs from within plug-ins:
 
@@ -8040,11 +7977,11 @@ iDempiere supports several ways to install 2Packs from within plug-ins:
 
 ---
 
-
+### Automatic External Pack In
 
 To overcome the limitations above, the **Automatic External Pack In** mechanism was introduced.
 
-#### 🔁 Automatic on Server Restart
+#### Automatic on Server Restart
 
 This is driven by several **SysConfig** keys:
 
@@ -8058,7 +7995,7 @@ This is driven by several **SysConfig** keys:
 
 ---
 
-#### 🧩 ZIP File Naming Convention
+#### ZIP File Naming Convention
 
 Files must follow this naming pattern:
 
@@ -8092,7 +8029,7 @@ The `ClientValue` component determines which client(s) will receive the 2Pack in
 - Use `ALL-CLIENTS-[SeedClient]` when you need to establish UUID mappings for cross-client record references
 :::
 
-#### 📦 Examples
+#### Examples
 
 - `201803161725_SYSTEM_CreateNewColumn.zip` → Installs on System
 - `201803161735_GardenWorld_CreateNewTax.zip` → Just GardenWorld
@@ -8135,7 +8072,7 @@ Emails are sent **per tenant** and also for **System** if applicable.
 
 ---
 
-### 📚 References
+### References
 
 - [IDEMPIERE-3551](https://idempiere.atlassian.net/browse/IDEMPIERE-3551)
 - [IDEMPIERE-3660](https://idempiere.atlassian.net/browse/IDEMPIERE-3660)
@@ -8146,7 +8083,7 @@ Emails are sent **per tenant** and also for **System** if applicable.
 
 ## Using 2Pack to Transfer Data and Automate Plug-in Setup
 
-### 🎯 Goal
+### Goal
 
 This tutorial explains how to use the **2Pack functionality** in iDempiere to:
 
@@ -8155,7 +8092,7 @@ This tutorial explains how to use the **2Pack functionality** in iDempiere to:
 
 ---
 
-### ✅ Prerequisites
+### Prerequisites
 
 Before starting, review:
 
@@ -8166,14 +8103,14 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-### 🔁 TL;DR
+### TL;DR
 
 Watch this quick video overview: 
 [https://www.youtube.com/watch?v=jykimSDE_54](https://www.youtube.com/watch?v=jykimSDE_54)
 
 ---
 
-### 🔧 Pack Out Data
+### Pack Out Data
 
 #### Managing Your Pack Outs
 
@@ -8181,7 +8118,7 @@ Watch this quick video overview:
 - Open the **Pack Out** window via:  
   `Application Dictionary > Application Packaging > Pack Out`
 - Create a new entry:
-  - **Name**: Use a meaningful name based on the [file naming notation recommendations](./what-is-2pack#️-file-naming-conventions)
+  - **Name**: Use a meaningful name based on the [file naming notation recommendations](./what-is-2pack#file-naming-conventions)
   - **Package Version**: Match your plug-in version from `MANIFEST.MF`
   - **Description / Instructions**: Optional metadata
   - **Date From**: Filter entries by creation date
@@ -8221,7 +8158,7 @@ In any window (e.g., Product), click the **Export** button in the toolbar:
 
 ---
 
-### 📥 Pack In Data Manually
+### Pack In Data Manually
 
 #### Install a 2Pack
 
@@ -8243,7 +8180,7 @@ In **Package Maintenance**, select a package and run the **Pack Roll** process.
 
 ---
 
-### ⚙️ Pack In Automatically with Plug-ins
+### Pack In Automatically with Plug-ins
 
 #### Option 1: `AdempiereActivator`
 
@@ -8285,7 +8222,7 @@ Newer versions of iDempiere (after IDEMPIERE-4105) allow using this format:
 
 ---
 
-### 📚 Advanced: Packing Out Related Records
+### Advanced: Packing Out Related Records
 
 To pack out hierarchical data (e.g., `C_BPartner` and related `AD_User`), use a structured SQL:
 
@@ -8433,8 +8370,6 @@ To improve traceability, a logging option is available in the **Package Maintena
 
 ## What is a 2Pack in iDempiere?
 
-## 📦 What is a 2Pack in iDempiere?
-
 A **2Pack** in iDempiere is a powerful packaging mechanism that enables easy configuration management across environments.
 
 :::note What is a 2Pack?
@@ -8445,7 +8380,7 @@ Think of it as a "configuration snapshot" that can be easily transferred and app
 
 ---
 
-### 🎯 Purpose
+### Purpose
 
 2Packs are used to:
 
@@ -8455,7 +8390,7 @@ Think of it as a "configuration snapshot" that can be easily transferred and app
 
 ---
 
-### 🧩 What Can Be Included?
+### What Can Be Included?
 
 A 2Pack can include the following elements:
 
@@ -8472,7 +8407,7 @@ A 2Pack can include the following elements:
 
 ---
 
-### 🔁 Key Concepts
+### Key Concepts
 
 - **Pack Out**: Export configuration and/or data into a `.zip` file
 - **Pack In**: Import the `.zip` file into another iDempiere environment
@@ -8481,9 +8416,9 @@ The `.zip` file contains an XML manifest and associated data files.
 
 ---
 
-### ⚙️ How It Works
+### How It Works
 
-#### 📋 Step-by-Step Workflow
+#### Step-by-Step Workflow
 
 1. **Define Package**: Developers define a **Pack Out** package using the iDempiere UI
 2. **Generate Archive**: 2Pack generates a `.zip` file with all the selected metadata and data
@@ -8509,7 +8444,7 @@ Use **Automatic External Pack In** for CI/CD pipelines and Docker deployments to
 
 ---
 
-### 🛠️ File Naming Conventions
+### File Naming Conventions
 
 #### Standard 2Pack Naming
 
@@ -8546,7 +8481,7 @@ Use descriptive names for the `AdditionalInformation` part to make it easy to id
 
 ---
 
-### ✅ Benefits
+### Benefits
 
 - Enables consistent configuration across systems
 - Automates initial setup for plug-ins
@@ -8559,7 +8494,7 @@ Use descriptive names for the `AdditionalInformation` part to make it easy to id
 :::
 ---
 
-### 👉 What’s Next?
+### What’s Next?
 
 Now that you understand what a 2Pack is, **read the next section to learn step-by-step how to create and import 2Packs in your own plug-ins or iDempiere environments.**
 
@@ -8724,7 +8659,7 @@ If your contribution includes **changes to the database**, follow these steps to
 ### 🆔 Requesting Centralized IDs
 Request official IDs as described in the [Manage the Centralized IDs](https://wiki.idempiere.org/en/Centralized_ID_Management) guide or contact the core team.
 
-### 🛠 Generating Migration Scripts
+### Generating Migration Scripts
 
 To generate migration scripts automatically:
 
@@ -8741,7 +8676,7 @@ iDempiere will automatically generate the corresponding SQL migration scripts an
 
 ---
 
-#### ⚠️ Important
+#### Important
 
 > Even failed SQL statements are logged.  
 > **You must carefully review the generated migration script before committing it.**  
@@ -8749,7 +8684,7 @@ iDempiere will automatically generate the corresponding SQL migration scripts an
 
 ---
 
-#### ✅ Example Migration Script
+#### Example Migration Script
 
 ```sql
 -- IDEMPIERE-5409 Dashboard Content - Maximizable checkbox
@@ -9054,7 +8989,7 @@ git push origin main
 
 ---
 
-### ✅ Best Practices
+### Best Practices
 
 - Create one branch per feature or fix.
 - Keep commit messages short and descriptive.
@@ -9076,7 +9011,7 @@ This is a checklist of the **minimum steps** required to submit high-quality pul
 If your contribution includes database changes, follow the [Changing the Database](./changing-the-database) instructions **before writing any code**.
 :::
 
-### ✅ Contribution Checklist
+### Contribution Checklist
 
 - **Every commit must be related to a JIRA ticket.**  
   Please **do not mix unrelated commits**. For example, if your change includes a refactoring, submit:
@@ -9110,7 +9045,7 @@ If your contribution includes database changes, follow the [Changing the Databas
 - **Avoid common pitfalls**:  
   Review the list of [Common Issues](./common-issues) before submitting your patch.
 
-### 📦 Final Step: Create the pull request
+### Final Step: Create the pull request
 
 When your code is ready, create a [Pull Request](./git-workflow) with a **commit message that includes the JIRA ticket number** (e.g., `IDEMPIERE-1234 Fix XYZ`).  
 This will allow automatic linking between the Git repository and the JIRA ticket.
@@ -9459,7 +9394,7 @@ The skills live in [`.agents/skills`](https://github.com/idempiere/idempiere/tre
 
 - Agents do not write migration scripts or dictionary IDs. You generate them from the iDempiere UI using [Centralized IDs](./changing-the-database). The agent tells you what to create and reviews the generated scripts.
 - Agents never print, log or commit `idempiere.properties`, `idempiereEnv.properties` or other files with passwords. If an agent needs connection details, it asks you.
-- Agents prefer overloads over changing public or protected method signatures. A signature change happens only when you explicitly decide on a breaking change. You then document it as one in the pull request and in the [migration notes](/docs/category/migration-notes).
+- Agents prefer overloads over changing public or protected method signatures. A signature change happens only when you explicitly decide on a breaking change. You then document it as one in the pull request and in the [migration notes](/docs/migration-notes).
 - You are responsible for every line you submit, whether you wrote it or an agent did. Read and understand the change before opening a pull request.
 - Be honest in the pull request about what you tested and what you did not test.
 - All other contribution rules still apply. See [How to Contribute](./how-to-contribute) and [Common Issues](./common-issues).
@@ -9668,15 +9603,15 @@ Now that you have a custom window, you might want to add some code to work your 
 
 ---
 
-## Purpose (Basic-development)
+## Introduction to iDempiere development
 
 The purpose of this site is to help you learn, configure, enhance, deploy, scale and support an iDempiere instance and the iDempiere community as a whole.
 
-## iDempiere Introduction
+### iDempiere introduction
 
 Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system supported by a skillful community. The project focuses on high-quality software, a philosophy of openness and its collaborative community that includes subject matter specialists, integrators, developers and end-users.
 
-## Why iDempiere
+### Why iDempiere
 - It is easy to install.
 - It runs on a small server.
 - It scales to hundreds of users.
@@ -9686,7 +9621,7 @@ Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system
 - It is commonly used around the world.
 - It is supported by a large community.
 
-## Try iDempiere Online
+### Try iDempiere online
 - [iDempiere 13 Orion Stable](https://demo.globalqss.com/webui/)
 - [iDempiere 14 Dev Build](https://test.idempiere.org/webui/)
 - [iDempiere 14 Dev Build with Oracle](https://test-oracle.idempiere.org/webui/)
@@ -10061,7 +9996,7 @@ Enable client Accounting
 
 ##### COPY_TENANT_BATCH_FLUSH_SIZE {#COPY_TENANT_BATCH_FLUSH_SIZE}
 
-[Copy Tenant](../new-features/v12/copy-or-move-tenant.md) feature now insert into batches, this configurator defines the batch size for the insert
+[Copy Tenant](../new-features/v6.2/copy-or-move-tenant.md) feature now insert into batches, this configurator defines the batch size for the insert
 
 - Values: default 10000
 - Scope: System
@@ -11628,11 +11563,11 @@ Some parts of this text are adapted from materials created by Pedro Rozo and Sma
 
 ---
 
-## Purpose (Basic-functional)
+## Introduction to using iDempiere
 
 The purpose of this section is to help you get started using iDempiere. We will focus on basic vocabulary and tools that most people use regardless of your industry. 
 
-## Getting Started
+### Getting started
 
 * Start by familiarizing yourself with [iDempiere vocabulary](vocabulary.md). This page was purposefully kept to a minimum to make learning the basics as efficient as possible.
 
@@ -11849,7 +11784,7 @@ on each of its icons or buttons, it clearly shows the name and/or role it plays.
 system you may use any browser (Chrome, Firefox, Safari ...) by entering the URL
 provided.
 
-## Components of iDempiere Window
+### Components of iDempiere Window
 ![Components of main/home page of iDempiere](./PNGs/Screen_basicplane.png)
 
 Some important areas are:
@@ -11862,32 +11797,32 @@ not seen above further right are
 - Performance (Dashboard)
 - Help / Quick Info area (optionally displayable)
 
-## Favorites
+### Favorites
 The favorites are user specific. In this view you can add processes and / or documents to which you can access
 more frequently, gaining time and accessing more quickly. You can also remove them
 using the delete icon.
 You can define new favorites just by dragging & dropping the items (using your mouse)
 from the menu to this area.  For a better organization, favorites can be ordered like a tree within folders, and with the "Automatic Launch" button you can define options that are automatically opened when you start a session.
 
-## Recent items
+### Recent items
 In this view you can see the records or documents that were recently modified by the
 logged-in user. In the same way they can be deleted dragging and dropping the recent item into delete icon.
 :::tip
 You can add a record to the Recent Items by editing a field of the record and then canceling the edition.
 :::
 
-## Activities
+### Activities
 Here you can quickly review some statistics number configured in your system.  They are shown as a title and a number indicating the number of records that are present in this type of activity.  Some of them
 are: Notice, Request, Workflow Activities and Unprocessed Documents.  This list be different vary depending on your role and the configuration of your system.
 
-## Views
+### Views
 Here you can see the direct links to the most frequent info windows, among them
 Business Partner and others. Info windows are quick ways to access crucial data from the ERP-system.
 
-## Calendar
+### Calendar
 The calendar can be used to display important dates for the user which must be defined in the respective business activities using the Requests feature.
 
-## Performance (Dashboard)
+### Performance (Dashboard)
 Here you can see computed values in graphical charts of important business data. They usually are tailored for each company and often for single user groups.
 
 ![Further components of main/home page of iDempiere](./PNGs/Screen_basicrightpart.png)
@@ -11896,7 +11831,7 @@ There are different types of windows you can access from the menu, a) Windows fo
 
 Most important are data entry and display windows.
 
-## Main items and functions in data and order entry windows
+### Main items and functions in data and order entry windows
 
 ![Items and functions in data entry windows](./PNGs/FunctionsOnDataEditWindows_Open.png)
 
@@ -11930,7 +11865,7 @@ Some documents have a printable format designed, you can generate those formats 
 This allows to define and see Labels or Tags associated to the current record.
 17. More options:
 
-## More options (for functions in data and order entry windows
+### More options (for functions in data and order entry windows
 
 ![More options for functions in data entry windows](./PNGs/FunctionsOnDataEditWindows_HiddenExtras.png)
 
@@ -11983,8 +11918,13 @@ The rules apply to people and AI agents alike. Agents also follow the extra rule
 - Open the page with one or two sentences that say what the page covers and who it is for.
 - After the opening sentences, state which iDempiere versions the page applies to, for example "Applies to iDempiere 9 and later."
 - New Feature pages are the exception: their **Version:** line states the version, so they do not need the sentence.
-- Do not set `title` in the frontmatter. It would duplicate the first heading. Many older pages still set it and will be cleaned up later.
+- Do not set `title` in the frontmatter. It would duplicate the first heading.
 - Start from a [page template](#page-templates) when you create a new page.
+
+### Folders
+
+- Each folder has a `_category_.json` file with the sidebar label and position.
+- When the folder has a generated index page, set `link.slug` to the folder path, for example `"slug": "/new-features/v15"` for `docs/new-features/v15/`. Write dots in the version as dashes (`/new-features/v1-0`). Without `slug`, the index page is published at `/docs/category/<label>`.
 
 ### Frontmatter
 
@@ -12307,7 +12247,7 @@ Now that you're familiar with the basics, you're ready to explore iDempiere furt
 
 ---
 
-## Purpose (Docs)
+## About the iDempiere documentation
 
 The purpose of this site is to help you learn, configure, enhance, deploy, scale and support an iDempiere instance and the iDempiere community as a whole.
 
@@ -12316,11 +12256,11 @@ There are two sources of iDempiere documentation:
 1. This site offers a guided resource for learning iDempiere.
 2. [iDempiere wiki](https://wiki.idempiere.org) offers a place for general knowledge, comments and community details.
 
-## iDempiere Introduction
+### iDempiere introduction
 
 Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system supported by a skillful community. The project focuses on high-quality software, a philosophy of openness and its collaborative community that includes subject matter specialists, implementors, developers and end-users.
 
-## Why iDempiere
+### Why iDempiere
 - It is easy to install.
 - It runs on a small server.
 - It scales to hundreds of users.
@@ -12332,7 +12272,7 @@ Founded in 2011 iDempiere is a powerful, Tier II, open-source ERP/CRM/SCM system
 - It has supporting ecosystem for a complete solution (BI, workflow, portals).
 - It costs a fraction of proprietary ERP.
 
-## Try iDempiere Online
+### Try iDempiere online
 - [iDempiere 12 Kudos Stable](https://demo.globalqss.com/webui/)
 - [iDempiere 13 Dev Build](https://test.idempiere.org/webui/)
 - [iDempiere 13 Dev Build with Oracle](https://test-oracle.idempiere.org/webui/)
@@ -12589,6 +12529,69 @@ See [PostgreSQL Default to Native Dialect](/docs/new-features/v9/postgresql-defa
 
 ---
 
+## Avoid Sequence Locks in Document Numbers
+
+:::warning Not Yet in Stable Release
+This feature is not yet part of a stable iDempiere release and may change.
+:::
+
+**Goal:** Technical
+
+**Developer:** [Carlos Ruiz](https://github.com/CarlosRuiz-globalqss) ([BX Service](https://www.bx-service.com))
+
+**Feature Ticket:** [IDEMPIERE-7120](https://idempiere.atlassian.net/browse/IDEMPIERE-7120)
+
+### Avoiding Sequence Locks Under Concurrent Document Creation
+
+#### The Problem: Sequence Lock Contention
+
+When many documents are created concurrently - for example during load testing or high-volume integrations - iDempiere's numeric document sequences become a bottleneck. Each document number allocation locks the `AD_Sequence` row, and under heavy concurrency, threads queue up waiting for the lock. After the configured timeout (`MSEQUENCE_GETNEXT_TIMEOUT` SysConfig, default 30 seconds) is exceeded, causing `GenerateDocumentNoTimeOut` errors and failed document creation.
+
+#### Solution 1: Allow Gaps for Numeric Document Sequences
+
+For numeric document sequences where lock contention is a concern but UUIDs are not desired, a new **Allow Gaps** setting is available.
+
+- When a numeric document sequence allows gaps, the next number allocation uses a **standalone/committed transaction** instead of the caller's transaction. This means the allocated number is preserved even if the caller rolls back, avoiding the need to hold the lock for the entire document creation process.
+
+#### Solution 2: UUID Document Sequences
+
+This feature introduces a **UUID-based sequence type** for document numbers. When a sequence is configured as UUID, it generates a **UUIDv7** value - a time-ordered, sortable UUID - without needing to lock the sequence row at all. This eliminates the contention point entirely.
+
+Existing numeric sequences continue to work as before. UUID sequences are opt-in per document type.
+
+UUID sequences have also better performance as they don't require the UPDATE to the AD_Sequence table.
+
+#### Setting Up a low-contention Document Sequence
+
+1. **Open the Sequence window** and select the sequence used by your document type, or create a new one.
+2. **Enable the UUID option** by setting the `IsUUIDSeq` flag to **Yes**.
+3. Alternatively **Enable the Allow Gaps** by setting the `IsAllowSequenceGaps` flag to **Yes**.
+4. **Configure prefix and suffix** as needed - same as numeric sequences, the UUID value is placed between the prefix and suffix.
+
+![AvoidLocksInDocumentSequences](pathname:///img/new-features/v14/01_AvoidLocksInDocumentSequences.png)
+
+#### Document Number Field Expansion
+
+To accommodate the longer UUID values, all `DocumentNo` columns and related process parameters in the core iDempiere tables have been widened from **30 to 255 characters**. This includes fields such as:
+
+- `I_GLJournal.BatchDocumentNo`
+- `I_GLJournal.JournalDocumentNo`
+- `C_PaySelection.Name`
+- `C_Payment.CheckNo`
+- `C_Order.POReference`
+- `C_Invoice.POReference`
+- `C_BPartner.POReference`
+
+#### Backward Compatibility
+
+This feature is fully backward compatible:
+
+- Existing numeric sequences continue to work unchanged.
+- UUID sequences are opt-in; no existing behavior is altered unless `IsUUIDSeq` is explicitly enabled.
+- Document number field expansion (30 → 255 characters) is transparent to existing data.
+
+---
+
 ## Support Report Source in Report Columns and Add User1/User2 as Report Sources
 
 :::warning Not Yet in Stable Release
@@ -12598,7 +12601,7 @@ This feature is not yet part of a stable iDempiere release and may change.
 **Developer:** [Deepak Pansheriya](https://wiki.idempiere.org/en/User:Dpansheriya) ([Logilite Technologies](https://www.logilite.com))  
 **Feature Ticket:** [IDEMPIERE-4069](https://idempiere.atlassian.net/browse/IDEMPIERE-4069)
 
-
+### Support Report Source in Report Columns and Add User1/User2 as Report Sources
 
 ### Overview
 
@@ -12758,69 +12761,6 @@ The new functionality is available only when Report Source is configured on Repo
 - Existing calculation logic remains unchanged.
 - User1 and User2 are supported wherever Report Sources are available.
 - Dynamic columns are generated based on the selected accounting dimension values.
-
----
-
-## Avoid Sequence Locks in Document Numbers
-
-:::warning Not Yet in Stable Release
-This feature is not yet part of a stable iDempiere release and may change.
-:::
-
-**Goal:** Technical
-
-**Developer:** [Carlos Ruiz](https://github.com/CarlosRuiz-globalqss) ([BX Service](https://www.bx-service.com))
-
-**Feature Ticket:** [IDEMPIERE-7120](https://idempiere.atlassian.net/browse/IDEMPIERE-7120)
-
-### Avoiding Sequence Locks Under Concurrent Document Creation
-
-#### The Problem: Sequence Lock Contention
-
-When many documents are created concurrently - for example during load testing or high-volume integrations - iDempiere's numeric document sequences become a bottleneck. Each document number allocation locks the `AD_Sequence` row, and under heavy concurrency, threads queue up waiting for the lock. After the configured timeout (`MSEQUENCE_GETNEXT_TIMEOUT` SysConfig, default 30 seconds) is exceeded, causing `GenerateDocumentNoTimeOut` errors and failed document creation.
-
-#### Solution 1: Allow Gaps for Numeric Document Sequences
-
-For numeric document sequences where lock contention is a concern but UUIDs are not desired, a new **Allow Gaps** setting is available.
-
-- When a numeric document sequence allows gaps, the next number allocation uses a **standalone/committed transaction** instead of the caller's transaction. This means the allocated number is preserved even if the caller rolls back, avoiding the need to hold the lock for the entire document creation process.
-
-#### Solution 2: UUID Document Sequences
-
-This feature introduces a **UUID-based sequence type** for document numbers. When a sequence is configured as UUID, it generates a **UUIDv7** value - a time-ordered, sortable UUID - without needing to lock the sequence row at all. This eliminates the contention point entirely.
-
-Existing numeric sequences continue to work as before. UUID sequences are opt-in per document type.
-
-UUID sequences have also better performance as they don't require the UPDATE to the AD_Sequence table.
-
-#### Setting Up a low-contention Document Sequence
-
-1. **Open the Sequence window** and select the sequence used by your document type, or create a new one.
-2. **Enable the UUID option** by setting the `IsUUIDSeq` flag to **Yes**.
-3. Alternatively **Enable the Allow Gaps** by setting the `IsAllowSequenceGaps` flag to **Yes**.
-4. **Configure prefix and suffix** as needed - same as numeric sequences, the UUID value is placed between the prefix and suffix.
-
-![AvoidLocksInDocumentSequences](pathname:///img/new-features/v14/01_AvoidLocksInDocumentSequences.png)
-
-#### Document Number Field Expansion
-
-To accommodate the longer UUID values, all `DocumentNo` columns and related process parameters in the core iDempiere tables have been widened from **30 to 255 characters**. This includes fields such as:
-
-- `I_GLJournal.BatchDocumentNo`
-- `I_GLJournal.JournalDocumentNo`
-- `C_PaySelection.Name`
-- `C_Payment.CheckNo`
-- `C_Order.POReference`
-- `C_Invoice.POReference`
-- `C_BPartner.POReference`
-
-#### Backward Compatibility
-
-This feature is fully backward compatible:
-
-- Existing numeric sequences continue to work unchanged.
-- UUID sequences are opt-in; no existing behavior is altered unless `IsUUIDSeq` is explicitly enabled.
-- Document number field expansion (30 → 255 characters) is transparent to existing data.
 
 ---
 
@@ -14385,6 +14325,7 @@ Changes to *Java Options* field will not be added to idempiere.ini file. Therefo
 
 ## Allow to Specify Print Format for Dashboard Content Report
 
+### Allow to Specify Print Format for Dashboard Content Report
 **Ticket:** [IDEMPIERE-5490](https://idempiere.atlassian.net/browse/IDEMPIERE-5490)
 
 **Developer:** Peter Takacs, Cloudempiere
@@ -14889,6 +14830,7 @@ This can be resolved similar to the ZK.2 use case from Norbert described above.
 
 ## Enable Showing Inactive Records through Reference
 
+### Enable Showing Inactive Records through Reference
 **Ticket:** [IDEMPIERE-5573](https://idempiere.atlassian.net/browse/IDEMPIERE-5573)
 
 **Developer:** Peter Takacs, Cloudempiere
@@ -15339,6 +15281,7 @@ When the preference is set the sessions opened by the user are read-only - he/sh
 
 ## Refactor ESC/Alt+X Shortcut for Closing Tabs
 
+### Refactor ESC/Alt+X Shortcut for Closing Tabs
 **Ticket:** &lt;https://idempiere.atlassian.net/browse/IDEMPIERE-5786&gt;(http://IDEMPIERE-5786)
 
 **Developer:** Peter Takacs, Cloudempiere
@@ -16346,176 +16289,6 @@ Adding this feature, it is possible to set a context variable like #ThemeVarient
 
 ---
 
-## Copy or Move Tenant
-
-**Goal:** Technical
-
-**Developers:** Carlos Ruiz
-
-**Sponsors:**  [FH](https://www.fh.com.br/)
-
-This feature was introduced in version 6.2 and it has received improvements and bug fixes in different versions.
-
-### Description
-There are two use cases for this process:
-
-- allows to move a whole tenant from an external database to the current, it can be used also to move a tenant from Oracle to PostgreSQL or vice versa
-- allows to copy a template tenant in the current database into a new tenant
-
-### Usage
-- Log in as System
-- Open the process **[Copy Tenant](https://wiki.idempiere.org/en/Copy_Client_(Process_ID-200110))**
-- Fill the parameters properly as explained below in detail
-- If there are errors, analyze and solve
-    - **Tip:** if there are too many errors, you can find all of them in the Process Audit window, Log tab.  This can be exported to CSV or Excel also for easier analysis.
-
-### Parameters
-**Copy Template Tenant:** Flag to indicate if the copy is from an external database, or local from a template tenant.
-
-#### Parameters for External Copy
-**JDBC URL:** JDBC URL of the external database.
-
-**User Name:** user used to connect to the JDBC URL.  Optional, if empty use the same as target.
-
-**Password:** password used to connect to the JDBC URL.  Optional, if empty use the same as target.
-
-**Tables to Exclude:** Comma separated list of tables to exclude.  Temporary tables (name starting with T_) are always excluded.
-
-**Tenants to Include:** Comma separated list of AD_Client_ID to include, if empty then all non-System tenants will be moved.  You must usually exclude tenant 11 (GardenWorld).
-
-**Tenants to Exclude:** Comma separated list of AD_Client_ID to exclude.  Just Include or Exclude can be used, not both at the same time.
-
-**Only Validate:** To do just initial validations and not execute the process.  Like a dry-run.
-
-**Preserve IDs:** Comma separated list of tables that require to preserve IDs.  You must take care that the IDs don't collide.  In case you need to solve ID collisions the process [Migrate ID](/docs/new-features/v6.2/migrate-an-id-or-uuid) can help with this task.
-
-**Fallback Records when FK not found:** When moving data from external database is possible to encounter System records in the source database that are not present in the target database, in this case all references to those missing records will error, this parameter helps to solve that problem assigning a fallback System record for the problematic tables/records.  This option is a comma separated list of table=idOrUuid or table.foreignUuid=idOrUuid.  More detailed explanation and examples can be found in the ticket [IDEMPIERE-6441](https://idempiere.atlassian.net/browse/IDEMPIERE-6441?focusedCommentId=53188).  (NOTE: this option was added in [Release-12.2025-04-04](https://wiki.idempiere.org/en/ChangeLog_Release_12#2025-04-04))
-
-#### Parameters for Copy Template
-**Tenant Name:** This is the name of the new tenant to be created.
-
-**Tenant Key:** The search key for the new tenant to be created, this is used to replace some initial object names (explained below in process).
-
-**Tenants to Include:** This is the ID of the tenant to take as template - just one ID must be filled here (for example 11 for GardenWorld).
-
-**Only Validate:** To do just initial validations and not execute the process.  Like a dry-run.
-
-**Skip some validations:** In order to make the process faster, you can enable this flag if you're sure the data is correct (for example if all validations passed in some previous check).
-
-**Fallback Records when FK not found:** Same as explained above for external copy, as the copy is within the same database the System records are present, so this option is mostly used for external copy.  But it can be helpful to solve cross-tenant issues found in some old databases.
-
-### Copy Tenant from External DB
-![01 MoveTenant](pathname:///img/new-features/v12/01_MoveTenant.png)
-
-#### Validations
-Before starting to copy the external data the process performs the following validations:
-
-- **General validations**
-    - Verify connection to source database using the URL provided (and username/password also if necessary)
-    - Verify there are tenants to move with the include/exclude filter provided
-    - Verify the tenant does not exist in current database
-    - Verify that attachments and archive are using the internal storage provider (Database) - migrating external storage provider is not implemented.  This validation is just necessary if there are attachment/archive records in the tenant to be moved, and also if the attachment/archive table has not been excluded.
-
-- **Table validations:** Each table in the dictionary of the source database (not excluded in the filter) is checked, these validations are made just for tables that have tenant data
-    - Table must be in target database - if the table doesn't exist in target database then the error is informed and the process cannot be executed
-
-- **Column validations:** Each column of a table being moved is validated
-    - The column must exist in target database
-    - Source and target column must have the same reference - this validation is just performed for official references
-    - Source and target column must have the same length in dictionary
-    - Before release-11 the columns with types SingleSelectionGrid and MultipleSelectionGrid were not supported.
-
-- **Foreign key validations:** Each column that is a foreign key is validated for
-    - If the column has a foreign key in a tenant different than system the error is informed - this can be considered a cross-tenant data corruption error and is considered a stopper for the process
-    - If the column has foreign keys in System tenant, then the UUIDs are verified to exist in the target database.  If the system UUID doesn't exist this is informed and the process cannot be executed.  To solve this error consider moving the required System data from source to target database using 2Pack.
-    - When there are missing foreign keys the process report a summary of the offending keys at the end of the log, this allows easily to analyze and create fallback records when possible and necessary, and solve this issue using the parameter "Fallback Records when FK not found**"**
-
-After passing all validations it is possible to execute the process, but still there is a possibility that required null columns or other foreign key issues are present in the database, this will be informed in the processing if found.
-
-#### Process
-When all validations pass then the process can be executed if the flag "Only Validate" is disabled.
-
-The process takes the records from every table to be moved, read it from the source database and insert the record in the target database.
-
-The IDs are changed as necessary in the target database, and **the UUIDs are preserved**.
-
-The conversion map of IDs are saved in the temporary table T_MoveClient.  This table also saves the original identifier on the source database when the record is replaced by a fallback record.
-
-When inserting record the process needs to find the corresponding foreign key conversion for the IDs.  There can be some cases where orphan records are found at this stage (foreign keys not existing), this is informed and the process is stopped.
-
-Also if the table is flagged to Preserve IDs is selected, and the ID already exists in the target database this is informed and the process is stopped.
-
-Note also that tables containing AD_Table_ID+Record_ID or AD_Table_ID+Record_UU will migrate just the records of the included tables (this is, it will not migrate records for excluded tables).
-
-There is a special treatment for the column AD_Preference.Value when AD_Preference.Attribute ends with _ID, in this case the Value is treated as a foreign key and the required conversion is saved as a String.  Also the columns with types "Chosen Multiple Selection Search", "Chosen Multiple Selection Table", "Single Selection Grid" and "Multiple Selection Grid" are converted.  However if your database has other ID fields being written as String in fields with other data types, these values will not be converted.
-
-### Copy Template Tenant within current DB
-![Copy Tenant   Process (iDempiere 1.0.0)](pathname:///img/new-features/v12/Copy_Tenant_-_Process_(iDempiere_1.0.0).png)
-
-#### Validations
-Before starting to copy the template tenant the process performs the following validations:
-
-- **General validations**
-    - Verify there is just one tenant to move in the include filter provided
-    - Verify the tenant does not exist in current database (verified by Name and Key)
-    - Verify there is not W_Store record with the context as tenant key in lowercase
-    - Verify that attachments and archive are using the internal storage provider (Database) - migrating external storage provider is not implemented.  This validation is just necessary if there are attachment/archive records in the tenant to be moved, and also if the attachment/archive table has not been excluded.
-
-- **Table validations:** Each table in the dictionary of the source database (not excluded in the filter) is checked, these validations are made just for tables that have tenant data
-
-- **Column validations:** Each column of a table being copied is validated
-    - Before release-11 the columns with types SingleSelectionGrid and MultipleSelectionGrid were not supported.
-
-- **Foreign key validations:** Each column that is a foreign key is validated for
-    - If the column has a foreign key in a tenant different than system the error is informed - this can be considered a cross-tenant data corruption error and is considered a stopper for the process
-    - When there are missing foreign keys the process report a summary of the offending keys at the end of the log, this allows easily to analyze and create fallback records when possible and necessary, and solve this issue using the parameter "Fallback Records when FK not found**"**
-
-After passing all validations it is possible to execute the process, but still there is a possibility that required null columns or other foreign key issues are present in the database, this will be informed in the processing if found.
-
-#### Process
-When all validations pass then the process can be executed if the flag "Only Validate" is disabled.
-
-The process takes the records from every table to be copied, read it from the template tenant and insert the record in the target tenant.
-
-The IDs are changed, and also **the UUIDs are changed**.
-
-The conversion map of IDs or UUIDs are saved in the temporary table T_MoveClient.  This table also saves the original identifier on the source tenant when the record is replaced by a fallback record.
-
-The conversion map of the UUIDs is saved in the table AD_Package_UUID_Map.
-
-When inserting record the process needs to find the corresponding foreign key conversion for the IDs.  There can be some cases where orphan records are found at this stage (foreign keys not existing), this is informed and the process is stopped.
-
-Note also that tables containing AD_Table_ID+Record_ID or AD_Table_ID+Record_UU will migrate just the records of the included tables (this is, it will not migrate records for excluded tables).
-
-There is a special treatment for the column AD_Preference.Value when AD_Preference.Attribute ends with _ID, in this case the Value is treated as a foreign key and the required conversion is saved as a String.  Also the columns with types "Chosen Multiple Selection Search", "Chosen Multiple Selection Table", "Single Selection Grid" and "Multiple Selection Grid" are converted.  However if your database has other ID fields being written as String in fields with other data types, these values will not be converted.
-
-The following columns replace the template tenant key with the target tenant key:
-- AD_Org.Value
-- AD_Org.Name
-- AD_Role.Name
-- AD_Tree.Name
-- AD_User.Name
-- AD_User.Description
-- C_AcctProcessor.Name
-- C_AcctSchema.Name
-- C_BPartner.Value
-- C_BPartner.Name
-- C_Calendar.Name
-- C_Element.Name
-- M_CostType.Name
-- R_RequestProcessor.Name
-
-The column W_Store.WebContext is assigned with the Tenant Key in lowercase.  Same for the column AD_User.Value.
-
-The columns AD_User.Password and AD_User.Salt are cleared, so initially there are not passwords assigned for the users in the new tenant, it is a job of SuperUser to log in there and assign passwords (or do it in some custom post-process).
-
-**Technical Info:** [IDEMPIERE-3916](https://idempiere.atlassian.net/browse/IDEMPIERE-3916), [IDEMPIERE-6441](https://idempiere.atlassian.net/browse/IDEMPIERE-6441)
-
-### Known Issues
-- Alex reported that copying a big tenant from another postgresql got error "java.net.SocketException: Connection timed out (Read failed)".  Changed tcp_keepalives_idle in postgresql.conf to 300 sec and the process didn't hang anymore.
-
----
-
 ## Define HTML field at field level
 
 **Goal:** Technical
@@ -16754,7 +16527,7 @@ Additionally, it supports the negate button to choose to print all invoices but 
 
 **Feature** **Ticket:** [IDEMPIERE-6588](https://idempiere.atlassian.net/browse/IDEMPIERE-6588)
 
-
+#### Exclude Freight Charges from Payment Discount
 To improve the accuracy of payment discounts, a new flag *IsExcludedFromDiscount* was introduced on the Charge (C_Charge) table. When this flag is enabled for a charge (e.g., Freight), amounts associated with that charge will be excluded from the discount calculation during payment processing.
 
 NOTE this calculation works just when the [Tenant Info](https://wiki.idempiere.org/en/Tenant_(Window_ID-109)#Tab:_Tenant_Info) flag "Discount calculated from Line Amounts" is enabled.
@@ -17103,7 +16876,7 @@ Bank statement can be matched manually or using matcher automatically. Earlier i
 **Developer:** Deepak Pansheriya [Logilite Technologies](https://www.logilite.com)
 
 **Feature Ticket:** [IDEMPIERE-6304](https://idempiere.atlassian.net/browse/IDEMPIERE-6304)
-
+#### Multiple SSO Provider Support
 This enhancement introduces the ability to configure and support **multiple Single Sign-On (SSO) providers** in iDempiere. Previously, only one SSO provider could be used at a time, and the system lacked flexibility to present multiple options at login.
 
 With this feature, system administrators can now configure more than one SSO provider (e.g., Cognito, Keycloak) and present each as a distinct **login button on the login page**. This provides organizations with flexible identity provider options and improves user experience across different domains or roles.
@@ -17650,7 +17423,7 @@ There is no migration of old XML attachments to the new Attachment File approach
 * **Developer:** [Diego Ruiz](https://github.com/d-ruiz/)([BX Service GmbH](https://www.bx-service.com/))
 * **Feature Ticket:** [IDEMPIERE-7060](https://idempiere.atlassian.net/browse/IDEMPIERE-7060)
 
-
+### Code-based password reset
 
 When email login is enabled, "Forgot My Password" runs a code-based reset directly in the login page
 instead of emailing a temporary password. The user requests a reset, receives a numeric code by email
@@ -18597,13 +18370,13 @@ The new extension point provides a clean and modular mechanism for implementing 
 
 ---
 
-## Support YAML and JSON on PackOut
+## YAML and JSON Support for 2Pack (PackOut / PackIn)
 
 * **Goal:** Technical
 * **Developer:** [Peter Takacs](https://github.com/PeterTakacs300)
 * **Feature Ticket:** [IDEMPIERE-7016](https://idempiere.atlassian.net/browse/IDEMPIERE-7016)
 
-## YAML and JSON Support for 2Pack (PackOut / PackIn)
+
 
 The 2Pack packaging system (`PackOut` / `PackIn`) has historically only supported XML as its serialization format. This feature adds **JSON and YAML** as peer export/import formats, giving users the choice of a more human-readable and version-control-friendly output.
 
@@ -18672,8 +18445,6 @@ A database migration creates:
 
 ---
 
-## Support UOM and QtyEntered on Inventory Documents
-
 ## Feature: Support UOM and QtyEntered on Physical Inventory and Inventory Increase/Decrease
 
 * **Goal:** Functional
@@ -18699,8 +18470,6 @@ The CSV Import Formats for "Inventory Decrease/Increase" and "Physical Inventory
 :::
 
 ---
-
-## WEditor Dynamic Display OSGi Service
 
 ## WEditor Dynamic Display OSGI Service
 
@@ -18739,24 +18508,7 @@ public class CostAdjustmentLineASIListener implements WEditor.DynamicDisplayList
 
 ---
 
-## BPartner and Account column in Statement of Account report
-
-**Goal:** Functional   
-**Developer:** [Deepak Pansheriya](https://wiki.idempiere.org/en/User:Dpansheriya) ([Logilite Technologies](https://www.logilite.com))  
-**Feature Ticket:** [IDEMPIERE-6733](https://idempiere.atlassian.net/browse/IDEMPIERE-6733)
-
-### Enhancing statement of account report to display Business Partner and Account column
-
-When we generate statement of account report for multiple account, the account column is use full to know GL entry is related to which GL account.
-This help in generating Account Ledger having credit and debit of different accounts related to a BPartner.  
-
-When a ledger of accounts are printed, we can see the business partner column and account column will give more insights to statement. For example printing Bank account statement or Cash statement, we can see the business partner column and account column will give more insights to statement.
-
-![User Task Type Node Action configuration](/img/docs/new-features/FinStatement_BPartner_Account_Column.png)
-
----
-
-## Accounting Implementation Classes Extracted to org.idempiere.acct
+## Accounting Implementation Classes Extracted to `org.idempiere.acct`
 
 * **Goal:** Technical  
 * **Developer:** [Diego Ruiz](https://github.com/d-ruiz/)([TrekGlobal](https://www.trekglobal.com/))
@@ -18837,13 +18589,30 @@ If your plugin only references **model classes** (e.g., `MInvoice`, `MOrder`) an
 
 ---
 
+## BPartner and Account column in Statement of Account report
+
+**Goal:** Functional   
+**Developer:** [Deepak Pansheriya](https://wiki.idempiere.org/en/User:Dpansheriya) ([Logilite Technologies](https://www.logilite.com))  
+**Feature Ticket:** [IDEMPIERE-6733](https://idempiere.atlassian.net/browse/IDEMPIERE-6733)
+
+### Enhancing statement of account report to display Business Partner and Account column
+
+When we generate statement of account report for multiple account, the account column is use full to know GL entry is related to which GL account.
+This help in generating Account Ledger having credit and debit of different accounts related to a BPartner.  
+
+When a ledger of accounts are printed, we can see the business partner column and account column will give more insights to statement. For example printing Bank account statement or Cash statement, we can see the business partner column and account column will give more insights to statement.
+
+![User Task Type Node Action configuration](/img/docs/new-features/FinStatement_BPartner_Account_Column.png)
+
+---
+
 ## CKEditor : allow override config files in a plugin
 
 **Goal:** Technical  
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  
 **Feature Ticket:** [IDEMPIERE-6953](https://idempiere.atlassian.net/browse/IDEMPIERE-6953)
 
-
+### CKEditor : allow override config files in a plugin
 
 It can be useful to override config files of CKEditor in a plugin (eg: for spell check).
 
@@ -18862,7 +18631,7 @@ Two System Configurator keys are available to store the path:
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  
 **Feature Ticket:** [IDEMPIERE-6063](https://idempiere.atlassian.net/browse/IDEMPIERE-6063)
 
-
+### Customization of email sent when server starts
 
 Idea is to allow implementors to define which informations should be set in the email sent at server start.
 
@@ -18911,7 +18680,7 @@ Apart from that, the System Configurator **EMAIL_SERVER_START_RECIPIENT** allow 
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  
 **Feature Ticket:** [IDEMPIERE-7063](https://idempiere.atlassian.net/browse/IDEMPIERE-7063)
 
-
+### Default Display Mode for Detail Tabs
 
 Until now, Detail tabs always opened in **Grid** mode.
 
@@ -18949,7 +18718,7 @@ This enhancement reduces unnecessary clicks and improves usability for maintenan
 * **Developer:** [hengsin](https://github.com/hengsin)([TrekGlobal](https://www.trekglobal.com/))
 * **Feature Ticket:** [IDEMPIERE-6908](https://idempiere.atlassian.net/browse/IDEMPIERE-6908)
 
-### 🚀 Features
+### Features
 
 * **Centralized Registry:** Tracks all installed extensions and their current versions.
 * **Dependency Resolution:** Automatically validates requirements and dependencies before installation.
@@ -18957,7 +18726,7 @@ This enhancement reduces unnecessary clicks and improves usability for maintenan
 * **Metadata Integration:** Parses and processes `metadata.json` and `info.md` files to provide a rich UI experience for administrators.
 * **Secure Downloads:** Manages secure retrieval of artifacts from remote repositories and verifies checksums.
 
-### 📦 Changes
+### Changes
 
 * **New Metadata Tables:**
    - `AD_Extension`: to store name, id, version and metadata of an extension. This includes external and bundled extensions (differentiated by the `bundled` flag).
@@ -18981,7 +18750,7 @@ This enhancement reduces unnecessary clicks and improves usability for maintenan
    - https://github.com/hengsin/idempiere-extension-repository-template/ 
    - Template to create a new extension repository.
 
-### 🛠 Usage & Configuration
+### Usage & Configuration
 
 * **Configuration:**
     1. Configure the **Extension Provider URL** using the `IDEMPIERE_EXTENSION_REPOSITORY` System Property to point to a compatible metadata repository. For local development/testing, you can use `file:///path/to/your/extension-repository/` instead of a remote repository hosted at GitHub.com.
@@ -19102,7 +18871,7 @@ A key prefix (`idempiere:<INSTANCE_NAME>:`) is applied automatically to all Redi
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  
 **Feature Ticket:** [IDEMPIERE-6661](https://idempiere.atlassian.net/browse/IDEMPIERE-6661)
 
-
+### Reusable Web Session for Scheduler
 
 The Scheduler can reuse an existing web session (`AD_Session`) instead of creating a new one each time it runs.
 
@@ -23088,3 +22857,62 @@ Schedule: A new release is prepared approximately every 1 or 2 weeks
 
 - [IDEMPIERE-6647](https://idempiere.atlassian.net/browse/IDEMPIERE-6647) Improve test coverage of org.adempiere.base ([#3186](https://github.com/idempiere/idempiere/pull/3186))
 - [IDEMPIERE-6820](https://idempiere.atlassian.net/browse/IDEMPIERE-6820) Add multi tenant support to SSO (DAD-209) ([#3177](https://github.com/idempiere/idempiere/pull/3177))
+
+---
+
+## Contribute Quick Info Widgets
+
+### File Structure
+
+1. Place your `.zip` files in the `static/downloads/` folder.
+2. Place your images in the `static/downloads/img/quick-infos` folder.
+3. Add an entry to the `quick-info-2packs.md` file in this repository.  
+   - Include the `.zip` file.  
+   - Add a screenshot of the outcome.  
+   - Provide a short description of the Quick Info.
+
+:::tip 💡  
+If you're not familiar with Docusaurus, share your intention to contribute in the documentation channel.  
+We will guide you through the process and assist you.  
+Simply share the `.zip` file with us, and we’ll be glad to help!  
+:::
+
+---
+
+---
+
+## Quick Info 2packs
+
+Quick Info widgets provide **contextual, real-time information** inside iDempiere without navigating away from the record you’re working on.  
+They are installed using **2pack files** and can be enabled per window or table.
+
+### Getting Started
+
+<details>
+  <summary>📥 How to Install the 2pack</summary>
+
+1. Download the `.zip` file for the Quick Info you want.
+2. Log In to iDempiere as System
+3. Open the _Pack In_ window
+4. Create a new record
+5. Attach the zip file to the created record
+6. Click the _PackIn_ button
+7. Run _Cache Reset_
+
+</details>
+
+---
+
+#### Available Quick Info 2packs
+
+Last Product Price
+
+        ![Last Product Price Quick Info Preview](/img/quick-infos/QuickInfo_LastProductPrice.png)
+
+This Quick Info shows the last purchased price for the products selected in purchase orders. It can be configured by vendor.
+Author: Diego Ruiz - BX Service GmbH
+
+        Purchasing
+        Products
+
+        ⬇ Download

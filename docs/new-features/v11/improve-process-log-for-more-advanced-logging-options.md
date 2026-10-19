@@ -1,6 +1,8 @@
 # Improve Process Log for more advanced logging options
 
-> **Initiator**: Norbert Bede, Cloudempiere
+> The main goal of this improvement was, to add the option of creating and updating Process Instance Logs (ADPInstanceLog) during the execution of any process.
+
+**Initiator**: Norbert Bede, Cloudempiere
 
 **Developer**: Peter Takács, Cloudempiere
 

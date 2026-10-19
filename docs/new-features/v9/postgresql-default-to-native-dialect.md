@@ -1,6 +1,8 @@
 # PostgreSQL Default to Native Dialect
 
-> **Goal:** Development
+> PostgreSQL Default to Native Dialect: a New Feature in iDempiere 9.
+
+**Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 

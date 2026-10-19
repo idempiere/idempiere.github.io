@@ -1,6 +1,8 @@
 # Support Readonly Logic Set Pressed Logic Custom Toolbar Button
 
-> **Goal:** Development
+> Support Readonly Logic Set Pressed Logic Custom Toolbar Button: a New Feature in iDempiere 10.
+
+**Goal:** Development
 
 **Developer:** Deepak Pansheriya
 

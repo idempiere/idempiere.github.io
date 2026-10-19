@@ -6,7 +6,7 @@
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  
 **Feature Ticket:** [IDEMPIERE-6953](https://idempiere.atlassian.net/browse/IDEMPIERE-6953)
 
-
+## CKEditor : allow override config files in a plugin
 
 It can be useful to override config files of CKEditor in a plugin (eg: for spell check).
 

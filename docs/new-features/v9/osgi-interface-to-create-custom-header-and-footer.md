@@ -1,14 +1,14 @@
 # OSGi Interface to Create Custom Header and Footer
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Add AD_PrintHeaderFooter table and OSGi interface IPrintHeaderFooter to replace Standard Header and Footer for tabular (non-form) report.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-4894](https://idempiere.atlassian.net/browse/IDEMPIERE-4894)
 
 **Description:**
-Add AD_PrintHeaderFooter table and OSGi interface IPrintHeaderFooter to replace Standard Header and Footer for tabular (non-form) report.
-
 ## Development
 - Create OSGi component for the org.idempiere.print.IPrintHeaderFooter interface
 - Create a AD_PrintHeaderFooter record for the created OSGi component. Fill Source Class field with Component Name

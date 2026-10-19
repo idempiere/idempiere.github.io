@@ -1,8 +1,10 @@
 # Messages at Client Level
 
-> **Developer:**  Nicolas Micoud
+> Messages are defined and translated at System level.
 
 **Goal:** Functional
+
+**Developer:**  Nicolas Micoud
 
 **Feature Ticket:** [IDEMPIERE-5136](https://idempiere.atlassian.net/browse/IDEMPIERE-5136)
 

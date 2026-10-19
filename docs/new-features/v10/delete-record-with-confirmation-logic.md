@@ -1,6 +1,8 @@
 # Delete Record with Confirmation Logic
 
-> **Goal:** UX/Functional
+> Delete Record with Confirmation Logic: a New Feature in iDempiere 10.
+
+**Goal:** UX/Functional
 
 **Developer:** Takacs Peter, **Design**: Norbert Bede **PR Review**:  Carlos Ruiz.
 

@@ -1,6 +1,8 @@
 # AD_Message+AD_Element Resource Bundle for Jasper Report
 
-> **Goal:** Development
+> Pass Resource Bundle backed by ADMessage and ADElement as report parameter to Jasper Report.
+
+**Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 

@@ -1,6 +1,8 @@
 # OSGi New Event Handling Annotation
 
-> **Feature:** OSGi New Event Handling Annotation
+> OSGi New Event Handling Annotation
+
+**Feature:** OSGi New Event Handling Annotation
 
 **Goal:** Development
 

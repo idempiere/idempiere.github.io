@@ -1,8 +1,10 @@
 # Favorite Dashboard
 
-> **Developer:**  Logilite Technologies
+> Logilite has developed user organizable favorite tree dashboard widget in Adaxa suite.
 
 **Goal:** Functional
+
+**Developer:**  Logilite Technologies
 
 **Feature Ticket:** [IDEMPIERE-3340](http://idempiere.atlassian.net/browse/IDEMPIERE-3340)
 

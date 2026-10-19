@@ -1,14 +1,14 @@
 # Export Tree Definition
 
-> **Developer:** Carlos Ruiz
+> Before this change, it was only possible to export the main menu tree.
 
 **Goal:** Technical
+
+**Developer:** Carlos Ruiz
 
 **Feature Ticket:** [IDEMPIERE-6546](https://idempiere.atlassian.net/browse/IDEMPIERE-6546)
 
 **Description:**
-
-Before this change, it was only possible to export the main menu tree.
 
 Now, is possible to export any Tree, using 2Pack.
 

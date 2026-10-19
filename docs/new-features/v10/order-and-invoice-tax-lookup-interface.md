@@ -1,14 +1,14 @@
 # Order and Invoice: Tax Lookup Interface
 
-> **Goal:** Development
+> Implement a new tax lookup interface to allow plugin to override the relation between bp/location/product and tax code without changing core.
+
+**Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-5056](https://idempiere.atlassian.net/browse/IDEMPIERE-5056)
 
 **Description:**
-
-Implement a new tax lookup interface to allow plugin to override the relation between bp/location/product and tax code without changing core.
 
 **Changes:**
 

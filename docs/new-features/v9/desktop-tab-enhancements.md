@@ -1,8 +1,10 @@
 # Desktop Tab Enhancements
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Desktop Tab Enhancements: a New Feature in iDempiere 9.
 
 **Goal:** Usability
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-4949](https://idempiere.atlassian.net/browse/IDEMPIERE-4949)
 

@@ -1,12 +1,12 @@
 # Private Access Window
 
-> **Developer:** Carlos Ruiz
+> Roles with "Personal Lock" permission are able to set locks in records.
 
 **Goal:** Functional
 
-**Description:**
+**Developer:** Carlos Ruiz
 
-Roles with "Personal Lock" permission are able to set locks in records.
+**Description:**
 
 And roles with "Personal Access" permission are able to see records locked by other users.
 

@@ -1,6 +1,8 @@
 # Attach Files using Drag and Drop
 
-> **Goal:** User Experience
+> Attach Files using Drag and Drop: a New Feature in iDempiere 10.
+
+**Goal:** User Experience
 
 **Developer:** Deepak Pansheriya
 

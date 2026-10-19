@@ -1,8 +1,10 @@
 # CustomsTariffNumber in Products and enhanced import
 
-> **Developer:**  Martin Schönbeck
+> CustomsTariffNumber in Products and enhanced import: a New Feature in iDempiere 9.
 
 **Goal:** Functional
+
+**Developer:**  Martin Schönbeck
 
 **Feature Ticket:** [IDEMPIERE-4688](https://idempiere.atlassian.net/browse/IDEMPIERE-4688)
 

@@ -1,8 +1,10 @@
 # Validate Required Plugins
 
-> **Developer:** Carlos Ruiz
+> Validate Required Plugins: a New Feature in iDempiere 12.
 
 **Goal:** Technical
+
+**Developer:** Carlos Ruiz
 
 **Description:**
 

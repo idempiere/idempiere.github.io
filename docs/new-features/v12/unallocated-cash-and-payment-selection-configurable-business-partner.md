@@ -1,6 +1,6 @@
 # Unallocated Cash and Payment Selection Configurable Business Partner
 
-> &lt;h2 style='color:red'&gt;NOTE: This is not yet integrated into core&lt;/h2&gt;
+> Unallocated Cash and Payment Selection Configurable Business Partner: a New Feature in iDempiere 12.
 
 &lt;h2 style="color:red"&gt;NOTE: This is not yet integrated into core&lt;/h2&gt;
 

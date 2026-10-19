@@ -1,8 +1,10 @@
 # Negate Option for Chosen Multiple Component parameter
 
-> **Developer:** Matheus.marcelino ([talk](https://wiki.idempiere.org/en/User_talk:Matheus.marcelino))
+> Negate Option for Chosen Multiple Component parameter: a New Feature in iDempiere 10.
 
 **Goal:** Functional
+
+**Developer:** Matheus.marcelino ([talk](https://wiki.idempiere.org/en/User_talk:Matheus.marcelino))
 
 **Sponsor:** devCoffee
 

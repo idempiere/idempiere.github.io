@@ -1,14 +1,14 @@
 # Excel File Preview at Report and Attachment Viewer
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Add Excel file (xls, xlsx and csv) preview support to report and attachment viewer.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-4801](https://idempiere.atlassian.net/browse/IDEMPIERE-4801)
 
 **Description:**
-Add Excel file (xls, xlsx and csv) preview support to report and attachment viewer.
-
 ## Usage
 New popup menu after running of report with excel format output type:
 

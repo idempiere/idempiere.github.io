@@ -1,6 +1,8 @@
 # JSON request and response support for Web Services
 
-> **Goal:** Development
+> JSON request and response support for Web Services: a New Feature in iDempiere 9.
+
+**Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 

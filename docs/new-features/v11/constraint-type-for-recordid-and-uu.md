@@ -1,6 +1,8 @@
 # Constraint Type for RecordID and UU
 
-> **Developer**: cloudempiere, Takacs Peter
+> The purpose of this improvement is to avoid storing IDs of deleted records in the RecordID column.
+
+**Developer**: cloudempiere, Takacs Peter
 
 **Design**: Carlos Ruiz/Norbert Bede
 

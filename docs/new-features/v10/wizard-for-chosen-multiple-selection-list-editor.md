@@ -1,8 +1,10 @@
 # Wizard for Chosen Multiple Selection List editor
 
-> **Developer:** Nicolas Micoud
+> Selecting items from a multiple selection list field can be time consuming, especially if you want to order it properly.
 
 **Goal:** Usability
+
+**Developer:** Nicolas Micoud
 
 **Sponsor:** [TGI](http://tgi.eu)
 

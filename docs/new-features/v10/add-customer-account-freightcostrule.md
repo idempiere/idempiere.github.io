@@ -1,14 +1,14 @@
 # Add Customer Account FreightCostRule
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Add FREIGHTCOSTRULE_CustomerAccount where freight cost should be charged to the receiver/customer shipper account.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-5083](https://idempiere.atlassian.net/browse/IDEMPIERE-5083)
 
 **Description:**
-
-Add FREIGHTCOSTRULE_CustomerAccount where freight cost should be charged to the receiver/customer shipper account.
 
 **Changes:**
 

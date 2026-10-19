@@ -6,7 +6,7 @@
 * **Developer:** [Diego Ruiz](https://github.com/d-ruiz/)([BX Service GmbH](https://www.bx-service.com/))
 * **Feature Ticket:** [IDEMPIERE-7060](https://idempiere.atlassian.net/browse/IDEMPIERE-7060)
 
-
+## Code-based password reset
 
 When email login is enabled, "Forgot My Password" runs a code-based reset directly in the login page
 instead of emailing a temporary password. The user requests a reset, receives a numeric code by email

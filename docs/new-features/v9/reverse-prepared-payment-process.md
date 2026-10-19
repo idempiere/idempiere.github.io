@@ -1,16 +1,16 @@
 # Reverse Prepared Payment Process
 
-> **Developer:**  Nicolas Micoud
+> This process was implemented to be able to fix a processed Payment Selection record without the need to hack DB.
 
 **Goal:** Functional
+
+**Developer:**  Nicolas Micoud
 
 **Sponsor:** [T.G.I.](https://tgi.eu)
 
 **Feature Ticket:** [IDEMPIERE-5170](https://idempiere.atlassian.net/browse/IDEMPIERE-5170)
 
 **Description:**
-
-This process was implemented to be able to fix a processed Payment Selection record without the need to hack DB.
 
 Scenario is:
 - Create a payment selection and add invoices.

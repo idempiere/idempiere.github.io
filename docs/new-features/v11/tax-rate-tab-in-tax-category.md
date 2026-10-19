@@ -1,8 +1,10 @@
 # Tax Rate Tab in Tax Category
 
-> **Developer:** Zuhri Utama
+> There's a new tab in the Tax Category window that allows users to work with tax rates directly from this window.
 
 **Goal:** Functional
+
+**Developer:** Zuhri Utama
 
 **Feature** **Ticket:** [IDEMPIERE-4648](https://idempiere.atlassian.net/browse/IDEMPIERE-4648)
 

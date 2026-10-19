@@ -1,6 +1,8 @@
 # Record ID Editor
 
-> **Goal:** UX/Functional
+> The Record ID field type allows two actions - select Table and Record, and zoom to the selected record.
+
+**Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, Design: Norbert Bede
 

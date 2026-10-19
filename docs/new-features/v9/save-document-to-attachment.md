@@ -1,8 +1,10 @@
 # Save Document to Attachment
 
-> **Developer:** Carlos Ruiz
+> Save Document to Attachment: a New Feature in iDempiere 9.
 
 **Goal:** Usability
+
+**Developer:** Carlos Ruiz
 
 **Description:**
 

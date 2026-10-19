@@ -1,6 +1,8 @@
 # Period Close Disallow When Unposted Documents Exists
 
-> **Goal:** Controlling Improvment
+> The purpose of this change better controlling between period close and un-posted documents.
+
+**Goal:** Controlling Improvment
 
 **Developer:** cloudempiere, Takacs Peter
 

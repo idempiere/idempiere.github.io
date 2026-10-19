@@ -1,6 +1,8 @@
 # Styles On HTML Report columns
 
-> **Goal:** UX/Functional
+> Styles On HTML Report columns: a New Feature in iDempiere 10.
+
+**Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, **Design**: Norbert Bede **Review**: CarlosRuiz
 

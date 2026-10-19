@@ -1,8 +1,10 @@
 # Configurable Cache Size per Table
 
-> **Developer:** Carlos Ruiz
+> Configurable Cache Size per Table: a New Feature in iDempiere 10.
 
 **Goal:** Technical
+
+**Developer:** Carlos Ruiz
 
 **Description:**
 

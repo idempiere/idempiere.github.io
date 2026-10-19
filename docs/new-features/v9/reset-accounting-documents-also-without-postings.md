@@ -1,8 +1,10 @@
 # Reset Accounting Documents also without Postings
 
-> **Developer:** Carlos Ruiz
+> Reset Accounting Documents also without Postings: a New Feature in iDempiere 9.
 
 **Goal:** Functional
+
+**Developer:** Carlos Ruiz
 
 **Description:**
 

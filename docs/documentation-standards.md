@@ -13,8 +13,13 @@ The rules apply to people and AI agents alike. Agents also follow the extra rule
 - Open the page with one or two sentences that say what the page covers and who it is for.
 - After the opening sentences, state which iDempiere versions the page applies to, for example "Applies to iDempiere 9 and later."
 - New Feature pages are the exception: their **Version:** line states the version, so they do not need the sentence.
-- Do not set `title` in the frontmatter. It would duplicate the first heading. Many older pages still set it and will be cleaned up later.
+- Do not set `title` in the frontmatter. It would duplicate the first heading.
 - Start from a [page template](#page-templates) when you create a new page.
+
+## Folders
+
+- Each folder has a `_category_.json` file with the sidebar label and position.
+- When the folder has a generated index page, set `link.slug` to the folder path, for example `"slug": "/new-features/v15"` for `docs/new-features/v15/`. Write dots in the version as dashes (`/new-features/v1-0`). Without `slug`, the index page is published at `/docs/category/<label>`.
 
 ## Frontmatter
 

@@ -1,6 +1,8 @@
 # OOMPH Import Projects
 
-> **Goal:** UX/Functional
+> Added idempiere.setup to utilsdev/oomph to support import of iDempiere projects into a new Eclipse workspace through the use of Oomph Import feature.
+
+**Goal:** UX/Functional
 
 **Developer:** Hengsin
 

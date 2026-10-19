@@ -1,8 +1,10 @@
 # Multiple SMTP Per Tenant
 
-> **Developer:**  Nicolas Micoud
+> Since v9, is possible to define several SMTP servers per tenant.
 
 **Goal:** Functional
+
+**Developer:**  Nicolas Micoud
 
 **Feature Ticket:** [IDEMPIERE-4866](https://idempiere.atlassian.net/browse/IDEMPIERE-4866)
 

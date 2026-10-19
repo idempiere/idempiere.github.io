@@ -1,8 +1,10 @@
 # Stocked Expense Type Product
 
-> **Developer: Deepak Pansheriya [Logilite Technologies](http://www.logilite.com/)**
+> Stocked Expense Type Product: a New Feature in iDempiere 11.
 
 **Goal:** Functional
+
+**Developer: Deepak Pansheriya [Logilite Technologies](http://www.logilite.com/)**
 
 **Feature** **Ticket:** [IDEMPIERE-5836](https://idempiere.atlassian.net/browse/IDEMPIERE-5836)
 

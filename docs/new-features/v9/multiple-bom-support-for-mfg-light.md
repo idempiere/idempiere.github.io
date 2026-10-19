@@ -1,8 +1,10 @@
 # Multiple BOM support for Mfg Light
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Multiple BOM support for Mfg Light: a New Feature in iDempiere 9.
 
 **Goal:** Usability
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-1250](https://idempiere.atlassian.net/browse/IDEMPIERE-1250)
 

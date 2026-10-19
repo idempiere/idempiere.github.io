@@ -1,6 +1,8 @@
 # Export SQL Insert Scripts
 
-> **Goal:** UX/Functional
+> Export SQL Insert Scripts: a New Feature in iDempiere 11.
+
+**Goal:** UX/Functional
 
 **Developer:** Hengsin
 

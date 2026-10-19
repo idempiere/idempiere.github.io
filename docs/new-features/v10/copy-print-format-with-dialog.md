@@ -1,6 +1,8 @@
 # Copy Print format With Dialog
 
-> **Goal:** UX/Functional
+> Copy Print format With Dialog: a New Feature in iDempiere 10.
+
+**Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter
 

@@ -1,8 +1,10 @@
 # Enable Save Column Width WListBox
 
-> **Developer:** Flemming Birch
+> Enable Save Column Width WListBox: a New Feature in iDempiere 9.
 
 **Goal:** Usability
+
+**Developer:** Flemming Birch
 
 **Feature** **Ticket:** [IDEMPIERE-4863](https://idempiere.atlassian.net/browse/IDEMPIERE-4863)
 

@@ -1,8 +1,10 @@
 # ImageURL Fieldtype
 
-> **Developer:**  Hengsin, Deep Testing, Carlos Ruiz.
+> ImageURL Fieldtype: a New Feature in iDempiere 12.
 
 **Goal:** Technical
+
+**Developer:**  Hengsin, Deep Testing, Carlos Ruiz.
 
 **Feature Ticket:** [IDEMPIERE-6242](https://idempiere.atlassian.net/browse/IDEMPIERE-6242)
 

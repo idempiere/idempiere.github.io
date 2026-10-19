@@ -1,6 +1,8 @@
 # OSGi New Process Factory
 
-> **Feature:** New Process Factory and Process Annotations
+> New Process Factory and Process Annotations
+
+**Feature:** New Process Factory and Process Annotations
 
 **Goal:** Development
 

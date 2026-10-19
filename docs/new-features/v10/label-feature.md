@@ -1,8 +1,10 @@
 # Label Feature
 
-> **Developer:** Alan.lesc1 ([talk](https://wiki.idempiere.org/en/User_talk:Alan.lesc1))
+> This feature should allow users to assign metadata (labels) to any iDempiere record.
 
 **Goal:** Functional
+
+**Developer:** Alan.lesc1 ([talk](https://wiki.idempiere.org/en/User_talk:Alan.lesc1))
 
 **Sponsor:** Norbert Bede
 

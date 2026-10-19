@@ -1,8 +1,10 @@
 # Auto Save Current Tab Changes
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Auto Save Current Tab Changes: a New Feature in iDempiere 10.
 
 **Goal:** Usability
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-5202](https://idempiere.atlassian.net/browse/IDEMPIERE-5202)
 

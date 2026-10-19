@@ -1,14 +1,14 @@
 # Support for pure UUID key tables
 
-> **Developer:** Carlos Ruiz
+> Historically iDempiere has always required a primary key _ID (integer java type, numeric(10) database type) on tables to support many features.
 
 **Goal:** Technical
+
+**Developer:** Carlos Ruiz
 
 **Sponsor:** [FH](https://www.fh.com.br/)
 
 ## Description
-Historically iDempiere has always required a primary key _ID (integer java type, numeric(10) database type) on tables to support many features.
-
 Apart from the features not supported for non-ID tables, the integer _ID key has some inconvenients, like:
 - maximum value not big enough for very high volume environments (max ID is 2.147.483.647)
 - the need of a sequence to generate next numbers (AD_Sequence or native sequences)

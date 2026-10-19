@@ -1,8 +1,10 @@
 # Inject Context Variables From Role
 
-> **Developer:** muriloht
+> Inject Context Variables From Role: a New Feature in iDempiere 11.
 
 **Goal:** Technical
+
+**Developer:** muriloht
 
 **Description:**
 

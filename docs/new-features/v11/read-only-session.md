@@ -1,12 +1,12 @@
 # Read-Only Session
 
-> **Developer:** Carlos Ruiz
+> This feature is to implement a user preference to make his/her sessions read-only until the preference is unchecked again.
 
 **Goal:** Usability
 
-**Description:**
+**Developer:** Carlos Ruiz
 
-This feature is to implement a user preference to make his/her sessions read-only until the preference is unchecked again.
+**Description:**
 
 It's very useful for example when you have access to a production environment and don't want to mess up things, it is common to have one tab open with Production, and another tab with Test, and is very easy to do mistakes here with unintended changes to Production data.
 

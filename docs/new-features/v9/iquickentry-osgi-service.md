@@ -1,6 +1,8 @@
 # IQuickEntry OSGI Service
 
-> **Goal:** Development
+> I have prepared an OSGI Service that allows to use a customized WQuickEdit dialog in the web client.
+
+**Goal:** Development
 
 **Developer:** Andreas Sumerauer
 

@@ -1,6 +1,6 @@
 # Read Access To Tables Not In Role Table Access List
 
-> When using the Role Table Access Include list (i.e uncheck the Exclude checkbox) for Read Write access, the current behaviour is hard coded as the role has no access to other tables that is not par...
+> Read Access To Tables Not In Role Table Access List: a New Feature in iDempiere 13.
 
 **Feature:** Add READ_TABLES_NOT_IN_TABLE_ACCESS_INCLUDE_LIST AD_SysConfig flag for Role Table Access
 

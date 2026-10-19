@@ -1,6 +1,8 @@
 # Info Window Generate Invoice (manual)
 
-> **Feature:** Generate invoice (manual) migrated to info window
+> Generate invoice (manual) migrated to info window
+
+**Feature:** Generate invoice (manual) migrated to info window
 
 **Goal:** Functional
 

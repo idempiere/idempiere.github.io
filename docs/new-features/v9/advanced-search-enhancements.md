@@ -1,8 +1,10 @@
 # Advanced Search Enhancements
 
-> **Developer:** Igor Pojzl
+> Advanced Search Enhancements: a New Feature in iDempiere 9.
 
 **Goal:** Usability
+
+**Developer:** Igor Pojzl
 
 **Feature Ticket:** [IDEMPIERE-4364](https://idempiere.atlassian.net/browse/IDEMPIERE-4364)
 

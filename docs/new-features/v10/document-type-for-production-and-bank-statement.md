@@ -1,8 +1,10 @@
 # Document Type for Production and Bank Statement
 
-> **Developer:** Carlos Ruiz
+> Document Type for Production and Bank Statement: a New Feature in iDempiere 10.
 
 **Goal:** Functional
+
+**Developer:** Carlos Ruiz
 
 **Description:**
 

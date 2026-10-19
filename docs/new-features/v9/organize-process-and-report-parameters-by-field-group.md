@@ -1,14 +1,14 @@
 # Organize process and report parameters by Field Group
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Implement collapsible field group for report and process parameter.
 
 **Goal:** Usability
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-1994](https://idempiere.atlassian.net/browse/IDEMPIERE-1994)
 
 **Description:**
-Implement collapsible field group for report and process parameter.
-
 ## Usage
 ### Set field group add report/process parameter window:
 ![1994 Process Parameter](pathname:///img/new-features/v9/1994_Process_Parameter.png)

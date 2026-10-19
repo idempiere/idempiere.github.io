@@ -1,6 +1,8 @@
 # Confirm Panel With Checkbox
 
-> **Goal:** Development
+> Confirm Panel With Checkbox: a New Feature in iDempiere 9.
+
+**Goal:** Development
 
 **Developer:** Andreas Sumerauer
 

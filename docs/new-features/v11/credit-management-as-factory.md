@@ -1,6 +1,8 @@
 # Credit Management as Factory
 
-> **Goal:** Customizibility, Extendibility
+> Credit Management as Factory: a New Feature in iDempiere 11.
+
+**Goal:** Customizibility, Extendibility
 
 **Developer:** [Logilite Technologies](http://www.logilite.com/)
 

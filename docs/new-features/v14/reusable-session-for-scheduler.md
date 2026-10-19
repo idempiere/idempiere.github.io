@@ -6,7 +6,7 @@
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  
 **Feature Ticket:** [IDEMPIERE-6661](https://idempiere.atlassian.net/browse/IDEMPIERE-6661)
 
-
+## Reusable Web Session for Scheduler
 
 The Scheduler can reuse an existing web session (`AD_Session`) instead of creating a new one each time it runs.
 

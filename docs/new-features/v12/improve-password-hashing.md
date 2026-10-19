@@ -1,12 +1,12 @@
 # Improve Password Hashing
 
-> **Developer:** Carlos Ruiz Heng Sin
+> Currently password hashing is using SHA-512 and salt is generated using SHA1PRNG random generator and 64 bytes.
 
 **Goal:** Security
 
-**Description:**
+**Developer:** Carlos Ruiz Heng Sin
 
-Currently password hashing is using SHA-512 and salt is generated using SHA1PRNG random generator and 64 bytes.
+**Description:**
 
 This ticket make the following changes to improve the security of password hashing in iDempiere:
 - Generate salt using the DRBG algorithm and 256 bit strength.

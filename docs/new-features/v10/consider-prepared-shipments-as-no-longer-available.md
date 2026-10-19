@@ -1,6 +1,8 @@
 # Consider prepared shipments as no longer available
 
-> **Goal:** UX/Functional
+> Consider prepared shipments as no longer available: a New Feature in iDempiere 10.
+
+**Goal:** UX/Functional
 
 **Developer:** Martin Schönbeck, Lukas Heidbreder
 

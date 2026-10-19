@@ -1,14 +1,14 @@
 # Form SQL Query
 
-> **Developer:** Carlos Ruiz
+> The new form SQL Query allows admin users to execute queries in the database.
 
 **Goal:** Technical
+
+**Developer:** Carlos Ruiz
 
 **Sponsor:** [FH](https://www.fh.com.br/)
 
 ## Description
-The new form SQL Query allows admin users to execute queries in the database.
-
 The form **DOES NOT support** multiple SQL statements, or any statement containing a semicolon (;)
 
 It allows just to execute single queries.

@@ -1,6 +1,9 @@
 # Enable Showing Inactive Records through Reference
 
-> **Ticket:** [IDEMPIERE-5573](https://idempiere.atlassian.net/browse/IDEMPIERE-5573)
+> Enable Showing Inactive Records through Reference: a New Feature in iDempiere 11.
+
+## Enable Showing Inactive Records through Reference
+**Ticket:** [IDEMPIERE-5573](https://idempiere.atlassian.net/browse/IDEMPIERE-5573)
 
 **Developer:** Peter Takacs, Cloudempiere
 

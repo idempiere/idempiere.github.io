@@ -1,6 +1,8 @@
 # Custom Commission calculations
 
-> **Goal:** Extensibility
+> The core commission feature works well but it is limited.
+
+**Goal:** Extensibility
 
 **Developer:** Diego.ruiz
 

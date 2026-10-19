@@ -1,16 +1,16 @@
 # Synchronize Print Format Items
 
-> **Developer:** Nicolas Micoud
+> Especially in SaaS environnment, it is time consuming to add some columns in Report Views and make them available in reports.
 
 **Goal:** Technical
+
+**Developer:** Nicolas Micoud
 
 **Sponsor:** [TGI](http://tgi.eu)
 
 **Feature Ticket:** [IDEMPIERE-5507](https://idempiere.atlassian.net/browse/IDEMPIERE-5507)
 
 **Description:**
-
-Especially in SaaS environnment, it is time consuming to add some columns in Report Views and make them available in reports.
 
 Using this process, this task is quicker.
 

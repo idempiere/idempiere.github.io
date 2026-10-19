@@ -1,8 +1,10 @@
 # Auto Produce for Mfg Light
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Auto Produce for Mfg Light: a New Feature in iDempiere 9.
 
 **Goal:** Usability
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-5031](https://idempiere.atlassian.net/browse/IDEMPIERE-5031)
 

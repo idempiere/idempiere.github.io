@@ -1,6 +1,8 @@
 # Status Line Widget Markdown And Scoped Style
 
-> **Feature:** Implement markdown and scoped style support for status line widget
+> Implement markdown and scoped style support for status line widget
+
+**Feature:** Implement markdown and scoped style support for status line widget
 
 **Goal:** Technical
 

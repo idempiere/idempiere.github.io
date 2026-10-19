@@ -1,8 +1,10 @@
 # Base Price List
 
-> **Developer:** Carlos Ruiz
+> Now a base price list can be defined for any price list.
 
 **Goal:** Functional
+
+**Developer:** Carlos Ruiz
 
 **Description:**
 

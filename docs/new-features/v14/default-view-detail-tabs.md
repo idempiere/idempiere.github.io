@@ -6,7 +6,7 @@
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  
 **Feature Ticket:** [IDEMPIERE-7063](https://idempiere.atlassian.net/browse/IDEMPIERE-7063)
 
-
+## Default Display Mode for Detail Tabs
 
 Until now, Detail tabs always opened in **Grid** mode.
 

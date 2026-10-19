@@ -1,8 +1,10 @@
 # Support UOM On Inventory Move
 
-> **Developer:** Diego Ruiz
+> This new feature introduces the UOM and Qty Entered fields in Inventory Move Line.
 
 **Goal:** Functional
+
+**Developer:** Diego Ruiz
 
 **Sponsor:** [BX Service GmbH](https://www.bx-service.com/)
 

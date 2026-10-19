@@ -1,16 +1,16 @@
 # Use System Configurator from css files
 
-> **Developer:**  Nicolas Micoud
+> Objective of the ticket is to load dynamically some resources such as a background image for the login page.
 
 **Goal:** Technical
+
+**Developer:**  Nicolas Micoud
 
 **Feature Ticket:** [IDEMPIERE-6495](https://idempiere.atlassian.net/browse/IDEMPIERE-6495)
 
 **Sponsor:** [TGI](http://tgi.eu)
 
 **Description:**
-
-Objective of the ticket is to load dynamically some resources such as a background image for the login page.
 
 To make it work, the login.css.dsp file must start with
 ```css

@@ -1,8 +1,10 @@
 # IProcessParameterListener - add onInit method
 
-> **Developer:**  Nicolas Micoud
+> IProcessParameterListener - add onInit method: a New Feature in iDempiere 12.
 
 **Goal:** Technical
+
+**Developer:**  Nicolas Micoud
 
 **Feature Ticket:** [IDEMPIERE-6466](https://idempiere.atlassian.net/browse/IDEMPIERE-6466)
 

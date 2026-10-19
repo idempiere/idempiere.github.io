@@ -1,14 +1,14 @@
 # Add Fixed Price Discount Support to Discount Schema
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Enhance discount schema to support the setting of fixed unit price for each discount break point.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-5260](https://idempiere.atlassian.net/browse/IDEMPIERE-5260)
 
 **Description:**
-
-Enhance discount schema to support the setting of fixed unit price for each discount break point.
 
 **Changes:**
 

@@ -1,6 +1,8 @@
 # OSGi New Mapped By Name Factory
 
-> **Goal:** Development
+> OSGi New Mapped By Name Factory: a New Feature in iDempiere 9.
+
+**Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 

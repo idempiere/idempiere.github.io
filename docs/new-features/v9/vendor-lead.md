@@ -1,8 +1,10 @@
 # Vendor Lead
 
-> **Developer:**  Nicolas Micoud
+> Idea is to use Lead to manage both Sales and Purchases sides.
 
 **Goal:** Functional
+
+**Developer:**  Nicolas Micoud
 
 **Feature Ticket:** [IDEMPIERE-4616](https://idempiere.atlassian.net/browse/IDEMPIERE-4616)
 

@@ -1,6 +1,8 @@
 # Dynamic Validation per Table
 
-> **Goal:** Dynamically restrict records that user can see
+> Dynamic Validation per Table: a New Feature in iDempiere 11.
+
+**Goal:** Dynamically restrict records that user can see
 
 **Developer:** Carlos Ruiz
 

@@ -1,8 +1,10 @@
 # Monitor Null Trx
 
-> **Developer:** Carlos Ruiz
+> Monitor Null Trx: a New Feature in iDempiere 11.
 
 **Goal:** Technical
+
+**Developer:** Carlos Ruiz
 
 **Description:**
 

@@ -1,8 +1,10 @@
 # Shipment On Availability When Products Available
 
-> **Developer:** Lukas Heidbreder
+> Shipment On Availability When Products Available: a New Feature in iDempiere 9.
 
 **Goal:** Functional
+
+**Developer:** Lukas Heidbreder
 
 **Feature** **Ticket:** [IDEMPIERE-4269](https://idempiere.atlassian.net/browse/IDEMPIERE-4269)
 

@@ -1,8 +1,10 @@
 # Min Max Validation Process Parameters
 
-> **Developer:** Zuhri Utama, Hieplq
+> Min Max Validation Process Parameters: a New Feature in iDempiere 11.
 
 **Goal:** Technical
+
+**Developer:** Zuhri Utama, Hieplq
 
 **Feature** **Ticket:** [IDEMPIERE-5062](https://idempiere.atlassian.net/browse/IDEMPIERE-5062)
 

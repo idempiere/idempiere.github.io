@@ -6,7 +6,7 @@
 * **Developer:** [hengsin](https://github.com/hengsin)([TrekGlobal](https://www.trekglobal.com/))
 * **Feature Ticket:** [IDEMPIERE-6908](https://idempiere.atlassian.net/browse/IDEMPIERE-6908)
 
-## 🚀 Features
+## Features
 
 * **Centralized Registry:** Tracks all installed extensions and their current versions.
 * **Dependency Resolution:** Automatically validates requirements and dependencies before installation.
@@ -14,7 +14,7 @@
 * **Metadata Integration:** Parses and processes `metadata.json` and `info.md` files to provide a rich UI experience for administrators.
 * **Secure Downloads:** Manages secure retrieval of artifacts from remote repositories and verifies checksums.
 
-## 📦 Changes
+## Changes
 
 * **New Metadata Tables:**
    - `AD_Extension`: to store name, id, version and metadata of an extension. This includes external and bundled extensions (differentiated by the `bundled` flag).
@@ -38,7 +38,7 @@
    - https://github.com/hengsin/idempiere-extension-repository-template/ 
    - Template to create a new extension repository.
 
-## 🛠 Usage & Configuration
+## Usage & Configuration
 
 * **Configuration:**
     1. Configure the **Extension Provider URL** using the `IDEMPIERE_EXTENSION_REPOSITORY` System Property to point to a compatible metadata repository. For local development/testing, you can use `file:///path/to/your/extension-repository/` instead of a remote repository hosted at GitHub.com.

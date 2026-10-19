@@ -1,6 +1,8 @@
 # Prepay Order Configurable Shipment and Invoicing
 
-> **Goal:** Sales Process
+> Prepay Order Configurable Shipment and Invoicing: a New Feature in iDempiere 12.
+
+**Goal:** Sales Process
 
 **Developer:** cloudempiere, Takacs Peter, **Design**: Igor Pojzl, Norbert Bede **Review**: CarlosRuiz, Hengsin
 

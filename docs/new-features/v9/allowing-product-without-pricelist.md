@@ -1,8 +1,10 @@
 # Allowing Product Without Pricelist
 
-> **Developer:**  Logilite Technologies
+> Allowing Product Without Pricelist: a New Feature in iDempiere 9.
 
 **Goal:** Functional
+
+**Developer:**  Logilite Technologies
 
 **Feature Ticket:** [IDEMPIERE-4086](http://idempiere.atlassian.net/browse/IDEMPIERE-4086)
 

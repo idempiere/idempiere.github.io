@@ -1,6 +1,8 @@
 # Status Line As Dashboard Widget
 
-> **Goal:** UX/Functional
+> Status Line As Dashboard Widget: a New Feature in iDempiere 10.
+
+**Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, **Design**: Norbert Bede **Review**: Hengsin Low
 

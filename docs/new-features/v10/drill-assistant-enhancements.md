@@ -1,6 +1,8 @@
 # Drill Assistant Enhancements
 
-> **Goal:** UX/Functional
+> Drill Assistant Enhancements: a New Feature in iDempiere 10.
+
+**Goal:** UX/Functional
 
 **Developer:** cloudempiere, review by @hengsin
 

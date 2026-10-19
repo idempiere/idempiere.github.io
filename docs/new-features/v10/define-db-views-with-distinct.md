@@ -1,16 +1,16 @@
 # Define DB views with DISTINCT
 
-> **Developer:** Nicolas Micoud
+> A 'Distinct' checkbox has been added on the View Component tab.
 
 **Goal:** Technical
+
+**Developer:** Nicolas Micoud
 
 **Sponsor:** [TGI](http://tgi.eu)
 
 **Feature Ticket:** [IDEMPIERE-5434](https://idempiere.atlassian.net/browse/IDEMPIERE-5434)
 
 **Description:**
-
-A 'Distinct' checkbox has been added on the View Component tab.
 
 ![DBViewDistinct](pathname:///img/new-features/v10/DBViewDistinct.png)
 

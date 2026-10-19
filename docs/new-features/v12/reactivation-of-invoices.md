@@ -1,8 +1,10 @@
 # Reactivation of Invoices
 
-> **Developer:**  Nicolas Micoud
+> Reactivation is configurable per Role and Document Type.
 
 **Goal:** Functional
+
+**Developer:**  Nicolas Micoud
 
 **Feature Ticket:** [IDEMPIERE-6067](https://idempiere.atlassian.net/browse/IDEMPIERE-6067)
 

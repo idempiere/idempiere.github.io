@@ -1,6 +1,8 @@
 # OSGi New Column Callout Factory
 
-> **Feature:** OSGi New Column Callout Factory
+> OSGi New Column Callout Factory
+
+**Feature:** OSGi New Column Callout Factory
 
 **Goal:** Development
 

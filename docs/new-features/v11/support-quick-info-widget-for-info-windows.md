@@ -1,6 +1,8 @@
 # Support Quick Info Widget for Info Windows
 
-> **Ticket:** [IDEMPIERE-5772](https://idempiere.atlassian.net/browse/IDEMPIERE-5772)
+> The Quick Info widget can be defined in System, through the Status Line window.
+
+**Ticket:** [IDEMPIERE-5772](https://idempiere.atlassian.net/browse/IDEMPIERE-5772)
 
 **Developer:** Peter Takacs, Cloudempiere
 

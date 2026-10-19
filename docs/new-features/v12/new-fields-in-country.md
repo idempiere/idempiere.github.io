@@ -1,8 +1,10 @@
 # New Fields in Country
 
-> **Developer:** Carlos Ruiz
+> New Fields in Country: a New Feature in iDempiere 12.
 
 **Goal:** Functional
+
+**Developer:** Carlos Ruiz
 
 **Sponsor:** [FH](https://www.fh.com.br/)
 

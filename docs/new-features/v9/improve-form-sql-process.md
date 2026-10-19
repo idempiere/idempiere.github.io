@@ -1,8 +1,10 @@
 # Improve Form SQL Process
 
-> **Developer:** Carlos Ruiz
+> Improve Form SQL Process: a New Feature in iDempiere 9.
 
 **Goal:** Technical
+
+**Developer:** Carlos Ruiz
 
 **Description:**
 

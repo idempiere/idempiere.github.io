@@ -1,8 +1,10 @@
 # Storage Reservation Log
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Storage Reservation Log: a New Feature in iDempiere 9.
 
 **Goal:** Usability
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-5021](https://idempiere.atlassian.net/browse/IDEMPIERE-5021)
 

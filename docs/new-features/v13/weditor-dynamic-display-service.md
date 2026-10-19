@@ -1,8 +1,6 @@
-# WEditor Dynamic Display OSGi Service
+# WEditor Dynamic Display OSGI Service
 
 > This enhancement exposes the existing WEditor.DynamicDisplayListener interface as an OSGi service
-
-# WEditor Dynamic Display OSGI Service
 
 **Goal:** New OSGI Service
 

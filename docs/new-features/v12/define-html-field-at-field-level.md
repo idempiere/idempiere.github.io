@@ -1,8 +1,10 @@
 # Define HTML field at field level
 
-> **Developer:**  Nicolas Micoud
+> Define HTML field at field level: a New Feature in iDempiere 12.
 
 **Goal:** Technical
+
+**Developer:**  Nicolas Micoud
 
 **Feature Ticket:** [IDEMPIERE-6147](https://idempiere.atlassian.net/browse/IDEMPIERE-6147)
 

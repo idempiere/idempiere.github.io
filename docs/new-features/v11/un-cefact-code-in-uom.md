@@ -1,12 +1,12 @@
 # UN CEFACT Code in UOM
 
-> **Developer:** Carlos Ruiz
+> The UN/CEFACT Code was added to Unit of Measure window, this standard code is used in many integrations (like ZUGFeRD or Electronic Invoices).
 
 **Goal:** Functional
 
-**Description:**
+**Developer:** Carlos Ruiz
 
-The UN/CEFACT Code was added to Unit of Measure window, this standard code is used in many integrations (like ZUGFeRD or Electronic Invoices).
+**Description:**
 
 The codes can be consulted at https://service.unece.org/trade/uncefact/vocabulary/rec20/
 

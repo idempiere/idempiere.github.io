@@ -1,10 +1,10 @@
 # Document Base Type Group
 
-> **Developer:** cloudempiere, takacs peter
+> Now you can define new Document Base Type Groups, for example: document types for costing, for accounting, for AR etc.
 
 **Goal:** Business
 
-Now you can define new Document Base Type Groups, for example: document types for costing, for accounting, for AR etc.
+**Developer:** cloudempiere, takacs peter
 
 Example we define test group  with doctype lines
 ![Doc type group](pathname:///img/new-features/v11/Doc_type_group.png)

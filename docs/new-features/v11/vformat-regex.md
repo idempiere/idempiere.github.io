@@ -1,12 +1,12 @@
 # VFormat RegEx
 
-> **Developer:** Carlos Ruiz
+> Now you can add validation for Strings based on regular expressions using the VFormat definition.
 
 **Goal:** Usability
 
-**Description:**
+**Developer:** Carlos Ruiz
 
-Now you can add validation for Strings based on regular expressions using the VFormat definition.
+**Description:**
 
 This is achieved simply adding a VFormat starting with the prefix ~ and followed by the regular expression that you want to apply.
 

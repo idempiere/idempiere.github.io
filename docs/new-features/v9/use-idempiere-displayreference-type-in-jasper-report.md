@@ -1,14 +1,14 @@
 # Use iDempiere Display/Reference Type In Jasper Report
 
-> **Goal:** Development
+> Allow the use of iDempiere's Display/Reference Type based rendering of data in Jasper Report.
+
+**Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-4868](https://idempiere.atlassian.net/browse/IDEMPIERE-4868) [IDEMPIERE-6048](https://idempiere.atlassian.net/browse/IDEMPIERE-6048)
 
 **Description:**
-Allow the use of iDempiere's Display/Reference Type based rendering of data in Jasper Report.
-
 **Usage:**
 1. Pass COLUMN_LOOKUP parameter of type java.util.function.BiFunction to Jasper Report.
 1. To use it, you have to add a report parameter to your Jasper Report that's with the name and type above.

@@ -1,14 +1,14 @@
 # Info Window Auto Hide Empty Column
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Info window will auto hide empty column if the feature is turn on through system configurator (system wide or tenant wide).
 
 **Goal:** Usability
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-4841](https://idempiere.atlassian.net/browse/IDEMPIERE-4841)
 
 **Description:**
-Info window will auto hide empty column if the feature is turn on through system configurator (system wide or tenant wide).
-
 ## Usage
 1. Added client level system config key ZK_INFO_AUTO_HIDE_EMPTY_COLUMNS (Y/N, default to N). Set this to Y to turn on the auto hide feature system wide or tenant wide.
 

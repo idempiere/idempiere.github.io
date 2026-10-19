@@ -1,14 +1,14 @@
 # Info Window Select DeSelect All
 
-> **Developer:** Carlos Ruiz
+> The user can now select or de-select all records from all pages in the Info Windows.
 
 **Goal:** Usability
+
+**Developer:** Carlos Ruiz
 
 **Sponsor:** [FH](https://www.fh.com.br/)
 
 **Description:**
-
-The user can now select or de-select all records from all pages in the Info Windows.
 
 ![01 InfoWindowSelectDeSelectAll](pathname:///img/new-features/v9/01_InfoWindowSelectDeSelectAll.png)
 

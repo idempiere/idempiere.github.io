@@ -1,8 +1,10 @@
 # Record Info Copy To Clipboard Buttons
 
-> **Developer:** Carlos Ruiz
+> Record Info Copy To Clipboard Buttons: a New Feature in iDempiere 9.
 
 **Goal:** Usability
+
+**Developer:** Carlos Ruiz
 
 **Description:**
 

@@ -1,6 +1,8 @@
 # Virtual Column Lazy Loading
 
-> **Goal:** Development
+> Virtual columns were loaded among the rest of the regular columns when instantiating a model class.
+
+**Goal:** Development
 
 **Developer:** Saulo Gil
 

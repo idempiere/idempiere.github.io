@@ -1,6 +1,8 @@
 # Development With Intellij
 
-> **Goal:** Development
+> With the help of the Eclipse PDE Partial plugin, use IntelliJ for iDempiere development.
+
+**Goal:** Development
 
 **Developer:** Hengsin
 

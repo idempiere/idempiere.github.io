@@ -1,8 +1,10 @@
 # Warehouse on Inventory Move to filter Locators
 
-> **Developer:**  Logilite Technologies
+> Before this enhancement, Inventory move has no restriction on warehouse.
 
 **Goal:** Functional
+
+**Developer:**  Logilite Technologies
 
 **Feature Ticket:** [IDEMPIERE-4882](http://idempiere.atlassian.net/browse/IDEMPIERE-4882)
 

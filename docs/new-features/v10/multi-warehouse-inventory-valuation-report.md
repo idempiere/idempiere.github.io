@@ -1,8 +1,10 @@
 # Multi Warehouse Inventory Valuation Report
 
-> **Developer:** Carlos Ruiz
+> Multi Warehouse Inventory Valuation Report: a New Feature in iDempiere 10.
 
 **Goal:** Functional
+
+**Developer:** Carlos Ruiz
 
 **Description:**
 

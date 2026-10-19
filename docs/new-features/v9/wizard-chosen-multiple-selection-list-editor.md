@@ -1,8 +1,10 @@
 # Wizard Chosen Multiple Selection List Editor
 
-> **Developer:** Nicolas Micoud
+> Wizard Chosen Multiple Selection List Editor: a New Feature in iDempiere 9.
 
 **Goal:** Usability
+
+**Developer:** Nicolas Micoud
 
 **Feature** **Ticket:** [IDEMPIERE-5265](https://idempiere.atlassian.net/browse/IDEMPIERE-5265)
 

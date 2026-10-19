@@ -1,12 +1,12 @@
 # OSGi New Document Factory
 
-> **Goal:** Development
+> Implement a new document factory base class (MappedDocumentFactory class and IMappedDocumentFactory interface).
+
+**Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Description:**
-Implement a new document factory base class (MappedDocumentFactory class and IMappedDocumentFactory interface).
-
 **Usage:**
 
 With following Doc class:

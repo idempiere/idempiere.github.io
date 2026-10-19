@@ -1,6 +1,6 @@
 # How To: Using Print Format Item Scripts In Reports
 
-> This document expands on the information provided in [NF8.2 Print Format Item Script](/docs/new-features/v8.2/print-format-item-script) and
+> How To: Using Print Format Item Scripts In Reports: a New Feature in iDempiere 9.
 
 ### Introduction
 This document expands on the information provided in [NF8.2 Print Format Item Script](/docs/new-features/v8.2/print-format-item-script) and incorporates the additional features provided by  [IDEMPIERE-5111 Data type improvements to Print Format Item Script](https://idempiere.atlassian.net/browse/IDEMPIERE-5111) and [IDEMPIERE-5253](https://idempiere.atlassian.net/browse/IDEMPIERE-5253).

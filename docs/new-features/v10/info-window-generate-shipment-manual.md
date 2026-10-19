@@ -1,6 +1,8 @@
 # Info Window Generate Shipment (manual)
 
-> **Feature:** Generate shipments (manual) migrated to info window
+> Generate shipments (manual) migrated to info window
+
+**Feature:** Generate shipments (manual) migrated to info window
 
 **Goal:** Functional
 

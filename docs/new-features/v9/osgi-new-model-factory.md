@@ -1,6 +1,8 @@
 # OSGi New Model Factory
 
-> **Feature:** OSGi New Model Factory and Model Annotations
+> OSGi New Model Factory and Model Annotations
+
+**Feature:** OSGi New Model Factory and Model Annotations
 
 **Goal:** Development
 

@@ -2,7 +2,7 @@
 
 > Learn how to use iDempiere's 2Pack functionality to transfer configuration and automate setup using plug-ins.
 
-## 🎯 Goal
+## Goal
 
 This tutorial explains how to use the **2Pack functionality** in iDempiere to:
 
@@ -11,7 +11,7 @@ This tutorial explains how to use the **2Pack functionality** in iDempiere to:
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 Before starting, review:
 
@@ -22,14 +22,14 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-## 🔁 TL;DR
+## TL;DR
 
 Watch this quick video overview: 
 [https://www.youtube.com/watch?v=jykimSDE_54](https://www.youtube.com/watch?v=jykimSDE_54)
 
 ---
 
-## 🔧 Pack Out Data
+## Pack Out Data
 
 ### Managing Your Pack Outs
 
@@ -37,7 +37,7 @@ Watch this quick video overview:
 - Open the **Pack Out** window via:  
   `Application Dictionary > Application Packaging > Pack Out`
 - Create a new entry:
-  - **Name**: Use a meaningful name based on the [file naming notation recommendations](./what-is-2pack#️-file-naming-conventions)
+  - **Name**: Use a meaningful name based on the [file naming notation recommendations](./what-is-2pack#file-naming-conventions)
   - **Package Version**: Match your plug-in version from `MANIFEST.MF`
   - **Description / Instructions**: Optional metadata
   - **Date From**: Filter entries by creation date
@@ -77,7 +77,7 @@ In any window (e.g., Product), click the **Export** button in the toolbar:
 
 ---
 
-## 📥 Pack In Data Manually
+## Pack In Data Manually
 
 ### Install a 2Pack
 
@@ -99,7 +99,7 @@ In **Package Maintenance**, select a package and run the **Pack Roll** process.
 
 ---
 
-## ⚙️ Pack In Automatically with Plug-ins
+## Pack In Automatically with Plug-ins
 
 ### Option 1: `AdempiereActivator`
 
@@ -141,7 +141,7 @@ Newer versions of iDempiere (after IDEMPIERE-4105) allow using this format:
 
 ---
 
-## 📚 Advanced: Packing Out Related Records
+## Advanced: Packing Out Related Records
 
 To pack out hierarchical data (e.g., `C_BPartner` and related `AD_User`), use a structured SQL:
 

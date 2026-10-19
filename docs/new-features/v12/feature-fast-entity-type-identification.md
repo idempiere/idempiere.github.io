@@ -1,9 +1,11 @@
 # FEATURE: Fast entity type identification
 
-> **Developer:** Murilo H. Torquato
+> Entity type identification can be activated in the User preference window by checking the 'Show Technical Information on Help' flag
 
 ## **FEATURE: Fast entity type identification**
 **Goal:** Technical
+
+**Developer:** Murilo H. Torquato
 
 **Feature** **Ticket:** [IDEMPIERE-3989](https://idempiere.atlassian.net/browse/IDEMPIERE-3989)
 

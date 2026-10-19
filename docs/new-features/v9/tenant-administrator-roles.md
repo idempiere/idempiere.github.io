@@ -1,8 +1,10 @@
 # Tenant Administrator Roles
 
-> **Developer:**  Nicolas Micoud
+> Tenant Administrator Roles: a New Feature in iDempiere 9.
 
 **Goal:** Functional
+
+**Developer:**  Nicolas Micoud
 
 **Feature Ticket:** [IDEMPIERE-5214](https://idempiere.atlassian.net/browse/IDEMPIERE-5214)
 

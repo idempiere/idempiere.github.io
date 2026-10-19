@@ -1,6 +1,8 @@
 # Email Template Markdown Text
 
-> **Feature:** Implement markdown text support for email template
+> Implement markdown text support for email template
+
+**Feature:** Implement markdown text support for email template
 
 **Goal:** Technical
 

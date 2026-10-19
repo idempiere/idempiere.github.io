@@ -1,8 +1,10 @@
 # Table Partitioning Support
 
-> **Initial idea, sponsorship:** Norbert Bede, Cloudempiere
+> Configure the partition information at Table and Column window
 
 **Goal:** Technical
+
+**Initial idea, sponsorship:** Norbert Bede, Cloudempiere
 
 **Developers**: Hengsin, Elaine Tan
 

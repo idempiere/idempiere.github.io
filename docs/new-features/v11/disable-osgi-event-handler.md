@@ -1,6 +1,8 @@
 # Disable OSGi Event Handler
 
-> **Goal:** UX/Functional
+> Disable OSGi Event Handler: a New Feature in iDempiere 11.
+
+**Goal:** UX/Functional
 
 **Developer:** Hengsin
 

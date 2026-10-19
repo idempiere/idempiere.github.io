@@ -1,6 +1,8 @@
 # JSON Field Type
 
-> **Developer:** Diego Ruiz - [BX Service GmbH](https://www.bx-service.com/)
+> JSON is a commonly used data format with diverse applications in data interchange, including web applications communicating with servers.
+
+**Developer:** Diego Ruiz - [BX Service GmbH](https://www.bx-service.com/)
 
 **Sponsor:** [Cloudempiere](https://www.cloudempiere.com/)
 

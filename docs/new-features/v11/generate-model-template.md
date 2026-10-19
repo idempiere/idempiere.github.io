@@ -1,8 +1,10 @@
 # Generate Model Template
 
-> **Developers:** Nicolas Micoud
+> Generate Model Template: a New Feature in iDempiere 11.
 
 **Goal:** Technical
+
+**Developers:** Nicolas Micoud
 
 **Sponsor:** [TGI](http://tgi.eu)
 

@@ -1,9 +1,11 @@
 # Multiple SSO Provider Support
 
-> **Developer:** Deepak Pansheriya [Logilite Technologies](https://www.logilite.com)
+> This enhancement introduces the ability to configure and support multiple Single Sign-On (SSO) providers in iDempiere.
+
+**Developer:** Deepak Pansheriya [Logilite Technologies](https://www.logilite.com)
 
 **Feature Ticket:** [IDEMPIERE-6304](https://idempiere.atlassian.net/browse/IDEMPIERE-6304)
-
+### Multiple SSO Provider Support
 This enhancement introduces the ability to configure and support **multiple Single Sign-On (SSO) providers** in iDempiere. Previously, only one SSO provider could be used at a time, and the system lacked flexibility to present multiple options at login.
 
 With this feature, system administrators can now configure more than one SSO provider (e.g., Cognito, Keycloak) and present each as a distinct **login button on the login page**. This provides organizations with flexible identity provider options and improves user experience across different domains or roles.

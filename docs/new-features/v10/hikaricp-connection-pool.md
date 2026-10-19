@@ -1,8 +1,10 @@
 # HikariCP Connection Pool
 
-> **Developers:** Jasper Siepkes, Heng Sin Low, Carlos Ruiz
+> The connection pool library has been replaced with HikariCP
 
 **Goal:** Technical
+
+**Developers:** Jasper Siepkes, Heng Sin Low, Carlos Ruiz
 
 ## Description
 The connection pool library has been replaced with [HikariCP](https://github.com/brettwooldridge/HikariCP)

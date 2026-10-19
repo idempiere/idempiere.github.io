@@ -1,8 +1,10 @@
 # Timezone By Organization
 
-> **Developer:** Matheus E. Marcelino
+> In ticket IDEMPIERE-5093, the possibility of define a timezone in tenant was implemented.
 
 **Goal:** Functional
+
+**Developer:** Matheus E. Marcelino
 
 **Feature** **Ticket:** [IDEMPIERE-5458](https://idempiere.atlassian.net/browse/IDEMPIERE-5458)
 

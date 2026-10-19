@@ -1,8 +1,10 @@
 # Bank/Cash Transfer Document
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Add CBankTransfer table and MBankTransfer DocAction model class.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-5088](https://idempiere.atlassian.net/browse/IDEMPIERE-5088)
 

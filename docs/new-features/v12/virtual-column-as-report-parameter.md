@@ -1,8 +1,10 @@
 # Virtual Column as Report Parameter
 
-> **Developer:** Paul Bowden (Adaxa)
+> Virtual Column as Report Parameter: a New Feature in iDempiere 12.
 
 **Goal:** Functional
+
+**Developer:** Paul Bowden (Adaxa)
 
 **Integrator:** Carlos Ruiz
 

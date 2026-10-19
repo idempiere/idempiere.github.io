@@ -1,6 +1,8 @@
 # Tabular Report Re-Run Enhancements
 
-> **Goal:** UX/Functional
+> Until now, tabular reports are opened in new tab - as result opening many tabs.
+
+**Goal:** UX/Functional
 
 **Developer:** cloudempiere
 

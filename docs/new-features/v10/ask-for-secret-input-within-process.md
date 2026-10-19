@@ -1,8 +1,10 @@
 # Ask For Secret Input Within Process
 
-> **Goal:** UX - Security - Development
+> In iDempiere 2.1, the functionality to ask the user for input within a process was added.
 
 ![SecretInputGif](pathname:///img/new-features/v10/SecretInputGif.gif)
+
+**Goal:** UX - Security - Development
 
 **Developer:** Diego Ruiz - [BX Service GmbH](https://www.bx-service.com/)
 

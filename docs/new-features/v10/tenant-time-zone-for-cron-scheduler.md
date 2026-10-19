@@ -1,14 +1,14 @@
 # Tenant Time Zone for Cron Scheduler
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Add option to support the scheduling of cron pattern scheduler with tenant time zone instead of server time zone.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-5093](https://idempiere.atlassian.net/browse/IDEMPIERE-5093)
 
 **Description:**
-
-Add option to support the scheduling of cron pattern scheduler with tenant time zone instead of server time zone.
 
 **Changes:**
 

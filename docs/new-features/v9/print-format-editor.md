@@ -1,8 +1,10 @@
 # Print Format Editor
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Print Format Editor: a New Feature in iDempiere 9.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-4059](https://idempiere.atlassian.net/browse/IDEMPIERE-4059)
 

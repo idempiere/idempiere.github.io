@@ -1,6 +1,8 @@
 # Dashboard Row Orientation
 
-> **Goal:** UX/Functional
+> Dashboard Row Orientation: a New Feature in iDempiere 10.
+
+**Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, **Design**: Norbert Bede **Review**: Hengsin Low
 

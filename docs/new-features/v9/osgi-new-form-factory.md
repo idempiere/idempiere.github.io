@@ -1,6 +1,8 @@
 # OSGi New Form Factory
 
-> **Feature:** New Form Factory and Form Annotations
+> New Form Factory and Form Annotations
+
+**Feature:** New Form Factory and Form Annotations
 
 **Goal:** Development
 

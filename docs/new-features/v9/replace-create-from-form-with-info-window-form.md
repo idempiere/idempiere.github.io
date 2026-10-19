@@ -1,16 +1,16 @@
 # Replace Create From Form With Info Window Form
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin)), Elaine Tan (etantg)
+> Use Info Window and Process to replace existing Create From custom form.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin)), Elaine Tan (etantg)
 
 **Sponsor:** [TDI APJ Malaysia](https://tdiapj.com/)
 
 **Feature Ticket:** [IDEMPIERE-5396](https://idempiere.atlassian.net/browse/IDEMPIERE-5396)
 
 **Description:**
-
-Use Info Window and Process to replace existing Create From custom form.
 
 **Scope:**
 

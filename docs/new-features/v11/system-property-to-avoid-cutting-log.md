@@ -1,8 +1,10 @@
 # System Property to avoid cutting log
 
-> **Developers:** Nicolas Micoud
+> Current code is cutting trace log in a hardcoded way.
 
 **Goal:** Technical
+
+**Developers:** Nicolas Micoud
 
 **Sponsor:** [TGI](http://tgi.eu)
 

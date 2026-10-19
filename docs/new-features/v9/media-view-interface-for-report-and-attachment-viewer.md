@@ -1,6 +1,8 @@
 # Media View Interface for Report and Attachment Viewer
 
-> **Goal:** Development
+> Add media view interface for Report and Attachment Viewer.
+
+**Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 

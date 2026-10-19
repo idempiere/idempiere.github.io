@@ -1,8 +1,6 @@
-# Support UOM and QtyEntered on Inventory Documents
+# Feature: Support UOM and QtyEntered on Physical Inventory and Inventory Increase/Decrease
 
 > Adds UOM and QtyEntered fields to Physical Inventory and Inventory Increase/Decrease windows.
-
-# Feature: Support UOM and QtyEntered on Physical Inventory and Inventory Increase/Decrease
 
 * **Goal:** Functional
 * **Developer**: [Diego Ruiz](https://github.com/d-ruiz)

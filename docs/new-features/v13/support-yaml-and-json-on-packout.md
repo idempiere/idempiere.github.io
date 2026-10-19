@@ -1,4 +1,4 @@
-# Support YAML and JSON on PackOut
+# YAML and JSON Support for 2Pack (PackOut / PackIn)
 
 > Adds YAML and JSON as peer export/import formats for the 2Pack packaging system, alongside the existing XML format.
 
@@ -6,7 +6,7 @@
 * **Developer:** [Peter Takacs](https://github.com/PeterTakacs300)
 * **Feature Ticket:** [IDEMPIERE-7016](https://idempiere.atlassian.net/browse/IDEMPIERE-7016)
 
-# YAML and JSON Support for 2Pack (PackOut / PackIn)
+
 
 The 2Pack packaging system (`PackOut` / `PackIn`) has historically only supported XML as its serialization format. This feature adds **JSON and YAML** as peer export/import formats, giving users the choice of a more human-readable and version-control-friendly output.
 

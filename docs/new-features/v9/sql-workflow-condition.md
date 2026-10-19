@@ -1,8 +1,10 @@
 # SQL Workflow Condition
 
-> **Developers:** Anton Mostovenko, Heng Sin Low
+> SQL Workflow Condition: a New Feature in iDempiere 9.
 
 **Goal:** Functional
+
+**Developers:** Anton Mostovenko, Heng Sin Low
 
 **Description:**
 

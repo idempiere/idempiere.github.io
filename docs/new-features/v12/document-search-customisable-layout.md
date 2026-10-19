@@ -1,6 +1,8 @@
 # Document Search Customisable Layout
 
-> **Feature:** Allow Define Customisable Layout for search result
+> Document Search Customisable Layout: a New Feature in iDempiere 12.
+
+**Feature:** Allow Define Customisable Layout for search result
 
 **Goal:** Technical
 

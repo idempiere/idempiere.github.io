@@ -1,8 +1,10 @@
 # Context Variable HTML REPORT THEME
 
-> **Developer:** Deepak Pansheriya
+> report.css path is configurable using system configuration named HTMLREPORTTHEME.
 
 **Goal:** Technical
+
+**Developer:** Deepak Pansheriya
 
 **Feature** **Ticket:** [IDEMPIERE-6396](https://idempiere.atlassian.net/browse/IDEMPIERE-6396)
 

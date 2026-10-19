@@ -1,6 +1,8 @@
 # Make print filename configurable
 
-> **Goal:** UX/Functional
+> Make print filename configurable: a New Feature in iDempiere 10.
+
+**Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, **Design**: Norbert Bede **Review**: Hengsin Low/CarlosRuiz
 

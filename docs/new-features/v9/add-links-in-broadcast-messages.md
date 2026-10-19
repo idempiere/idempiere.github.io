@@ -1,8 +1,10 @@
 # Add links in Broadcast Messages
 
-> **Developer:**  Nicolas Micoud - original credits go to Matheus E. Marcelino and Murilo H. Torquato
+> Add links in Broadcast Messages: a New Feature in iDempiere 9.
 
 **Goal:** Usability
+
+**Developer:**  Nicolas Micoud - original credits go to Matheus E. Marcelino and Murilo H. Torquato
 
 **Feature Ticket:** [IDEMPIERE-5135](https://idempiere.atlassian.net/browse/IDEMPIERE-5135)
 

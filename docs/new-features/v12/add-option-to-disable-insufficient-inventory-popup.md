@@ -1,6 +1,8 @@
 # Add option to Disable "Insufficient Inventory" Popup
 
-> **Goal:** User experience - Usability
+> Add option to Disable "Insufficient Inventory" Popup: a New Feature in iDempiere 12.
+
+**Goal:** User experience - Usability
 
 **Developer:**  Diego Ruiz
 

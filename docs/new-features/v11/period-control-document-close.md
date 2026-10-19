@@ -1,8 +1,10 @@
 # Period Control Document Close
 
-> **Developer:** cloudempiere, Takacs Peter, Igor Pojzl
+> The purpose of this change is to close a period for new documents first, so it is not allowed to enter new documents, but reposting documents remains possible.
 
 **Goal:** Functional
+
+**Developer:** cloudempiere, Takacs Peter, Igor Pojzl
 
 **Design**: Norbert Bede
 

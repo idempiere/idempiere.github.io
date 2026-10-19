@@ -1,14 +1,14 @@
 # Workflow EMail Notification Enhancements
 
-> **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
+> Make attachment of PDF document to Workflow EMail Notification optional.
 
 **Goal:** Functional
+
+**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 
 **Feature Ticket:** [IDEMPIERE-5261](https://idempiere.atlassian.net/browse/IDEMPIERE-5261)
 
 **Description:**
-
-Make attachment of PDF document to Workflow EMail Notification optional.
 
 Add bean property access to Mail Template.
 

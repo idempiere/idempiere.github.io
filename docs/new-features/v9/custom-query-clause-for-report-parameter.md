@@ -1,6 +1,8 @@
 # Custom Query Clause for Report Parameter
 
-> **Goal:** Development
+> Custom Query Clause for Report Parameter: a New Feature in iDempiere 9.
+
+**Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))
 

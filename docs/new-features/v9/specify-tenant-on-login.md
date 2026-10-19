@@ -1,12 +1,12 @@
 # Specify Tenant on Login
 
-> **Developer:** Carlos Ruiz
+> Traditionally the login flow of iDempiere has allowed the user to enter username and password and select the tenant to login in a second page.
 
 **Goal:** Security
 
-**Sponsor:** [FH](https://www.fh.com.br/)
+**Developer:** Carlos Ruiz
 
-Traditionally the login flow of iDempiere has allowed the user to enter username and password and select the tenant to login in a second page.
+**Sponsor:** [FH](https://www.fh.com.br/)
 
 This is perfect for most of implementations, but can raise some security concerns in multi-tenant implementations.
 
