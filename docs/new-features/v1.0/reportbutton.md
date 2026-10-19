@@ -1,7 +1,7 @@
 ---
 sidebar_position: 41
 sidebar_label: "Report Button"
-description: "The Report inherit the search filter from the window"
+description: "Report Button: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
 # Report Button

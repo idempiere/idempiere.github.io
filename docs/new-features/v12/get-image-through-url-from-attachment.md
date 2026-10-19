@@ -1,7 +1,7 @@
 ---
 sidebar_position: 19
 sidebar_label: "Get image through url from attachment"
-description: "This feature allow define in print format items image source from attachment with the next pattern."
+description: "Get image through url from attachment: a New Feature in iDempiere 12."
 tags: [technical]
 ---
 # Get image through url from attachment

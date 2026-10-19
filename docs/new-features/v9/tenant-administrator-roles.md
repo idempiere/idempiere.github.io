@@ -1,7 +1,7 @@
 ---
 sidebar_position: 16
 sidebar_label: "Tenant Administrator Roles"
-description: "Messages are defined and translated at System level."
+description: "Tenant Administrator Roles: a New Feature in iDempiere 9."
 tags: [functional]
 ---
 # Tenant Administrator Roles

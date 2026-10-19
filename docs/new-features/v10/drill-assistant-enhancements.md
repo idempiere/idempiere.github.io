@@ -1,7 +1,7 @@
 ---
 sidebar_position: 28
 sidebar_label: "Drill Assistant Enhancements"
-description: "This enhancement allows to define Drill Rules for admins, then users are allowed to run new reports with predefined parameters by Drill Assistant from..."
+description: "Drill Assistant Enhancements: a New Feature in iDempiere 10."
 tags: [user-experience]
 ---
 # Drill Assistant Enhancements

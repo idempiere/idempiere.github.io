@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: "Exclude Locators for Demand Operations"
-description: "On the process of managing items on a warehouse is required to mark some locators to be excluded from the count and from the process of demand operations..."
+description: "Exclude Locators for Demand Operations: a New Feature in iDempiere 3.0."
 tags: [functional]
 ---
 # Exclude Locators for Demand Operations

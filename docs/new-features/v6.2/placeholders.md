@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: "Placeholders"
-description: "&lt;cite&gt;Placeholder specifies a short hint that describes the expected value of an input field (e.g."
+description: "Placeholders: a New Feature in iDempiere 6.2."
 tags: [user-experience]
 ---
 # Placeholders

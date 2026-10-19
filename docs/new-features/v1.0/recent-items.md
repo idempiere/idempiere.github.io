@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: "Recent Items Dashboard"
-description: "This feature shows the user a history of recent records that been have created or updated."
+description: "Recent Items Dashboard: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
 # Recent Items Dashboard

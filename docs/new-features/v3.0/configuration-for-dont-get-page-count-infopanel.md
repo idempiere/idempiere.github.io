@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: "Configuration For Dont Get Page Count InfoPanel"
-description: "For info window, when query data, it also do a query for get total page."
+description: "Configuration For Dont Get Page Count InfoPanel: a New Feature in iDempiere 3.0."
 tags: [user-experience]
 ---
 # Configuration For Dont Get Page Count InfoPanel

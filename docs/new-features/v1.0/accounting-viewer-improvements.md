@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: "Accounting Viewer Improvements"
-description: "Review accounting entries without interrupting your workflow—the Accounting Viewer now opens as a standalone window instead of a blocking popup."
+description: "Review accounting entries without interrupting your workflow. The Accounting Viewer now opens as a standalone window instead of a blocking popup."
 tags: [functional]
 ---
 # Accounting Viewer Improvements

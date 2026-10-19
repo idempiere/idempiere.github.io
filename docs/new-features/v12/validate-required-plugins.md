@@ -1,7 +1,7 @@
 ---
 sidebar_position: 28
 sidebar_label: "Validate Required Plugins"
-description: "There are cases where a plugin is absolutely critical for the correct behavior of a server, if the plugin is missing or didn't start correctly the..."
+description: "Validate Required Plugins: a New Feature in iDempiere 12."
 tags: [technical]
 ---
 # Validate Required Plugins

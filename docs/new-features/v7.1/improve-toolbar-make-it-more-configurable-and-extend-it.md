@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: "Improve toolbar, make it more configurable and extend it"
-description: "The goal of the new feature is to improve the toolbar and make it more configurable and extend its functionality, with a show More option to hide the less..."
+description: "Improve toolbar, make it more configurable and extend it: a New Feature in iDempiere 7.1."
 tags: [user-experience]
 ---
 # Improve toolbar, make it more configurable and extend it

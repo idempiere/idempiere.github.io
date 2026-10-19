@@ -1,7 +1,7 @@
 ---
 sidebar_position: 27
 sidebar_label: "Date Range Component"
-description: "cloudempiere, Takacs Peter, Design: Norbert Bede Review: Hengsin Low, CarlosRuiz"
+description: "Date Range Component: a New Feature in iDempiere 10."
 tags: [user-experience]
 ---
 # Date Range Component

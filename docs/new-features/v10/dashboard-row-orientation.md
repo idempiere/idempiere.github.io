@@ -1,7 +1,7 @@
 ---
 sidebar_position: 26
 sidebar_label: "Dashboard Row Orientation"
-description: "cloudempiere, Takacs Peter, Design: Norbert Bede Review: Hengsin Low"
+description: "Dashboard Row Orientation: a New Feature in iDempiere 10."
 tags: [user-experience]
 ---
 # Dashboard Row Orientation

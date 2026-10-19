@@ -1,7 +1,7 @@
 ---
 sidebar_position: 18
 sidebar_label: "Inventory Documents"
-description: "Previously when an Internal Use Inventory document had lines with qty 0 and complete the document the physical inventory of that product goes to zero..."
+description: "Inventory Documents: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
 # Inventory Documents

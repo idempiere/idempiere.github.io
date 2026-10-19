@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: "Deductible and Non Deductible Input Tax"
-description: "Implement support for https://techconcepthub.com/deductible-tax-and-non-deductible-tax/"
+description: "Deductible and Non Deductible Input Tax: a New Feature in iDempiere 10."
 tags: [functional]
 ---
 # Deductible and Non Deductible Input Tax

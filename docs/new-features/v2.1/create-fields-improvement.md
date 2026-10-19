@@ -1,7 +1,7 @@
 ---
 sidebar_position: 32
 sidebar_label: "Create Fields Improvement"
-description: "When you run the Create Fields process from the Tab tab in the Window, Tab and Field window, you now have two parameters. The new parameters allow"
+description: "Create Fields Improvement: a New Feature in iDempiere 2.1."
 tags: [technical]
 ---
 # Create Fields Improvement

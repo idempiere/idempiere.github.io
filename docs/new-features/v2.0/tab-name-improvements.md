@@ -1,7 +1,7 @@
 ---
 sidebar_position: 13
 sidebar_label: "Tab Name Improvements"
-description: "The name of the tab was improved to show a configurable description of the record, like the next screenshot shows."
+description: "Tab Name Improvements: a New Feature in iDempiere 2.0."
 tags: [user-experience]
 ---
 # Tab Name Improvements

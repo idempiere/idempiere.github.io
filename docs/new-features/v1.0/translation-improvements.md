@@ -1,7 +1,7 @@
 ---
 sidebar_position: 57
 sidebar_label: "Translation Improvements"
-description: "Now you can import/export translation directly from the webui client, to import you can choose a server folder to import the translation, or upload a zipped..."
+description: "Translation Improvements: a New Feature in iDempiere 1.0."
 tags: [technical]
 ---
 # Translation Improvements

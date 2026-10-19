@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: "ImageURL Fieldtype"
-description: "https://idempiere.atlassian.net/browse/IDEMPIERE-6242 adds a new ImageURL editor which rendering images from web url only."
+description: "ImageURL Fieldtype: a New Feature in iDempiere 12."
 tags: [technical]
 ---
 # ImageURL Fieldtype

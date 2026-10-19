@@ -1,7 +1,7 @@
 ---
 sidebar_position: 9
 sidebar_label: "How To Configure The Toolbar"
-description: "This tutorial is brought to you by Diego Ruiz from BX Service GmbH. If you have questions, criticism, or improvement sugg"
+description: "How To Configure The Toolbar: a New Feature in iDempiere 8.2."
 tags: [functional]
 ---
 # How To Configure The Toolbar

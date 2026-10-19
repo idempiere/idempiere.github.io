@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 sidebar_label: "Enable Showing Inactive Records through Reference"
-description: "There are some use cases, when showing inactive records in a list field of parameter can be useful, e.g."
+description: "Enable Showing Inactive Records through Reference: a New Feature in iDempiere 11."
 tags: [functional]
 ---
 # Enable Showing Inactive Records through Reference

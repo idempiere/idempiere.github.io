@@ -1,7 +1,7 @@
 ---
 sidebar_position: 33
 sidebar_label: "ImportCSV"
-description: "Easy Import/Export CSV"
+description: "ImportCSV: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
 # ImportCSV

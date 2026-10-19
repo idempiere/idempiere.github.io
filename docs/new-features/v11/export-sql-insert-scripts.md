@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: "Export SQL Insert Scripts"
-description: "Export Current Row to SQL Insert Scripts"
+description: "Export SQL Insert Scripts: a New Feature in iDempiere 11."
 tags: [functional]
 ---
 # Export SQL Insert Scripts

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 29
 sidebar_label: "Implement OAuth2 for EMail Authentication"
-description: "The goal of OAuth2 is to avoid having the password of the user saved in the database, with the actual plain password authentication, when a database is..."
+description: "Implement OAuth2 for EMail Authentication: a New Feature in iDempiere 8.2."
 tags: [security]
 ---
 # Implement OAuth2 for EMail Authentication

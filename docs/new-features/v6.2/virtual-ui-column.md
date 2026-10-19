@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: "Virtual UI Column"
-description: "Legacy virtual DB columns can represent a big issue in terms of performance, for example writing complex SQL statements that bring SUM of records accessing..."
+description: "Virtual UI Column: a New Feature in iDempiere 6.2."
 tags: [functional]
 ---
 # Virtual UI Column

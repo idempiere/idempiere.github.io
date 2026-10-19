@@ -1,7 +1,7 @@
 ---
 sidebar_position: 12
 sidebar_label: "Document Type for Production and Bank Statement"
-description: "The documents Production and Bank Statement can be configured now to use different bank statements, this provides better flexibility to configure the..."
+description: "Document Type for Production and Bank Statement: a New Feature in iDempiere 10."
 tags: [functional]
 ---
 # Document Type for Production and Bank Statement

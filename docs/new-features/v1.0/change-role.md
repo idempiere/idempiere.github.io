@@ -1,7 +1,7 @@
 ---
 sidebar_position: 28
 sidebar_label: "Change Role"
-description: "The user that have several role can change the role without login out of the system."
+description: "Change Role: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
 # Change Role

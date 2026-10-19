@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: "Protect Passwords on Properties"
-description: "Historically *mpiere has saved some sensitive information in the files idempiereEnv.properties, idempiere.properties, myEnvironment.sh and myEnvironment.sav..."
+description: "Protect Passwords on Properties: a New Feature in iDempiere 8.2."
 tags: [security]
 ---
 # Protect Passwords on Properties

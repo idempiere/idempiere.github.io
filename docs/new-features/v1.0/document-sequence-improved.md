@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: "Improved Document Sequence"
-description: "Sequences can restart every month and can be maintain by organization"
+description: "Improved Document Sequence: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
 # Improved Document Sequence

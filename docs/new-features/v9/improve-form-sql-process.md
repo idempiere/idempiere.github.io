@@ -1,7 +1,7 @@
 ---
 sidebar_position: 36
 sidebar_label: "Improve Form SQL Process"
-description: "The form SQL Process) has been improved to allow executing a configurable set of commands."
+description: "Improve Form SQL Process: a New Feature in iDempiere 9."
 tags: [technical]
 ---
 # Improve Form SQL Process

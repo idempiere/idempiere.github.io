@@ -1,7 +1,7 @@
 ---
 sidebar_position: 19
 sidebar_label: "Manufacturing Light"
-description: "What is 'iDempiere Manufacturing Light'?"
+description: "Manufacturing Light: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
 # Manufacturing Light

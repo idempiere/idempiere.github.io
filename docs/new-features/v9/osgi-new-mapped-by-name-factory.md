@@ -1,7 +1,7 @@
 ---
 sidebar_position: 50
 sidebar_label: "OSGi New Mapped By Name Factory"
-description: "iDempiere have many OSGi factory that create the requested instance by class name or a string key (IProcessFactory, IModelValidatorFactory..."
+description: "OSGi New Mapped By Name Factory: a New Feature in iDempiere 9."
 tags: [development]
 ---
 # OSGi New Mapped By Name Factory

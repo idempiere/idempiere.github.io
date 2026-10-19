@@ -1,7 +1,7 @@
 ---
 sidebar_position: 12
 sidebar_label: 'Add option to Disable "Insufficient Inventory" Popup'
-description: "Currently, users always receive a popup message indicating \"Insufficient Inventory\" when creating a Sales Order Line, even if the associated warehouse is..."
+description: "Add option to Disable \"Insufficient Inventory\" Popup: a New Feature in iDempiere 12."
 tags: [user-experience]
 ---
 # Add option to Disable "Insufficient Inventory" Popup

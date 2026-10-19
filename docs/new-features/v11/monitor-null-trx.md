@@ -1,7 +1,7 @@
 ---
 sidebar_position: 26
 sidebar_label: "Monitor Null Trx"
-description: "In version 4.1 it was implemented a way to monitor transactions on idempiereMonitor (see Monitor_Trx), but this implementation is able just to monitor..."
+description: "Monitor Null Trx: a New Feature in iDempiere 11."
 tags: [technical]
 ---
 # Monitor Null Trx

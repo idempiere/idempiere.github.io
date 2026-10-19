@@ -1,7 +1,7 @@
 ---
 sidebar_position: 12
 sidebar_label: "Warning on Password Expiration"
-description: "When defined a maximum password age (in USERLOCKINGMAXPASSWORDAGE_DAY), the system can now also issue a warning to the user several days before the..."
+description: "Warning on Password Expiration: a New Feature in iDempiere 6.2."
 tags: [user-experience]
 ---
 # Warning on Password Expiration

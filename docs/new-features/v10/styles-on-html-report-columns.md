@@ -1,7 +1,7 @@
 ---
 sidebar_position: 32
 sidebar_label: "Styles On HTML Report columns"
-description: "cloudempiere, Takacs Peter, Design: Norbert Bede Review: CarlosRuiz"
+description: "Styles On HTML Report columns: a New Feature in iDempiere 10."
 tags: [user-experience]
 ---
 # Styles On HTML Report columns

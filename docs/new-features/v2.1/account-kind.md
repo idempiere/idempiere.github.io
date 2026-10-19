@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: "Account Kind"
-description: "In order to identify if an account is managing business partners (like Accounts Receivable), or managing products (like Depreciation)."
+description: "Account Kind: a New Feature in iDempiere 2.1."
 tags: [functional]
 ---
 # Account Kind

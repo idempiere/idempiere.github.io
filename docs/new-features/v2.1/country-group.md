@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: "Country Group"
-description: "During the IDempiere Workshop 2014 an idea was discussed to enable easier configuration for ta"
+description: "Country Group: a New Feature in iDempiere 2.1."
 tags: [functional]
 ---
 # Country Group

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 18
 sidebar_label: "Dashboard Role Access"
-description: "You can restrict now the dashboard panels per user or role, please note that if there is no access definition, then the dashboard is considered public and..."
+description: "Dashboard Role Access: a New Feature in iDempiere 2.0."
 tags: [security]
 ---
 # Dashboard Role Access

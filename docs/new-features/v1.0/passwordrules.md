@@ -1,7 +1,7 @@
 ---
 sidebar_position: 62
 sidebar_label: "Password Rules"
-description: "Supported on vt-password and vt-dictionary libraries by Middleware Services at Virginia Tech."
+description: "Password Rules: a New Feature in iDempiere 1.0."
 tags: [security]
 ---
 # Password Rules

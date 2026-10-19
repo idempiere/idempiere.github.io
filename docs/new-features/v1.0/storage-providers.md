@@ -1,7 +1,7 @@
 ---
 sidebar_position: 56
 sidebar_label: "Storage Providers"
-description: "This feature opens the posssibility to have more ways to save the attachments and archives in the system."
+description: "Storage Providers: a New Feature in iDempiere 1.0."
 tags: [technical]
 ---
 # Storage Providers

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: "Min Max Validation Process Parameters"
-description: "Now you can define minimum and maximum for process parameters with type Integer, Amount, Date, Number, Quantity, Cost+Price or."
+description: "Min Max Validation Process Parameters: a New Feature in iDempiere 11."
 tags: [functional]
 ---
 # Min Max Validation Process Parameters

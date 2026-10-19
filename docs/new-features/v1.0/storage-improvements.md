@@ -1,7 +1,7 @@
 ---
 sidebar_position: 25
 sidebar_label: "Storage Improvements"
-description: "A big old issue inherited from Compiere times is that storage was recording reservations and on-hand quantities on the same table with different needs, for..."
+description: "Storage Improvements: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
 # Storage Improvements

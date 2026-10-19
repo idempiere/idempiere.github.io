@@ -1,7 +1,7 @@
 ---
 sidebar_position: 34
 sidebar_label: "Info Window Process"
-description: "Include Sub-Info tabs, IDEMPIERE-1045 by Xolali"
+description: "Info Window Process: a New Feature in iDempiere 2.1."
 tags: [technical]
 ---
 # Info Window Process

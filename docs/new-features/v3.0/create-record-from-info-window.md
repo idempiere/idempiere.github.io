@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: "Create Record From Info Window"
-description: "Now you can create a new record directly from Info Window like shown in the screenshot."
+description: "Create Record From Info Window: a New Feature in iDempiere 3.0."
 tags: [user-experience]
 ---
 # Create Record From Info Window

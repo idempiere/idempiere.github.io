@@ -1,7 +1,7 @@
 ---
 sidebar_position: 21
 sidebar_label: "Auto Produce for Mfg Light"
-description: "Zoom across from Shipment Line to Production"
+description: "Auto Produce for Mfg Light: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
 # Auto Produce for Mfg Light

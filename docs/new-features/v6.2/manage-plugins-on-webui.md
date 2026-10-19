@@ -1,7 +1,7 @@
 ---
 sidebar_position: 13
 sidebar_label: "Manage Plugins on WebUI"
-description: "Now basic plugin information can be seen directly on the webui (as System Administrator), &lt;s&gt;clicking on the About button and navigating to the..."
+description: "Manage Plugins on WebUI: a New Feature in iDempiere 6.2."
 tags: [technical]
 ---
 # Manage Plugins on WebUI

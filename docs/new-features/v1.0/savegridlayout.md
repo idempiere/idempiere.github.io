@@ -1,7 +1,7 @@
 ---
 sidebar_position: 43
 sidebar_label: "Configurable Grid Layout"
-description: "Implementors can now set configure a better disposition of the fields on grid layout per window, to achieve this two new configuration options where created..."
+description: "Configurable Grid Layout: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
 # Configurable Grid Layout

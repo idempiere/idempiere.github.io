@@ -1,7 +1,7 @@
 ---
 sidebar_position: 50
 sidebar_label: "Active Login Session List"
-description: "Below image shows Active session window for one of current session ."
+description: "Active Login Session List: a New Feature in iDempiere 1.0."
 tags: [technical]
 ---
 # Active Login Session List

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 12
 sidebar_label: "Reset Accounting Documents also without Postings"
-description: "By default, the Reset Accounting) process doesn't reset documents that don't have postings."
+description: "Reset Accounting Documents also without Postings: a New Feature in iDempiere 9."
 tags: [functional]
 ---
 # Reset Accounting Documents also without Postings

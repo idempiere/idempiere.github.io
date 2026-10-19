@@ -1,7 +1,7 @@
 ---
 sidebar_position: 64
 sidebar_label: "Improved Role Access Update"
-description: "In the process Role Access Update preserve the changes made to automatic roles"
+description: "Improved Role Access Update: a New Feature in iDempiere 1.0."
 tags: [security]
 ---
 # Improved Role Access Update

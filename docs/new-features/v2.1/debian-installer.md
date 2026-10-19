@@ -1,7 +1,7 @@
 ---
 sidebar_position: 33
 sidebar_label: "Debian Installer"
-description: "The new IDempiere Debian Installer allows an almost automatic installation in Debian and Ub"
+description: "Debian Installer: a New Feature in iDempiere 2.1."
 tags: [technical]
 ---
 # Debian Installer

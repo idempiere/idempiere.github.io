@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: "Toolbar and Tab Button"
-description: "Extending the functionality implemented for Column Toolbar Button you can now define those toolbar buttons to appear both, on toolbar and on the window at..."
+description: "Toolbar and Tab Button: a New Feature in iDempiere 2.1."
 tags: [technical]
 ---
 # Toolbar and Tab Button

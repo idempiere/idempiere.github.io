@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: "Configurable Activities Dashboard"
-description: "Ashley Ramdass, Deepak Pansheriya, Murilo Habermann Torquato, Carlos Ruiz"
+description: "Configurable Activities Dashboard: a New Feature in iDempiere 4.1."
 tags: [user-experience]
 ---
 # Configurable Activities Dashboard

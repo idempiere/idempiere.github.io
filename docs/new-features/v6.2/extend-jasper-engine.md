@@ -1,7 +1,7 @@
 ---
 sidebar_position: 16
 sidebar_label: "Extend Jasper Engine"
-description: "Want to run a report per user, protect pdf file by password and sent email to user"
+description: "Extend Jasper Engine: a New Feature in iDempiere 6.2."
 tags: [development]
 ---
 # Extend Jasper Engine

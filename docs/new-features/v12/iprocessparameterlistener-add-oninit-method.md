@@ -1,7 +1,7 @@
 ---
 sidebar_position: 22
 sidebar_label: "IProcessParameterListener - add onInit method"
-description: "Processes are a powerful tool and several improvements were made recently."
+description: "IProcessParameterListener - add onInit method: a New Feature in iDempiere 12."
 tags: [technical]
 ---
 # IProcessParameterListener - add onInit method

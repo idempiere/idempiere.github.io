@@ -1,7 +1,7 @@
 ---
 sidebar_position: 65
 sidebar_label: "Role Inheritance"
-description: "Actually iDempiere supports role inheritance - a role can be composed by included roles, and in such case it inherits the configuration for menu access..."
+description: "Role Inheritance: a New Feature in iDempiere 1.0."
 tags: [security]
 ---
 # Role Inheritance

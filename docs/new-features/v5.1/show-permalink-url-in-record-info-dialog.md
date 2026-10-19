@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 sidebar_label: "Show Permalink URL in Record Info Dialog"
-description: "This is related to feature Zoom From URL"
+description: "Show Permalink URL in Record Info Dialog: a New Feature in iDempiere 5.1."
 tags: [user-experience]
 ---
 # Show Permalink URL in Record Info Dialog

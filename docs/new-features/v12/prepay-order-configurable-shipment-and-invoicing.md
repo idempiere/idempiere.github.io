@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 sidebar_label: "Prepay Order Configurable Shipment and Invoicing"
-description: "cloudempiere, Takacs Peter, Design: Igor Pojzl, Norbert Bede Review: CarlosRuiz, Hengsin"
+description: "Prepay Order Configurable Shipment and Invoicing: a New Feature in iDempiere 12."
 tags: [functional]
 ---
 # Prepay Order Configurable Shipment and Invoicing

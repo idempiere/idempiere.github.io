@@ -1,7 +1,7 @@
 ---
 sidebar_position: 52
 sidebar_label: "Code Best Practices"
-description: "fb-contrib™ is an extra detector plugin to be used with the static bug finder FindBugs™."
+description: "Code Best Practices: a New Feature in iDempiere 1.0."
 tags: [technical]
 ---
 # Code Best Practices

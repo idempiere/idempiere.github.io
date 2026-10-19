@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: "Confirm Panel With Checkbox"
-description: "This modification allows to add a checkbox to the center div of the ConfigPanel Required for Plugin: https://github.com/Soundbytes/idempiere-ProductionCommit"
+description: "Confirm Panel With Checkbox: a New Feature in iDempiere 9."
 tags: [development]
 ---
 # Confirm Panel With Checkbox

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 58
 sidebar_label: "Web Services Improvements"
-description: "&lt;web:ModelCRUD&gt; &lt;adin:serviceType&gt;CreateBPartner&lt;/adin:serviceType&gt; &lt;adin:TableName&gt;C_BPartner&lt;/adin:TableName&gt..."
+description: "Web Services Improvements: a New Feature in iDempiere 1.0."
 tags: [technical]
 ---
 # Web Services Improvements

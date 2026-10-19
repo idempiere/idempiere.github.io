@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: "Allowing Product Without Pricelist"
-description: "As shown below, Allow Product without price list added on Doc type."
+description: "Allowing Product Without Pricelist: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
 # Allowing Product Without Pricelist

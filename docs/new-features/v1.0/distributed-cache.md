@@ -1,7 +1,7 @@
 ---
 sidebar_position: 54
 sidebar_label: "Distributed Cache"
-description: "iDempiere have build in support for distributed cache for a load balance environment."
+description: "Distributed Cache: a New Feature in iDempiere 1.0."
 tags: [technical]
 ---
 # Distributed Cache

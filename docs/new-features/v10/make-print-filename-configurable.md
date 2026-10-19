@@ -1,7 +1,7 @@
 ---
 sidebar_position: 29
 sidebar_label: "Make print filename configurable"
-description: "cloudempiere, Takacs Peter, Design: Norbert Bede Review: Hengsin Low/CarlosRuiz"
+description: "Make print filename configurable: a New Feature in iDempiere 10."
 tags: [user-experience]
 ---
 # Make print filename configurable

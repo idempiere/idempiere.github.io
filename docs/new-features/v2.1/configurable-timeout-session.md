@@ -1,7 +1,7 @@
 ---
 sidebar_position: 31
 sidebar_label: "Configurable Timeout Session"
-description: "A new sysconfig key ZKSESSIONTIMEOUTINSECONDS"
+description: "Configurable Timeout Session: a New Feature in iDempiere 2.1."
 tags: [technical]
 ---
 # Configurable Timeout Session

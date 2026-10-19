@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 sidebar_label: "On Start Schedule"
-description: "There is a new scheduler type configurable to run just when the server starts, this can be interesting in case there is the need to run a process on every..."
+description: "On Start Schedule: a New Feature in iDempiere 6.2."
 tags: [functional]
 ---
 # On Start Schedule

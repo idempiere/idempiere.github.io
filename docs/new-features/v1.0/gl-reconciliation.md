@@ -1,7 +1,7 @@
 ---
 sidebar_position: 12
 sidebar_label: "GL Reconciliation"
-description: "The Account Reconciliation functionality is designed to assist in reconciling suspense/clearing type General Ledger accounts and reporting on the records..."
+description: "GL Reconciliation: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
 # GL Reconciliation

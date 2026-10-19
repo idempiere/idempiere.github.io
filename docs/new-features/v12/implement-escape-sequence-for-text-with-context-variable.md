@@ -1,7 +1,7 @@
 ---
 sidebar_position: 21
 sidebar_label: "Implement escape sequence for text with context variable"
-description: "We use a pair of @ character for context variable, for e.g @COrderID@."
+description: "Implement escape sequence for text with context variable: a New Feature in iDempiere 12."
 tags: [technical]
 ---
 # Implement escape sequence for text with context variable

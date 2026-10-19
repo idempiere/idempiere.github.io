@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: "Unallocated Cash and Payment Selection Configurable Business Partner"
-description: "&lt;h2 style='color:red'&gt;NOTE: This is not yet integrated into core&lt;/h2&gt;"
+description: "Unallocated Cash and Payment Selection Configurable Business Partner: a New Feature in iDempiere 12."
 tags: [functional]
 ---
 # Unallocated Cash and Payment Selection Configurable Business Partner
