@@ -1,4 +1,5 @@
 ---
+description: "Recommended security steps after installing the iDempiere server, and how to keep it up to date."
 sidebar_position: 5
 ---
 

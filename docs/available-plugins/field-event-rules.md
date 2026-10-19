@@ -1,4 +1,5 @@
 ---
+description: "Field Event Rules let you define \"when this field changes, do that\" logic in the Application Dictionary without writing Java code."
 sidebar_position: 1
 ---
 

@@ -1,4 +1,5 @@
 ---
+description: "What a Business Partner is in iDempiere (vendors, customers, employees and more) and how to create one."
 sidebar_position: 25
 ---
 

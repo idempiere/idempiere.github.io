@@ -1,4 +1,5 @@
 ---
+description: "Clone the iDempiere code and build it from the command line without Eclipse."
 sidebar_position: 8
 ---
 

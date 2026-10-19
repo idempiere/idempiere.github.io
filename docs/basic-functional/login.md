@@ -1,4 +1,5 @@
 ---
+description: "Understand the iDempiere login concepts so you can log in to the system."
 sidebar_position: 10
 ---
 

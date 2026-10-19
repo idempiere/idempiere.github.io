@@ -1,4 +1,5 @@
 ---
+description: "Get iDempiere up and running with Docker or Docker Compose."
 sidebar_position: 2
 ---
 

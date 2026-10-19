@@ -1,4 +1,5 @@
 ---
+description: "A tour of the iDempiere demo system of the GardenWorld company and the ERP functions it covers."
 sidebar_position: 15
 ---
 
