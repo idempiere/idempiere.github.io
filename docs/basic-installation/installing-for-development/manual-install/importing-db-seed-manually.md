@@ -1,4 +1,5 @@
 ---
+description: "Import the iDempiere seed database manually when you set up iDempiere to run in Eclipse."
 sidebar_position: 4
 ---
 

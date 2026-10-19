@@ -1,4 +1,5 @@
 ---
+description: "A first walk through iDempiere: the home screen, basic actions and where to get help."
 sidebar_position: 15
 ---
 # Getting Started

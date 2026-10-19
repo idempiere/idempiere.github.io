@@ -1,4 +1,5 @@
 ---
+description: "The available Quick Info widget 2Packs from the community, which show contextual information inside iDempiere without leaving the record."
 sidebar_position: 1
 ---
 # Quick Info 2packs

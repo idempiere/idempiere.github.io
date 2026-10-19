@@ -1,4 +1,5 @@
 ---
+description: "Build iDempiere and set up the Eclipse workspace: import the projects and set the target platform."
 sidebar_position: 3
 ---
 

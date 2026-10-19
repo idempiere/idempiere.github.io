@@ -1,4 +1,5 @@
 ---
+description: "Start the iDempiere server from Eclipse and open it in your browser."
 sidebar_position: 7
 ---
 

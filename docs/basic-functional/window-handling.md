@@ -1,4 +1,5 @@
 ---
+description: "The parts of an iDempiere window: favorites, recent items, activities, views, calendar, performance and the functions of data entry windows."
 sidebar_position: 20
 ---
 

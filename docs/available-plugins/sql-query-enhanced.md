@@ -1,4 +1,5 @@
 ---
+description: "SQL Query Enhanced replaces the standard SQL Query form with a code editor, a statement history and tools to copy and export the results."
 sidebar_position: 2
 ---
 

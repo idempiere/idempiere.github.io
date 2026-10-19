@@ -1,4 +1,5 @@
 ---
+description: "Apply additional migration scripts to your development database, either the automated way or manually."
 sidebar_position: 6
 ---
 

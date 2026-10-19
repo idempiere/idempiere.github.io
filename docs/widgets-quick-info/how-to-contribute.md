@@ -1,4 +1,5 @@
 ---
+description: "How to add a Quick Info widget 2Pack to this site: where the files go and what the entry needs."
 sidebar_position: 2
 ---
 # Contribute Quick Info Widgets
