@@ -1,10 +1,11 @@
 ---
 sidebar_position: 29
-title: "Development With Intellij"
 sidebar_label: "Development With Intellij"
-description: "**Goal:** Development"
+description: "With the help of the Eclipse PDE Partial plugin, use IntelliJ for iDempiere development."
 tags: [development]
 ---
+# Development With Intellij
+
 **Goal:** Development
 
 **Developer:** Hengsin

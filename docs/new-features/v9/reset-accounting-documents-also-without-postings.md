@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Reset Accounting Documents also without Postings"
 sidebar_label: "Reset Accounting Documents also without Postings"
-description: "**Developer:** Carlos Ruiz"
+description: "Reset Accounting Documents also without Postings: a New Feature in iDempiere 9."
 tags: [functional]
 ---
+# Reset Accounting Documents also without Postings
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

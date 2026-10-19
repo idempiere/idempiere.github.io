@@ -1,10 +1,11 @@
 ---
 sidebar_position: 23
-title: "Generate Model Template"
 sidebar_label: "Generate Model Template"
-description: "**Developers:** Nicolas Micoud"
+description: "Generate Model Template: a New Feature in iDempiere 11."
 tags: [technical]
 ---
+# Generate Model Template
+
 **Goal:** Technical
 
 **Developers:** Nicolas Micoud

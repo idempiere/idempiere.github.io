@@ -1,10 +1,11 @@
 ---
 sidebar_position: 25
-title: "Grid View Auto Hide Empty Column"
 sidebar_label: "Grid View Auto Hide Empty Column"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Grid view will auto hide empty column if the feature is turn on globally through system configurator or by user through the grid view customization dialog."
 tags: [user-experience]
 ---
+# Grid View Auto Hide Empty Column
+
 **Goal:** Usability
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

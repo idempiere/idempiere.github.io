@@ -1,10 +1,11 @@
 ---
 sidebar_position: 56
-title: "Storage Providers"
 sidebar_label: "Storage Providers"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Storage Providers: a New Feature in iDempiere 1.0."
 tags: [technical]
 ---
+# Storage Providers
+
 **Goal:** Technical
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

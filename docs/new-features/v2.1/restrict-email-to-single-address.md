@@ -1,10 +1,11 @@
 ---
 sidebar_position: 38
-title: "Restrict EMail To Single Address"
 sidebar_label: "Restrict EMail To Single Address"
 description: "For test systems you can set up the SysConfig key MAIL_DONT_SEND_TO_ADDRESS=Y to avoid sending unwanted messages."
 tags: [technical]
 ---
+# Restrict EMail To Single Address
+
 **Goal:** Technical
 
 **Description:**

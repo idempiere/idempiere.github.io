@@ -1,10 +1,11 @@
 ---
 sidebar_position: 25
-title: "Support for Alternate DB Admin User"
 sidebar_label: "Support for Alternate DB Admin User"
-description: "**Developer:** Carlos Ruiz"
+description: "Normally there are fixed admin users for Oracle (SYSTEM) and for PostgreSQL (postgres)."
 tags: [technical]
 ---
+# Support for Alternate DB Admin User
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Exclude Locators for Demand Operations"
 sidebar_label: "Exclude Locators for Demand Operations"
-description: "- Sponsor: Norbert Bede [MULTIMAGE Ltd](http://www.multimageconsult.com/)"
+description: "Exclude Locators for Demand Operations: a New Feature in iDempiere 3.0."
 tags: [functional]
 ---
+# Exclude Locators for Demand Operations
+
 ## Exclude Locators for Demand Operations
 - Sponsor: Norbert Bede [MULTIMAGE Ltd](http://www.multimageconsult.com/)
 - Developer: Carlos Ruiz

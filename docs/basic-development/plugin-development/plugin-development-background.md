@@ -1,5 +1,4 @@
 ---
-title: OSGi and MANIFEST.MF Background
 sidebar_label: OSGi Background
 sidebar_position: 10
 description: Background reference on MANIFEST.MF, plugin.xml, OSGi concepts, and key iDempiere plug-in projects.

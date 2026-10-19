@@ -1,10 +1,11 @@
 ---
 sidebar_position: 27
-title: "Use System Configurator from css files"
 sidebar_label: "Use System Configurator from css files"
-description: "**Developer:**  Nicolas Micoud"
+description: "Objective of the ticket is to load dynamically some resources such as a background image for the login page."
 tags: [technical]
 ---
+# Use System Configurator from css files
+
 **Goal:** Technical
 
 **Developer:**  Nicolas Micoud

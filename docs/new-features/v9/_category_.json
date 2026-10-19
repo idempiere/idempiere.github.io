@@ -3,6 +3,8 @@
   "position": 13,
   "link": {
     "type": "generated-index",
+    "title": "New features in iDempiere 9",
+    "slug": "/new-features/v9",
     "description": "Features integrated in iDempiere v9."
   }
 }

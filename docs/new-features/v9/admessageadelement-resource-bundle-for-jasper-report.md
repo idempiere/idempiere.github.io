@@ -1,10 +1,11 @@
 ---
 sidebar_position: 37
-title: "AD_Message+AD_Element Resource Bundle for Jasper Report"
 sidebar_label: "AD_Message+AD_Element Resource Bundle for Jasper Report"
-description: "**Goal:** Development"
+description: "Pass Resource Bundle backed by ADMessage and ADElement as report parameter to Jasper Report."
 tags: [development]
 ---
+# AD_Message+AD_Element Resource Bundle for Jasper Report
+
 **Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 26
-title: "Monitor Null Trx"
 sidebar_label: "Monitor Null Trx"
-description: "**Developer:** Carlos Ruiz"
+description: "Monitor Null Trx: a New Feature in iDempiere 11."
 tags: [technical]
 ---
+# Monitor Null Trx
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

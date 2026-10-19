@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: "Financial Report : Exclude all adjustment periods"
 sidebar_label: "Financial Report : Exclude all adjustment periods"
-description: "**Developer:**  Nicolas Micoud"
+description: "Until v8.2, financial reports were excluding the last adjustement period if it ends on the same day as the period selected for the report."
 tags: [functional]
 ---
+# Financial Report : Exclude all adjustment periods
+
 **Goal:** Functional
 
 **Developer:**  Nicolas Micoud

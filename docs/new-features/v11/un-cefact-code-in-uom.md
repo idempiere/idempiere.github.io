@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
-title: "UN CEFACT Code in UOM"
 sidebar_label: "UN CEFACT Code in UOM"
-description: "**Developer:** Carlos Ruiz"
+description: "The UN/CEFACT Code was added to Unit of Measure window, this standard code is used in many integrations (like ZUGFeRD or Electronic Invoices)."
 tags: [functional]
 ---
+# UN CEFACT Code in UOM
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

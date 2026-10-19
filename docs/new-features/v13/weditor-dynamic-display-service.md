@@ -1,5 +1,4 @@
 ---
-title: "WEditor Dynamic Display OSGi Service"
 sidebar_label: "WEditor Dynamic Display OSGi Service"
 sidebar_position: 14
 description: "This enhancement exposes the existing WEditor.DynamicDisplayListener interface as an OSGi service"

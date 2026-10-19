@@ -1,10 +1,11 @@
 ---
 sidebar_position: 62
-title: "Password Rules"
 sidebar_label: "Password Rules"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Password Rules: a New Feature in iDempiere 1.0."
 tags: [security]
 ---
+# Password Rules
+
 **Goal:** Security
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

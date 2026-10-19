@@ -1,10 +1,11 @@
 ---
 sidebar_position: 31
-title: "Improved Form Layout"
 sidebar_label: "Improved Form Layout"
-description: "**Goal:** User Experience"
+description: "Improved Form Layout: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
+# Improved Form Layout
+
 **Goal:** User Experience
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

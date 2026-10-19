@@ -1,8 +1,9 @@
 {
-  "label": "Basic Installation",
+  "label": "Basic installation",
   "position": 20,
   "link": {
     "type": "generated-index",
+    "slug": "/basic-installation",
     "description": "Information you need to start playing with iDempiere in your own instance"
   }
 }

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 41
-title: "Custom Commission calculations"
 sidebar_label: "Custom Commission calculations"
-description: "**Goal:** Extensibility"
+description: "The core commission feature works well but it is limited."
 tags: [development]
 ---
+# Custom Commission calculations
+
 **Goal:** Extensibility
 
 **Developer:** Diego.ruiz

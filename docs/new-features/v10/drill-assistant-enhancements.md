@@ -1,10 +1,11 @@
 ---
 sidebar_position: 28
-title: "Drill Assistant Enhancements"
 sidebar_label: "Drill Assistant Enhancements"
-description: "**Goal:** UX/Functional"
+description: "Drill Assistant Enhancements: a New Feature in iDempiere 10."
 tags: [user-experience]
 ---
+# Drill Assistant Enhancements
+
 **Goal:** UX/Functional
 
 **Developer:** cloudempiere, review by @hengsin

@@ -1,5 +1,4 @@
 ---
-title: Contributing an Extension to the Registry
 sidebar_label: Contributing to the Extension Registry
 sidebar_position: 23
 description: How to publish a plug-in to the official iDempiere Extension Registry so any iDempiere 14+ instance can find and install it.

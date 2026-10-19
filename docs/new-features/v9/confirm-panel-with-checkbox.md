@@ -1,10 +1,11 @@
 ---
 sidebar_position: 40
-title: "Confirm Panel With Checkbox"
 sidebar_label: "Confirm Panel With Checkbox"
-description: "**Goal:** Development"
+description: "Confirm Panel With Checkbox: a New Feature in iDempiere 9."
 tags: [development]
 ---
+# Confirm Panel With Checkbox
+
 **Goal:** Development
 
 **Developer:** Andreas Sumerauer

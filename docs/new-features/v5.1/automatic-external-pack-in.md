@@ -1,10 +1,13 @@
 ---
 sidebar_position: 7
-title: "Automatic External Pack In"
 sidebar_label: "Automatic External Pack In"
-description: "**Developers:** Diego Ruiz, Carlos Ruiz"
+description: "Automatic External Pack In (iDempiere 5.1): a New Feature in iDempiere 5.1."
 tags: [technical]
 ---
+# Automatic External Pack In (iDempiere 5.1)
+
+This page describes the feature as introduced in iDempiere 5.1. For the current guide, see [Automatic External Pack In](/docs/basic-development/2pack/automatic-external-packin).
+
 **Goal:** Technical
 
 **Developers:** Diego Ruiz, Carlos Ruiz

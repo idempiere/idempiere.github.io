@@ -1,10 +1,11 @@
 ---
 sidebar_position: 48
-title: "Welcome Page"
 sidebar_label: "Welcome Page"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "The welcome page has been redesigned to provide more configuration and better information to the user."
 tags: [user-experience]
 ---
+# Welcome Page
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

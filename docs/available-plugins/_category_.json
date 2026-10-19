@@ -1,8 +1,9 @@
 {
-  "label": "Available Plugins",
+  "label": "Available plugins",
   "position": 55,
   "link": {
     "type": "generated-index",
+    "slug": "/available-plugins",
     "description": "Community and third-party plugins available for iDempiere."
   }
 }

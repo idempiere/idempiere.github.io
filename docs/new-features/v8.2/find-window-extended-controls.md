@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Find Window Extended Controls"
 sidebar_label: "Find Window Extended Controls"
-description: "**Goal:** Development - Usability"
+description: "Find Window Extended Controls: a New Feature in iDempiere 8.2."
 tags: [functional]
 ---
+# Find Window Extended Controls
+
 **Goal:** Development - Usability
 
 **Developer:** Deepak Pansheriya, Murilo H Torquato

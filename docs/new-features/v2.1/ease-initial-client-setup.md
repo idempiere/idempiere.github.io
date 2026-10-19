@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Ease Initial Client Setup"
 sidebar_label: "Ease Initial Client Setup"
 description: "In order to ease the initial setup of a new tenant three options were added to the 'Initial Client Setup Process':"
 tags: [functional]
 ---
+# Ease Initial Client Setup
+
 **Goal:** Functional
 
 **Description:**

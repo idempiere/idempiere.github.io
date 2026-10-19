@@ -1,10 +1,11 @@
 ---
 sidebar_position: 48
-title: "OSGi New Event Handling Annotation"
 sidebar_label: "OSGi New Event Handling Annotation"
-description: "**Feature:** OSGi New Event Handling Annotation"
+description: "OSGi New Event Handling Annotation"
 tags: [development]
 ---
+# OSGi New Event Handling Annotation
+
 **Feature:** OSGi New Event Handling Annotation
 
 **Goal:** Development

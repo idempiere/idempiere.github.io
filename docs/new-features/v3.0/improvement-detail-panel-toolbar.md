@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Improvement: Detail Panel ToolBar"
 sidebar_label: "Improvement: Detail Panel ToolBar"
-description: "**Sponsor:** Integratio"
+description: "Improvement: Detail Panel ToolBar: a New Feature in iDempiere 3.0."
 tags: [user-experience]
 ---
+# Improvement: Detail Panel ToolBar
+
 ## **Improvement:** Detail Panel ToolBar
 **Goal:** Usability
 

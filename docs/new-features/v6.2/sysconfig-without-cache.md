@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
-title: "SysConfig without Cache"
 sidebar_label: "SysConfig without Cache"
-description: "**Developer:** Carlos Ruiz"
+description: "By default all SysConfig values are cached, so when they change it requires a Cache Reset to take the new value."
 tags: [technical]
 ---
+# SysConfig without Cache
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

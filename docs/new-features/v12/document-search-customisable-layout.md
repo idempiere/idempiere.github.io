@@ -1,10 +1,11 @@
 ---
 sidebar_position: 16
-title: "Document Search Customisable Layout"
 sidebar_label: "Document Search Customisable Layout"
-description: "**Feature:** Allow Define Customisable Layout for search result"
+description: "Document Search Customisable Layout: a New Feature in iDempiere 12."
 tags: [technical]
 ---
+# Document Search Customisable Layout
+
 **Feature:** Allow Define Customisable Layout for search result
 
 **Goal:** Technical

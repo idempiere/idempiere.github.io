@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: "Excel Master Detail Export"
 sidebar_label: "Excel Master Detail Export"
-description: "**Goal:** User Experience"
+description: "Excel Master Detail Export: a New Feature in iDempiere 7.1."
 tags: [user-experience]
 ---
+# Excel Master Detail Export
+
 **Goal:** User Experience
 
 **Developer:** Heng Sin Low

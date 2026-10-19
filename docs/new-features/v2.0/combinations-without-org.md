@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Combinations Without Org"
 sidebar_label: "Combinations Without Org"
-description: "**Developer:** Nicolas Micoud"
+description: "Combinations Without Org: a New Feature in iDempiere 2.0."
 tags: [functional]
 ---
+# Combinations Without Org
+
 **Goal:** Functional
 
 **Developer:** Nicolas Micoud

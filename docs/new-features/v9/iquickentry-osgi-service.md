@@ -1,10 +1,11 @@
 ---
 sidebar_position: 43
-title: "IQuickEntry OSGI Service"
 sidebar_label: "IQuickEntry OSGI Service"
-description: "**Goal:** Development"
+description: "I have prepared an OSGI Service that allows to use a customized WQuickEdit dialog in the web client."
 tags: [development]
 ---
+# IQuickEntry OSGI Service
+
 **Goal:** Development
 
 **Developer:** Andreas Sumerauer

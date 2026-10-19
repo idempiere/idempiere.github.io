@@ -3,6 +3,7 @@
   "position": 60,
   "link": {
     "type": "generated-index",
+    "slug": "/widgets-quick-info",
     "description": "Prebuilt widgets that add real-time, in-place information panels to iDempiere."
   }
 }

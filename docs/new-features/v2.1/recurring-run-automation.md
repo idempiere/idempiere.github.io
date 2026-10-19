@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "Recurring Run Automation"
 sidebar_label: "Recurring Run Automation"
 description: "The Recurring functionality can now be used for subscriptions where you want to generate recurring documents automatically."
 tags: [functional]
 ---
+# Recurring Run Automation
+
 **Goal:** Functional
 
 **Description:**

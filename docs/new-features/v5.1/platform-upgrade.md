@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Platform Upgrade"
 sidebar_label: "Platform Upgrade"
-description: "**Goal:** Architecture"
+description: "The platform upgrades included in iDempiere 5.1."
 tags: [architecture]
 ---
+# Platform Upgrade in iDempiere 5.1
+
 **Goal:** Architecture
 
 **Developers:** Le Quy Hiep,  Heng Sin Low

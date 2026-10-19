@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Document Type for Production and Bank Statement"
 sidebar_label: "Document Type for Production and Bank Statement"
-description: "**Developer:** Carlos Ruiz"
+description: "Document Type for Production and Bank Statement: a New Feature in iDempiere 10."
 tags: [functional]
 ---
+# Document Type for Production and Bank Statement
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

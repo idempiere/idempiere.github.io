@@ -1,10 +1,13 @@
 ---
 sidebar_position: 26
-title: "Run Script with 2Pack"
 sidebar_label: "Run Script with 2Pack"
-description: "**Developer:** Carlos Ruiz"
+description: "Pack In (2Pack) is now able to run scripts when being imported, two types of scripts are supported: Shell Scripts and JSR223 Scripts."
 tags: [technical]
 ---
+# Run Script with 2Pack (iDempiere 8.2)
+
+This page describes the feature as introduced in iDempiere 8.2. For the current guide, see [Run Script with 2Pack](/docs/basic-development/2pack/run-script-with-2pack).
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

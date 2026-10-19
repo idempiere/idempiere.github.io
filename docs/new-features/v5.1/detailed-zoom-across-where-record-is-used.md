@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Detailed Zoom Across (Where record is used)"
 sidebar_label: "Detailed Zoom Across (Where record is used)"
-description: "**Developer:** Carlos Ruiz"
+description: "By default the toolbar button zoom across discover where the record on screen is used on first tabs of windows."
 tags: [user-experience]
 ---
+# Detailed Zoom Across (Where record is used)
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

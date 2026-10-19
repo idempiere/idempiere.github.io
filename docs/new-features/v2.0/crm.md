@@ -1,10 +1,11 @@
 ---
 sidebar_position: 2
-title: "CRM Sales Management"
 sidebar_label: "CRM Sales Management"
 description: "Sales Leads Management with configurable charts and dashboards"
 tags: [functional]
 ---
+# CRM Sales Management
+
 ![AdaxaSalesCRMDashboard](pathname:///img/new-features/v2.0/AdaxaSalesCRMDashboard.png)
 ## Source
 ***Goal:** Functional in core

@@ -1,5 +1,4 @@
 ---
-title: Custom Product Pricing in Plug-ins
 sidebar_label: Product Pricing Factory
 sidebar_position: 20
 description: Learn how to extend product pricing in iDempiere using IProductPricingFactory.

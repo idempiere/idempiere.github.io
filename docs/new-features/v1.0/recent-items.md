@@ -1,10 +1,11 @@
 ---
 sidebar_position: 40
-title: "Recent Items Dashboard"
 sidebar_label: "Recent Items Dashboard"
-description: "**Contributor:** Quality Systems & Solutions (GlobalQSS)"
+description: "Recent Items Dashboard: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
+# Recent Items Dashboard
+
 **Goal:** Usability
 
 **Contributor:** Quality Systems & Solutions (GlobalQSS)

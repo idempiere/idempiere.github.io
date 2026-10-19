@@ -1,5 +1,4 @@
 ---
-title: Accounting Implementation Classes Extracted to org.idempiere.acct
 sidebar_label:  Accounting Plugin (org.idempiere.acct)
 sidebar_position: 5
 description: Accounting-related implementation classes have been moved from iDempiere core to a dedicated bundle, making it possible to run iDempiere without the accounting engine.

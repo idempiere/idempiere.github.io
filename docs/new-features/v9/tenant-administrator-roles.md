@@ -1,10 +1,11 @@
 ---
 sidebar_position: 16
-title: "Tenant Administrator Roles"
 sidebar_label: "Tenant Administrator Roles"
-description: "**Developer:**  Nicolas Micoud"
+description: "Tenant Administrator Roles: a New Feature in iDempiere 9."
 tags: [functional]
 ---
+# Tenant Administrator Roles
+
 **Goal:** Functional
 
 **Developer:**  Nicolas Micoud

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 24
-title: "Improve Process Log for more advanced logging options"
 sidebar_label: "Improve Process Log for more advanced logging options"
-description: "**Initiator**: Norbert Bede, Cloudempiere"
+description: "The main goal of this improvement was, to add the option of creating and updating Process Instance Logs (ADPInstanceLog) during the execution of any process."
 tags: [technical]
 ---
+# Improve Process Log for more advanced logging options
+
 **Initiator**: Norbert Bede, Cloudempiere
 
 **Developer**: Peter Takács, Cloudempiere

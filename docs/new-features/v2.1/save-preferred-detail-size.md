@@ -1,10 +1,11 @@
 ---
 sidebar_position: 24
-title: "Save Preferred Detail Size"
 sidebar_label: "Save Preferred Detail Size"
-description: "**Developer:** Nicolas Micoud, Carlos Ruiz"
+description: "Now iDempiere is able to save the prefered detail size per user per window/tab."
 tags: [user-experience]
 ---
+# Save Preferred Detail Size
+
 **Goal:** Usability
 
 **Developer:** Nicolas Micoud, Carlos Ruiz

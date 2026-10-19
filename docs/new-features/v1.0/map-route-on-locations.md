@@ -1,10 +1,11 @@
 ---
 sidebar_position: 20
-title: "Map Route On Locations"
 sidebar_label: "Map Route On Locations"
-description: "**Contributor:** Kenos"
+description: "Map Route On Locations: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
+# Map Route On Locations
+
 **Goal:** Functional
 
 **Contributor:** Kenos

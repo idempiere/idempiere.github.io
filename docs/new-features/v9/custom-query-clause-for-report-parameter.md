@@ -1,10 +1,11 @@
 ---
 sidebar_position: 42
-title: "Custom Query Clause for Report Parameter"
 sidebar_label: "Custom Query Clause for Report Parameter"
-description: "**Goal:** Development"
+description: "Custom Query Clause for Report Parameter: a New Feature in iDempiere 9."
 tags: [development]
 ---
+# Custom Query Clause for Report Parameter
+
 **Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

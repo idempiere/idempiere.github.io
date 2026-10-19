@@ -1,9 +1,9 @@
 ---
-title: Support Report Source in Report Columns and Add User1/User2 as Report Sources
 sidebar_label: Report Source in Report Columns
 sidebar_position: 4
 description: Support Report Source in Report Columns and Add User1/User2 as Report Sources
 ---
+# Support Report Source in Report Columns and Add User1/User2 as Report Sources
 
 :::warning Not Yet in Stable Release
 This feature is not yet part of a stable iDempiere release and may change.

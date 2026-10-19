@@ -1,10 +1,11 @@
 ---
 sidebar_position: 34
-title: "Link End Process With Next Record"
 sidebar_label: "Link End Process With Next Record"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Now the output of some processes that create new documents or records in other tables allows the user to navigate directly to those new records"
 tags: [user-experience]
 ---
+# Link End Process With Next Record
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

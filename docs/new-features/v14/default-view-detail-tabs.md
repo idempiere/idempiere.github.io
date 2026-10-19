@@ -1,9 +1,9 @@
 ---
-title: Default Display Mode for Detail Tabs
 sidebar_label: Detail Tab Display Mode
 sidebar_position: 1
 description: Allow users to configure the default display mode of Detail tabs
 ---
+# Default Display Mode for Detail Tabs
 
 **Goal:** Usability  
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  

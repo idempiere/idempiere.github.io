@@ -1,9 +1,9 @@
 ---
-title: New Feature Suggestion Guidelines
 sidebar_label: New Feature Suggestions
 sidebar_position: 4
 description: How to propose enhancements and new features for iDempiere in a way the community can evaluate effectively
 ---
+# New Feature Suggestion Guidelines
 
 This page is part of the list of contribution paths described in [Contributing to iDempiere](./contributing-to-idempiere).
 

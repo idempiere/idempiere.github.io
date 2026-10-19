@@ -1,9 +1,9 @@
 ---
-title: Avoid Sequence Locks in Document Numbers
 sidebar_label: Avoid Sequence Locks in Document Numbers
 sidebar_position: 5
 description: Introduces UUID-based document sequences and Allow Gaps setting to eliminate sequence lock contention under concurrent document creation.
 ---
+# Avoid Sequence Locks in Document Numbers
 
 :::warning Not Yet in Stable Release
 This feature is not yet part of a stable iDempiere release and may change.

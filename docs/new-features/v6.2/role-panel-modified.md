@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "Role Panel Modified"
 sidebar_label: "Role Panel Modified"
-description: "**Developers:** Deepak Pansheriya, Carlos Ruiz"
+description: "The role panel after the user provides the login credentials has been modified."
 tags: [user-experience]
 ---
+# Role Panel Modified
+
 **Goal:** Usability
 
 **Developers:** Deepak Pansheriya, Carlos Ruiz

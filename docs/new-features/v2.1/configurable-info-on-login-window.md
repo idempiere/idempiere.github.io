@@ -1,10 +1,11 @@
 ---
 sidebar_position: 45
-title: "Configurable Info on Login Window"
 sidebar_label: "Configurable Info on Login Window"
 description: "_All keys set in the System Configurator_"
 tags: [security]
 ---
+# Configurable Info on Login Window
+
 ![All keys set 1](pathname:///img/new-features/v2.1/All_keys_set_1.png)
 
 _All keys set in the System Configurator_

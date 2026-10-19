@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Find Window"
 sidebar_label: "Find Window"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "The history button was moved from toolbar to search window."
 tags: [functional]
 ---
+# Find Window
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 52
-title: "Code Best Practices"
 sidebar_label: "Code Best Practices"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Code Best Practices: a New Feature in iDempiere 1.0."
 tags: [technical]
 ---
+# Code Best Practices
+
 **Goal:** Technical
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

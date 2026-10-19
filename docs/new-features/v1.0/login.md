@@ -1,10 +1,11 @@
 ---
 sidebar_position: 35
-title: "Login Improvements"
 sidebar_label: "Login Improvements"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Now users can login directly using the defaults that used on their last session (client, role, organization, warehouse)."
 tags: [user-experience]
 ---
+# Login Improvements
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

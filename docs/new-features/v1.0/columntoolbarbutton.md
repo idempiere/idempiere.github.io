@@ -1,10 +1,11 @@
 ---
 sidebar_position: 29
-title: "Column Toolbar Buttons"
 sidebar_label: "Column Toolbar Buttons"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Option to display column button as part of the window toolbar instead of in the form."
 tags: [user-experience]
 ---
+# Column Toolbar Buttons
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

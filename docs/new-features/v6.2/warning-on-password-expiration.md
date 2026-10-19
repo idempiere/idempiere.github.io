@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Warning on Password Expiration"
 sidebar_label: "Warning on Password Expiration"
-description: "**Goal:** User Experience (Usability)"
+description: "Warning on Password Expiration: a New Feature in iDempiere 6.2."
 tags: [user-experience]
 ---
+# Warning on Password Expiration
+
 **Goal:** User Experience (Usability)
 
 **Developer:** Nicolas Micoud

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 58
-title: "Web Services Improvements"
 sidebar_label: "Web Services Improvements"
-description: "**Goal:** Technical improvement of [Web services](https://wiki.idempiere.org/en/Web_services)"
+description: "Web Services Improvements: a New Feature in iDempiere 1.0."
 tags: [technical]
 ---
+# Web Services Improvements
+
 **Goal:** Technical improvement of [Web services](https://wiki.idempiere.org/en/Web_services)
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

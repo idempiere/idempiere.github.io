@@ -1,5 +1,4 @@
 ---
-title: Running Plug-ins Locally in iDempiere
 sidebar_label: Running Plug-ins Locally
 description: Guide to configure and run plug-ins locally in iDempiere.
 sidebar_position: 2
@@ -11,7 +10,7 @@ This guide explains how to configure and run your plug-ins locally in iDempiere.
 
 ---
 
-## 🎯 Goal
+## Goal
 
 After setting up your plug-in project, you might wonder: **How do I make it work within iDempiere?**
 
@@ -19,7 +18,7 @@ To avoid merge conflicts and keep customizations maintainable, plug-ins should b
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 Before continuing, we strongly recommend reading:
 
@@ -29,7 +28,7 @@ This guide explains best practices for clean, modular plug-in development.
 
 ---
 
-## ⚙️ Workflow
+## Workflow
 
 After creating your plug-in project, open the `MANIFEST.MF` file.
 
@@ -72,7 +71,7 @@ start <bundle_number>
 
 ---
 
-## 🚀 Additional Features
+## Additional Features
 
 :::tip Automatically Start Your Plug-in
 - Set **Autostart = true** in Run Configurations.
@@ -83,6 +82,6 @@ For integrating `ModelValidators`, `Processes`, `Callouts`, and more, refer to t
 
 ---
 
-## 🔚 Conclusion
+## Conclusion
 
 By following this guide, you can configure and run your plug-ins locally in iDempiere. For the next step, learn how to distribute and install your plug-ins in the [Distributing Plug-ins](./distributing-plugins) guide.

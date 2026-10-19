@@ -1,10 +1,11 @@
 ---
 sidebar_position: 44
-title: "OSGi Factory for Replenishment"
 sidebar_label: "OSGi Factory for Replenishment"
-description: "**Goal:** Development"
+description: "Replenishment classes can be defined now as an OSGi service, this is helpful to implement pure OSGi plugins as the old approach required to create a fragment."
 tags: [development]
 ---
+# OSGi Factory for Replenishment
+
 **Goal:** Development
 
 **Developer:** Tomas Svikruha

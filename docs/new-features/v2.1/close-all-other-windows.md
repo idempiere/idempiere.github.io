@@ -1,10 +1,11 @@
 ---
 sidebar_position: 13
-title: "Close All / Other Windows"
 sidebar_label: "Close All / Other Windows"
 description: "Implemented a short way to close all windows - or other windows (all windows except the selected)"
 tags: [user-experience]
 ---
+# Close All / Other Windows
+
 **Goal:** Usability
 
 **Description:**

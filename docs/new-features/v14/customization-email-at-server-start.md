@@ -1,9 +1,9 @@
 ---
-title: Customization of email sent when server starts
 sidebar_label: Customization of email sent when server starts
 sidebar_position: 1
 description: Allow to customize the content of the email sent when the iDempiere service starts
 ---
+# Customization of email sent when server starts
 
 **Goal:** Technical  
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  

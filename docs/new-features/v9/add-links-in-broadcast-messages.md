@@ -1,10 +1,11 @@
 ---
 sidebar_position: 18
-title: "Add links in Broadcast Messages"
 sidebar_label: "Add links in Broadcast Messages"
-description: "**Developer:**  Nicolas Micoud - original credits go to Matheus E. Marcelino and Murilo H. Torquato"
+description: "Add links in Broadcast Messages: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
+# Add links in Broadcast Messages
+
 **Goal:** Usability
 
 **Developer:**  Nicolas Micoud - original credits go to Matheus E. Marcelino and Murilo H. Torquato

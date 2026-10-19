@@ -1,8 +1,7 @@
 ---
-title: "Read Access To Tables Not In Role Table Access List"
 sidebar_label: "Read Access To Tables Not In Role Table Access List"
 sidebar_position: 10
-description: "When using the Role Table Access Include list (i.e uncheck the Exclude checkbox) for Read Write access, the current behaviour is hard coded as the role has no access to other tables that is not par..."
+description: "Read Access To Tables Not In Role Table Access List: a New Feature in iDempiere 13."
 tags:
   - functional
 ---

@@ -51,6 +51,12 @@ const config = {
   plugins: [
     require.resolve('docusaurus-lunr-search'),
     [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: require('./redirects.js'),
+      },
+    ],
+    [
       '@docusaurus/plugin-pwa',
       {
         offlineModeActivationStrategies: [
@@ -210,16 +216,16 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Basic Installation Guide',
-                to: '/docs/introduction',
+                label: 'Basic installation guide',
+                to: '/docs/basic-installation',
               },
               {
-                label: 'Basic Functional Guide',
-                to: '/docs/introduction',
+                label: 'Basic functional guide',
+                to: '/docs/basic-functional',
               },
               {
-                label: 'Basic Developer Guide',
-                to: '/docs/introduction',
+                label: 'Basic developer guide',
+                to: '/docs/basic-development',
               },
             ],
           },

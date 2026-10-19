@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "SQL Searches in windows for advanced users"
 sidebar_label: "SQL Searches in windows for advanced users"
-description: "**Goal:** Functional - Usability"
+description: "The goal of the ticket is to allow advanced users to share advanced SQL search filter with other users, it is related to NF7.1 Share Saved Queries."
 tags: [user-experience]
 ---
+# SQL Searches in windows for advanced users
+
 **Goal:** Functional - Usability
 
 **Developer:** Diego Ruiz

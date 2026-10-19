@@ -1,10 +1,11 @@
 ---
 sidebar_position: 68
-title: "2Pack Revamped"
 sidebar_label: "2Pack Revamped"
-description: "**Goal:** Architecture"
+description: "2Pack Revamped: a New Feature in iDempiere 1.0."
 tags: [architecture]
 ---
+# 2Pack Revamped
+
 **Goal:** Architecture
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

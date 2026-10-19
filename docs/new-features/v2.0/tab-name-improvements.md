@@ -1,10 +1,11 @@
 ---
 sidebar_position: 13
-title: "Tab Name Improvements"
 sidebar_label: "Tab Name Improvements"
-description: "**Goal:** User Experience"
+description: "Tab Name Improvements: a New Feature in iDempiere 2.0."
 tags: [user-experience]
 ---
+# Tab Name Improvements
+
 **Goal:** User Experience
 
 **Developer:** Nicolas Micoud

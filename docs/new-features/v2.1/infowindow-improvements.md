@@ -1,10 +1,11 @@
 ---
 sidebar_position: 19
-title: "InfoWindow Improvements"
 sidebar_label: "InfoWindow Improvements"
 description: "To make user more comfortable with info window"
 tags: [user-experience]
 ---
+# InfoWindow Improvements
+
 **Goal:** Usability
 To make user more comfortable with info window
 

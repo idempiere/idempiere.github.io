@@ -1,10 +1,11 @@
 ---
 sidebar_position: 55
-title: "Virtual Column Lazy Loading"
 sidebar_label: "Virtual Column Lazy Loading"
-description: "**Goal:** Development"
+description: "Virtual columns were loaded among the rest of the regular columns when instantiating a model class."
 tags: [development]
 ---
+# Virtual Column Lazy Loading
+
 **Goal:** Development
 
 **Developer:** Saulo Gil

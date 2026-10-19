@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Min Max Validation Process Parameters"
 sidebar_label: "Min Max Validation Process Parameters"
-description: "**Developer:** Zuhri Utama, Hieplq"
+description: "Min Max Validation Process Parameters: a New Feature in iDempiere 11."
 tags: [functional]
 ---
+# Min Max Validation Process Parameters
+
 **Goal:** Technical
 
 **Developer:** Zuhri Utama, Hieplq

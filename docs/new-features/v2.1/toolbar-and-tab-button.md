@@ -1,10 +1,11 @@
 ---
 sidebar_position: 40
-title: "Toolbar and Tab Button"
 sidebar_label: "Toolbar and Tab Button"
-description: "**Developer:** Carlos Ruiz"
+description: "Toolbar and Tab Button: a New Feature in iDempiere 2.1."
 tags: [technical]
 ---
+# Toolbar and Tab Button
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz
