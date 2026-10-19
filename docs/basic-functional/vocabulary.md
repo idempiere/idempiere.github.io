@@ -1,6 +1,6 @@
 ---
+description: "Definitions of the basic iDempiere terms, such as Tenant, that you need to know when you use the system."
 sidebar_position: 2
-description: "This page defines basic terms you should know when using iDempiere."
 ---
 # Vocabulary {#vocabulary}
 
