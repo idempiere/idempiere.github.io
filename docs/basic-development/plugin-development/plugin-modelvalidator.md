@@ -65,6 +65,7 @@ import org.compiere.model.ModelValidator;
 import org.compiere.model.PO;
 import org.compiere.model.MClient;
 import org.compiere.model.MOrder;
+import org.compiere.model.ModelValidationEngine;
 import org.compiere.util.CLogger;
 
 public class MyModelValidator implements ModelValidator {
