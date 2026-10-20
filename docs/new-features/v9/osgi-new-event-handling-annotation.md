@@ -85,7 +85,7 @@ public class MyEventManager extends AnnotationBasedEventManager {
 }
 ```
 
-In iDempiere 9 and 10, the core component `DefaultAnnotationBasedEventManager` uses `service = {}`. In iDempiere 13 and the latest development branch, it uses `service = {DefaultAnnotationBasedEventManager.class}`.
+In iDempiere 9 and 10, the core component `DefaultAnnotationBasedEventManager` uses `service = {}`. From iDempiere 11 on, it uses `service = {DefaultAnnotationBasedEventManager.class}`.
 
 ### **Event handlers and Event delegates**
 1. PO and FactValidate - ModelEventHandler and ModelEventDelegate

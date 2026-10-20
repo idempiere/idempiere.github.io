@@ -26,7 +26,7 @@ public class MyDocInOut extends Doc_InOut {
 ```
 
 :::note
-`Doc_InOut` and `DocManager` are in the `org.compiere.acct` package in iDempiere 10 to 13. In the latest development branch (`master`) they are in `org.idempiere.acct.doc`. Use the package of the iDempiere version you build against.
+`Doc_InOut` and `DocManager` are in the `org.compiere.acct` package in iDempiere 9 to 13. In the latest development branch (`master`) they are in `org.idempiere.acct.doc`. Use the package of the iDempiere version you build against.
 :::
 
 Developer can use one of the following approach:
