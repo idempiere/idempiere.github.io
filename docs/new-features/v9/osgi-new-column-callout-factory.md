@@ -45,7 +45,9 @@ public void bindService(IMappedColumnCalloutFactory factory) {
     factory.addMapping(MTest.Table_Name, MTest.COLUMNNAME_T_Amount, () -> new MyTestAmountCallout());
 }
 ```
-3. Create a subclass of MappedColumnCalloutFactory, register as IColumnCalloutFactory service (DO NOT register as IMappedColumnCalloutFactory service).
+
+3. Create a subclass of `MappedColumnCalloutFactory`, register as `IColumnCalloutFactory` service (DO NOT register as `IMappedColumnCalloutFactory` service).
+
 ```java
 public class MyFactory extends MappedColumnCalloutFactory {
     public MyFactory() {
@@ -55,9 +57,11 @@ public class MyFactory extends MappedColumnCalloutFactory {
 ```
 
 ### **Annotations**
-1. org.adempiere.base.annotation.Callout with tableName and columnName parameter. Use '*' to match any table or column name.
-1. Usage:
-::* Annotate your class with org.adempiere.base.annotation.Callout annotation
+
+The `org.adempiere.base.annotation.Callout` annotation takes `tableName` and `columnName` parameters. Use `*` to match any table or column name.
+
+Annotate your class with the `Callout` annotation:
+
 ```java
  @Callout(tableName = "AD_InfoWindow", columnName = "AD_Table_ID")
  @Callout(tableName = "AD_InfoColumn", columnName = {"AD_Element_ID","AD_Reference_ID"})
@@ -68,16 +72,39 @@ public class MyFactory extends MappedColumnCalloutFactory {
      }
  }
 ```
-::* Create an OSGi component that extends the AnnotationBasedColumnCalloutFactory class (with service =
-IColumnCalloutFactory.class).
-::* Alternatively, in plugin Activator start method, scan annotated callout classes
+
+Then register the annotated classes in one of two ways.
+
+**Option 1:** Create an OSGi component that extends the `AnnotationBasedColumnCalloutFactory` class (with `service = IColumnCalloutFactory.class`). The class must implement the abstract `getPackages()` method and return the packages that hold your annotated callout classes. The scan does not include sub-packages.
+
+```java title="src/com/example/callout/MyAnnotationBasedColumnCalloutFactory.java"
+package com.example.callout;
+
+import org.adempiere.base.AnnotationBasedColumnCalloutFactory;
+import org.adempiere.base.IColumnCalloutFactory;
+import org.osgi.service.component.annotations.Component;
+
+@Component(immediate = true, service = IColumnCalloutFactory.class)
+public class MyAnnotationBasedColumnCalloutFactory extends AnnotationBasedColumnCalloutFactory {
+
+    @Override
+    protected String[] getPackages() {
+        return new String[] {"com.example.callout"};
+    }
+}
+```
+
+**Option 2:** In the plugin Activator `start` method, scan the annotated callout classes:
+
 ```java
  public void start(BundleContext context) throws Exception {
      //replace org.idempiere.test.callout with package name of your annotated callout classes
      Core.getMappedColumnCalloutFactory().scan(context, "org.idempiere.test.callout");
  }
 ```
-::*The activator approach above is not 100% safe as Core.getMappedColumnCalloutFactory() can return null if your bundle get activated before the activation of the IMappedColumnCalloutFactory service. The better way is to use @Component, @Reference and @Activator instead.
+
+The activator approach above is not 100% safe as `Core.getMappedColumnCalloutFactory()` can return null if your bundle gets activated before the activation of the `IMappedColumnCalloutFactory` service. The better way is to use the `@Component`, `@Reference` and `@Activate` annotations instead:
+
 ```java
  @Component(immediate = true)
  public class MyActivator implements BundleActivator {
