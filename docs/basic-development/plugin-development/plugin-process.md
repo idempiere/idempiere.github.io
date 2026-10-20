@@ -230,7 +230,7 @@ For versions before iDempiere 9, use the `IProcessFactory` interface.
 
 #### Step 1: Create the Process Factory Class
 
-```java
+```java title="src/com/example/process/MyProcessFactory.java"
 package com.example.process;
 
 import org.adempiere.base.IProcessFactory;

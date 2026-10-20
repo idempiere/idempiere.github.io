@@ -264,7 +264,7 @@ Create a class that implements the [`IColumnCallout`](https://github.com/idempie
 
 **Example: `CalloutFromFactory.java`**
 
-```java
+```java title="src/com/example/callout/CalloutFromFactory.java"
 package com.example.callout;
 
 import org.adempiere.base.IColumnCallout;
@@ -293,7 +293,7 @@ Create a factory class that implements [`IColumnCalloutFactory`](https://github.
 
 **Example: `CalloutFactory.java`**
 
-```java
+```java title="src/com/example/callout/CalloutFactory.java"
 package com.example.callout;
 
 import org.adempiere.base.IColumnCallout;
