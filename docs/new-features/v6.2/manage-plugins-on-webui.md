@@ -12,7 +12,7 @@ tags: [technical]
 
 **Description:**
 
-Now basic plugin information can be seen directly on the webui (as System Administrator), &lt;s&gt;clicking on the About button and navigating to the Plugins dialog&lt;/s&gt; (since version 8.2) on the menu using the form **Plugin Manager** you can see:
+Now basic plugin information can be seen directly on the webui (as System Administrator), ~~clicking on the About button and navigating to the Plugins dialog~~ (since version 8.2) on the menu using the form **Plugin Manager** you can see:
 - Plugin ID
 - Status
 - Plugin Name
