@@ -22,9 +22,7 @@ The way to use this is the same as before, with the slight difference that you n
 
 Here is an example of how to use the askForSecretInput() method:
 ```java
-```
 		final StringBuffer answer = new StringBuffer();
-```
 		final StringBuffer retVal = new StringBuffer();
 		processUI.askForSecretInput("Please enter some String", new Callback<String>() {
 			@Override
