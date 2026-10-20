@@ -8,6 +8,12 @@ description: Learn how to add custom tabs to the iDempiere WebUI About window us
 
 This tutorial was contributed by Jan Thielemann from evenos GmbH.
 
+:::warning
+
+`IAboutWindowTabFactory` is not part of iDempiere core. It does not exist in `master` or in `release-10` to `release-13`, so this tutorial works only on a core that has been patched to add it. Check that your iDempiere version provides the interface before you follow the steps.
+
+:::
+
 ## Goal
 
 The goal of this tutorial is to show how to use the `IAboutWindowTabFactory` service in your plug-in project. Use this service to add custom tabs to the About window (opened by clicking the image in the upper left corner of the WebUI), alongside the default About, Credit, Info, and Errors tabs.

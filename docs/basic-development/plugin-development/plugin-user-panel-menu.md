@@ -6,6 +6,12 @@ description: Learn how to add custom menu entries to the iDempiere WebUI user pa
 
 # Using IUserPanelMenuFactory in Plug-ins
 
+:::warning
+
+`IUserPanelMenuFactory` is not part of iDempiere core. The Jira ticket that proposes it, [IDEMPIERE-2000](https://idempiere.atlassian.net/browse/IDEMPIERE-2000), is still open. Neither this interface nor `IUserPanelMenu` exists in `master` or in `release-10` to `release-13`, so this tutorial works only on a core that has been patched to add them. Check that your iDempiere version provides them before you follow the steps.
+
+:::
+
 ## Goal
 
 The goal of this tutorial is to show how to use the `IUserPanelMenuFactory` service in your plug-in project. Use this service to add custom entries to the WebUI user panel (the menu that contains Feedback, Preference, Change Role, and Log Out).
