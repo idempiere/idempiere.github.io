@@ -76,8 +76,21 @@ function javaBlocks(text) {
 const DECLARATION = /^\s*(?:public\s+|abstract\s+|final\s+)*(class|interface)\s+(\w+)(?:\s+extends\s+([\w.<>, ]+?))?(?:\s+implements\s+([\w.<>, ]+?))?\s*\{/m;
 
 // Names of the types in an extends or implements list, without generics.
-const typeNames = (list) =>
-  (list || '').replace(/<[^>]*>/g, '').split(',').map((s) => s.trim()).filter(Boolean);
+const typeNames = (list) => {
+  const names = [];
+  let depth = 0;
+  let current = '';
+  for (const ch of list || '') {
+    if (ch === '<') depth += 1;
+    else if (ch === '>') depth -= 1;
+    else if (ch === ',' && depth === 0) {
+      names.push(current.trim());
+      current = '';
+    } else if (depth === 0) current += ch;
+  }
+  names.push(current.trim());
+  return names.filter(Boolean);
+};
 
 function checkPage(file, { byName, bySimple }) {
   const blocks = javaBlocks(fs.readFileSync(file, 'utf8'));
