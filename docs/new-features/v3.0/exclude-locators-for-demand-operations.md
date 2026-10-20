@@ -67,7 +67,7 @@ Add column M_LocatorType_ID to table M_Locator
 The initial list of affected objects (can be more after a deeper review):
 DB Function BOMQtyAvailable
 
-&lt;strike&gt;The dictionary reference “Locator (WH)” is not prepared to receive a filter (dynamic validation) - in order to implement filtering for the Shipment is necessary to implement this, probably modifying WLocatorDialog to check for dynamic validation, and enabling dynamic validation for the Locator reference when adding a column, field or field customization.&lt;/strike&gt;
+~~The dictionary reference “Locator (WH)” is not prepared to receive a filter (dynamic validation) - in order to implement filtering for the Shipment is necessary to implement this, probably modifying WLocatorDialog to check for dynamic validation, and enabling dynamic validation for the Locator reference when adding a column, field or field customization.~~
 
 - The original idea to filter the locator is too complex as the WLocatorDialog doesn't have direct access to the calling field - this validation was implemented on MInOutLine.beforeSave, showing the user an error if a locator not available for shipping is selected.
 
