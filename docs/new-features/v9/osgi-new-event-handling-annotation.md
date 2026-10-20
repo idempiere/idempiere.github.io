@@ -55,7 +55,8 @@ public void bindService(IEventManager eventManager) {
 }
 ```
 
-3. Annotate your class with EventTopicDelegate and one of ModelEventTopic, ImportEventTopic or ProcessEventTopic annotation. Create a new OSGi component that extends the AnnotationBasedEventManager class (with service = &#123;&#125;).
+3. Annotate your class with EventTopicDelegate and one of ModelEventTopic, ImportEventTopic or ProcessEventTopic annotation. Create a new OSGi component that extends the `AnnotationBasedEventManager` class (with `service = {}`). The subclass must implement the public abstract `getPackages()` method and return the packages that hold your delegate classes.
+
 ```java
  @EventTopicDelegate
  @ModelEventTopic(modelClass = MInOut.class)
@@ -68,24 +69,42 @@ public void bindService(IEventManager eventManager) {
  }
 ```
 
+```java title="src/com/example/event/MyEventManager.java"
+package com.example.event;
+
+import org.adempiere.base.AnnotationBasedEventManager;
+import org.osgi.service.component.annotations.Component;
+
+@Component(immediate = true, service = {})
+public class MyEventManager extends AnnotationBasedEventManager {
+
+    @Override
+    public String[] getPackages() {
+        return new String[] {"com.example.event"};
+    }
+}
+```
+
+In iDempiere 9 and 10, the core component `DefaultAnnotationBasedEventManager` uses `service = {}`. In iDempiere 13 and the latest development branch, it uses `service = {DefaultAnnotationBasedEventManager.class}`.
+
 ### **Event handlers and Event delegates**
-1. PO and FactValidate - ModelEventHandler and ModelEventDeleagete
+1. PO and FactValidate - ModelEventHandler and ModelEventDelegate
 1. Import (I_BPartner, I_Product, etc) -  ImportEventHandler and ImportEventDelegate
 1. Process - ProcessEventHandler and ProcessEventDelegate
 1. Others - SimpleEventHandler and EventDelegate (and the optional, convenient delegate class of RequestSendEmailEventDelegate and AfterLoginEventDelegate)
 
 ### **Annotations**
-1. There’s annotattion created for all predefined event delegate (“@AfterLogin”, “@AfterProcess”, “@BeforeComplete”, “@AfterImport”, etc)
+1. There’s an annotation created for all predefined event delegate (“@AfterLogin”, “@AfterProcess”, “@BeforeComplete”, “@AfterImport”, etc)
 1. Model/PO event annotation at org.adempiere.base.event.annotations.po
 1. Process event annotation at org.adempiere.base.event.annotations.process
 1. Import event annotation at org.adempiere.base.event.annotations.imp
 1. Document event annotation at org.adempiere.base.event.annotations.doc
 1. Base classes and Other event annotation at org.adempiere.base.event.annotations
 1. IDEMPIERE-5019 added EventTopicDelegate, ModelEventTopic, ImportEventTopic and ProcessEventTopic class level annotation.
-1. * Event delegate class with EventTopicDelegate annotation will be discovered and register by OSGi Component that extends the AnnotationBasedEventManager class (Doesn't have to provide any service, i.e service = &#123;&#125;).
+1. * Event delegate class with EventTopicDelegate annotation will be discovered and register by OSGi Component that extends the AnnotationBasedEventManager class (Doesn't have to provide any service, i.e `service = {}`).
 1. * For core, annotate your event delegate class and place it in the org.adempiere.base.event.delegate package.
 1. * ModelEventTopic, ImportEventTopic and ProcessEventTopic annotation is to define the parameter needed for each event type (for e.g, model class for model event type).
-1. * Example from org.adempiere.base.event.delegate.AutoProduceEventDelegate:
+1. * Example from org.adempiere.base.event.delegate.AutoProduceEventDelegate. The code is simplified: the current class also skips customer and vendor returns.
 
 ```java
    @EventTopicDelegate
