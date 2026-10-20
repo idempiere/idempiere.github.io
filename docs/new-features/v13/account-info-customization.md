@@ -16,13 +16,16 @@ to customize Account Info, you need to create or use your own plugin. copy defau
 
 example of FormFactory : 
 
-```java
-package org.idempiere.custom.acct;
+```java title="src/com/company/form/FormFactory.java"
+package com.company.form;
 
 import org.adempiere.webui.acct.WAcctViewer;
 import org.adempiere.webui.factory.IFormFactory;
 import org.adempiere.webui.panel.ADForm;
+import org.osgi.service.component.annotations.Component;
 
+// the ranking must be higher than the core form factories (0 and 1)
+@Component(immediate = true, service = IFormFactory.class, property = {"service.ranking:Integer=100"})
 public class FormFactory implements IFormFactory
 {
 
