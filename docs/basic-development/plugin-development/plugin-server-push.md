@@ -22,8 +22,8 @@ Before you start, review the following tutorials:
 
 ## Full example code
 
-```java title="src/com/example/dashboard/DPTest.java"
-package com.example.dashboard;
+```java title="src/org/adempiere/webui/dashboard/DPTest.java"
+package org.adempiere.webui.dashboard;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +32,6 @@ import org.adempiere.base.Service;
 import org.adempiere.webui.apps.AEnv;
 import org.adempiere.webui.component.Label;
 import org.adempiere.webui.component.Textbox;
-import org.adempiere.webui.dashboard.DashboardPanel;
 import org.adempiere.webui.util.IServerPushCallback;
 import org.adempiere.webui.util.ServerPushTemplate;
 import org.compiere.util.Env;
