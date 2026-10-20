@@ -43,10 +43,11 @@ Before this enhancement, these validations often required core modifications.
 
 The new extension point provides a clean and modular mechanism for implementing custom validation logic.
 
-**New Interfaces**
+**New Interface**
 
-- IStorageValidator
-- IStorageValidatorFactory
+- `IStorageValidator`: implement it as an OSGi service. Its method is `validate(PO po, BigDecimal movementQty, IReservationTracer tracer, String trxName)`.
+
+The core component `StorageValidatorProvider` collects all `IStorageValidator` services and calls them in descending `service.ranking` order. There is no factory interface.
 
 **Benefits**
 
