@@ -39,7 +39,11 @@ The `@Component` annotation registers this class as an OSGi Declarative Service.
 
 Create a class implementing `ICreditManager`. It has one method: `checkCreditStatus(String docAction)`, which returns a `CreditStatus` object.
 
-```java
+```java title="src/org/compiere/model/credit/MyCreditManagerOrder.java"
+package org.compiere.model.credit;
+
+import org.adempiere.base.ICreditManager;
+
 public class MyCreditManagerOrder implements ICreditManager {
 
     private MOrder order;
