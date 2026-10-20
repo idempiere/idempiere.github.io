@@ -33,7 +33,19 @@ Note the context variable is going to be filled on an EventHandler in a plugin, 
 ![02 StatusLine](pathname:///img/new-features/v8.2/02_StatusLine.png)
 
 ## Java Class
-```java
+```java title="src/com/example/statusline/TestEventHandler.java"
+package com.example.statusline;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.Base64;
+
+import org.adempiere.base.event.AbstractEventHandler;
+import org.adempiere.base.event.EventManager;
+import org.adempiere.exceptions.AdempiereException;
+import org.compiere.model.MStatusLine;
+import org.compiere.util.Env;
+import org.osgi.service.event.Event;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
