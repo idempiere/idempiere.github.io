@@ -12,9 +12,9 @@ tags: [user-experience]
 
 **Description:**
 
-&lt;cite&gt;[Placeholder](https://www.w3schools.com/tags/att_input_placeholder.asp) specifies a short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format).&lt;/cite&gt;
-
-&lt;cite&gt;The short hint is displayed in the input field before the user enters a value.&lt;/cite&gt;
+> [Placeholder](https://www.w3schools.com/tags/att_input_placeholder.asp) specifies a short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format).
+>
+> The short hint is displayed in the input field before the user enters a value.
 
 ***Placeholders for Fields:***
 

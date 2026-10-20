@@ -39,11 +39,9 @@ this report receive parameter Staff_ID to query info relate that staff and gener
 ![SentSalaryEmail](pathname:///img/new-features/v6.2/SentSalaryEmail.png)
 this process point to tw.idempiere.jasperreport.extend.osgi.service.SentMailPayrollToStaff
 - parameter meaning
-&lt;gallery&gt;
-EmailTestValue.png|Mail Receive Test
-ReportToRun.png|Report To Run Name
-PasswordProtected.png|Encrypted
-&lt;/gallery&gt;
+    - EmailTestValue: Mail Receive Test
+    - ReportToRun: Report To Run Name
+    - PasswordProtected: Encrypted
 
 **Remember:** change "Mail Receive Test" value to yours
 
