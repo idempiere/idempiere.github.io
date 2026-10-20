@@ -22,7 +22,7 @@ How To :
 
 to customize Account Info, you need to create or use your own plugin. copy default account info window from org.adempiere.webui.acct.WAcctViewer class to your plugin, ex. com.company.form.WCustomAcctViewer and register the new form using [FormFactory](/docs/basic-development/plugin-development/plugin-forms.md).
 
-example of FormFactory : 
+example of FormFactory (register the class as an OSGi component with `service = IFormFactory.class`, as described in the Forms guide above) : 
 
 ```java
 package org.idempiere.custom.acct;
