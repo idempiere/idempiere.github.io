@@ -30,7 +30,7 @@ With following form class:
 
 Developer can use one of the following approach:
 
-1. At plugin Activator start method, register the process class.
+1. At plugin Activator start method, register the form class.
 
 ```java
 public void start(BundleContext context) throws Exception {
@@ -39,14 +39,16 @@ public void start(BundleContext context) throws Exception {
 }
 ```
 
-2. Create an osgi component, at the bind method for IMappedFormFactory service component.
+2. Create an osgi component, at the bind method for the `IMappedFormFactory` service.
+
 ```java
 public void bindService(IMappedFormFactory factory) {
     factory.addMapping(MyTestForm.class.getName(), () -> new MyTestForm().getForm());
 }
 ```
 
-3. Create a subclass of MappedFormFactory, register as IFormFactory service (DO NOT register as IMappedFormFactory service).
+3. Create a subclass of `MappedFormFactory`, register as `IFormFactory` service (DO NOT register as `IMappedFormFactory` service).
+
 ```java
 public class MyFactory extends MappedFormFactory {
     public MyFactory() {
@@ -56,6 +58,7 @@ public class MyFactory extends MappedFormFactory {
 ```
 
 4. IDEMPIERE-5012 added scan(BundleContext context, String... packages) method to IMappedFormFactory and MappedFormFactory. Developer can call that at plugin Activator start method to register form classes with org.idempiere.ui.zk.annotation.Form annotation.
+
 ```java
  public void start(BundleContext context) throws Exception {
       //replace org.idempiere.test.form with package name of your form classes
@@ -64,7 +67,8 @@ public class MyFactory extends MappedFormFactory {
 ```
 
 The approach above is not 100% safe as Extensions.getMappedFormFactory() can return null if your bundle get activated before the activation of the IMappedFormFactory service.
-The better way is to use @Component, @Reference and @Activator instead.
+The better way is to use the `@Component`, `@Reference` and `@Activate` annotations instead:
+
 ```java
  @Component(immediate = true)
  public class MyActivator implements BundleActivator {
@@ -95,12 +99,29 @@ The better way is to use @Component, @Reference and @Activator instead.
 ### **Annotations**
 1. org.idempiere.ui.zk.annotation.Form annotation with optional name parameter. A form class is always register to its fully qualify class name and the name parameter allow developer to add an alternate register name for the form class.
 
-2. Plugin should either use the method 4 above or create a new OSGi component that extends the AnnotationBasedFormFactory class (usually with @Component(immediate = true, service = IFormFactory.class, property = &#123;"service.ranking:Integer=1"&#125;) component annotation).
+2. Plugin should either use the method 4 above or create a new OSGi component that extends the `AnnotationBasedFormFactory` class (usually with `@Component(immediate = true, service = IFormFactory.class, property = {"service.ranking:Integer=1"})` component annotation). The subclass must implement the abstract `getPackages()` method and return the packages that hold your form classes. The scan does not include sub-packages.
 
 ```java
 @org.idempiere.ui.zk.annotation.Form(name = "org.compiere.apps.form.VAllocation")
 public class WAllocation extends Allocation implements IFormController, EventListener<Event>, WTableModelListener, ValueChangeListener {
   ...
+}
+```
+
+```java title="src/com/example/form/MyFormFactory.java"
+package com.example.form;
+
+import org.adempiere.webui.factory.AnnotationBasedFormFactory;
+import org.adempiere.webui.factory.IFormFactory;
+import org.osgi.service.component.annotations.Component;
+
+@Component(immediate = true, service = IFormFactory.class, property = {"service.ranking:Integer=1"})
+public class MyFormFactory extends AnnotationBasedFormFactory {
+
+    @Override
+    protected String[] getPackages() {
+        return new String[] {"com.example.form"};
+    }
 }
 ```
 

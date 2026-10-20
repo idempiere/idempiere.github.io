@@ -20,9 +20,7 @@ public class MyTest extends SvrProcess {
        @Override
        protected void prepare() {
        }
-```
 
-```
        @Override
        protected String doIt() throws Exception {
            return null;
@@ -41,14 +39,16 @@ public void start(BundleContext context) throws Exception {
 }
 ```
 
-2. Create an osgi component, at the bind method for IMappedDocumentFactory service component.
+2. Create an osgi component, at the bind method for the `IMappedProcessFactory` service.
+
 ```java
 public void bindService(IMappedProcessFactory factory) {
     factory.addMapping(MyTest.class.getName(), () -> new MyTest());
 }
 ```
 
-3. Create a subclass of MappedProcessFactory, register as IDocFactory service (DO NOT register as IMappedDocumentFactory service).
+3. Create a subclass of `MappedProcessFactory`, register as `IProcessFactory` service (DO NOT register as `IMappedProcessFactory` service).
+
 ```java
 public class MyFactory extends MappedProcessFactory {
     public MyFactory() {
@@ -58,6 +58,7 @@ public class MyFactory extends MappedProcessFactory {
 ```
 
 4. IDEMPIERE-5001 added scan(BundleContext context, String... packages) method to IMappedProcessFactory and MappedProcessFactory. Developer can call that at plugin Activator start method to register process classes with org.adempiere.base.annotation.Process annotation.
+
 ```java
  public void start(BundleContext context) throws Exception {
       //replace org.idempiere.test.process with package name of your process classes
@@ -66,7 +67,8 @@ public class MyFactory extends MappedProcessFactory {
 ```
 
 The approach above is not 100% safe as Core.getMappedProcessFactory() can return null if your bundle get activated before the activation of the IMappedProcessFactory service.
-The better way is to use @Component, @Reference and @Activator instead.
+The better way is to use the `@Component`, `@Reference` and `@Activate` annotations instead:
+
 ```java
  @Component(immediate = true)
  public class MyActivator implements BundleActivator {
@@ -97,13 +99,30 @@ The better way is to use @Component, @Reference and @Activator instead.
 ### **Annotations**
 1. org.adempiere.base.annotation.Process annotation with optional name parameter. A process class is always register to its fully qualify class name and the name parameter allow developer to add an alternate register name for the process class.
 
-2. Plugin should either use the method 4 above or create a new OSGi component that extends the AnnotationBasedProcessFactory class (usually with @Component(immediate = true, service = IProcessFactory.class, property = &#123;"service.ranking:Integer=1"&#125;) component annotation).
+2. Plugin should either use the method 4 above or create a new OSGi component that extends the `AnnotationBasedProcessFactory` class (usually with `@Component(immediate = true, service = IProcessFactory.class, property = {"service.ranking:Integer=1"})` component annotation). The subclass must implement the abstract `getPackages()` method and return the packages that hold your process classes. The scan does not include sub-packages.
 
 ```java
   @org.adempiere.base.annotation.Process
   public class BPartnerValidate extends SvrProcess  {
      ...
   }
+```
+
+```java title="src/com/example/process/MyProcessFactory.java"
+package com.example.process;
+
+import org.adempiere.base.AnnotationBasedProcessFactory;
+import org.adempiere.base.IProcessFactory;
+import org.osgi.service.component.annotations.Component;
+
+@Component(immediate = true, service = IProcessFactory.class, property = {"service.ranking:Integer=1"})
+public class MyProcessFactory extends AnnotationBasedProcessFactory {
+
+    @Override
+    protected String[] getPackages() {
+        return new String[] {"com.example.process"};
+    }
+}
 ```
 
 **Technical Info:** [IDEMPIERE-4689](https://idempiere.atlassian.net/browse/IDEMPIERE-4689), [IDEMPIERE-5001](https://idempiere.atlassian.net/browse/IDEMPIERE-5001)
