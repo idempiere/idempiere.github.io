@@ -14,10 +14,13 @@ The goal of this tutorial is to show how to use the `ICreditManagerFactory` serv
 
 Create a class implementing `ICreditManagerFactory`. In `getCreditManager()`, check the type of the document and return an instance of your `ICreditManager` implementation, or `null` to fall through to the next factory.
 
-```java
+```java title="src/com/example/credit/MyCreditManagerFactory.java"
+package com.example.credit;
+
+import org.adempiere.base.ICreditManager;
+import org.adempiere.base.ICreditManagerFactory;
 import org.compiere.model.MOrder;
 import org.compiere.model.PO;
-import org.compiere.model.credit.MyCreditManagerOrder;
 import org.osgi.service.component.annotations.Component;
 
 @Component(immediate = true, service = ICreditManagerFactory.class)
@@ -39,10 +42,12 @@ The `@Component` annotation registers this class as an OSGi Declarative Service.
 
 Create a class implementing `ICreditManager`. It has one method: `checkCreditStatus(String docAction)`, which returns a `CreditStatus` object.
 
-```java title="src/org/compiere/model/credit/MyCreditManagerOrder.java"
-package org.compiere.model.credit;
+```java title="src/com/example/credit/MyCreditManagerOrder.java"
+package com.example.credit;
 
+import org.adempiere.base.CreditStatus;
 import org.adempiere.base.ICreditManager;
+import org.compiere.model.MOrder;
 
 public class MyCreditManagerOrder implements ICreditManager {
 
