@@ -30,9 +30,7 @@ public class MyBankStatementMatcher implements BankStatementMatcherInterface {
 	public BankStatementMatchInfo findMatch(MBankStatementLine bsl) {
 	    return null;
 	}
-```
 
-```
 	@Override
 	public BankStatementMatchInfo findMatch(X_I_BankStatement ibs) {
 	    return null;
@@ -48,11 +46,9 @@ public class MyBankStatementMatcherFactory extends MappedByNameFactory<BankState
            //add mapping from name/key to create new instance lambda expression
            addMapping(MyBankStatementMatcher.class.getName(), () -> new MyBankStatementMatcher());
 	}
-```
 
-```
 	@Override
-	public BankStatementMatcherInterface newBankStatementMatcherInstance(String className)     {
+	public BankStatementMatcherInterface newBankStatementMatcherInstance(String className) {
            //use the newInstance default method at IMappedByNameFactory interface
            return newInstance(className);
 	}
