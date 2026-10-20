@@ -65,14 +65,17 @@ tags: [technical]
 
 ### Search Key
 1. The search key value maps to the **serviceType** tag in the web service request. This is demonstrated in the following snippet:
- &lt;web:ModelCRUD&gt;
-   &lt;adin:serviceType&gt;CreateBPartner&lt;/adin:serviceType&gt;
-   &lt;adin:TableName&gt;C_BPartner&lt;/adin:TableName&gt;
-   &lt;adin:RecordID&gt;0&lt;/adin:RecordID&gt;
-   &lt;adin:Action&gt;CreateUpdate&lt;/adin:Action&gt;
+
+```xml
+ <web:ModelCRUD>
+   <adin:serviceType>CreateBPartner</adin:serviceType>
+   <adin:TableName>C_BPartner</adin:TableName>
+   <adin:RecordID>0</adin:RecordID>
+   <adin:Action>CreateUpdate</adin:Action>
       :
       :
- &lt;web:ModelCRUD&gt;
+ </web:ModelCRUD>
+```
 
 ### Web Service
 1. This field denotes the type of web service. We now have both **Model-Oriented** and **Composite** Interfaces. The **ModelADService** is also improved to cover *createUpdateData* service.
@@ -141,31 +144,34 @@ tags: [technical]
 1. Composite service is actually a wrapper on the model-oriented web-service.
 1. It allows to combine multiple atomic *ModelADService* operation like *createData*, *UpdateData*, *createUpdateData*, *setDocAction* etc in single request.
 1. Below is sample request syntax for a composite service.
- &lt;web:compositeOperation&gt;
-   &lt;web:CompositeModelRequest&gt;
-    &lt;web:ADLoginRequest&gt;
-         :
-         :
-    &lt;/web:ADLoginRequest&gt;
-    &lt;web:serviceType&gt;SyncOrder&lt;/web:serviceType&gt;
-    &lt;web:**operations**&gt;
-      &lt;web:operation **preCommit**="false" **postCommit**="false"&gt;
-        &lt;web:**TargetPort**&gt;createUpdateData&lt;/web:**TargetPort**&gt;
-          &lt;web:ModelCRUD&gt;
-             :
-             :
-          &lt;/web:ModelCRUD&gt;
-        &lt;web:TargetPort&gt;createUpdateData&lt;/web:TargetPort&gt;
-      &lt;/web:operation preCommit="false" postCommit="false"&gt;
-     &lt;/web:operations&gt;
-  &lt;/web:compositeOperation&gt;
 
-1. You can take a look at the highlighted tags.
+```xml
+ <web:compositeOperation>
+   <web:CompositeRequest>
+    <web:ADLoginRequest>
+         :
+         :
+    </web:ADLoginRequest>
+    <web:serviceType>SyncOrder</web:serviceType>
+    <web:operations>
+      <web:operation preCommit="false" postCommit="false">
+        <web:TargetPort>createUpdateData</web:TargetPort>
+          <web:ModelCRUD>
+             :
+             :
+          </web:ModelCRUD>
+      </web:operation>
+     </web:operations>
+   </web:CompositeRequest>
+ </web:compositeOperation>
+```
+
+1. Take a look at the `operations` and `operation` tags (with the `preCommit` and `postCommit` attributes) and the `TargetPort` tag.
 1. Operations allow to combine multiple *CRUD* operation or *runProcess* operation.
 1. **TargetPort** specify operation name of *ModelADService** to be called.
 1. Possible value for **TargetPort** are *createData*, *updateData*, *createUpdateData**, *deleteData*, *readData*, *setDocAction* and *runProcess*.
 1. All operation specified in this request share one login request and can share data with each other using *requestCtx* (@* variable).
-&lt;nowiki&gt;*Note that createUpdateData is an improvement for the ModelADService included in this feature request.&lt;/nowiki&gt;
+*Note that createUpdateData is an improvement for the ModelADService included in this feature request.*
 
 **See also Video:**
 
@@ -189,9 +195,11 @@ tags: [technical]
 1. These variables are accessible also by consecutive operations by script.
 1. For example if we have created a *User* and want to use the same on *C_Order*, our *createOrder* request can have input field parameter as below.
 
- &lt;adin:field column="AD_User_ID"&gt;
-   &lt;adin:val&gt;@AD_User. AD_User_ID&lt;/adin:val&gt;
- &lt;/adin:field&gt;
+```xml
+ <adin:field column="AD_User_ID">
+   <adin:val>@AD_User. AD_User_ID</adin:val>
+ </adin:field>
+```
 
 1. Here whenever field has value starting with @, the web service will consider the consecutive string as a variable and try to resolve it from the request context.
 1. In above example, @AD_User. AD_User_ID will get AD_User_ID from previously created AD_User record.
@@ -223,42 +231,45 @@ tags: [technical]
     1. *CreateUpdate* - If record does not exists, create it otherwise update existing record
 1. Below is an sample request document for **createUpdateData**.
 
- &lt;_0:createUpdateData&gt; &lt;_0:ModelCRUDRequest&gt;
-   &lt;_0:ModelCRUD&gt;
-     &lt;_0:serviceType&gt;CreateUpdateLocation&lt;/_0:serviceType&gt;
-       &lt;_0:TableName&gt;C_Location&lt;/_0:TableName&gt;
-       &lt;_0:RecordID&gt;0&lt;/_0:RecordID&gt;
-     &lt;_0:Action&gt;**CreateUpdate**&lt;/_0:Action&gt;
-     &lt;_0:DataRow&gt;
-       &lt;_0:field column="C_Country_ID" lval="United States"/&gt;
-       &lt;_0:field column="Address1"&gt;
-           &lt;_0:val&gt;1625 Cowboy Chaps Place&lt;/_0:val&gt;
-       &lt;/_0:field&gt;
-       &lt;_0:field column="C_Region_ID" lval="NV"/&gt;
-       &lt;_0:field column="RegionName"&gt;
-           &lt;_0:val&gt;NV&lt;/_0:val&gt;
-       &lt;/_0:field&gt;
-       &lt;_0:field column="Postal"&gt;
-           &lt;_0:val&gt;89002&lt;/_0:val&gt;
-       &lt;/_0:field&gt;
-       &lt;_0:field column="City"&gt;
-           &lt;_0:val&gt;Henderson&lt;/_0:val&gt;
-       &lt;/_0:field&gt;
-     &lt;/_0:DataRow&gt;
-   &lt;/_0:ModelCRUD&gt;
-       &lt;_0:ADLoginRequest&gt;
+```xml
+ <_0:createUpdateData>
+ <_0:ModelCRUDRequest>
+   <_0:ModelCRUD>
+     <_0:serviceType>CreateUpdateLocation</_0:serviceType>
+       <_0:TableName>C_Location</_0:TableName>
+       <_0:RecordID>0</_0:RecordID>
+     <_0:Action>CreateUpdate</_0:Action>
+     <_0:DataRow>
+       <_0:field column="C_Country_ID" lval="United States"/>
+       <_0:field column="Address1">
+           <_0:val>1625 Cowboy Chaps Place</_0:val>
+       </_0:field>
+       <_0:field column="C_Region_ID" lval="NV"/>
+       <_0:field column="RegionName">
+           <_0:val>NV</_0:val>
+       </_0:field>
+       <_0:field column="Postal">
+           <_0:val>89002</_0:val>
+       </_0:field>
+       <_0:field column="City">
+           <_0:val>Henderson</_0:val>
+       </_0:field>
+     </_0:DataRow>
+   </_0:ModelCRUD>
+       <_0:ADLoginRequest>
          :
          :
-   &lt;/_0:ADLoginRequest&gt;
-  &lt;/_0:ModelCRUDRequest&gt;
- &lt;/_0:createUpdateData&gt;
+   </_0:ADLoginRequest>
+  </_0:ModelCRUDRequest>
+ </_0:createUpdateData>
+```
 
 1. Please take note of **Action**. It indicates *CreateUpdate*. This mean record is either created or updated based on existence.
 
 ## Lookup
 1. Newly added lVal parameter for *Field* will pass readable string and will be converted to ID using standard iDempiere lookup mechanism.
 1. For example to set Shipping Method on Order, we can retrieve M_Freight_ID through Shipping Method name.
-1. Below is example how we can find out Region using lookup instead of C_Region_ID. &lt;_0:field column="C_Region_ID" lval="NV"/&gt;
+1. Below is example how we can find out Region using lookup instead of C_Region_ID: `<_0:field column="C_Region_ID" lval="NV"/>`
 1. Please note that we are using lval attribute instead of val element when we want to use lookup.
 
 ## WS Validator
@@ -278,41 +289,43 @@ tags: [technical]
 1. Usage of this is in composite service to perform setDocAction without adding any complexity to identify record.
 1. Below sample shows how it is used to complete a document created in previous operation inside a composite srequest.
 
- &lt;_0:compositeOperation&gt;
-  &lt;_0:CompositeRequest&gt;
-    &lt;_0:serviceType&gt;SyncOrder&lt;/_0:serviceType&gt;
-    &lt;_0:operations&gt;
-      &lt;_0:operation preCommit="false" postCommit="false"&gt;
-        &lt;_0:TargetPort&gt;createUpdateData&lt;/_0:TargetPort&gt;
-          &lt;_0:ModelCRUD&gt;
-            &lt;_0:serviceType&gt;createOrderRecord&lt;/_0:serviceType&gt;
-            &lt;_0:TableName&gt;C_Order&lt;/_0:TableName&gt;
+```xml
+ <_0:compositeOperation>
+  <_0:CompositeRequest>
+    <_0:serviceType>SyncOrder</_0:serviceType>
+    <_0:operations>
+      <_0:operation preCommit="false" postCommit="false">
+        <_0:TargetPort>createUpdateData</_0:TargetPort>
+          <_0:ModelCRUD>
+            <_0:serviceType>createOrderRecord</_0:serviceType>
+            <_0:TableName>C_Order</_0:TableName>
                  :
                  :
-          &lt;/_0:ModelCRUD&gt;
-        &lt;/_0:operation&gt;
-      &lt;_0:operation preCommit="true" postCommit="false"&gt;
-        &lt;_0:TargetPort&gt;createUpdateData&lt;/_0:TargetPort&gt;
-          &lt;_0:ModelCRUD&gt;
-              &lt;_0:serviceT ype&gt;CreateOrderLine&lt;/_0:serviceT ype&gt;
-              &lt;_0:TableName&gt;C_OrderLine&lt;/_0:TableName&gt;
+          </_0:ModelCRUD>
+        </_0:operation>
+      <_0:operation preCommit="true" postCommit="false">
+        <_0:TargetPort>createUpdateData</_0:TargetPort>
+          <_0:ModelCRUD>
+              <_0:serviceType>CreateOrderLine</_0:serviceType>
+              <_0:TableName>C_OrderLine</_0:TableName>
                  :
                  :
-          &lt;/_0:ModelCRUD&gt;
-        &lt;/_0:operation&gt;
-      &lt;_0:operation preCommit="true" postCommit="true"&gt;
-        &lt;_0:TargetPort&gt;setDocAction&lt;/_0:TargetPort&gt;
-        &lt;_0:ModelSetDocAction&gt;
-          &lt;_0:serviceType&gt;CompleteOrder&lt;/_0:serviceT ype&gt;
-          &lt;_0:tableName&gt;C_Order&lt;/_0:tableName&gt;
-          &lt;_0:recordID&gt;0&lt;/_0:recordID&gt;
-        &lt;_0:recordIDVariable&gt;@C_Order.C_Order_ID&lt;/_0:recordIDVariable&gt;
-            &lt;_0:docAction&gt;CO&lt;/_0:docAction&gt;
-        &lt;/_0:ModelSetDocAction&gt;
-     &lt;/_0:operation&gt;
-   &lt;/_0:operations&gt;
-  &lt;/_0:CompositeRequest&gt;
- &lt;/_0:compositeOperation&gt;
+          </_0:ModelCRUD>
+        </_0:operation>
+      <_0:operation preCommit="true" postCommit="true">
+        <_0:TargetPort>setDocAction</_0:TargetPort>
+        <_0:ModelSetDocAction>
+          <_0:serviceType>CompleteOrder</_0:serviceType>
+          <_0:tableName>C_Order</_0:tableName>
+          <_0:recordID>0</_0:recordID>
+        <_0:recordIDVariable>@C_Order.C_Order_ID</_0:recordIDVariable>
+            <_0:docAction>CO</_0:docAction>
+        </_0:ModelSetDocAction>
+     </_0:operation>
+   </_0:operations>
+  </_0:CompositeRequest>
+ </_0:compositeOperation>
+```
 
 1. In above request, we are creating order and then completing same using *setDocAction* operation.
 1. We use **recordIDVariable** to retrieve record ID for order created before this operation.
