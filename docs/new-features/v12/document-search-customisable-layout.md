@@ -28,11 +28,13 @@ _Document Search Card Layout_
 
 - New Features in Search Definition Window:
 - Added `AD_Message_ID` and `AD_Style_ID` fields.
+
 **Note** These fields are visible when the search type is set to "Query" (`SearchType=Q`).
 
 - Enhanced Query type searches:
   - Query results can now be formatted using `Message Text` from `AD_Message` and styled with `CSS` definitions from `AD_Style`.
-**Formatting with `AD_Message**
+
+**Formatting with `AD_Message`**
 
 - Supports both HTML and Markdown, or a mix of both.
   - Use `<#md></#md>` tags to enclose Markdown.
@@ -40,17 +42,15 @@ _Document Search Card Layout_
   - Header text with `<#header></#header>`
   - Footer text with `<#footer></#footer>`
 - Flexible variable substitution options:
-```
- - Message format variables `{0}`, `{1}`, etc., and context variables like `@Name@`.
- - Special variables: `@WindowName@` for window name and `@Row@` for row number**CSS Styling with `AD_Style`**
-```
+  - Message format variables `{0}`, `{1}`, etc., and context variables like `@Name@`.
+  - Special variables: `@WindowName@` for window name and `@Row@` for row number
 
 **CSS Styling with `AD_Style`**
 
 Built from `AD_StyleLine` and uses scoped CSS instead of inline styles.
-```
- - Scoped CSS is not enabled by default in Firefox; to enable, use `about:config` and set `layout.css.at-scope.enabled` to `true`.
-```
+
+- Scoped CSS is not enabled by default in Firefox; to enable, use `about:config` and set `layout.css.at-scope.enabled` to `true`.
+
 **Additional Updates and Fixes:**
 Added a new JavaScript function: `idempiere.directZoom(keyColumnName, id)`.
 

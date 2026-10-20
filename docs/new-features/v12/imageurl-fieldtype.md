@@ -40,30 +40,23 @@ the admin able to define the size of thumbnails rendering in grid.
     - Add client level AD_SysConfig ZK_THUMBNAIL_IMAGE_HEIGHT, default to 100
     - Add client level AD_SysConfig ZK_THUMBNAIL_IMAGE_WIDTH, default to 100
 
-**Example CSS Customization of No Image Place Holder (.no-image) and Hover Image (.fullsize-image) **
-```
-```
-.no-image &#123;
-```
-	background-image: url("../images/noimage.png");
-```
-	background-size: 22px;
- 	height: 22px;
- 	width: 100%;
- 	display: inline-block;
- 	background-position-x: center;
- 	background-repeat: no-repeat;
-&#125;
-```
+**Example CSS Customization of No Image Place Holder (.no-image) and Hover Image (.fullsize-image)**
 
-```
-.fullsize-image &#123;
-```
+```css
+.no-image {
+	background-image: url("../images/noimage.png");
+	background-size: 22px;
+	height: 22px;
+	width: 100%;
+	display: inline-block;
+	background-position-x: center;
+	background-repeat: no-repeat;
+}
+
+.fullsize-image {
 	height: 200px !important;
 	width: 300px !important;
-```
-&#125;
-```
+}
 ```
 
 **Example Usage**
