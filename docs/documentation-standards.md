@@ -269,6 +269,7 @@ Each pull request runs these checks on the pages it changes. Findings show up as
 - **markdownlint** checks heading levels, list style and trailing spaces. Configuration: `.markdownlint-cli2.jsonc`.
 - **Vale** checks the words to avoid, em dashes and sentence-case headings. Rules: `styles/iDempiere/`.
 - **Frontmatter check** reports missing or invalid frontmatter fields. Run it locally with `npm run lint:frontmatter`. For a new page, run `node scripts/check-frontmatter.js --strict <page>`.
+- **Java snippet check** compares the imports and class names in Java code blocks with the iDempiere source. It is not part of the pull request checks. Run it on the pages you change with `npm run lint:java -- --source <path to an iDempiere clone> <page>`. It reads the clone and changes no file. A missing class is an error. A missing `package`, `title` or `import` is a warning.
 - **Link check** runs once a week on external links and reports broken ones.
 
 ### What blocks a merge
