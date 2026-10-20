@@ -88,11 +88,15 @@ jobs:
           mapfile -t pages <<< "$FILES"
           status=0
           out=$(npx --yes markdownlint-cli2@0.23.2 "${pages[@]}" 2>&1) || status=$?
+          # In workflow commands, % and line breaks are special characters.
           printf '%s\n' "$out" \
+            | sed -e 's/%/%25/g' -e 's/\r/%0D/g' \
             | sed -nE 's/^([^: ]+):([0-9]+)(:[0-9]+)? error (.*)$/::warning file=\1,line=\2,title=markdownlint::\4/p'
-          # Lint findings also exit non-zero. Without a summary, markdownlint did not run.
-          if [[ $status -ne 0 && $out != *'Summary:'* ]]; then
-            echo "::warning title=markdownlint::markdownlint did not complete (exit $status)"
+          # Exit 1 means lint findings, which stay warnings. Any other non-zero
+          # exit, or no summary, means markdownlint itself failed to run.
+          if [[ $status -gt 1 || ( $status -ne 0 && $out != *'Summary:'* ) ]]; then
+            echo "::error title=markdownlint::markdownlint did not complete (exit $status)"
+            exit "$status"
           fi
 
   frontmatter:

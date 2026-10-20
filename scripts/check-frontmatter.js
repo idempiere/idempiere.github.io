@@ -24,6 +24,8 @@ const args = process.argv.slice(2);
 const strict = args.includes('--strict');
 const failInvalid = args.includes('--fail-invalid');
 const inGitHub = process.env.GITHUB_ACTIONS === 'true';
+// In workflow commands, % and line breaks are special characters.
+const escapeCommand = (s) => s.replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
 
 // Docusaurus does not publish files or folders that start with _.
 function isPage(file) {
@@ -91,7 +93,7 @@ for (const file of pages) {
     const messages = found.filter((p) => p.error === (level === 'error')).map((p) => p.text);
     if (!messages.length) continue;
     if (inGitHub) {
-      console.log(`::${level} file=${file},line=1,title=Frontmatter::${messages.join('; ')}`);
+      console.log(`::${level} file=${file},line=1,title=Frontmatter::${escapeCommand(messages.join('; '))}`);
     } else {
       console.log(`${file} (${level})\n  - ${messages.join('\n  - ')}`);
     }
