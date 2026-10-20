@@ -12,7 +12,7 @@ tags: [functional]
 
 **Feature Ticket:** [IDEMPIERE-4065](http://idempiere.atlassian.net/browse/IDEMPIERE-4065)
 
-**Sponsor:** [[Adaxa](http://www.adaxa.com/), Cara, [chuck boecking](https://www.chuckboecking.com/), [Logilite Technologies LLP](http://www.logilite.com)]
+**Sponsor:** [Adaxa](http://www.adaxa.com/), Cara, [chuck boecking](https://www.chuckboecking.com/), [Logilite Technologies LLP](http://www.logilite.com)
 
 **Description:**
 

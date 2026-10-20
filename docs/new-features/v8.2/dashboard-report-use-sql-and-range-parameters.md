@@ -28,6 +28,10 @@ It means that the report will filter data
  - for Document Type 116
  - for dates between D-30 and today
 
-**Postgres Example** &lt;blockquote&gt;@SQL=SELECT date_trunc('month', NOW()) + interval '1 month' - interval '1 second'&lt;/blockquote&gt;
+**Postgres Example**
+
+```text
+@SQL=SELECT date_trunc('month', NOW()) + interval '1 month' - interval '1 second'
+```
 
 **Technical Info:** [IDEMPIERE-4781](https://idempiere.atlassian.net/browse/IDEMPIERE-4781)
