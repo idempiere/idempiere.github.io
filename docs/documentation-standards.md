@@ -284,4 +284,12 @@ On a page that already exists, the pull request only has to keep its own changes
 - Vale finds no em dashes and no words to avoid on the lines you add or change.
 - Frontmatter fields that are set have the right format, for example `last_reviewed: 2026-10-19` or `applies_to: ">=9"`.
 
+If Vale flags a word that is correct in context, such as "leverage" as a noun in "financial leverage", turn the rule off around that line and turn it back on after it:
+
+```markdown
+<!-- vale iDempiere.AvoidWords = NO -->
+Financial leverage is the ratio of debt to equity.
+<!-- vale iDempiere.AvoidWords = YES -->
+```
+
 Everything else on an existing page, such as a missing frontmatter field or an older markdownlint problem, is a warning. Fix it when you can, but it does not block the merge. Set `applies_to` and `last_reviewed` only after you have checked the page against the current release.
