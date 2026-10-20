@@ -12,7 +12,7 @@ tags: [functional]
 
 **Feature Ticket:** [IDEMPIERE-3981](https://idempiere.atlassian.net/browse/IDEMPIERE-3981)
 
-**Sponsor:** [[Logilite Technologies LLP](http://www.logilite.com)], [[devCoffee](https://devcoffee.com.br/)]
+**Sponsor:** [Logilite Technologies LLP](http://www.logilite.com), [devCoffee](https://devcoffee.com.br/)
 
 **Description:**
 
