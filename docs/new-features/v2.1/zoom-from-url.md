@@ -22,13 +22,13 @@ The parameters that URL receives are:
 Examples:
 
 - Open iDempiere and navigate to product "Azalea Bush" (using TableName=M_Product)
-    - &lt;https://test.idempiere.org/webui/?Action=Zoom&TableName=M_Product&Record_ID=128&gt;(https://test.idempiere.org/webui/?Action=Zoom&TableName=M_Product&Record_ID=128)
+    - [https://test.idempiere.org/webui/?Action=Zoom&TableName=M_Product&Record_ID=128](https://test.idempiere.org/webui/?Action=Zoom&TableName=M_Product&Record_ID=128)
 - Open iDempiere and navigate to the order containing the order line with ID 102 (using AD_Table_ID=260 which is C_OrderLine)
-    - &lt;https://test.idempiere.org/webui/?Action=Zoom&AD_Table_ID=260&Record_ID=102&gt;(https://test.idempiere.org/webui/?Action=Zoom&AD_Table_ID=260&Record_ID=102)
+    - [https://test.idempiere.org/webui/?Action=Zoom&AD_Table_ID=260&Record_ID=102](https://test.idempiere.org/webui/?Action=Zoom&AD_Table_ID=260&Record_ID=102)
 - Open iDempiere and navigate to the Business Partner window (using AD_Table_ID=291 which is C_BPartner)
-    - &lt;https://test.idempiere.org/webui/?Action=Zoom&AD_Table_ID=291&gt;(https://test.idempiere.org/webui/?Action=Zoom&AD_Table_ID=291)
+    - [https://test.idempiere.org/webui/?Action=Zoom&AD_Table_ID=291](https://test.idempiere.org/webui/?Action=Zoom&AD_Table_ID=291)
 - Open iDempiere and navigate to the Business Partner window (using TableName)
-    - &lt;https://test.idempiere.org/webui/?Action=Zoom&TableName=C_BPartner&gt;(https://test.idempiere.org/webui/?Action=Zoom&TableName=C_BPartner)
+    - [https://test.idempiere.org/webui/?Action=Zoom&TableName=C_BPartner](https://test.idempiere.org/webui/?Action=Zoom&TableName=C_BPartner)
 
 ![01 ZoomFromURL](pathname:///img/new-features/v2.1/01_ZoomFromURL.png)
 
