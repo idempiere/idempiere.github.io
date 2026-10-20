@@ -14,9 +14,9 @@
 
 Current code is cutting trace log in a hardcoded way. And you can only have
 
-''09:18:18.234-----------> ProxyLeakTask.run: Connection leak detection triggered for org.postgresql.jdbc.PgConnection@3101587f on thread pool-1-thread-5, stack trace follows [329]
-java.lang.Exception: Apparent connection leak detected
 ```
+09:18:18.234-----------> ProxyLeakTask.run: Connection leak detection triggered for org.postgresql.jdbc.PgConnection@3101587f on thread pool-1-thread-5, stack trace follows [329]
+java.lang.Exception: Apparent connection leak detected
    at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:99)
    at org.compiere.db.DB_PostgreSQL.getCachedConnection(DB_PostgreSQL.java:609)
    at org.compiere.db.CConnection.getConnection(CConnection.java:1142)
@@ -28,7 +28,7 @@ java.lang.Exception: Apparent connection leak detected
    at org.compiere.db.ProxyFactory.newCPreparedStatement(ProxyFactory.java:54)
    at org.compiere.util.DB.prepareStatement(DB.java:750)
    at org.compiere.util.DB.prepareStatement(DB.java:708)
-   at org.compiere.model.Query.first(Query.java:363)''
+   at org.compiere.model.Query.first(Query.java:363)
 ```
 
 which gives no clue about the origin of the error.

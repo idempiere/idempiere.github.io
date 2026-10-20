@@ -35,28 +35,15 @@ saveStatus(0, null, null, "This is a Status log");
 ```
 
 ### Progress log type
-Status logs can be created through "saveProgress" methods, they are saved to DB immediately when the method is called, and the AD_PInstance_Log_UU is returned. The difference between Status and Progress logs is, that Progress logs can be continuously updated through the "updateProgress" method.
+Progress logs can be created through "saveProgress" methods, they are saved to DB immediately when the method is called, and the AD_PInstance_Log_UU is returned. The difference between Status and Progress logs is, that Progress logs can be continuously updated through the "updateProgress" method.
 
 ```java
-
 String progressLogUU = null;
 
-for(int idx = 0; idx `<=` 100; idx+=10) {
-
-```
-   if(Util.isEmpty(progressLogUU))
-```
-
-```
-       progressLogUU = saveProgress(0, null, null, "This is a Progress log: " + idx + "%");
-```
-
+for (int idx = 0; idx <= 100; idx += 10) {
+    if (Util.isEmpty(progressLogUU))
+        progressLogUU = saveProgress(0, null, null, "This is a Progress log: " + idx + "%");
     else
-
-```
-       updateProgress(progressLogUU, 0, null, null, "This is a Progress log: " + idx + "%");
-```
-
+        updateProgress(progressLogUU, 0, null, null, "This is a Progress log: " + idx + "%");
 }
-
 ```

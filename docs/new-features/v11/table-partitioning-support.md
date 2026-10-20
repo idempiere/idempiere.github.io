@@ -86,50 +86,40 @@ Read-only. Capture the database partition info from the database to the **Table 
     - Change partitioning method from List partitioning to Range partitioning.
 - Other type of changes require manual intervention to first re-construct the table as non partition table.
 - For PostgreSQL, changes to partition key column and/or partitioning method require manual intervention to first re-construct the table as non partition table.
-- Example of reconstruction for PostgreSQL (assume C_AcctProcessorLog is a partitioned table and you need to make changes to partition key column and/or partitioning method:
-   -- Create a New Table
-   CREATE TABLE C_AcctProcessorLog_new AS
+- Example of reconstruction for PostgreSQL (assume C_AcctProcessorLog is a partitioned table and you need to make changes to partition key column and/or partitioning method):
+
 ```sql
+-- Create a New Table
+CREATE TABLE C_AcctProcessorLog_new AS
   SELECT * FROM C_AcctProcessorLog;
-```
 
-   -- Recreate Indexes and Constraints
-   ALTER TABLE C_AcctProcessorLog DROP CONSTRAINT c_acctprocessorlog_pkey
-   ALTER TABLE C_AcctProcessorLog_new
-```
-     ADD CONSTRAINT c_acctprocessorlog_pkey PRIMARY KEY (c_acctprocessor_id, c_acctprocessorlog_id);
-```
+-- Recreate Indexes and Constraints
+ALTER TABLE C_AcctProcessorLog DROP CONSTRAINT c_acctprocessorlog_pkey;
+ALTER TABLE C_AcctProcessorLog_new
+  ADD CONSTRAINT c_acctprocessorlog_pkey PRIMARY KEY (c_acctprocessor_id, c_acctprocessorlog_id);
 
-   ALTER TABLE C_AcctProcessorLog DROP CONSTRAINT c_acctprocessorlog_uu_idx
-   ALTER TABLE C_AcctProcessorLog_new
-```
-     ADD CONSTRAINT c_acctprocessorlog_uu_idx UNIQUE (c_acctprocessorlog_uu);
-```
+ALTER TABLE C_AcctProcessorLog DROP CONSTRAINT c_acctprocessorlog_uu_idx;
+ALTER TABLE C_AcctProcessorLog_new
+  ADD CONSTRAINT c_acctprocessorlog_uu_idx UNIQUE (c_acctprocessorlog_uu);
 
-   ALTER TABLE C_AcctProcessorLog_new
-```sql
-     ADD CONSTRAINT cacctprocessor_log FOREIGN KEY (c_acctprocessor_id)
-     REFERENCES c_acctprocessor (c_acctprocessor_id) MATCH SIMPLE
-     ON UPDATE NO ACTION
-     ON DELETE CASCADE
-     DEFERRABLE INITIALLY DEFERRED;
-```
+ALTER TABLE C_AcctProcessorLog_new
+  ADD CONSTRAINT cacctprocessor_log FOREIGN KEY (c_acctprocessor_id)
+  REFERENCES c_acctprocessor (c_acctprocessor_id) MATCH SIMPLE
+  ON UPDATE NO ACTION
+  ON DELETE CASCADE
+  DEFERRABLE INITIALLY DEFERRED;
 
-   -- Drop the Original Table and Rename the New Table
-```sql
-  DROP TABLE C_AcctProcessorLog;
-  ALTER TABLE C_AcctProcessorLog_new RENAME TO C_AcctProcessorLog;
-```
+-- Drop the Original Table and Rename the New Table
+DROP TABLE C_AcctProcessorLog;
+ALTER TABLE C_AcctProcessorLog_new RENAME TO C_AcctProcessorLog;
 
-   -- Vacuum and Analyze
-```
-  VACUUM ANALYZE C_AcctProcessorLog;
+-- Vacuum and Analyze
+VACUUM ANALYZE C_AcctProcessorLog;
 ```
 
 ## Markdown flow
-```bash
 
-``` mermaid
+```mermaid
 graph TB
 
   %% UI Configuration Section
@@ -149,26 +139,22 @@ graph TB
   %% Backend Logic
   subgraph Backend_Automation
     direction TB
-```sql
-   BackendJob[Background Job Executes Based on Configuration] --> CheckPartition{Are Required
-   Partitions Created?}
-   CheckPartition -- No --> CreatePartition[Create Missing Partitions]
-   CreatePartition --> CheckPartition
-   CheckPartition -- Yes --> CheckData{Is There Data in the
-   Default Partition?}
-   CheckData -- Yes --> MoveData[Move Data to
-   Correct Partitions]
-   CheckData -- No --> Done[Done]
-   MoveData --> Done
- end
-```
+    BackendJob[Background Job Executes Based on Configuration] --> CheckPartition{Are Required
+    Partitions Created?}
+    CheckPartition -- No --> CreatePartition[Create Missing Partitions]
+    CreatePartition --> CheckPartition
+    CheckPartition -- Yes --> CheckData{Is There Data in the
+    Default Partition?}
+    CheckData -- Yes --> MoveData[Move Data to
+    Correct Partitions]
+    CheckData -- No --> Done[Done]
+    MoveData --> Done
+  end
 
   %% Process Flow
   UI_Column --> Scheduler --> BackendJob
-
 ```
 
-```
 ![Partition table workflow](pathname:///img/new-features/v11/Partition_table_workflow.jpg)
 
 ## Future enhancement

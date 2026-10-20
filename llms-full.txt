@@ -14100,11 +14100,13 @@ The goal of this How-To guide is to demonstrate how to utilize the ICreditManage
 #### Implementing Credit Manager Factory
 For implementing Credit Manager factory, add new class implementing ICreditManagerFactory as below. you should add condition in which case the object of your Credit Manager (ICreditManager) implementor should be returned. Mostly we used PO Mode on Credit Manager screen.
 
-```java
+```java title="src/com/example/credit/MyCreditManagerFactory.java"
+package com.example.credit;
 
+import org.adempiere.base.ICreditManager;
+import org.adempiere.base.ICreditManagerFactory;
 import org.compiere.model.MOrder;
 import org.compiere.model.PO;
-import org.compiere.model.credit.MyCreditManagerOrder;
 import org.osgi.service.component.annotations.Component;
 
 @Component(immediate = true, service = ICreditManagerFactory.class)
@@ -14131,7 +14133,13 @@ Credit Manager class implements ICreditManager interface.
 - Method has Document Action (String) as a parameter.
 - Method will return Credit Status (CreditStatus).
 
-```java
+```java title="src/com/example/credit/MyCreditManagerOrder.java"
+package com.example.credit;
+
+import org.adempiere.base.CreditStatus;
+import org.adempiere.base.ICreditManager;
+import org.compiere.model.MOrder;
+import org.compiere.util.Util;
 
 public class MyCreditManagerOrder implements ICreditManager
 {
@@ -14161,9 +14169,10 @@ public class MyCreditManagerOrder implements ICreditManager
 ```
 
 #### Credit Status POJO Class
-Credit Status is POJO to return in  *checkCreditStatus*
+Credit Status is a POJO to return in *checkCreditStatus*. The class `org.adempiere.base.CreditStatus` is part of iDempiere core, so you do not create it. This is its code, shown for reference:
 
-```java
+```java title="org.adempiere.base/src/org/adempiere/base/CreditStatus.java"
+package org.adempiere.base;
 
 public class CreditStatus
 {
@@ -14299,9 +14308,9 @@ You need to be careful when assigning these restrictions as they apply also on I
 
 For example:
 
-- If you add a filter for the table `AD_User` like `AD_User.`AD_User_ID>10`0`, the table AD_User will filter correctly the records 0, 10 and 100
+- If you add a filter for the table `AD_User` like `AD_User.AD_User_ID>100`, the table AD_User will filter correctly the records 0, 10 and 100
 - **BUT** as a collateral issue the *Business Partner Info* will show just 5 business partners, those that **have** a user with ID > 100
-- To solve this, the correct way to add the filter and still show information about business partners without users will be:  `(AD_User.AD_User_ID IS NULL OR AD_User.`AD_User_ID>100`)`
+- To solve this, the correct way to add the filter and still show information about business partners without users will be:  `(AD_User.AD_User_ID IS NULL OR AD_User.AD_User_ID>100)`
 
 ### Use Cases
 #### Norbert
@@ -14410,11 +14419,8 @@ C_Order_ID IN (
   SELECT Record_ID
   FROM AD_ChangeLog
   WHERE AD_Session_ID=@#AD_Session_ID@
-```sql
    AND AD_Table_ID=(SELECT AD_Table_ID FROM AD_Table WHERE TableName='C_Order')
    AND EventChangeLog='I')
-```
-
 ```
 
 " SP.2. e-commerce - guest user - as guest user i would like access only to records i owned (you cant test it, we can do this here) "
@@ -14423,7 +14429,7 @@ Also, all the created records by will be associated to the same user, so is not 
 Maybe the predicate is wrong?  guest users cannot own records, maybe a session can, but not a guest user.
 BTW, this would need a rule for each table the guest user has access to.
 
-### Deepak
+#### Deepak
 " Employee working on one warehouse can not see document of other warehouse. May be warehouse user access."
 
 This will show just the documents of the warehouse selected at login:
@@ -14479,7 +14485,6 @@ Table = C_Invoice
 Role/User = Empty (everybody)
 Code =
 (C_Invoice.IsSOTrx='Y'
-```sql
   OR (C_Invoice.IsSOTrx='N'
         AND @#AD_Role_ID@=(SELECT AD_Role_ID FROM AD_Role WHERE Name='Finances')
         AND NOT EXISTS (SELECT 1 FROM C_InvoiceLine il WHERE il.C_Invoice_ID=C_Invoice.C_Invoice_ID
@@ -14488,9 +14493,7 @@ Code =
                                                  )
                        )
       )
-```
 )
-
 ```
 
 "Request type based access allow only certain users to have access to specific request types
@@ -14672,30 +14675,17 @@ saveStatus(0, null, null, "This is a Status log");
 ```
 
 #### Progress log type
-Status logs can be created through "saveProgress" methods, they are saved to DB immediately when the method is called, and the AD_PInstance_Log_UU is returned. The difference between Status and Progress logs is, that Progress logs can be continuously updated through the "updateProgress" method.
+Progress logs can be created through "saveProgress" methods, they are saved to DB immediately when the method is called, and the AD_PInstance_Log_UU is returned. The difference between Status and Progress logs is, that Progress logs can be continuously updated through the "updateProgress" method.
 
 ```java
-
 String progressLogUU = null;
 
-for(int idx = 0; idx `<=` 100; idx+=10) {
-
-```
-   if(Util.isEmpty(progressLogUU))
-```
-
-```
-       progressLogUU = saveProgress(0, null, null, "This is a Progress log: " + idx + "%");
-```
-
+for (int idx = 0; idx <= 100; idx += 10) {
+    if (Util.isEmpty(progressLogUU))
+        progressLogUU = saveProgress(0, null, null, "This is a Progress log: " + idx + "%");
     else
-
-```
-       updateProgress(progressLogUU, 0, null, null, "This is a Progress log: " + idx + "%");
-```
-
+        updateProgress(progressLogUU, 0, null, null, "This is a Progress log: " + idx + "%");
 }
-
 ```
 
 ---
@@ -15471,7 +15461,6 @@ The package installation log can manage now UUID based tables too
 The X_ generated model classes implement now two new constructors based on the UUID column, additionally to the already existing two constructors based on the _ID column.
 
 The new constructors look like this:
-‎
 
 ```java
 
@@ -15482,7 +15471,6 @@ public X_TestUU (Properties ctx, String TestUU_UU, String trxName)
 ```java
 
 public X_TestUU (Properties ctx, String TestUU_UU, String trxName, String ... virtualColumns)
-‎
 ```
 
 Additionally, when the table doesn't have _ID keys or multi-parent keys, then the two _ID based constructors are not generated.
@@ -15521,7 +15509,6 @@ With the new UUID based constructor, the zero is replaced with the empty string,
 ```java
 
 MTest test = new MTest(ctx, "", trxName);
-‎
 ```
 
 #### Reading an existing record
@@ -15529,7 +15516,6 @@ To read a record with the _ID constructor, developers used to write:
 ```java
 
 MTest test = new MTest(ctx, 103, trxName);
-‎
 ```
 
 With the new UUID based constructor, the ID is replaced with the UUID string, like:
@@ -15611,9 +15597,9 @@ WHERE C_Order_ID = ANY(string_to_array('@_IWInfoIDs_Selected@',',')::NUMERIC[])
 
 Current code is cutting trace log in a hardcoded way. And you can only have
 
-''09:18:18.234-----------> ProxyLeakTask.run: Connection leak detection triggered for org.postgresql.jdbc.PgConnection@3101587f on thread pool-1-thread-5, stack trace follows [329]
-java.lang.Exception: Apparent connection leak detected
 ```
+09:18:18.234-----------> ProxyLeakTask.run: Connection leak detection triggered for org.postgresql.jdbc.PgConnection@3101587f on thread pool-1-thread-5, stack trace follows [329]
+java.lang.Exception: Apparent connection leak detected
    at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:99)
    at org.compiere.db.DB_PostgreSQL.getCachedConnection(DB_PostgreSQL.java:609)
    at org.compiere.db.CConnection.getConnection(CConnection.java:1142)
@@ -15625,7 +15611,7 @@ java.lang.Exception: Apparent connection leak detected
    at org.compiere.db.ProxyFactory.newCPreparedStatement(ProxyFactory.java:54)
    at org.compiere.util.DB.prepareStatement(DB.java:750)
    at org.compiere.util.DB.prepareStatement(DB.java:708)
-   at org.compiere.model.Query.first(Query.java:363)''
+   at org.compiere.model.Query.first(Query.java:363)
 ```
 
 which gives no clue about the origin of the error.
@@ -15720,50 +15706,40 @@ Read-only. Capture the database partition info from the database to the **Table 
     - Change partitioning method from List partitioning to Range partitioning.
 - Other type of changes require manual intervention to first re-construct the table as non partition table.
 - For PostgreSQL, changes to partition key column and/or partitioning method require manual intervention to first re-construct the table as non partition table.
-- Example of reconstruction for PostgreSQL (assume C_AcctProcessorLog is a partitioned table and you need to make changes to partition key column and/or partitioning method:
-   -- Create a New Table
-   CREATE TABLE C_AcctProcessorLog_new AS
+- Example of reconstruction for PostgreSQL (assume C_AcctProcessorLog is a partitioned table and you need to make changes to partition key column and/or partitioning method):
+
 ```sql
+-- Create a New Table
+CREATE TABLE C_AcctProcessorLog_new AS
   SELECT * FROM C_AcctProcessorLog;
-```
 
-   -- Recreate Indexes and Constraints
-   ALTER TABLE C_AcctProcessorLog DROP CONSTRAINT c_acctprocessorlog_pkey
-   ALTER TABLE C_AcctProcessorLog_new
-```
-     ADD CONSTRAINT c_acctprocessorlog_pkey PRIMARY KEY (c_acctprocessor_id, c_acctprocessorlog_id);
-```
+-- Recreate Indexes and Constraints
+ALTER TABLE C_AcctProcessorLog DROP CONSTRAINT c_acctprocessorlog_pkey;
+ALTER TABLE C_AcctProcessorLog_new
+  ADD CONSTRAINT c_acctprocessorlog_pkey PRIMARY KEY (c_acctprocessor_id, c_acctprocessorlog_id);
 
-   ALTER TABLE C_AcctProcessorLog DROP CONSTRAINT c_acctprocessorlog_uu_idx
-   ALTER TABLE C_AcctProcessorLog_new
-```
-     ADD CONSTRAINT c_acctprocessorlog_uu_idx UNIQUE (c_acctprocessorlog_uu);
-```
+ALTER TABLE C_AcctProcessorLog DROP CONSTRAINT c_acctprocessorlog_uu_idx;
+ALTER TABLE C_AcctProcessorLog_new
+  ADD CONSTRAINT c_acctprocessorlog_uu_idx UNIQUE (c_acctprocessorlog_uu);
 
-   ALTER TABLE C_AcctProcessorLog_new
-```sql
-     ADD CONSTRAINT cacctprocessor_log FOREIGN KEY (c_acctprocessor_id)
-     REFERENCES c_acctprocessor (c_acctprocessor_id) MATCH SIMPLE
-     ON UPDATE NO ACTION
-     ON DELETE CASCADE
-     DEFERRABLE INITIALLY DEFERRED;
-```
+ALTER TABLE C_AcctProcessorLog_new
+  ADD CONSTRAINT cacctprocessor_log FOREIGN KEY (c_acctprocessor_id)
+  REFERENCES c_acctprocessor (c_acctprocessor_id) MATCH SIMPLE
+  ON UPDATE NO ACTION
+  ON DELETE CASCADE
+  DEFERRABLE INITIALLY DEFERRED;
 
-   -- Drop the Original Table and Rename the New Table
-```sql
-  DROP TABLE C_AcctProcessorLog;
-  ALTER TABLE C_AcctProcessorLog_new RENAME TO C_AcctProcessorLog;
-```
+-- Drop the Original Table and Rename the New Table
+DROP TABLE C_AcctProcessorLog;
+ALTER TABLE C_AcctProcessorLog_new RENAME TO C_AcctProcessorLog;
 
-   -- Vacuum and Analyze
-```
-  VACUUM ANALYZE C_AcctProcessorLog;
+-- Vacuum and Analyze
+VACUUM ANALYZE C_AcctProcessorLog;
 ```
 
 ### Markdown flow
-```bash
 
-``` mermaid
+```mermaid
 graph TB
 
   %% UI Configuration Section
@@ -15783,26 +15759,22 @@ graph TB
   %% Backend Logic
   subgraph Backend_Automation
     direction TB
-```sql
-   BackendJob[Background Job Executes Based on Configuration] --> CheckPartition{Are Required
-   Partitions Created?}
-   CheckPartition -- No --> CreatePartition[Create Missing Partitions]
-   CreatePartition --> CheckPartition
-   CheckPartition -- Yes --> CheckData{Is There Data in the
-   Default Partition?}
-   CheckData -- Yes --> MoveData[Move Data to
-   Correct Partitions]
-   CheckData -- No --> Done[Done]
-   MoveData --> Done
- end
-```
+    BackendJob[Background Job Executes Based on Configuration] --> CheckPartition{Are Required
+    Partitions Created?}
+    CheckPartition -- No --> CreatePartition[Create Missing Partitions]
+    CreatePartition --> CheckPartition
+    CheckPartition -- Yes --> CheckData{Is There Data in the
+    Default Partition?}
+    CheckData -- Yes --> MoveData[Move Data to
+    Correct Partitions]
+    CheckData -- No --> Done[Done]
+    MoveData --> Done
+  end
 
   %% Process Flow
   UI_Column --> Scheduler --> BackendJob
-
 ```
 
-```
 ![Partition table workflow](pathname:///img/new-features/v11/Partition_table_workflow.jpg)
 
 ### Future enhancement
