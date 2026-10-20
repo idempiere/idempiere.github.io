@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: "On Start Schedule"
 sidebar_label: "On Start Schedule"
-description: "**Developer:** Carlos Ruiz"
+description: "On Start Schedule: a New Feature in iDempiere 6.2."
 tags: [functional]
 ---
+# On Start Schedule
+
 **Goal:** Functional
 
 **Developer:** Carlos Ruiz

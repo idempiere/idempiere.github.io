@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Add Grid/Form Toggle Button to Detail Pane"
 sidebar_label: "Add Grid/Form Toggle Button to Detail Pane"
-description: "**Goal:** User Experience (Usability)"
+description: "The goal of the ticket is to allow users to switch between grid and form view at detail pane."
 tags: [functional]
 ---
+# Add Grid/Form Toggle Button to Detail Pane
+
 **Goal:** User Experience (Usability)
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

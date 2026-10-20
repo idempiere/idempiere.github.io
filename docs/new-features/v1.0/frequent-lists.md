@@ -1,10 +1,11 @@
 ---
 sidebar_position: 32
-title: "Frequent lists"
 sidebar_label: "Frequent lists"
-description: "**Goal:** User Experience"
+description: "Frequent lists: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
+# Frequent lists
+
 **Goal:** User Experience
 
 **Contributor:**  Nicolas Micoud

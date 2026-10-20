@@ -1,9 +1,9 @@
 ---
-title: Reusable Web Session for Scheduler
 sidebar_label: Reusable Web Session for Scheduler
 sidebar_position: 1
 description: Allow reuse of an existing session for schedulers
 ---
+# Reusable Web Session for Scheduler
 
 **Goal:** Technical  
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 45
-title: "Media View Interface for Report and Attachment Viewer"
 sidebar_label: "Media View Interface for Report and Attachment Viewer"
-description: "**Goal:** Development"
+description: "Add media view interface for Report and Attachment Viewer."
 tags: [development]
 ---
+# Media View Interface for Report and Attachment Viewer
+
 **Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

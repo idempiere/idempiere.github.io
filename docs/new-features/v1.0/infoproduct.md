@@ -1,10 +1,11 @@
 ---
 sidebar_position: 17
-title: "Improved Info Product"
 sidebar_label: "Improved Info Product"
-description: "**Functional:** Material Management, Info Views"
+description: "Improved Info Product: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
+# Improved Info Product
+
 **Goal:** Usability
 
 **Functional:** Material Management, Info Views

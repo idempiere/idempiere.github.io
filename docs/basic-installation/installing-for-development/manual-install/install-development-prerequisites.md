@@ -1,4 +1,5 @@
 ---
+description: "Install the prerequisites for iDempiere development: Ubuntu, PostgreSQL 17, git, OpenJDK 17 and Eclipse."
 sidebar_position: 1
 ---
 

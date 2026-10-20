@@ -1,10 +1,11 @@
 ---
 sidebar_position: 22
-title: "Payment Batch"
 sidebar_label: "Payment Batch"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Main goal of this feature is to allow users to group payments in batches in order to reconcile several payments in one single statement line."
 tags: [functional]
 ---
+# Payment Batch
+
 **Goal:** Functional
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

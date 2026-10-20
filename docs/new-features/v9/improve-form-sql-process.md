@@ -1,10 +1,11 @@
 ---
 sidebar_position: 36
-title: "Improve Form SQL Process"
 sidebar_label: "Improve Form SQL Process"
-description: "**Developer:** Carlos Ruiz"
+description: "Improve Form SQL Process: a New Feature in iDempiere 9."
 tags: [technical]
 ---
+# Improve Form SQL Process
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

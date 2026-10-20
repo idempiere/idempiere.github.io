@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: "Implement Document Action for Production Document"
 sidebar_label: "Implement Document Action for Production Document"
 description: "Now the Production document behaves fully as an iDempiere document, with the corresponding options to Prepare, Complete, Close, Void, Reverse Correct a"
 tags: [functional]
 ---
+# Implement Document Action for Production Document
+
 **Goal:** Functional
 
 **Description:**

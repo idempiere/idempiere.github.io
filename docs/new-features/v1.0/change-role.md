@@ -1,10 +1,11 @@
 ---
 sidebar_position: 28
-title: "Change Role"
 sidebar_label: "Change Role"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Change Role: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
+# Change Role
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

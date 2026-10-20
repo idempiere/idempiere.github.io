@@ -1,10 +1,11 @@
 ---
 sidebar_position: 26
-title: "Info Window Auto Hide Empty Column"
 sidebar_label: "Info Window Auto Hide Empty Column"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Info window will auto hide empty column if the feature is turn on through system configurator (system wide or tenant wide)."
 tags: [user-experience]
 ---
+# Info Window Auto Hide Empty Column
+
 **Goal:** Usability
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

@@ -1,5 +1,4 @@
 ---
-title: Developing Plug-in Callouts
 sidebar_label: Callouts
 description: Learn how to implement column callouts in iDempiere plug-ins using modern best practices.
 sidebar_position: 5
@@ -7,7 +6,7 @@ sidebar_position: 5
 
 # Developing Plug-in Callouts
 
-## 🎯 Goal
+## Goal
 
 This tutorial shows you how to develop **callouts** in your own plug-in. 
 
@@ -58,7 +57,7 @@ For **earlier versions**, use the **CalloutFactory** approach.
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 Before starting, review:
 
@@ -69,7 +68,7 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-## 📋 Implementation Methods
+## Implementation Methods
 
 ### Modern Approach (iDempiere 9+): Mapped Column Callout Factory
 
@@ -370,7 +369,7 @@ bin.includes = META-INF/,\
 
 ---
 
-## 🧪 Testing Your Callout
+## Testing Your Callout
 
 1. Start the iDempiere client
 2. Log in as **GardenAdmin** to **GardenWorld**
@@ -387,14 +386,14 @@ New value: [your entered text]
 
 ---
 
-## 🎥 Video Tutorial
+## Video Tutorial
 
 Watch this video walkthrough:  
 [https://www.youtube.com/watch?v=twC6Dy8R5g4](https://www.youtube.com/watch?v=twC6Dy8R5g4)
 
 ---
 
-## 📦 Exporting Your Plug-in
+## Exporting Your Plug-in
 
 Before exporting your plug-in as a JAR:
 
@@ -406,7 +405,7 @@ This ensures your OSGi component definitions are packaged correctly.
 
 ---
 
-## 🔗 Related Resources
+## Related Resources
 
 - [IColumnCallout Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/IColumnCallout.java)
 - [IColumnCalloutFactory Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/adempiere/base/IColumnCalloutFactory.java)

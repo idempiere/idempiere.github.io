@@ -1,5 +1,4 @@
 ---
-title: Extension Registry Worked Example
 sidebar_label: Extension Registry Worked Example
 sidebar_position: 25
 description: A real plug-in submitted to the Extension Registry from start to finish, including the mistakes and open items it surfaced.

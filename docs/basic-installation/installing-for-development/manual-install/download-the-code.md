@@ -1,4 +1,5 @@
 ---
+description: "Clone the iDempiere source code from GitHub, set the working version and keep your copy up to date."
 sidebar_position: 2
 ---
 

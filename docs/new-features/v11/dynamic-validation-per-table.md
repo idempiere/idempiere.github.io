@@ -1,10 +1,11 @@
 ---
 sidebar_position: 34
-title: "Dynamic Validation per Table"
 sidebar_label: "Dynamic Validation per Table"
-description: "**Goal:** Dynamically restrict records that user can see"
+description: "Dynamic Validation per Table: a New Feature in iDempiere 11."
 tags: [security]
 ---
+# Dynamic Validation per Table
+
 **Goal:** Dynamically restrict records that user can see
 
 **Developer:** Carlos Ruiz

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 30
-title: "Protect Passwords on Properties"
 sidebar_label: "Protect Passwords on Properties"
-description: "**Developer:** Carlos Ruiz"
+description: "Protect Passwords on Properties: a New Feature in iDempiere 8.2."
 tags: [security]
 ---
+# Protect Passwords on Properties
+
 **Goal:** Security
 
 **Developer:** Carlos Ruiz

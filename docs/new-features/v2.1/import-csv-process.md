@@ -1,10 +1,11 @@
 ---
 sidebar_position: 17
-title: "Import CSV Process"
 sidebar_label: "Import CSV Process"
-description: "**Developers:** Hiep Le Quy, Thomas Bayen, Carlos Ruiz"
+description: "Related to Import Template there is a process now that can be used to import CSV files."
 tags: [user-experience]
 ---
+# Import CSV Process
+
 **Goal:** Usability
 
 **Developers:** Hiep Le Quy, Thomas Bayen, Carlos Ruiz

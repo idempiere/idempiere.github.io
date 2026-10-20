@@ -18,12 +18,17 @@ The rules apply to people and AI agents alike. Agents also follow the extra rule
 - Open the page with one or two sentences that say what the page covers and who it is for.
 - After the opening sentences, state which iDempiere versions the page applies to, for example "Applies to iDempiere 9 and later."
 - New Feature pages are the exception: their **Version:** line states the version, so they do not need the sentence.
-- Do not set `title` in the frontmatter. It would duplicate the first heading. Many older pages still set it and will be cleaned up later.
+- Do not set `title` in the frontmatter. It would duplicate the first heading.
 - Start from a [page template](#page-templates) when you create a new page.
+
+## Folders
+
+- Each folder has a `_category_.json` file with the sidebar label and position.
+- When the folder has a generated index page, set `link.slug` to the folder path, for example `"slug": "/new-features/v15"` for `docs/new-features/v15/`. Write dots in the version as dashes (`/new-features/v1-0`). Without `slug`, the index page is published at `/docs/category/<label>`.
 
 ## Frontmatter
 
-Every page starts with a YAML frontmatter block. The automatic check reports missing or invalid fields as warnings.
+Every page starts with a YAML frontmatter block. The automatic check reports missing or invalid fields. See [What blocks a merge](#what-blocks-a-merge).
 
 ```yaml title="docs/basic-development/plugin-development/plugin-callouts.md"
 ---
@@ -259,9 +264,34 @@ Copy a template from [`docs/_templates/`](https://github.com/idempiere/idempiere
 
 ## Automatic checks
 
-Each pull request runs these checks on the pages it changes. For now they only warn and do not block the merge.
+Each pull request runs these checks on the pages it changes. Findings show up as annotations on the pull request.
 
 - **markdownlint** checks heading levels, list style and trailing spaces. Configuration: `.markdownlint-cli2.jsonc`.
 - **Vale** checks the words to avoid, em dashes and sentence-case headings. Rules: `styles/iDempiere/`.
-- **Frontmatter check** reports missing or invalid frontmatter fields. Run it locally with `npm run lint:frontmatter`.
+- **Frontmatter check** reports missing or invalid frontmatter fields. Run it locally with `npm run lint:frontmatter`. For a new page, run `node scripts/check-frontmatter.js --strict <page>`.
 - **Link check** runs once a week on external links and reports broken ones.
+
+### What blocks a merge
+
+A new page must pass all checks:
+
+- markdownlint finds no problems.
+- The frontmatter has every required field, in the right format.
+- Vale finds no em dashes and no words to avoid.
+
+On a page that already exists, the pull request only has to keep its own changes clean:
+
+- Vale finds no em dashes and no words to avoid on the lines you add or change.
+- Frontmatter fields that are set have the right format, for example `last_reviewed: 2026-10-19` or `applies_to: ">=9"`.
+
+<!-- vale iDempiere.AvoidWords = NO -->
+If Vale flags a word that is correct in context, such as "leverage" as a noun in "financial leverage", turn the rule off around that line and turn it back on after it:
+<!-- vale iDempiere.AvoidWords = YES -->
+
+```markdown
+<!-- vale iDempiere.AvoidWords = NO -->
+Financial leverage is the ratio of debt to equity.
+<!-- vale iDempiere.AvoidWords = YES -->
+```
+
+Everything else on an existing page, such as a missing frontmatter field or an older markdownlint problem, is a warning. Fix it when you can, but it does not block the merge. Set `applies_to` and `last_reviewed` only after you have checked the page against the current release.

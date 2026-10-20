@@ -1,4 +1,5 @@
 ---
+description: "An alternative way to create an iDempiere development environment on Linux, with scripts maintained by Heng Sin."
 sidebar_position: 2
 ---
 

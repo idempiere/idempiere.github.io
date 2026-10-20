@@ -1,5 +1,4 @@
 ---
-title: Developing Plug-in Forms
 sidebar_label: Forms
 description: Learn how to create custom forms in iDempiere plug-ins using the IFormFactory service.
 sidebar_position: 7
@@ -7,7 +6,7 @@ sidebar_position: 7
 
 # Developing Plug-in Forms
 
-## 🎯 Goal
+## Goal
 
 This tutorial shows you how to use the **IFormFactory** service in your plug-in project to create custom forms in iDempiere.
 
@@ -23,7 +22,7 @@ A **form** in iDempiere is a custom user interface component that provides speci
 
 ---
 
-## ✅ Prerequisites
+## Prerequisites
 
 Before starting, review:
 
@@ -34,7 +33,7 @@ You should already know how to create a plug-in, as this guide will not cover th
 
 ---
 
-## 📋 Implementation Methods
+## Implementation Methods
 
 ### Modern Approach (iDempiere 9+): Mapped Form Factory
 
@@ -193,7 +192,7 @@ For a complete working example of a custom form with annotation-based registrati
 
 ---
 
-## 🔧 Creating a Custom Form (Step by Step)
+## Creating a Custom Form (Step by Step)
 
 ### Step 1: Create Your Form Controller Class
 
@@ -323,7 +322,7 @@ The `service.ranking` property determines the priority for OSGi service lookup. 
 
 ---
 
-## ⚙️ Configuring Your Form in iDempiere
+## Configuring Your Form in iDempiere
 
 ### Step 1: Create a Form Record
 
@@ -354,7 +353,7 @@ The `service.ranking` property determines the priority for OSGi service lookup. 
 
 ---
 
-## 🧪 Testing Your Form
+## Testing Your Form
 
 1. Deploy your plug-in to iDempiere
 2. Ensure your plug-in is set to auto-start in the Run Configuration
@@ -373,7 +372,7 @@ If the form doesn't appear:
 
 ---
 
-## 🔗 Related Resources
+## Related Resources
 
 - [IFormFactory Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.ui.zk/WEB-INF/src/org/adempiere/webui/factory/IFormFactory.java)
 - [IFormController Interface](https://github.com/idempiere/idempiere/blob/master/org.adempiere.ui.zk/WEB-INF/src/org/adempiere/webui/panel/IFormController.java)

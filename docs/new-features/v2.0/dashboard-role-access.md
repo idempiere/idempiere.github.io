@@ -1,10 +1,11 @@
 ---
 sidebar_position: 18
-title: "Dashboard Role Access"
 sidebar_label: "Dashboard Role Access"
-description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
+description: "Dashboard Role Access: a New Feature in iDempiere 2.0."
 tags: [security]
 ---
+# Dashboard Role Access
+
 **Goal:** Security
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

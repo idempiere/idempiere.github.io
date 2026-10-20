@@ -1,10 +1,11 @@
 ---
 sidebar_position: 31
-title: "Credit Management as Factory"
 sidebar_label: "Credit Management as Factory"
-description: "**Goal:** Customizibility, Extendibility"
+description: "Credit Management as Factory: a New Feature in iDempiere 11."
 tags: [development]
 ---
+# Credit Management as Factory
+
 **Goal:** Customizibility, Extendibility
 
 **Developer:** [Logilite Technologies](http://www.logilite.com/)

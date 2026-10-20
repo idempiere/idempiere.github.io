@@ -1,5 +1,4 @@
 ---
-title: Server Push in Plug-ins
 sidebar_label: Server Push (ITopicSubscriber)
 sidebar_position: 15
 description: Learn how to use ServerPushTemplate, IServerPushCallback, and ITopicSubscriber to broadcast real-time messages between iDempiere WebUI sessions.

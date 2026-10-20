@@ -1,10 +1,11 @@
 ---
 sidebar_position: 17
-title: "Vendor Lead"
 sidebar_label: "Vendor Lead"
-description: "**Developer:**  Nicolas Micoud"
+description: "Idea is to use Lead to manage both Sales and Purchases sides."
 tags: [functional]
 ---
+# Vendor Lead
+
 **Goal:** Functional
 
 **Developer:**  Nicolas Micoud

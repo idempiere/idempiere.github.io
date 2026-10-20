@@ -1,5 +1,4 @@
 ---
-title: Developing WebUI Themes
 sidebar_label: WebUI Themes
 sidebar_position: 16
 description: Learn how to create custom WebUI themes for iDempiere using OSGi fragment projects.

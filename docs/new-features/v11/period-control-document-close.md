@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Period Control Document Close"
 sidebar_label: "Period Control Document Close"
-description: "**Developer:** cloudempiere, Takacs Peter, Igor Pojzl"
+description: "The purpose of this change is to close a period for new documents first, so it is not allowed to enter new documents, but reposting documents remains possible."
 tags: [functional]
 ---
+# Period Control Document Close
+
 **Goal:** Functional
 
 **Developer:** cloudempiere, Takacs Peter, Igor Pojzl

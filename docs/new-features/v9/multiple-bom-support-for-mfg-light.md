@@ -1,10 +1,11 @@
 ---
 sidebar_position: 28
-title: "Multiple BOM support for Mfg Light"
 sidebar_label: "Multiple BOM support for Mfg Light"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Multiple BOM support for Mfg Light: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
+# Multiple BOM support for Mfg Light
+
 **Goal:** Usability
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

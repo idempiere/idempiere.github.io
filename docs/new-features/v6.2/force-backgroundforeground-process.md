@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Force Background/Foreground Process"
 sidebar_label: "Force Background/Foreground Process"
-description: "**Developer:** Diego Ruiz"
+description: "The Execution Type field has been added to Report & Process to force execution in background/foreground - this can be useful for slow reports for instance."
 tags: [user-experience]
 ---
+# Force Background/Foreground Process
+
 **Goal:** Usability
 
 **Developer:** Diego Ruiz

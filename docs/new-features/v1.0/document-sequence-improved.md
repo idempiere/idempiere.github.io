@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: "Improved Document Sequence"
 sidebar_label: "Improved Document Sequence"
-description: "**Contributor:** Nicolas Micoud"
+description: "Improved Document Sequence: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
+# Improved Document Sequence
+
 **Goal:** Functional
 
 **Contributor:** Nicolas Micoud

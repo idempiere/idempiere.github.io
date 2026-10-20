@@ -1,10 +1,11 @@
 ---
 sidebar_position: 29
-title: "Organize process and report parameters by Field Group"
 sidebar_label: "Organize process and report parameters by Field Group"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Implement collapsible field group for report and process parameter."
 tags: [user-experience]
 ---
+# Organize process and report parameters by Field Group
+
 **Goal:** Usability
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

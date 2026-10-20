@@ -1,10 +1,11 @@
 ---
 sidebar_position: 64
-title: "Improved Role Access Update"
 sidebar_label: "Improved Role Access Update"
-description: "**Contributor:** Hesham S. Ahmed"
+description: "Improved Role Access Update: a New Feature in iDempiere 1.0."
 tags: [security]
 ---
+# Improved Role Access Update
+
 **Goal:** Security
 
 **Contributor:** Hesham S. Ahmed

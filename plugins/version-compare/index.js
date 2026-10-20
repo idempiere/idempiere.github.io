@@ -98,9 +98,11 @@ function firstParagraph(body) {
   return `${text.slice(0, 280).replace(/\s+\S*$/, '')}…`;
 }
 
+// Page titles are the first "# " heading. Inline code marks are dropped, so
+// a title such as `org.idempiere.acct` shows as plain text.
 function firstHeading(body) {
   const m = body.match(/^# (.+)$/m);
-  return m ? m[1].trim() : null;
+  return m ? m[1].replace(/`/g, '').trim() : null;
 }
 
 // Some descriptions were generated from the first bullet of the article and

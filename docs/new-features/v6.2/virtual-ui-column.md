@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Virtual UI Column"
 sidebar_label: "Virtual UI Column"
-description: "**Developers:** Carlos Ruiz"
+description: "Virtual UI Column: a New Feature in iDempiere 6.2."
 tags: [functional]
 ---
+# Virtual UI Column
+
 **Goal:** Technical
 
 **Developers:** Carlos Ruiz

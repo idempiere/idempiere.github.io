@@ -1,10 +1,11 @@
 ---
 sidebar_position: 20
-title: "ImageURL Fieldtype"
 sidebar_label: "ImageURL Fieldtype"
-description: "**Developer:**  Hengsin, Deep Testing, Carlos Ruiz."
+description: "ImageURL Fieldtype: a New Feature in iDempiere 12."
 tags: [technical]
 ---
+# ImageURL Fieldtype
+
 **Goal:** Technical
 
 **Developer:**  Hengsin, Deep Testing, Carlos Ruiz.

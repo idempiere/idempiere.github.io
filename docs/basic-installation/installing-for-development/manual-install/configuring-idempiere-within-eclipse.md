@@ -1,4 +1,5 @@
 ---
+description: "Configure iDempiere to run inside Eclipse for development."
 sidebar_position: 5
 ---
 

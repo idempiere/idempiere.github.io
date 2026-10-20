@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: 'Add option to Disable "Insufficient Inventory" Popup'
 sidebar_label: 'Add option to Disable "Insufficient Inventory" Popup'
-description: "**Goal:** User experience - Usability"
+description: "Add option to Disable \"Insufficient Inventory\" Popup: a New Feature in iDempiere 12."
 tags: [user-experience]
 ---
+# Add option to Disable "Insufficient Inventory" Popup
+
 **Goal:** User experience - Usability
 
 **Developer:**  Diego Ruiz

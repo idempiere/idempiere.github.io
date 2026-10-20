@@ -1,10 +1,11 @@
 ---
 sidebar_position: 54
-title: "Distributed Cache"
 sidebar_label: "Distributed Cache"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Distributed Cache: a New Feature in iDempiere 1.0."
 tags: [technical]
 ---
+# Distributed Cache
+
 **Goal:** Technical
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

@@ -1,9 +1,9 @@
 ---
-title: Plugin Guidelines
 sidebar_label: Plugin Guidelines
 sidebar_position: 6
 description: Community checklist to evaluate plugin quality, documentation, installation, and maintenance readiness
 ---
+# Plugin Guidelines
 
 This page is part of the list of contribution paths described in [Contributing to iDempiere](./contributing-to-idempiere).
 

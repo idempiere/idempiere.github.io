@@ -1,10 +1,11 @@
 ---
 sidebar_position: 26
-title: "Automatic List Refresh"
 sidebar_label: "Automatic List Refresh"
-description: "**Goal:** User Experience"
+description: "When adding a new record on a table, the related lists don't need to be refreshed, the new record is automagically added to the list."
 tags: [user-experience]
 ---
+# Automatic List Refresh
+
 **Goal:** User Experience
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

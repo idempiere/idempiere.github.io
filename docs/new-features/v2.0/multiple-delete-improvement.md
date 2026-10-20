@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "Multiple Delete Improvement"
 sidebar_label: "Multiple Delete Improvement"
-description: "**Goal:** User Experience"
+description: "The Delete Multiple button was changed, now there is just one unified Delete button that can be used for multiple delete when viewing the records in grid mode."
 tags: [user-experience]
 ---
+# Multiple Delete Improvement
+
 **Goal:** User Experience
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

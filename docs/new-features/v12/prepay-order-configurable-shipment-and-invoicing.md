@@ -1,10 +1,11 @@
 ---
 sidebar_position: 7
-title: "Prepay Order Configurable Shipment and Invoicing"
 sidebar_label: "Prepay Order Configurable Shipment and Invoicing"
-description: "**Goal:** Sales Process"
+description: "Prepay Order Configurable Shipment and Invoicing: a New Feature in iDempiere 12."
 tags: [functional]
 ---
+# Prepay Order Configurable Shipment and Invoicing
+
 **Goal:** Sales Process
 
 **Developer:** cloudempiere, Takacs Peter, **Design**: Igor Pojzl, Norbert Bede **Review**: CarlosRuiz, Hengsin

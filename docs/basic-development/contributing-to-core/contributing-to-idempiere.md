@@ -1,9 +1,9 @@
 ---
-title: Contributing to iDempiere
 sidebar_label: Start Here
 sidebar_position: 1
 description: Overview of how to get involved with the iDempiere project and where to start
 ---
+# Contributing to iDempiere
 
 First off, thanks for taking the time to contribute.
 

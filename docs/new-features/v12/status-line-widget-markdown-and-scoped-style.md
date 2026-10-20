@@ -1,10 +1,11 @@
 ---
 sidebar_position: 24
-title: "Status Line Widget Markdown And Scoped Style"
 sidebar_label: "Status Line Widget Markdown And Scoped Style"
-description: "**Feature:** Implement markdown and scoped style support for status line widget"
+description: "Implement markdown and scoped style support for status line widget"
 tags: [technical]
 ---
+# Status Line Widget Markdown And Scoped Style
+
 **Feature:** Implement markdown and scoped style support for status line widget
 
 **Goal:** Technical

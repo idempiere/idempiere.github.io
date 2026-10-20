@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
-title: "Define HTML field at field level"
 sidebar_label: "Define HTML field at field level"
-description: "**Developer:**  Nicolas Micoud"
+description: "Define HTML field at field level: a New Feature in iDempiere 12."
 tags: [technical]
 ---
+# Define HTML field at field level
+
 **Goal:** Technical
 
 **Developer:**  Nicolas Micoud

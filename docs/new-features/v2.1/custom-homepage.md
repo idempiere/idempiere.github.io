@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
-title: "Custom Homepage"
 sidebar_label: "Custom Homepage"
-description: "**Goal:** User Experience"
+description: "The homepage for iDempiere is now customizable and themeable."
 tags: [user-experience]
 ---
+# Custom Homepage
+
 **Goal:** User Experience
 
 **Developer:** Antonio Cañaveral

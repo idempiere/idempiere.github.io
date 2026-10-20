@@ -1,10 +1,11 @@
 ---
 sidebar_position: 6
-title: "Jasper Report Deployment Refactoring and Improvement"
 sidebar_label: "Jasper Report Deployment Refactoring and Improvement"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Refactor and improve the deployment of Jasper Report."
 tags: [functional]
 ---
+# Jasper Report Deployment Refactoring and Improvement
+
 **Goal:** Functional
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

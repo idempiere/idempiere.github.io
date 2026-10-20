@@ -1,5 +1,4 @@
 ---
-title: Using IUserPanelMenuFactory in Plug-ins
 sidebar_label: User Panel Menu Factory
 sidebar_position: 12
 description: Learn how to add custom menu entries to the iDempiere WebUI user panel using IUserPanelMenuFactory.

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 20
-title: "Allowing Product Without Pricelist"
 sidebar_label: "Allowing Product Without Pricelist"
-description: "**Developer:**  Logilite Technologies"
+description: "Allowing Product Without Pricelist: a New Feature in iDempiere 9."
 tags: [user-experience]
 ---
+# Allowing Product Without Pricelist
+
 **Goal:** Functional
 
 **Developer:**  Logilite Technologies

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Enable Showing Inactive Records through Reference"
 sidebar_label: "Enable Showing Inactive Records through Reference"
-description: "**Ticket:** [IDEMPIERE-5573](https://idempiere.atlassian.net/browse/IDEMPIERE-5573)"
+description: "Enable Showing Inactive Records through Reference: a New Feature in iDempiere 11."
 tags: [functional]
 ---
+# Enable Showing Inactive Records through Reference
+
 ## Enable Showing Inactive Records through Reference
 **Ticket:** [IDEMPIERE-5573](https://idempiere.atlassian.net/browse/IDEMPIERE-5573)
 

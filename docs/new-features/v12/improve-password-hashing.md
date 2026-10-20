@@ -1,10 +1,11 @@
 ---
 sidebar_position: 30
-title: "Improve Password Hashing"
 sidebar_label: "Improve Password Hashing"
-description: "**Developer:** Carlos Ruiz Heng Sin"
+description: "Currently password hashing is using SHA-512 and salt is generated using SHA1PRNG random generator and 64 bytes."
 tags: [security]
 ---
+# Improve Password Hashing
+
 **Goal:** Security
 
 **Developer:** Carlos Ruiz Heng Sin

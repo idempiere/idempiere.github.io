@@ -1,9 +1,9 @@
 ---
-title: BPartner and Account column in Statement of Account report
 sidebar_label: BPartner and Account column in Statement of Account report
 sidebar_position: 2
 description: Adding Business Partner and Account column in Statement of account report.
 ---
+# BPartner and Account column in Statement of Account report
 
 **Goal:** Functional   
 **Developer:** [Deepak Pansheriya](https://wiki.idempiere.org/en/User:Dpansheriya) ([Logilite Technologies](https://www.logilite.com))  

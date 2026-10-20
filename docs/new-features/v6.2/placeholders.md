@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Placeholders"
 sidebar_label: "Placeholders"
-description: "**Developer:** Nicolas Micoud"
+description: "Placeholders: a New Feature in iDempiere 6.2."
 tags: [user-experience]
 ---
+# Placeholders
+
 **Goal:** Usability
 
 **Developer:** Nicolas Micoud

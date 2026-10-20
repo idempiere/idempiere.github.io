@@ -1,10 +1,11 @@
 ---
 sidebar_position: 8
-title: "Dynamic Zoom"
 sidebar_label: "Dynamic Zoom"
-description: "**Contributor:**  Nicolas Micoud"
+description: "This enhancement allow the application to determine zoom window at runtime through the use of data driven SQL rule."
 tags: [functional]
 ---
+# Dynamic Zoom
+
 **Goal:** Functional
 
 **Contributor:**  Nicolas Micoud

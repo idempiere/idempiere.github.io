@@ -1,8 +1,9 @@
 {
-  "label": "Developing Plug-Ins",
+  "label": "Developing plug-ins",
   "position": 5,
   "link": {
     "type": "generated-index",
+    "slug": "/basic-development/plugin-development",
     "description": "This is a series of tutorials for developing plug-ins. It can be seen as some kind of starting help and best practice. "  
   }
 }

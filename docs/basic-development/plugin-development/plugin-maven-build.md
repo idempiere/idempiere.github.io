@@ -1,5 +1,4 @@
 ---
-title: Building iDempiere Plug-ins with Maven
 sidebar_label: Maven Build
 sidebar_position: 21
 description: Learn how to build iDempiere plug-ins using Maven (Tycho), the build system adopted from iDempiere 6.1 onward.

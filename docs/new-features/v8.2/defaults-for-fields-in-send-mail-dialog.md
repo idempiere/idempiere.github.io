@@ -1,10 +1,11 @@
 ---
 sidebar_position: 16
-title: "Defaults for Fields in Send Mail Dialog"
 sidebar_label: "Defaults for Fields in Send Mail Dialog"
-description: "**Goal:** User Experience (Usability)"
+description: "A mechanism is implemented to fill with default values the variables in the Send EMail Dialog."
 tags: [user-experience]
 ---
+# Defaults for Fields in Send Mail Dialog
+
 **Goal:** User Experience (Usability)
 
 **Developer:** Carlos Ruiz

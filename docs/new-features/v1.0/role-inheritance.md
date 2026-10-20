@@ -1,10 +1,11 @@
 ---
 sidebar_position: 65
-title: "Role Inheritance"
 sidebar_label: "Role Inheritance"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Role Inheritance: a New Feature in iDempiere 1.0."
 tags: [security]
 ---
+# Role Inheritance
+
 **Goal:** Security
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

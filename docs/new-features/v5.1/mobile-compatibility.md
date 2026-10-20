@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: "Mobile Compatibility"
 sidebar_label: "Mobile Compatibility"
-description: "**Developer:** Heng Sin Low"
+description: "iDempiere provides now an excellent user experience when used in tablets and smartphones."
 tags: [user-experience]
 ---
+# Mobile Compatibility
+
 **Goal:** Usability
 
 **Developer:** Heng Sin Low

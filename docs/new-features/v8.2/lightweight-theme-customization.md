@@ -1,10 +1,11 @@
 ---
 sidebar_position: 18
-title: "Lightweight theme customization"
 sidebar_label: "Lightweight theme customization"
-description: "**Developer:** Carlos Ruiz"
+description: "To allow theme customization without the need to fully develop a theme the default theme can be extended with a fragment containing a \"fragment/custom.css.dsp\"."
 tags: [user-experience]
 ---
+# Lightweight theme customization
+
 **Goal:** Usability
 
 **Developer:** Carlos Ruiz

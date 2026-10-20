@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "Delete Record with Confirmation Logic"
 sidebar_label: "Delete Record with Confirmation Logic"
-description: "**Goal:** UX/Functional"
+description: "Delete Record with Confirmation Logic: a New Feature in iDempiere 10."
 tags: [functional]
 ---
+# Delete Record with Confirmation Logic
+
 **Goal:** UX/Functional
 
 **Developer:** Takacs Peter, **Design**: Norbert Bede **PR Review**:  Carlos Ruiz.

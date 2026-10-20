@@ -1,4 +1,5 @@
 ---
+description: "Where to download the iDempiere installers: the current stable release, daily development builds and previous releases."
 sidebar_position: 2
 ---
 

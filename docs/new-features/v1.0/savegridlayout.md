@@ -1,10 +1,11 @@
 ---
 sidebar_position: 43
-title: "Configurable Grid Layout"
 sidebar_label: "Configurable Grid Layout"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Configurable Grid Layout: a New Feature in iDempiere 1.0."
 tags: [user-experience]
 ---
+# Configurable Grid Layout
+
 **Goal:** Usability
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

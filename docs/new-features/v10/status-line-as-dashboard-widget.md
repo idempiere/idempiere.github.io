@@ -1,10 +1,11 @@
 ---
 sidebar_position: 31
-title: "Status Line As Dashboard Widget"
 sidebar_label: "Status Line As Dashboard Widget"
-description: "**Goal:** UX/Functional"
+description: "Status Line As Dashboard Widget: a New Feature in iDempiere 10."
 tags: [user-experience]
 ---
+# Status Line As Dashboard Widget
+
 **Goal:** UX/Functional
 
 **Developer:** cloudempiere, Takacs Peter, **Design**: Norbert Bede **Review**: Hengsin Low

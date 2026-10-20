@@ -1,10 +1,11 @@
 ---
 sidebar_position: 57
-title: "Translation Improvements"
 sidebar_label: "Translation Improvements"
-description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
+description: "Translation Improvements: a New Feature in iDempiere 1.0."
 tags: [technical]
 ---
+# Translation Improvements
+
 **Goal:** Technical
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

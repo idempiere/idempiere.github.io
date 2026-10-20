@@ -1,10 +1,11 @@
 ---
 sidebar_position: 21
-title: "Mixed POS Payments on Sales Order"
 sidebar_label: "Mixed POS Payments on Sales Order"
-description: "**Functional:** Sales"
+description: "Sales Order window was modified to allow management of Mixed Payments on POS Orders, this is, a sales order that is paid with different tender types."
 tags: [functional]
 ---
+# Mixed POS Payments on Sales Order
+
 **Goal:** Usability
 
 **Functional:** Sales

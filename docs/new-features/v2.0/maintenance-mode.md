@@ -1,10 +1,11 @@
 ---
 sidebar_position: 16
-title: "Maintenance Mode"
 sidebar_label: "Maintenance Mode"
 description: "You can define a system configurator key SYSTEM_IN_MAINTENANCE_MODE=Y on the tenant that you want to disable login for maintenance.  If you define SYST"
 tags: [technical]
 ---
+# Maintenance Mode
+
 **Goal:** Technical
 
 **Description:**

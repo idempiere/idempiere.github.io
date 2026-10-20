@@ -27,7 +27,7 @@ Never guess window names, field names, SysConfig keys, default values or version
 - Location: `docs/new-features/in-development/` while the core pull request is not merged.
 - File name: short kebab-case, e.g. `avoid-sequence-locks.md`.
 - `sidebar_position`: look at the sibling pages and pick the next free number.
-- Start from `docs/_templates/new-feature.md`. It follows the section structure of existing pages such as `docs/new-features/v14/default-view-detail-tabs.md` and `docs/new-features/in-development/avoid-sequence-locks.md`. Do not copy their `title:` frontmatter field. The first `#` heading is the title.
+- Start from `docs/_templates/new-feature.md`. It follows the section structure of existing pages such as `docs/new-features/v14/default-view-detail-tabs.md` and `docs/new-features/in-development/avoid-sequence-locks.md`. The first `#` heading is the title. Do not set `title:` in the frontmatter.
 - Keep the "Not Yet in Stable Release" warning at the top while the page is in `in-development`.
 - While the page is in `in-development`, set the **Version:** line and `applies_to` to the release the core pull request targets. Update both when the page moves.
 - Set `tags` in the front matter, using only the values already in use: `functional`, `user-experience`, `technical`, `development`, `security`, `architecture`. The version compare page (`/upgrade/compare`) builds its category filters from these tags, so a new tag value creates a new filter. Ask the user before introducing one.
@@ -58,7 +58,7 @@ If the change alters existing behavior, removes something, or requires action fr
   - `technical-notes.md`: developers and administrators.
   - `functional-notes.md`: consultants and functional users.
   - `removed-deprecated-apis.md`: removed or deprecated APIs, for plugin developers.
-- If the file does not exist yet for that version, ask the user before creating it. Copy the front matter style from the same file in the previous version folder.
+- If the file does not exist yet for that version, ask the user before creating it. Copy the front matter style from the same file in the previous version folder, and add `applies_to: "<NN>"` and `last_reviewed: <today>`. Older files lack these two fields, and the checks fail a new page without them.
 - Add one `##` section per change. The version compare page treats each `##` section as one note.
 - Start the section with one plain prose paragraph that summarizes the change. The compare page shows that first paragraph as the summary and skips lists, code, tables and admonitions.
 - After the summary, explain who is affected and the required action, as numbered steps when order matters.
@@ -68,6 +68,7 @@ If the change alters existing behavior, removes something, or requires action fr
 ## 5. After the core pull request is merged
 
 - Move the page: `git mv docs/new-features/in-development/<page>.md docs/new-features/v14/<page>.md`.
+- If the version folder does not exist yet, copy `_category_.json` from the previous version folder and change `label`, `position`, `link.title`, `link.description` and `link.slug`. Set `link.slug` to the folder path, for example `"slug": "/new-features/v15"`. Without it, the category page moves to `/docs/category/v15`.
 - Remove the "Not Yet in Stable Release" warning.
 - Set the **Version:** line and `applies_to` to the release folder, for example `**Version:** iDempiere 14` and `applies_to: ">=14"`.
 - Check `sidebar_position` against the pages in the target folder.
@@ -80,6 +81,7 @@ If the change alters existing behavior, removes something, or requires action fr
 3. Headings are sentence case, `##` or deeper, and short.
 4. Admonitions have an empty line after the opening and before the closing `:::`. No `:::caution`.
 5. No TODO comments left that the user has not seen.
+6. A new page must pass the pull request checks. Run `node scripts/check-frontmatter.js --strict <page>` and `npx --yes markdownlint-cli2@0.23.2 <page>`, and fix every problem they report.
 
 ## 7. Commit and pull request
 

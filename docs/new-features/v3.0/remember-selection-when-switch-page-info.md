@@ -1,10 +1,11 @@
 ---
 sidebar_position: 10
-title: "Remember Selection When Switch Page Info"
 sidebar_label: "Remember Selection When Switch Page Info"
-description: "**Goal:** User Experience"
+description: "The info window in version 2.1 support multiple-records selection, however doesn't select records on more then 1 page."
 tags: [user-experience]
 ---
+# Remember Selection When Switch Page Info
+
 **Goal:** User Experience
 
 **Contributor:** MULTIMAGE (cloudempiere)

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: "Drop Rename DB Objects"
 sidebar_label: "Drop Rename DB Objects"
-description: "**Goal:** Development - Usability"
+description: "Five new processes have been added to allow some operations directly in the database without the need to open a DB manager (like DBeaver or pgadmin)."
 tags: [functional]
 ---
+# Drop Rename DB Objects
+
 **Goal:** Development - Usability
 
 **Developer:** Carlos Ruiz

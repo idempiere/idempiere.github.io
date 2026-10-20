@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
-title: "iDempiere workshop August 2014"
 sidebar_label: "iDempiere workshop August 2014"
 description: "There was a iDempiere workshop in August 2014 held by Carlos Ruiz (organized by Thomas Bayen)"
 tags: [functional]
 ---
+# iDempiere workshop August 2014
+
 ## iDempiere workshop August 2014
 There was a iDempiere workshop in August 2014 held by Carlos Ruiz (organized by Thomas Bayen)
 
@@ -20,7 +21,7 @@ There was a iDempiere workshop in August 2014 held by Carlos Ruiz (organized by 
 ## Overview
 This part of the workshop gives an overview of the new features of iDempiere 1.0, 2.0, 3.0, ... Carlos opened the New Feature Category and we talked about the more interesting points
 
-### [:Category:New_Features_v1.0](/docs/category/v10-1)
+### [:Category:New_Features_v1.0](/docs/new-features/v1-0)
 - Load Balancing/Hazelcast
 - 2Pack (improvements, usage with the export button, exporting of detail tabs)
 - Fitnesse/ Selenium (not very many tests done yet, but a good tool to do functional tests for your own implementation. Examples are in the plugin)
@@ -48,14 +49,14 @@ This part of the workshop gives an overview of the new features of iDempiere 1.0
 
 (See the page for links to most of these features.)
 
-### [:Category:New_Features_v2.0](/docs/category/v20)
+### [:Category:New_Features_v2.0](/docs/new-features/v2-0)
 - Charts
 - Management of Dashboard Gadgets
 - improved Management of Views in the database and constraints
 - Focus (you can set the default focus field when you open a record)
 - Set the Title of a Tab
 
-### [:Category:New_Features_v3.0](/docs/category/v30)
+### [:Category:New_Features_v3.0](/docs/new-features/v3-0)
 - new html start page (can be configured with the file home.properties)
 - default chart of accounts and deactivate default accounts
 - process to create requests from email

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 59
-title: "Window Tab Toolbar Buttons"
 sidebar_label: "Window Tab Toolbar Buttons"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "You can now define new process/form toolbar button for a window tab without the need to create a dummy ad_column record."
 tags: [technical]
 ---
+# Window Tab Toolbar Buttons
+
 **Goal:** Technical
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

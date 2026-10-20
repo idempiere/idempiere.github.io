@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Add Fixed Price Discount Support to Discount Schema"
 sidebar_label: "Add Fixed Price Discount Support to Discount Schema"
-description: "**Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))"
+description: "Enhance discount schema to support the setting of fixed unit price for each discount break point."
 tags: [functional]
 ---
+# Add Fixed Price Discount Support to Discount Schema
+
 **Goal:** Functional
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

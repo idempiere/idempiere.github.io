@@ -1,4 +1,5 @@
 ---
+description: "Install the iDempiere server from the installers: create the user, install the server, and import and update the database."
 sidebar_position: 3
 ---
 

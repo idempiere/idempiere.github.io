@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "GL Reconciliation"
 sidebar_label: "GL Reconciliation"
-description: "**Sponsor:** [Adaxa](http://www.adaxa.com/)"
+description: "GL Reconciliation: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
+# GL Reconciliation
+
 **Goal:** Functional
 
 **Sponsor:** [Adaxa](http://www.adaxa.com/)

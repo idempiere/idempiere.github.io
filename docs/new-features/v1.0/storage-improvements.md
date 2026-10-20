@@ -1,10 +1,11 @@
 ---
 sidebar_position: 25
-title: "Storage Improvements"
 sidebar_label: "Storage Improvements"
-description: "**Functional:** Material Management"
+description: "Storage Improvements: a New Feature in iDempiere 1.0."
 tags: [functional]
 ---
+# Storage Improvements
+
 **Goal:** Functional
 
 **Functional:** Material Management

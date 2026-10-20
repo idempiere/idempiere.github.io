@@ -1,9 +1,9 @@
 ---
-title: Pull Request Review
 sidebar_label: Pull Request Review
 sidebar_position: 5
 description: How to review and test iDempiere pull requests so good changes move faster and risky changes are caught early
 ---
+# Pull Request Review
 
 This page is part of the list of contribution paths described in [Contributing to iDempiere](./contributing-to-idempiere).
 

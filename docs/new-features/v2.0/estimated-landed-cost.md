@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
-title: "Estimated Landed Cost"
 sidebar_label: "Estimated Landed Cost"
-description: "**Sponsor:** [TrekGlobal](http://www.trekglobal.com/)"
+description: "Support estimated landed cost for Average Costing."
 tags: [functional]
 ---
+# Estimated Landed Cost
+
 **Goal:** Functional
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

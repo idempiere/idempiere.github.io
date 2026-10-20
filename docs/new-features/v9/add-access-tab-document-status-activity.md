@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Add Access Tab Document Status Activity"
 sidebar_label: "Add Access Tab Document Status Activity"
-description: "**Developer:** Deepak Pansheriya"
+description: "Currently Document status can be assigned single role or user but there is no way to configure multiple role or user assignment to document status."
 tags: [functional]
 ---
+# Add Access Tab Document Status Activity
+
 **Goal:** Functional
 
 **Developer:** Deepak Pansheriya

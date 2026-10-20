@@ -1,9 +1,9 @@
 ---
-title: Sales Pipelines
 sidebar_label: Concept of Sales Pipeline for Opportunities
 sidebar_position: 1
 description: Allow the use of a list of Sales Stage per Sales Pipeline
 ---
+# Sales Pipelines
 
 **Goal:** Functional  
 **Developer:** [Nicolas Micoud](https://wiki.idempiere.org/en/User:Nmicoud) ([TGI](https://www.tgi.eu))  

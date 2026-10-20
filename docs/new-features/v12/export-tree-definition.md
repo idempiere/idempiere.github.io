@@ -1,10 +1,11 @@
 ---
 sidebar_position: 18
-title: "Export Tree Definition"
 sidebar_label: "Export Tree Definition"
-description: "**Developer:** Carlos Ruiz"
+description: "Before this change, it was only possible to export the main menu tree."
 tags: [technical]
 ---
+# Export Tree Definition
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

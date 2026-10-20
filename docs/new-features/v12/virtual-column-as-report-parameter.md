@@ -1,10 +1,11 @@
 ---
 sidebar_position: 11
-title: "Virtual Column as Report Parameter"
 sidebar_label: "Virtual Column as Report Parameter"
-description: "**Developer:** Paul Bowden (Adaxa)"
+description: "Virtual Column as Report Parameter: a New Feature in iDempiere 12."
 tags: [functional]
 ---
+# Virtual Column as Report Parameter
+
 **Goal:** Functional
 
 **Developer:** Paul Bowden (Adaxa)

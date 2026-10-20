@@ -1,10 +1,11 @@
 ---
 sidebar_position: 27
-title: "Support for pure UUID key tables"
 sidebar_label: "Support for pure UUID key tables"
-description: "**Developer:** Carlos Ruiz"
+description: "Historically iDempiere has always required a primary key _ID (integer java type, numeric(10) database type) on tables to support many features."
 tags: [technical]
 ---
+# Support for pure UUID key tables
+
 **Goal:** Technical
 
 **Developer:** Carlos Ruiz

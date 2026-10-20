@@ -1,10 +1,11 @@
 ---
 sidebar_position: 3
-title: "Dashboard Chart"
 sidebar_label: "Dashboard Chart"
-description: "**Sponsor:** [Adaxa](http://www.adaxa.com/), [Trek Global](http://www.trekglobal.com/)"
+description: "Dashboard Chart: a New Feature in iDempiere 2.0."
 tags: [functional]
 ---
+# Dashboard Chart
+
 **Goal:** Functional
 
 **Sponsor:** [Adaxa](http://www.adaxa.com/), [Trek Global](http://www.trekglobal.com/)

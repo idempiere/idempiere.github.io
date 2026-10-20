@@ -1,10 +1,11 @@
 ---
 sidebar_position: 69
-title: "Fitnesse Integration"
 sidebar_label: "Fitnesse Integration"
-description: "**Goal:** Functional Testing"
+description: "Fitnesse Integration: a New Feature in iDempiere 1.0."
 tags: [architecture]
 ---
+# Fitnesse Integration
+
 **Goal:** Functional Testing
 
 **Sponsor:** [Trek Global](https://www.trekglobal.com)

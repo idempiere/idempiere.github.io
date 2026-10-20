@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
-title: "Accounting Viewer Improvements"
 sidebar_label: "Accounting Viewer Improvements"
-description: "**Sponsor:** [Trek Global](https://www.trekglobal.com)"
+description: "Review accounting entries without interrupting your workflow. The Accounting Viewer now opens as a standalone window instead of a blocking popup."
 tags: [functional]
 ---
+# Accounting Viewer Improvements
+
 :::info Feature Overview
 Review accounting entries without interrupting your workflow—the Accounting Viewer now opens as a standalone window instead of a blocking popup. You can navigate instantly to source documents with the Zoom button, or double-click any row to drill down into accounting fact details for deeper investigation. Need to analyze your data externally? Export everything to Excel with one click.
 

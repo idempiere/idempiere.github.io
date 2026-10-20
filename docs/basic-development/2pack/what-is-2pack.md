@@ -1,11 +1,10 @@
 ---
-title: What is a 2Pack in iDempiere?
 sidebar_label: 2Packs
 description: Learn what a 2Pack is, how it works, and why it's essential for configuration migration in iDempiere.
 sidebar_position: 1
 ---
 
-# 📦 What is a 2Pack in iDempiere?
+# What is a 2Pack in iDempiere?
 
 A **2Pack** in iDempiere is a powerful packaging mechanism that enables easy configuration management across environments.
 
@@ -17,7 +16,7 @@ Think of it as a "configuration snapshot" that can be easily transferred and app
 
 ---
 
-## 🎯 Purpose
+## Purpose
 
 2Packs are used to:
 
@@ -27,7 +26,7 @@ Think of it as a "configuration snapshot" that can be easily transferred and app
 
 ---
 
-## 🧩 What Can Be Included?
+## What Can Be Included?
 
 A 2Pack can include the following elements:
 
@@ -44,7 +43,7 @@ A 2Pack can include the following elements:
 
 ---
 
-## 🔁 Key Concepts
+## Key Concepts
 
 - **Pack Out**: Export configuration and/or data into a `.zip` file
 - **Pack In**: Import the `.zip` file into another iDempiere environment
@@ -53,9 +52,9 @@ The `.zip` file contains an XML manifest and associated data files.
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
-### 📋 Step-by-Step Workflow
+### Step-by-Step Workflow
 
 1. **Define Package**: Developers define a **Pack Out** package using the iDempiere UI
 2. **Generate Archive**: 2Pack generates a `.zip` file with all the selected metadata and data
@@ -81,7 +80,7 @@ Use **Automatic External Pack In** for CI/CD pipelines and Docker deployments to
 
 ---
 
-## 🛠️ File Naming Conventions
+## File Naming Conventions
 
 ### Standard 2Pack Naming
 
@@ -118,7 +117,7 @@ Use descriptive names for the `AdditionalInformation` part to make it easy to id
 
 ---
 
-## ✅ Benefits
+## Benefits
 
 - Enables consistent configuration across systems
 - Automates initial setup for plug-ins
@@ -131,6 +130,6 @@ Use descriptive names for the `AdditionalInformation` part to make it easy to id
 :::
 ---
 
-## 👉 What’s Next?
+## What’s Next?
 
 Now that you understand what a 2Pack is, **read the next section to learn step-by-step how to create and import 2Packs in your own plug-ins or iDempiere environments.**

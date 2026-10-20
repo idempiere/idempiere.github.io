@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Set default Contact/User in Documents"
 sidebar_label: "Set default Contact/User in Documents"
-description: "**Developer:** Diego Ruiz"
+description: "The goal of the ticket is to ease the document creation process by setting default BillTo/ShipTo users based on a new flag on the User/Contact window."
 tags: [functional]
 ---
+# Set default Contact/User in Documents
+
 **Goal:** Usability
 
 **Developer:** Diego Ruiz

@@ -1,5 +1,4 @@
 ---
-title: "Storage Validator OSGI Service"
 sidebar_label: "Storage Validator OSGI Service"
 sidebar_position: 12
 description: "This enhancement introduces a new Storage Validator extension point to iDempiere."

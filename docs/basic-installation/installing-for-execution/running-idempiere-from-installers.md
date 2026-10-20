@@ -1,4 +1,5 @@
 ---
+description: "Start an iDempiere server installed from the installers, manually or as a service, and fix common problems."
 sidebar_position: 4
 ---
 

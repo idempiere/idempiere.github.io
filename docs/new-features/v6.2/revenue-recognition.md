@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
-title: "Revenue Recognition"
 sidebar_label: "Revenue Recognition"
-description: "**Sponsor:** [Adaxa](http://www.adaxa.com/)"
+description: "Revenue Recognition is working now for both Time and Event based recognition requirements."
 tags: [functional]
 ---
+# Revenue Recognition
+
 **Goal:** Functional
 
 **Sponsor:** [Adaxa](http://www.adaxa.com/)

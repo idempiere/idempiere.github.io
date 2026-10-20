@@ -1,10 +1,11 @@
 ---
 sidebar_position: 29
-title: "Implement OAuth2 for EMail Authentication"
 sidebar_label: "Implement OAuth2 for EMail Authentication"
-description: "**Developer:** Carlos Ruiz"
+description: "Implement OAuth2 for EMail Authentication: a New Feature in iDempiere 8.2."
 tags: [security]
 ---
+# Implement OAuth2 for EMail Authentication
+
 **Goal:** Security
 
 **Developer:** Carlos Ruiz

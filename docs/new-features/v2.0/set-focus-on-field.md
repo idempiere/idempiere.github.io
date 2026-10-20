@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
-title: "Set Focus On Field"
 sidebar_label: "Set Focus On Field"
-description: "**Goal:** User Experience"
+description: "Set Focus On Field: a New Feature in iDempiere 2.0."
 tags: [user-experience]
 ---
+# Set Focus On Field
+
 **Goal:** User Experience
 
 **Sponsor:** [TrekGlobal](http://www.trekglobal.com/)

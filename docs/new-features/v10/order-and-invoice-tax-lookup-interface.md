@@ -1,10 +1,11 @@
 ---
 sidebar_position: 40
-title: "Order and Invoice: Tax Lookup Interface"
 sidebar_label: "Order and Invoice: Tax Lookup Interface"
-description: "**Goal:** Development"
+description: "Implement a new tax lookup interface to allow plugin to override the relation between bp/location/product and tax code without changing core."
 tags: [development]
 ---
+# Order and Invoice: Tax Lookup Interface
+
 **Goal:** Development
 
 **Developer:** Hengsin ([talk](https://wiki.idempiere.org/en/User_talk:Hengsin))

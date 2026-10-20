@@ -1,5 +1,4 @@
 ---
-title: Using ITaxProviderFactory in Plug-ins
 sidebar_label: Tax Provider Factory
 sidebar_position: 9
 description: Learn how to implement a custom tax provider in iDempiere using the ITaxProviderFactory service.
