@@ -177,7 +177,7 @@ For detailed information, see [NF9_OSGi_New_Model_Factory](/docs/new-features/v9
 
 With a map-based factory, you declare associations using method references:
 
-```java
+```java title="src/org/evenos/factories/MyModelFactory.java"
 package org.evenos.factories;
 
 import org.idempiere.model.MappedModelFactory;
