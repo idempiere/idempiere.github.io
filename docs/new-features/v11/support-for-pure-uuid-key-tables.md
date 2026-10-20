@@ -117,7 +117,6 @@ The package installation log can manage now UUID based tables too
 The X_ generated model classes implement now two new constructors based on the UUID column, additionally to the already existing two constructors based on the _ID column.
 
 The new constructors look like this:
-‎
 
 ```java
 
@@ -128,7 +127,6 @@ public X_TestUU (Properties ctx, String TestUU_UU, String trxName)
 ```java
 
 public X_TestUU (Properties ctx, String TestUU_UU, String trxName, String ... virtualColumns)
-‎
 ```
 
 Additionally, when the table doesn't have _ID keys or multi-parent keys, then the two _ID based constructors are not generated.
@@ -167,7 +165,6 @@ With the new UUID based constructor, the zero is replaced with the empty string,
 ```java
 
 MTest test = new MTest(ctx, "", trxName);
-‎
 ```
 
 ### Reading an existing record
@@ -175,7 +172,6 @@ To read a record with the _ID constructor, developers used to write:
 ```java
 
 MTest test = new MTest(ctx, 103, trxName);
-‎
 ```
 
 With the new UUID based constructor, the ID is replaced with the UUID string, like:
