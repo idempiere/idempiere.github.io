@@ -242,6 +242,23 @@ Use Docusaurus admonitions for content that needs to stand out:
 - For SQL, say whether it is for PostgreSQL, Oracle or both. Show PostgreSQL first when only one is given.
 - Do not leave trailing spaces or runs of blank lines in code.
 
+### Checking Java snippets
+
+Check the Java blocks on a page against the iDempiere source before you open a pull request. The check does not compile the code or look at method calls. It checks that the classes exist, and that each full class has a `package` line, a `title` and its imports.
+
+1. Keep a local clone of iDempiere. The check only reads its git data and changes nothing. It uses `upstream/master`, then `origin/master`, then `master`, whichever the clone has first. To check another version, add `--ref`, for example `--ref upstream/release-13`.
+2. Run it on the pages you changed:
+
+   ```bash
+   npm run lint:java -- --source ~/src/idempiere docs/basic-development/plugin-development/plugin-eventhandler.md
+   ```
+
+3. Read the result:
+   - An **error** is an `org.adempiere`, `org.compiere` or `org.idempiere` import that does not exist in that version, or exists in another package. The message names the right class when there is one. Fix errors before the merge. The exit code is 1.
+   - A **warning** is a full class without a `package` line or a `title`, or a class that is used but not imported. Fix the warnings on the code you change.
+
+The check skips classes that the page declares itself, such as `MyEventHandler`, and types from `java.*`, `org.osgi.*` and `org.zkoss.*`. A block without a class declaration is a fragment. The check looks at its imports but does not ask for a `package`, `title` or `import` lines. The check is not part of the pull request checks.
+
 ## Screenshots
 
 - Take screenshots in the GardenWorld demo Tenant, with the default theme and the `en_US` language, so pages look alike.
@@ -269,7 +286,7 @@ Each pull request runs these checks on the pages it changes. Findings show up as
 - **markdownlint** checks heading levels, list style and trailing spaces. Configuration: `.markdownlint-cli2.jsonc`.
 - **Vale** checks the words to avoid, em dashes and sentence-case headings. Rules: `styles/iDempiere/`.
 - **Frontmatter check** reports missing or invalid frontmatter fields. Run it locally with `npm run lint:frontmatter`. For a new page, run `node scripts/check-frontmatter.js --strict <page>`.
-- **Java snippet check** compares the imports and class names in Java code blocks with the iDempiere source. It is not part of the pull request checks. Run it on the pages you change with `npm run lint:java -- --source <path to an iDempiere clone> <page>`. It reads the clone and changes no file. A missing class is an error. A missing `package`, `title` or `import` is a warning.
+- **Java snippet check** compares the imports and class names in Java code blocks with the iDempiere source. It is not part of the pull request checks. See [Checking Java snippets](#checking-java-snippets).
 - **Link check** runs once a week on external links and reports broken ones.
 
 ### What blocks a merge
