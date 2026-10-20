@@ -21,11 +21,13 @@ The goal of this How-To guide is to demonstrate how to utilize the ICreditManage
 ### Implementing Credit Manager Factory
 For implementing Credit Manager factory, add new class implementing ICreditManagerFactory as below. you should add condition in which case the object of your Credit Manager (ICreditManager) implementor should be returned. Mostly we used PO Mode on Credit Manager screen.
 
-```java
+```java title="src/com/example/credit/MyCreditManagerFactory.java"
+package com.example.credit;
 
+import org.adempiere.base.ICreditManager;
+import org.adempiere.base.ICreditManagerFactory;
 import org.compiere.model.MOrder;
 import org.compiere.model.PO;
-import org.compiere.model.credit.MyCreditManagerOrder;
 import org.osgi.service.component.annotations.Component;
 
 @Component(immediate = true, service = ICreditManagerFactory.class)
@@ -52,7 +54,13 @@ Credit Manager class implements ICreditManager interface.
 - Method has Document Action (String) as a parameter.
 - Method will return Credit Status (CreditStatus).
 
-```java
+```java title="src/com/example/credit/MyCreditManagerOrder.java"
+package com.example.credit;
+
+import org.adempiere.base.CreditStatus;
+import org.adempiere.base.ICreditManager;
+import org.compiere.model.MOrder;
+import org.compiere.util.Util;
 
 public class MyCreditManagerOrder implements ICreditManager
 {
@@ -82,9 +90,10 @@ public class MyCreditManagerOrder implements ICreditManager
 ```
 
 ### Credit Status POJO Class
-Credit Status is POJO to return in  *checkCreditStatus*
+Credit Status is a POJO to return in *checkCreditStatus*. The class `org.adempiere.base.CreditStatus` is part of iDempiere core, so you do not create it. This is its code, shown for reference:
 
-```java
+```java title="org.adempiere.base/src/org/adempiere/base/CreditStatus.java"
+package org.adempiere.base;
 
 public class CreditStatus
 {
