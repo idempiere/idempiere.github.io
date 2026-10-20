@@ -10,8 +10,8 @@
 
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"iDempiere Documentation","url":"https://docs.idempiere.org","publisher":{"@type":"Organization","name":"iDempiere","url":"https://www.idempiere.org"}}</script><link rel="stylesheet" href="/assets/css/styles.e86bf028.css">
-<script src="/assets/js/runtime~main.9b46cc7c.js" defer="defer"></script>
-<script src="/assets/js/main.0650f13c.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.9ffc7373.js" defer="defer"></script>
+<script src="/assets/js/main.f2e23d7c.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -30,47 +30,48 @@
 <p><em>Document Search Card Layout</em></p>
 <p><strong>Release Notes Summary</strong></p>
 <ul>
-<li class="">
-<p>New Features in Search Definition Window:</p>
-</li>
-<li class="">
-<p>Added <code>AD_Message_ID</code> and <code>AD_Style_ID</code> fields.
-<strong>Note</strong> These fields are visible when the search type is set to &quot;Query&quot; (<code>SearchType=Q</code>).</p>
-</li>
-<li class="">
-<p>Enhanced Query type searches:</p>
+<li class="">New Features in Search Definition Window:</li>
+<li class="">Added <code>AD_Message_ID</code> and <code>AD_Style_ID</code> fields.</li>
+</ul>
+<p><strong>Note</strong> These fields are visible when the search type is set to &quot;Query&quot; (<code>SearchType=Q</code>).</p>
 <ul>
-<li class="">Query results can now be formatted using <code>Message Text</code> from <code>AD_Message</code> and styled with <code>CSS</code> definitions from <code>AD_Style</code>.
-<strong>Formatting with `AD_Message</strong></li>
+<li class="">Enhanced Query type searches:<!-- -->
+<ul>
+<li class="">Query results can now be formatted using <code>Message Text</code> from <code>AD_Message</code> and styled with <code>CSS</code> definitions from <code>AD_Style</code>.</li>
 </ul>
 </li>
-<li class="">
-<p>Supports both HTML and Markdown, or a mix of both.</p>
+</ul>
+<p><strong>Formatting with <code>AD_Message</code></strong></p>
+<ul>
+<li class="">Supports both HTML and Markdown, or a mix of both.<!-- -->
 <ul>
 <li class="">Use <code>&lt;#md&gt;&lt;/#md&gt;</code> tags to enclose Markdown.</li>
 </ul>
 </li>
-<li class="">
-<p>Basic structure support for headers, bodies, and footers:</p>
+<li class="">Basic structure support for headers, bodies, and footers:<!-- -->
 <ul>
 <li class="">Header text with <code>&lt;#header&gt;&lt;/#header&gt;</code></li>
 <li class="">Footer text with <code>&lt;#footer&gt;&lt;/#footer&gt;</code></li>
 </ul>
 </li>
-<li class="">
-<p>Flexible variable substitution options:</p>
+<li class="">Flexible variable substitution options:<!-- -->
+<ul>
+<li class="">Message format variables <code>{0}</code>, <code>{1}</code>, etc., and context variables like <code>@Name@</code>.</li>
+<li class="">Special variables: <code>@WindowName@</code> for window name and <code>@Row@</code> for row number</li>
+</ul>
 </li>
 </ul>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"> - Message format variables `{0}`, `{1}`, etc., and context variables like `@Name@`.</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"> - Special variables: `@WindowName@` for window name and `@Row@` for row number**CSS Styling with `AD_Style`**</span><br></div></code></pre></div></div>
 <p><strong>CSS Styling with <code>AD_Style</code></strong></p>
 <p>Built from <code>AD_StyleLine</code> and uses scoped CSS instead of inline styles.</p>
-<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"> - Scoped CSS is not enabled by default in Firefox; to enable, use `about:config` and set `layout.css.at-scope.enabled` to `true`.</span><br></div></code></pre></div></div>
+<ul>
+<li class="">Scoped CSS is not enabled by default in Firefox; to enable, use <code>about:config</code> and set <code>layout.css.at-scope.enabled</code> to <code>true</code>.</li>
+</ul>
 <p><strong>Additional Updates and Fixes:</strong>
 Added a new JavaScript function: <code>idempiere.directZoom(keyColumnName, id)</code>.</p>
 <p>Resolved an issue in <code>AD Window</code> list view:</p>
 <ul>
 <li class="">Fixed broken list view display when field content includes single or double quotation marks.</li>
 </ul>
-<p>This update brings enhanced search result customization and improved list view stability.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/docs/tags/technical">technical</a></li></ul></div></div><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/idempiere/idempiere.github.io/tree/main/docs/new-features/v12/document-search-customisable-layout.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-10-19T12:13:13.000Z" itemprop="dateModified">Oct 19, 2026</time></b></span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/new-features/v12/define-html-field-at-field-level"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Define HTML field at field level</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/new-features/v12/email-template-markdown-text"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Email Template Markdown Text</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#description" class="table-of-contents__link toc-highlight">Description</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/basic-installation">Basic installation guide</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/basic-functional">Basic functional guide</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/basic-development">Basic developer guide</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://groups.google.com/g/idempiere" target="_blank" rel="noopener noreferrer" class="footer__link-item">Google Groups<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://mattermost.idempiere.org/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mattermost<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.facebook.com/groups/idempiere/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/idempiere" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.youtube.com/channel/UCRdFTCB3yc_ni8EBXyhVqfQ" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/groups/5146317/" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/idempiere/idempiere" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 iDempiere<br>Illustrations by <a href="https://storyset.com">Storyset</a></div></div></div></footer></div>
+<p>This update brings enhanced search result customization and improved list view stability.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>Tags:</b><ul class="tags_jXut padding--none margin-left--sm"><li class="tag_QGVx"><a rel="tag" class="tag_zVej tagRegular_sFm0" href="/docs/tags/technical">technical</a></li></ul></div></div><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/idempiere/idempiere.github.io/tree/main/docs/new-features/v12/document-search-customisable-layout.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"><span class="theme-last-updated">Last updated<!-- --> on <b><time datetime="2026-10-20T19:05:03.000Z" itemprop="dateModified">Oct 20, 2026</time></b></span></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/new-features/v12/define-html-field-at-field-level"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Define HTML field at field level</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/new-features/v12/email-template-markdown-text"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Email Template Markdown Text</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#description" class="table-of-contents__link toc-highlight">Description</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/basic-installation">Basic installation guide</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/basic-functional">Basic functional guide</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/basic-development">Basic developer guide</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://groups.google.com/g/idempiere" target="_blank" rel="noopener noreferrer" class="footer__link-item">Google Groups<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://mattermost.idempiere.org/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Mattermost<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.facebook.com/groups/idempiere/" target="_blank" rel="noopener noreferrer" class="footer__link-item">Facebook<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/idempiere" target="_blank" rel="noopener noreferrer" class="footer__link-item">Twitter<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.youtube.com/channel/UCRdFTCB3yc_ni8EBXyhVqfQ" target="_blank" rel="noopener noreferrer" class="footer__link-item">Youtube<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.linkedin.com/groups/5146317/" target="_blank" rel="noopener noreferrer" class="footer__link-item">LinkedIn<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/idempiere/idempiere" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 iDempiere<br>Illustrations by <a href="https://storyset.com">Storyset</a></div></div></div></footer></div>
 </body>
 </html>

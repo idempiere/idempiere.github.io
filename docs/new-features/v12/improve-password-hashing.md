@@ -25,7 +25,7 @@ _USER_PASSWORD_HASH_ALGORITHM_
 _Convert password to hashes process_
 
 **Migration of existing SHA-512 hashes**:
-&lt;p&gt;
+
 - Change USER_PASSWORD_HASH_ALGORITHM System Configurator entry to PBKDF2 or Argon2, reset cache.
 - User's password will be rehashed using the newly set algorithm when they login next time.
 

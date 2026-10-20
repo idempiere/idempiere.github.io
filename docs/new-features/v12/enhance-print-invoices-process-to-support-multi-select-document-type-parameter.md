@@ -9,7 +9,7 @@
 **Feature Ticket:** [IDEMPIERE-6698](https://idempiere.atlassian.net/browse/IDEMPIERE-6698)
 
 **Description**
-This enhancement adds multi-select capability to the Document Type parameter in the Print Invoices process, allowing users to print invoices for multiple document types in a single execution.​
+This enhancement adds multi-select capability to the Document Type parameter in the Print Invoices process, allowing users to print invoices for multiple document types in a single execution.
 
 Additionally, it supports the negate button to choose to print all invoices but the ones with the selected document type.
 

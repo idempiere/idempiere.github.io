@@ -22,12 +22,8 @@ So I just add a onInit method, which is called when the panel opens.
 And now, you can execute some code on initialization, eg:
 
 ```java
-
 public void onInit(ProcessParameterPanel parameterPanel) {
-```
    parameterPanel.getEditor("Parameter1").setValue("YourDesiredValue1");
    parameterPanel.getEditor("Parameter1").dynamicDisplay(); // if the parameter is mandatory, its label won't be colored in red :)
-```
 }
-
 ```

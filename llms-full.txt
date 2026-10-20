@@ -16111,11 +16111,13 @@ _Document Search Card Layout_
 
 - New Features in Search Definition Window:
 - Added `AD_Message_ID` and `AD_Style_ID` fields.
+
 **Note** These fields are visible when the search type is set to "Query" (`SearchType=Q`).
 
 - Enhanced Query type searches:
   - Query results can now be formatted using `Message Text` from `AD_Message` and styled with `CSS` definitions from `AD_Style`.
-**Formatting with `AD_Message**
+
+**Formatting with `AD_Message`**
 
 - Supports both HTML and Markdown, or a mix of both.
   - Use `<#md></#md>` tags to enclose Markdown.
@@ -16123,17 +16125,15 @@ _Document Search Card Layout_
   - Header text with `<#header></#header>`
   - Footer text with `<#footer></#footer>`
 - Flexible variable substitution options:
-```
- - Message format variables `{0}`, `{1}`, etc., and context variables like `@Name@`.
- - Special variables: `@WindowName@` for window name and `@Row@` for row number**CSS Styling with `AD_Style`**
-```
+  - Message format variables `{0}`, `{1}`, etc., and context variables like `@Name@`.
+  - Special variables: `@WindowName@` for window name and `@Row@` for row number
 
 **CSS Styling with `AD_Style`**
 
 Built from `AD_StyleLine` and uses scoped CSS instead of inline styles.
-```
- - Scoped CSS is not enabled by default in Firefox; to enable, use `about:config` and set `layout.css.at-scope.enabled` to `true`.
-```
+
+- Scoped CSS is not enabled by default in Firefox; to enable, use `about:config` and set `layout.css.at-scope.enabled` to `true`.
+
 **Additional Updates and Fixes:**
 Added a new JavaScript function: `idempiere.directZoom(keyColumnName, id)`.
 
@@ -16182,7 +16182,7 @@ Add markdown text support for html email template.
 **Feature Ticket:** [IDEMPIERE-6698](https://idempiere.atlassian.net/browse/IDEMPIERE-6698)
 
 **Description**
-This enhancement adds multi-select capability to the Document Type parameter in the Print Invoices process, allowing users to print invoices for multiple document types in a single execution.​
+This enhancement adds multi-select capability to the Document Type parameter in the Print Invoices process, allowing users to print invoices for multiple document types in a single execution.
 
 Additionally, it supports the negate button to choose to print all invoices but the ones with the selected document type.
 
@@ -16336,30 +16336,23 @@ the admin able to define the size of thumbnails rendering in grid.
     - Add client level AD_SysConfig ZK_THUMBNAIL_IMAGE_HEIGHT, default to 100
     - Add client level AD_SysConfig ZK_THUMBNAIL_IMAGE_WIDTH, default to 100
 
-**Example CSS Customization of No Image Place Holder (.no-image) and Hover Image (.fullsize-image) **
-```
-```
-.no-image &#123;
-```
-	background-image: url("../images/noimage.png");
-```
-	background-size: 22px;
- 	height: 22px;
- 	width: 100%;
- 	display: inline-block;
- 	background-position-x: center;
- 	background-repeat: no-repeat;
-&#125;
-```
+**Example CSS Customization of No Image Place Holder (.no-image) and Hover Image (.fullsize-image)**
 
-```
-.fullsize-image &#123;
-```
+```css
+.no-image {
+	background-image: url("../images/noimage.png");
+	background-size: 22px;
+	height: 22px;
+	width: 100%;
+	display: inline-block;
+	background-position-x: center;
+	background-repeat: no-repeat;
+}
+
+.fullsize-image {
 	height: 200px !important;
 	width: 300px !important;
-```
-&#125;
-```
+}
 ```
 
 **Example Usage**
@@ -16452,7 +16445,7 @@ _USER_PASSWORD_HASH_ALGORITHM_
 _Convert password to hashes process_
 
 **Migration of existing SHA-512 hashes**:
-&lt;p&gt;
+
 - Change USER_PASSWORD_HASH_ALGORITHM System Configurator entry to PBKDF2 or Argon2, reset cache.
 - User's password will be rehashed using the newly set algorithm when they login next time.
 
@@ -16482,14 +16475,10 @@ So I just add a onInit method, which is called when the panel opens.
 And now, you can execute some code on initialization, eg:
 
 ```java
-
 public void onInit(ProcessParameterPanel parameterPanel) {
-```
    parameterPanel.getEditor("Parameter1").setValue("YourDesiredValue1");
    parameterPanel.getEditor("Parameter1").dynamicDisplay(); // if the parameter is mandatory, its label won't be colored in red :)
-```
 }
-
 ```
 
 ---
