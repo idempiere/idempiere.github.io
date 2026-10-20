@@ -37,9 +37,9 @@ You need to be careful when assigning these restrictions as they apply also on I
 
 For example:
 
-- If you add a filter for the table `AD_User` like `AD_User.`AD_User_ID>10`0`, the table AD_User will filter correctly the records 0, 10 and 100
+- If you add a filter for the table `AD_User` like `AD_User.AD_User_ID>100`, the table AD_User will filter correctly the records 0, 10 and 100
 - **BUT** as a collateral issue the *Business Partner Info* will show just 5 business partners, those that **have** a user with ID > 100
-- To solve this, the correct way to add the filter and still show information about business partners without users will be:  `(AD_User.AD_User_ID IS NULL OR AD_User.`AD_User_ID>100`)`
+- To solve this, the correct way to add the filter and still show information about business partners without users will be:  `(AD_User.AD_User_ID IS NULL OR AD_User.AD_User_ID>100)`
 
 ## Use Cases
 ### Norbert
@@ -148,11 +148,8 @@ C_Order_ID IN (
   SELECT Record_ID
   FROM AD_ChangeLog
   WHERE AD_Session_ID=@#AD_Session_ID@
-```sql
    AND AD_Table_ID=(SELECT AD_Table_ID FROM AD_Table WHERE TableName='C_Order')
    AND EventChangeLog='I')
-```
-
 ```
 
 " SP.2. e-commerce - guest user - as guest user i would like access only to records i owned (you cant test it, we can do this here) "
@@ -217,7 +214,6 @@ Table = C_Invoice
 Role/User = Empty (everybody)
 Code =
 (C_Invoice.IsSOTrx='Y'
-```sql
   OR (C_Invoice.IsSOTrx='N'
         AND @#AD_Role_ID@=(SELECT AD_Role_ID FROM AD_Role WHERE Name='Finances')
         AND NOT EXISTS (SELECT 1 FROM C_InvoiceLine il WHERE il.C_Invoice_ID=C_Invoice.C_Invoice_ID
@@ -226,9 +222,7 @@ Code =
                                                  )
                        )
       )
-```
 )
-
 ```
 
 "Request type based access allow only certain users to have access to specific request types
