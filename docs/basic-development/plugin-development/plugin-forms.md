@@ -149,7 +149,7 @@ The `@Form` annotation allows you to declaratively register your form class. The
 
 ```java
 import org.idempiere.ui.zk.annotation.Form;
-import org.adempiere.webui.component.ADForm;
+import org.adempiere.webui.panel.ADForm;
 
 @Form(name = "org.compiere.apps.form.VAllocation")
 public class WAllocation extends Allocation 
@@ -196,10 +196,10 @@ Create a class that implements `IFormController` and `EventListener` to handle f
 
 **Example: `WMyFormController.java`**
 
-```java
+```java title="src/com/mycompany/webui/apps/form/WMyFormController.java"
 package com.mycompany.webui.apps.form;
 
-import org.adempiere.webui.component.ADForm;
+import org.adempiere.webui.panel.ADForm;
 import org.adempiere.webui.panel.IFormController;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
@@ -239,7 +239,7 @@ Create a class that implements `IFormFactory` to serve as the form loader for yo
 
 **Example: `MyFormFactory.java`**
 
-```java
+```java title="src/com/mycompany/webui/factory/MyFormFactory.java"
 package com.mycompany.webui.factory;
 
 import org.adempiere.webui.factory.IFormFactory;

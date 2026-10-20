@@ -53,7 +53,7 @@ Create a new class that implements the `ModelValidator` interface and all its re
 
 **Example: `MyModelValidator.java`**
 
-```java
+```java title="src/com/mycompany/validator/MyModelValidator.java"
 package com.mycompany.validator;
 
 import java.util.logging.Level;
@@ -61,6 +61,7 @@ import org.compiere.model.ModelValidator;
 import org.compiere.model.PO;
 import org.compiere.model.MClient;
 import org.compiere.model.MOrder;
+import org.compiere.model.ModelValidationEngine;
 import org.compiere.util.CLogger;
 
 public class MyModelValidator implements ModelValidator {
@@ -182,7 +183,7 @@ Create a factory class that implements `IModelValidatorFactory` to tell iDempier
 
 **Example: `MyModelValidatorFactory.java`**
 
-```java
+```java title="src/com/mycompany/validator/MyModelValidatorFactory.java"
 package com.mycompany.validator;
 
 import org.adempiere.base.IModelValidatorFactory;

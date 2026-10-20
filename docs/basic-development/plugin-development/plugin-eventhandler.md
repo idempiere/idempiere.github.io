@@ -70,7 +70,7 @@ Create a class that extends [`AbstractEventHandler`](https://github.com/idempier
 
 **Example: `MyEventHandler.java`**
 
-```java
+```java title="src/com/example/eventhandler/MyEventHandler.java"
 package com.example.eventhandler;
 
 import org.adempiere.base.event.AbstractEventHandler;
@@ -215,7 +215,7 @@ Other system-level events:
 :::
 
 :::tip Showing Error Messages
-Instead of throwing an exception, you can call `addErrorMessage(String message)` to display a user-friendly error message without a stack trace.
+Instead of throwing an exception, you can call `addErrorMessage(Event event, String errorMessage)` to display a user-friendly error message without a stack trace.
 :::
 
 ---
@@ -226,7 +226,11 @@ Instead of throwing an exception, you can call `addErrorMessage(String message)`
 
 Add the `@Component` annotation to your event handler class:
 
-```java
+```java title="src/com/example/eventhandler/MyEventHandler.java"
+package com.example.eventhandler;
+
+import org.adempiere.base.event.AbstractEventHandler;
+import org.adempiere.base.event.IEventManager;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
@@ -265,7 +269,7 @@ Create a directory named `OSGI-INF` in your project root (this is the OSGi conve
 
 Create a file `OSGI-INF/eventhandler.xml`:
 
-```xml
+```xml title="OSGI-INF/eventhandler.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" 
                name="com.example.eventhandler.MyEventHandler">
