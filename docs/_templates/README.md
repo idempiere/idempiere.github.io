@@ -11,4 +11,4 @@ Copy one of these files to start a new page. This folder starts with `_`, so Doc
 | `plugin.md` | A page in Available Plugins |
 | `migration-note.md` | A breaking change or removed API in a release |
 
-Replace every `<placeholder>`, delete sections that do not apply, and follow the [Documentation standards](https://docs.idempiere.org/docs/documentation-standards).
+Replace every `<placeholder>`, delete sections that do not apply, and follow the [Documentation standards](https://docs.idempiere.org/docs/documentation-standards). A new page must pass every automatic check before it can be merged. See [What blocks a merge](https://docs.idempiere.org/docs/documentation-standards#what-blocks-a-merge).

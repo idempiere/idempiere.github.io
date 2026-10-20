@@ -9,6 +9,10 @@ Add the section to docs/migration-notes/v<NN>/<file>.md, where <file> is:
 The version compare page treats each ## section as one note and shows its
 first prose paragraph as the summary. Keep that paragraph plain: no list,
 code, table or admonition before it.
+
+If the file does not exist yet for that release, give it the same frontmatter
+as the file in the previous version folder, plus applies_to: "<NN>" and
+last_reviewed: <YYYY-MM-DD>. A new page must have every required field.
 -->
 
 ## <What changed, in a few words>

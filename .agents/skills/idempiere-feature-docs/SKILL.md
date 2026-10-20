@@ -58,7 +58,7 @@ If the change alters existing behavior, removes something, or requires action fr
   - `technical-notes.md`: developers and administrators.
   - `functional-notes.md`: consultants and functional users.
   - `removed-deprecated-apis.md`: removed or deprecated APIs, for plugin developers.
-- If the file does not exist yet for that version, ask the user before creating it. Copy the front matter style from the same file in the previous version folder.
+- If the file does not exist yet for that version, ask the user before creating it. Copy the front matter style from the same file in the previous version folder, and add `applies_to: "<NN>"` and `last_reviewed: <today>`. Older files lack these two fields, and the checks fail a new page without them.
 - Add one `##` section per change. The version compare page treats each `##` section as one note.
 - Start the section with one plain prose paragraph that summarizes the change. The compare page shows that first paragraph as the summary and skips lists, code, tables and admonitions.
 - After the summary, explain who is affected and the required action, as numbered steps when order matters.
@@ -81,6 +81,7 @@ If the change alters existing behavior, removes something, or requires action fr
 3. Headings are sentence case, `##` or deeper, and short.
 4. Admonitions have an empty line after the opening and before the closing `:::`. No `:::caution`.
 5. No TODO comments left that the user has not seen.
+6. A new page must pass the pull request checks. Run `node scripts/check-frontmatter.js --strict <page>` and `npx --yes markdownlint-cli2@0.23.2 <page>`, and fix every problem they report.
 
 ## 7. Commit and pull request
 

@@ -1,7 +1,7 @@
 # Words to avoid: docs/documentation-standards.md#words-to-avoid
 extends: existence
 message: "Avoid '%s'. Say it plainly. See the Documentation standards, Words to avoid."
-level: warning
+level: error
 ignorecase: true
 tokens:
   - seamless(ly)?
