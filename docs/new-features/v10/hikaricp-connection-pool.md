@@ -17,11 +17,7 @@ You can find and configure options for the pool in the file hikaricp.properties,
 - $IDEMPIERE_HOME/Oracle/hikaricp.properties
 Depending on the database you're using.
 
-There are four properties that you cannot change:
-- JdbcUrl
-- Username
-- Password
-- driverClassName
+The `driverClassName` property cannot be changed: iDempiere always sets it. iDempiere takes `jdbcUrl`, `username` and `password` from the database connection settings. If you set one of them in the properties file, the value in the file is used instead.
 
 You can define or fine-tune the following properties in the properties file, the information below is copied from [HikariCP documentation](https://github.com/brettwooldridge/HikariCP#gear-configuration-knobs-baby), please refer there for up to date information.
 

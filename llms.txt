@@ -110,7 +110,7 @@ This file contains links to documentation sections following the llmstxt.org sta
 - [Delete Record with Confirmation Logic](https://docs.idempiere.org/docs/new-features/v10/delete-record-with-confirmation-logic.md): Delete Record with Confirmation Logic: a New Feature in iDempiere 10.
 - [Document Type for Production and Bank Statement](https://docs.idempiere.org/docs/new-features/v10/document-type-for-production-and-bank-statement.md): Document Type for Production and Bank Statement: a New Feature in iDempiere 10.
 - [Drill Assistant Enhancements](https://docs.idempiere.org/docs/new-features/v10/drill-assistant-enhancements.md): Drill Assistant Enhancements: a New Feature in iDempiere 10.
-- [Flat View Menu Tree Enhancements](https://docs.idempiere.org/docs/new-features/v10/flat-view-menu-tree-enhancements.md): Add ZKFLATVIEWMENUTREE system config, tenant level and default to N.
+- [Flat View Menu Tree Enhancements](https://docs.idempiere.org/docs/new-features/v10/flat-view-menu-tree-enhancements.md): Add ZK_FLAT_VIEW_MENU_TREE system config, tenant level and default to N.
 - [HikariCP Connection Pool](https://docs.idempiere.org/docs/new-features/v10/hikaricp-connection-pool.md): The connection pool library has been replaced with HikariCP
 - [Info Window Generate Invoice (manual)](https://docs.idempiere.org/docs/new-features/v10/info-window-generate-invoice-manual.md): Generate invoice (manual) migrated to info window
 - [Info Window Generate Shipment (manual)](https://docs.idempiere.org/docs/new-features/v10/info-window-generate-shipment-manual.md): Generate shipments (manual) migrated to info window

@@ -1,6 +1,6 @@
 # Flat View Menu Tree Enhancements
 
-> Add ZKFLATVIEWMENUTREE system config, tenant level and default to N.
+> Add ZK_FLAT_VIEW_MENU_TREE system config, tenant level and default to N.
 
 **Goal:** Functional
 
