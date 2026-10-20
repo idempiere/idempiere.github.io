@@ -1,7 +1,7 @@
 ---
 sidebar_position: 13
 sidebar_label: "Flat View Menu Tree Enhancements"
-description: "Add ZKFLATVIEWMENUTREE system config, tenant level and default to N."
+description: "Add ZK_FLAT_VIEW_MENU_TREE system config, tenant level and default to N."
 tags: [functional]
 ---
 # Flat View Menu Tree Enhancements

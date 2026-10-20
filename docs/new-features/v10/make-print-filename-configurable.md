@@ -18,7 +18,7 @@ This enhancement allows you to configure the human readable print file name inst
 
 The pattern  "SCO@DocumentNo@" generate pdf with human readable filename SCO20210406-001 instead InvoiceFormatGroup_5099627889056305320.pdf
 
-The solution supports default printformat item and translations ​ as well as standard iDempiere form documents and Jasper report-based documents.
+The solution supports default printformat item and translations  as well as standard iDempiere form documents and Jasper report-based documents.
 
 **Setup/Usage**
 
