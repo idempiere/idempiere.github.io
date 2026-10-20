@@ -15413,19 +15413,19 @@ On SSO configuration screen has SSO Provider field which list all SSO provider i
 ![SSOPluginDependencies](pathname:///img/new-features/v11/SSOPluginDependencies.png)
 
 #### Implement SSO Factory
-For implementing SSO factory, add new class implementing ISSOPrincipleFactory as below. you should add condition in which case the object of your SSO provider (ISSOPrincipalService) implementor should be returned. Mostly we used SSO Provider configured on sso configuration screen.
+For implementing SSO factory, add new class implementing ISSOPrincipalFactory as below. you should add condition in which case the object of your SSO provider (ISSOPrincipalService) implementor should be returned. Mostly we used SSO Provider configured on sso configuration screen.
 
 ```java
 import org.adempiere.base.sso.ISSOPrincipalService;
-import org.adempiere.base.sso.ISSOPrincipleFactory;
-import org.compiere.model.I_SSO_PrincipleConfig;
+import org.adempiere.base.sso.ISSOPrincipalFactory;
+import org.compiere.model.I_SSO_PrincipalConfig;
 
 import com.logilite.sso.test.principle.MSSOPrinciple;
 
-public class MySSOFactory implements ISSOPrincipleFactory
+public class MySSOFactory implements ISSOPrincipalFactory
 {
 	@Override
-	public ISSOPrincipalService getSSOPrincipleService(I_SSO_PrincipleConfig config)
+	public ISSOPrincipalService getSSOPrincipalService(I_SSO_PrincipalConfig config)
 	{
 		if ("MYSSOPROVIDER".equalsIgnoreCase(config.getSSO_Provider()))
 			return new MSSOPrinciple(config);
@@ -15445,7 +15445,7 @@ SSO Provider class implements ISSOPrincipalService interface.
 ###### *getAuthenticationToken*
 - Method has ***request*** (*HttpServletRequest*) , ***response*** (*HttpServletResponse*)  and ***redirectMode*** (*String*) as a parameter.
 - Method will send a request to SSO provider with the code & redirect URL to get the auth token & and save token in session.
-- Token is save in session with attribute name ***SSOPrinciple.SSO_PRINCIPLE_SESSION_NAME***.
+- Token is save in session with attribute name ***ISSOPrincipalService.SSO_PRINCIPAL_SESSION_TOKEN***.
 
 ###### *isAuthenticated*
 - Method has ***request*** (*HttpServletRequest*) , ***response*** (*HttpServletResponse*) as a parameter.
@@ -15469,7 +15469,7 @@ SSO Provider class implements ISSOPrincipalService interface.
 
 ##### *SSOUtils* Method:
 ###### *getRedirectedURL*
-- Method take ***redirectMode*** (*String*) , ***config*** (*I_SSO_PrincipleConfig*) as a parameter.
+- Method take ***redirectMode*** (*String*) , ***config*** (*I_SSO_PrincipalConfig*) as a parameter.
 - Method will return  ***Redirect URIs*** (*String*) from SSO Provider configured (***config***) as per ***redirectMode*** .
 - We have Redirect Mode as below.
 - # ***SSOUtils*.*SSO_MODE_OSGI*** - Apache Felix Web Console Bundles
@@ -15485,20 +15485,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.adempiere.base.sso.ISSOPrincipalService;
 import org.adempiere.base.sso.SSOUtils;
-import org.compiere.model.I_SSO_PrincipleConfig;
+import org.compiere.model.I_SSO_PrincipalConfig;
 import org.compiere.model.MSysConfig;
 import org.compiere.util.Language;
 
 /**
  * In core BridgeFilter, AdempiereMonitorFilter, SSOWebuiFilter filter
- * use ISSOPrinciple methods to log-in/authenticated users using the SSO provider.
+ * use ISSOPrincipalService methods to log-in/authenticated users using the SSO provider.
  */
 public class MSSOPrinciple implements ISSOPrincipalService
 {
 
-	private I_SSO_PrincipleConfig config;
+	private I_SSO_PrincipalConfig config;
 
-	public MSSOPrinciple(I_SSO_PrincipleConfig ssoConfig)
+	public MSSOPrinciple(I_SSO_PrincipalConfig ssoConfig)
 	{
 		setConfig(ssoConfig);
 	}
@@ -15518,7 +15518,7 @@ public class MSSOPrinciple implements ISSOPrincipalService
 	 * if {@code #hasAuthenticationCode(HttpServletRequest, HttpServletResponse)} returns true, then
 	 * request is sent to the SSO provider with the code & response redirect URL to get the
 	 * authenticated user token & and saved token in the session attribute
-	 * {@link #ISSOPrinciple.SSO_PRINCIPLE_SESSION_NAME}
+	 * {@link ISSOPrincipalService#SSO_PRINCIPAL_SESSION_TOKEN}
 	 */
 	@Override
 	public void getAuthenticationToken(HttpServletRequest request, HttpServletResponse response, String redirectMode) throws Throwable
@@ -15533,12 +15533,12 @@ public class MSSOPrinciple implements ISSOPrincipalService
 		String sso_Redirect_URL = SSOUtils.getRedirectedURL(redirectMode, getConfig());
 		// SSO authentication token code
 
-		// request.getSession().setAttribute(ISSOPrinciple.SSO_PRINCIPLE_SESSION_NAME, token);
+		// request.getSession().setAttribute(ISSOPrincipalService.SSO_PRINCIPAL_SESSION_TOKEN, token);
 	}
 
 	/**
 	 * if {@code #hasAuthenticationCode(HttpServletRequest, HttpServletResponse)} returns false,
-	 * then current session attribute {@link #ISSOPrinciple.SSO_PRINCIPLE_SESSION_NAME}
+	 * then current session attribute {@link ISSOPrincipalService#SSO_PRINCIPAL_SESSION_TOKEN}
 	 * have a token or not.
 	 */
 	@Override
@@ -15590,12 +15590,12 @@ public class MSSOPrinciple implements ISSOPrincipalService
 		return null;
 	}
 
-	public I_SSO_PrincipleConfig getConfig()
+	public I_SSO_PrincipalConfig getConfig()
 	{
 		return config;
 	}
 
-	public void setConfig(I_SSO_PrincipleConfig config)
+	public void setConfig(I_SSO_PrincipalConfig config)
 	{
 		this.config = config;
 	}
@@ -15628,11 +15628,11 @@ public class MSSOPrinciple implements ISSOPrincipalService
 
 - Select **Services** section
 - **Provide** **Services** > click **Add**
-- Search **ISSOPrincipleFactory**
+- Search **ISSOPrincipalFactory**
 - Click **OK**
 
-![Service ISSOPrincipleFactory](pathname:///img/new-features/v11/Service_ISSOPrincipleFactory.png)
-![Services ISSOPrincipleFactory Img](pathname:///img/new-features/v11/Services_ISSOPrincipleFactory_Img.png)
+![Service ISSOPrincipalFactory](pathname:///img/new-features/v11/Service_ISSOPrincipleFactory.png)
+![Services ISSOPrincipalFactory Img](pathname:///img/new-features/v11/Services_ISSOPrincipleFactory_Img.png)
 
 - Component Definition **myssofactory.xml** look as below
 
@@ -15642,7 +15642,7 @@ public class MSSOPrinciple implements ISSOPrincipalService
    <implementation class="com.logilite.sso.test.factory.MySSOFactory"/>
    <property name="service.ranking" type="Integer" value="10"/>
    <service>
-      <provide interface="org.adempiere.base.sso.ISSOPrincipleFactory"/>
+      <provide interface="org.adempiere.base.sso.ISSOPrincipalFactory"/>
    </service>
 </scr:component>
 ```
