@@ -22,7 +22,7 @@ Before you start, review the following tutorials:
 
 ## Full example code
 
-```java
+```java title="src/org/adempiere/webui/dashboard/DPTest.java"
 package org.adempiere.webui.dashboard;
 
 import java.util.HashMap;
