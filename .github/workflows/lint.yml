@@ -86,9 +86,14 @@ jobs:
           FILES: ${{ needs.changed.outputs.changed }}
         run: |
           mapfile -t pages <<< "$FILES"
-          npx --yes markdownlint-cli2@0.23.2 "${pages[@]}" 2>&1 \
-            | sed -nE 's/^([^: ]+):([0-9]+)(:[0-9]+)? error (.*)$/::warning file=\1,line=\2,title=markdownlint::\4/p' \
-            || true
+          status=0
+          out=$(npx --yes markdownlint-cli2@0.23.2 "${pages[@]}" 2>&1) || status=$?
+          printf '%s\n' "$out" \
+            | sed -nE 's/^([^: ]+):([0-9]+)(:[0-9]+)? error (.*)$/::warning file=\1,line=\2,title=markdownlint::\4/p'
+          # Lint findings also exit non-zero. Without a summary, markdownlint did not run.
+          if [[ $status -ne 0 && $out != *'Summary:'* ]]; then
+            echo "::warning title=markdownlint::markdownlint did not complete (exit $status)"
+          fi
 
   frontmatter:
     name: Frontmatter
