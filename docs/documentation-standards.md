@@ -268,7 +268,7 @@ Each pull request runs these checks on the pages it changes. Findings show up as
 
 - **markdownlint** checks heading levels, list style and trailing spaces. Configuration: `.markdownlint-cli2.jsonc`.
 - **Vale** checks the words to avoid, em dashes and sentence-case headings. Rules: `styles/iDempiere/`.
-- **Frontmatter check** reports missing or invalid frontmatter fields. Run it locally with `npm run lint:frontmatter`.
+- **Frontmatter check** reports missing or invalid frontmatter fields. Run it locally with `npm run lint:frontmatter`. For a new page, run `node scripts/check-frontmatter.js --strict <page>`.
 - **Link check** runs once a week on external links and reports broken ones.
 
 ### What blocks a merge
