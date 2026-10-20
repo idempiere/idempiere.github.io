@@ -31,7 +31,7 @@ This feature was created in order to simplify the task of reading process parame
    @Parameter
    private String     p_IsSelfService = null;
    @Parameter
-   private Timestamp  p_DateOrdered_From = null;
+   private Timestamp  p_DateOrdered = null;
    @Parameter
    private Timestamp  p_DateOrdered_To = null;
    @Parameter
@@ -82,9 +82,11 @@ This feature was created in order to simplify the task of reading process parame
  }  //  prepare
 ```
 
+For a range parameter such as `DateOrdered`, the field for the "from" value is named after the parameter (`p_DateOrdered`) and the field for the "to" value adds the suffix `_To` (`p_DateOrdered_To`). The "to" field is filled only when the field for the "from" value exists. A field named `p_DateOrdered_From` is not filled.
+
 In case the class attribute name doesn't match the parameter name, we can use the name annotation attribute as follows:
 
-```
+```java
    @Parameter(name = "declaredName")
    private String parameter = null;
 ```

@@ -79,7 +79,8 @@ public class MyFactory extends MappedModelFactory {
 ```
 
 The approach above is not 100% safe as Core.getMappedModelFactory() can return null if your bundle get activated before the activation of the IMappedModelFactory service.
-The better way is to use @Component, @Reference and @Activator instead.
+The better way is to use the `@Component`, `@Reference` and `@Activate` annotations instead:
+
 ```java
  @Component(immediate = true)
  public class MyActivator implements BundleActivator {
