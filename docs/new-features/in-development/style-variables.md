@@ -96,7 +96,7 @@ The same style also colours the **Request Type** column in the grid view.
 
 ## Migration impact
 
-Existing styles keep working. A style with a single `@`, or with an odd number of `@`, is used as written. Text between two `@` that does not match a column is left as it is.
+A style with a single `@`, or with an odd number of `@`, is used as written. Text between two `@` that does not match a column is left as it is. Text between two `@` that matches a column is now replaced with the value of that column, even if it was meant literally. For example, `content: "@Status@"` shows the value of the `Status` column when the record has one.
 
 ## Related tickets
 
