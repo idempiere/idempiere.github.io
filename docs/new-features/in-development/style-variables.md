@@ -8,7 +8,7 @@ applies_to: ">=14"
 last_reviewed: 2026-10-21
 ---
 
-# Variables in CSS Style Lines
+# Variables in CSS style lines
 
 :::warning Not Yet in Stable Release
 
@@ -43,7 +43,7 @@ The Inline Style of a Style Line can now contain variables. A variable is replac
 - **No nesting.** A variable name cannot contain `@`.
 - **A variable that cannot be resolved is kept as written**, for example `@Missing@`. The browser ignores the invalid value.
 - **Only inline styles are parsed.** CSS blocks such as `@media print { ... }` are not changed.
-- **Class prefixes.** The `@sclass=` and `@zclass=` prefix is not treated as a variable, and it is matched without regard to upper or lower case. The class name after the prefix can contain variables, for example `@sclass=status-@Status@`.
+- **Class prefixes.** The `@sclass=` and `@zclass=` prefix is not treated as a variable, and it is matched without regard to upper or lower case. The prefix is not counted in the rule above about an odd number of `@`. The class name after the prefix can contain variables, for example `@sclass=status-@Status@`, which has one pair of `@` after the prefix.
 - **SQL is not supported.** To use a calculated value, create a virtual column with a SQL Column and reference it as `@ColumnName@`.
 
 ### Where the values come from
@@ -51,10 +51,12 @@ The Inline Style of a Style Line can now contain variables. A variable is replac
 | Style used for | Variables are read from |
 | --- | --- |
 | Field Style and Label Style in a window | The current record |
-| Row style in the grid view | The row <!-- TODO: verify - grid view confirmed for R_RequestType_ID. Not tried: an FK column whose name differs from its table, such as SalesRep_ID (AD_User). By the code, the table is taken from the column name in the grid, so the raw id may be substituted instead of the referenced value. --> |
+| Row style in the grid view | The row |
 | Info window columns | The row of the Info window |
 | Labels | The Label record itself |
 | HTML report output | The data of the report row |
+
+In the grid view, the table of `@FK_ID.Column@` is taken from the column name. This works when the foreign key column is named after its table, such as `R_RequestType_ID` for the `R_RequestType` table. For a column with a different name, such as `SalesRep_ID` for the `AD_User` table, the id is substituted instead of the referenced value, for example `101` instead of "GardenAdmin".
 
 ## How to set it up
 
