@@ -96,7 +96,7 @@ The same style also colours the **Request Type** column in the grid view.
 
 ## Migration impact
 
-Styles that contain a single `@` keep working. If an existing Inline Style contains two or more `@` characters that were not meant as a variable, replace each of them with `@@`. Text between two `@` that does not match a column is left as it is.
+Existing styles keep working. A style with a single `@`, or with an odd number of `@`, is used as written. Text between two `@` that does not match a column is left as it is.
 
 ## Related tickets
 
