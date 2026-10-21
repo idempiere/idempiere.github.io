@@ -17,7 +17,7 @@ This feature is not yet part of a stable iDempiere release and may change.
 :::
 
 **Goal:** Usability  
-**Developer:** [Peter Takacs](https://github.com/PeterTakacs300) <!-- TODO: verify - company name and link for the developer line -->  
+**Developer:** [Peter Takacs](https://github.com/PeterTakacs300)  
 **Feature Ticket:** [IDEMPIERE-7163](https://idempiere.atlassian.net/browse/IDEMPIERE-7163)  
 **Version:** iDempiere 14
 
@@ -51,7 +51,7 @@ The Inline Style of a Style Line can now contain variables. A variable is replac
 | Style used for | Variables are read from |
 | --- | --- |
 | Field Style and Label Style in a window | The current record |
-| Row style in the grid view | The row <!-- TODO: verify - in the grid view the table of @FK_ID.Column@ is derived from the column name, so it works for R_RequestType_ID but not for columns such as SalesRep_ID. Confirm in the UI. --> |
+| Row style in the grid view | The row <!-- TODO: verify - grid view confirmed for R_RequestType_ID. Not tried: an FK column whose name differs from its table, such as SalesRep_ID (AD_User). By the code, the table is taken from the column name in the grid, so the raw id may be substituted instead of the referenced value. --> |
 | Info window columns | The row of the Info window |
 | Labels | The Label record itself |
 | HTML report output | The data of the report row |
@@ -61,8 +61,8 @@ The Inline Style of a Style Line can now contain variables. A variable is replac
 This example colours a field of a Request by its Request Type. The Request Type window has the fields **Header Color** and **Content Color**, and a Request points to its Request Type through the **Request Type** field (`R_RequestType_ID`).
 
 1. Open the Request Type window.
-2. Select a Request Type and fill in **Header Color** with `#2E9E6B` and **Content Color** with `#DCF2E6`. <!-- TODO: verify - accepted format of these two fields and whether GardenWorld has request types with colours -->
-3. Open the CSS Style window and create a CSS Style named "Request colours".
+2. Select the "Request for Quotation" Request Type and fill in **Header Color** with `#2E9E6B` and **Content Color** with `#FFFFFF`.
+3. Open the CSS Style window and create a CSS Style named "R_RequestType.HeaderColor".
 4. Go to the CSS Style window => Style Line subtab and add a line with this Inline Style:
 
    ```css
@@ -70,11 +70,19 @@ This example colours a field of a Request by its Request Type. The Request Type 
    ```
 
 5. Open the Window, Tab & Field window => Request window => Tab => Field subtab.
-6. Select the field that should be coloured and set **Field Style** to "Request colours".
+6. Select the **Request Type** field and set **Field Style** to "R_RequestType.HeaderColor".
 
-A Request with the Request Type above now shows the field with a green background and mint text. A Request without a Request Type keeps the default look, because the variables stay unresolved and the browser ignores the invalid values.
+A Request with the "Request for Quotation" Request Type now shows the **Request Type** field with a green background and white text. A Request without a Request Type keeps the default look, because the variables stay unresolved and the browser ignores the invalid values.
 
-<!-- TODO: screenshot of the Style Line subtab with the Inline Style and of the coloured Request field -->
+![Request Type window with Header Color and Content Color filled in](/img/docs/new-features/StyleVariables_RequestTypeColors.png)
+
+![CSS Style window with the Inline Style in the Style Line subtab](/img/docs/new-features/StyleVariables_StyleLine.png)
+
+![Request window with the Request Type field coloured by its Request Type](/img/docs/new-features/StyleVariables_RequestColoredField.png)
+
+The same style also colours the **Request Type** column in the grid view.
+
+![Request grid with the Request Type column coloured by its Request Type](/img/docs/new-features/StyleVariables_RequestGrid.png)
 
 ## Technical notes
 
