@@ -46,6 +46,6 @@ Every upgrade runs Synchronize Terminology. A translation typed on a centrally m
 ## Other tasks
 
 - **Override a message for one Tenant:** see [Messages at Client Level](/docs/new-features/v9/messages-at-client-level).
-- **Find untranslated texts:** filter a translation tab on Translated = No, or run the [coverage query](/docs/translation-localization/how-translation-works#measure-the-coverage-of-a-language).
+- **Find untranslated texts:** filter a translation tab on Translated = No, or run the [coverage query](/docs/translation-localization/how-translation-works#measure-the-coverage-of-a-language). It counts messages, elements, fields and menus; add other `_Trl` tables the same way.
 - **See your changes:** run Cache Reset, then log in again.
 - **Plug-in texts:** translate them in the same windows. To deliver them, see [Ship translations](/docs/translation-localization/ship-translations).

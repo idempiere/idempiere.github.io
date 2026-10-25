@@ -12,7 +12,7 @@ What happens in the database when you translate. Applies to iDempiere 11 and lat
 :::tip[In short]
 
 - Each translatable table has a `_Trl` twin with one row per language.
-- `IsTranslated='N'` means the row still holds the English copy.
+- `IsTranslated` is a status flag. `N` marks a row for review: often it still holds the English copy, but it can also hold an older translation.
 - Editing English text, Synchronize Terminology and Synchronize Doc Translation can overwrite translations.
 
 :::

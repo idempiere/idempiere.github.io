@@ -1,6 +1,6 @@
 ---
 sidebar_position: 50
-description: Ship translated texts for AD_Message, AD_Element, R_MailText and other _Trl tables with Translation XML files, 2Pack or migration scripts.
+description: Ship translated texts for AD_Message, AD_Element, R_MailText and other _Trl tables with translation XML files, 2Pack or migration scripts.
 tags: [development]
 applies_to: ">=11"
 last_reviewed: 2026-10-25
@@ -11,7 +11,7 @@ How to move translated texts to other iDempiere databases, for a plug-in, a lang
 
 :::tip[In short]
 
-- Use Translation XML files, the files of the Translation Import/Export process. The import only updates existing rows and reports what it did not find.
+- Use translation XML files, the files of the Translation Import/Export process. The import only updates existing rows and reports what it did not find.
 - Core records: match by ID. Plug-in and tenant records: match by UU.
 - Log Migration Scripts does not record translations.
 
@@ -22,7 +22,7 @@ How to move translated texts to other iDempiere databases, for a plug-in, a lang
 | | Core | Plug-in |
 | --- | --- | --- |
 | Records | IDs up to 999999, same in every database | IDs differ per database |
-| Match by | `id` | `uuid` of the base record |
+| Match by | `id` or `uuid` | `uuid` of the base record |
 | Goes to | The [language pack](/docs/translation-localization#languages-and-coverage) of the language | The plug-in's own XML files or 2Pack |
 
 ## Choose a format
@@ -33,7 +33,7 @@ How to move translated texts to other iDempiere databases, for a plug-in, a lang
 | 2Pack | A plug-in shipping its records with their translations | Yes | The 2Pack value, `N` if missing |
 | Migration script | A plug-in that already ships SQL | If you write `INSERT` | What you write |
 
-## Ship with Translation XML files
+## Ship with translation files
 
 ### Export a translation file
 
@@ -43,24 +43,24 @@ How to move translated texts to other iDempiere databases, for a plug-in, a lang
 
 Centrally maintained fields are not exported. Their texts come from the element.
 
-### Translation XML file format
+### Translation file format
 
-The values below are samples. Replace the ID, UU and texts with your own.
+Replace every `YOUR_...` value before you import the file.
 
 ```xml title="AD_Message_Trl_sk_SK.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <idempiereTrl language="sk_SK" table="AD_Message">
-  <row id="200123" trl="Y">
-    <value column="MsgText" original="Invalid code.">Neplatný kód.</value>
+  <row id="YOUR_AD_MESSAGE_ID" trl="Y">
+    <value column="MsgText" original="YOUR_ENGLISH_TEXT">YOUR_TRANSLATION</value>
   </row>
-  <row uuid="3f6c1d2e-8a4b-4c7d-9e10-5b2a7c8d9e0f" trl="N">
-    <value column="MsgText" original="Your password has been reset.">Vaše heslo bolo obnovené.</value>
+  <row uuid="YOUR_AD_MESSAGE_UU" trl="N">
+    <value column="MsgText" original="YOUR_ENGLISH_TEXT">YOUR_TRANSLATION</value>
   </row>
 </idempiereTrl>
 ```
 
 - `table` is the base table.
-- `uuid` is the UU of the base record (`AD_Message_UU`), not of the `_Trl` row.
+- `uuid` is the UU of the base record (`AD_Message_UU`), not of the `_Trl` row. When a row has `uuid`, the import uses it and ignores `id`.
 - `trl` sets `IsTranslated`. Missing means `Y`.
 - `original` is ignored on import.
 
@@ -79,9 +79,7 @@ Translations travel only when `2PACK_HANDLE_TRANSLATIONS` is `Y` on both systems
 
 | Key | Default | Level | What it does |
 | --- | --- | --- | --- |
-| `2PACK_HANDLE_TRANSLATIONS` | `N` (set in 2009, not verified against the current seed database) | System | Packs `_Trl` rows with their parent record |
-
-<!-- TODO: verify - the default N comes from the 2009 migration script 557_FR1786994.sql. Check the current seed database. -->
+| `2PACK_HANDLE_TRANSLATIONS` | `N` | System | Packs `_Trl` rows with their parent record |
 
 - Translations sit inside their parent element. A 2Pack with only `_Trl` rows fails.
 - Pack In skips languages that are not system languages on the target.
@@ -95,7 +93,7 @@ Write it by hand. Match by a key that is the same everywhere. PostgreSQL and Ora
 ```sql title="migration/iD14/postgresql/202610251200_IDEMPIERE-NNNN_sk_SK.sql"
 SELECT register_migration_script('202610251200_IDEMPIERE-NNNN_sk_SK.sql') FROM dual;
 
-UPDATE AD_Message_Trl SET MsgText='Vaše heslo bolo obnovené. Prihláste sa novým heslom.', IsTranslated='Y',
+UPDATE AD_Message_Trl SET MsgText='YOUR_TRANSLATION', IsTranslated='Y',
   Updated=TO_TIMESTAMP('2026-10-25 12:00:00','YYYY-MM-DD HH24:MI:SS'), UpdatedBy=100
 WHERE AD_Message_ID=(SELECT AD_Message_ID FROM AD_Message WHERE Value='PasswordResetSuccess')
   AND AD_Language='sk_SK' AND AD_Client_ID=0

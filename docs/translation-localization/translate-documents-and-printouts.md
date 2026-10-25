@@ -11,7 +11,7 @@ How to send invoices, orders and mails in the customer's language. Applies to iD
 
 :::tip[In short]
 
-- Set Language on the Business Partner. Documents print in that language.
+- Set Language on the Business Partner. Documents print in that language. For bulk invoice printing, also turn on Multi Lingual Documents.
 - Built-in print formats translate labels and data for you.
 - Jasper reports get the language as a parameter. The report does the rest.
 
@@ -21,10 +21,10 @@ How to send invoices, orders and mails in the customer's language. Applies to iD
 
 | Printout | Language |
 | --- | --- |
-| A document (order, invoice, shipment, payment, dunning letter) | The Business Partner's Language. If empty, the Tenant's language. |
+| One document printed or emailed from its window (order, invoice, shipment, payment and others) | The Business Partner's Language, also with Multi Lingual Documents off. If empty, the Tenant's language. |
+| Dunning letters (Print Dunning Letters) | The Business Partner's Language. If empty, the Tenant's language. |
+| Invoices printed in bulk (Print Invoices) | The Business Partner's Language only when the Tenant has Multi Lingual Documents on. Otherwise the user's login language. |
 | A report from the menu | The user's login language |
-
-The Business Partner language is used even when the Tenant has Multi Lingual Documents off.
 
 ## What to translate
 
@@ -43,7 +43,7 @@ Do not run Synchronize Doc Translation after translating business data. See [Pro
 - **Data:** a print format on a view such as `C_Invoice_Header_v` reads the translated view `C_Invoice_Header_vt`. Core has these views for order, invoice, shipment and dunning headers. For your own views, see [Translated views](/docs/translation-localization/how-translation-works#translated-views).
 - **File name:** can be translated. See [Make print filename configurable](/docs/new-features/v10/make-print-filename-configurable).
 
-## Jasper reports
+## JasperReports
 
 iDempiere passes the language. The report handles labels and data itself.
 
@@ -72,7 +72,7 @@ Labels and `CURRENT_LANG` only work when iDempiere runs the report. To preview i
 
 ## Test a translated document
 
-Set Language on a test Business Partner, then print and email a document for it.
+Set Language on a test Business Partner, then print and email a document for it, and run Print Invoices for it. Repeat with the Business Partner's Language empty.
 
 ## Known issues
 

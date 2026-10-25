@@ -20,7 +20,7 @@ The steps to bring a new language and country to a customer, in order. Applies t
 
 ## Decide first
 
-- **Base language:** keep `en_US`. Core upgrades add English texts, so another base language falls behind. See [Base Language Flexible](/docs/new-features/v1.0/base-language-flexible).
+- **Base language:** keep `en_US`. Core migration scripts write English texts into the base tables, so with another base language you must re-translate them after each upgrade. If no user should see English, use a language that is not a login language as base ([discussion](https://mattermost.idempiere.org/idempiere/pl/qqux5t3msb8nipms1kat63dmnc)). See [Base Language Flexible](/docs/new-features/v1.0/base-language-flexible).
 - **Multi Lingual Documents** (Tenant window): turn it on if the customer works or sends documents in more than one language. See [When rows are updated](/docs/translation-localization/how-translation-works#when-rows-are-updated).
 - **Language pack:** check [Languages and coverage](/docs/translation-localization#languages-and-coverage).
 
@@ -28,7 +28,7 @@ The steps to bring a new language and country to a customer, in order. Applies t
 
 1. Language window: select System Language and Login Locale. Check the date and number formats.
 2. Run Language Maintenance with Add.
-3. Import the pack with the Translation Import/Export process, for the "System" Tenant. See [Ship translations](/docs/translation-localization/ship-translations#ship-with-translation-xml-files).
+3. Import the pack with the Translation Import/Export process, for the "System" Tenant. See [Ship translations](/docs/translation-localization/ship-translations#ship-with-translation-files).
 4. Run Synchronize Terminology, then Cache Reset.
 
 ## Set up the Tenant
@@ -56,6 +56,6 @@ New core texts arrive in English, and changed English texts do not flag their tr
 | Formats | Date, time and decimal format per language | Set them in the Language window |
 | Documents | Print formats, document types | Legal texts and numbering |
 
-Country localizations known so far (the list is not complete): [Brazil](https://github.com/idempierelbr/idempierelbr), [Colombia](https://github.com/globalqss/globalqss-idempiere-lco).
+Examples of country localizations (the list is not complete): [Brazil](https://github.com/idempierelbr/idempierelbr), [Colombia](https://github.com/globalqss/globalqss-idempiere-lco).
 
 <!-- TODO: verify - other country localizations, and what each one covers. -->
