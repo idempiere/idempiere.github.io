@@ -158,3 +158,5 @@ SELECT * FROM C_BPartner WHERE [your_condition];AD_User>R_ContactInterest;C_BPar
 For implementation, refer to [GenericPOElementHandler](https://github.com/idempiere/idempiere/blob/master/org.adempiere.pipo.handlers/src/org/adempiere/pipo2/handler/GenericPOElementHandler.java).`exportDetail()` and `.create()` methods.
 
 ---
+
+See also: [Ship translations](/docs/translation-localization/ship-translations#option-2-2pack), for how a 2Pack carries translations.
