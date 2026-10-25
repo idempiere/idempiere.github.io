@@ -13,7 +13,7 @@ Start here to run iDempiere in another language or country. Applies to iDempiere
 
 - Core ships English only. Other languages come from community language packs.
 - Screens show the user's login language. Documents print in the Business Partner's language.
-- Translate texts in iDempiere, move them with Translation Import/Export.
+- Translate texts in iDempiere, move them as XML files with the Translation Import/Export process.
 
 :::
 
@@ -21,18 +21,18 @@ Start here to run iDempiere in another language or country. Applies to iDempiere
 
 | I want to | Page |
 | --- | --- |
-| Bring a new language to a customer | [Roll out a language](./roll-out-a-language.md) |
-| Set up accounting, taxes and addresses for a country | [Localization checklist](./roll-out-a-language.md#localization-checklist) |
-| Translate windows, fields, menus and messages | [Translate the user interface](./translate-the-user-interface.md) |
-| Print invoices and orders in the customer's language | [Translate documents and printouts](./translate-documents-and-printouts.md) |
-| Understand the `_Trl` tables | [How translation works](./how-translation-works.md) |
-| Deliver translations to other systems | [Ship translations](./ship-translations.md) |
+| Bring a new language to a customer | [Roll out a language](/docs/translation-localization/roll-out-a-language) |
+| Set up accounting, taxes and addresses for a country | [Localization checklist](/docs/translation-localization/roll-out-a-language#localization-checklist) |
+| Translate windows, fields, menus and messages | [Translate the user interface](/docs/translation-localization/translate-the-user-interface) |
+| Print invoices and orders in the customer's language | [Translate documents and printouts](/docs/translation-localization/translate-documents-and-printouts) |
+| Understand the `_Trl` tables | [How translation works](/docs/translation-localization/how-translation-works) |
+| Deliver translations to other systems | [Ship translations](/docs/translation-localization/ship-translations) |
 
 ## Languages and coverage
 
-Each language pack lives in its own repository. "Updated" is the last change to the repository, "Version" the iDempiere release named in the files. Checked in October 2026.
+Each language pack lives in its own repository. "Updated" is the last change to the repository, "iDempiere release" the release named in the files. Checked in October 2026. The list is not complete: languages listed only on the old wiki are missing.
 
-| Language | Repository | Updated | Version |
+| Language | Repository | Updated | iDempiere release |
 | --- | --- | --- | --- |
 | German (`de_DE`, `de_CH`) | [bxservice/tbayen.translations](https://github.com/bxservice/tbayen.translations) | 2026-08 | 14 |
 | Spanish, Colombia (`es_CO`) | [globalqss/globalqss-idempiere-lco](https://github.com/globalqss/globalqss-idempiere-lco) | 2026-06 | 13 |
@@ -49,9 +49,9 @@ Each language pack lives in its own repository. "Updated" is the last change to 
 
 <!-- TODO: verify - Hungarian (hu_HU) and other languages listed on the old wiki Translations page, which could not be read. -->
 
-An older pack still installs. Records added since then stay in English. To measure a language in your database, see [Measure the coverage](./how-translation-works.md#measure-the-coverage-of-a-language).
+An older pack still installs. Records added since then stay in English. To measure a language in your database, see [Measure the coverage](/docs/translation-localization/how-translation-works#measure-the-coverage-of-a-language).
 
-To improve a pack, send a pull request to its repository. Core does not take translations. The German pack was updated in 2026 with AI-translated texts ([pull request 10](https://github.com/bxservice/tbayen.translations/pull/10)); see [Translate with a tool or AI](./ship-translations.md#translate-with-a-tool-or-ai).
+To improve a pack, send a pull request to its repository. Core does not take translations. The German pack was updated in 2026 with AI-translated texts ([pull request 10](https://github.com/bxservice/tbayen.translations/pull/10)); see [Translate with a tool or AI](/docs/translation-localization/ship-translations#translate-with-a-tool-or-ai).
 
 ## Feature history
 

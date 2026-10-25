@@ -7,7 +7,7 @@ last_reviewed: 2026-10-25
 ---
 # Translate documents and printouts
 
-How to send invoices, orders and mails in the customer's language. Applies to iDempiere 11 and later.
+How to send invoices, orders and mails in the customer's language. Applies to iDempiere 11 and later. Checked in October 2026.
 
 :::tip[In short]
 
@@ -24,7 +24,7 @@ How to send invoices, orders and mails in the customer's language. Applies to iD
 | A document (order, invoice, shipment, payment, dunning letter) | The Business Partner's Language. If empty, the Tenant's language. |
 | A report from the menu | The user's login language |
 
-This works even with Multi Lingual Documents off.
+The Business Partner language is used even when the Tenant has Multi Lingual Documents off.
 
 ## What to translate
 
@@ -35,19 +35,19 @@ This works even with Multi Lingual Documents off.
 | Mail text | Mail Template => Translation |
 | Business data | Translation tab of each record, per Tenant: Document Type, Product, Unit of Measure, Payment Term, Tax, Charge, Greeting, Dunning Level |
 
-Do not run Synchronize Doc Translation after translating business data. See [Processes](./how-translation-works.md#processes).
+Do not run Synchronize Doc Translation after translating business data. See [Processes](/docs/translation-localization/how-translation-works#processes).
 
 ## Built-in print formats
 
 - **Labels:** Synchronize Terminology fills them from the element translations. To refresh one print format, run [Synchronize Print Format Items](/docs/new-features/v10/synchronize-print-format-items).
-- **Data:** a print format on a view such as `C_Invoice_Header_v` reads the translated view `C_Invoice_Header_vt`. Core has these views for order, invoice, shipment and dunning headers. For your own views, see [Translated views](./how-translation-works.md#translated-views).
+- **Data:** a print format on a view such as `C_Invoice_Header_v` reads the translated view `C_Invoice_Header_vt`. Core has these views for order, invoice, shipment and dunning headers. For your own views, see [Translated views](/docs/translation-localization/how-translation-works#translated-views).
 - **File name:** can be translated. See [Make print filename configurable](/docs/new-features/v10/make-print-filename-configurable).
 
 ## Jasper reports
 
 iDempiere passes the language. The report handles labels and data itself.
 
-- **Language:** documents use the Business Partner rule above. Other reports use the login language, unless the process has a parameter named `CURRENT_LANG` or `AD_Language`. From iDempiere 12, the report viewer also offers a language drop-down for Jasper documents.
+- **Language:** documents use the Business Partner's Language, otherwise the Tenant's language. Other reports use the login language, unless the process has a parameter named `CURRENT_LANG` or `AD_Language`. From iDempiere 12, the report viewer also offers a language drop-down for Jasper documents.
 - **Parameters:** `CURRENT_LANG` (for example `de_DE`) and `REPORT_LOCALE` (date and number formats, follows `CURRENT_LANG`).
 - **Labels:** `$R{key}` or `str("key")` is looked up in this order:
   1. the report's properties file, country first (`name_sv_SE.properties`), then language (`name_sv.properties`)
@@ -55,7 +55,7 @@ iDempiere passes the language. The report handles labels and data itself.
   3. `AD_Element`, its Print Name
 
   See [AD_Message+AD_Element Resource Bundle](/docs/new-features/v9/admessageadelement-resource-bundle-for-jasper-report).
-- **Data:** nothing switches automatically. Query the [translated view](./how-translation-works.md#translated-views) yourself:
+- **Data:** nothing switches automatically. Query the [translated view](/docs/translation-localization/how-translation-works#translated-views) yourself:
 
 ```sql
 SELECT * FROM C_Invoice_Header_vt
@@ -70,7 +70,7 @@ Labels and `CURRENT_LANG` only work when iDempiere runs the report. To preview i
 
 :::
 
-## Test
+## Test a translated document
 
 Set Language on a test Business Partner, then print and email a document for it.
 

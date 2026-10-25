@@ -159,4 +159,4 @@ For implementation, refer to [GenericPOElementHandler](https://github.com/idempi
 
 ---
 
-See also: [Ship translations](/docs/translation-localization/ship-translations#option-2-2pack), for how a 2Pack carries translations.
+See also: [Ship translations](/docs/translation-localization/ship-translations#ship-translations-with-2pack), for how a 2Pack carries translations.

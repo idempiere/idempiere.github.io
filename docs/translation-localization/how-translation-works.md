@@ -50,9 +50,11 @@ Editing a translated column of a base record (`PO.updateTranslations()`):
 | --- | --- |
 | Off | All languages get the new text. Translations are lost. |
 | On, Tenant language = base language | Texts stay. All rows marked `IsTranslated='N'`. |
-| On, Tenant language ≠ base language | Tenant language gets the new text. Others marked `N`. |
+| On, Tenant language ≠ base language | Tenant language gets the new text. Other languages get `IsTranslated='N'`. |
 
 A migration script that changes English text with SQL changes no `_Trl` row and flags nothing.
+
+System Administrator edits dictionary texts in the "System" Tenant, so that Tenant's Multi Lingual Documents setting decides what happens to dictionary translations. Check it in the Tenant window before you edit English texts. The default in a new database has not been verified.
 
 <!-- TODO: verify - the Multi Lingual Documents setting of the "System" Tenant in the seed database. -->
 
@@ -63,7 +65,7 @@ A migration script that changes English text with SQL changes no `_Trl` row and 
 | Language Maintenance | Add, delete or re-create the rows of one language |
 | Synchronize Terminology | Copies element translations to fields, parameters, print format items, menus. Overwrites. |
 | Synchronize Doc Translation | Copies base text into non-`AD` `_Trl` tables (products, mail templates). Overwrites. |
-| Translation Import/Export | Exports to XML, or updates rows from XML. See [Ship translations](./ship-translations.md). |
+| Translation Import/Export | Exports to XML, or updates rows from XML. See [Ship translations](/docs/translation-localization/ship-translations). |
 
 None of them resets the cache. Run Cache Reset afterwards.
 

@@ -7,7 +7,7 @@ last_reviewed: 2026-10-25
 ---
 # Translate the user interface
 
-How to translate windows, fields, menus and messages. Applies to iDempiere 11 and later.
+How to translate windows, fields, menus and messages. Applies to iDempiere 11 and later. Checked in October 2026.
 
 :::tip[In short]
 
@@ -31,11 +31,11 @@ How to translate windows, fields, menus and messages. Applies to iDempiere 11 an
 
 The System Translation Check window shows all these tabs for one language.
 
-A language appears on the login page only when Login Locale is selected. See [Language flags](./how-translation-works.md#language-flags).
+A language appears on the login page only when Login Locale is selected. See [Language flags](/docs/translation-localization/how-translation-works#language-flags).
 
 ## Translate the element, not the field
 
-Most fields are Centrally Maintained: they take their label from the element. [Synchronize Terminology](./how-translation-works.md#processes) copies element translations to fields, process parameters, info columns, print format items and menus.
+Most fields are Centrally Maintained: they take their label from the element. [Synchronize Terminology](/docs/translation-localization/how-translation-works#processes) copies element translations to fields, process parameters, info columns, print format items and menus.
 
 :::warning
 
@@ -46,6 +46,6 @@ Every upgrade runs Synchronize Terminology. A translation typed on a centrally m
 ## Other tasks
 
 - **Override a message for one Tenant:** see [Messages at Client Level](/docs/new-features/v9/messages-at-client-level).
-- **Find untranslated texts:** filter a translation tab on Translated = No, or run the [coverage query](./how-translation-works.md#measure-the-coverage-of-a-language).
+- **Find untranslated texts:** filter a translation tab on Translated = No, or run the [coverage query](/docs/translation-localization/how-translation-works#measure-the-coverage-of-a-language).
 - **See your changes:** run Cache Reset, then log in again.
-- **Plug-in texts:** translate them in the same windows. To deliver them, see [Ship translations](./ship-translations.md).
+- **Plug-in texts:** translate them in the same windows. To deliver them, see [Ship translations](/docs/translation-localization/ship-translations).
