@@ -5,16 +5,10 @@ description: Use context variables such as @Column@ and @FK_ID.Column@ in the In
 tags:
   - user-experience
 applies_to: ">=14"
-last_reviewed: 2026-10-21
+last_reviewed: 2026-10-26
 ---
 
 # Variables in CSS style lines
-
-:::warning Not Yet in Stable Release
-
-This feature is not yet part of a stable iDempiere release and may change.
-
-:::
 
 **Goal:** Usability  
 **Developer:** [Peter Takacs](https://github.com/PeterTakacs300)  
