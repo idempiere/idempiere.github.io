@@ -63,7 +63,7 @@ Scripts and builds that call the model generator from the command line are affec
 - A call with a core package (`org.compiere.*` or `org.adempiere.*`) and a column entity type other than `D` is refused, because it writes plug-in columns into core files.
 - A call that mixes a named argument (`--...`) into positional arguments is refused.
 - A wrong number of positional arguments prints the error and the usage and exits with 1. Before, it printed one usage line and returned.
-- A table in a comma separated table list that matches nothing is refused.
+- A table in a comma-separated table list that matches nothing is refused.
 - Some other risky combinations, for example a system entity type for the tables without a column entity type, now print a `WARNING` line in the positional form.
 
 Check the exit code of the scripts that call the generator. See [Model generator for custom columns](/docs/new-features/v14/model-generator-custom-columns) for the new named arguments.

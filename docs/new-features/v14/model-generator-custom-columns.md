@@ -17,7 +17,7 @@ last_reviewed: 2026-10-26
 
 ## Summary
 
-A plug-in that adds columns to a table it does not own, such as `C_Order`, can now generate an accessor class for its own columns:
+A plug-in that adds columns to a table it does not own, such as `C_Order`, can now generate an accessor class for its own columns. This example was tested on iDempiere 14.
 
 ```java
 C_Order_XYZ.of(order).setXYZ_Note("Pallet delivery");
@@ -58,7 +58,8 @@ The model generator can write an accessor: a small class for one owner's columns
 
 - `C_Order_XYZ.of(po)` works on any `PO` of the table, including an `MOrder` that core created. It needs no model factory.
 - `C_Order_XYZ.of(mTab)` works in a callout. Values go through `GridTab.setValue`, so dependent callouts still run and the read-only rules of the field apply.
-- The getters and setters behave like the ones of the `X_` classes: an `_ID` set below 1 stores null, a column that is not updateable is written with `set_ValueNoCheck`, Boolean columns use Y and N, and list columns get the value constants of the `X_` class.
+- The getters and setters behave like the ones of the `X_` classes: an `_ID` set below 1 stores null (below 0 for the columns where 0 is valid), Boolean columns use Y and N, and list columns get the value constants of the `X_` class.
+- On a `PO`, a column that is not updateable is written with `set_ValueNoCheck`. On a `GridTab`, every value goes through `GridTab.setValue`, so the read-only rules of the field apply also to a column that is not updateable.
 - A column the table does not have fails at the first write, so a renamed column is not ignored.
 - The accessor is named after the table and the plug-in: `<Table>_<suffix>`, for example `C_Order_XYZ`. Its interface, when generated in the same run, is `I_C_Order_XYZ`.
 
@@ -68,7 +69,7 @@ The command line of the model generator also accepts named arguments:
 | --- | --- |
 | `--folder` | Source folder. It must exist. |
 | `--package` | Java package of the generated files. |
-| `--tables` | One table name pattern (`LIKE`, case-insensitive) or a comma separated list of exact names. |
+| `--tables` | One table name pattern (`LIKE`, case-insensitive) or a comma-separated list of exact names. |
 | `--table-entity-type` | Entity types of the tables, comma separated. Default `U,A`. |
 | `--column-entity-type` | Only columns of these entity types, comma separated. Default all columns. |
 | `--output` | `interface`, `class` and/or `accessor`, comma separated. Default `interface,class`. |
@@ -110,6 +111,8 @@ bash RUN_ModelGenerator.sh --folder=../com.xyz/src --package=com.xyz.model \
      --output=interface,accessor --suffix=XYZ
 ```
 
+These calls were tested on iDempiere 14.
+
 ```java
 // event handler: any C_Order PO, MOrder included
 C_Order_XYZ.of(po).setXYZ_Note("Pallet delivery");
@@ -120,7 +123,7 @@ C_Order_XYZ.of(mTab).getXYZ_PalletQty();
 
 ### B2. Core and two plug-ins
 
-A vertical plug-in `ABC` adds its own columns to the same table and generates its own accessor with `--column-entity-type=ABC --suffix=ABC`.
+A vertical plug-in `ABC` adds its own columns to the same table and generates its own accessor with `--column-entity-type=ABC --suffix=ABC`. This example was tested on iDempiere 14.
 
 ```java
 C_Order_XYZ.of(order).setXYZ_Note("Ring twice");
