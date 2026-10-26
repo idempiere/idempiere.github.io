@@ -28,3 +28,5 @@ The solution supports default printformat item and translations  as well as stan
 1. * A. invoice_@DocumentNo@
 1. * B. rechnung_@DocumentNo@ (on _trl)
 1. * C. SO_@DocumentNo@_@C_BPartner_ID&lt;Name&gt;@_@#AD_User_ID&lt;Name&gt;@
+
+See also: [Translate documents and printouts](/docs/translation-localization/translate-documents-and-printouts).

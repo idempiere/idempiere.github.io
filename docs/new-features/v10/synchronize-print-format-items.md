@@ -33,3 +33,5 @@ Just select :
 And that's it !
 
 Missing Print Format Items are added (but not visible) ; user has to add them (using the Wizard for instance)
+
+See also: [Translate documents and printouts](/docs/translation-localization/translate-documents-and-printouts).

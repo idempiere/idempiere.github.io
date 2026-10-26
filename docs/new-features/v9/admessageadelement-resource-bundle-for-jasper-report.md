@@ -25,3 +25,5 @@ Tip for concatenation with a field:```java
 (str("IsDefault") != null ? str("IsDefault") : "str(IsDefault)") + ": " + $F&#123;IsDefaultField&#125;
 
 ```
+
+See also: [Translate documents and printouts](/docs/translation-localization/translate-documents-and-printouts).

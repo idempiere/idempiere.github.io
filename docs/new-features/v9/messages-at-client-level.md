@@ -34,3 +34,5 @@ Execute Cache Reset process to force the reload of messages.
 And you can see the result, "Home" has been translated for "Home of Garden World"
 
 ![ClientLevelMessage Home](pathname:///img/new-features/v9/ClientLevelMessage_Home.png)
+
+See also: [Translate the user interface](/docs/translation-localization/translate-the-user-interface).
