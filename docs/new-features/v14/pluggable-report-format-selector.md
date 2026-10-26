@@ -127,7 +127,7 @@ Rules for a selector:
 
 ## Migration impact
 
-The viewer lists the same print formats in the same order, with the same role checks and create entries. The only visible change is that the native drop-down list is now an editable combo box.
+The viewer lists the same print formats with the same role checks and create entries. Without a selector plugin, the order is also the same, and the only visible change is that the native drop-down list is now an editable combo box. A selector plugin can reorder, group and decorate the entries.
 
 ## Related tickets
 
