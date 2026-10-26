@@ -53,3 +53,17 @@ See [SOAP Web Services Plugin](/docs/new-features/v14/soap-web-services-plugin) 
 The accounting implementation classes (document posting logic, `Doc_*` classes, accounting schema handling) have been extracted from iDempiere core into a dedicated bundle: `org.idempiere.acct`.
 
 See [Accounting Plugin](/docs/new-features/v14/accounting-plugin) for details and impact.
+
+## Model generator command line
+
+The command line of the model generator is stricter. A few calls that used to run now fail with exit code 1, and the last output line is always `result: ok`, `result: refused`, `result: error` or `result: differs`. The positional form still produces the same files.
+
+Scripts and builds that call the model generator from the command line are affected:
+
+- A call with a core package (`org.compiere.*` or `org.adempiere.*`) and a column entity type other than `D` is refused, because it writes plug-in columns into core files.
+- A call that mixes a named argument (`--...`) into positional arguments is refused.
+- A wrong number of positional arguments prints the error and the usage and exits with 1. Before, it printed one usage line and returned.
+- A table in a comma separated table list that matches nothing is refused.
+- Some other risky combinations, for example a system entity type for the tables without a column entity type, now print a `WARNING` line in the positional form.
+
+Check the exit code of the scripts that call the generator. See [Model generator for custom columns](/docs/new-features/v14/model-generator-custom-columns) for the new named arguments.
