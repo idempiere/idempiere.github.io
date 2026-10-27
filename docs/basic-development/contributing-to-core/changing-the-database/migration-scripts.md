@@ -1,16 +1,11 @@
 ---
-sidebar_label: Changing the Database
-sidebar_position: 9
-description: Guidelines for safely updating the iDempiere database schema
+sidebar_position: 2
+description: Turn on Log Migration Scripts so iDempiere records your dictionary changes as SQL migration scripts for a core pull request.
+tags: [development, technical]
+applies_to: "all"
+last_reviewed: 2026-10-27
 ---
-# Changing the Database
-
-If your contribution includes **changes to the database**, follow these steps to ensure consistency across environments:
-
-## 🆔 Requesting Centralized IDs
-Request official IDs as described in the [Manage the Centralized IDs](https://wiki.idempiere.org/en/Centralized_ID_Management) guide or contact the core team.
-
-## Generating Migration Scripts
+# Generating Migration Scripts
 
 To generate migration scripts automatically:
 
@@ -27,7 +22,7 @@ iDempiere will automatically generate the corresponding SQL migration scripts an
 
 ---
 
-### Important
+## Important
 
 > Even failed SQL statements are logged.  
 > **You must carefully review the generated migration script before committing it.**  
@@ -35,7 +30,7 @@ iDempiere will automatically generate the corresponding SQL migration scripts an
 
 ---
 
-### Example Migration Script
+## Example Migration Script
 
 ```sql
 -- IDEMPIERE-5409 Dashboard Content - Maximizable checkbox

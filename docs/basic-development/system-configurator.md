@@ -432,26 +432,26 @@ Default value for Entity Type field in windows
 
 Developer password
 
-- Reference: [Centralized ID Management](https://wiki.idempiere.org/en/Centralized_ID_Management)
+- Reference: [Centralized IDs](/docs/basic-development/contributing-to-core/changing-the-database/centralized-ids)
 
 #### DICTIONARY_ID_USER {#DICTIONARY_ID_USER}
 
 Developer username
 
-- Reference: [Centralized ID Management](https://wiki.idempiere.org/en/Centralized_ID_Management)
+- Reference: [Centralized IDs](/docs/basic-development/contributing-to-core/changing-the-database/centralized-ids)
 
 #### DICTIONARY_ID_USE_CENTRALIZED_ID {#DICTIONARY_ID_USE_CENTRALIZED_ID}
 
 Assign the dictionary ID's from a centralized website reservation instead of sequences
 
 - Values: Y/N default Y
-- Reference: [Centralized ID Management](https://wiki.idempiere.org/en/Centralized_ID_Management)
+- Reference: [Centralized IDs](/docs/basic-development/contributing-to-core/changing-the-database/centralized-ids)
 
 #### DICTIONARY_ID_WEBSITE {#DICTIONARY_ID_WEBSITE}
 
 Website providing the ID reservation service for iDempiere
 
-- Reference: [Centralized ID Management](https://wiki.idempiere.org/en/Centralized_ID_Management)
+- Reference: [Centralized IDs](/docs/basic-development/contributing-to-core/changing-the-database/centralized-ids)
 
 #### DOCACTIONBUTTON_SHOWACTIONNAME {#DOCACTIONBUTTON_SHOWACTIONNAME}
 
@@ -976,32 +976,32 @@ Enable/disable validation -> Select the Product UoM as the From Unit of Measure
 
 Developer password
 
-- Reference: [Centralized ID Management](https://wiki.idempiere.org/en/Centralized_ID_Management)
+- Reference: [Project ID server](/docs/basic-development/contributing-to-core/changing-the-database/project-id-server)
 
 #### PROJECT_ID_PROJECT {#PROJECT_ID_PROJECT}
 
 The name of the project
 
-- Reference: [Centralized ID Management](https://wiki.idempiere.org/en/Centralized_ID_Management)
+- Reference: [Project ID server](/docs/basic-development/contributing-to-core/changing-the-database/project-id-server)
 
 #### PROJECT_ID_USER {#PROJECT_ID_USER}
 
 Developer username
 
-- Reference: [Centralized ID Management](https://wiki.idempiere.org/en/Centralized_ID_Management)
+- Reference: [Project ID server](/docs/basic-development/contributing-to-core/changing-the-database/project-id-server)
 
 #### PROJECT_ID_USE_CENTRALIZED_ID {#PROJECT_ID_USE_CENTRALIZED_ID}
 
 Assign the non-dictionary ID's for tables with entity type from a centralized website reservation instead of sequences
 
 - Values: Y/N default N
-- Reference: [Centralized ID Management](https://wiki.idempiere.org/en/Centralized_ID_Management)
+- Reference: [Project ID server](/docs/basic-development/contributing-to-core/changing-the-database/project-id-server)
 
 #### PROJECT_ID_WEBSITE {#PROJECT_ID_WEBSITE}
 
 Website providing the ID reservation service for the project
 
-- Reference: [Centralized ID Management](https://wiki.idempiere.org/en/Centralized_ID_Management)
+- Reference: [Project ID server](/docs/basic-development/contributing-to-core/changing-the-database/project-id-server)
 
 ### Q
 
