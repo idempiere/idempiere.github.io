@@ -1,6 +1,9 @@
 ---
 sidebar_position: 2
 description: Turn on Log Migration Scripts so iDempiere records your dictionary changes as SQL migration scripts for a core pull request.
+tags: [development, technical]
+applies_to: "all"
+last_reviewed: 2026-10-27
 ---
 # Generating Migration Scripts
 

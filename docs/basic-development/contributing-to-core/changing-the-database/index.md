@@ -2,6 +2,9 @@
 sidebar_label: Changing the Database
 sidebar_position: 9
 description: Reserve official IDs and generate migration scripts when your iDempiere core contribution changes the Application Dictionary or the database.
+tags: [development, technical]
+applies_to: "all"
+last_reviewed: 2026-10-27
 ---
 # Changing the Database
 
