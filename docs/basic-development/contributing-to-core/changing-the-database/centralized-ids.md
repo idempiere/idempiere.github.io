@@ -2,6 +2,7 @@
 sidebar_position: 1
 description: Configure iDempiere to get official dictionary IDs from the central ID server, check the setup, and look up or reserve IDs.
 tags: [development, technical]
+applies_to: "all"
 last_reviewed: 2026-10-27
 ---
 # Request centralized IDs
