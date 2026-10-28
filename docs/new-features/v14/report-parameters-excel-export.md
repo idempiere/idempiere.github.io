@@ -9,7 +9,7 @@ applies_to: ">=14"
 last_reviewed: 2026-10-28
 ---
 
-# Report Parameters in Excel Export
+# Report parameters in Excel Export
 
 **Goal:** Usability  
 **Developer:** [Heng Sin Low](https://github.com/hengsin) ([TrekGlobal](https://www.trekglobal.com/))  
@@ -68,7 +68,7 @@ This feature allows administrators and users to choose whether report parameters
 
 ## Migration impact
 
-None. The `SHOW_REPORT_PARAMETER_IN_XLS_REPORT` key defaults to `Y`, and existing user preference records leave `IsExcelExportWithParameters` unset (`NULL`). Existing installations preserve their current export behavior without manual intervention.
+The iD14 migration adds the `AD_UserPreference.IsExcelExportWithParameters` column and related metadata. The `SHOW_REPORT_PARAMETER_IN_XLS_REPORT` key defaults to `Y`, and existing user preference records remain unset (`NULL`). Existing installations preserve their current export behavior without manual preference configuration.
 
 ## Related tickets
 
