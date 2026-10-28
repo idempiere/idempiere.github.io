@@ -1,8 +1,10 @@
 import React from 'react';
 import DocItem from '@theme-original/DocItem';
 import Giscus from '@giscus/react';
+import { useColorMode } from '@docusaurus/theme-common';
 
 export default function DocItemWrapper(props) {
+  const { colorMode } = useColorMode();
   return (
     <>
       <DocItem {...props} />
@@ -17,11 +19,11 @@ export default function DocItemWrapper(props) {
               reactionsEnabled = "1"
               emitMetadata = "0"
               inputPosition = "top"
-              theme = "preferred_color_scheme"
+              theme = {colorMode === 'dark' ? 'transparent_dark' : 'light'}
               lang = "en"
               loading = "lazy"
               crossorigin = "anonymous"
-          /> 
+          />
     </>
   );
 }
