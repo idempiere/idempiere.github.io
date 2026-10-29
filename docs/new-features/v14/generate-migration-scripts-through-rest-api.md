@@ -1,7 +1,7 @@
 ---
 sidebar_label: Migration Scripts via REST API
 sidebar_position: 7
-description: Generate and append to SQL migration scripts for Application Dictionary changes made through the REST API using System administrator request headers.
+description: Generate and append to SQL migration scripts for Application Dictionary changes made through the REST API using migration script request headers.
 tags:
   - technical
   - development
@@ -28,7 +28,7 @@ In addition, each call to the core migration script logger generated a separate 
 
 This feature adds support for generating database migration scripts directly through the REST API:
 
-- **New HTTP request headers**: System administrators can pass headers to enable migration script logging, activate Dictionary Maintenance mode (centralized IDs), and specify a ticket comment.
+- **New HTTP request headers**: Callers with seed user and tenant accounts can pass headers to enable migration script logging, activate Dictionary Maintenance mode (centralized IDs), and specify a ticket comment.
 - **Single migration file per session**: Core `Convert` now supports reusing a single migration file across multiple database operations within the same authenticated session.
 - **Clean registration**: The `register_migration_script` call and Oracle headers are written once when the file is created. Subsequent operations in the same session append only their SQL statements.
 - **Process inheritance**: Processes triggered through `/v1/processes/...` inherit the migration logging context from the calling request.
@@ -36,9 +36,9 @@ This feature adds support for generating database migration scripts directly thr
 
 ## How to use it
 
-### Step 1: Authenticate as System Administrator
+### Step 1: Authenticate as an authorized seed user
 
-Obtain a JWT token for the "System" Tenant (`AD_Client_ID=0`), "System Administrator" Role (`AD_Role_ID=0`), and an administrator user:
+Obtain a JWT token for a seed tenant (`AD_Client_ID <= 20`) and seed user (`AD_User_ID <= 102`), such as the "System" Tenant (`AD_Client_ID=0`) with "SuperUser":
 
 ```bash
 curl -X POST https://localhost:8443/api/v1/auth/tokens \
@@ -132,15 +132,14 @@ The following HTTP request headers configure migration script generation:
 | `X-ID-AdempiereSys` | `Y`, `N`, `true`, `false`, `1`, `0` | `N` | Enables or disables Dictionary Maintenance mode and centralized ID generation. |
 | `X-ID-MigrationScriptComment` | Text string | None | Ticket number or comment for the migration script header and file name. |
 
-:::info Security Requirement
+:::info Security requirement
 
-These headers are only honored when all of the following conditions are met:
+To match the permission check used by the web UI preference dialog (`WPreference`), these headers are only honored when both of the following conditions are met:
 
-1. The request uses a token for the "System" Tenant (`AD_Client_ID=0`).
-2. The user has the "System Administrator" Role (`AD_Role_ID=0`).
-3. The authenticated user has administrator privileges (`MUser.isAdministrator()`).
+1. The Tenant ID is a seed tenant: `AD_Client_ID <= 20` (such as the "System" Tenant `0` or "GardenWorld" `11`).
+2. The User ID is a seed user: `AD_User_ID <= 102` (such as "System" `0` or "SuperUser" `100`).
 
-For any other tenant (such as "GardenWorld") or non-administrator user, the headers are ignored.
+For any custom non-seed tenant (`AD_Client_ID > 20`) or non-seed user (`AD_User_ID > 102`), the headers are ignored.
 
 :::
 
@@ -166,7 +165,7 @@ Core iDempiere introduces a context variable in `org.compiere.dbPort.Convert`:
 
 The `com.trekglobal.idempiere.rest.api` bundle manages the migration script context through JAX-RS filters:
 
-- `RequestFilter`: Validates System administrator rights, sanitizes comments, and applies settings to the execution context via `MigrationScriptContext.apply(requestContext)`.
+- `RequestFilter`: Validates seed tenant and user permissions (`AD_Client_ID <= 20` and `AD_User_ID <= 102`), sanitizes comments, and applies settings to the execution context via `MigrationScriptContext.apply(requestContext)`.
 - `ResponseFilter`: Flushes and closes open script writers after request execution via `MigrationScriptContext.closeMigrationScriptFiles(requestContext)`.
 - `ProcessResourceImpl`: Automatically copies the migration context to process threads via `MigrationScriptContext.copy(ctx, m_ctx)`, ensuring that processes such as table synchronization write to the active migration script.
 
