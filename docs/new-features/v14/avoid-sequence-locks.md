@@ -5,10 +5,6 @@ description: Introduces UUID-based document sequences and Allow Gaps setting to 
 ---
 # Avoid Sequence Locks in Document Numbers
 
-:::warning Not Yet in Stable Release
-This feature is not yet part of a stable iDempiere release and may change.
-:::
-
 **Goal:** Technical
 
 **Developer:** [Carlos Ruiz](https://github.com/CarlosRuiz-globalqss) ([BX Service](https://www.bx-service.com))
