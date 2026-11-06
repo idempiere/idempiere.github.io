@@ -7915,6 +7915,8 @@ For implementation, refer to [GenericPOElementHandler](https://github.com/idempi
 
 ---
 
+See also: [Ship translations](/docs/translation-localization/ship-translations#ship-translations-with-2pack), for how a 2Pack carries translations.
+
 ---
 
 ## Run Script with 2Pack
@@ -8380,6 +8382,8 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,DefaultV
 ALTER TABLE PA_DashboardContent ADD COLUMN IsMaximizable CHAR(1) DEFAULT 'Y' CHECK (IsMaximizable IN ('Y','N')) NOT NULL
 ;
 ```
+
+Log Migration Scripts does not record changes to translation (`_Trl`) tables. See [Ship translations](/docs/translation-localization/ship-translations).
 
 ---
 
@@ -11302,6 +11306,8 @@ Click on it again to shrink the menu to the basic structure.
 The system provides a search box which allows you to filter the options that are part of
 the name typed for easy access.
 
+See also: [Translate the user interface](/docs/translation-localization/translate-the-user-interface), which explains how a language appears on the login page.
+
 ---
 
 ## System overview
@@ -13474,6 +13480,8 @@ The solution supports default printformat item and translations  as well as stan
 1. * B. rechnung_@DocumentNo@ (on _trl)
 1. * C. SO_@DocumentNo@_@C_BPartner_ID&lt;Name&gt;@_@#AD_User_ID&lt;Name&gt;@
 
+See also: [Translate documents and printouts](/docs/translation-localization/translate-documents-and-printouts).
+
 ---
 
 ## Multi Warehouse Inventory Valuation Report
@@ -13813,6 +13821,8 @@ Just select :
 And that's it !
 
 Missing Print Format Items are added (but not visible) ; user has to add them (using the Wizard for instance)
+
+See also: [Translate documents and printouts](/docs/translation-localization/translate-documents-and-printouts).
 
 ---
 
@@ -19287,6 +19297,8 @@ Tip for concatenation with a field:```java
 
 ```
 
+See also: [Translate documents and printouts](/docs/translation-localization/translate-documents-and-printouts).
+
 ---
 
 ## Advanced Search Enhancements
@@ -20252,6 +20264,8 @@ Execute Cache Reset process to force the reload of messages.
 And you can see the result, "Home" has been translated for "Home of Garden World"
 
 ![ClientLevelMessage Home](pathname:///img/new-features/v9/ClientLevelMessage_Home.png)
+
+See also: [Translate the user interface](/docs/translation-localization/translate-the-user-interface).
 
 ---
 
@@ -23196,6 +23210,470 @@ Schedule: A new release is prepared approximately every 1 or 2 weeks
 
 - [IDEMPIERE-6647](https://idempiere.atlassian.net/browse/IDEMPIERE-6647) Improve test coverage of org.adempiere.base ([#3186](https://github.com/idempiere/idempiere/pull/3186))
 - [IDEMPIERE-6820](https://idempiere.atlassian.net/browse/IDEMPIERE-6820) Add multi tenant support to SSO (DAD-209) ([#3177](https://github.com/idempiere/idempiere/pull/3177))
+
+---
+
+## How translation works
+
+What happens in the database when you translate. Applies to iDempiere 11 and later. Checked against iDempiere master in October 2026.
+
+:::tip[In short]
+
+- Each translatable table has a `_Trl` twin with one row per language.
+- `IsTranslated` is a status flag. `N` marks a row for review: often it still holds the English copy, but it can also hold an older translation.
+- Editing English text, Synchronize Terminology and Synchronize Doc Translation can overwrite translations.
+
+:::
+
+### Tables
+
+`AD_Message` has `AD_Message_Trl`, `M_Product` has `M_Product_Trl`, and so on. A `_Trl` row holds:
+
+- the key of the base record and `AD_Language`
+- a copy of each column marked Translated. To add a `_Trl` table to your own table, see [Create/Complete Table](/docs/new-features/v8.2/createcomplete-table).
+- `IsTranslated`
+- a UU column, for example `AD_Message_Trl_UU`
+
+`AD_Message_Trl` also has `AD_Client_ID` in its key, for [tenant-level messages](/docs/new-features/v9/messages-at-client-level).
+
+### Language flags
+
+| Flag | Meaning |
+| --- | --- |
+| Base Language | Language of the base tables. `en_US` by default. |
+| System Language | iDempiere keeps `_Trl` rows for it. |
+| Login Locale | Users can pick it on the login page. |
+
+### When rows are created
+
+- **New record:** one `_Trl` row per system language, copied from the base text (`PO.insertTranslations()`).
+- **New language:** only when you run Language Maintenance with Add.
+- **Upgrade:** `SyncDB` adds missing rows, then runs Synchronize Terminology.
+
+### When rows are updated
+
+Editing a translated column of a base record (`PO.updateTranslations()`):
+
+| Multi Lingual Documents | Result |
+| --- | --- |
+| Off | All languages get the new text. Translations are lost. |
+| On, Tenant language = base language | Texts stay. All rows marked `IsTranslated='N'`. |
+| On, Tenant language ≠ base language | Tenant language gets the new text. Other languages get `IsTranslated='N'`. |
+
+A migration script that changes English text with SQL changes no `_Trl` row and flags nothing.
+
+System Administrator edits dictionary texts in the "System" Tenant, so that Tenant's Multi Lingual Documents setting decides what happens to dictionary translations. Check it in the Tenant window before you edit English texts. The default in a new database has not been verified.
+
+### Processes
+
+| Process | Effect |
+| --- | --- |
+| Language Maintenance | Add, delete or re-create the rows of one language |
+| Synchronize Terminology | Copies element translations to fields, parameters, print format items, menus. Overwrites. |
+| Synchronize Doc Translation | Copies base text into non-`AD` `_Trl` tables (products, mail templates). Overwrites. |
+| Translation Import/Export | Exports to XML, or updates rows from XML. See [Ship translations](/docs/translation-localization/ship-translations). |
+
+None of them resets the cache. Run Cache Reset afterwards.
+
+Log Migration Scripts never logs `_Trl` changes.
+
+### Translated views
+
+A view `<name>_v` can have a twin `<name>_vt` that joins the `_Trl` tables and has an `AD_Language` column, for example `C_Invoice_Header_v` and `C_Invoice_Header_vt`. When the language is not the base language, iDempiere reads the `_vt` view instead and filters on the language:
+
+| Reader | Switches to `_vt` when | Language |
+| --- | --- | --- |
+| Built-in print format | the `_vt` view exists in the database | The printout language |
+| REST API (`/api/v1/models/<name>_v`) | the `_vt` view is registered as a table in the Application Dictionary | The `language` given at [login](https://bxservice.github.io/idempiere-rest-docs/docs/api-guides/authentication) |
+| Jasper report | never, the report's SQL must query `_vt` itself | `CURRENT_LANG` |
+
+The caller always asks for `_v` and gets translated data.
+
+For your own `_vt` view:
+
+- Give it the same columns as the `_v` view, plus `AD_Language`.
+- Join each `_Trl` table on the language. A join without it returns every row once per language.
+- Register it in the Application Dictionary if the REST API should use it.
+
+### Measure the coverage of a language
+
+PostgreSQL and Oracle:
+
+```sql
+SELECT t, AD_Language, COUNT(*) AS total,
+  SUM(CASE WHEN IsTranslated='Y' THEN 1 ELSE 0 END) AS translated
+FROM (
+  SELECT 'AD_Message' AS t, AD_Language, IsTranslated FROM AD_Message_Trl WHERE AD_Client_ID=0
+  UNION ALL SELECT 'AD_Element', AD_Language, IsTranslated FROM AD_Element_Trl
+  UNION ALL SELECT 'AD_Field', AD_Language, IsTranslated FROM AD_Field_Trl
+  UNION ALL SELECT 'AD_Menu', AD_Language, IsTranslated FROM AD_Menu_Trl
+) x
+GROUP BY t, AD_Language
+ORDER BY t, AD_Language;
+```
+
+The result is only as good as the flags the language pack set.
+
+---
+
+## Translation and localization
+
+Start here to run iDempiere in another language or country. Applies to iDempiere 11 and later.
+
+:::tip[In short]
+
+- Core ships English only. Other languages come from community language packs.
+- Screens show the user's login language. Documents print in the Business Partner's language.
+- Translate texts in iDempiere, move them as XML files with the Translation Import/Export process.
+
+:::
+
+### Find your page
+
+| I want to | Page |
+| --- | --- |
+| Bring a new language to a customer | [Roll out a language](/docs/translation-localization/roll-out-a-language) |
+| Set up accounting, taxes and addresses for a country | [Localization checklist](/docs/translation-localization/roll-out-a-language#localization-checklist) |
+| Translate windows, fields, menus and messages | [Translate the user interface](/docs/translation-localization/translate-the-user-interface) |
+| Print invoices and orders in the customer's language | [Translate documents and printouts](/docs/translation-localization/translate-documents-and-printouts) |
+| Understand the `_Trl` tables | [How translation works](/docs/translation-localization/how-translation-works) |
+| Deliver translations to other systems | [Ship translations](/docs/translation-localization/ship-translations) |
+
+### Languages and coverage
+
+Each language pack lives in its own repository. "Updated" is the last change to the repository, "iDempiere release" the release named in the files. Checked in October 2026. The list is not complete: languages listed only on the old wiki are missing.
+
+| Language | Repository | Updated | iDempiere release |
+| --- | --- | --- | --- |
+| German (`de_DE`, `de_CH`) | [bxservice/tbayen.translations](https://github.com/bxservice/tbayen.translations) | 2026-08 | 14 |
+| Spanish, Colombia (`es_CO`) | [globalqss/globalqss-idempiere-lco](https://github.com/globalqss/globalqss-idempiere-lco) | 2026-06 | 13 |
+| Spanish, Paraguay (`es_PY`) | [corvalanariel/idempiere-translation-es-py](https://github.com/corvalanariel/idempiere-translation-es-py) | 2026-06 | 13 |
+| Portuguese, Brazil (`pt_BR`) | [idempierelbr/idempierelbr](https://github.com/idempierelbr/idempierelbr) | 2026-10 | 13 |
+| Portuguese, Brazil (`pt_BR`), older | [devcoffee/idempiere-pt_br](https://github.com/devcoffee/idempiere-pt_br) | 2023-05 | 11 |
+| Chinese, Taiwan (`zh_TW`) | [ray-idempiere/idempiere-language-zh_TW](https://github.com/ray-idempiere/idempiere-language-zh_TW) | 2026-03 | 12 |
+| French (`fr_FR`) | [nmicoud/fr_FR](https://github.com/nmicoud/fr_FR) | 2025-05 | 12 |
+| Czech (`cs_CZ`) | [SnowDrift80/iDempiere_cs_CZ_Trl](https://github.com/SnowDrift80/iDempiere_cs_CZ_Trl) | 2023-12 | 10 |
+| Russian (`ru_RU`) | [kinerix/iDempiereTranslationRussia](https://github.com/kinerix/iDempiereTranslationRussia) | 2022-10 | Not stated |
+| Romanian (`ro_RO`) | [idempiere-consulting/idempiere-romanian-translation](https://github.com/idempiere-consulting/idempiere-romanian-translation) | 2020-05 | 7.1 |
+| Italian (`it_IT`) | [idempiere-consulting/idempiere-italy-translation](https://github.com/idempiere-consulting/idempiere-italy-translation) | 2020-03 | 5.1 |
+| Slovak (`sk_SK`) | [cloudempiere/idempiere-translations](https://github.com/cloudempiere/idempiere-translations) | 2020-04 | 3.1 |
+
+An older pack still installs. Records added since then stay in English. To measure a language in your database, see [Measure the coverage](/docs/translation-localization/how-translation-works#measure-the-coverage-of-a-language).
+
+To improve a pack, send a pull request to its repository. Core does not take translations. The German pack was updated in 2026 with AI-translated texts ([pull request 10](https://github.com/bxservice/tbayen.translations/pull/10)); see [Translate with a tool or AI](/docs/translation-localization/ship-translations#translate-with-a-tool-or-ai).
+
+### Feature history
+
+| Version | Feature |
+| --- | --- |
+| 1.0 | [Translation Improvements](/docs/new-features/v1.0/translation-improvements): import and export in the web client |
+| 1.0 | [Base Language Flexible](/docs/new-features/v1.0/base-language-flexible): change the base language |
+| 8.2 | [Create/Complete Table](/docs/new-features/v8.2/createcomplete-table): add a translation table |
+| 9 | [Messages at Client Level](/docs/new-features/v9/messages-at-client-level): tenant-level messages |
+| 9 | [AD_Message+AD_Element Resource Bundle for Jasper Report](/docs/new-features/v9/admessageadelement-resource-bundle-for-jasper-report) |
+| 10 | [Synchronize Print Format Items](/docs/new-features/v10/synchronize-print-format-items) |
+| 10 | [Make print filename configurable](/docs/new-features/v10/make-print-filename-configurable): translated file names |
+
+---
+
+## Roll out a language
+
+The steps to bring a new language and country to a customer, in order. Applies to iDempiere 11 and later. Checked in October 2026.
+
+:::tip[In short]
+
+1. Keep English as base language.
+2. Activate the language, import the pack, reset the cache.
+3. Set the Tenant and Business Partner languages.
+4. Print a test document.
+
+:::
+
+### Decide first
+
+- **Base language:** keep `en_US`. Core migration scripts write English texts into the base tables, so with another base language you must re-translate them after each upgrade. If no user should see English, use a language that is not a login language as base ([discussion](https://mattermost.idempiere.org/idempiere/pl/qqux5t3msb8nipms1kat63dmnc)). See [Base Language Flexible](/docs/new-features/v1.0/base-language-flexible).
+- **Multi Lingual Documents** (Tenant window): turn it on if the customer works or sends documents in more than one language. See [When rows are updated](/docs/translation-localization/how-translation-works#when-rows-are-updated).
+- **Language pack:** check [Languages and coverage](/docs/translation-localization#languages-and-coverage).
+
+### Install the language
+
+1. Language window: select System Language and Login Locale. Check the date and number formats.
+2. Run Language Maintenance with Add.
+3. Import the pack with the Translation Import/Export process, for the "System" Tenant. See [Ship translations](/docs/translation-localization/ship-translations#ship-with-translation-files).
+4. Run Synchronize Terminology, then Cache Reset.
+
+### Set up the Tenant
+
+1. Tenant window: set Language and Multi Lingual Documents.
+2. Translate the business data printed on documents. See [Translate documents and printouts](/docs/translation-localization/translate-documents-and-printouts).
+3. Set Language on foreign Business Partners.
+
+### Test before go-live
+
+1. Log in with the language and work through the main windows.
+2. Print and email a document for a foreign Business Partner.
+
+### After each upgrade
+
+New core texts arrive in English, and changed English texts do not flag their translations. Import the updated pack and review.
+
+### Localization checklist
+
+| Area | Core provides | You set up |
+| --- | --- | --- |
+| Chart of accounts | US example (`AccountingUS.csv`) | The country chart, in Initial Tenant Setup |
+| Taxes | Tax rates and the [tax provider](/docs/basic-development/plugin-development/plugin-tax-provider-factory) extension point | Country rates and rules |
+| Addresses | Address layout and validation per country | Check the country, load regions and cities |
+| Formats | Date, time and decimal format per language | Set them in the Language window |
+| Documents | Print formats, document types | Legal texts and numbering |
+
+Examples of country localizations (the list is not complete): [Brazil](https://github.com/idempierelbr/idempierelbr), [Colombia](https://github.com/globalqss/globalqss-idempiere-lco).
+
+---
+
+## Ship translations
+
+How to move translated texts to other iDempiere databases, for a plug-in, a language pack or a customer. Applies to iDempiere 11 and later. Checked against iDempiere master in October 2026.
+
+:::tip[In short]
+
+- Use translation XML files, the files of the Translation Import/Export process. The import only updates existing rows and reports what it did not find.
+- Core records: match by ID. Plug-in and tenant records: match by UU.
+- Log Migration Scripts does not record translations.
+
+:::
+
+### Core or plug-in
+
+| | Core | Plug-in |
+| --- | --- | --- |
+| Records | IDs up to 999999, same in every database | IDs differ per database |
+| Match by | `id` or `uuid` | `uuid` of the base record |
+| Goes to | The [language pack](/docs/translation-localization#languages-and-coverage) of the language | The plug-in's own XML files or 2Pack |
+
+### Choose a format
+
+| Format | Use for | Creates rows | Sets `IsTranslated` |
+| --- | --- | --- | --- |
+| Translation XML files | Records that already exist | No | `Y`, or the `trl` value |
+| 2Pack | A plug-in shipping its records with their translations | Yes | The 2Pack value, `N` if missing |
+| Migration script | A plug-in that already ships SQL | If you write `INSERT` | What you write |
+
+### Ship with translation files
+
+#### Export a translation file
+
+1. Run the Translation Import/Export process: Export, the Language, the "System" Tenant. Table is optional.
+2. Select Only Centralized Data for core records only. Clear it for plug-in records, then remove rows that are not yours (there is no Entity Type filter).
+3. Download the ZIP. It has one file per table: `<Table>_Trl_<language>.xml`.
+
+Centrally maintained fields are not exported. Their texts come from the element.
+
+#### Translation file format
+
+Replace every `YOUR_...` value before you import the file.
+
+```xml title="AD_Message_Trl_sk_SK.xml"
+<?xml version="1.0" encoding="UTF-8"?>
+<idempiereTrl language="sk_SK" table="AD_Message">
+  <row id="YOUR_AD_MESSAGE_ID" trl="Y">
+    <value column="MsgText" original="YOUR_ENGLISH_TEXT">YOUR_TRANSLATION</value>
+  </row>
+  <row uuid="YOUR_AD_MESSAGE_UU" trl="N">
+    <value column="MsgText" original="YOUR_ENGLISH_TEXT">YOUR_TRANSLATION</value>
+  </row>
+</idempiereTrl>
+```
+
+- `table` is the base table.
+- `uuid` is the UU of the base record (`AD_Message_UU`), not of the `_Trl` row. When a row has `uuid`, the import uses it and ignores `id`.
+- `trl` sets `IsTranslated`. Missing means `Y`.
+- `original` is ignored on import.
+
+#### Import a translation file
+
+1. Zip the files, flat or in a `<language>/` folder.
+2. Run the Translation Import/Export process: Import, the Language, the ZIP file (or an `https://` URL), the "System" Tenant. An empty Tenant updates every Tenant.
+3. Compare the `Updated=` count in the log with your row count.
+4. Run Synchronize Terminology if you changed elements, then Cache Reset.
+
+Command line: `RUN_TrlImport.sh <language> [folder]`.
+
+### Ship translations with 2Pack
+
+Translations travel only when `2PACK_HANDLE_TRANSLATIONS` is `Y` on both systems.
+
+| Key | Default | Level | What it does |
+| --- | --- | --- | --- |
+| `2PACK_HANDLE_TRANSLATIONS` | `N` | System | Packs `_Trl` rows with their parent record |
+
+- Translations sit inside their parent element. A 2Pack with only `_Trl` rows fails.
+- Pack In skips languages that are not system languages on the target.
+
+See [Using 2Pack to transfer data](/docs/basic-development/2pack/packin-packout-guide).
+
+### Ship translations with a migration script
+
+Write it by hand. Match by a key that is the same everywhere. PostgreSQL and Oracle. Put the file in the migration folder of your release; `iD14` is an example.
+
+```sql title="migration/iD14/postgresql/202610251200_IDEMPIERE-NNNN_sk_SK.sql"
+SELECT register_migration_script('202610251200_IDEMPIERE-NNNN_sk_SK.sql') FROM dual;
+
+UPDATE AD_Message_Trl SET MsgText='YOUR_TRANSLATION', IsTranslated='Y',
+  Updated=TO_TIMESTAMP('2026-10-25 12:00:00','YYYY-MM-DD HH24:MI:SS'), UpdatedBy=100
+WHERE AD_Message_ID=(SELECT AD_Message_ID FROM AD_Message WHERE Value='PasswordResetSuccess')
+  AND AD_Language='sk_SK' AND AD_Client_ID=0
+;
+```
+
+- `AD_Client_ID=0` keeps tenant-level messages untouched.
+- Elements: match by `ColumnName`. Tenant data such as `R_MailText`: match by UU.
+- iDempiere does not run plug-in SQL files by itself. See [Run Script with 2Pack](/docs/basic-development/2pack/run-script-with-2pack).
+
+### Translate with a tool or AI
+
+1. Export the language.
+2. Translate only the text inside `value`. Keep `id`, `uuid` and `column`.
+3. Set `trl="N"` on rows nobody has reviewed.
+4. Import and check the `Updated=` count.
+
+A wrong `id` that exists in your database changes another record. Prefer `uuid` outside core.
+
+### Troubleshooting
+
+| Symptom | Fix |
+| --- | --- |
+| Fewer rows updated than in the file | Run Language Maintenance with Add. Use `uuid` for IDs above 999999. |
+| `Update Rows=n (Should be 1)` | Set the Tenant and import again. |
+| Old text still shows | Run Cache Reset. |
+
+To keep translations through upgrades, see [Roll out a language](/docs/translation-localization/roll-out-a-language#after-each-upgrade).
+
+---
+
+## Translate documents and printouts
+
+How to send invoices, orders and mails in the customer's language. Applies to iDempiere 11 and later. Checked in October 2026.
+
+:::tip[In short]
+
+- Set Language on the Business Partner. Documents print in that language. For bulk invoice printing, also turn on Multi Lingual Documents.
+- Built-in print formats translate labels and data for you.
+- Jasper reports get the language as a parameter. The report does the rest.
+
+:::
+
+### Which language is used
+
+| Printout | Language |
+| --- | --- |
+| One document printed or emailed from its window (order, invoice, shipment, payment and others) | The Business Partner's Language, also with Multi Lingual Documents off. If empty, the Tenant's language. |
+| Dunning letters (Print Dunning Letters) | The Business Partner's Language. If empty, the Tenant's language. |
+| Invoices printed in bulk (Print Invoices) | The Business Partner's Language only when the Tenant has Multi Lingual Documents on. Otherwise the user's login language. |
+| A report from the menu | The user's login language |
+
+### What to translate
+
+| Text | Where |
+| --- | --- |
+| Labels of a built-in print format | Print Format => Item Translation |
+| Labels of a Jasper report | A properties file, or `AD_Message` / `AD_Element` |
+| Mail text | Mail Template => Translation |
+| Business data | Translation tab of each record, per Tenant: Document Type, Product, Unit of Measure, Payment Term, Tax, Charge, Greeting, Dunning Level |
+
+Do not run Synchronize Doc Translation after translating business data. See [Processes](/docs/translation-localization/how-translation-works#processes).
+
+### Built-in print formats
+
+- **Labels:** Synchronize Terminology fills them from the element translations. To refresh one print format, run [Synchronize Print Format Items](/docs/new-features/v10/synchronize-print-format-items).
+- **Data:** a print format on a view such as `C_Invoice_Header_v` reads the translated view `C_Invoice_Header_vt`. Core has these views for order, invoice, shipment and dunning headers. For your own views, see [Translated views](/docs/translation-localization/how-translation-works#translated-views).
+- **File name:** can be translated. See [Make print filename configurable](/docs/new-features/v10/make-print-filename-configurable).
+
+### JasperReports
+
+iDempiere passes the language. The report handles labels and data itself.
+
+- **Language:** documents use the Business Partner's Language, otherwise the Tenant's language. Other reports use the login language, unless the process has a parameter named `CURRENT_LANG` or `AD_Language`. From iDempiere 12, the report viewer also offers a language drop-down for Jasper documents.
+- **Parameters:** `CURRENT_LANG` (for example `de_DE`) and `REPORT_LOCALE` (date and number formats, follows `CURRENT_LANG`).
+- **Labels:** `$R{key}` or `str("key")` is looked up in this order:
+  1. the report's properties file, country first (`name_sv_SE.properties`), then language (`name_sv.properties`)
+  2. `AD_Message`, including tenant-level messages when they are enabled ([discussion](https://mattermost.idempiere.org/idempiere/pl/negibnid5tyjbffffkxbwftx4y))
+  3. `AD_Element`, its Print Name
+
+  See [AD_Message+AD_Element Resource Bundle](/docs/new-features/v9/admessageadelement-resource-bundle-for-jasper-report).
+- **Data:** nothing switches automatically. Query the [translated view](/docs/translation-localization/how-translation-works#translated-views) yourself:
+
+```sql
+SELECT * FROM C_Invoice_Header_vt
+WHERE C_Invoice_ID = $P{RECORD_ID} AND AD_Language = $P{CURRENT_LANG}
+```
+
+- **Amounts in another currency:** `DisplayType.getCurrencyFormat(language, currencyISOCode)` formats them for the language.
+
+:::tip
+
+Labels and `CURRENT_LANG` only work when iDempiere runs the report. To preview in Jaspersoft Studio, give `CURRENT_LANG` a default value.
+
+:::
+
+### Test a translated document
+
+Set Language on a test Business Partner, then print and email a document for it, and run Print Invoices for it. Repeat with the Business Partner's Language empty.
+
+### Known issues
+
+Open in October 2026:
+
+- [IDEMPIERE-4400](https://idempiere.atlassian.net/browse/IDEMPIERE-4400): the Language field in print preview is empty.
+- [IDEMPIERE-6418](https://idempiere.atlassian.net/browse/IDEMPIERE-6418): payment print and export duplicate lines when three login languages are active and the Business Partner has a non-base language.
+- [IDEMPIERE-6913](https://idempiere.atlassian.net/browse/IDEMPIERE-6913): the web client does not pass the print format to a Jasper process.
+
+---
+
+## Translate the user interface
+
+How to translate windows, fields, menus and messages. Applies to iDempiere 11 and later. Checked in October 2026.
+
+:::tip[In short]
+
+- Log in as System Administrator. Changes apply to all Tenants.
+- Translate the element, not the field.
+- Use the System Translation Check window to work through one language.
+
+:::
+
+### Where to translate
+
+| Text | Window => tab |
+| --- | --- |
+| Field labels, help | Element => Translation |
+| Window, tab, field names | Window, Tab & Field => Window, Tab or Field Translation |
+| Menu entries | Menu => Translation |
+| Processes and parameters | Report & Process => Report Translation, Parameter Translation |
+| Messages and buttons | Messages => Translation |
+| Drop-down values | Reference => List Translation |
+| Info windows | Info Window => Window Translation, Column Translation |
+
+The System Translation Check window shows all these tabs for one language.
+
+A language appears on the login page only when Login Locale is selected. See [Language flags](/docs/translation-localization/how-translation-works#language-flags).
+
+### Translate the element, not the field
+
+Most fields are Centrally Maintained: they take their label from the element. [Synchronize Terminology](/docs/translation-localization/how-translation-works#processes) copies element translations to fields, process parameters, info columns, print format items and menus.
+
+:::warning
+
+Every upgrade runs Synchronize Terminology. A translation typed on a centrally maintained field is lost. To give one field its own label, clear Centrally Maintained first.
+
+:::
+
+### Other tasks
+
+- **Override a message for one Tenant:** see [Messages at Client Level](/docs/new-features/v9/messages-at-client-level).
+- **Find untranslated texts:** filter a translation tab on Translated = No, or run the [coverage query](/docs/translation-localization/how-translation-works#measure-the-coverage-of-a-language). It counts messages, elements, fields and menus; add other `_Trl` tables the same way.
+- **See your changes:** run Cache Reset, then log in again.
+- **Plug-in texts:** translate them in the same windows. To deliver them, see [Ship translations](/docs/translation-localization/ship-translations).
 
 ---
 
