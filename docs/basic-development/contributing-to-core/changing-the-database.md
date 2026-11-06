@@ -53,3 +53,5 @@ INSERT INTO AD_Column (AD_Column_ID,Version,Name,AD_Table_ID,ColumnName,DefaultV
 ALTER TABLE PA_DashboardContent ADD COLUMN IsMaximizable CHAR(1) DEFAULT 'Y' CHECK (IsMaximizable IN ('Y','N')) NOT NULL
 ;
 ```
+
+Log Migration Scripts does not record changes to translation (`_Trl`) tables. See [Ship translations](/docs/translation-localization/ship-translations).

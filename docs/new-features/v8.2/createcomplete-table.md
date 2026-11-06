@@ -47,3 +47,5 @@ With the process *Create/Complete Table*, accessible from the gear button in *Ta
 - And at last open 'Language' and run 'Language Maintenance'/'Add Missing Translations' for all languages used (necessary only if the base table already contains rows)
 
 **Technical Info:** [IDEMPIERE-4858](https://idempiere.atlassian.net/browse/IDEMPIERE-4858)
+
+See also: [How translation works](/docs/translation-localization/how-translation-works).

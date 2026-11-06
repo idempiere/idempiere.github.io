@@ -53,3 +53,5 @@ Click on it again to shrink the menu to the basic structure.
 
 The system provides a search box which allows you to filter the options that are part of
 the name typed for easy access.
+
+See also: [Translate the user interface](/docs/translation-localization/translate-the-user-interface), which explains how a language appears on the login page.
