@@ -46,7 +46,7 @@ The skills live in [`.agents/skills`](https://github.com/idempiere/idempiere/tre
 
 ## Rules that matter most
 
-- Agents do not write migration scripts or dictionary IDs. You generate them from the iDempiere UI using [Centralized IDs](./changing-the-database). The agent tells you what to create and reviews the generated scripts.
+- Agents do not write migration scripts or dictionary IDs. You generate them from the iDempiere UI using [Centralized IDs](./changing-the-database/centralized-ids.md). The agent tells you what to create and reviews the generated scripts.
 - Agents never print, log or commit `idempiere.properties`, `idempiereEnv.properties` or other files with passwords. If an agent needs connection details, it asks you.
 - Agents prefer overloads over changing public or protected method signatures. A signature change happens only when you explicitly decide on a breaking change. You then document it as one in the pull request and in the [migration notes](/docs/migration-notes).
 - You are responsible for every line you submit, whether you wrote it or an agent did. Read and understand the change before opening a pull request.

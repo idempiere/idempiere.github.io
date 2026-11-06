@@ -43,6 +43,8 @@ If you want to fix a bug or add an enhancement to the core project, start with t
 - [Common Issues](./common-issues)
 - [Changing the Database](./changing-the-database)
 
+If your change adds or changes Application Dictionary records, you need centralized IDs before you start. See [Request centralized IDs](./changing-the-database/centralized-ids.md).
+
 In summary, the usual flow is:
 
 1. Create your personal fork.
