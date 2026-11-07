@@ -957,6 +957,7 @@ Path to additional font use in report, making it available for PDF export
 
 - Values: Default none
 - Reference: [BF 2617308](https://sourceforge.net/tracker/index.php?func=detail&aid=2617308&group_id=176962&atid=879332)
+- See [Fonts in print formats and reports](./fonts-for-printing/print-formats.md#embed-fonts-with-pdf_font_dir)
 
 #### ProductUOMConversionRateValidate {#ProductUOMConversionRateValidate}
 

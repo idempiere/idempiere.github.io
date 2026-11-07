@@ -50,3 +50,5 @@ When you run server on a minimal centos instance (like on gcloud) text on your c
 ```shell
 sudo yum -y install liberation-serif-fonts liberation-sans-fonts liberation-fonts liberation-fonts-common liberation-narrow-fonts liberation-mono-fonts dejavu-lgc-serif-fonts dejavu-serif-fonts dejavu-fonts-common dejavu-lgc-sans-mono-fonts dejavu-sans-fonts dejavu-sans-mono-fonts gnu-free-fonts-common gnu-free-serif-fonts gnu-free-sans-fonts gnu-free-serif-fonts
 ```
+
+For fonts in print formats and Jasper reports, see [Fonts in print formats and reports](../../basic-development/fonts-for-printing/index.md) and [Install fonts on servers](../../basic-development/fonts-for-printing/install-fonts-on-servers.md).
