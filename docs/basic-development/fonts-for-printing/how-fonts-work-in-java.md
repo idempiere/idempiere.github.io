@@ -3,7 +3,7 @@ sidebar_position: 5
 description: For developers, the classes a print format goes through, how the JDK finds fonts, and the native memory that font rendering uses.
 tags: [development, technical]
 applies_to: ">=10"
-last_reviewed: 2026-11-07
+last_reviewed: 2026-11-08
 ---
 # How fonts work in Java
 
@@ -32,7 +32,9 @@ The JDK keeps its own list of fonts. iDempiere does not manage fonts itself.
 
 - **Font list:** the first time a font is used, the JDK reads the fonts of the operating system through fontconfig. It does not read them again until the JVM restarts.
 - **Logical fonts:** `Dialog`, `DialogInput`, `SansSerif`, `Serif` and `Monospaced` are mapped to installed fonts through fontconfig. If the JDK has its own `fontconfig.properties` file in its `lib` directory, that file sets this mapping instead.
-- **Fonts from a plug-in:** a plug-in can add a font file for its JVM with `Font.createFont()` and `GraphicsEnvironment.registerFont()`. Java then knows the font, but fontconfig and other programs do not. `registerFont()` returns `false` when Java already knows a font with the same name, for example from the operating system. The font that was there first is used.
+- **Fonts from a plug-in:** a plug-in can add a font file for its JVM with `Font.createFont()` and `GraphicsEnvironment.registerFont()`. Java then knows the font, but fontconfig and other programs do not. `registerFont()` returns `false` when Java already knows a font with the same name, for example from the operating system. The font that was there first is used. Some JDKs bring their own fonts, for example DejaVu in Amazon Corretto.
+- **Styles of a face:** for a face name such as "Helvetica Neue Medium", Java returns that face for every style. Only fontconfig turns it into the bold face of the family, so this works only for fonts installed on the operating system ([IDEMPIERE-7201](https://idempiere.atlassian.net/browse/IDEMPIERE-7201)).
+- **macOS:** Java finds a face there only by its PostScript name (`HelveticaNeue-Medium`), so a print format can fall back to another font.
 - **Headless servers:** with `-Djava.awt.headless=true`, Java still needs fontconfig and font files. It only skips the screen.
 
 ## Memory

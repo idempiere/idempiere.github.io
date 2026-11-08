@@ -3,7 +3,7 @@ sidebar_position: 2
 description: How a print format gets its fonts, which letters its PDF loses, and how to embed fonts with PDF_FONT_DIR.
 tags: [development, technical]
 applies_to: ">=10"
-last_reviewed: 2026-11-07
+last_reviewed: 2026-11-08
 ---
 # Fonts in print formats
 
@@ -23,6 +23,7 @@ Every print format, and every item in it, has a Print Font. You define the fonts
 - `Dialog`, `DialogInput`, `SansSerif`, `Serif` and `Monospaced` are Java logical fonts. The server replaces them with one of its installed fonts, so they can look different on two servers.
 - Any other name must be a font installed on the server. You can check this with `fc-list`, see [Check a server](./install-fonts-on-servers.md#check-a-server).
 - In a table (list) print format, the header and the totals take their fonts from the Print Table Format window, not from the items. If a font change seems to do nothing, look there.
+- Without fonts of their own there, the header and the totals take the print format's font in bold and bold italic. Give the print format a family name (`Helvetica Neue`), not one face (`Helvetica Neue Medium`), or they can lose bold, see [How Java finds fonts](./how-fonts-work-in-java.md#how-java-finds-fonts).
 
 :::warning
 

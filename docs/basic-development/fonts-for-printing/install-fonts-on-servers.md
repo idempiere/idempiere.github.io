@@ -3,7 +3,7 @@ sidebar_position: 4
 description: Install fonts on an iDempiere server or in a Docker image, and check which fonts a server has and which fonts a PDF contains.
 tags: [technical]
 applies_to: ">=10"
-last_reviewed: 2026-11-07
+last_reviewed: 2026-11-08
 ---
 # Install fonts on servers
 
@@ -65,6 +65,8 @@ pdffonts invoice.pdf
 
 - The `emb` column shows whether a font is embedded. A font with `emb` set to `no` comes from the computer that opens the PDF, so the document can look different there.
 - The `encoding` column shows the encoding. `WinAnsi` is `Cp1252`: letters outside it are lost. `Identity-H` keeps all letters.
+
+To compare the layout of two PDFs, print both on Linux. On macOS, Java can miss a face and print another font, see [How Java finds fonts](./how-fonts-work-in-java.md#how-java-finds-fonts).
 
 ## Related pages
 
