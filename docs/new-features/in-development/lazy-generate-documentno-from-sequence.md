@@ -37,7 +37,7 @@ This feature introduces lazy generation of document numbers from sequences:
 - Generation of the actual document number from `AD_Sequence` is deferred until:
   1. The transaction pre-commit phase (`beforeCommit` transaction event), or
   2. Business logic explicitly reads the document number via `getDocumentNo()`.
-- The duration of the sequence lock is shortened to the brief moment just before database commit, minimizing lock contention among concurrent transactions.
+- When business logic does not read the document number during processing, the duration of the sequence lock is shortened to the brief moment just before database commit, minimizing lock contention among concurrent transactions. If code calls `getDocumentNo()` earlier in the transaction, the sequence is locked at that point and held until the transaction completes or rolls back.
 - If a transaction rolls back before commit, the temporary document number is discarded and the sequence record is never queried or updated. This avoids burning sequence numbers or blocking other transactions.
 - When the sequence generates the actual document number, related records created earlier in the transaction that captured the temporary number are updated automatically:
   - `AD_ChangeLog`: The insert change log entry for the `DocumentNo` column is updated to record the actual document number.
@@ -49,11 +49,13 @@ Lazy document number generation can be enabled tenant-wide, or configured indivi
 
 ### Configure tenant-wide lazy generation
 
-To enable lazy document number generation across an entire Tenant:
+To configure lazy document number generation across the system or for a specific Tenant:
 
 1. Open the System Configurator window as a System Administrator or Tenant Administrator.
 2. Search for the `LAZY_GENERATE_DOCUMENTNO_FROM_SEQUENCE` configuration key.
-3. Set the **Configured Value** to `Y`.
+3. Configure the setting:
+   - **For a system-wide setting:** Select the existing record under the "System" Tenant and set **Configured Value** to `Y`.
+   - **For a tenant-only setting:** Create a copy of the record for the specific Tenant, and set **Configured Value** to `Y` (to enable) or `N` (to disable).
 4. Save the record and reset the cache.
 
 ![System Configurator setting](/img/docs/new-features/LazyGenerateDocNo_SystemConfigurator.png)
