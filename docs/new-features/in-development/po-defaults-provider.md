@@ -36,7 +36,7 @@ A plugin could not change this:
 ## Use cases
 
 - **Orders from integrations.** A Sales Order created by REST, an import or a scheduler gets the Sales Representative of its Business Partner, not the technical user.
-- **Rules of the Business Partner.** An order created with only `C_BPartner_ID` set gets the Delivery Rule and Invoice Rule of its Business Partner, not the fixed constructor values.
+- **Rules of the Business Partner.** An order created with `C_BPartner_ID` and `C_BPartner_Location_ID` set directly gets the Delivery Rule and Invoice Rule of its Business Partner, not the fixed constructor values.
 - **No sales representative.** A deployment leaves the Sales Representative empty when nobody is responsible, instead of filling in the logged-in user.
 
 Without a provider plugin, nothing changes for users. The feature adds no window, field or setting.
@@ -46,7 +46,7 @@ Without a provider plugin, nothing changes for users. The feature adds no window
 A new OSGi service, `IPODefaultsProvider`, supplies defaults for the records of one table. A plugin registers it with the name of the table it serves, the same way column callouts are selected.
 
 - **Initial values.** When a new record is created, the model calls `initDefaults` of each provider at the end of its own initial values. A provider can overwrite these values, or clear one so that it is decided on save.
-- **Values on save.** In `beforeSave`, before each built-in default, the model asks the providers for a value of the column, but only while the column is still empty. A value set by the user or by the calling code is kept.
+- **Values on save.** In `beforeSave`, before each built-in default, the model asks the providers for a value of the column, but only while the column is still empty. A value set by the user or by the calling code is kept when the order has both the Business Partner and its Location. If the Location is empty, `beforeSave` first calls `setBPartner`, which can overwrite the Sales Representative, payment term, price list, Delivery Rule and Invoice Rule with the values of the Business Partner.
 - **No provider, no change.** With no provider registered for a table, the records get the same values as before.
 
 The interface is generic and selected by table name. In this release, `MOrder` and `MInvoice` call it. A table whose model does not call it ignores its providers.
@@ -137,7 +137,7 @@ For example, a provider can clear `DeliveryRule` and `InvoiceRule` in `initDefau
 - `getDefault`: the providers are asked in order of `service.ranking`, highest first. The first answer other than `useFallback()` wins.
 - `initDefaults`: all providers are called, lowest ranking first. When two providers set the same column, the value of the highest ranking provider is kept.
 - Only the providers registered for the table of the record are called.
-- A provider that throws a `RuntimeException` is written to the log as a warning and skipped. The save does not fail because of it.
+- A provider that throws a `RuntimeException` is written to the log as a warning and skipped. Changes the provider made before the exception are not undone. For example, a setter error left by `initDefaults` can still make the save fail.
 - Providers can be registered and removed while the server runs. They are looked up again each time a record is created or saved.
 - `getDefault` is called on every save while the column is empty, updates included. Keep it fast.
 - One provider instance serves all threads and tenants. Keep it stateless, and use `po.getCtx()` and `po.get_TrxName()`.
@@ -154,9 +154,9 @@ For example, a provider can clear `DeliveryRule` and `InvoiceRule` in `initDefau
 
 ## Migration impact
 
-None for installations without a provider plugin. Orders and invoices get the same defaults as before.
+Without a provider plugin, orders and invoices get the same defaults as before, with one exception when a lookup finds nothing.
 
-A built-in default is now applied only when its lookup finds a record. Before, a lookup that found nothing returned -1, and the model could pass -1 to the setter. For example, an order without a price list got the currency -1. Now the field stays empty, and the currency comes from the context.
+A built-in default is now applied only when its lookup finds a record. Before, a lookup that found nothing returned -1, and the model passed -1 to the setter, which left the field empty. For example, an order without a price list got an empty currency. Now the currency comes from the context.
 
 ## Related tickets
 
