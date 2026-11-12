@@ -1,18 +1,19 @@
 ---
 sidebar_label: Server Push Reconnect (Atmosphere)
-sidebar_position: 3
-description: How the Atmosphere server push of the ZK Web UI retries after an outage, when it reloads the page, and how to set timeouts behind a reverse proxy or load balancer.
+sidebar_position: 8
+description: How Atmosphere server push in the ZK Web UI retries after an outage, when it reloads the page, and how to set timeouts behind a proxy.
+tags:
+  - installation
+  - configuration
+applies_to: ">=14"
+last_reviewed: 2026-11-12
 ---
 # Server Push Reconnect (Atmosphere)
 
-:::warning Not Yet in Stable Release
-This feature is not yet part of a stable iDempiere release and may change.
-<!-- TODO: verify - update after https://github.com/idempiere/idempiere/pull/3453 is merged -->
-:::
-
 **Goal:** Technical  
 **Developer:** [Norbert Bede](https://github.com/norbertbede), [Heng Sin Low](https://github.com/hengsin)  
-**Feature Ticket:** [IDEMPIERE-7205](https://idempiere.atlassian.net/browse/IDEMPIERE-7205)
+**Feature Ticket:** [IDEMPIERE-7205](https://idempiere.atlassian.net/browse/IDEMPIERE-7205)  
+**Version:** iDempiere 14
 
 ## Overview
 
@@ -75,7 +76,7 @@ Lasting outage, for example a server restart:
 | 7 s | Failure 4, wait 8 s |
 | 15 s | Failure 5: the browser loads `index.zul` |
 
-While the server is down, the proxy answers the page request with its maintenance page. When the server is back, the user gets the login page. The in-memory session is lost after a restart in any case, so waiting longer would not help.
+While the server is down, the proxy answers the page request with its maintenance page. A static maintenance page does not return to iDempiere by itself: the user reloads the page, or the maintenance page reloads itself after a short delay (see [Maintenance page](#maintenance-page)). When the server is back, the user gets the login page. The in-memory session is lost after a restart in any case, so waiting longer would not help.
 
 ## Session timeout
 
@@ -90,8 +91,6 @@ A real session timeout is handled by ZK, not by the retry logic above. By defaul
 
 Add both to "Java Options" when running iDempiere setup, or to `JAVA_OPTIONS` for the Docker image. The push timeout can also be set as a ZK library property in `WEB-INF/zk.xml`. The retry count and the backoff waits are fixed.
 
-<!-- TODO: verify - default push timeout may change during review of PR #3453 -->
-
 ## Running behind a reverse proxy or load balancer
 
 ### Read timeout
@@ -105,7 +104,7 @@ Every proxy between the browser and iDempiere must keep the comet request open l
 | AWS Application Load Balancer | `idle_timeout.timeout_seconds` | 60 s |
 | AWS CloudFront | Origin response timeout | 30 s |
 
-Either raise the proxy timeout above the push timeout, or lower the push timeout below the smallest proxy timeout. For example, with the defaults above, `-Dfi.jawsy.jawwa.zk.atmosphere.timeout=50000` keeps idle polls below 60 seconds.
+Either raise the proxy timeout above the push timeout, or lower the push timeout below the smallest proxy timeout in the chain. For example, behind nginx or an Application Load Balancer with default settings (60 s), `-Dfi.jawsy.jawwa.zk.atmosphere.timeout=50000` keeps idle polls below 60 seconds. Behind CloudFront, first raise its origin response timeout above the push timeout, or set the push timeout below 30 seconds, for example `25000`.
 
 :::tip
 Leave a margin. If the proxy timeout and the push timeout are equal, the proxy often answers first.
@@ -128,8 +127,12 @@ location = /maintenance.html {
 location /webui/ {
     proxy_pass http://idempiere:8080;
     proxy_read_timeout 180s;
+    # also use error_page for 502/503/504 returned by iDempiere itself
+    proxy_intercept_errors on;
 }
 ```
+
+To bring users back without a manual reload, the maintenance page can reload itself, for example with `<meta http-equiv="refresh" content="30">`.
 
 On AWS CloudFront, use custom error responses for 502, 503 and 504 that point to the maintenance page and return 503.
 
