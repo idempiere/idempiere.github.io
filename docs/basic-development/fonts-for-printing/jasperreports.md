@@ -41,20 +41,20 @@ bin.includes = META-INF/,\
                .
 ```
 
-Put `jasperreports_extension.properties` and the `fonts/` folder into `src/`, so they end up at the root of the bundle:
+Put `jasperreports_extension.properties` and the `fonts/` folder into `src/`, so they end up at the root of the bundle. Give each font extension its own property suffix (`examplesans`) and its own folder (`fonts/examplesans/`). If two fragments use the same `fonts/fonts.xml` path or the same property, JasperReports can load only one of them:
 
 ```properties title="jasperreports_extension.properties"
 net.sf.jasperreports.extension.registry.factory.simple.font.families=net.sf.jasperreports.engine.fonts.SimpleFontExtensionsRegistryFactory
-net.sf.jasperreports.extension.simple.font.families.example=fonts/fonts.xml
+net.sf.jasperreports.extension.simple.font.families.examplesans=fonts/examplesans/fonts.xml
 ```
 
-```xml title="fonts/fonts.xml"
+```xml title="fonts/examplesans/fonts.xml"
 <fontFamilies>
   <fontFamily name="Example Sans">
-    <normal>fonts/ExampleSans-Regular.ttf</normal>
-    <bold>fonts/ExampleSans-Bold.ttf</bold>
-    <italic>fonts/ExampleSans-Italic.ttf</italic>
-    <boldItalic>fonts/ExampleSans-BoldItalic.ttf</boldItalic>
+    <normal>fonts/examplesans/ExampleSans-Regular.ttf</normal>
+    <bold>fonts/examplesans/ExampleSans-Bold.ttf</bold>
+    <italic>fonts/examplesans/ExampleSans-Italic.ttf</italic>
+    <boldItalic>fonts/examplesans/ExampleSans-BoldItalic.ttf</boldItalic>
     <pdfEncoding>Identity-H</pdfEncoding>
     <pdfEmbedded>true</pdfEmbedded>
   </fontFamily>
@@ -62,7 +62,7 @@ net.sf.jasperreports.extension.simple.font.families.example=fonts/fonts.xml
 ```
 
 - In the report, `fontName` must be exactly the family name from `fonts.xml`, here `Example Sans`. The name inside the font file does not matter.
-- Keep `Identity-H` and `pdfEmbedded` set to `true`, so the PDF contains every letter and looks the same on every computer.
+- Keep `Identity-H` and `pdfEmbedded` set to `true`, so the PDF keeps the letters the font contains and looks the same on every computer. Encoding and embedding do not add letters to a font. Check that each font face covers the languages you need, and check the rendered PDF.
 - After you install the fragment, restart the server, or refresh the JasperReports bundle. A fragment is attached only when its host bundle starts.
 - Only include fonts whose license allows you to share them.
 
@@ -82,9 +82,9 @@ When the `fontName` of a text field is not a family of a font extension, JasperR
 | `pdfEncoding` | `Cp1252` | Letters outside this encoding are lost |
 | `isPdfEmbedded` | `false` | Whether the font file goes into the PDF |
 
-- These attributes are deprecated in JasperReports 6, and you must set them on every field.
+- These attributes are deprecated in JasperReports 6. A field can also inherit them from a report style, so they do not have to be set on every field.
 - With the defaults, a report loses the same letters as a print format. Use a font extension instead.
-- A field without a `fontName` uses the default font `SansSerif` (property `net.sf.jasperreports.default.font.name`). In a PDF, it also gets Helvetica with `Cp1252`.
+- A field without its own `fontName`, and without one from a report style, uses the default font `SansSerif` (property `net.sf.jasperreports.default.font.name`). In a PDF, it also gets Helvetica with `Cp1252`.
 
 ## Missing fonts
 

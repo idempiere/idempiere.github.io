@@ -19,7 +19,7 @@ These classes in `org.adempiere.base` take part:
 
 | Output | Path through the code | Fonts |
 | --- | --- | --- |
-| PDF | `ReportEngine.createPDF()` => `PDFReportRenderer` => `Document.writePDF()`. In iDempiere 10, `createPDF()` calls `Document.getPDFAsFile()` and `createPDFData()` calls `Document.getPDFAsArray()`. A print format with a Jasper Process creates its PDF with that report instead. | `Document` creates an OpenPDF `DefaultFontMapper`, adds the fonts of `PDF_FONT_DIR`, and draws the pages through `PdfGraphics2D`. The mapper uses `Cp1252`. |
+| PDF | `ReportEngine.createPDF()` => `PDFReportRenderer` => `Document.writePDF()`. In iDempiere 10, `createPDF()` calls `Document.getPDFAsFile()` and `createPDFData()` calls `Document.getPDFAsArray()`. A print format with a Jasper Process creates its PDF with that report instead, but only through `createPDF()`. `createPDFData()` does not run the Jasper Process and returns `null` for such a print format, so use `createPDF()` for Jasper-backed PDFs. | `Document` creates an OpenPDF `DefaultFontMapper`, adds the fonts of `PDF_FONT_DIR`, and draws the pages through `PdfGraphics2D`. The mapper uses `Cp1252`. |
 | Document archive | `ArchiveEngine` => `Document.getPDFAsArray()` | Same as the PDF |
 | Direct print | `ReportEngine.print()` => `PrintUtil.print()` => `java.awt.print.PrinterJob` | Java fonts, sent through the Java print service |
 | Report renderer from a plug-in (only in versions with [Extensible Report Content Generation](../../new-features/v13/extensible-report-content-generation.md)) | `IReportContentRendererFactory` services | Chosen by the plug-in |

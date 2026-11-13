@@ -61,9 +61,7 @@ Embedding the font does not help, because the encoding is still `Cp1252`. There 
 What you can do:
 
 - Let a JasperReports report create the PDF: in the Print Format window, fill the Jasper Process field. The PDF of that print format then comes from the report. See [Fonts in JasperReports](./jasperreports.md).
-- Print directly on a printer defined on the server, which is not limited to `Cp1252`.
-
-<!-- TODO: verify - is there an IDEMPIERE ticket for a configurable PDF encoding of print formats? Link it here if one exists. -->
+- Print directly on a printer defined on the server. The paper output is not limited to `Cp1252`. If automatic archiving is enabled, the archive PDF still uses `Cp1252` and can lose those letters. When the archived document must keep them, use the JasperReports path.
 
 ## Embed fonts with PDF_FONT_DIR
 

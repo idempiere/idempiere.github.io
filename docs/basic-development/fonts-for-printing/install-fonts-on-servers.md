@@ -39,7 +39,9 @@ COPY fonts/ /usr/share/fonts/truetype/company/
 RUN fc-cache -f
 ```
 
-If the base image runs as another user, switch to `root` first with `USER root`.
+If the base image runs as another user, switch to `root` first with `USER root`. After `fc-cache`, switch back to the user of the base image, so the container does not run as root. For the official `12-release` image, that user is `idempiere` (`USER idempiere`).
+
+<!-- TODO: verify - confirm that the official 12-release image runs as the user idempiere. -->
 
 :::tip
 
@@ -64,7 +66,7 @@ pdffonts invoice.pdf
 ```
 
 - The `emb` column shows whether a font is embedded. A font with `emb` set to `no` comes from the computer that opens the PDF, so the document can look different there.
-- The `encoding` column shows the encoding. `WinAnsi` is `Cp1252`: letters outside it are lost. `Identity-H` keeps all letters.
+- The `encoding` column shows the encoding. `WinAnsi` is `Cp1252`: letters outside it are lost. `Identity-H` keeps all letters that the font contains. It does not add letters to a font, so check that the font covers the languages you need and check the rendered PDF.
 
 To compare the layout of two PDFs, print both on Linux. On macOS, Java can miss a face and print another font, see [How Java finds fonts](./how-fonts-work-in-java.md#how-java-finds-fonts).
 
