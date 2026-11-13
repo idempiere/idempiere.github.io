@@ -1,6 +1,6 @@
 ---
 sidebar_label: Lazy Generate Document No from Sequence
-sidebar_position: 5
+sidebar_position: 6
 description: Defer document number generation to pre-commit to reduce database sequence lock contention under high concurrency.
 tags:
   - technical
@@ -9,12 +9,6 @@ last_reviewed: 2026-11-08
 ---
 
 # Lazy generate document numbers from sequence
-
-:::warning Not Yet in Stable Release
-
-This feature is not yet part of a stable iDempiere release and may change.
-
-:::
 
 **Goal:** Technical  
 **Developer:** [Heng Sin Low](https://github.com/hengsin)  
@@ -60,7 +54,7 @@ To configure lazy document number generation across the system or for a specific
 
 ![System Configurator setting](/img/docs/new-features/LazyGenerateDocNo_SystemConfigurator.png)
 
-### Configure per Document Type
+### Configure per document type
 
 You can override or configure lazy generation on specific Document Types:
 
