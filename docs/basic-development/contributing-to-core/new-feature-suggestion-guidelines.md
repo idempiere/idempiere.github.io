@@ -13,6 +13,8 @@ These guidelines cover both completely new features and smaller improvements to 
 
 Following them helps the community understand your proposal, find related suggestions, and decide whether the idea belongs in the core project.
 
+If you plan to implement the change yourself, check whether it needs a design discussion before you write code. See [Changes that need a design discussion first](./design-discussion).
+
 Before creating an enhancement suggestion, review the points below and include as much detail as possible.
 
 ## Before submitting an enhancement suggestion

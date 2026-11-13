@@ -11,6 +11,12 @@ This is a checklist of the **minimum steps** required to submit high-quality pul
 If your contribution includes database changes, follow the [Changing the Database](./changing-the-database) instructions **before writing any code**.
 :::
 
+:::tip
+
+If your change shapes iDempiere for everyone, for example it changes a public API, default behavior or the Application Dictionary, discuss it on Mattermost first. See [Changes that need a design discussion first](./design-discussion).
+
+:::
+
 ## Contribution Checklist
 
 - **Every commit must be related to a JIRA ticket.**  
