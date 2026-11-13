@@ -1,6 +1,6 @@
 ---
 sidebar_label: INSERT INTO ... RETURNING Support
-sidebar_position: 5
+sidebar_position: 6
 description: Implement INSERT INTO RETURNING support in PO save to avoid the separate reload query when inserting records in PostgreSQL.
 tags:
   - technical
@@ -9,13 +9,7 @@ applies_to: ">=14"
 last_reviewed: 2026-11-09
 ---
 
-# Support for INSERT INTO ... RETURNING
-
-:::warning Not Yet in Stable Release
-
-This feature is not yet part of a stable iDempiere release and may change.
-
-:::
+# Support for insert into ... returning
 
 **Goal:** Technical  
 **Developer:** [Heng Sin Low](https://github.com/hengsin)  
