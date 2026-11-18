@@ -50,6 +50,7 @@ A new process, *Create View Components from Database*, does the opposite of *Vie
 | --- | --- | --- |
 | Delete existing view components | No | When selected, the existing View Components and View Columns of the table are deleted before the new ones are created. When not selected, the process stops with an error if the table already has View Components. |
 | Create Columns from DB | Yes | When selected, the *Create Columns from DB* process runs afterwards for the same table and creates the Columns that are missing. |
+| Remove PostgreSQL casts | Yes | Shown only on PostgreSQL. When selected, all the type casts (`::type`) are removed, so the definition can also be used on Oracle. The process log lists, for each View Component, the View Columns and clauses where casts were removed. When not selected, the definition is kept exactly as PostgreSQL returns it. |
 
 ## Known limitations
 
@@ -60,24 +61,27 @@ A new process, *Create View Components from Database*, does the opposite of *Vie
   - `SELECT *` or `alias.*` in the column list
   - a `SELECT` without `FROM`
   - a `UNION` nested inside parentheses
+- Only views in the iDempiere database schema are searched.
 - Materialized views are not found, because only regular views are searched.
 - Every `SELECT` of the view must return the same number of columns as the view.
 - The process reads the definition that the database stores, not the original script. Comments and the original formatting are lost.
-- PostgreSQL returns the definition in its own normalized form: identifiers in lower case, extra parentheses and type casts (`::type`) that were not in the original SQL. The process cleans up two cases only:
-  - Casts of string literals to character types without a length, for example `'Y'::bpchar` or `'abc'::text`, are removed.
-  - A column that is only a typed `NULL`, for example `NULL::numeric`, becomes `NULL` with the DB Data Type set, for character and numeric columns.
-- All other casts are kept as PostgreSQL returns them, including `NULL` cast to timestamp or other types. Review the Column SQL and the clauses before the dictionary definition is used to create the view in an Oracle database.
+- PostgreSQL returns the definition in its own normalized form: identifiers in lower case, extra parentheses and type casts (`::type`) that were not in the original SQL. Oracle does not accept `::type`.
+- With *Remove PostgreSQL casts* selected:
+  - All casts are removed, but some of them are needed on PostgreSQL itself, for example `lpad(x::text, 2, '0')` when `x` is a number, or a cast that sets the data type of a view column, such as `(...)::date`. Check the places listed in the process log and rewrite them in a form that works on both databases, for example `CAST(x AS VARCHAR(10))` or `TO_DATE(...)`.
+  - A column that is only a typed `NULL`, for example `NULL::character varying`, becomes `NULL` with the DB Data Type set, for character and numeric columns. *View Validate* then creates it as `NULLIF('a','a')` or `NULLIF(1,1)`, which keeps the data type on both databases.
+- With *Remove PostgreSQL casts* not selected, the definition only works on PostgreSQL. A typed `NULL` is kept in the Column SQL, for example `NULL::character varying`, without DB Data Type.
 - When a clause or a column expression is longer than the From Clause, Where Clause, Other Clause or Column SQL field allows, the process stops with an error instead of cutting the SQL.
 - The column names come from the database, in the order of the view columns.
 - *Create Columns from DB* only adds the Columns that are missing in the table. It creates a System Element for column names that have none, with the Entity Type of the table.
 
 ## Technical notes
 
-- Process class: `org.compiere.process.DatabaseViewImport`. The logic is also available as the static method `DatabaseViewImport.importDatabaseView(Properties ctx, MTable table, boolean deleteOld, boolean createColumns, String trxName, ProcessInfo pi)`, which runs in the transaction passed by the caller.
+- Process class: `org.compiere.process.DatabaseViewImport`. The logic is also available as the static method `DatabaseViewImport.importDatabaseView(Properties ctx, MTable table, boolean deleteOld, boolean createColumns, boolean removeCasts, String trxName, ProcessInfo pi)`, which runs in the transaction passed by the caller.
 - The SQL is split by `org.compiere.process.ViewDefinitionParser`. It has no database access.
 - The view definition is read with `pg_get_viewdef` on PostgreSQL and from `ALL_VIEWS.TEXT` on Oracle.
 - The *Create Columns from DB* process is called through the new constant `SystemIDs.PROCESS_AD_TABLE_CREATECOLUMNS`.
-- New messages: `ViewNotFoundInDB` and `ViewDefinitionNotSupported`.
+- The casts are removed by `ViewDefinitionParser.removeCasts(String)`, which ignores text inside string literals and quoted identifiers.
+- New messages: `ViewNotFoundInDB`, `ViewDefinitionNotSupported` and `ViewCastsRemoved`.
 
 ## Migration impact
 
