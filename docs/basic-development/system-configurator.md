@@ -953,10 +953,11 @@ Defines if Generate Payment Selection must be called at the end of Payment Selec
 
 #### PDF_FONT_DIR {#PDF_FONT_DIR}
 
-Path to additional font use in report, making it available for PDF export
+Path to additional font use in report, making it available for PDF export. When unset or empty, iDempiere automatically uses the `fonts` subdirectory under `IDEMPIERE_HOME`
 
 - Values: Default none
 - Reference: [BF 2617308](https://sourceforge.net/tracker/index.php?func=detail&aid=2617308&group_id=176962&atid=879332)
+- Reference: [IDEMPIERE-7212](https://idempiere.atlassian.net/browse/IDEMPIERE-7212)
 
 #### ProductUOMConversionRateValidate {#ProductUOMConversionRateValidate}
 
