@@ -10,12 +10,6 @@ last_reviewed: 2026-11-18
 
 # PDF font caching and default directory
 
-:::warning Not Yet in Stable Release
-
-This feature is not yet part of a stable iDempiere release and may change.
-
-:::
-
 **Goal:** Technical  
 **Developer:** [Heng Sin Low](https://github.com/hengsin)  
 **Feature Ticket:** [IDEMPIERE-7212](https://idempiere.atlassian.net/browse/IDEMPIERE-7212)  
