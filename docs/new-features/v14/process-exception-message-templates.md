@@ -11,12 +11,6 @@ last_reviewed: 2026-11-16
 
 # Process exception message templates
 
-:::warning Not Yet in Stable Release
-
-This feature is not yet part of a stable iDempiere release and may change.
-
-:::
-
 **Goal:** Technical  
 **Developer:** [Heng Sin Low](https://github.com/hengsin)  
 **Feature Ticket:** [IDEMPIERE-7210](https://idempiere.atlassian.net/browse/IDEMPIERE-7210)  
