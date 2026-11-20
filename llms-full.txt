@@ -1469,6 +1469,280 @@ This is worth stating plainly: the build-from-source rule is the right call for 
 
 ---
 
+## OSGi and MANIFEST.MF Background
+
+This page provides deeper explanations for concepts introduced in [Running Plug-ins Locally in iDempiere](../plugin-running-locally). The information here is not strictly required to follow the tutorial, but it can help you build a clearer mental model of how iDempiere's plug-in system works.
+
+### MANIFEST.MF
+
+**Short version:** `MANIFEST.MF` is the file that configures all attributes of your OSGi plug-in. It lives at `META-INF/MANIFEST.MF` inside your plug-in's jar file and is read by the OSGi framework (Equinox) to discover the plug-in's capabilities. It may be accompanied by a `plugin.xml` file for some Equinox-specific needs.
+
+#### Longer explanation
+
+Two files describe an OSGi plug-in's attributes: `META-INF/MANIFEST.MF` and `plugin.xml`. To understand why both exist, a bit of history helps.
+
+This technology originates in the Eclipse Platform. Originally, Eclipse used a `plugin.xml` file to describe plugin attributes. Starting around Eclipse 3.1, Eclipse adopted a new plugin system based on Equinox — an implementation of the OSGi Plugin Architecture developed as part of the Eclipse project.
+
+OSGi defines `META-INF/MANIFEST.MF` as the standard way to describe a plugin's attributes. Switching entirely to the new system would have been straightforward, except for one problem: the OSGi standardization process is slow, and Eclipse needed capabilities that weren't yet standardized. So the Equinox framework implemented the standard OSGi behavior through `MANIFEST.MF` and used `plugin.xml` as a second configuration file for Equinox-specific extensions.
+
+#### For iDempiere developers
+
+iDempiere uses Equinox as its OSGi implementation. You can use both configuration styles. `plugin.xml` is only needed when you require Equinox-specific features. For most plug-in configuration, `MANIFEST.MF` is the right place.
+
+#### Further reading
+
+- [Vogella - Eclipse Plug-in Development](http://www.vogella.com/articles/EclipsePlugIn/article.html)
+- [Vogella - Eclipse Extension Points](http://www.vogella.com/articles/EclipseExtensionPoint/article.html)
+- [InformIT - Eclipse Architecture](http://www.informit.com/articles/article.aspx?p=1315271&seqNum=3)
+
+### The org.adempiere.base project
+
+This is the base plug-in for iDempiere. It contains the most fundamental parts of the codebase. Every iDempiere plug-in must include it in its dependency list.
+
+### The org.adempiere.plugin.utils project
+
+This plug-in contains helper utilities for plug-in development. It includes the `AdempiereActivator` class. If you use this class as your OSGi activator, it can perform automatic work when the plug-in is first activated — such as creating database entries. This is the mechanism used by 2Pack's automatic pack-in feature.
+
+### Singleton plug-ins
+
+A Singleton plug-in can only be loaded once in an OSGi framework.
+
+OSGi's design goal is that plug-ins are independent of their environment, so it shouldn't technically matter if the same plug-in is loaded twice. In practice, however, loading a plug-in twice (perhaps in two different versions because you forgot to uninstall the old one) often causes strange errors and is rarely useful.
+
+In iDempiere, you should always use Singleton plug-ins.
+
+---
+
+## OSGi glossary for plug-in developers
+
+This page explains the OSGi words you meet in the plug-in guides. It is written for developers who write their first iDempiere plug-in and have not used OSGi before.
+
+Applies to iDempiere 9 and later, where the annotation-based factories such as `AnnotationBasedProcessFactory` are available. For the history of `MANIFEST.MF` and Equinox, see [OSGi Background](./osgi-background).
+
+### The big picture
+
+You do not need to know OSGi in depth to write a plug-in. These six points are enough to start:
+
+1. Your plug-in is a **bundle**: a jar file with a description file named `MANIFEST.MF`.
+2. iDempiere runs on an OSGi framework called **Equinox**. It starts, stops and connects the bundles.
+3. Your code adds behavior by publishing a **service**. For example, a process factory is a service.
+4. You publish a service by putting the `@Component` annotation on a class. This is **Declarative Services**.
+5. Core finds your service and uses it. When several services could answer, the highest **`service.ranking`** goes first.
+6. You deliver the bundle to a server as a **feature** from a **p2** repository.
+
+### A small example
+
+This class adds a process factory to iDempiere. It is complete: the annotation publishes it, and `getPackages()` tells it where your process classes are.
+
+```java title="src/com/example/process/MyProcessFactory.java"
+package com.example.process;
+
+import org.adempiere.base.AnnotationBasedProcessFactory;
+import org.adempiere.base.IProcessFactory;
+import org.osgi.service.component.annotations.Component;
+
+@Component(immediate = true, service = IProcessFactory.class, property = {"service.ranking:Integer=100"})
+public class MyProcessFactory extends AnnotationBasedProcessFactory {
+
+    @Override
+    protected String[] getPackages() {
+        return new String[] {"com.example.process"};
+    }
+}
+```
+
+`getPackages()` does not scan subpackages. A process in `com.example.process.reports` is not found by this example, so list every package that contains process classes.
+
+Read it from top to bottom:
+
+- [`@Component`](#component-annotation) turns the class into a [component](#component).
+- `service = IProcessFactory.class` says which [service](#service) it publishes.
+- `immediate = true` creates the component right away. See [immediate](#immediate).
+- `service.ranking:Integer=100` sets the [ranking](#serviceranking). Core's own process factories use values from -2 to 1, so yours is asked first.
+
+### Terms from A to Z
+
+#### @Activate
+
+A Declarative Services annotation for a method. OSGi calls that method once, when it creates the component. Use it to do start-up work, for example to scan for your classes. The core class `AnnotationBasedModelFactory` uses it. See [Service Annotations](../annotations-instead-xml).
+
+:::warning
+The annotation is `@Activate`. There is no `@Activator` annotation in OSGi. An **activator** is a different thing: see [Activator](#activator).
+:::
+
+#### Activator
+
+A class that implements `org.osgi.framework.BundleActivator`. OSGi calls its `start(BundleContext)` method when the bundle starts and `stop(BundleContext)` when it stops. The bundle names its activator in the `Bundle-Activator` header of `MANIFEST.MF`. For example, `org.adempiere.base` uses `org.adempiere.base.BaseActivator`.
+
+iDempiere offers base classes for activators that load a 2Pack: `AdempiereActivator` and `Incremental2PackActivator`, both in `org.adempiere.plugin.utils`.
+
+An activator is one way to register a service. The newer way is a component with [`@Component`](#component-annotation), which needs no activator class. See [Service Annotations](../annotations-instead-xml).
+
+#### Bundle
+
+The unit that OSGi installs, starts and stops. A bundle is a jar file with a `META-INF/MANIFEST.MF`. Eclipse calls the same thing a plug-in, and so does iDempiere. In this documentation, "plug-in" and "bundle" mean the same thing.
+
+#### Bundle-ActivationPolicy: lazy
+
+A `MANIFEST.MF` header. OSGi starts the bundle only when something loads a class from it. In the console such a bundle shows as `<<LAZY>>` until then. This is normal, not an error.
+
+#### @Component {#component-annotation}
+
+A Declarative Services annotation on a class. It tells OSGi to create the class as a [component](#component) and to publish it as a [service](#service). The `service` attribute names the interface to publish, and `property` sets service properties such as `service.ranking`. Without `service`, the build publishes only the interfaces that the class implements directly. Interfaces inherited from a superclass are not published, so set `service` when the class gets its interface from a superclass.
+
+```java title="src/org/adempiere/base/AnnotationBasedModelFactory.java"
+@Component(immediate = true, service = IModelFactory.class, property = {"service.ranking:Integer=0"})
+```
+
+#### Component
+
+An object that OSGi creates and manages for a bundle. A component can publish a service and can ask for other services.
+
+#### Declarative Services (DS)
+
+The OSGi specification that lets you declare services and their dependencies instead of writing registration code. You declare them with annotations such as `@Component` and `@Reference`. The build turns the annotations into XML files in `OSGI-INF/`, and the `Service-Component` header in `MANIFEST.MF` points to them. See [Service Annotations](../annotations-instead-xml).
+
+#### @Deactivate
+
+The counterpart of [`@Activate`](#activate). OSGi calls the annotated method when it stops the component. Use it to clean up.
+
+#### Equinox
+
+The OSGi framework from the Eclipse project. iDempiere runs on it. See [OSGi Background](./osgi-background).
+
+#### Factory
+
+An iDempiere pattern, not an OSGi term. Core asks the registered services of a factory interface in `service.ranking` order. For model factories (`IModelFactory`) and process factories (`IProcessFactory`), core uses the first answer that is not `null`. Column callout factories (`IColumnCalloutFactory`) work differently: core asks all of them and runs every callout they return. A plug-in adds behavior by publishing its own factory service. See [Model Factory](../plugin-modelfactory), [Process](../plugin-process) and [Callouts](../plugin-callouts).
+
+#### Feature
+
+An Eclipse and p2 term for a group of bundles that you install together. The `update-prd.sh` script installs a feature from a p2 repository. See [Distributing Plug-ins](../distributing-plugins).
+
+#### Fragment
+
+A bundle that attaches to a host bundle and shares its class loader. It names the host in the `Fragment-Host` header. The [Dashboard Panel Fragments](../plugin-dashboard-panels) guide creates a fragment of the `org.adempiere.ui.zk` bundle.
+
+#### `immediate`
+
+An attribute of `@Component`. With `immediate = true`, OSGi creates the component as soon as its references are satisfied, instead of waiting until another bundle asks for its service. Most of the plug-in guides use it.
+
+#### Import-Package and Require-Bundle
+
+Two headers in `MANIFEST.MF` that state what a bundle needs.
+
+- `Import-Package` names the Java packages the bundle uses. OSGi finds any bundle that exports them.
+- `Require-Bundle` names a whole bundle. All of its exported packages become visible.
+
+Plug-ins that use the iDempiere core normally use `Require-Bundle: org.adempiere.base`.
+
+#### MANIFEST.MF
+
+The file `META-INF/MANIFEST.MF` in a bundle. It holds the bundle's name, version, dependencies, exports and activator. See [OSGi Background](./osgi-background).
+
+#### OSGi console
+
+A command line into the running OSGi framework. Use it to list bundles, see why a bundle did not start, and list the registered services. When you run iDempiere from Eclipse, it is the **Console** view. On a server, connect with Telnet to port 12612. The Compose example in the [Docker setup](../../../basic-installation/docker) maps this port. The `docker run` example publishes only port 8443. [Running Plug-ins Locally](../plugin-running-locally) uses the `ss` command to check that a plug-in is `ACTIVE`.
+
+:::warning
+
+The Telnet console has no login, and its commands can start, stop and uninstall bundles. Do not expose port 12612 to an untrusted network. By default `idempiere-server.sh` binds the console to localhost, so the risk is mostly in Docker or when `HOST` is changed. In Docker, publish it on the loopback interface only, for example `127.0.0.1:12612:12612`.
+
+:::
+
+#### p2
+
+The Eclipse mechanism that installs and updates bundles and features from a repository. See [Distributing Plug-ins](../distributing-plugins).
+
+#### @Reference
+
+A Declarative Services annotation on a field or method. It asks OSGi to give the component another service. The component starts only after OSGi can supply every mandatory reference. See [Service Annotations](../annotations-instead-xml).
+
+#### Service
+
+A Java object published in the OSGi service registry under one or more interface names, with properties. Other bundles look it up by interface. In iDempiere, core finds plug-in code this way, for example through `Service.locator()`.
+
+#### service.ranking
+
+A service property with an integer value. When several services match a lookup, the one with the highest `service.ranking` comes first. A plug-in that must answer before a core factory publishes its service with a higher ranking. Core factories use low values, for example `0` for `AnnotationBasedModelFactory`.
+
+#### Service-Component
+
+The header in `MANIFEST.MF` that lists the component XML files, for example `Service-Component: OSGI-INF/*.xml`. Without it OSGi does not see the components of the bundle.
+
+### Bundle states
+
+A bundle moves through these states:
+
+| State | Meaning |
+| --- | --- |
+| `INSTALLED` | OSGi has the jar but cannot yet match its dependencies. |
+| `RESOLVED` | Every dependency is matched. The bundle is not running. |
+| `STARTING` | The bundle is starting. A lazy bundle stays here until a class is loaded. |
+| `ACTIVE` | The bundle runs. |
+
+If your bundle does not start, open the [OSGi console](#osgi-console) and check it in two steps:
+
+1. Run `ss` to list the bundles and find the state of yours.
+2. If it is `INSTALLED`, run `diag <bundle id>`. The output names the missing dependency.
+
+### Common mix-ups
+
+| You may read or write | What is right |
+| --- | --- |
+| `@Activator` | The annotation is `@Activate`. An activator is a class that implements `BundleActivator`. |
+| "Plug-in" and "bundle" are different | They mean the same thing in this documentation. |
+| A factory is an OSGi term | It is an iDempiere pattern. The OSGi term is service. |
+| My bundle is `<<LAZY>>`, so it failed | It has not been used yet. Lazy bundles start when a class is first loaded. |
+| `Import-Package` and `Require-Bundle` do the same | `Import-Package` names packages. `Require-Bundle` names a whole bundle. |
+
+---
+
+## How iDempiere uses OSGi
+
+iDempiere has used OSGi for more than ten years, and the way plug-ins are written changed a lot in that time. This page explains how it changed. It also tells you which parts of a plug-in are OSGi standard, which come from Eclipse, and which are iDempiere's own.
+
+It helps when you read old forum posts, old plug-ins or the older guides, because they often show an older way of doing the same thing. For the terms, see the [OSGi Glossary](./osgi-glossary).
+
+### How it changed
+
+The dates below come from the commit history of the iDempiere source code. Each row names the Jira ticket when there is one.
+
+| When | What changed | What it means for you |
+| --- | --- | --- |
+| January 2010 | The code base starts to run inside Equinox, the OSGi framework of Eclipse. | The first step to bundles. |
+| August 2010 | Support for Declarative Services on Equinox is added. | Components can be described in XML files. |
+| September 2010 | Projects are renamed to match their bundle symbolic names, and the build moves to Eclipse features and a product configuration. | One bundle per project, delivered as features. |
+| December 2010 | System events are built on the OSGi Event Admin service. The first component XML file appears in `OSGI-INF/`. | Event handlers are OSGi services. |
+| November 2012 to February 2013 | [IDEMPIERE-359](https://idempiere.atlassian.net/browse/IDEMPIERE-359) adds OSGi services as a second way to extend core, next to the Eclipse extension points of `plugin.xml`. `Service.locator()` then looks services up in the OSGi service registry. | A plug-in can publish a service instead of declaring an extension point. |
+| October 2019 | The first `@Component` annotation appears in the source ([IDEMPIERE-4056](https://idempiere.atlassian.net/browse/IDEMPIERE-4056)). | Components no longer need hand-written XML. |
+| February 2021 | Factory base classes backed by a `Map` and lambdas are added: [IDEMPIERE-4675](https://idempiere.atlassian.net/browse/IDEMPIERE-4675) for models, [IDEMPIERE-4689](https://idempiere.atlassian.net/browse/IDEMPIERE-4689) for processes and [IDEMPIERE-4690](https://idempiere.atlassian.net/browse/IDEMPIERE-4690) for callouts. | You can register a model, process or callout with a factory that holds a map of names to lambdas. |
+| February to October 2021 | Annotation-based registration is added. [IDEMPIERE-4694](https://idempiere.atlassian.net/browse/IDEMPIERE-4694) adds annotation-based event handlers, [IDEMPIERE-4773](https://idempiere.atlassian.net/browse/IDEMPIERE-4773) forms and [IDEMPIERE-5001](https://idempiere.atlassian.net/browse/IDEMPIERE-5001) (October) the `@Process` annotation with `AnnotationBasedProcessFactory`. The class scanner ClassGraph first appears with [IDEMPIERE-4842](https://idempiere.atlassian.net/browse/IDEMPIERE-4842). | You can register a model, process, callout, event handler or form by annotating the class. See the iDempiere 9 feature pages. |
+| January to May 2026 | Parts of core move behind services or into their own bundles: accounting ([IDEMPIERE-6793](https://idempiere.atlassian.net/browse/IDEMPIERE-6793)), the SOAP web services ([IDEMPIERE-6955](https://idempiere.atlassian.net/browse/IDEMPIERE-6955)), an extension manager ([IDEMPIERE-6908](https://idempiere.atlassian.net/browse/IDEMPIERE-6908)) and Redis as an alternative to Hazelcast for the distributed cache ([IDEMPIERE-6989](https://idempiere.atlassian.net/browse/IDEMPIERE-6989)). | Core depends less on its own implementations, and optional parts install as extensions. |
+
+### What is standard OSGi, and what is not
+
+A plug-in mixes three kinds of things. Knowing which is which tells you where to look for help.
+
+| Kind | Examples in iDempiere | Where to read more |
+| --- | --- | --- |
+| **OSGi standard** | Bundles and `MANIFEST.MF`, `BundleActivator`, the service registry, Declarative Services (`@Component`, `@Reference`, `@Activate`), Event Admin, fragment bundles (`Fragment-Host`) | The OSGi specifications |
+| **Eclipse and Equinox** | The Equinox framework, `plugin.xml` and extension points, features and p2 repositories, the Eclipse project and PDE tools | The Eclipse documentation |
+| **iDempiere's own** | `Service.locator()`, the factory pattern (`IModelFactory`, `IProcessFactory` and similar), the mapped factories built on a `Map` and lambdas, class scanning with ClassGraph, `AbstractEventHandler`, the extension manager | The plug-in guides on this site |
+
+Two things surprise newcomers:
+
+- The annotations you write are standard OSGi, but the way iDempiere finds the classes that carry its own annotations, such as `@Callout` or `@Process`, is iDempiere's own code. It scans packages, which is why a factory has a `getPackages()` method.
+- The older Eclipse extension points have not disappeared from the source. `plugin.xml` files in core bundles still declare extension points such as `org.adempiere.base.ModelValidator` and `org.adempiere.webui.Form`. New plug-ins use services instead, as the guides show.
+
+### What this means when you write a plug-in
+
+- **Use services and annotations.** Publish a service with `@Component`. This is the way the current guides teach, and it needs no XML.
+- **Expect older examples to differ.** An old plug-in may use a `BundleActivator` to register things in `start()`, a hand-written file in `OSGI-INF/`, or a `plugin.xml` extension point. They still show what the code does, but write new code the current way.
+- **Check the version.** The annotation-based factories, such as `AnnotationBasedProcessFactory`, exist from iDempiere 9. For an older version, register a factory with a `@Component` service as the [process guide](../plugin-process) shows, or with an activator and XML.
+- **Ask in the right place.** For `@Component` and `@Reference` questions, the OSGi Declarative Services documentation applies. For "which factory do I implement", the iDempiere guides apply.
+
+---
+
 ## Developing Plug-in Callouts
 
 ### Goal
@@ -2031,50 +2305,6 @@ After installing, find the `org.adempiere.ui.zk` bundle in the Apache Felix Web 
 ### Activating the Dashboard Panel
 
 Log in as SuperUser with the System role and add your dashboard using **Dashboard Content Edit** in the menu.
-
----
-
-## OSGi and MANIFEST.MF Background
-
-This page provides deeper explanations for concepts introduced in [Running Plug-ins Locally in iDempiere](./plugin-running-locally). The information here is not strictly required to follow the tutorial, but it can help you build a clearer mental model of how iDempiere's plug-in system works.
-
-### MANIFEST.MF
-
-**Short version:** `MANIFEST.MF` is the file that configures all attributes of your OSGi plug-in. It lives at `META-INF/MANIFEST.MF` inside your plug-in's jar file and is read by the OSGi framework (Equinox) to discover the plug-in's capabilities. It may be accompanied by a `plugin.xml` file for some Equinox-specific needs.
-
-#### Longer explanation
-
-Two files describe an OSGi plug-in's attributes: `META-INF/MANIFEST.MF` and `plugin.xml`. To understand why both exist, a bit of history helps.
-
-This technology originates in the Eclipse Platform. Originally, Eclipse used a `plugin.xml` file to describe plugin attributes. Starting around Eclipse 3.1, Eclipse adopted a new plugin system based on Equinox — an implementation of the OSGi Plugin Architecture developed as part of the Eclipse project.
-
-OSGi defines `META-INF/MANIFEST.MF` as the standard way to describe a plugin's attributes. Switching entirely to the new system would have been straightforward, except for one problem: the OSGi standardization process is slow, and Eclipse needed capabilities that weren't yet standardized. So the Equinox framework implemented the standard OSGi behavior through `MANIFEST.MF` and used `plugin.xml` as a second configuration file for Equinox-specific extensions.
-
-#### For iDempiere developers
-
-iDempiere uses Equinox as its OSGi implementation. You can use both configuration styles. `plugin.xml` is only needed when you require Equinox-specific features. For most plug-in configuration, `MANIFEST.MF` is the right place.
-
-#### Further reading
-
-- [Vogella - Eclipse Plug-in Development](http://www.vogella.com/articles/EclipsePlugIn/article.html)
-- [Vogella - Eclipse Extension Points](http://www.vogella.com/articles/EclipseExtensionPoint/article.html)
-- [InformIT - Eclipse Architecture](http://www.informit.com/articles/article.aspx?p=1315271&seqNum=3)
-
-### The org.adempiere.base project
-
-This is the base plug-in for iDempiere. It contains the most fundamental parts of the codebase. Every iDempiere plug-in must include it in its dependency list.
-
-### The org.adempiere.plugin.utils project
-
-This plug-in contains helper utilities for plug-in development. It includes the `AdempiereActivator` class. If you use this class as your OSGi activator, it can perform automatic work when the plug-in is first activated — such as creating database entries. This is the mechanism used by 2Pack's automatic pack-in feature.
-
-### Singleton plug-ins
-
-A Singleton plug-in can only be loaded once in an OSGi framework.
-
-OSGi's design goal is that plug-ins are independent of their environment, so it shouldn't technically matter if the same plug-in is loaded twice. In practice, however, loading a plug-in twice (perhaps in two different versions because you forgot to uninstall the old one) often causes strange errors and is rarely useful.
-
-In iDempiere, you should always use Singleton plug-ins.
 
 ---
 
