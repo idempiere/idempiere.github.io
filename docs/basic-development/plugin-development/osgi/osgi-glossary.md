@@ -11,7 +11,7 @@ last_reviewed: 2026-10-20
 
 This page explains the OSGi words you meet in the plug-in guides. It is written for developers who write their first iDempiere plug-in and have not used OSGi before.
 
-Applies to iDempiere 9 and later, where the Declarative Services annotations are available. For the history of `MANIFEST.MF` and Equinox, see [OSGi Background](./osgi-background).
+Applies to iDempiere 9 and later, where the annotation-based factories such as `AnnotationBasedProcessFactory` are available. For the history of `MANIFEST.MF` and Equinox, see [OSGi Background](./osgi-background).
 
 ## The big picture
 
@@ -52,7 +52,7 @@ Read it from top to bottom:
 - [`@Component`](#component-annotation) turns the class into a [component](#component).
 - `service = IProcessFactory.class` says which [service](#service) it publishes.
 - `immediate = true` creates the component right away. See [immediate](#immediate).
-- `service.ranking:Integer=100` sets the [ranking](#serviceranking). Core's own process factories use values from -1 to 1, so yours is asked first.
+- `service.ranking:Integer=100` sets the [ranking](#serviceranking). Core's own process factories use values from -2 to 1, so yours is asked first.
 
 ## Terms from A to Z
 
@@ -82,7 +82,7 @@ A `MANIFEST.MF` header. OSGi starts the bundle only when something loads a class
 
 ### @Component {#component-annotation}
 
-A Declarative Services annotation on a class. It tells OSGi to create the class as a [component](#component) and to publish it as a [service](#service). The `service` attribute names the interface to publish, and `property` sets service properties such as `service.ranking`. Without `service`, OSGi publishes only the interfaces that the class implements directly. Interfaces inherited from a superclass are not published, so set `service` when the class gets its interface from a superclass.
+A Declarative Services annotation on a class. It tells OSGi to create the class as a [component](#component) and to publish it as a [service](#service). The `service` attribute names the interface to publish, and `property` sets service properties such as `service.ranking`. Without `service`, the build publishes only the interfaces that the class implements directly. Interfaces inherited from a superclass are not published, so set `service` when the class gets its interface from a superclass.
 
 ```java title="src/org/adempiere/base/AnnotationBasedModelFactory.java"
 @Component(immediate = true, service = IModelFactory.class, property = {"service.ranking:Integer=0"})
@@ -116,7 +116,7 @@ An Eclipse and p2 term for a group of bundles that you install together. The `up
 
 A bundle that attaches to a host bundle and shares its class loader. It names the host in the `Fragment-Host` header. The [Dashboard Panel Fragments](../plugin-dashboard-panels) guide creates a fragment of the `org.adempiere.ui.zk` bundle.
 
-### immediate
+### `immediate`
 
 An attribute of `@Component`. With `immediate = true`, OSGi creates the component as soon as its references are satisfied, instead of waiting until another bundle asks for its service. Most of the plug-in guides use it.
 
@@ -139,7 +139,7 @@ A command line into the running OSGi framework. Use it to list bundles, see why 
 
 :::warning
 
-The Telnet console has no login, and its commands can start, stop and uninstall bundles. Do not expose port 12612 to an untrusted network. In Docker, publish it on the loopback interface only, for example `127.0.0.1:12612:12612`.
+The Telnet console has no login, and its commands can start, stop and uninstall bundles. Do not expose port 12612 to an untrusted network. By default `idempiere-server.sh` binds the console to localhost, so the risk is mostly in Docker or when `HOST` is changed. In Docker, publish it on the loopback interface only, for example `127.0.0.1:12612:12612`.
 
 :::
 
