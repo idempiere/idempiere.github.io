@@ -11,12 +11,6 @@ last_reviewed: 2026-11-07
 
 # Pluggable defaults for new records
 
-:::warning Not Yet in Stable Release
-
-This feature is not yet part of a stable iDempiere release and may change.
-
-:::
-
 **Goal:** New OSGi Service  
 **Developer:** [Igor Pojzl](https://github.com/igorpojzl) ([CloudEmpiere](https://www.cloudempiere.com))  
 **Feature Ticket:** [IDEMPIERE-7136](https://idempiere.atlassian.net/browse/IDEMPIERE-7136)  
