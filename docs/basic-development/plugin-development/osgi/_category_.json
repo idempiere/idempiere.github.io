@@ -1,0 +1,9 @@
+{
+  "label": "OSGi",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "slug": "/basic-development/plugin-development/osgi",
+    "description": "Background, terms and history of OSGi in iDempiere, for plug-in developers."
+  }
+}

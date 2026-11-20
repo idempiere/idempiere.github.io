@@ -1,12 +1,12 @@
 ---
 sidebar_label: OSGi Background
-sidebar_position: 10
+sidebar_position: 1
 description: Background reference on MANIFEST.MF, plugin.xml, OSGi concepts, and key iDempiere plug-in projects.
 ---
 
 # OSGi and MANIFEST.MF Background
 
-This page provides deeper explanations for concepts introduced in [Running Plug-ins Locally in iDempiere](./plugin-running-locally). The information here is not strictly required to follow the tutorial, but it can help you build a clearer mental model of how iDempiere's plug-in system works.
+This page provides deeper explanations for concepts introduced in [Running Plug-ins Locally in iDempiere](../plugin-running-locally). The information here is not strictly required to follow the tutorial, but it can help you build a clearer mental model of how iDempiere's plug-in system works.
 
 ## MANIFEST.MF
 
