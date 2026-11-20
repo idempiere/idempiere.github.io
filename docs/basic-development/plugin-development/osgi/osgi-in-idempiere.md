@@ -34,8 +34,8 @@ A plug-in mixes three kinds of things. Knowing which is which tells you where to
 
 | Kind | Examples in iDempiere | Where to read more |
 | --- | --- | --- |
-| **OSGi standard** | Bundles and `MANIFEST.MF`, `BundleActivator`, the service registry, Declarative Services (`@Component`, `@Reference`, `@Activate`), Event Admin | The OSGi specifications |
-| **Eclipse and Equinox** | The Equinox framework, `plugin.xml` and extension points, features and p2 repositories, fragments, the Eclipse project and PDE tools | The Eclipse documentation |
+| **OSGi standard** | Bundles and `MANIFEST.MF`, `BundleActivator`, the service registry, Declarative Services (`@Component`, `@Reference`, `@Activate`), Event Admin, fragment bundles (`Fragment-Host`) | The OSGi specifications |
+| **Eclipse and Equinox** | The Equinox framework, `plugin.xml` and extension points, features and p2 repositories, the Eclipse project and PDE tools | The Eclipse documentation |
 | **iDempiere's own** | `Service.locator()`, the factory pattern (`IModelFactory`, `IProcessFactory` and similar), the mapped factories built on a `Map` and lambdas, class scanning with ClassGraph, `AbstractEventHandler`, the extension manager | The plug-in guides on this site |
 
 Two things surprise newcomers:
@@ -47,5 +47,5 @@ Two things surprise newcomers:
 
 - **Use services and annotations.** Publish a service with `@Component`. This is the way the current guides teach, and it needs no XML.
 - **Expect older examples to differ.** An old plug-in may use a `BundleActivator` to register things in `start()`, a hand-written file in `OSGI-INF/`, or a `plugin.xml` extension point. They still show what the code does, but write new code the current way.
-- **Check the version.** The annotation-based factories exist from iDempiere 9. For an older version, the activator and XML way applies.
+- **Check the version.** The annotation-based factories, such as `AnnotationBasedProcessFactory`, exist from iDempiere 9. For an older version, register a factory with a `@Component` service as the [process guide](../plugin-process) shows, or with an activator and XML.
 - **Ask in the right place.** For `@Component` and `@Reference` questions, the OSGi Declarative Services documentation applies. For "which factory do I implement", the iDempiere guides apply.

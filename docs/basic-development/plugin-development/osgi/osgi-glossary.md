@@ -45,6 +45,8 @@ public class MyProcessFactory extends AnnotationBasedProcessFactory {
 }
 ```
 
+`getPackages()` does not scan subpackages. A process in `com.example.process.reports` is not found by this example, so list every package that contains process classes.
+
 Read it from top to bottom:
 
 - [`@Component`](#component-annotation) turns the class into a [component](#component).
@@ -80,7 +82,7 @@ A `MANIFEST.MF` header. OSGi starts the bundle only when something loads a class
 
 ### @Component {#component-annotation}
 
-A Declarative Services annotation on a class. It tells OSGi to create the class as a [component](#component) and to publish it as a [service](#service). The `service` attribute names the interface to publish, and `property` sets service properties such as `service.ranking`.
+A Declarative Services annotation on a class. It tells OSGi to create the class as a [component](#component) and to publish it as a [service](#service). The `service` attribute names the interface to publish, and `property` sets service properties such as `service.ranking`. Without `service`, OSGi publishes only the interfaces that the class implements directly. Interfaces inherited from a superclass are not published, so set `service` when the class gets its interface from a superclass.
 
 ```java title="src/org/adempiere/base/AnnotationBasedModelFactory.java"
 @Component(immediate = true, service = IModelFactory.class, property = {"service.ranking:Integer=0"})
@@ -133,7 +135,13 @@ The file `META-INF/MANIFEST.MF` in a bundle. It holds the bundle's name, version
 
 ### OSGi console
 
-A command line into the running OSGi framework. Use it to list bundles, see why a bundle did not start, and list the registered services. When you run iDempiere from Eclipse, it is the **Console** view. On a server, connect with Telnet to port 12612, which the [Docker setup](../../../basic-installation/docker) maps. [Running Plug-ins Locally](../plugin-running-locally) uses the `ss` command to check that a plug-in is `ACTIVE`.
+A command line into the running OSGi framework. Use it to list bundles, see why a bundle did not start, and list the registered services. When you run iDempiere from Eclipse, it is the **Console** view. On a server, connect with Telnet to port 12612. The Compose example in the [Docker setup](../../../basic-installation/docker) maps this port. The `docker run` example publishes only port 8443. [Running Plug-ins Locally](../plugin-running-locally) uses the `ss` command to check that a plug-in is `ACTIVE`.
+
+:::warning
+
+The Telnet console has no login, and its commands can start, stop and uninstall bundles. Do not expose port 12612 to an untrusted network. In Docker, publish it on the loopback interface only, for example `127.0.0.1:12612:12612`.
+
+:::
 
 ### p2
 
