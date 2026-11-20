@@ -1,26 +1,20 @@
 ---
 sidebar_label: Create View Components from Database
-sidebar_position: 5
+sidebar_position: 17
 description: Create the View Components and View Columns of a view table from the view definition that already exists in the database.
 tags:
   - technical
   - development
-applies_to: ">=14"
-last_reviewed: 2026-11-17
+applies_to: ">=13"
+last_reviewed: 2026-11-20
 ---
 
 # Create view components from a database view
 
-:::warning Not Yet in Stable Release
-
-This feature is not yet part of a stable iDempiere release and may change.
-
-:::
-
 **Goal:** Technical  
 **Developer:** [Diego Ruiz](https://github.com/d-ruiz/) ([BX Service GmbH](https://www.bx-service.com/))  
 **Feature Ticket:** [IDEMPIERE-7213](https://idempiere.atlassian.net/browse/IDEMPIERE-7213)  
-**Version:** iDempiere 14
+**Version:** iDempiere 13
 
 ## The problem
 
