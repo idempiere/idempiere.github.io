@@ -2,16 +2,10 @@
 
 > Create the View Components and View Columns of a view table from the view definition that already exists in the database.
 
-:::warning Not Yet in Stable Release
-
-This feature is not yet part of a stable iDempiere release and may change.
-
-:::
-
 **Goal:** Technical  
 **Developer:** [Diego Ruiz](https://github.com/d-ruiz/) ([BX Service GmbH](https://www.bx-service.com/))  
 **Feature Ticket:** [IDEMPIERE-7213](https://idempiere.atlassian.net/browse/IDEMPIERE-7213)  
-**Version:** iDempiere 14
+**Version:** iDempiere 13
 
 ## The problem
 
