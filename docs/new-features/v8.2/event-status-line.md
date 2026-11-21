@@ -24,7 +24,7 @@ For this example we need a very simple message to fill with a String, so we simp
 ## Status Line
 The SQL definition for the status line is also very simple, we simply need to get the context variable from the Dual table.
 
-```SQL
+```sql
 SELECT '@MyComplexVariable@' FROM Dual
 ```
 

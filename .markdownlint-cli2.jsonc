@@ -16,6 +16,18 @@
     "MD009": { "br_spaces": 2 },
     // Tabs are fine inside code blocks.
     "MD010": { "code_blocks": false },
+    // Every code block needs a language from this list. Each one is
+    // highlighted by the site (Prism, see docusaurus.config.js), except
+    // text (plain on purpose) and mermaid (shown as plain code). Names are
+    // case-sensitive: sql, not SQL. Add a language here and to Prism
+    // additionalLanguages together.
+    "MD040": {
+      "allowed_languages": [
+        "bash", "css", "diff", "groovy", "html", "java", "javascript", "json",
+        "markdown", "mermaid", "nginx", "properties", "python", "shell", "sql",
+        "text", "xml", "yaml"
+      ]
+    },
     // Off: long lines, inline HTML and JSX (MDX), bare URLs, table pipe alignment.
     "MD013": false,
     "MD060": false,
