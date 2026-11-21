@@ -776,6 +776,28 @@ article:has(> .theme-doc-card-container) {
   font-size: 0.875rem;
 }
 
+/* ---------- Comments (Giscus) ---------- */
+
+/* Clear separation from the Previous/Next links: a hairline and space
+   above, so reactions and comments do not stick to the content. */
+.doc-comments {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Desktop with an "On this page" column: match the article width.
+   The article column is 75% of the row, and the row is the container
+   plus its negative gutters. */
+@media (min-width: 997px) {
+  .row:has(> .col.col--3) + .doc-comments {
+    max-width: calc(
+      (100% + 2 * var(--ifm-spacing-horizontal)) * 0.75 -
+        2 * var(--ifm-spacing-horizontal)
+    );
+  }
+}
+
 /* ---------- Site footer ---------- */
 
 /* Matches GitBook and Vercel: 14px links in a muted colour, small
