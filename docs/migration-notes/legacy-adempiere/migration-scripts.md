@@ -81,7 +81,7 @@ Experience and documentation about this migration path is shared by Pb_integrati
 
 Migrating some ADempiere installations before 360 to iDempiere generates a problem when using PostgreSQL 9.2: applying the script `201309192024_IDEMPIERE-1370.sql` throws:
 
-```
+```text
 ERROR:  cannot change name of input parameter "p_product_id"
 ```
 

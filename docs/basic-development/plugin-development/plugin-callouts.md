@@ -355,13 +355,13 @@ If not using annotations, create a component definition XML file manually.
 
 3. Update your `META-INF/MANIFEST.MF` to include the component:
 
-```
+```properties
 Service-Component: OSGI-INF/calloutfactory.xml
 ```
 
 4. Ensure `build.properties` includes the OSGI-INF directory in the binary build:
 
-```
+```properties
 bin.includes = META-INF/,\
                .,\
                OSGI-INF/
@@ -379,7 +379,7 @@ bin.includes = META-INF/,\
 6. Check your console log for the output
 
 You should see:
-```
+```text
 Callout triggered on: DocumentNote
 New value: [your entered text]
 ```

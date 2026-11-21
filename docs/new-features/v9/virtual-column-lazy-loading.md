@@ -18,19 +18,19 @@ Virtual columns were loaded among the rest of the regular columns when instantia
 
 **New constructor**
 
-```
+```java
  testPo = new MTest(Env.getCtx(), testPo.get_ID(), getTrxName(), MTest.COLUMNNAME_TestVirtualQty);
 ```
 
 One or many virtual columns can passed on as parameters after the trxName parameter.
 
-```
+```java
  testPo = new MTest(Env.getCtx(), testPo.get_ID(), getTrxName(), MTest.COLUMNNAME_TestVirtualQty, MTest.COLUMNNAME_AnotherVirtualColumn);
 ```
 
 **Using Query**
 
-```
+```java
  new Query(Env.getCtx(), MTest.Table_Name, MTest.COLUMNNAME_Test_ID + "=?", getTrxName())
    .setVirtualColumns(I_Test.COLUMNNAME_TestVirtualQty).first();
 ```

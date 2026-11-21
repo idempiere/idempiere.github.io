@@ -57,13 +57,13 @@ After installing postgres you must check the correct configuration of `/etc/post
 
 The following line requires change of the authentication method:
 
-```
+```text
 local   all             all                                     peer
 ```
 
 Change to:
 
-```
+```text
 local   all             all                                     scram-sha-256
 ```
 
