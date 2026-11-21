@@ -45,7 +45,7 @@ This is driven by several **SysConfig** keys:
 
 Files must follow this naming pattern:
 
-```
+```text
 [Timestamp]_[ClientValue]_[OptionalInfo].zip
 ```
 

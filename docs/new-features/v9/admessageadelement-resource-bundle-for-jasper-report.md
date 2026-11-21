@@ -20,9 +20,11 @@ Pass Resource Bundle backed by AD_Message and AD_Element as report parameter to 
 1. In your Jasper Report, use the build in str function to get translated text from AD_Message or AD_Element (or property file if you have deploy one). For e.g, str("IsDefault")
 1. Note that this will not work when you preview using Jasper Report Studio. To get reasonable output at Jasper Report Studio, you can make use of conditional expression, for e.g: str("IsDefault") != null ? str("IsDefault") : "str(IsDefault)"
 
-Tip for concatenation with a field:```java
+Tip for concatenation with a field:
 
-(str("IsDefault") != null ? str("IsDefault") : "str(IsDefault)") + ": " + $F&#123;IsDefaultField&#125;
+```java
+
+(str("IsDefault") != null ? str("IsDefault") : "str(IsDefault)") + ": " + $F{IsDefaultField}
 
 ```
 

@@ -28,7 +28,7 @@ Add markdown text support for html email template.
 - Example using just mark down:
 
 
-```
+```text
 <#md>**Bold Text**</#md>
 ```
 - Support auto link and table markdown extension.

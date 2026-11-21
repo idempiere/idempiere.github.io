@@ -22,7 +22,7 @@ The official registry lives at [github.com/idempiere/idempiere-extension-reposit
 
 Layout:
 
-```
+```text
 index.json                       ← GENERATED, never edit by hand
 index-schema.json
 metadata-schema.json

@@ -245,13 +245,13 @@ See [Event Handling with Annotations](./plugin-eventhandler#event-annotations-id
 
 3. Update your `META-INF/MANIFEST.MF`:
 
-```
+```properties
 Service-Component: OSGI-INF/*.xml
 ```
 
 4. Ensure `build.properties` includes the OSGI-INF directory:
 
-```
+```properties
 bin.includes = META-INF/,\
                .,\
                OSGI-INF/

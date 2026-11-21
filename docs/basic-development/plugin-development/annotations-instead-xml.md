@@ -39,7 +39,7 @@ Set up Eclipse to support DS annotations:
 
 Add the following package to the `Import-Package` section of your plug-in's `MANIFEST.MF` file:
 
-```
+```text
 org.osgi.service.component.annotations
 ```
 
