@@ -235,7 +235,7 @@ Use Docusaurus admonitions for content that needs to stand out:
 
 ## Code examples
 
-- Give every code block a language, such as `java`, `sql`, `xml`, `bash`, `properties` or `yaml`.
+- Give every code block a language, such as `java`, `sql`, `xml`, `bash`, `properties` or `yaml`. Use `text` for file names, folder trees, console output and anything else without a fitting language. A code block without a language fails the pull request checks.
 - When the code belongs in a file, add a `title` with the file path, for example `title="src/com/example/callout/MyCallout.java"`.
 - Show complete code a reader can copy: include the `package` line and all `import` lines.
 - Say which iDempiere version you tested the code on, in a sentence before the block.
@@ -301,6 +301,7 @@ On a page that already exists, the pull request only has to keep its own changes
 
 - Vale finds no em dashes and no words to avoid on the lines you add or change.
 - Frontmatter fields that are set have the right format, for example `last_reviewed: 2026-10-19` or `applies_to: ">=9"`.
+- Every code block has a language. Use `text` when no other language fits.
 
 <!-- vale iDempiere.AvoidWords = NO -->
 If Vale flags a word that is correct in context, such as "leverage" as a noun in "financial leverage", turn the rule off around that line and turn it back on after it:

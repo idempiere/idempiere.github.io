@@ -6,7 +6,8 @@ name: Docs checks
 # What fails the pull request:
 # - New pages: every markdownlint and frontmatter problem.
 # - All pages: Vale errors (em dashes, words to avoid) on the lines the pull
-#   request adds, and frontmatter in the wrong format or not valid YAML.
+#   request adds, frontmatter in the wrong format or not valid YAML, and
+#   code blocks without a language (markdownlint MD040).
 # Everything else on pages that already existed only warns, so a small fix
 # to an older page does not have to clean up the whole page.
 
@@ -78,8 +79,10 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v24
         with:
           globs: ${{ needs.changed.outputs.new }}
-      # Warn only. The action reports every finding as a failure annotation,
-      # so run the CLI and turn its findings into warnings.
+      # Warn only, except MD040. The action reports every finding as a failure
+      # annotation, so run the CLI and turn its findings into warnings. A code
+      # block without a language (MD040) fails on every page: no page has one,
+      # so the rule cannot block a fix to an older page.
       - name: Changed pages
         if: ${{ !cancelled() && needs.changed.outputs.changed != '' }}
         env:
@@ -89,14 +92,21 @@ jobs:
           status=0
           out=$(npx --yes markdownlint-cli2@0.23.2 "${pages[@]}" 2>&1) || status=$?
           # In workflow commands, % and line breaks are special characters.
-          printf '%s\n' "$out" \
-            | sed -e 's/%/%25/g' -e 's/\r/%0D/g' \
+          escaped=$(printf '%s\n' "$out" | sed -e 's/%/%25/g' -e 's/\r/%0D/g')
+          printf '%s\n' "$escaped" \
+            | grep -v ' error MD040/' \
             | sed -nE 's/^([^: ]+):([0-9]+)(:[0-9]+)? error (.*)$/::warning file=\1,line=\2,title=markdownlint::\4/p'
-          # Exit 1 means lint findings, which stay warnings. Any other non-zero
-          # exit, or no summary, means markdownlint itself failed to run.
+          # Exit 1 means lint findings. Any other non-zero exit, or no summary,
+          # means markdownlint itself failed to run.
           if [[ $status -gt 1 || ( $status -ne 0 && $out != *'Summary:'* ) ]]; then
             echo "::error title=markdownlint::markdownlint did not complete (exit $status)"
             exit "$status"
+          fi
+          md040=$(printf '%s\n' "$escaped" | grep ' error MD040/' || true)
+          if [[ -n $md040 ]]; then
+            printf '%s\n' "$md040" \
+              | sed -nE 's/^([^: ]+):([0-9]+)(:[0-9]+)? error (.*)$/::error file=\1,line=\2,title=Code block language::Give the code block a language, such as java, sql, xml, bash, properties or text. \4/p'
+            exit 1
           fi
 
   frontmatter:
