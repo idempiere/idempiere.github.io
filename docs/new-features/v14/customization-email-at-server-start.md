@@ -28,7 +28,7 @@ For instance, the subject can be like :
 `[@SystemName@] (@ServerName@) has started`
 
 And the message: 
-```
+```text
 Version : @Version@
 ServerInfo : @ServerInfo@
 Status : @SystemStatus<Name>@
@@ -38,7 +38,7 @@ Which will results in:
 Subject: [iDempiere] (8CC53311KQ:192.168.1.200) has started
 
 Message: 
-```
+```text
 Version : 14.0.0.qualifier
 ServerInfo : jetty/12.0.25
 Status : Evaluation

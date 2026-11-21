@@ -34,7 +34,7 @@ The parameter is passed to Jasper as a String with the record IDs separated by c
 The Jasper Report must take care of parsing the parameter accordingly.
 
 Example in PostgreSQL:
-```SQL
+```sql
 
 cbp.c_bpartner_id = any(string_to_array($P{param_c_bpartner_id}, ',')::int[]);
 

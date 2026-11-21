@@ -20,7 +20,7 @@ https://idempiere.atlassian.net/browse/IDEMPIERE-6242 adds a new ImageURL editor
 
 **Technical Changes**
     - Added Image URL display/data type
-```
+```text
    - Implemented thumbnail rendering for Image and Image URL data type (Grid View and Info Window)
    - Implemented showing full size image for thumbnail on hover of the thumbnail image
 ```

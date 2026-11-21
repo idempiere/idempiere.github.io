@@ -29,7 +29,7 @@ Product Accounting:
 
 If you want to set the landed cost clearing account same account as the default you could use this SQL (please be careful):
 
-```
+```sql
 
 update m_product_acct set p_landedcostclearing_acct = (select ac.p_landedcostclearing_acct from c_acctschema_default ac where ac.c_acctschema_id=1000000);
 update m_product_category_acct set p_landedcostclearing_acct = (select ac.p_landedcostclearing_acct from c_acctschema_default ac where ac.c_acctschema_id=1000000);

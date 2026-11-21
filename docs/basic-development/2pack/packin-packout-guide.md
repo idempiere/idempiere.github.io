@@ -123,7 +123,7 @@ Only newer versions will be installed.
 
 Allows handling **multiple** 2Packs named with a versioning pattern:
 
-```
+```text
 2Pack_<Name>_<version>.zip
 ```
 
@@ -136,7 +136,7 @@ These will be loaded and installed in order.
 
 :::tip
 Newer versions of iDempiere (after IDEMPIERE-4105) allow using this format:
-```
+```text
 2Pack_1.0.0_Tables.zip
 ```
 (Only the portion after the version can contain underscores.)

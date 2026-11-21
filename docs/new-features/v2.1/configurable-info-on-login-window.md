@@ -32,7 +32,7 @@ The Version Info panel on the login page of iDempieres webui consists of 6 value
 
 In previous versions of iDempiere, all of those keys were shown, no matter if the system was a productive system or only for testing. With the new feature you now have six new keys for the System Configurator to configure if you want to show a value in the Version Info panel or not. These are boolean keys so you can use 'Y', 'N', 'true' and 'false' as the value.
 
-```
+```text
 
 APPLICATION_MAIN_VERSION_SHOWN
 APPLICATION_DATABASE_VERSION_SHOWN
@@ -52,7 +52,7 @@ If you don't implement the keys in the System Configurator, the default values t
 - Only show iDempiere Version and Implementation Vendor
 
 Also you now can overwrite some of the values in the Version Info panel via the System Configurator. Use the following keys to provide your own values as a String:
-```
+```text
 
 APPLICATION_MAIN_VERSION
 APPLICATION_IMPLEMENTATION_VENDOR

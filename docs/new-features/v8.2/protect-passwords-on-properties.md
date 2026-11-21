@@ -46,7 +46,7 @@ To extend this feature is as simple as implementing the scripts customSetVar.sh 
 
 ## Disabling this feature
 In case you want to disable this feature, for example when running in a development or safe test environment, you can do that passing the following parameter to the JVM in the console applications and also in the idempiere server application:
-```
+```text
 -DIDEMPIERE_SECURE_PROPERTIES=false
 ```
 

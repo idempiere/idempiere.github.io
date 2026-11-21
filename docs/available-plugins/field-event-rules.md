@@ -101,7 +101,7 @@ The Condition field is an optional guard that must be true for the rule to execu
 
 Uses iDempiere's standard variable syntax. Variables in `@Brackets@` are resolved from the current record and session context.
 
-```
+```text
 @IsSoTrx@=Y
 @GrandTotal@ > 100
 @IsSoTrx@=Y & @GrandTotal@ > 100
@@ -161,11 +161,11 @@ FETCH FIRST 1 ROW ONLY
 
 **Arithmetic / inline expression** - for simple calculations without a full query.
 
-```
+```text
 @QtyOrdered@ * @PriceActual@
 ```
 
-```
+```text
 @SQL=CASE WHEN @IsSOTrx@ = 'Y' THEN @PriceList@ ELSE @PriceStd@ END from dual
 ```
 

@@ -31,7 +31,7 @@ Instead of starting from scratch, you might want to use the scaffolding tool fro
 
 1. In Eclipse, go to:
 
-   ```
+   ```text
    File → New → Other… → Plug-in Project
    ```
 
@@ -39,7 +39,7 @@ Instead of starting from scratch, you might want to use the scaffolding tool fro
 
 3. **Uncheck** “Use default location” and choose a custom folder outside the iDempiere core repository, such as:
 
-   ```
+   ```text
    idempiere-plugins/your-plugin-name
    ```
 
@@ -51,7 +51,7 @@ Instead of starting from scratch, you might want to use the scaffolding tool fro
 
 7. Once created, connect the project to version control:
 
-   ```
+   ```text
    Right-click the project → Team → Share Project
    ```
 

@@ -57,7 +57,7 @@ In your `MANIFEST.MF`:
 - **Build tab:** make sure the theme folder is checked under **Binary Build**.
 - **MANIFEST.MF tab:** add this line at the end (followed by a newline):
 
-```
+```properties
 Jetty-WarFragmentFolderPath: /
 ```
 
@@ -70,7 +70,7 @@ To test the theme fragment in Eclipse:
 1. Open **Run Configurations**, select the **server.product**, go to the **Plug-ins** tab, and check your theme fragment to activate it.
 2. Go to the **Arguments** tab and add to VM arguments:
 
-```
+```text
 -DZK_THEME=newtheme
 ```
 

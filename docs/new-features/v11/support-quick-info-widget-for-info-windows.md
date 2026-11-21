@@ -32,9 +32,10 @@ The values of the selected row are updated in the context on every selection. On
 In the status line SQL, the row values can be accessed with the @_IWInfo_*ColumnName*@ syntax, e.g. @_IWInfo_C_Order_ID@.
 
 There is a special context variable for listing the ID's of the selected rows, separated by comma (e.g. 100,101,102,103). This variable can be accessed with @_IWInfoIDs_Selected@ syntax. Example usage in a WHERE clause:
- SELECT C_Order_ID
- FROM C_Order
-```
+
+```sql
+SELECT C_Order_ID
+FROM C_Order
 WHERE C_Order_ID = ANY(string_to_array('@_IWInfoIDs_Selected@',',')::NUMERIC[])
 ```
 

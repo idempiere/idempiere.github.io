@@ -18,7 +18,7 @@ tags: [technical]
 
 Current code is cutting trace log in a hardcoded way. And you can only have
 
-```
+```text
 09:18:18.234-----------> ProxyLeakTask.run: Connection leak detection triggered for org.postgresql.jdbc.PgConnection@3101587f on thread pool-1-thread-5, stack trace follows [329]
 java.lang.Exception: Apparent connection leak detected
    at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:99)

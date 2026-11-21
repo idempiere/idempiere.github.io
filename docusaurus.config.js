@@ -161,6 +161,9 @@ const config = {
           editUrl:
             'https://github.com/idempiere/idempiere.github.io/tree/main/',
           showLastUpdateTime: true,
+          // Marks standalone images, so custom.css frames them and leaves
+          // images inside a sentence inline.
+          rehypePlugins: [require('./src/plugins/rehype-image-frame')],
         },
         sitemap: {
           lastmod: 'date',
@@ -178,6 +181,12 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/idempiere-social-card.jpg',
+      docs: {
+        sidebar: {
+          // Readers can collapse the sidebar to focus on the page.
+          hideable: true,
+        },
+      },
       navbar: {
         title: 'iDempiere',
         logo: {
@@ -272,7 +281,12 @@ const config = {
       },
       prism: {
         theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        // Neutral dark background that matches the site's dark greys.
+        darkTheme: prismThemes.vsDark,
+        // Not in the default bundle; Java, shell and SQL are the most
+        // used languages in these docs.
+        // Keep in sync with MD040 allowed_languages in .markdownlint-cli2.jsonc.
+        additionalLanguages: ['java', 'bash', 'sql', 'properties', 'diff', 'nginx', 'groovy'],
       },
     }),
 };

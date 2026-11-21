@@ -294,13 +294,13 @@ The `bindEventManager` and `unbindEventManager` methods are inherited from the `
 
 Edit your `META-INF/MANIFEST.MF` file to include the component definition:
 
-```
+```properties
 Service-Component: OSGI-INF/eventhandler.xml
 ```
 
 If you have multiple component definitions, you can use:
 
-```
+```properties
 Service-Component: OSGI-INF/*.xml
 ```
 
@@ -308,7 +308,7 @@ Service-Component: OSGI-INF/*.xml
 
 In your `MANIFEST.MF`, ensure the plugin activation is enabled:
 
-```
+```properties
 Bundle-ActivationPolicy: lazy
 ```
 
@@ -318,7 +318,7 @@ Also ensure in your plugin configuration that "Activate this plugin when one of 
 
 Ensure `build.properties` includes the OSGI-INF directory:
 
-```
+```properties
 bin.includes = META-INF/,\
                .,\
                OSGI-INF/
