@@ -7,7 +7,8 @@ name: Docs checks
 # - New pages: every markdownlint and frontmatter problem.
 # - All pages: Vale errors (em dashes, words to avoid) on the lines the pull
 #   request adds, frontmatter in the wrong format or not valid YAML, and
-#   code blocks without a language (markdownlint MD040).
+#   code blocks without a language from the allowed list (markdownlint
+#   MD040, configured in .markdownlint-cli2.jsonc).
 # Everything else on pages that already existed only warns, so a small fix
 # to an older page does not have to clean up the whole page.
 
@@ -105,7 +106,7 @@ jobs:
           md040=$(printf '%s\n' "$escaped" | grep ' error MD040/' || true)
           if [[ -n $md040 ]]; then
             printf '%s\n' "$md040" \
-              | sed -nE 's/^([^: ]+):([0-9]+)(:[0-9]+)? error (.*)$/::error file=\1,line=\2,title=Code block language::Give the code block a language, such as java, sql, xml, bash, properties or text. \4/p'
+              | sed -nE 's/^([^: ]+):([0-9]+)(:[0-9]+)? error (.*)$/::error file=\1,line=\2,title=Code block language::Give the code block a language from the allowed list in .markdownlint-cli2.jsonc, such as java, sql, xml, bash, properties or text. \4/p'
             exit 1
           fi
 
