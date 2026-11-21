@@ -26,12 +26,14 @@
   --ifm-line-height-base: 1.65;
   --ifm-h1-font-size: 2.25rem;
   --ifm-h2-font-size: 1.5rem;
-  --ifm-h3-font-size: 1.2rem;
-  --ifm-h4-font-size: 1.05rem;
-  --ifm-h5-font-size: 0.95rem;
+  --ifm-h3-font-size: 1.25rem;
+  --ifm-h4-font-size: 1.1rem;
+  --ifm-h5-font-size: 1rem;
   --ifm-h6-font-size: 0.9rem;
   --ifm-heading-line-height: 1.3;
   --ifm-heading-font-weight: 650;
+  /* Bold body text stays lighter than every heading level. */
+  --ifm-font-weight-bold: 600;
   --ifm-heading-margin-bottom: 0.75rem;
   --ifm-paragraph-margin-bottom: 1rem;
   --ifm-leading: 1rem;
@@ -74,23 +76,51 @@
   --ifm-h3-vertical-rhythm-top: 1.25;
 }
 
+/* Heading scale: size and weight step down together.
+   H1 36/700, H2 24/650, H3 20/600, H4 17.6/600, H5 16/600 muted.
+   Bold body text is 16/600 in the body colour, so it never competes
+   with a heading. */
 .markdown h1:first-child {
   --ifm-h1-font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
 /* Infima sets h2 and h3 sizes on these selectors, so override them here. */
 .markdown > h2 {
   --ifm-h2-font-size: 1.5rem;
+  font-weight: 650;
+  line-height: 1.3;
 }
 
 .markdown > h3 {
-  --ifm-h3-font-size: 1.2rem;
+  --ifm-h3-font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.markdown > h4 {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.markdown > h5,
+.markdown > h6 {
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ifm-color-emphasis-800);
 }
 
 .markdown h2,
 .markdown h3 {
   letter-spacing: -0.01em;
+}
+
+.markdown strong,
+.markdown b {
+  font-weight: 600;
+  color: inherit;
 }
 
 /* ---------- Spacing and rhythm ----------
@@ -700,28 +730,53 @@ article:has(> .theme-doc-card-container) {
 
 /* ---------- Reading progress ---------- */
 
-/* A 2px bar under the navbar that fills as you scroll a doc page. Pure CSS
-   (scroll-driven animation); browsers without support show nothing. */
-@supports (animation-timeline: scroll()) {
+/* A 2px bar at the very top of the window, above the navbar, that follows
+   the article, not the whole page:
+   it starts when the text reaches the top of the screen and is full when
+   the end of the text is in view, so comments and the footer do not
+   count. It fades out at the end so it never sits there as a solid line.
+   Pure CSS (named view timeline); browsers without support show nothing. */
+@supports (timeline-scope: --a) and (animation-range: contain) {
+  html.docs-doc-page {
+    timeline-scope: --doc-article;
+  }
+
+  html.docs-doc-page .theme-doc-markdown {
+    view-timeline: --doc-article block;
+  }
+
   html.docs-doc-page body::before {
     content: '';
     position: fixed;
-    top: var(--ifm-navbar-height);
+    top: 0;
     left: 0;
     right: 0;
     height: 2px;
-    z-index: calc(var(--ifm-z-index-fixed) + 1);
+    /* Above the sticky navbar. */
+    z-index: calc(var(--ifm-z-index-fixed) + 10);
     background: var(--ifm-color-primary);
     transform-origin: 0 50%;
     transform: scaleX(0);
+    opacity: 0;
     animation: doc-reading-progress linear both;
-    animation-timeline: scroll(root block);
+    animation-timeline: --doc-article;
+    animation-range: contain 0% contain 100%;
     pointer-events: none;
   }
 
   @keyframes doc-reading-progress {
-    to {
+    0% {
+      transform: scaleX(0);
+      opacity: 1;
+    }
+
+    97% {
+      opacity: 1;
+    }
+
+    100% {
       transform: scaleX(1);
+      opacity: 0;
     }
   }
 }
