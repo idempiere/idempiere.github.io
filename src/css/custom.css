@@ -469,8 +469,10 @@
 .markdown > p:has(> img:only-child),
 .markdown > p:has(> a:only-child > img:only-child),
 .markdown li > p:has(> img:only-child) {
-  display: flex;
-  justify-content: center;
+  /* Block, not flex: CSS cannot see text nodes, so a paragraph with a
+     sentence and an image also matches. As a block, the sentence stays
+     on its own line and the image is centred below it. */
+  display: block;
   padding: 1.25rem;
   background-color: var(--doc-frame-bg);
   border: 1px solid var(--doc-frame-border);
@@ -491,6 +493,14 @@
   box-shadow: var(--doc-img-shadow);
   /* Transparent PNGs get a solid backing. */
   background-color: #fff;
+}
+
+/* Centre the image inside the frame (list-item images set their own
+   margins below). */
+.markdown > p > img:only-child,
+.markdown > p > a:only-child > img:only-child,
+.markdown li > p > img:only-child {
+  margin-inline: auto;
 }
 
 /* Images placed straight in a list item, often right after the item's
