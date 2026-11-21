@@ -257,9 +257,12 @@
   overflow-wrap: anywhere;
 }
 
-/* The last column usually holds the description: keep it readable. */
-.markdown table td:last-child:not(:first-child) {
-  min-width: 14rem;
+/* Every column gets a small minimum width, so short values such as dates
+   ("2026-08") or versions never break at a hyphen when a neighbouring
+   column has long text. Only for tables up to 5 columns: wider tables
+   would no longer fit the page. */
+.markdown table:not(:has(th:nth-child(6))) :is(th, td) {
+  min-width: 6.5rem;
 }
 
 /* Code blocks: 13.6px with a little more line height and padding, a
