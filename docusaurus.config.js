@@ -278,7 +278,11 @@ const config = {
       },
       prism: {
         theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        // Neutral dark background that matches the site's dark greys.
+        darkTheme: prismThemes.vsDark,
+        // Not in the default bundle; Java, shell and SQL are the most
+        // used languages in these docs.
+        additionalLanguages: ['java', 'bash', 'sql', 'properties', 'diff'],
       },
     }),
 };

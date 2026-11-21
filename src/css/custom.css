@@ -262,10 +262,54 @@
   min-width: 14rem;
 }
 
-/* Code blocks */
+/* Code blocks: 13.6px with a little more line height and padding, a
+   hairline border instead of a drop shadow, 8px corners (Vercel, Stripe,
+   Resend use 13 to 14px). */
 .markdown pre,
 .theme-code-block {
   font-size: 0.85rem;
+}
+
+/* Docusaurus sets radius and shadow through a module class, so this needs
+   the extra .markdown for specificity. */
+.markdown .theme-code-block {
+  --ifm-pre-line-height: 1.6;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.theme-code-block pre {
+  border-radius: 0;
+}
+
+.theme-code-block pre code {
+  padding: 1rem 1.15rem;
+}
+
+[data-theme='dark'] .markdown .theme-code-block {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Title bar (```lang title="file.ext"): small, quiet, like a file tab. */
+.theme-code-block [class*='codeBlockTitle'] {
+  padding: 0.5rem 1.15rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+  background-color: var(--ifm-color-emphasis-100);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .theme-code-block [class*='codeBlockTitle'] {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Copy and wrap buttons: same corner radius as the block. */
+.theme-code-block button {
+  border-radius: 6px;
 }
 
 /* Tables: smaller text, hairline row dividers, no zebra stripes or
@@ -618,17 +662,17 @@ article:has(> .theme-doc-card-container) {
     border: 0 !important;
     border-top: 1px solid var(--ifm-toc-border-color) !important;
     background-color: var(--ifm-background-surface-color) !important;
-    opacity: 0.8;
   }
 
   [class*='collapseSidebarButton_']:hover {
-    opacity: 1;
     background-color: var(--ifm-color-emphasis-100) !important;
   }
 
+  /* The icon is a 20px SVG without a viewBox: changing width or height
+     crops it. Scale the drawing instead (keeping Docusaurus' rotation). */
   [class*='collapseSidebarButtonIcon'] {
-    width: 0.9rem;
-    height: 0.9rem;
+    transform: rotate(180deg) scale(0.8) !important;
+    margin-top: 2px !important;
   }
 
   [class*='expandButton_'] {
