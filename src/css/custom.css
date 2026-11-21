@@ -246,9 +246,20 @@
   vertical-align: baseline;
 }
 
-/* Field and key names in tables must not break mid-word. */
-.markdown table :not(pre) > code {
+/* Tables: names in the first column (keys, fields) stay on one line.
+   Long code in other columns (class names, paths) may wrap, so it cannot
+   push a column wide and crush the description next to it. */
+.markdown table td:first-child > code:only-child {
   white-space: nowrap;
+}
+
+.markdown table td:not(:first-child) code {
+  overflow-wrap: anywhere;
+}
+
+/* The last column usually holds the description: keep it readable. */
+.markdown table td:last-child:not(:first-child) {
+  min-width: 14rem;
 }
 
 /* Code blocks */
