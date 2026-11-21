@@ -179,7 +179,7 @@
 .markdown > details,
 .markdown > .tabs-container,
 .markdown > figure,
-.markdown > p:has(> img:only-child) {
+.markdown > p.doc-image-frame {
   margin-top: var(--doc-gap-object);
   margin-bottom: var(--doc-gap-object);
 }
@@ -466,27 +466,26 @@
   border-radius: 4px;
 }
 
-.markdown > p:has(> img:only-child),
-.markdown > p:has(> a:only-child > img:only-child),
-.markdown li > p:has(> img:only-child) {
-  /* Block, not flex: CSS cannot see text nodes, so a paragraph with a
-     sentence and an image also matches. As a block, the sentence stays
-     on its own line and the image is centred below it. */
-  display: block;
+/* The classes come from src/plugins/rehype-image-frame.js, which marks
+   standalone images at build time. CSS alone cannot tell them apart from
+   images inside a sentence: :only-child ignores text nodes. */
+.markdown p.doc-image-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   padding: 1.25rem;
   background-color: var(--doc-frame-bg);
   border: 1px solid var(--doc-frame-border);
   border-radius: 10px;
 }
 
-.markdown li > p:has(> img:only-child) {
+.markdown li > p.doc-image-frame {
   margin-top: 0.75rem;
 }
 
-.markdown > p > img:only-child,
-.markdown > p > a:only-child > img:only-child,
-.markdown li > p > img:only-child,
-.markdown li > img {
+.markdown p.doc-image-frame img,
+.markdown img.doc-image-block {
   display: block;
   border: 1px solid var(--doc-img-border);
   border-radius: 6px;
@@ -495,19 +494,11 @@
   background-color: #fff;
 }
 
-/* Centre the image inside the frame (list-item images set their own
-   margins below). */
-.markdown > p > img:only-child,
-.markdown > p > a:only-child > img:only-child,
-.markdown li > p > img:only-child {
-  margin-inline: auto;
-}
-
-/* Images placed straight in a list item, often right after the item's
-   text (no paragraph around them). They get the same frame look, drawn
-   with spread shadows so the layout does not shift, kept inside the
+/* Images placed straight in a list item, on their own line after the
+   item's text (no paragraph around them). They get the same frame look,
+   drawn with spread shadows so the layout does not shift, kept inside the
    column, and clear space from the text above and the next item. */
-.markdown li > img {
+.markdown img.doc-image-block {
   --doc-li-frame: 0.75rem;
   max-width: calc(100% - 2 * var(--doc-li-frame));
   margin: calc(var(--doc-li-frame) + 0.75rem) var(--doc-li-frame)

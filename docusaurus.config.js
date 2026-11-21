@@ -161,6 +161,9 @@ const config = {
           editUrl:
             'https://github.com/idempiere/idempiere.github.io/tree/main/',
           showLastUpdateTime: true,
+          // Marks standalone images, so custom.css frames them and leaves
+          // images inside a sentence inline.
+          rehypePlugins: [require('./src/plugins/rehype-image-frame')],
         },
         sitemap: {
           lastmod: 'date',
