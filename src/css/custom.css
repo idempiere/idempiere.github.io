@@ -1,30 +1,523 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Global styles. The classic template bundles Infima; the variables below
+ * override its defaults. The readability section tunes type size, line
+ * length and component density for long technical pages.
  */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #0c5f91	;
+  /* Brand */
+  --ifm-color-primary: #0c5f91;
   --ifm-color-primary-dark: #0b5683;
   --ifm-color-primary-darker: #0a517b;
   --ifm-color-primary-darkest: #084366;
   --ifm-color-primary-light: #0d69a0;
   --ifm-color-primary-lighter: #0e6da7;
   --ifm-color-primary-lightest: #107bbc;
-  --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Type scale, aligned with GitBook, Vercel and Cube docs: body 16px,
+     title 36px, sidebar 14px. Infima defaults: h1 48px, h2 32px, h3 24px. */
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.65;
+  --ifm-h1-font-size: 2.25rem;
+  --ifm-h2-font-size: 1.5rem;
+  --ifm-h3-font-size: 1.2rem;
+  --ifm-h4-font-size: 1.05rem;
+  --ifm-h5-font-size: 0.95rem;
+  --ifm-h6-font-size: 0.9rem;
+  --ifm-heading-line-height: 1.3;
+  --ifm-heading-font-weight: 650;
+  --ifm-heading-margin-bottom: 0.75rem;
+  --ifm-paragraph-margin-bottom: 1rem;
+  --ifm-leading: 1rem;
+
+  /* Code */
+  --ifm-code-font-size: 87.5%;
+  --ifm-code-padding-horizontal: 0.3rem;
+  --ifm-code-padding-vertical: 0.05rem;
+  --ifm-pre-line-height: 1.55;
+  --ifm-pre-padding: 0.9rem;
+
+  /* Chrome: navbar, sidebar, table of contents */
+  --ifm-navbar-height: 3.5rem;
+  --ifm-navbar-item-padding-horizontal: 0.65rem;
+  --ifm-menu-link-padding-vertical: 0.3rem;
+  --ifm-menu-link-padding-horizontal: 0.6rem;
+  --ifm-toc-padding-vertical: 0.25rem;
+  --ifm-table-cell-padding: 0.5rem 0.75rem;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* For readability, use a lighter palette and softer text in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #0684be;
-  --ifm-color-primary-dark: #0577ab;
-  --ifm-color-primary-darker: #0570a2;
-  --ifm-color-primary-darkest: #045c85;
-  --ifm-color-primary-light: #0791d1;
-  --ifm-color-primary-lighter: #0798db;
-  --ifm-color-primary-lightest: #08acf7;
+  --ifm-color-primary: #3a9fd6;
+  --ifm-color-primary-dark: #2a93cd;
+  --ifm-color-primary-darker: #278bc2;
+  --ifm-color-primary-darkest: #2072a0;
+  --ifm-color-primary-light: #55addc;
+  --ifm-color-primary-lighter: #62b3df;
+  --ifm-color-primary-lightest: #89c7e8;
+  --ifm-font-color-base: #d7dadf;
+  --ifm-heading-color: #eef0f3;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Article ---------- */
+
+.markdown {
+  --ifm-h1-vertical-rhythm-bottom: 1;
+  --ifm-h2-vertical-rhythm-top: 1.75;
+  --ifm-h3-vertical-rhythm-top: 1.25;
+}
+
+.markdown h1:first-child {
+  --ifm-h1-font-size: 2.25rem;
+  letter-spacing: -0.02em;
+}
+
+/* Infima sets h2 and h3 sizes on these selectors, so override them here. */
+.markdown > h2 {
+  --ifm-h2-font-size: 1.5rem;
+}
+
+.markdown > h3 {
+  --ifm-h3-font-size: 1.2rem;
+}
+
+.markdown h2,
+.markdown h3 {
+  letter-spacing: -0.01em;
+}
+
+.markdown li + li {
+  margin-top: 0.2rem;
+}
+
+.markdown li > ul,
+.markdown li > ol {
+  margin-top: 0.2rem;
+}
+
+/* Inline code: quieter, so it does not shout inside a sentence. */
+.markdown :not(pre) > code {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background-color: var(--ifm-color-emphasis-100);
+  vertical-align: baseline;
+}
+
+/* Field and key names in tables must not break mid-word. */
+.markdown table :not(pre) > code {
+  white-space: nowrap;
+}
+
+/* Code blocks */
+.markdown pre,
+.theme-code-block {
+  font-size: 0.85rem;
+}
+
+/* Tables: smaller text, hairline row dividers, no zebra stripes or
+   vertical grid lines, so the eye follows rows instead of boxes. */
+.markdown table {
+  --ifm-table-border-width: 0;
+  --ifm-table-stripe-background: transparent;
+  --ifm-table-head-background: var(--ifm-color-emphasis-100);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-collapse: collapse;
+}
+
+.markdown table th {
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.markdown table tr {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.markdown table thead tr {
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.markdown table td {
+  vertical-align: top;
+}
+
+/* Admonitions: a quiet tinted panel with a thin outline and a coloured
+   accent bar. No drop shadow. Each type keeps its own colour, but the
+   text stays in the normal body colour so it reads like the page. */
+.theme-admonition {
+  --adm-accent: var(--ifm-color-emphasis-500);
+  --adm-bg: var(--ifm-color-emphasis-100);
+  font-size: 0.93rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  color: var(--ifm-font-color-base);
+  background-color: var(--adm-bg);
+  border: 1px solid color-mix(in srgb, var(--adm-accent) 25%, transparent);
+  border-left: 3px solid var(--adm-accent);
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.theme-admonition a {
+  color: var(--ifm-link-color);
+  text-decoration-color: color-mix(in srgb, var(--ifm-link-color) 40%, transparent);
+}
+
+.theme-admonition [class*='admonitionHeading'] {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+  color: var(--adm-accent);
+}
+
+.theme-admonition [class*='admonitionIcon'] svg {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--adm-accent);
+}
+
+.theme-admonition :not(pre) > code {
+  background-color: color-mix(in srgb, var(--ifm-font-color-base) 7%, transparent);
+  border-color: transparent;
+}
+
+.theme-admonition-note {
+  --adm-accent: #6b7280;
+  --adm-bg: #f6f7f9;
+}
+
+.theme-admonition-tip {
+  --adm-accent: #15803d;
+  --adm-bg: #f0faf3;
+}
+
+.theme-admonition-info {
+  --adm-accent: #0c5f91;
+  --adm-bg: #f0f6fb;
+}
+
+.theme-admonition-warning,
+.theme-admonition-caution {
+  --adm-accent: #b45309;
+  --adm-bg: #fdf8ee;
+}
+
+.theme-admonition-danger {
+  --adm-accent: #c0262d;
+  --adm-bg: #fdf3f3;
+}
+
+[data-theme='dark'] .theme-admonition-note {
+  --adm-accent: #9ca3af;
+  --adm-bg: rgba(156, 163, 175, 0.08);
+}
+
+[data-theme='dark'] .theme-admonition-tip {
+  --adm-accent: #4ade80;
+  --adm-bg: rgba(74, 222, 128, 0.07);
+}
+
+[data-theme='dark'] .theme-admonition-info {
+  --adm-accent: #5cb3e6;
+  --adm-bg: rgba(92, 179, 230, 0.08);
+}
+
+[data-theme='dark'] .theme-admonition-warning,
+[data-theme='dark'] .theme-admonition-caution {
+  --adm-accent: #f5b544;
+  --adm-bg: rgba(245, 181, 68, 0.08);
+}
+
+[data-theme='dark'] .theme-admonition-danger {
+  --adm-accent: #f87171;
+  --adm-bg: rgba(248, 113, 113, 0.08);
+}
+
+.markdown blockquote {
+  font-size: 0.95rem;
+}
+
+.markdown img {
+  border-radius: 4px;
+}
+
+/* ---------- Category index pages and doc cards ---------- */
+
+/* The generated index page title sits outside .markdown. */
+[class*='generatedIndexPage'] h1 {
+  --ifm-h1-font-size: 2.25rem;
+  letter-spacing: -0.02em;
+}
+
+[class*='generatedIndexPage'] header p {
+  color: var(--ifm-color-emphasis-700);
+  max-width: 44rem;
+}
+
+/* Compact link cards in the style of GitBook and Cube: thin outline,
+   no shadow, small title, description that may wrap to two lines. */
+.theme-doc-card-container.card {
+  --ifm-card-vertical-spacing: 0.9rem;
+  --ifm-card-horizontal-spacing: 1.1rem;
+  height: 100%;
+  padding: 0.9rem 1.1rem !important;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 6%), 0 1px 3px rgb(0 0 0 / 4%);
+  background-color: var(--ifm-background-color);
+  transition: border-color var(--ifm-transition-fast) ease,
+    box-shadow var(--ifm-transition-fast) ease;
+}
+
+.theme-doc-card-container.card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
+  background-color: color-mix(in srgb, var(--ifm-color-primary) 4%, var(--ifm-background-color));
+}
+
+/* Dark mode: cards sit on a slightly raised surface, like Vercel and
+   GitBook dark themes, instead of blending into the page. */
+[data-theme='dark'] .theme-doc-card-container.card {
+  background-color: #242526;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 30%);
+}
+
+[data-theme='dark'] .theme-doc-card-container.card:hover {
+  background-color: #2b2d31;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 40%);
+}
+
+[data-theme='dark'] .pagination-nav__link {
+  background-color: #242526;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.theme-doc-card-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 0.3rem;
+  align-items: flex-start;
+}
+
+.theme-doc-card-icon {
+  font-size: 0.95rem !important;
+  margin-right: 0.45rem !important;
+  line-height: 1.35;
+  opacity: 0.75;
+}
+
+.theme-doc-card-title.text--truncate,
+.theme-doc-card-description.text--truncate {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.theme-doc-card-title {
+  font-size: inherit !important;
+}
+
+.theme-doc-card-description {
+  font-size: 0.85rem !important;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Tighter grid: the default leaves 2rem between rows. */
+.theme-doc-card-container {
+  margin-bottom: 0;
+}
+
+article:has(> .theme-doc-card-container) {
+  margin-bottom: 1rem !important;
+}
+
+/* ---------- Navigation ---------- */
+
+.navbar {
+  font-size: 0.93rem;
+}
+
+.navbar__title {
+  font-size: 1rem;
+}
+
+/* Sidebar: smaller and lighter, so the article stays the focus. */
+.theme-doc-sidebar-menu {
+  font-size: 0.875rem;
+}
+
+.theme-doc-sidebar-menu .menu__link {
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.theme-doc-sidebar-menu .menu__list-item-collapsible > .menu__link,
+.theme-doc-sidebar-menu > .menu__list-item > .menu__link,
+.theme-doc-sidebar-menu > .menu__list-item > .menu__list-item-collapsible > .menu__link {
+  font-weight: 500;
+}
+
+.theme-doc-sidebar-menu .menu__link--active:not(.menu__link--sublist) {
+  font-weight: 600;
+}
+
+/* Expand/collapse chevrons: Infima draws them at 32px inside a 20px box,
+   which outweighs 14px labels. Draw them at about 18px, a bit muted. */
+.theme-doc-sidebar-menu .menu__link--sublist-caret::after,
+.theme-doc-sidebar-menu .menu__caret::before {
+  min-width: 1rem;
+  width: 1rem;
+  height: 1rem;
+  background-size: 1.15rem 1.15rem;
+  opacity: 0.55;
+}
+
+.theme-doc-sidebar-menu .menu__caret {
+  padding: 0.3rem 0.5rem;
+}
+
+.theme-doc-sidebar-menu .menu__list-item-collapsible:hover .menu__caret::before,
+.theme-doc-sidebar-menu .menu__link--sublist-caret:hover::after {
+  opacity: 0.85;
+}
+
+/* Table of contents */
+.table-of-contents {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.table-of-contents__link {
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  font-size: 0.8rem;
+}
+
+.breadcrumbs__link {
+  padding: 0.15rem 0.6rem;
+}
+
+/* Pagination and footer links */
+.pagination-nav__link {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+}
+
+.pagination-nav__sublabel {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.pagination-nav__label {
+  font-size: 0.95rem;
+}
+
+.theme-doc-footer {
+  font-size: 0.875rem;
+}
+
+/* ---------- Site footer ---------- */
+
+/* Matches GitBook and Vercel: 14px links in a muted colour, small
+   semibold column titles, less vertical padding. */
+.footer {
+  --ifm-footer-padding-vertical: 2.25rem;
+  --ifm-footer-link-horizontal-spacing: 0;
+  font-size: 0.875rem;
+}
+
+.footer__title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.footer__item {
+  margin-top: 0;
+  padding: 0.2rem 0;
+}
+
+.footer__link-item {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.footer__link-item:hover {
+  opacity: 1;
+}
+
+.footer__link-item svg {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+.footer__bottom {
+  margin-top: 1.5rem;
+}
+
+.footer__copyright {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+/* Dark mode: Infima's blue-slate footer (#303846) clashes with the neutral
+   greys of the page (#1b1b1d) and navbar (#242526). Match the navbar and
+   separate the footer with a hairline instead. */
+[data-theme='dark'] .footer--dark {
+  --ifm-footer-background-color: #242526;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* The footer is always dark, so the brand blue link is unreadable there. */
+.footer--dark .footer__copyright a {
+  color: var(--ifm-footer-link-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 996px) {
+  :root {
+    --ifm-h1-font-size: 1.85rem;
+    --ifm-h2-font-size: 1.35rem;
+    --ifm-h3-font-size: 1.15rem;
+  }
+
+  .markdown h1:first-child {
+    --ifm-h1-font-size: 1.85rem;
+  }
+
+  .markdown > h2 {
+    --ifm-h2-font-size: 1.35rem;
+  }
+
+  .markdown > h3 {
+    --ifm-h3-font-size: 1.15rem;
+  }
+
+  /* Larger tap targets in the mobile menu. */
+  .theme-doc-sidebar-menu {
+    font-size: 0.95rem;
+  }
 }
