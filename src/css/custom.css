@@ -15,6 +15,11 @@
   --ifm-color-primary-lightest: #107bbc;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
+  /* Two-tone text: body a step softer than headings, so headings stand
+     out when scanning. Body #374151 on white is about 10:1 contrast. */
+  --ifm-font-color-base: #374151;
+  --ifm-heading-color: #111827;
+
   /* Type scale, aligned with GitBook, Vercel and Cube docs: body 16px,
      title 36px, sidebar 14px. Infima defaults: h1 48px, h2 32px, h3 24px. */
   --ifm-font-size-base: 16px;
@@ -56,8 +61,8 @@
   --ifm-color-primary-light: #55addc;
   --ifm-color-primary-lighter: #62b3df;
   --ifm-color-primary-lightest: #89c7e8;
-  --ifm-font-color-base: #d7dadf;
-  --ifm-heading-color: #eef0f3;
+  --ifm-font-color-base: #c9cdd3;
+  --ifm-heading-color: #f1f3f5;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -95,6 +100,20 @@
 .markdown li > ul,
 .markdown li > ol {
   margin-top: 0.2rem;
+}
+
+/* Links in running text get a soft underline, so they are not marked by
+   colour alone (Supabase, Resend). Full colour on hover. */
+.markdown a:not(.hash-link):not(.card) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, var(--ifm-link-color) 35%, transparent);
+  transition: text-decoration-color var(--ifm-transition-fast) ease;
+}
+
+.markdown a:not(.hash-link):not(.card):hover {
+  text-decoration-color: currentColor;
 }
 
 /* Inline code: quieter, so it does not shout inside a sentence. */
@@ -385,19 +404,92 @@ article:has(> .theme-doc-card-container) {
   padding: 0.3rem 0.5rem;
 }
 
+/* Collapse-sidebar button: a quiet bar instead of a boxed 40px button. */
+@media (min-width: 997px) {
+  [class*='collapseSidebarButton_'] {
+    height: 2.25rem !important;
+    border: 0 !important;
+    border-top: 1px solid var(--ifm-toc-border-color) !important;
+    background-color: var(--ifm-background-surface-color) !important;
+    opacity: 0.8;
+  }
+
+  [class*='collapseSidebarButton_']:hover {
+    opacity: 1;
+    background-color: var(--ifm-color-emphasis-100) !important;
+  }
+
+  [class*='collapseSidebarButtonIcon'] {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  [class*='expandButton_'] {
+    opacity: 0.7;
+  }
+
+  [class*='expandButton_']:hover {
+    opacity: 1;
+  }
+}
+
+/* Guide lines on nested levels (Tailwind): long lists such as
+   "Developing plug-ins" read as a group instead of a wall of links. */
+.theme-doc-sidebar-menu .menu__list .menu__list {
+  margin-left: 0.75rem;
+  padding-left: 0.35rem;
+  border-left: 1px solid var(--ifm-color-emphasis-200);
+}
+
 .theme-doc-sidebar-menu .menu__list-item-collapsible:hover .menu__caret::before,
 .theme-doc-sidebar-menu .menu__link--sublist-caret:hover::after {
   opacity: 0.85;
 }
 
-/* Table of contents */
+/* Table of contents: one rail on the left, the section you are reading is
+   marked on the rail (Tailwind, Resend, Vercel). Indent comes from the
+   link padding so every marker lands on the same rail. */
 .table-of-contents {
   font-size: 0.8125rem;
   line-height: 1.45;
 }
 
-.table-of-contents__link {
+.theme-doc-toc-desktop .table-of-contents,
+.theme-doc-toc-desktop .table-of-contents ul {
+  padding-left: 0;
+}
+
+.theme-doc-toc-desktop .table-of-contents li {
+  margin: 0;
+}
+
+.theme-doc-toc-desktop .table-of-contents__link {
+  margin-left: -1px;
+  padding: 0.22rem 0 0.22rem 0.9rem;
+  border-left: 2px solid transparent;
   color: var(--ifm-color-emphasis-700);
+  transition: color var(--ifm-transition-fast) ease,
+    border-color var(--ifm-transition-fast) ease;
+}
+
+.theme-doc-toc-desktop .table-of-contents ul .table-of-contents__link {
+  padding-left: 1.8rem;
+}
+
+.theme-doc-toc-desktop .table-of-contents ul ul .table-of-contents__link {
+  padding-left: 2.7rem;
+}
+
+.theme-doc-toc-desktop .table-of-contents__link:hover {
+  color: var(--ifm-heading-color);
+  border-left-color: var(--ifm-color-emphasis-400);
+}
+
+.theme-doc-toc-desktop .table-of-contents__link--active,
+.theme-doc-toc-desktop .table-of-contents__link--active:hover {
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+  border-left-color: var(--ifm-color-primary);
 }
 
 /* Breadcrumbs */
@@ -493,6 +585,34 @@ article:has(> .theme-doc-card-container) {
   color: var(--ifm-footer-link-color);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+/* ---------- Reading progress ---------- */
+
+/* A 2px bar under the navbar that fills as you scroll a doc page. Pure CSS
+   (scroll-driven animation); browsers without support show nothing. */
+@supports (animation-timeline: scroll()) {
+  html.docs-doc-page body::before {
+    content: '';
+    position: fixed;
+    top: var(--ifm-navbar-height);
+    left: 0;
+    right: 0;
+    height: 2px;
+    z-index: calc(var(--ifm-z-index-fixed) + 1);
+    background: var(--ifm-color-primary);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    animation: doc-reading-progress linear both;
+    animation-timeline: scroll(root block);
+    pointer-events: none;
+  }
+
+  @keyframes doc-reading-progress {
+    to {
+      transform: scaleX(1);
+    }
+  }
 }
 
 /* ---------- Small screens ---------- */

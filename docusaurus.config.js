@@ -178,6 +178,12 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/idempiere-social-card.jpg',
+      docs: {
+        sidebar: {
+          // Readers can collapse the sidebar to focus on the page.
+          hideable: true,
+        },
+      },
       navbar: {
         title: 'iDempiere',
         logo: {
