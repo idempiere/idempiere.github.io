@@ -93,13 +93,106 @@
   letter-spacing: -0.01em;
 }
 
+/* ---------- Spacing and rhythm ----------
+   Three steps instead of one flat 16px gap:
+   - prose (paragraphs, lists): 1.25rem
+   - objects (code, notes, tables, images, details, tabs): 1.75rem above
+     and below, so they read as separate blocks
+   - sections: about 2.75rem above an H2, 0.75rem below it, so a heading
+     clearly belongs to the text that follows. */
+.markdown {
+  --doc-gap-prose: 1.25rem;
+  --doc-gap-object: 1.75rem;
+  --ifm-paragraph-margin-bottom: var(--doc-gap-prose);
+  --ifm-list-margin: var(--doc-gap-prose);
+}
+
+/* Infima sets these with --ifm-leading on the same selectors. */
+.markdown > p,
+.markdown > ul,
+.markdown > ol,
+.markdown > dl,
+.markdown > blockquote {
+  margin-bottom: var(--doc-gap-prose);
+}
+
+.markdown > h2 {
+  margin-top: 2.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown > h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.markdown > h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* First section heading right under the page title. */
+.markdown > header + h2,
+.markdown > header + h3 {
+  margin-top: 1.75rem;
+}
+
+/* A heading straight after another heading needs less room. */
+.markdown > h2 + h3,
+.markdown > h3 + h4 {
+  margin-top: 1rem;
+}
+
+.markdown > .theme-code-block,
+.markdown > .theme-admonition,
+.markdown > table,
+.markdown > details,
+.markdown > .tabs-container,
+.markdown > figure,
+.markdown > p:has(> img:only-child) {
+  margin-top: var(--doc-gap-object);
+  margin-bottom: var(--doc-gap-object);
+}
+
+/* Avoid a double gap when two objects follow each other. */
+.markdown > :is(.theme-code-block, .theme-admonition, table, details, .tabs-container)
+  + :is(.theme-code-block, .theme-admonition, table, details, .tabs-container) {
+  margin-top: 0;
+}
+
+/* The first block after a heading sits closer to it. */
+.markdown > :is(h2, h3, h4) + :is(.theme-code-block, .theme-admonition, table, details, .tabs-container) {
+  margin-top: 0.75rem;
+}
+
+.markdown > :first-child {
+  margin-top: 0;
+}
+
+/* Lists: a little air between items, more when items are paragraphs. */
 .markdown li + li {
-  margin-top: 0.2rem;
+  margin-top: 0.4rem;
 }
 
 .markdown li > ul,
 .markdown li > ol {
-  margin-top: 0.2rem;
+  margin-top: 0.4rem;
+}
+
+.markdown li > p {
+  margin-bottom: 0.5rem;
+}
+
+/* Divider lines: lighter, with even space around them. */
+.markdown > hr {
+  margin: 2.5rem 0;
+  height: 1px;
+  border: 0;
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.markdown > hr + h2 {
+  margin-top: 0;
 }
 
 /* Links in running text get a soft underline, so they are not marked by
@@ -585,6 +678,24 @@ article:has(> .theme-doc-card-container) {
   color: var(--ifm-footer-link-color);
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+/* ---------- Page gutters ---------- */
+
+/* Desktop: more air between the sidebar, the text and the table of
+   contents. Infima gives the doc container only 1rem on each side. */
+@media (min-width: 997px) {
+  [class*='docMainContainer_'] > .container {
+    padding-left: 3rem;
+    padding-right: 2rem;
+    /* Infima's padding utilities on this element use !important. */
+    padding-top: 1.5rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .theme-doc-toc-desktop {
+    padding-left: 0.5rem;
+  }
 }
 
 /* ---------- Reading progress ---------- */
