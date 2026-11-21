@@ -38,7 +38,9 @@ return false;
 
 ```
 
-This could be entered as follows:![IDEMPIERE 5011 boolean](pathname:///img/new-features/v9/IDEMPIERE-5011-boolean.png)
+This could be entered as follows:
+
+![IDEMPIERE 5011 boolean](pathname:///img/new-features/v9/IDEMPIERE-5011-boolean.png)
 
 Using the value from the example above, our next script column could contain something like:
 
@@ -51,7 +53,9 @@ return 0;
 
 ```
 
-This could be entered as follows and include a Format Pattern to display as a percentage:![IDEMPIERE 5011 previous](pathname:///img/new-features/v9/IDEMPIERE-5011-previous.png)
+This could be entered as follows and include a Format Pattern to display as a percentage:
+
+![IDEMPIERE 5011 previous](pathname:///img/new-features/v9/IDEMPIERE-5011-previous.png)
 
 There are a vast variety of scripts that can be created using the functionality provided by beanshell. Here are a few more examples:
 
