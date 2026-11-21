@@ -393,8 +393,81 @@
   font-size: 0.95rem;
 }
 
+/* ---------- Images ----------
+   An image that stands alone in a paragraph sits centred in a same-width
+   frame (Mintlify, Stripe, GitBook), so every screenshot box lines up
+   whatever the image size, and screenshots with white or tinted
+   backgrounds no longer blend into the page. Images are never upscaled.
+   Images inside a sentence keep their normal inline look. */
+:root {
+  --doc-frame-bg: #f6f7f9;
+  --doc-frame-border: rgba(0, 0, 0, 0.06);
+  --doc-img-border: rgba(0, 0, 0, 0.08);
+  --doc-img-shadow: 0 1px 2px rgb(0 0 0 / 5%), 0 2px 8px rgb(0 0 0 / 6%);
+}
+
+[data-theme='dark'] {
+  --doc-frame-bg: rgba(255, 255, 255, 0.03);
+  --doc-frame-border: rgba(255, 255, 255, 0.07);
+  --doc-img-border: rgba(255, 255, 255, 0.1);
+  --doc-img-shadow: 0 1px 3px rgb(0 0 0 / 40%);
+}
+
 .markdown img {
+  max-width: 100%;
+  height: auto;
   border-radius: 4px;
+}
+
+.markdown > p:has(> img:only-child),
+.markdown > p:has(> a:only-child > img:only-child),
+.markdown li > p:has(> img:only-child) {
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem;
+  background-color: var(--doc-frame-bg);
+  border: 1px solid var(--doc-frame-border);
+  border-radius: 10px;
+}
+
+.markdown li > p:has(> img:only-child) {
+  margin-top: 0.75rem;
+}
+
+.markdown > p > img:only-child,
+.markdown > p > a:only-child > img:only-child,
+.markdown li > p > img:only-child,
+.markdown li > img {
+  display: block;
+  border: 1px solid var(--doc-img-border);
+  border-radius: 6px;
+  box-shadow: var(--doc-img-shadow);
+  /* Transparent PNGs get a solid backing. */
+  background-color: #fff;
+}
+
+/* Images placed straight in a list item, often right after the item's
+   text (no paragraph around them). They get the same frame look, drawn
+   with spread shadows so the layout does not shift, kept inside the
+   column, and clear space from the text above and the next item. */
+.markdown li > img {
+  --doc-li-frame: 0.75rem;
+  max-width: calc(100% - 2 * var(--doc-li-frame));
+  margin: calc(var(--doc-li-frame) + 0.75rem) var(--doc-li-frame)
+    calc(var(--doc-li-frame) + 1rem);
+  box-shadow: var(--doc-img-shadow), 0 0 0 var(--doc-li-frame) var(--doc-frame-bg),
+    0 0 0 calc(var(--doc-li-frame) + 1px) var(--doc-frame-border);
+}
+
+/* Dark mode: take the glare off bright screenshots; full brightness on
+   hover so details are still easy to check. */
+[data-theme='dark'] .markdown img {
+  filter: brightness(0.9);
+  transition: filter var(--ifm-transition-fast) ease;
+}
+
+[data-theme='dark'] .markdown img:hover {
+  filter: none;
 }
 
 /* ---------- Category index pages and doc cards ---------- */
