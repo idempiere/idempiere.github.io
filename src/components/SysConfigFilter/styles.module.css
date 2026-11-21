@@ -1,0 +1,165 @@
+/* Filter box. Not sticky: a sticky box covered table rows while scrolling.
+   Press "/" to jump back to it. */
+.filter {
+  margin: 1rem 0 1.5rem;
+}
+
+.box {
+  padding: 0.75rem 1rem;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+}
+
+.label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.hint {
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.hint kbd {
+  padding: 0 0.35rem;
+  font-size: 0.75rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.45rem 0.7rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+}
+
+.input:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.count {
+  flex: none;
+  min-width: 7.5rem;
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Empty state: shown in place of the tables when nothing matches. */
+.empty {
+  margin-top: 1rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px dashed var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+}
+
+.emptyTitle {
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+}
+
+.emptyText {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.clear {
+  padding: 0.4rem 0.9rem;
+  font: inherit;
+  font-size: 0.875rem;
+  color: var(--ifm-color-primary);
+  background: transparent;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clear:hover {
+  color: #fff;
+  background: var(--ifm-color-primary);
+}
+
+/* Key name with its anchor. Targets land below the navbar. */
+.key {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+.key code {
+  font-size: 0.85em;
+  overflow-wrap: anywhere;
+}
+
+/* Key tables: fixed layout so columns line up across letters, and long
+   key names wrap instead of pushing the description off screen. */
+.keyTable {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.9rem;
+}
+
+/* Infima's table display rule would override the hidden attribute. */
+.keyTable[hidden] {
+  display: none;
+}
+
+.keyTable th,
+.keyTable td {
+  padding: 0.45rem 0.6rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.keyTable th:nth-child(1) {
+  width: 29%;
+}
+
+.keyTable th:nth-child(2) {
+  width: 40%;
+}
+
+.keyTable th:nth-child(3) {
+  width: 15%;
+}
+
+.keyTable th:nth-child(4) {
+  width: 16%;
+}
+
+.keyTable td {
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+
+/* Ticket links (IDEMPIERE-1286) stay on one line. */
+.keyTable td:last-child a {
+  white-space: nowrap;
+}
+
+/* Rows that jump in from a link get a short highlight. */
+.keyTable tr:has(.key:target) {
+  background: color-mix(in srgb, var(--ifm-color-primary) 10%, transparent);
+}
