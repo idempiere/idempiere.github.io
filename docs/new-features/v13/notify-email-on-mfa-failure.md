@@ -46,7 +46,9 @@ To apply the template to all tenants, maintain the record in the System client. 
 
 ## How to disable the feature
 
-Deactivate the Mail Template record with **Name** `MFA Validation Failed`. When that template is inactive or not present, iDempiere does not send email notifications for failed MFA attempts.
+Deactivate every active Mail Template record with **Name** `MFA Validation Failed`, in the System client and in each tenant that has one. iDempiere does not send email notifications for failed MFA attempts when no active template with that name exists in System or in the current tenant.
+
+If the System mail template is deactivated, but is active in a specific tenant, sending the notification will work just on that tenant.
 
 ## Template variables
 
@@ -61,7 +63,7 @@ The following variables are available in the **MFA Validation Failed** Mail Temp
 
 ## Migration impact
 
-None. The feature sends notifications only when the **MFA Validation Failed** Mail Template is active. Existing behavior does not change.
+When sending e-mails is correctly configured this feature automatically starts sending, provided the users have proper e-mails.
 
 ## See also
 
