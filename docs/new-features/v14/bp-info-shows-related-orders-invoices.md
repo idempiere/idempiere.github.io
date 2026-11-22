@@ -26,8 +26,8 @@ When working with a Business Partner, users often need to see the related orders
 
 The Business Partner Info window now includes two related info tabs:
 
-- **Orders**
-- **Invoices**
+- **Order Info**
+- **Invoice Info**
 
 When you open the Business Partner Info window and select a Business Partner, the related orders and invoices appear in their own tabs without leaving the window.
 
@@ -44,8 +44,8 @@ A hidden query criteria field (`IsNotOpenAsRelated`) was added to the Orders and
 
 1. Open the **Business Partner Info** window.
 2. Select or search for a Business Partner.
-3. Click the **Orders** tab to see the related sales and purchase orders.
-4. Click the **Invoices** tab to see the related invoices.
+3. Click the **Order Info** tab to see the related sales and purchase orders.
+4. Click the **Invoice Info** tab to see the related invoices.
 
 ![Business Partner Info window showing the related Orders and Invoices tabs](/img/docs/new-features/v14/BPInfoWithRelatedOrdersAndInvoices.png)
 
