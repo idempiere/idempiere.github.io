@@ -69,8 +69,18 @@ The [`PDF_FONT_DIR`](../system-configurator.md#PDF_FONT_DIR) key of the System C
 
 - Set the key for the System Tenant. iDempiere reads it only there.
 - The value is a path on the server, not on your computer. Subfolders are not read.
-- The font must also be installed on the server. `PDF_FONT_DIR` only tells the PDF where the file is. Without the installed font, the layout uses `Dialog`, and no file matches.
-- iDempiere reads the directory again for every PDF, and opens every font file in it. Keep only the fonts you need there. Many fonts slow down every PDF.
+- Up to iDempiere 13, the font must also be installed on the server. `PDF_FONT_DIR` only tells the PDF where the file is. Without the installed font, the layout uses `Dialog`, and no file matches.
+- Up to iDempiere 13, iDempiere reads the directory again for every PDF, and opens every font file in it. Keep only the fonts you need there. Many fonts slow down every PDF.
+
+:::note
+
+iDempiere 14 changes how the directory is used, see [PDF font caching and default directory](../../new-features/v14/pdf-font-caching-and-directory.md):
+
+- When the key is empty, iDempiere uses the `fonts` folder in `IDEMPIERE_HOME`.
+- iDempiere also registers the fonts of the directory with Java, so the layout uses them without installing them on the server.
+- iDempiere reads the directory once and keeps the fonts in a cache. After you add a font file or change the key, run Cache Reset.
+
+:::
 
 ## Related pages
 
