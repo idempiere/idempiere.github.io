@@ -28,6 +28,9 @@
         "text", "xml", "yaml"
       ]
     },
+    // Code blocks are fenced, not indented. An indented block cannot have a
+    // language, so MD040 would not see it.
+    "MD046": { "style": "fenced" },
     // Off: long lines, inline HTML and JSX (MDX), bare URLs, table pipe alignment.
     "MD013": false,
     "MD060": false,
