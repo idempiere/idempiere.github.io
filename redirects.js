@@ -10,8 +10,11 @@ module.exports = [
   {from: '/docs/basic-functional/business_partner', to: '/docs/basic-functional/business-partner'},
   {from: '/docs/basic-functional/menue_overview', to: '/docs/basic-functional/menu-overview'},
   {from: '/docs/basic-functional/window_handling', to: '/docs/basic-functional/window-handling'},
-  {from: '/docs/new-features/in-development/Report-Source-for-Report-Column', to: '/docs/new-features/in-development/report-source-for-report-column'},
+  {from: '/docs/new-features/in-development/Report-Source-for-Report-Column', to: '/docs/new-features/v14/report-source-for-report-column'},
   {from: '/docs/new-features/v14/BPartner-Account-Column-in-Statement-of-Account', to: '/docs/new-features/v14/bpartner-account-column-in-statement-of-account'},
+
+  // Pages moved into the OSGi folder of the plug-in guides.
+  {from: '/docs/basic-development/plugin-development/plugin-development-background', to: '/docs/basic-development/plugin-development/osgi/osgi-background'},
 
   // Duplicate pages merged into one.
   {from: '/docs/new-features/v12/copy-or-move-tenant', to: '/docs/new-features/v6.2/copy-or-move-tenant'},

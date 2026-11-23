@@ -42,6 +42,7 @@ If you want to fix a bug or add an enhancement to the core project, start with t
 - [Fork and Branch Git Workflow](./git-workflow)
 - [Common Issues](./common-issues)
 - [Changing the Database](./changing-the-database)
+- [Changes that need a design discussion first](./design-discussion)
 
 If your change adds or changes Application Dictionary records, you need centralized IDs before you start. See [Request centralized IDs](./changing-the-database/centralized-ids.md).
 
