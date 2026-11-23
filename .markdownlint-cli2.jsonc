@@ -23,7 +23,7 @@
     // additionalLanguages together.
     "MD040": {
       "allowed_languages": [
-        "bash", "css", "diff", "groovy", "html", "java", "javascript", "json",
+        "bash", "css", "diff", "dockerfile", "groovy", "html", "java", "javascript", "json",
         "markdown", "mermaid", "nginx", "properties", "python", "shell", "sql",
         "text", "xml", "yaml"
       ]

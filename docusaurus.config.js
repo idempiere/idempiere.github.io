@@ -286,7 +286,7 @@ const config = {
         // Not in the default bundle; Java, shell and SQL are the most
         // used languages in these docs.
         // Keep in sync with MD040 allowed_languages in .markdownlint-cli2.jsonc.
-        additionalLanguages: ['java', 'bash', 'sql', 'properties', 'diff', 'nginx', 'groovy'],
+        additionalLanguages: ['java', 'bash', 'sql', 'properties', 'diff', 'nginx', 'groovy', 'docker'],
       },
     }),
 };
