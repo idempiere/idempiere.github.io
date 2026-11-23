@@ -347,6 +347,27 @@ Check credit on prepay order
 - Values: defaults to true
 - Reference: [FR 2840458](https://sourceforge.net/tracker/index.php?func=detail&aid=2840458&group_id=176962&atid=879335)
 
+#### CHECK_PURCHASE_PRICE_LIST_FOR_ZERO_COST_POSTING {#CHECK_PURCHASE_PRICE_LIST_FOR_ZERO_COST_POSTING}
+
+Checks for an active effective zero-price purchase Price List (with no active effective positive purchase price) before failing zero-cost posting on Material Shipment, Material Receipt (without a Purchase Order line), and Physical Inventory
+
+- Values: default to false
+- Reference: [IDEMPIERE-7223](https://idempiere.atlassian.net/browse/IDEMPIERE-7223)
+
+#### CHECK_ZERO_COST_PO_FOR_ZERO_COST_POSTING {#CHECK_ZERO_COST_PO_FOR_ZERO_COST_POSTING}
+
+Checks for a processed zero-cost Purchase Order or Vendor Invoice M_CostDetail before failing zero-cost posting on Material Shipment and Physical Inventory
+
+- Values: default to true
+- Reference: [IDEMPIERE-7223](https://idempiere.atlassian.net/browse/IDEMPIERE-7223)
+
+#### CHECK_ZERO_COST_PRODUCTION_FOR_ZERO_COST_POSTING {#CHECK_ZERO_COST_PRODUCTION_FOR_ZERO_COST_POSTING}
+
+Checks for a processed zero-cost Production M_CostDetail before failing zero-cost posting on Material Shipment and Physical Inventory
+
+- Values: default to false
+- Reference: [IDEMPIERE-7223](https://idempiere.atlassian.net/browse/IDEMPIERE-7223)
+
 #### CKEDITOR_FILE_CONFIG {#CKEDITOR_FILE_CONFIG}
 
 Path to the config file of CKEditor
