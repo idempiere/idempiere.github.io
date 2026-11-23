@@ -41,8 +41,6 @@ RUN fc-cache -f
 
 If the base image runs as another user, switch to `root` first with `USER root`. After `fc-cache`, switch back to the user of the base image, so the container does not run as root. For the official `12-release` image, that user is `idempiere` (`USER idempiere`).
 
-<!-- TODO: verify - confirm that the official 12-release image runs as the user idempiere. -->
-
 :::tip
 
 Use the same font packages and font files on every server and in every image: development, test and production. Otherwise the Java logical fonts (`SansSerif`, `Serif`, `Dialog`) can turn into different fonts on each server, and documents look different.

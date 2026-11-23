@@ -34,6 +34,8 @@ Bundle-Version: 1.0.0.qualifier
 Fragment-Host: net.sf.jasperreports.engine
 ```
 
+Give each font fragment its own `Bundle-SymbolicName`. OSGi can refuse to install a second bundle with the same symbolic name and version.
+
 ```properties title="build.properties"
 source.. = src/
 output.. = target/classes/
