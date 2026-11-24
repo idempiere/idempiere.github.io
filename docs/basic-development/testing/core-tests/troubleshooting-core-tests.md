@@ -42,7 +42,7 @@ Migration scripts are not applied. Run `bash RUN_SyncDBDev.sh`, then run the tes
 
 - The test depends on data that another test changed, or on the order of tests.
 - A test committed data. Remove `commit()`, or clean up in a `finally` block and mark the class `@Isolated`.
-- The test depends on today's date. Use `getLoginDate()` or set the date.
+- The test depends on today's date. `getLoginDate()` is the current time, so it does not help. Set a fixed date on the records, or override `newLoginDetails(TestInfo)` to log in with a fixed date.
 
 ## A document does not complete or posting is wrong
 

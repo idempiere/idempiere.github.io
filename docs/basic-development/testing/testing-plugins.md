@@ -93,10 +93,10 @@ Test the plugin through the path that iDempiere uses. For a model validator or e
 Run from the build root, so the freshly built plugin is used:
 
 ```bash
-mvn clean verify -DskipTests=false -Dtest=MyValidatorTest -Didempiere.home=/path/to/folder/with/idempiere.properties
+mvn clean verify -DskipTests=false -Dtest=MyValidatorTest -DfailIfNoTests=false -Didempiere.home=/path/to/folder/with/idempiere.properties
 ```
 
-Results are in `<plugin>.test/target/surefire-reports/`.
+`-Dtest` applies to every test bundle in the build. If `org.idempiere.test` is in the same build, it has no `MyValidatorTest` and Tycho stops with "No tests found". `-DfailIfNoTests=false` prevents that, so check that your test ran: results are in `<plugin>.test/target/surefire-reports/`.
 
 ## Optional: a plain JUnit module
 

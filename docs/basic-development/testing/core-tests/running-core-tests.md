@@ -52,9 +52,7 @@ This builds iDempiere and runs every test. It takes a long time. Run it before y
 
 ### Run one method
 
-```bash
-./mvnw verify -DskipTests=false -Dtest='InOutTest#testMatShipmentPosting'
-```
+The Maven build cannot run a single method. Tycho 4.0.8, which the core build uses, turns `-Dtest` into a class file pattern, so `-Dtest='InOutTest#testMatShipmentPosting'` matches no test. Run one method from the IDE instead. See [Run from an IDE](#run-from-an-ide).
 
 :::note
 
@@ -70,7 +68,7 @@ Use `clean` when you switch branches or review a pull request, so leftover build
 
 1. Open `org.idempiere.test/idempiere.unit.test.launch`.
 2. Run it as a **JUnit Plug-in Test**. A plain "JUnit Test" has no OSGi runtime and fails at startup.
-3. To run one class, right-click it and select Run As => JUnit Plug-in Test.
+3. To run one class or one method, right-click it and select Run As => JUnit Plug-in Test.
 
 The launch configuration lists its bundles one by one. If the tests need a new bundle, add it to the launch as well.
 
@@ -92,13 +90,15 @@ The repository ships the run configurations `org.idempiere.test`, `org.idempiere
 
 ## Build the coverage report
 
-The `coverage-report` module builds a JaCoCo aggregate report over the core bundles whenever the tests run ([IDEMPIERE-6784](https://idempiere.atlassian.net/browse/IDEMPIERE-6784)):
+In iDempiere 13 and later, the `coverage-report` module builds a JaCoCo aggregate report over the core bundles whenever the tests run ([IDEMPIERE-6784](https://idempiere.atlassian.net/browse/IDEMPIERE-6784)):
 
 ```bash
 ./mvnw clean verify -DskipTests=false
 ```
 
 The report is written under `coverage-report/target/site/`. <!-- TODO: verify - exact folder name (jacoco-aggregate) -->
+
+iDempiere 12 has no `coverage-report` module, so this command builds no report there. On version 12, use the coverage configuration of the Eclipse launch ([IDEMPIERE-5183](https://idempiere.atlassian.net/browse/IDEMPIERE-5183)).
 
 ## Continuous integration
 

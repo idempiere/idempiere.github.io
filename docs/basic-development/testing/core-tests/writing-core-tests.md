@@ -122,11 +122,12 @@ Rules that follow:
 
 ### Run documents and processes as the UI does
 
-- Complete or void documents with `MWorkflow.runDocumentActionWorkflow(po, DocAction.ACTION_Complete)`.
+- Run a document action with `MWorkflow.runDocumentActionWorkflow(po, action)`. The action you pass decides what happens: `DocAction.ACTION_Complete` completes the document, `DocAction.ACTION_Void` voids it.
 - Assert `assertFalse(info.isError(), info.getSummary())`. The summary tells you why a document did not complete.
 - Call `po.load(getTrxName())` before you read `DocStatus` or `isPosted()`.
 - For posting, follow the tests in the `acct` and `costing` packages and the `FactAcct` helper in `org.idempiere.test`.
-- When a test runs a process, keep it inside the test transaction so the process does not commit it.
+- When a test runs a Java process, pass `managedTrx=false`: `ProcessUtil.startJavaProcess(Env.getCtx(), pi, getTrx(), false)`. With the shorter overloads the runner commits and closes the test transaction when the process succeeds.
+- A process that commits internally still commits. Clean up its data in a `finally` block and mark the class `@Isolated`.
 
 ### Write clear assertions
 
@@ -141,7 +142,7 @@ The suite can run test classes in parallel, and tests must not depend on their o
 
 - Create the records you need as new rows in the test transaction.
 - **Do not update shared Garden World records** (SysConfig, Client Info, Products, conversion rates) to set up a scenario. Updates lock rows, slow the suite and break parallel runs.
-- Do not depend on the current date. Use `getLoginDate()` or set dates explicitly.
+- Do not depend on the current date. `getLoginDate()` returns the time the test started, so set fixed dates on your records when the result depends on the date.
 - Avoid `commit()`. If the code under test needs committed data, clean up afterwards and mark the class with JUnit 5 `@Isolated`.
 
 ### Replace static lookups with Mockito

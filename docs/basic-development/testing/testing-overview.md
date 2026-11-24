@@ -8,7 +8,7 @@ last_reviewed: 2026-11-24
 ---
 # Testing overview
 
-This page explains how iDempiere is tested and which kind of test fits your change. Start here, then follow the pages of this section in order. Applies to all iDempiere versions; details checked against the master branch (version 14) in November 2026.
+This page explains how iDempiere is tested and which kind of test fits your change. Start here, then follow the pages of this section in order. The test levels on this page apply to all iDempiere versions. The `org.idempiere.test` bundle exists since iDempiere 8, and the commands and examples on the following pages apply to iDempiere 12 and later. Details checked against the master branch (version 14) in November 2026.
 
 ## In one minute
 
