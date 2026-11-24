@@ -61,4 +61,4 @@ Announcements are posted in the [iDempiere Google Group](https://groups.google.c
 
 ## Next
 
-[End-to-end UI testing](./end-to-end-ui-testing.md)
+[End-to-end browser testing](./end-to-end-ui-testing.md)

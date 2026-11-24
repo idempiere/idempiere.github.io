@@ -42,7 +42,7 @@ A class that looks pure but initialises iDempiere statics (a static `CLogger`, a
 
 Create a project `<plugin>.test` next to your plugin and add it to your build. A common layout makes it a **fragment of the plugin under test**, so the tests can see packages that the plugin does not export.
 
-### MANIFEST.MF
+### Manifest
 
 ```text title="com.example.myplugin.test/META-INF/MANIFEST.MF"
 Bundle-ManifestVersion: 2
@@ -63,7 +63,7 @@ Import-Package: org.assertj.core.api,
 - `org.idempiere.test` gives you `AbstractTestCase`, `DictionaryIDs` and Mockito, which it exports.
 - Do not mark `org.idempiere.test` as optional. If it cannot be resolved you want one clear error, not hundreds of compile errors.
 
-### build.properties
+### Build properties
 
 ```text title="com.example.myplugin.test/build.properties"
 source.. = src/
@@ -71,7 +71,7 @@ output.. = target/classes/
 bin.includes = META-INF/,.
 ```
 
-### pom.xml
+### Maven project file
 
 The parts that matter:
 
@@ -93,10 +93,10 @@ Test the plugin through the path that iDempiere uses. For a model validator or e
 Run from the build root, so the freshly built plugin is used:
 
 ```bash
-mvn clean verify -DskipTests=false -Dtest=MyValidatorTest -DfailIfNoTests=false -Didempiere.home=/path/to/folder/with/idempiere.properties
+mvn clean verify -DskipTests=false -Dtest=MyValidatorTest -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Didempiere.home=/path/to/folder/with/idempiere.properties
 ```
 
-`-Dtest` applies to every test bundle in the build. If `org.idempiere.test` is in the same build, it has no `MyValidatorTest` and Tycho stops with "No tests found". `-DfailIfNoTests=false` prevents that, so check that your test ran: results are in `<plugin>.test/target/surefire-reports/`.
+`-Dtest` applies to every test bundle in the build. If `org.idempiere.test` is in the same build, it has no `MyValidatorTest` and Tycho stops with "No tests found". `-DfailIfNoTests=false` prevents that. If the build also has a plain JUnit module (see below), Maven Surefire fails there for the same reason; `-Dsurefire.failIfNoSpecifiedTests=false` prevents that. Check that your test ran: results are in `<plugin>.test/target/surefire-reports/`.
 
 ## Optional: a plain JUnit module
 

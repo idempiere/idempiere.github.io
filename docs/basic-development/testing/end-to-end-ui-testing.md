@@ -1,12 +1,12 @@
 ---
-sidebar_label: End-to-end UI testing
+sidebar_label: End-to-end browser testing
 sidebar_position: 5
 description: "The state of automated browser tests for the iDempiere ZK client: past Selenium and FitNesse work, ZK IDs and the Playwright proposal."
 tags: [development, technical, testing]
 applies_to: "all"
 last_reviewed: 2026-11-24
 ---
-# End-to-end UI testing
+# End-to-end browser testing
 
 End-to-end tests drive the application the way a user does: log in, open a window, enter data, complete a document. iDempiere has **no automated end-to-end suite in core today**. This page explains what was tried, what is left in the code and what is planned. Applies to all iDempiere versions.
 
@@ -27,7 +27,7 @@ End-to-end tests drive the application the way a user does: log in, open a windo
 
 Few tests were written with these tools, and they were not kept up to date.
 
-## Predictable ZK component IDs
+## Fixed component identifiers in ZK
 
 ZK generates random component IDs, which makes browser tests fragile. Core still has the hook that the Selenium work used.
 
@@ -49,7 +49,7 @@ Use it only on a development or test server, never in production.
 
 :::
 
-## The Playwright proposal
+## Planned browser test suite
 
 [IDEMPIERE-7119](https://idempiere.atlassian.net/browse/IDEMPIERE-7119) proposes a test suite with [Playwright](https://playwright.dev/).
 

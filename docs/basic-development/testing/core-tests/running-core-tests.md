@@ -52,7 +52,7 @@ This builds iDempiere and runs every test. It takes a long time. Run it before y
 
 ### Run one method
 
-The Maven build cannot run a single method. Tycho 4.0.8, which the core build uses, turns `-Dtest` into a class file pattern, so `-Dtest='InOutTest#testMatShipmentPosting'` matches no test. Run one method from the IDE instead. See [Run from an IDE](#run-from-an-ide).
+The Maven build cannot run a single method. Tycho 4.0.8, which the core build uses, turns `-Dtest` into a class file pattern, so `-Dtest='InOutTest#testMatShipmentPosting'` matches no test. Run one method from Eclipse or IntelliJ instead. See [Run from your editor](#run-from-your-editor).
 
 :::note
 
@@ -62,17 +62,23 @@ The Maven build cannot run a single method. Tycho 4.0.8, which the core build us
 
 Use `clean` when you switch branches or review a pull request, so leftover build output does not hide compile errors.
 
-## Run from an IDE
+## Run from your editor
 
 ### Eclipse
 
 1. Open `org.idempiere.test/idempiere.unit.test.launch`.
 2. Run it as a **JUnit Plug-in Test**. A plain "JUnit Test" has no OSGi runtime and fails at startup.
-3. To run one class or one method, right-click it and select Run As => JUnit Plug-in Test.
+3. To run one class or one method, open Run => Run Configurations, duplicate `idempiere.unit.test`, and select the class and method on the Test tab.
+
+:::warning
+
+Do not start a test with Run As => JUnit Plug-in Test from the context menu. Eclipse then creates a new launch configuration with the project folder as working directory, so iDempiere does not find `idempiere.properties` in the repository root.
+
+:::
 
 The launch configuration lists its bundles one by one. If the tests need a new bundle, add it to the launch as well.
 
-### IntelliJ IDEA
+### IntelliJ
 
 The repository ships the run configurations `org.idempiere.test`, `org.idempiere.test.SelectedClass` and `org.idempiere.test.SelectedClass.Method`. They need the Eclipse PDE Partial plugin 1.6.8 or newer. See [Development with IntelliJ](../../../new-features/v12/development-with-intellij.md).
 

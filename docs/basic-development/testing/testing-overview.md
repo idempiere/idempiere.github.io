@@ -28,7 +28,7 @@ This page explains how iDempiere is tested and which kind of test fits your chan
 | 4 | [Troubleshooting core tests](./core-tests/troubleshooting-core-tests.md) | How to fix a failing or missing test |
 | 5 | [Testing plugins](./testing-plugins.md) | How to test your own plugin |
 | 6 | [Manual testing](./manual-testing.md) | How pull requests and releases are tested by hand |
-| 7 | [End-to-end UI testing](./end-to-end-ui-testing.md) | The state of browser tests and the Playwright plan |
+| 7 | [End-to-end browser testing](./end-to-end-ui-testing.md) | The state of browser tests and the Playwright plan |
 | 8 | [Testing history](./testing-history.md) | How testing changed from 2006 to today |
 
 ## Test levels
@@ -64,11 +64,11 @@ Each level below uses the usual industry name, then says what iDempiere has for 
 - **In iDempiere:** no automated suite in core. Tested by hand (for example with Postman) during Testing Days. The REST API is a separate project.
 - **Read:** [Manual testing](./manual-testing.md).
 
-### End-to-end (UI) tests
+### End-to-end tests
 
 - **Checks:** a user flow in the browser, from login to a completed document.
 - **In iDempiere:** none in core. Selenium and FitNesse were used from 2012 and moved out of core in 2019. Playwright is the proposed replacement.
-- **Read:** [End-to-end UI testing](./end-to-end-ui-testing.md).
+- **Read:** [End-to-end browser testing](./end-to-end-ui-testing.md).
 
 ### Performance tests
 

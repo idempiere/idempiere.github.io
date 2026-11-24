@@ -98,7 +98,7 @@ public class SampleOrderTest extends AbstractTestCase {
 
 The sections below explain each part.
 
-### Extend AbstractTestCase
+### Extend the base test class
 
 `org.idempiere.test.AbstractTestCase` starts iDempiere once per test class and prepares each test method:
 
@@ -126,8 +126,8 @@ Rules that follow:
 - Assert `assertFalse(info.isError(), info.getSummary())`. The summary tells you why a document did not complete.
 - Call `po.load(getTrxName())` before you read `DocStatus` or `isPosted()`.
 - For posting, follow the tests in the `acct` and `costing` packages and the `FactAcct` helper in `org.idempiere.test`.
-- When a test runs a Java process, pass `managedTrx=false`: `ProcessUtil.startJavaProcess(Env.getCtx(), pi, getTrx(), false)`. With the shorter overloads the runner commits and closes the test transaction when the process succeeds.
-- A process that commits internally still commits. Clean up its data in a `finally` block and mark the class `@Isolated`.
+- When a test runs a process, use `ServerProcessCtl.process(pi, getTrx(), false)`, as the tests in the `costing` package do. It reads the process class from the process definition, and `false` stops it from committing and closing the test transaction. The shorter overload `ServerProcessCtl.process(pi, getTrx())` commits when the process succeeds.
+- A process that commits internally still commits, and the rollback in `@AfterEach` does not remove its data. Delete that data in a `finally` block with a separate transaction that you commit, and mark the class `@Isolated`.
 
 ### Write clear assertions
 
@@ -142,7 +142,7 @@ The suite can run test classes in parallel, and tests must not depend on their o
 
 - Create the records you need as new rows in the test transaction.
 - **Do not update shared Garden World records** (SysConfig, Client Info, Products, conversion rates) to set up a scenario. Updates lock rows, slow the suite and break parallel runs.
-- Do not depend on the current date. `getLoginDate()` returns the time the test started, so set fixed dates on your records when the result depends on the date.
+- Do not depend on the current date. `getLoginDate()` returns the time the test started, so set fixed dates on your records when the result depends on the date. If the code under test reads the login date, also override `newLoginDetails(TestInfo)` to log in with a fixed date.
 - Avoid `commit()`. If the code under test needs committed data, clean up afterwards and mark the class with JUnit 5 `@Isolated`.
 
 ### Replace static lookups with Mockito
@@ -161,7 +161,7 @@ try (MockedStatic<MSysConfig> mocked = Mockito.mockStatic(MSysConfig.class, Mock
 - Static mocks apply only to the current thread. Code on another thread sees the real method.
 - Examples in the suite: `base/POInsertSQLTest.java` for `MSysConfig`, and `ConversionRateHelper.mockStatic()` used in `base/MatchInvTestIsolated.java` for conversion rates.
 
-## Step 5: Run it
+## Step 5: Run the test
 
 1. Run your class: `./mvnw verify -DskipTests=false -Dtest=SampleOrderTest`.
 2. For a bug fix, check that the test fails without your fix and passes with it.
