@@ -1,0 +1,9 @@
+{
+  "label": "Testing",
+  "position": 6,
+  "link": {
+    "type": "generated-index",
+    "slug": "/basic-development/testing",
+    "description": "How iDempiere is tested today, from JUnit tests in org.idempiere.test to manual and end-to-end testing, mapped to the usual test levels."
+  }
+}
