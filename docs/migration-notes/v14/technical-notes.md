@@ -67,3 +67,33 @@ Scripts and builds that call the model generator from the command line are affec
 - Some other risky combinations, for example a system entity type for the tables without a column entity type, now print a `WARNING` line in the positional form.
 
 Check the exit code of the scripts that call the generator. See [Model generator for custom columns](/docs/new-features/v14/model-generator-custom-columns) for the new named arguments.
+
+## MTimeExpenseLine.getLaborCost null and exception behavior
+
+`MTimeExpenseLine.getLaborCost(MAcctSchema)` now returns `null` instead of `BigDecimal.ZERO` when the referenced `S_TimeExpenseLine` row does not exist, throws `DBException` on SQL errors instead of logging and returning zero, and uses the expense line's own transaction name before falling back to the Accounting Schema transaction name. This lets callers distinguish a genuine zero-cost expense line from a missing record so Project Issue costing can fall back to standard product costs.
+
+**Who is affected:** plug-in developers calling `MTimeExpenseLine.getLaborCost(MAcctSchema)` directly.  
+**Ticket:** [IDEMPIERE-7231](https://idempiere.atlassian.net/browse/IDEMPIERE-7231)
+
+### What to do
+
+1. Check for `null` on the return value of `MTimeExpenseLine.getLaborCost(MAcctSchema)` if your code previously assumed a non-null `BigDecimal`.
+2. Handle `DBException` if your caller expects database lookup errors to be caught instead of propagating.
+3. Verify transaction visibility if your code passes a different transaction on the `MAcctSchema` than on the `MTimeExpenseLine` instance.
+
+See [Charge-based posting for manual cost elements](/docs/new-features/v14/charge-based-manual-cost-elements) for full details.
+
+## Reversal posting replay for shipments, returns, production and project issues
+
+Sales Shipment, Customer Return, Production, and Project Issue reversals now replay all posted `Fact_Acct` rows (plus document-level DueTo/DueFrom balancing rows) from the original document, skip GL Distribution on replayed rows, and negate the original `M_CostDetail` amount where available. Production and Project Issue reversals now require the original document to be posted first instead of posting independently, and `MProjectIssue` resolves product costing method via `product.getCostingMethod(as)` instead of `as.getCostingMethod()`.
+
+**Who is affected:** all installations posting reversals of Sales Shipments, Customer Returns, Productions, or Project Issues (including installations that do not configure `M_CostElement.C_Charge_ID`), especially workflows that reverse documents before the original is posted or rely on GL Distribution re-running during reversal.  
+**Ticket:** [IDEMPIERE-7231](https://idempiere.atlassian.net/browse/IDEMPIERE-7231)
+
+### What to do
+
+1. Ensure original Production and Project Issue documents are posted before their reversals are posted (or allow the accounting processor to retry once the original posts).
+2. Review any GL Distribution rules or custom accounting validators that previously expected GL Distribution to run again on reversal lines for these four document types.
+3. Verify Project Issue balance calculations if products use Product Category costing method overrides.
+
+See [Charge-based posting for manual cost elements](/docs/new-features/v14/charge-based-manual-cost-elements) for full details.
