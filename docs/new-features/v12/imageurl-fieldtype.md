@@ -19,19 +19,19 @@ tags: [technical]
 https://idempiere.atlassian.net/browse/IDEMPIERE-6242 adds a new ImageURL editor which rendering images from web url only.
 
 **Technical Changes**
-    - Added Image URL display/data type
-```text
-   - Implemented thumbnail rendering for Image and Image URL data type (Grid View and Info Window)
-   - Implemented showing full size image for thumbnail on hover of the thumbnail image
-```
+
+- Added Image URL display/data type
+- Implemented thumbnail rendering for Image and Image URL data type (Grid View and Info Window)
+- Implemented showing full size image for thumbnail on hover of the thumbnail image
 
 **Related to**
-    - AD_Form ImageURL, load from theme or fragment attached to org.adempiere.ui.zk
-    - AD_InfoProcess Image URL, load from theme
-    - AD_InfoWindow ImageURL, load from theme or fragment attached to org.adempiere.ui.zk
-    - AD_PrintFormatItem.ImageURL, load from web, theme or fragment attached to org.adempiere.ui.zk
-    - AD_PrintTableFormat.ImageURL, load from web
-    - AD_UserDef_Info.ImageURL, same as AD_InfoWindow ImageURL
+
+- AD_Form ImageURL, load from theme or fragment attached to org.adempiere.ui.zk
+- AD_InfoProcess Image URL, load from theme
+- AD_InfoWindow ImageURL, load from theme or fragment attached to org.adempiere.ui.zk
+- AD_PrintFormatItem.ImageURL, load from web, theme or fragment attached to org.adempiere.ui.zk
+- AD_PrintTableFormat.ImageURL, load from web
+- AD_UserDef_Info.ImageURL, same as AD_InfoWindow ImageURL
 
 **Setup**
 
