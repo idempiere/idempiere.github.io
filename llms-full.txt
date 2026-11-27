@@ -10173,6 +10173,791 @@ import SysConfigFilter, {Key} from '@site/src/components/SysConfigFilter';
 
 ---
 
+## Running core tests
+
+This page shows how to run the core test suite and read its results. Applies to iDempiere 12 and later. The `org.idempiere.test` bundle exists since iDempiere 8; older versions differ in details.
+
+### What you run
+
+- **Where:** the `org.idempiere.test` bundle in the [idempiere repository](https://github.com/idempiere/idempiere).
+- **What:** JUnit 5 tests, built and run by Tycho inside an OSGi runtime.
+- **Against:** a real iDempiere database with Garden World data, PostgreSQL or Oracle.
+- **Also on master (iDempiere 14):** a second, small test bundle, `org.idempiere.redis.service.test` ([IDEMPIERE-7191](https://idempiere.atlassian.net/browse/IDEMPIERE-7191)). It runs in the same build, needs no database and reports its own `Tests run` lines.
+
+### Before you start
+
+- You can build iDempiere from source. See [Introduction to iDempiere development](../../introduction.md).
+- An `idempiere.properties` file in the repository root points to a database with Garden World data. The tests find it through `-DIDEMPIERE_HOME=..`, set in `org.idempiere.test/pom.xml`.
+- All migration scripts are applied to that database:
+
+  ```bash
+  bash RUN_SyncDBDev.sh
+  ```
+
+:::warning
+
+`idempiere.properties` usually holds database credentials. Never commit it, paste it into a pull request or share it in a chat.
+
+:::
+
+### Run from the terminal
+
+Tests are **skipped by default** (`<skipTests>true</skipTests>` in `org.idempiere.test/pom.xml`). Always pass `-DskipTests=false` and use the `verify` goal.
+
+#### Run the whole suite
+
+```bash
+./mvnw clean verify -DskipTests=false
+```
+
+This builds iDempiere and runs every test. It takes a long time. Run it before you open a pull request.
+
+#### Run one class
+
+```bash
+./mvnw verify -DskipTests=false -Dtest=InOutTest -DfailIfNoTests=false
+```
+
+`-Dtest` applies to every test bundle in the build. On master (iDempiere 14), `org.idempiere.redis.service.test` has no `InOutTest`, and without `-DfailIfNoTests=false` Tycho stops there with "No tests found". With this option, a misspelled class name also gives a green build, so check that your test ran. See [Check that it worked](#check-that-it-worked).
+
+#### Run one method
+
+The Maven build cannot run a single method. Tycho 4.0.8, which the core build uses, turns `-Dtest` into a class file pattern, so `-Dtest='InOutTest#testMatShipmentPosting'` matches no test. Run one method from Eclipse or IntelliJ instead. See [Run from your editor](#run-from-your-editor).
+
+:::note
+
+`mvn test` does not run these tests. Tycho runs OSGi tests in the `integration-test` phase, so use `verify` or `install`. A green build without `-DskipTests=false` means no test ran.
+
+:::
+
+Use `clean` when you switch branches or review a pull request, so leftover build output does not hide compile errors.
+
+### Run from your editor
+
+#### Eclipse
+
+1. Open `org.idempiere.test/idempiere.unit.test.launch`.
+2. Run it as a **JUnit Plug-in Test**. A plain "JUnit Test" has no OSGi runtime and fails at startup.
+3. To run one class or one method, open Run => Run Configurations, duplicate `idempiere.unit.test`, and select the class and method on the Test tab.
+
+:::warning
+
+Do not start a test with Run As => JUnit Plug-in Test from the context menu. Eclipse then creates a new launch configuration with the project folder as working directory, so iDempiere does not find `idempiere.properties` in the repository root.
+
+:::
+
+The launch configuration lists its bundles one by one. If the tests need a new bundle, add it to the launch as well.
+
+#### IntelliJ
+
+The repository ships the run configurations `org.idempiere.test`, `org.idempiere.test.SelectedClass` and `org.idempiere.test.SelectedClass.Method`. They need the Eclipse PDE Partial plugin 1.6.8 or newer. See [Development with IntelliJ](../../../new-features/v12/development-with-intellij.md).
+
+### Read the results
+
+1. Open `org.idempiere.test/target/surefire-reports/`.
+2. Find the `.txt` file of the failing class. It holds the assertion message and the stack trace.
+3. Check whether the same test also fails on `master`. If it does, say so in the pull request.
+
+### Run tests in parallel
+
+- The Maven build runs tests in one thread (`junit.jupiter.execution.parallel.enabled=false`).
+- `org.idempiere.test/idempiere.unit.test.parallel.launch` runs test classes in parallel in Eclipse. Use it to check that your test does not depend on other tests.
+- Tests that change shared data carry the JUnit 5 `@Isolated` annotation, so they never run at the same time as others.
+
+### Build the coverage report
+
+In iDempiere 13 and later, the `coverage-report` module builds a JaCoCo aggregate report over the core bundles whenever the tests run ([IDEMPIERE-6784](https://idempiere.atlassian.net/browse/IDEMPIERE-6784)):
+
+```bash
+./mvnw clean verify -DskipTests=false
+```
+
+The report is written to `coverage-report/target/site/jacoco-aggregate/`. Open `index.html` in that folder.
+
+The `coverage-report` module and both test bundles are only part of the default Maven profile. On master (iDempiere 14), builds with `-P common,core` or `-P common,extended` ([IDEMPIERE-6897](https://idempiere.atlassian.net/browse/IDEMPIERE-6897)) run no tests and build no report, even with `-DskipTests=false`.
+
+iDempiere 12 has no `coverage-report` module, so this command builds no report there. On version 12, use the coverage configuration of the Eclipse launch ([IDEMPIERE-5183](https://idempiere.atlassian.net/browse/IDEMPIERE-5183)).
+
+### Continuous integration
+
+- The project runs builds and the test suite on [Jenkins](https://jenkins.idempiere.org/), in the daily jobs.
+- GitHub Actions in the core repository only hold a SonarQube analysis that is started by hand. They do not run the tests.
+- So run the tests yourself before you open a pull request.
+
+### Check that it worked
+
+- The Maven output lists `Tests run: N` with `N` greater than 0 for `org.idempiere.test`.
+- `org.idempiere.test/target/surefire-reports/` contains a report for each class you ran.
+
+If either is missing, see [Troubleshooting core tests](./troubleshooting-core-tests.md).
+
+### Next
+
+[Writing core tests](./writing-core-tests.md)
+
+---
+
+## Troubleshooting core tests
+
+This page lists the common problems with core tests, grouped by symptom. Start with the report of the failing class in `org.idempiere.test/target/surefire-reports/`. Applies to iDempiere 12 and later.
+
+### The build is green but no test ran
+
+- `-DskipTests=false` is missing. Tests are skipped by default.
+- `mvn test` was used. Use `verify` or `install`; Tycho runs OSGi tests in the `integration-test` phase.
+
+### A test is not found
+
+- The test uses JUnit 4 imports (`org.junit.Test`). Use JUnit 5: `org.junit.jupiter.api.Test`.
+- In Eclipse, the class was run as "JUnit Test". Use the `idempiere.unit.test` launch, or a copy of it with your class selected. See [Run from your editor](./running-core-tests.md#run-from-your-editor).
+- A bundle the test needs is missing from `idempiere.unit.test.launch`. Add it to the launch.
+
+### Tests fail at startup or the context is empty
+
+- `idempiere.properties` is missing in the repository root, or the database is not reachable.
+- The class does not extend `AbstractTestCase`, so iDempiere is not started and there is no login context.
+- A subclass overrides `init(TestInfo)` without `@BeforeEach` or without calling `super.init(testInfo)` first.
+- Context values are set in `@BeforeAll`. They are reset before each test; set them in `@BeforeEach`.
+
+### Many tests fail on a fresh database
+
+Migration scripts are not applied. Run `bash RUN_SyncDBDev.sh`, then run the tests again.
+
+### Record not found, or "Transaction closed"
+
+- A model constructor, `Query` or `DB` call gets `null` instead of `getTrxName()`, so it reads or writes outside the test transaction.
+- A process run by the test commits or closes the test transaction. Keep the process inside the test transaction.
+- `save()` returned false without an error. Use `saveEx()` to see the reason.
+
+### A test passes alone but fails in the full suite
+
+- The test depends on data that another test changed, or on the order of tests.
+- A test committed data. Remove `commit()`, or clean up in a `finally` block and mark the class `@Isolated`.
+- The test depends on today's date. `getLoginDate()` is the current time, so it does not help. Set a fixed date on the records, or override `newLoginDetails(TestInfo)` to log in with a fixed date.
+
+### A document does not complete or posting is wrong
+
+- Read `info.getSummary()` from `runDocumentActionWorkflow`. It gives the reason.
+- Call `po.load(getTrxName())` before you read `DocStatus` or `isPosted()`.
+- For posting, compare with the existing tests in the `acct` and `costing` packages.
+
+### A mock has no effect
+
+- The `MockedStatic` is not open around the call. Use try-with-resources around the code under test.
+- The stubbed method is a different overload from the one the code calls. Match the arguments, or use `any()`.
+- The code runs on another thread. Static mocks apply only to the current thread.
+
+### Next
+
+[Testing plugins](../testing-plugins.md)
+
+---
+
+## Writing core tests
+
+This page walks you through writing a core test, from choosing where it goes to reporting it in the pull request. Applies to iDempiere 12 and later. Mockito is available from iDempiere 12 ([IDEMPIERE-6468](https://idempiere.atlassian.net/browse/IDEMPIERE-6468)).
+
+On the master branch (iDempiere 14 and later), the core repository ships an AI agent skill with the same rules: `.agents/skills/idempiere-unit-tests/SKILL.md`, with a template in `references/test-template.java`. See [Using AI agents](../../contributing-to-core/using-ai-agents.md).
+
+For a recorded walkthrough, watch [Unit tests in iDempiere's core (15 Minutes in iDempiere)](https://www.youtube.com/watch?v=bO71gw3is5I&t=412s).
+
+### Before you start
+
+- You can run the suite. See [Running core tests](./running-core-tests.md).
+- You know which behaviour the test must prove: the bug that the fix removes, or the rule that the new logic adds.
+
+### Step 1: Decide whether a test is expected
+
+| Change | Test expected? |
+|---|---|
+| Bug fix in logic that runs without the UI | Yes. The test fails before the fix and passes after it |
+| New business logic (model classes, processes, accounting, costing, utilities) | Yes |
+| Refactoring | Existing tests stay green. If the code has no tests, add them first |
+| UI-only (ZK) change | Usually no. Write the manual test steps in the pull request |
+
+### Step 2: Choose the package and class
+
+Put the test in the package for its area under `org.idempiere.test/src/org/idempiere/test/`:
+
+| Package | For |
+|---|---|
+| `base` | Core utilities and documents (`InOutTest`, `InvoiceTest`, `EnvTest`, `DBTest`) |
+| `model` | Model classes, callouts, allocations, bank statements |
+| `acct`, `costing` | Posting and costing |
+| `process`, `workflow`, `event`, `form`, `print`, `ui`, `dashboard` | The matching area |
+
+- Add a method to an existing test class for the same model or feature when there is one.
+- Otherwise name the new class `<Subject>Test` and start it with the GPLv2 header used by the other files.
+
+### Step 3: Write the test
+
+Each test follows Arrange, Act, Assert:
+
+```java title="org.idempiere.test/src/org/idempiere/test/model/SampleOrderTest.java"
+package org.idempiere.test.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import java.math.BigDecimal;
+
+import org.compiere.model.MBPartner;
+import org.compiere.model.MOrder;
+import org.compiere.model.MOrderLine;
+import org.compiere.process.DocAction;
+import org.compiere.process.ProcessInfo;
+import org.compiere.util.Env;
+import org.compiere.wf.MWorkflow;
+import org.idempiere.test.AbstractTestCase;
+import org.idempiere.test.DictionaryIDs;
+import org.junit.jupiter.api.Test;
+
+/**
+ * IDEMPIERE-#### what this test verifies
+ */
+public class SampleOrderTest extends AbstractTestCase {
+
+	@Test
+	public void testCompleteSalesOrder() {
+		// Arrange: always pass getTrxName(), it is rolled back after the test
+		MOrder order = new MOrder(Env.getCtx(), 0, getTrxName());
+		order.setBPartner(MBPartner.get(Env.getCtx(), DictionaryIDs.C_BPartner.JOE_BLOCK.id));
+		order.setC_DocTypeTarget_ID(DictionaryIDs.C_DocType.STANDARD_ORDER.id);
+		order.setIsSOTrx(true);
+		order.setDateOrdered(getLoginDate());
+		order.setDocStatus(DocAction.STATUS_Drafted);
+		order.setDocAction(DocAction.ACTION_Complete);
+		order.saveEx();
+
+		MOrderLine line = new MOrderLine(order);
+		line.setM_Product_ID(DictionaryIDs.M_Product.AZALEA_BUSH.id);
+		line.setQty(BigDecimal.ONE);
+		line.saveEx();
+
+		// Act: run the document workflow, as the UI does
+		ProcessInfo info = MWorkflow.runDocumentActionWorkflow(order, DocAction.ACTION_Complete);
+
+		// Assert
+		assertFalse(info.isError(), info.getSummary());
+		order.load(getTrxName());
+		assertEquals(DocAction.STATUS_Completed, order.getDocStatus(), "Order should be completed");
+	}
+}
+```
+
+The sections below explain each part.
+
+#### Extend the base test class
+
+`org.idempiere.test.AbstractTestCase` starts iDempiere once per test class and prepares each test method:
+
+- **Login context:** Garden World Tenant, HQ Organization, admin User and Role, HQ Warehouse, `en_US`, primary accounting schema.
+- **Transaction:** a new one per test, from `getTrxName()` or `getTrx()`, rolled back in `@AfterEach`.
+- **Helpers:** `getAD_Client_ID()`, `getAD_Org_ID()`, `getAD_User_ID()`, `getAD_Role_ID()`, `getM_Warehouse_ID()`, `getLanguage()`, `getLoginDate()`, `commit()`, `rollback()`.
+
+Rules that follow:
+
+- Pass `getTrxName()` to every model constructor, `Query` and `DB` call. A `null` transaction writes outside the test and leaves data behind.
+- Use `Env.getCtx()`, not a new `Properties` object.
+- Use `saveEx()`, not `save()`, so a failed save shows its reason.
+- For your own setup, add a separate `@BeforeEach` method. If you override `init(TestInfo)`, annotate the override with `@BeforeEach` and call `super.init(testInfo)` first. Without the annotation, JUnit 5 runs neither method.
+
+#### Refer to records with DictionaryIDs
+
+`org.idempiere.test.DictionaryIDs` holds named constants for Garden World records, for example `DictionaryIDs.C_BPartner.JOE_BLOCK.id` ("Joe Block" Business Partner) or `DictionaryIDs.M_Product.AZALEA_BUSH.id` ("Azalea Bush" Product).
+
+- Never write raw IDs in a test.
+- If a record you need is missing, add an enum constant with the real ID and UUID from the Garden World database. Never invent IDs.
+
+#### Run documents and processes as the UI does
+
+- Run a document action with `MWorkflow.runDocumentActionWorkflow(po, action)`. The action you pass decides what happens: `DocAction.ACTION_Complete` completes the document, `DocAction.ACTION_Void` voids it.
+- Assert `assertFalse(info.isError(), info.getSummary())`. The summary tells you why a document did not complete.
+- Call `po.load(getTrxName())` before you read `DocStatus` or `isPosted()`.
+- For posting, follow the tests in the `acct` and `costing` packages and the `FactAcct` helper in `org.idempiere.test`.
+- When a test runs a Java process, use `ServerProcessCtl.process(pi, getTrx(), false)`, as the tests in the `costing` package do. It reads the process class from the process definition, and `false` stops it from committing and closing the test transaction. The shorter overload `ServerProcessCtl.process(pi, getTrx())` commits when a Java process succeeds. `false` does not change the transaction handling of script or database processes.
+- If `pi` has no process instance ID, `ServerProcessCtl` saves a new process instance (`AD_PInstance`) outside the test transaction, so the rollback in `@AfterEach` does not remove it. The core tests leave these records in place.
+- A process that commits internally still commits, and the rollback in `@AfterEach` does not remove its data. Delete that data in a `finally` block with a separate transaction that you commit, and mark the class `@Isolated`.
+
+#### Write clear assertions
+
+- Assert the specific outcome with a message: `assertEquals(expected, actual, "why")`.
+- Test one behaviour per method.
+- Cover failure and edge cases (empty, zero, boundary, validation error), not only the happy path.
+- AssertJ is available as well (`org.assertj.core.api`).
+
+### Step 4: Keep the test independent
+
+The suite can run test classes in parallel, and tests must not depend on their order.
+
+- Create the records you need as new rows in the test transaction.
+- **Do not update shared Garden World records** (SysConfig, Client Info, Products, conversion rates) to set up a scenario. Updates lock rows, slow the suite and break parallel runs.
+- Do not depend on the current date. `getLoginDate()` returns the time the test started, so set fixed dates on your records when the result depends on the date. If the code under test reads the login date, also override `newLoginDetails(TestInfo)` to log in with a fixed date.
+- Avoid `commit()`. If the code under test needs committed data, clean up afterwards and mark the class with JUnit 5 `@Isolated`.
+
+#### Replace static lookups with Mockito
+
+Use `mockStatic` to change what a static getter returns for one block, instead of changing data in the database:
+
+```java
+try (MockedStatic<MSysConfig> mocked = Mockito.mockStatic(MSysConfig.class, Mockito.CALLS_REAL_METHODS)) {
+	mocked.when(() -> MSysConfig.getBooleanValue(MSysConfig.EXPORT_BLOB_COLUMN_FOR_INSERT, true, Env.getAD_Client_ID(Env.getCtx())))
+		.thenReturn(true);
+	// code under test
+}
+```
+
+- `CALLS_REAL_METHODS` keeps every other method of the class real.
+- Static mocks apply only to the current thread. Code on another thread sees the real method.
+- Examples in the suite: `base/POInsertSQLTest.java` for `MSysConfig`, and `ConversionRateHelper.mockStatic()` used in `base/MatchInvTestIsolated.java` for conversion rates.
+
+### Step 5: Run the test
+
+1. Run your class: `./mvnw verify -DskipTests=false -Dtest=SampleOrderTest -DfailIfNoTests=false`.
+2. For a bug fix, check that the test fails without your fix and passes with it.
+3. Run the whole suite before you open the pull request.
+
+See [Running core tests](./running-core-tests.md) for all options.
+
+### Step 6: Report it in the pull request
+
+- List the tests you added or changed.
+- Give the exact command you ran and the result.
+- If you did not run the full suite, or a test already failed on `master`, say so.
+
+### Next
+
+[Troubleshooting core tests](./troubleshooting-core-tests.md)
+
+---
+
+## End-to-end browser testing
+
+End-to-end tests drive the application the way a user does: log in, open a window, enter data, complete a document. iDempiere has **no automated end-to-end suite in core today**. This page explains what was tried, what is left in the code and what is planned. Applies to all iDempiere versions.
+
+### Current state
+
+- No Selenium, ZATS or Playwright tests in core.
+- UI flows are tested by hand. See [Manual testing](./manual-testing.md).
+- A Playwright suite is proposed in [IDEMPIERE-7119](https://idempiere.atlassian.net/browse/IDEMPIERE-7119) (open).
+
+### What was tried before
+
+| Year | Tool | What happened |
+|---|---|---|
+| 2012 | Selenium | Selenium integration for the ZK client ([IDEMPIERE-92](https://idempiere.atlassian.net/browse/IDEMPIERE-92)) |
+| 2012 | FitNesse | Acceptance tests written as wiki tables ([IDEMPIERE-206](https://idempiere.atlassian.net/browse/IDEMPIERE-206)). See [FitNesse integration](../../new-features/v1.0/fitnesse-integration.md) |
+| 2013 | JMeter | Load tests of the ZK client ([IDEMPIERE-876](https://idempiere.atlassian.net/browse/IDEMPIERE-876)) |
+| 2019 | | FitNesse and Selenium moved out of core into separate repositories ([IDEMPIERE-4138](https://idempiere.atlassian.net/browse/IDEMPIERE-4138)) |
+
+Few tests were written with these tools, and they were not kept up to date.
+
+### Fixed component identifiers in ZK
+
+ZK generates random component IDs, which makes browser tests fragile. Core still has the hook that the Selenium work used.
+
+#### How it works
+
+`org.adempiere.ui.zk/WEB-INF/zk-selenium.xml` sets `org.adempiere.webui.AdempiereIdGenerator` as the ZK ID generator.
+
+#### Turn it on
+
+Add this VM argument to the server launch configuration:
+
+```text
+-Dorg.zkoss.zk.config.path=file://${project_loc:org.adempiere.ui.zk}/WEB-INF/zk-selenium.xml
+```
+
+:::warning
+
+Use it only on a development or test server, never in production.
+
+:::
+
+### Planned browser test suite
+
+[IDEMPIERE-7119](https://idempiere.atlassian.net/browse/IDEMPIERE-7119) proposes a test suite with [Playwright](https://playwright.dev/).
+
+- **Goal:** turn the manual test cases from Testing Days into Playwright tests that run automatically.
+- **Element lookup:** the ticket mentions a test server with fixed ZK IDs. A later comment reports that Playwright can find elements through the field labels of the Application Dictionary, without fixed IDs.
+- **How to help:** comment on the ticket before you start, so the work is not duplicated.
+
+### Tips for browser tests on iDempiere
+
+These apply to any browser tool, Playwright or Selenium.
+
+#### Data
+
+- Run against a fresh Garden World database that is reset before each run.
+- Browser tests commit data. They cannot roll back like `AbstractTestCase`.
+
+#### Finding elements
+
+- Find elements by visible label or role, not by generated ZK IDs.
+
+#### Waiting
+
+- ZK updates the page through AJAX. Wait for a visible result (a status message, a field value), not for a fixed time.
+
+#### Scope
+
+- Keep browser tests for flows that only the UI can show.
+- Test business logic with JUnit tests in `org.idempiere.test`, which are faster and more stable.
+
+### Next
+
+[Testing history](./testing-history.md)
+
+---
+
+## Manual testing
+
+People test what the automated suite does not cover: the ZK user interface, the REST API and full business flows. This page explains where manual testing happens and what is expected from you. Applies to all iDempiere versions.
+
+### What is tested by hand
+
+| Area | Why manual |
+|---|---|
+| ZK windows and forms in the browser | No browser test suite in core. Some window and form logic is covered by JUnit tests in the `ui`, `form` and `adwindow` packages of `org.idempiere.test` |
+| REST API | No API test suite in core. The REST API is a separate project |
+| Full business flows (order to invoice, posting) | JUnit tests cover the logic; people check the screens |
+
+### When you open a pull request
+
+The pull request template asks which direct and collateral scenarios you tested.
+
+1. Test the scenario from the ticket.
+2. Test the related scenarios that your change could affect.
+3. For a UI change, write the steps in the pull request: window, record, action, expected result. For example: Sales Order window, "Joe Block" Business Partner, complete the order, status is Completed.
+
+See [Git workflow](../contributing-to-core/git-workflow.md).
+
+### When you review a pull request
+
+1. Merge the pull request into a temporary branch.
+2. Apply its migration scripts.
+3. Test beyond the happy path.
+4. Report what you tested, honestly.
+
+See [Pull request review](../contributing-to-core/pull-request-review.md).
+
+### When you report a bug
+
+Give steps that reproduce the problem on one of the public [test sites](https://www.idempiere.org/test-sites), so others see the same result. See [Bug reporting guidelines](../contributing-to-core/bug-reporting-guidelines.md).
+
+### Testing Days and release stabilization
+
+Before a release, the community runs a stabilization phase and Testing Days.
+
+#### Stabilization phase
+
+- Only bug fixes are merged.
+- Plugin maintainers test their plugins against the release candidate.
+
+#### Testing Days
+
+- Testers pick test cases from a shared library of manual test cases.
+- They run them on prepared PostgreSQL and Oracle test servers.
+- The REST API is tested with Postman.
+- Results and bugs are coordinated in the Mattermost triage channel and reported in [JIRA](https://idempiere.atlassian.net/).
+
+Announcements are posted in the [iDempiere Google Group](https://groups.google.com/g/idempiere) and on [idempiere.org](https://www.idempiere.org).
+
+### Next
+
+[End-to-end browser testing](./end-to-end-ui-testing.md)
+
+---
+
+## Testing history
+
+This page records how testing in iDempiere changed over time, so you can tell current practice from old advice. The facts come from the core Git history and the linked JIRA tickets.
+
+### Summary
+
+| Period | Approach |
+|---|---|
+| Before 2020 | Mostly manual. FitNesse and Selenium were tried, but few tests were written |
+| 2020 to 2024 | One JUnit 5 bundle on a real Garden World database becomes the standard |
+| 2025 onward | Mockito, coverage measurement, more tests asked for in review, Playwright planned |
+
+### Before 2020: early attempts
+
+| Date | Change | Ticket |
+|---|---|---|
+| 2006 to 2010 | ADempiere-era JUnit 3/4 tests, mostly in `org.adempiere.extend`. Rarely run or maintained | |
+| Nov 2012 | FitNesse integration in core | [IDEMPIERE-206](https://idempiere.atlassian.net/browse/IDEMPIERE-206) |
+| Dec 2012 | Selenium integration for the ZK client (`org.idempiere.ui.zk.selenium`) | [IDEMPIERE-92](https://idempiere.atlassian.net/browse/IDEMPIERE-92) |
+| 2013 | Load tests of the ZK client with JMeter | [IDEMPIERE-876](https://idempiere.atlassian.net/browse/IDEMPIERE-876) |
+| Dec 2019 | FitNesse and Selenium moved out of core | [IDEMPIERE-4138](https://idempiere.atlassian.net/browse/IDEMPIERE-4138) |
+
+### 2020 to 2024: the JUnit 5 suite
+
+| Date | Change | Ticket |
+|---|---|---|
+| Apr 2020 | Old ADempiere tests removed from `org.adempiere.extend` | [IDEMPIERE-4199](https://idempiere.atlassian.net/browse/IDEMPIERE-4199) |
+| May 2020 | New bundle `org.idempiere.test` with JUnit 5, Tycho Surefire and `AbstractTestCase` | [IDEMPIERE-4289](https://idempiere.atlassian.net/browse/IDEMPIERE-4289) |
+| May 2020 | Better Garden World test data | [IDEMPIERE-4297](https://idempiere.atlassian.net/browse/IDEMPIERE-4297) |
+| Aug 2020 | Unit tests run in the Jenkins daily jobs | [IDEMPIERE-2830](https://idempiere.atlassian.net/browse/IDEMPIERE-2830) |
+| Oct 2020 | `org.idempiere.test-feature` added | |
+| Nov 2021 | "Improve Unit Tests" umbrella ticket | [IDEMPIERE-5063](https://idempiere.atlassian.net/browse/IDEMPIERE-5063) |
+| Feb 2022 | Test coverage configuration in the Eclipse launch | [IDEMPIERE-5183](https://idempiere.atlassian.net/browse/IDEMPIERE-5183) |
+| Jun 2022 | Shared `DictionaryIDs` constants replace raw IDs in tests | [IDEMPIERE-5320](https://idempiere.atlassian.net/browse/IDEMPIERE-5320) |
+| Aug 2022 | Parallel test execution support | [IDEMPIERE-5391](https://idempiere.atlassian.net/browse/IDEMPIERE-5391) |
+| Sep 2022 | Pull request template with a "Tests" section | |
+| Jun 2023 | `org.idempiere.test-feature` includes `org.idempiere.test`, so others can run the tests from the command line | [IDEMPIERE-5762](https://idempiere.atlassian.net/browse/IDEMPIERE-5762) |
+
+### 2025 onward: isolation, coverage and browser tests again
+
+| Date | Change | Ticket |
+|---|---|---|
+| Mar 2025 | Mockito support | [IDEMPIERE-6468](https://idempiere.atlassian.net/browse/IDEMPIERE-6468) |
+| Jun 2025 | `Mockito.mockStatic` used to avoid records created outside the test transaction | [IDEMPIERE-6594](https://idempiere.atlassian.net/browse/IDEMPIERE-6594) |
+| Aug 2025 | Test coverage push for `org.adempiere.base` (PO, Env, DB, GridTab, Cache, Trx, MRole) | [IDEMPIERE-6647](https://idempiere.atlassian.net/browse/IDEMPIERE-6647) |
+| Nov 2025 | Community Testing Days with a shared library of manual test cases | |
+| Dec 2025 | JaCoCo aggregate coverage report (`coverage-report` module) | [IDEMPIERE-6784](https://idempiere.atlassian.net/browse/IDEMPIERE-6784) |
+| Sep 2026 | Playwright test suite proposed (open) | [IDEMPIERE-7119](https://idempiere.atlassian.net/browse/IDEMPIERE-7119) |
+| Oct 2026 | AI agent skill `idempiere-unit-tests` in the core repository | [IDEMPIERE-7109](https://idempiere.atlassian.net/browse/IDEMPIERE-7109) |
+
+### Growth of the test suite
+
+Approximate number of files with "Test" in their name in `org.idempiere.test` at the end of each year (a few helper classes are included):
+
+| Year | Files |
+|---|---|
+| 2020 | 21 |
+| 2021 | 49 |
+| 2022 | 76 |
+| 2023 | 87 |
+| 2024 | 96 |
+| 2025 | 133 |
+| 2026 (November) | 187 |
+
+In November 2026 the bundle has about 1,700 test methods, and about 150 test classes extend `AbstractTestCase`.
+
+### Back to the start
+
+[Testing overview](./testing-overview.md)
+
+---
+
+## Testing overview
+
+This page explains how iDempiere is tested and which kind of test fits your change. Start here, then follow the pages of this section in order. The test levels on this page apply to all iDempiere versions. The `org.idempiere.test` bundle exists since iDempiere 8, and the commands and examples on the following pages apply to iDempiere 12 and later. Details checked against the master branch (version 14) in November 2026.
+
+### In one minute
+
+- Almost all automated tests are in one bundle, `org.idempiere.test`.
+- They are **JUnit 5 tests that run inside OSGi against a real database** with Garden World data. The project calls them unit tests; in industry terms they are integration tests.
+- They are **skipped by default**. Run them with `./mvnw verify -DskipTests=false`.
+- There is **no automated UI test suite** in core. People test the UI by hand.
+- Releases also depend on **manual testing**: pull request review and Testing Days.
+
+### Read this section in order
+
+| Step | Page | You learn |
+|---|---|---|
+| 1 | This page | The test levels and which test to write |
+| 2 | [Running core tests](./core-tests/running-core-tests.md) | How to run the suite and read the results |
+| 3 | [Writing core tests](./core-tests/writing-core-tests.md) | How to write a test with `AbstractTestCase` |
+| 4 | [Troubleshooting core tests](./core-tests/troubleshooting-core-tests.md) | How to fix a failing or missing test |
+| 5 | [Testing plugins](./testing-plugins.md) | How to test your own plugin |
+| 6 | [Manual testing](./manual-testing.md) | How pull requests and releases are tested by hand |
+| 7 | [End-to-end browser testing](./end-to-end-ui-testing.md) | The state of browser tests and the Playwright plan |
+| 8 | [Testing history](./testing-history.md) | How testing changed from 2006 to today |
+
+### Test levels
+
+Each level below uses the usual industry name, then says what iDempiere has for it.
+
+#### Static analysis
+
+- **Checks:** code smells and security patterns, without running code.
+- **In iDempiere:** a SonarQube workflow in GitHub Actions, started by hand (`.github/workflows/sonarqube.yml`).
+
+#### Unit tests
+
+- **Checks:** one class in isolation, no database, in milliseconds.
+- **In iDempiere:** few. Some tests in `org.idempiere.test` use only plain Java and Mockito, but they run in the same OSGi suite as the rest.
+- **Read:** [Writing core tests](./core-tests/writing-core-tests.md#replace-static-lookups-with-mockito).
+
+#### Integration tests
+
+- **Checks:** classes working together with the database, the Application Dictionary and the login context.
+- **In iDempiere:** **the main kind.** About 150 test classes extend `AbstractTestCase` and run on Garden World inside a transaction that is rolled back after each test.
+- **Read:** [Running core tests](./core-tests/running-core-tests.md), [Writing core tests](./core-tests/writing-core-tests.md).
+
+#### Component (plugin) tests
+
+- **Checks:** a plugin's own logic, its OSGi wiring and its model hooks.
+- **In iDempiere:** a separate test bundle per plugin, built like `org.idempiere.test`. There is no official template.
+- **Read:** [Testing plugins](./testing-plugins.md).
+
+#### API tests
+
+- **Checks:** REST or web service requests and responses.
+- **In iDempiere:** no automated suite in core. Tested by hand (for example with Postman) during Testing Days. The REST API is a separate project.
+- **Read:** [Manual testing](./manual-testing.md).
+
+#### End-to-end tests
+
+- **Checks:** a user flow in the browser, from login to a completed document.
+- **In iDempiere:** none in core. Selenium and FitNesse were used from 2012 and moved out of core in 2019. Playwright is the proposed replacement.
+- **Read:** [End-to-end browser testing](./end-to-end-ui-testing.md).
+
+#### Performance tests
+
+- **Checks:** speed and load.
+- **In iDempiere:** a few cache tests in the `performance` package of `org.idempiere.test`. JMeter was used for ZK load tests in 2013.
+
+#### Acceptance and exploratory testing
+
+- **Checks:** a person confirms that the change does what the ticket asks.
+- **In iDempiere:** pull request review and Testing Days with a shared library of test cases.
+- **Read:** [Manual testing](./manual-testing.md).
+
+#### Coverage
+
+- **Checks:** how much code the tests run.
+- **In iDempiere:** a JaCoCo aggregate report in the `coverage-report` module.
+- **Read:** [Running core tests](./core-tests/running-core-tests.md#build-the-coverage-report).
+
+### The test pyramid in iDempiere
+
+The usual advice is many fast unit tests at the bottom, fewer integration tests in the middle and a few end-to-end tests at the top. iDempiere has a different shape:
+
+| Layer | Size in iDempiere | Why |
+|---|---|---|
+| Top: end-to-end | Manual only | No browser test suite in core |
+| Middle: integration | Large | The PO model layer, the Application Dictionary and `Env` context are used everywhere, so most tests need a database |
+| Bottom: unit | Thin, growing | Since 2025, Mockito `mockStatic` replaces static lookups such as `MSysConfig` |
+
+When you write a test, use the lowest level that can show the bug. Use Mockito to avoid database updates where you can, and `AbstractTestCase` when the logic needs real records.
+
+### Which test should I write?
+
+| Your change | Write | Base class |
+|---|---|---|
+| Core bug fix in model, process, accounting, costing or utility code | A test in `org.idempiere.test` that fails before the fix and passes after it | `AbstractTestCase` |
+| New core business logic | Tests in the matching `org.idempiere.test` package | `AbstractTestCase` |
+| Pure Java logic with no iDempiere classes loaded | A plain JUnit 5 test, with Mockito for collaborators | none |
+| A plugin: model validator, event handler, process, factory | A test bundle for the plugin | `AbstractTestCase` for code that saves records |
+| A ZK UI change only | Usually no automated test. Write the manual test steps in the pull request | |
+
+Before you open a pull request, all existing tests must still pass, and the pull request template asks which tests you added and ran. See [How to contribute](../contributing-to-core/how-to-contribute.md) and [Git workflow](../contributing-to-core/git-workflow.md).
+
+### Next
+
+[Running core tests](./core-tests/running-core-tests.md)
+
+---
+
+## Testing plugins
+
+This page shows how to set up tests for your own plugin. Plugin tests do not go into `org.idempiere.test`; each plugin has its own test project that reuses the core test support. Applies to iDempiere 12 and later.
+
+:::info
+
+The project has no official template for plugin tests yet. This page describes common community practice. Where it differs from `org.idempiere.test/pom.xml`, copy from that file.
+
+:::
+
+### Before you start
+
+- Your plugin builds with Maven and Tycho. See [Building plug-ins with Maven](../plugin-development/plugin-maven-build.md).
+- You can run the core tests. See [Running core tests](./core-tests/running-core-tests.md).
+
+### Step 1: Choose the kind of test
+
+| The code under test | Test it with | Runs |
+|---|---|---|
+| Pure Java, nothing from `org.compiere` or `org.adempiere` is loaded | A plain JUnit 5 module (with Mockito) | Maven Surefire, no OSGi, no database, seconds |
+| OSGi wiring: component registration, factories, service ranking | An OSGi test bundle | Tycho, OSGi runtime |
+| Model validators, event handlers, processes, anything that saves records | An OSGi test bundle with tests on `AbstractTestCase` | Tycho, OSGi runtime, Garden World database |
+| ZK UI only | Manual test steps in the pull request | |
+
+:::tip
+
+A class that looks pure but initialises iDempiere statics (a static `CLogger`, an `MSysConfig` lookup) fails in a plain module. Put its tests in the OSGi test bundle.
+
+:::
+
+### Step 2: Create the OSGi test bundle
+
+Create a project `<plugin>.test` next to your plugin and add it to your build. A common layout makes it a **fragment of the plugin under test**, so the tests can see packages that the plugin does not export.
+
+#### Manifest
+
+```text title="com.example.myplugin.test/META-INF/MANIFEST.MF"
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.example.myplugin.test
+Bundle-Version: 1.0.0.qualifier
+Fragment-Host: com.example.myplugin
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Require-Bundle: org.adempiere.base,
+ org.idempiere.test
+Import-Package: org.assertj.core.api,
+ org.junit.jupiter.api,
+ org.junit.jupiter.api.extension,
+ org.junit.jupiter.params,
+ org.junit.jupiter.params.provider
+```
+
+- `Fragment-Host` is your plugin, not `org.idempiere.test`.
+- `org.idempiere.test` gives you `AbstractTestCase`, `DictionaryIDs` and Mockito, which it exports.
+- Do not mark `org.idempiere.test` as optional. If it cannot be resolved you want one clear error, not hundreds of compile errors.
+
+#### Build properties
+
+```text title="com.example.myplugin.test/build.properties"
+source.. = src/
+output.. = target/classes/
+bin.includes = META-INF/,.
+```
+
+#### Maven project file
+
+The parts that matter:
+
+- `<packaging>eclipse-test-plugin</packaging>`
+- `<skipTests>true</skipTests>` as the default, passed to `tycho-surefire-plugin` as `<skipTests>${skipTests}</skipTests>`
+- `tycho-surefire-plugin` with `<argLine>-DIDEMPIERE_HOME=${idempiere.home}</argLine>` and `<providerHint>junit59</providerHint>`
+- The plugin under test and the bundles it needs, listed as extra requirements of the target platform so they are in the test runtime
+
+`org.idempiere.test` is not published to the iDempiere P2 repository. Build it in the same reactor as your plugin, or publish it to your own repository. 
+
+### Step 3: Write the tests
+
+Tests in the OSGi bundle follow the same rules as core tests: extend `AbstractTestCase`, pass `getTrxName()` everywhere, use `DictionaryIDs`, avoid updates to shared data and avoid `commit()`. See [Writing core tests](./core-tests/writing-core-tests.md).
+
+Test the plugin through the path that iDempiere uses. For a model validator or event handler, save or complete the record and check the result, instead of calling the handler method directly. This also proves that the handler is registered.
+
+### Step 4: Run the tests
+
+Run from the build root, so the freshly built plugin is used:
+
+```bash
+mvn clean verify -DskipTests=false -Dtest=MyValidatorTest -DfailIfNoTests=false -Dsurefire.failIfNoSpecifiedTests=false -Didempiere.home=/path/to/folder/with/idempiere.properties
+```
+
+`-Dtest` applies to every test bundle in the build. If `org.idempiere.test` is in the same build, it has no `MyValidatorTest` and Tycho stops with "No tests found". `-DfailIfNoTests=false` prevents that. If the build also has a plain JUnit module (see below), Maven Surefire fails there for the same reason; `-Dsurefire.failIfNoSpecifiedTests=false` prevents that. Check that your test ran: results are in `<plugin>.test/target/surefire-reports/`.
+
+### Optional: a plain JUnit module
+
+For pure logic, a separate `jar` module with `junit-jupiter` and `maven-surefire-plugin` runs with `mvn test` in seconds and needs no database. Add a test there only when it passes there. If it needs the OSGi runtime, it belongs in the test bundle.
+
+### Related pages
+
+- [Unit Tests in iDempiere Plug-ins presentation (15 Minutes in iDempiere)](https://www.youtube.com/watch?v=rAtmhHeewk4), a community video by Saúl Piña. It shows a different setup from this page: mock-based tests in a test fragment from the [iDempiere plugin scaffold](https://github.com/ingeint/idempiere-plugin-scaffold), run by Maven Surefire without the OSGi runtime or a database.
+- [Running plug-ins locally](../plugin-development/plugin-running-locally.md)
+- [Testing extensions locally](../plugin-development/extension-registry-local-testing.md), for the manual install and update checks of an extension
+
+### Next
+
+[Manual testing](./manual-testing.md)
+
+---
+
 ## Business Partner
 
 ### Introduction
