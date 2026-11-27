@@ -10,7 +10,9 @@ last_reviewed: 2026-11-24
 
 This page walks you through writing a core test, from choosing where it goes to reporting it in the pull request. Applies to iDempiere 12 and later. Mockito is available from iDempiere 12 ([IDEMPIERE-6468](https://idempiere.atlassian.net/browse/IDEMPIERE-6468)).
 
-The core repository ships an AI agent skill with the same rules: `.agents/skills/idempiere-unit-tests/SKILL.md`, with a template in `references/test-template.java`. See [Using AI agents](../../contributing-to-core/using-ai-agents.md).
+On the master branch (iDempiere 14 and later), the core repository ships an AI agent skill with the same rules: `.agents/skills/idempiere-unit-tests/SKILL.md`, with a template in `references/test-template.java`. See [Using AI agents](../../contributing-to-core/using-ai-agents.md).
+
+For a recorded walkthrough, watch [Unit tests in iDempiere's core (15 Minutes in iDempiere)](https://www.youtube.com/watch?v=bO71gw3is5I&t=412s).
 
 ## Before you start
 
@@ -163,7 +165,7 @@ try (MockedStatic<MSysConfig> mocked = Mockito.mockStatic(MSysConfig.class, Mock
 
 ## Step 5: Run the test
 
-1. Run your class: `./mvnw verify -DskipTests=false -Dtest=SampleOrderTest`.
+1. Run your class: `./mvnw verify -DskipTests=false -Dtest=SampleOrderTest -DfailIfNoTests=false`.
 2. For a bug fix, check that the test fails without your fix and passes with it.
 3. Run the whole suite before you open the pull request.
 

@@ -16,8 +16,6 @@ The project has no official template for plugin tests yet. This page describes c
 
 :::
 
-<!-- TODO: verify - the project has no official plugin test template; this page describes community practice -->
-
 ## Before you start
 
 - Your plugin builds with Maven and Tycho. See [Building plug-ins with Maven](../plugin-development/plugin-maven-build.md).
@@ -104,6 +102,7 @@ For pure logic, a separate `jar` module with `junit-jupiter` and `maven-surefire
 
 ## Related pages
 
+- [Unit Tests in iDempiere Plug-ins presentation (15 Minutes in iDempiere)](https://www.youtube.com/watch?v=rAtmhHeewk4), a community video by Saúl Piña. It shows a different setup from this page: mock-based tests in a test fragment from the [iDempiere plugin scaffold](https://github.com/ingeint/idempiere-plugin-scaffold), run by Maven Surefire without the OSGi runtime or a database.
 - [Running plug-ins locally](../plugin-development/plugin-running-locally.md)
 - [Testing extensions locally](../plugin-development/extension-registry-local-testing.md), for the manual install and update checks of an extension
 

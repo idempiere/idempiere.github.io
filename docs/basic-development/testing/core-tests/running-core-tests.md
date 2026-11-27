@@ -15,6 +15,7 @@ This page shows how to run the core test suite and read its results. Applies to 
 - **Where:** the `org.idempiere.test` bundle in the [idempiere repository](https://github.com/idempiere/idempiere).
 - **What:** JUnit 5 tests, built and run by Tycho inside an OSGi runtime.
 - **Against:** a real iDempiere database with Garden World data, PostgreSQL or Oracle.
+- **Also on master (iDempiere 14):** a second, small test bundle, `org.idempiere.redis.service.test` ([IDEMPIERE-7191](https://idempiere.atlassian.net/browse/IDEMPIERE-7191)). It runs in the same build, needs no database and reports its own `Tests run` lines.
 
 ## Before you start
 
@@ -47,8 +48,10 @@ This builds iDempiere and runs every test. It takes a long time. Run it before y
 ### Run one class
 
 ```bash
-./mvnw verify -DskipTests=false -Dtest=InOutTest
+./mvnw verify -DskipTests=false -Dtest=InOutTest -DfailIfNoTests=false
 ```
+
+`-Dtest` applies to every test bundle in the build. On master (iDempiere 14), `org.idempiere.redis.service.test` has no `InOutTest`, and without `-DfailIfNoTests=false` Tycho stops there with "No tests found". The option is harmless on older versions.
 
 ### Run one method
 
@@ -102,7 +105,9 @@ In iDempiere 13 and later, the `coverage-report` module builds a JaCoCo aggregat
 ./mvnw clean verify -DskipTests=false
 ```
 
-The report is written under `coverage-report/target/site/`. <!-- TODO: verify - exact folder name (jacoco-aggregate) -->
+The report is written to `coverage-report/target/site/jacoco-aggregate/`. Open `index.html` in that folder.
+
+The `coverage-report` module is only part of the default Maven profile. On master (iDempiere 14), builds with `-P common,core` or `-P common,extended` ([IDEMPIERE-6897](https://idempiere.atlassian.net/browse/IDEMPIERE-6897)) do not build the report.
 
 iDempiere 12 has no `coverage-report` module, so this command builds no report there. On version 12, use the coverage configuration of the Eclipse launch ([IDEMPIERE-5183](https://idempiere.atlassian.net/browse/IDEMPIERE-5183)).
 
