@@ -32,6 +32,13 @@
   font-size: 0.75rem;
 }
 
+/* The "/" shortcut needs a keyboard. */
+@media (hover: none), (pointer: coarse) {
+  .hint {
+    display: none;
+  }
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -63,6 +70,24 @@
   font-size: 0.85rem;
   color: var(--ifm-color-emphasis-700);
   font-variant-numeric: tabular-nums;
+}
+
+/* Small screens: the counter goes below the input, so the input keeps the
+   full width. */
+@media (max-width: 996px) {
+  .row {
+    flex-wrap: wrap;
+    gap: 0.35rem 0.75rem;
+  }
+
+  .input {
+    flex-basis: 100%;
+  }
+
+  .count {
+    min-width: 0;
+    text-align: left;
+  }
 }
 
 /* Empty state: shown in place of the tables when nothing matches. */
@@ -109,57 +134,108 @@
 
 .key code {
   font-size: 0.85em;
-  overflow-wrap: anywhere;
 }
 
-/* Key tables: fixed layout so columns line up across letters, and long
-   key names wrap instead of pushing the description off screen. */
-.keyTable {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
+/* "#" link to the key, shown on hover or keyboard focus, as on a heading. */
+.keyLink {
+  padding-left: 0.3rem;
+  opacity: 0;
+  text-decoration: none;
+  user-select: none;
+  transition: opacity var(--ifm-transition-fast);
+}
+
+.keyLink::before {
+  content: '#';
+}
+
+.key:hover .keyLink,
+.keyLink:focus {
+  opacity: 1;
+}
+
+/* Key tables: the tables that follow the filter box, up to the next section
+   of the page. Styled from CSS, not from a class added by the script, so the
+   layout is already final in the server-rendered page and a link to a key
+   (#KEY) does not move after the page loads. */
+.filter ~ table:not(.filter ~ h2 ~ table) {
   font-size: 0.9rem;
 }
 
 /* Infima's table display rule would override the hidden attribute. */
-.keyTable[hidden] {
+.filter ~ table:not(.filter ~ h2 ~ table)[hidden] {
   display: none;
 }
 
-.keyTable th,
-.keyTable td {
+.filter ~ table:not(.filter ~ h2 ~ table) th,
+.filter ~ table:not(.filter ~ h2 ~ table) td {
   padding: 0.45rem 0.6rem;
   line-height: 1.45;
   text-align: left;
 }
 
-.keyTable th:nth-child(1) {
-  width: 29%;
-}
-
-.keyTable th:nth-child(2) {
-  width: 40%;
-}
-
-.keyTable th:nth-child(3) {
-  width: 15%;
-}
-
-.keyTable th:nth-child(4) {
-  width: 16%;
-}
-
-.keyTable td {
+.filter ~ table:not(.filter ~ h2 ~ table) td {
   vertical-align: top;
-  overflow-wrap: break-word;
-}
-
-/* Ticket links (IDEMPIERE-1286) stay on one line. */
-.keyTable td:last-child a {
-  white-space: nowrap;
 }
 
 /* Rows that jump in from a link get a short highlight. */
-.keyTable tr:has(.key:target) {
+.filter ~ table:not(.filter ~ h2 ~ table) tr:has(.key:target) {
   background: color-mix(in srgb, var(--ifm-color-primary) 10%, transparent);
+}
+
+/* Desktop: fixed layout so columns line up across letters, and long key
+   names wrap instead of pushing the description off screen. */
+@media (min-width: 997px) {
+  .filter ~ table:not(.filter ~ h2 ~ table):not([hidden]) {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) th:nth-child(1) {
+    width: 29%;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) th:nth-child(2) {
+    width: 40%;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) th:nth-child(3) {
+    width: 15%;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) th:nth-child(4) {
+    width: 16%;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) td {
+    overflow-wrap: break-word;
+  }
+
+  .key code {
+    overflow-wrap: anywhere;
+  }
+
+  /* Ticket links (IDEMPIERE-1286) stay on one line. */
+  .filter ~ table:not(.filter ~ h2 ~ table) td:last-child a {
+    white-space: nowrap;
+  }
+}
+
+/* Phones and tablets: the table scrolls sideways (the Infima default), so
+   each column keeps a readable width. Key names stay on one line, and ticket
+   links may wrap. */
+@media (max-width: 996px) {
+  .key code {
+    white-space: nowrap;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) th:nth-child(2) {
+    min-width: 16rem;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) th:nth-child(3),
+  .filter ~ table:not(.filter ~ h2 ~ table) th:nth-child(4) {
+    min-width: 9rem;
+  }
 }

@@ -7,7 +7,8 @@ import styles from './styles.module.css';
  *
  * Renders the key in code format with an anchor (#ZK_THEME), so links from
  * other pages land on its row, and registers the anchor with the Docusaurus
- * broken-link check. Use `<Key deprecated>` for a key that is no longer used.
+ * broken-link check. Hover the key to get a # link to copy, as on a heading.
+ * Use `<Key deprecated>` for a key that is no longer used.
  */
 export function Key({children, deprecated = false}) {
   const id = String(children).trim();
@@ -16,6 +17,7 @@ export function Key({children, deprecated = false}) {
   return (
     <span id={id} className={styles.key}>
       {deprecated ? <del title="Deprecated">{code}</del> : code}
+      <a href={`#${id}`} className={styles.keyLink} aria-label={`Direct link to ${id}`} title={`Direct link to ${id}`} />
     </span>
   );
 }
@@ -59,10 +61,9 @@ export default function SysConfigFilter() {
     if (Math.abs(window.scrollY - top) > 4) window.scrollTo({top});
   };
 
-  // Style the key tables once and count the keys.
+  // Count the keys. The tables are styled in styles.module.css.
   useEffect(() => {
     const sections = getSections();
-    sections.forEach(({table}) => table.classList.add(styles.keyTable));
     const total = sections.reduce((n, {table}) => n + table.tBodies[0].rows.length, 0);
     setCounts({shown: total, total});
   }, []);
@@ -96,13 +97,22 @@ export default function SysConfigFilter() {
       const hide = visible === 0;
       if (table.hidden !== hide) table.hidden = hide;
       if (heading && heading.hidden !== hide) heading.hidden = hide;
+      // Hide the letter in the table of contents too.
+      if (heading?.id) {
+        document.querySelectorAll(`.table-of-contents a[href="#${CSS.escape(heading.id)}"]`).forEach((a) => {
+          const item = a.closest('li');
+          if (item && item.hidden !== hide) item.hidden = hide;
+        });
+      }
       shown += visible;
     });
     setCounts((c) => (c.shown === shown ? c : {...c, shown}));
   }, [deferredQuery]);
 
   const onChange = (e) => {
-    if (!query && e.target.value) scrollBoxToTop(); // first keystroke of a search
+    // First keystroke of a search. Not on touch screens: the on-screen
+    // keyboard is opening and the browser already keeps the box in view.
+    if (!query && e.target.value && !window.matchMedia('(pointer: coarse)').matches) scrollBoxToTop();
     setQuery(e.target.value);
   };
 
