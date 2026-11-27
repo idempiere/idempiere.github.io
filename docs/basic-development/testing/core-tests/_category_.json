@@ -1,0 +1,9 @@
+{
+  "label": "Core tests",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "slug": "/basic-development/testing/core-tests",
+    "description": "Run, write and fix the JUnit 5 tests in the org.idempiere.test bundle. Read the pages in order."
+  }
+}
