@@ -47,7 +47,7 @@ This change can break old Jasper reports that defined the ID parameter as `BigDe
 
 When this error is reached, running the Jasper report throws this exception:
 
-```
+```text
 java.lang.ClassCastException: java.lang.Integer cannot be cast to java.math.BigDecimal
 	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.setStatementParameter(JRJdbcQueryExecuter.java:553)
 	at net.sf.jasperreports.engine.query.JRJdbcQueryExecuter.setStatementParameter(JRJdbcQueryExecuter.java:399)

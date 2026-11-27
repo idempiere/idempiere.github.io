@@ -19,7 +19,7 @@ _String input in Swing_
 **Description:**
 
 When running a process from the GUI, you now have two methods to interact with the user. In the SvrProcess subclass you can call the processUI to ask for boolean or String inputs. Here is an example of how to use the askForInput() method:
-```
+```java
 
  final StringBuffer string = new StringBuffer();
  final StringBuffer stringcaptured = new StringBuffer();
