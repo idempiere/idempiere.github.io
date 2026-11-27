@@ -51,7 +51,7 @@ This builds iDempiere and runs every test. It takes a long time. Run it before y
 ./mvnw verify -DskipTests=false -Dtest=InOutTest -DfailIfNoTests=false
 ```
 
-`-Dtest` applies to every test bundle in the build. On master (iDempiere 14), `org.idempiere.redis.service.test` has no `InOutTest`, and without `-DfailIfNoTests=false` Tycho stops there with "No tests found". The option is harmless on older versions.
+`-Dtest` applies to every test bundle in the build. On master (iDempiere 14), `org.idempiere.redis.service.test` has no `InOutTest`, and without `-DfailIfNoTests=false` Tycho stops there with "No tests found". With this option, a misspelled class name also gives a green build, so check that your test ran. See [Check that it worked](#check-that-it-worked).
 
 ### Run one method
 
@@ -107,7 +107,7 @@ In iDempiere 13 and later, the `coverage-report` module builds a JaCoCo aggregat
 
 The report is written to `coverage-report/target/site/jacoco-aggregate/`. Open `index.html` in that folder.
 
-The `coverage-report` module is only part of the default Maven profile. On master (iDempiere 14), builds with `-P common,core` or `-P common,extended` ([IDEMPIERE-6897](https://idempiere.atlassian.net/browse/IDEMPIERE-6897)) do not build the report.
+The `coverage-report` module and both test bundles are only part of the default Maven profile. On master (iDempiere 14), builds with `-P common,core` or `-P common,extended` ([IDEMPIERE-6897](https://idempiere.atlassian.net/browse/IDEMPIERE-6897)) run no tests and build no report, even with `-DskipTests=false`.
 
 iDempiere 12 has no `coverage-report` module, so this command builds no report there. On version 12, use the coverage configuration of the Eclipse launch ([IDEMPIERE-5183](https://idempiere.atlassian.net/browse/IDEMPIERE-5183)).
 

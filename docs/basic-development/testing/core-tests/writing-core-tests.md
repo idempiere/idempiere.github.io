@@ -128,7 +128,8 @@ Rules that follow:
 - Assert `assertFalse(info.isError(), info.getSummary())`. The summary tells you why a document did not complete.
 - Call `po.load(getTrxName())` before you read `DocStatus` or `isPosted()`.
 - For posting, follow the tests in the `acct` and `costing` packages and the `FactAcct` helper in `org.idempiere.test`.
-- When a test runs a process, use `ServerProcessCtl.process(pi, getTrx(), false)`, as the tests in the `costing` package do. It reads the process class from the process definition, and `false` stops it from committing and closing the test transaction. The shorter overload `ServerProcessCtl.process(pi, getTrx())` commits when the process succeeds.
+- When a test runs a Java process, use `ServerProcessCtl.process(pi, getTrx(), false)`, as the tests in the `costing` package do. It reads the process class from the process definition, and `false` stops it from committing and closing the test transaction. The shorter overload `ServerProcessCtl.process(pi, getTrx())` commits when a Java process succeeds. `false` does not change the transaction handling of script or database processes.
+- If `pi` has no process instance ID, `ServerProcessCtl` saves a new process instance (`AD_PInstance`) outside the test transaction, so the rollback in `@AfterEach` does not remove it. The core tests leave these records in place.
 - A process that commits internally still commits, and the rollback in `@AfterEach` does not remove its data. Delete that data in a `finally` block with a separate transaction that you commit, and mark the class `@Isolated`.
 
 ### Write clear assertions
