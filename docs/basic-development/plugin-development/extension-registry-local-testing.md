@@ -32,7 +32,7 @@ mkdir -p "$REG/extensions/com.example.demo/1.0.0" "$REG/jars"
 
 Target layout:
 
-```
+```text
 $HOME/idempiere-local-registry/
 ├── index.json
 ├── jars/
@@ -157,13 +157,13 @@ It is not an `AD_SysConfig` record and cannot be changed from inside the applica
 
 Edit the `VM_ARGUMENTS` attribute of your launch configuration and replace the shipped default:
 
-```
+```text
 -DIDEMPIERE_EXTENSION_REPOSITORY=https://github.com/idempiere/idempiere-extension-repository
 ```
 
 with
 
-```
+```text
 -DIDEMPIERE_EXTENSION_REPOSITORY=file:/home/you/idempiere-local-registry
 ```
 
@@ -358,7 +358,7 @@ Those are the core extensions seeded by migration (`org.idempiere.acct`, `org.ad
 
 The OSGi bundle survives the SQL delete. Remove it from the console:
 
-```
+```text
 osgi> ss com.example.demo
 osgi> stop <id>
 osgi> uninstall <id>

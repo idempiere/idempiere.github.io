@@ -116,7 +116,7 @@ sta com.trekglobal.idempiere.rest.api
 
 Visit:
 
-```
+```text
 https://<your-server>:8443/osgi/system/console/bundles
 ```
 

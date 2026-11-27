@@ -12,7 +12,7 @@
 
 We use a pair of @ character for context variable, for e.g @C_Order_ID@. This create a problem when we need to use text literal with @ character (for e.g email address) together with context variable.For e.g, the mail text template below:
 
-```
+```text
 Hello @Name@
 
 Here is some text
@@ -24,7 +24,7 @@ or to this another mail test2@test.com
 
 To solve this problem, this ticket implement the '@@' escape sequence to support the use of single @ character.
 
-```
+```text
 Hello @Name@
 
 Here is some text

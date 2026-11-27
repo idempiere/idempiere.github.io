@@ -14,7 +14,7 @@ HTTP can still be used for proxy forwarding, but the configuration requires forw
 
 In nginx, add the following line to the definition of the `/webui` and `/webui/zkau/comet` locations:
 
-```
+```nginx
 proxy_set_header  X-Forwarded-Proto $scheme;
 ```
 

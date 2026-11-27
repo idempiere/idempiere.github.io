@@ -12,7 +12,7 @@ The sample projects referenced below are available at: [Amerpsoft iDempiere Comm
 
 A Maven-based iDempiere plug-in set uses the following layout:
 
-```
+```text
 MyPlugins/
   org.myplugin.feature/          ← Feature project
   org.myplugin.editors/          ← Plugin project
@@ -81,7 +81,7 @@ The feature project lists which plug-ins are included in the feature. P2 project
 
 **MANIFEST.MF** (key entries):
 
-```
+```properties
 Bundle-SymbolicName: org.myplugin.editors;singleton:=true
 Bundle-Version: 7.1.0.qualifier
 Require-Bundle: org.adempiere.base;bundle-version="7.1.0", ...
@@ -113,7 +113,7 @@ Service-Component: OSGI-INF/*.xml
 
 **MANIFEST.MF** (key entries):
 
-```
+```properties
 Fragment-Host: org.adempiere.ui.zk;bundle-version="7.1.0"
 Jetty-WarFragmentFolderPath: /
 ```
@@ -237,7 +237,7 @@ mvn verify -Didempiere.target=org.myplugin.p2.targetplatform
 
 The generated JAR files will be in:
 
-```
+```text
 org.myplugin.p2.site/target/repository/plugins/   ← plugin JARs
 org.myplugin.p2.site/target/repository/features/  ← feature JARs
 ```

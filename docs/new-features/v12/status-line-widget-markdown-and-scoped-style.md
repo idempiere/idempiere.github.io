@@ -28,7 +28,7 @@ This ticket enhance that with markdown and scoped css style (&lt;style&gt;@scope
 ```
 - Example using just mark down:
 
-```
+```text
 <#md>**Bold Text**</#md>
 ```
 - Support auto link and table markdown extension.

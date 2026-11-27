@@ -47,20 +47,24 @@ this section explain how to setup a typical KPI style indicator
 Order
             Count
 
-```
+```text
            Last Month: {1}
 
            Current Month: {0}
 ```
 &lt;/syntaxhighlight&gt;*note: the choice clause add classes which change color of  arrow-up/down*
 
-**register new dsp file in theme.css.dsp:** ```css
+**register new dsp file in theme.css.dsp:**
 
-&lt;c:include page="fragment/gadget-kpi.css.dsp" /&gt;
+```css
+
+<c:include page="fragment/gadget-kpi.css.dsp" />
 
 ```
 
-create new dsp file gadget-kpi.css.dsp```css
+create new dsp file gadget-kpi.css.dsp
+
+```css
 
 .kpi-arrow {
 	border: solid;
@@ -121,22 +125,22 @@ create new dsp file gadget-kpi.css.dsp```css
 .kpi-inline {
 	display: inline;
 
-```**create status line with the next SQL**<syntaxhighlight lang="sql" line="1">
-select
 ```
+
+**create status line with the next SQL**
+
+```sql
+select
  ROUND (SUM(orders) FILTER (WHERE kpidata.month = date_trunc('month', now())),0)::numeric as orders_MTD ,
  ROUND (SUM(orders) FILTER (WHERE kpidata.month = date_trunc('month', now() - INTERVAL '1 month')),0)::numeric orders_MTD_P,
  round((SUM(orders) FILTER (WHERE kpidata.month = date_trunc('month', now())) / SUM(orders) FILTER (WHERE kpidata.month = date_trunc('month', now() - INTERVAL '1 month')) - 1) * 100, 2)::numeric as diff
 FROM
-```
 (
 SELECT
-```
   DATE_TRUNC('month',dateordered) AS month,
  COUNT(c_order_id) AS orders
-```
 FROM c_order
 where ad_client_id=@#AD_Client_ID@ and issotrx='Y'
 GROUP BY month
 ) kpidata
-&lt;/syntaxhighlight&gt;
+```

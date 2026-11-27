@@ -24,11 +24,9 @@ in order to be able to use the new function added into idempiere-util.dsp.tld ; 
 ```css
 
 .login-window .z-window-content {
-```
-   background-image: url(../images/$&#123;u:sysConfig("LOGIN_BACKGROUND_IMG", "login_tgi.png")&#125;) !important;
+   background-image: url(../images/${u:sysConfig("LOGIN_BACKGROUND_IMG", "login_tgi.png")}) !important;
    background-repeat: no-repeat;
    background-position: center;
-```
 }
 
 ```

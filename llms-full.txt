@@ -39,7 +39,7 @@ Set up Eclipse to support DS annotations:
 
 Add the following package to the `Import-Package` section of your plug-in's `MANIFEST.MF` file:
 
-```
+```text
 org.osgi.service.component.annotations
 ```
 
@@ -123,7 +123,7 @@ Instead of starting from scratch, you might want to use the scaffolding tool fro
 
 1. In Eclipse, go to:
 
-   ```
+   ```text
    File → New → Other… → Plug-in Project
    ```
 
@@ -131,7 +131,7 @@ Instead of starting from scratch, you might want to use the scaffolding tool fro
 
 3. **Uncheck** “Use default location” and choose a custom folder outside the iDempiere core repository, such as:
 
-   ```
+   ```text
    idempiere-plugins/your-plugin-name
    ```
 
@@ -143,7 +143,7 @@ Instead of starting from scratch, you might want to use the scaffolding tool fro
 
 7. Once created, connect the project to version control:
 
-   ```
+   ```text
    Right-click the project → Team → Share Project
    ```
 
@@ -279,7 +279,7 @@ sta com.trekglobal.idempiere.rest.api
 
 Visit:
 
-```
+```text
 https://<your-server>:8443/osgi/system/console/bundles
 ```
 
@@ -318,7 +318,7 @@ The official registry lives at [github.com/idempiere/idempiere-extension-reposit
 
 Layout:
 
-```
+```text
 index.json                       ← GENERATED, never edit by hand
 index-schema.json
 metadata-schema.json
@@ -682,7 +682,7 @@ mkdir -p "$REG/extensions/com.example.demo/1.0.0" "$REG/jars"
 
 Target layout:
 
-```
+```text
 $HOME/idempiere-local-registry/
 ├── index.json
 ├── jars/
@@ -807,13 +807,13 @@ It is not an `AD_SysConfig` record and cannot be changed from inside the applica
 
 Edit the `VM_ARGUMENTS` attribute of your launch configuration and replace the shipped default:
 
-```
+```text
 -DIDEMPIERE_EXTENSION_REPOSITORY=https://github.com/idempiere/idempiere-extension-repository
 ```
 
 with
 
-```
+```text
 -DIDEMPIERE_EXTENSION_REPOSITORY=file:/home/you/idempiere-local-registry
 ```
 
@@ -1008,7 +1008,7 @@ Those are the core extensions seeded by migration (`org.idempiere.acct`, `org.ad
 
 The OSGi bundle survives the SQL delete. Remove it from the console:
 
-```
+```text
 osgi> ss com.example.demo
 osgi> stop <id>
 osgi> uninstall <id>
@@ -1066,7 +1066,7 @@ JAR=/path/to/de.bxservice.docstatusvalidator_1.0.1.202609091909.jar
 unzip -p "$JAR" META-INF/MANIFEST.MF
 ```
 
-```
+```properties
 Bundle-Name: BXS_DocStatusValidator
 Bundle-SymbolicName: de.bxservice.docstatusvalidator
 Bundle-Version: 1.0.1.202609091909
@@ -1092,7 +1092,7 @@ Four things to take from this:
 unzip -l "$JAR" | grep 2Pack
 ```
 
-```
+```text
     14282  META-INF/2Pack_1.0.0.zip
      1777  META-INF/2Pack_1.0.1.zip
 ```
@@ -1109,7 +1109,7 @@ unzip -o -q "$JAR" 'META-INF/2Pack_*.zip' && unzip -o -q META-INF/2Pack_1.0.0.zi
 grep -o '<EntityType>[^<]*<' 2Pack_1.0.0/dict/PackOut.xml | sort | uniq -c
 ```
 
-```
+```text
      58 <EntityType>BAY<
 ```
 
@@ -1182,7 +1182,7 @@ cp /path/to/de.bxservice.docstatusvalidator_1.0.1.202609091909.jar "$REG/jars/"
 sha256sum "$REG/jars/"*.jar | cut -d' ' -f1
 ```
 
-```
+```text
 3464e6e50b4f957b073a04a0ad93c4bfa409890ed7bd049acf3c43c17b03e00f
 ```
 
@@ -1285,14 +1285,14 @@ All four passed here before the server was touched.
 
 `org.adempiere.server-feature/server.product.launch` already ships the argument, pointing at the public registry:
 
-```
+```text
 -DIDEMPIERE_EXTENSION_REPOSITORY=https://github.com/idempiere/idempiere-extension-repository
 ```
 
 :::tip Duplicate the launch configuration rather than editing that file
 Run → Run Configurations → right-click `server.product` → Duplicate, and change the value in the copy:
 
-```
+```text
 -DIDEMPIERE_EXTENSION_REPOSITORY=file:/home/diego/idempiere-local-registry
 ```
 
@@ -1356,7 +1356,7 @@ SELECT count(*) FROM AD_ExtensionEntity e
 
 Observed on this install:
 
-```
+```text
  1000000 | 0.0.0 | Completed successfully |   0
  1000001 | 1.0.0 | Completed successfully |  86
  1000002 | 1.0.1 | Completed successfully |   4
@@ -2094,13 +2094,13 @@ If not using annotations, create a component definition XML file manually.
 
 3. Update your `META-INF/MANIFEST.MF` to include the component:
 
-```
+```properties
 Service-Component: OSGI-INF/calloutfactory.xml
 ```
 
 4. Ensure `build.properties` includes the OSGI-INF directory in the binary build:
 
-```
+```properties
 bin.includes = META-INF/,\
                .,\
                OSGI-INF/
@@ -2118,7 +2118,7 @@ bin.includes = META-INF/,\
 6. Check your console log for the output
 
 You should see:
-```
+```text
 Callout triggered on: DocumentNote
 New value: [your entered text]
 ```
@@ -2985,13 +2985,13 @@ The `bindEventManager` and `unbindEventManager` methods are inherited from the `
 
 Edit your `META-INF/MANIFEST.MF` file to include the component definition:
 
-```
+```properties
 Service-Component: OSGI-INF/eventhandler.xml
 ```
 
 If you have multiple component definitions, you can use:
 
-```
+```properties
 Service-Component: OSGI-INF/*.xml
 ```
 
@@ -2999,7 +2999,7 @@ Service-Component: OSGI-INF/*.xml
 
 In your `MANIFEST.MF`, ensure the plugin activation is enabled:
 
-```
+```properties
 Bundle-ActivationPolicy: lazy
 ```
 
@@ -3009,7 +3009,7 @@ Also ensure in your plugin configuration that "Activate this plugin when one of 
 
 Ensure `build.properties` includes the OSGI-INF directory:
 
-```
+```properties
 bin.includes = META-INF/,\
                .,\
                OSGI-INF/
@@ -3358,13 +3358,13 @@ See [Event Handling with Annotations](./plugin-eventhandler#event-annotations-id
 
 3. Update your `META-INF/MANIFEST.MF`:
 
-```
+```properties
 Service-Component: OSGI-INF/*.xml
 ```
 
 4. Ensure `build.properties` includes the OSGI-INF directory:
 
-```
+```properties
 bin.includes = META-INF/,\
                .,\
                OSGI-INF/
@@ -3446,7 +3446,7 @@ The sample projects referenced below are available at: [Amerpsoft iDempiere Comm
 
 A Maven-based iDempiere plug-in set uses the following layout:
 
-```
+```text
 MyPlugins/
   org.myplugin.feature/          ← Feature project
   org.myplugin.editors/          ← Plugin project
@@ -3515,7 +3515,7 @@ The feature project lists which plug-ins are included in the feature. P2 project
 
 **MANIFEST.MF** (key entries):
 
-```
+```properties
 Bundle-SymbolicName: org.myplugin.editors;singleton:=true
 Bundle-Version: 7.1.0.qualifier
 Require-Bundle: org.adempiere.base;bundle-version="7.1.0", ...
@@ -3547,7 +3547,7 @@ Service-Component: OSGI-INF/*.xml
 
 **MANIFEST.MF** (key entries):
 
-```
+```properties
 Fragment-Host: org.adempiere.ui.zk;bundle-version="7.1.0"
 Jetty-WarFragmentFolderPath: /
 ```
@@ -3671,7 +3671,7 @@ mvn verify -Didempiere.target=org.myplugin.p2.targetplatform
 
 The generated JAR files will be in:
 
-```
+```text
 org.myplugin.p2.site/target/repository/plugins/   ← plugin JARs
 org.myplugin.p2.site/target/repository/features/  ← feature JARs
 ```
@@ -4186,13 +4186,13 @@ See [Event Handling with Annotations](./plugin-eventhandler#event-annotations-id
 
 3. Update your `META-INF/MANIFEST.MF`:
 
-```
+```properties
 Service-Component: OSGI-INF/*.xml
 ```
 
 4. Ensure `build.properties` includes the OSGI-INF directory:
 
-```
+```properties
 bin.includes = META-INF/,\
                .,\
                OSGI-INF/
@@ -4544,7 +4544,7 @@ Create `OSGI-INF/processfactory.xml`:
 
 Update `META-INF/MANIFEST.MF`:
 
-```
+```properties
 Service-Component: OSGI-INF/*.xml
 ```
 
@@ -5336,7 +5336,7 @@ In your `MANIFEST.MF`:
 - **Build tab:** make sure the theme folder is checked under **Binary Build**.
 - **MANIFEST.MF tab:** add this line at the end (followed by a newline):
 
-```
+```properties
 Jetty-WarFragmentFolderPath: /
 ```
 
@@ -5349,7 +5349,7 @@ To test the theme fragment in Eclipse:
 1. Open **Run Configurations**, select the **server.product**, go to the **Plug-ins** tab, and check your theme fragment to activate it.
 2. Go to the **Arguments** tab and add to VM arguments:
 
-```
+```text
 -DZK_THEME=newtheme
 ```
 
@@ -6761,13 +6761,13 @@ After installing postgres you must check the correct configuration of `/etc/post
 
 The following line requires change of the authentication method:
 
-```
+```text
 local   all             all                                     peer
 ```
 
 Change to:
 
-```
+```text
 local   all             all                                     scram-sha-256
 ```
 
@@ -7450,7 +7450,7 @@ Note the above instructions are specific for Ubuntu or Debian, in folder `/opt/i
 
 If you try to run the script and encounter the following error: 
 
-```
+```text
 ===================================
 Starting iDempiere Server
 ===================================
@@ -7581,7 +7581,7 @@ The Condition field is an optional guard that must be true for the rule to execu
 
 Uses iDempiere's standard variable syntax. Variables in `@Brackets@` are resolved from the current record and session context.
 
-```
+```text
 @IsSoTrx@=Y
 @GrandTotal@ > 100
 @IsSoTrx@=Y & @GrandTotal@ > 100
@@ -7641,11 +7641,11 @@ FETCH FIRST 1 ROW ONLY
 
 **Arithmetic / inline expression** - for simple calculations without a full query.
 
-```
+```text
 @QtyOrdered@ * @PriceActual@
 ```
 
-```
+```text
 @SQL=CASE WHEN @IsSOTrx@ = 'Y' THEN @PriceList@ ELSE @PriceStd@ END from dual
 ```
 
@@ -7824,7 +7824,7 @@ There is one plugin version for each iDempiere version. Download the jar from [G
 
 You can also install it from the OSGi console:
 
-```
+```text
 install file:/path/com.soropeza.sqlquery-13.2.0.jar
 start <bundle-id>
 ```
@@ -7907,7 +7907,7 @@ This is driven by several **SysConfig** keys:
 
 Files must follow this naming pattern:
 
-```
+```text
 [Timestamp]_[ClientValue]_[OptionalInfo].zip
 ```
 
@@ -8109,7 +8109,7 @@ Only newer versions will be installed.
 
 Allows handling **multiple** 2Packs named with a versioning pattern:
 
-```
+```text
 2Pack_<Name>_<version>.zip
 ```
 
@@ -8122,7 +8122,7 @@ These will be loaded and installed in order.
 
 :::tip
 Newer versions of iDempiere (after IDEMPIERE-4105) allow using this format:
-```
+```text
 2Pack_1.0.0_Tables.zip
 ```
 (Only the portion after the version can contain underscores.)
@@ -8360,7 +8360,7 @@ Use **Automatic External Pack In** for CI/CD pipelines and Docker deployments to
 
 For general use, 2Pack files are typically named using a descriptive format:
 
-```
+```text
 2Pack_1.0.0_MyPlugin.zip
 ```
 
@@ -8371,7 +8371,7 @@ If you use the **Automatic External Pack In** feature, you must follow a specifi
 :::
 
 **Required Format:**
-```
+```text
 [Timestamp]_[ClientValue]_[AdditionalInformation].zip
 ```
 
@@ -8381,7 +8381,7 @@ If you use the **Automatic External Pack In** feature, you must follow a specifi
 - **AdditionalInformation**: Descriptive name for the pack
 
 **Example:**
-```
+```text
 201803161725_SYSTEM_CreateNewColumn.zip
 ```
 
@@ -12278,7 +12278,7 @@ Use Docusaurus admonitions for content that needs to stand out:
 
 ### Code examples
 
-- Give every code block a language, such as `java`, `sql`, `xml`, `bash`, `properties` or `yaml`.
+- Give every code block a language, such as `java`, `sql`, `xml`, `bash`, `properties` or `yaml`. Use `text` for file names, folder trees, console output and anything else without a fitting language. Write the language in lower case (`sql`, not `SQL`). The allowed languages are listed under MD040 in `.markdownlint-cli2.jsonc`. A code block without a language, or with one that is not on the list, fails the pull request checks.
 - When the code belongs in a file, add a `title` with the file path, for example `title="src/com/example/callout/MyCallout.java"`.
 - Show complete code a reader can copy: include the `package` line and all `import` lines.
 - Say which iDempiere version you tested the code on, in a sentence before the block.
@@ -12344,6 +12344,7 @@ On a page that already exists, the pull request only has to keep its own changes
 
 - Vale finds no em dashes and no words to avoid on the lines you add or change.
 - Frontmatter fields that are set have the right format, for example `last_reviewed: 2026-10-19` or `applies_to: ">=9"`.
+- Every code block has a language from the allowed list. Use `text` when no other language fits.
 
 If Vale flags a word that is correct in context, such as "leverage" as a noun in "financial leverage", turn the rule off around that line and turn it back on after it:
 
@@ -12545,7 +12546,7 @@ Experience and documentation about this migration path is shared by Pb_integrati
 
 Migrating some ADempiere installations before 360 to iDempiere generates a problem when using PostgreSQL 9.2: applying the script `201309192024_IDEMPIERE-1370.sql` throws:
 
-```
+```text
 ERROR:  cannot change name of input parameter "p_product_id"
 ```
 
@@ -12682,7 +12683,7 @@ HTTP can still be used for proxy forwarding, but the configuration requires forw
 
 In nginx, add the following line to the definition of the `/webui` and `/webui/zkau/comet` locations:
 
-```
+```nginx
 proxy_set_header  X-Forwarded-Proto $scheme;
 ```
 
@@ -13947,20 +13948,24 @@ this section explain how to setup a typical KPI style indicator
 Order
             Count
 
-```
+```text
            Last Month: {1}
 
            Current Month: {0}
 ```
 &lt;/syntaxhighlight&gt;*note: the choice clause add classes which change color of  arrow-up/down*
 
-**register new dsp file in theme.css.dsp:** ```css
+**register new dsp file in theme.css.dsp:**
 
-&lt;c:include page="fragment/gadget-kpi.css.dsp" /&gt;
+```css
+
+<c:include page="fragment/gadget-kpi.css.dsp" />
 
 ```
 
-create new dsp file gadget-kpi.css.dsp```css
+create new dsp file gadget-kpi.css.dsp
+
+```css
 
 .kpi-arrow {
 	border: solid;
@@ -14021,25 +14026,25 @@ create new dsp file gadget-kpi.css.dsp```css
 .kpi-inline {
 	display: inline;
 
-```**create status line with the next SQL**<syntaxhighlight lang="sql" line="1">
-select
 ```
+
+**create status line with the next SQL**
+
+```sql
+select
  ROUND (SUM(orders) FILTER (WHERE kpidata.month = date_trunc('month', now())),0)::numeric as orders_MTD ,
  ROUND (SUM(orders) FILTER (WHERE kpidata.month = date_trunc('month', now() - INTERVAL '1 month')),0)::numeric orders_MTD_P,
  round((SUM(orders) FILTER (WHERE kpidata.month = date_trunc('month', now())) / SUM(orders) FILTER (WHERE kpidata.month = date_trunc('month', now() - INTERVAL '1 month')) - 1) * 100, 2)::numeric as diff
 FROM
-```
 (
 SELECT
-```
   DATE_TRUNC('month',dateordered) AS month,
  COUNT(c_order_id) AS orders
-```
 FROM c_order
 where ad_client_id=@#AD_Client_ID@ and issotrx='Y'
 GROUP BY month
 ) kpidata
-&lt;/syntaxhighlight&gt;
+```
 
 ---
 
@@ -15825,9 +15830,10 @@ The values of the selected row are updated in the context on every selection. On
 In the status line SQL, the row values can be accessed with the @_IWInfo_*ColumnName*@ syntax, e.g. @_IWInfo_C_Order_ID@.
 
 There is a special context variable for listing the ID's of the selected rows, separated by comma (e.g. 100,101,102,103). This variable can be accessed with @_IWInfoIDs_Selected@ syntax. Example usage in a WHERE clause:
- SELECT C_Order_ID
- FROM C_Order
-```
+
+```sql
+SELECT C_Order_ID
+FROM C_Order
 WHERE C_Order_ID = ANY(string_to_array('@_IWInfoIDs_Selected@',',')::NUMERIC[])
 ```
 
@@ -15853,7 +15859,7 @@ WHERE C_Order_ID = ANY(string_to_array('@_IWInfoIDs_Selected@',',')::NUMERIC[])
 
 Current code is cutting trace log in a hardcoded way. And you can only have
 
-```
+```text
 09:18:18.234-----------> ProxyLeakTask.run: Connection leak detection triggered for org.postgresql.jdbc.PgConnection@3101587f on thread pool-1-thread-5, stack trace follows [329]
 java.lang.Exception: Apparent connection leak detected
    at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:99)
@@ -16422,7 +16428,7 @@ Add markdown text support for html email template.
 ```
 - Example using just mark down:
 
-```
+```text
 <#md>**Bold Text**</#md>
 ```
 - Support auto link and table markdown extension.
@@ -16571,26 +16577,26 @@ if  company  want to store their image asset as attachment eg. for product or ca
 https://idempiere.atlassian.net/browse/IDEMPIERE-6242 adds a new ImageURL editor which rendering images from web url only.
 
 **Technical Changes**
-    - Added Image URL display/data type
-```
-   - Implemented thumbnail rendering for Image and Image URL data type (Grid View and Info Window)
-   - Implemented showing full size image for thumbnail on hover of the thumbnail image
-```
+
+- Added Image URL display/data type
+- Implemented thumbnail rendering for Image and Image URL data type (Grid View and Info Window)
+- Implemented showing full size image for thumbnail on hover of the thumbnail image
 
 **Related to**
-    - AD_Form ImageURL, load from theme or fragment attached to org.adempiere.ui.zk
-    - AD_InfoProcess Image URL, load from theme
-    - AD_InfoWindow ImageURL, load from theme or fragment attached to org.adempiere.ui.zk
-    - AD_PrintFormatItem.ImageURL, load from web, theme or fragment attached to org.adempiere.ui.zk
-    - AD_PrintTableFormat.ImageURL, load from web
-    - AD_UserDef_Info.ImageURL, same as AD_InfoWindow ImageURL
+
+- AD_Form ImageURL, load from theme or fragment attached to org.adempiere.ui.zk
+- AD_InfoProcess Image URL, load from theme
+- AD_InfoWindow ImageURL, load from theme or fragment attached to org.adempiere.ui.zk
+- AD_PrintFormatItem.ImageURL, load from web, theme or fragment attached to org.adempiere.ui.zk
+- AD_PrintTableFormat.ImageURL, load from web
+- AD_UserDef_Info.ImageURL, same as AD_InfoWindow ImageURL
 
 **Setup**
 
 the admin able to define the size of thumbnails rendering in grid.
 
-    - Add client level AD_SysConfig ZK_THUMBNAIL_IMAGE_HEIGHT, default to 100
-    - Add client level AD_SysConfig ZK_THUMBNAIL_IMAGE_WIDTH, default to 100
+- Add client level AD_SysConfig ZK_THUMBNAIL_IMAGE_HEIGHT, default to 100
+- Add client level AD_SysConfig ZK_THUMBNAIL_IMAGE_WIDTH, default to 100
 
 **Example CSS Customization of No Image Place Holder (.no-image) and Hover Image (.fullsize-image)**
 
@@ -16644,7 +16650,7 @@ _the screen shows how the user can zoom in on the details of the image by on hov
 
 We use a pair of @ character for context variable, for e.g @C_Order_ID@. This create a problem when we need to use text literal with @ character (for e.g email address) together with context variable.For e.g, the mail text template below:
 
-```
+```text
 Hello @Name@
 
 Here is some text
@@ -16656,7 +16662,7 @@ or to this another mail test2@test.com
 
 To solve this problem, this ticket implement the '@@' escape sequence to support the use of single @ character.
 
-```
+```text
 Hello @Name@
 
 Here is some text
@@ -16935,7 +16941,7 @@ This ticket enhance that with markdown and scoped css style (&lt;style&gt;@scope
 ```
 - Example using just mark down:
 
-```
+```text
 <#md>**Bold Text**</#md>
 ```
 - Support auto link and table markdown extension.
@@ -17093,11 +17099,9 @@ in order to be able to use the new function added into idempiere-util.dsp.tld ; 
 ```css
 
 .login-window .z-window-content {
-```
-   background-image: url(../images/$&#123;u:sysConfig("LOGIN_BACKGROUND_IMG", "login_tgi.png")&#125;) !important;
+   background-image: url(../images/${u:sysConfig("LOGIN_BACKGROUND_IMG", "login_tgi.png")}) !important;
    background-repeat: no-repeat;
    background-position: center;
-```
 }
 
 ```
@@ -18716,7 +18720,7 @@ For instance, the subject can be like :
 `[@SystemName@] (@ServerName@) has started`
 
 And the message: 
-```
+```text
 Version : @Version@
 ServerInfo : @ServerInfo@
 Status : @SystemStatus<Name>@
@@ -18726,7 +18730,7 @@ Which will results in:
 Subject: [iDempiere] (8CC53311KQ:192.168.1.200) has started
 
 Message: 
-```
+```text
 Version : 14.0.0.qualifier
 ServerInfo : jetty/12.0.25
 Status : Evaluation
@@ -20481,9 +20485,11 @@ Pass Resource Bundle backed by AD_Message and AD_Element as report parameter to 
 1. In your Jasper Report, use the build in str function to get translated text from AD_Message or AD_Element (or property file if you have deploy one). For e.g, str("IsDefault")
 1. Note that this will not work when you preview using Jasper Report Studio. To get reasonable output at Jasper Report Studio, you can make use of conditional expression, for e.g: str("IsDefault") != null ? str("IsDefault") : "str(IsDefault)"
 
-Tip for concatenation with a field:```java
+Tip for concatenation with a field:
 
-(str("IsDefault") != null ? str("IsDefault") : "str(IsDefault)") + ": " + $F&#123;IsDefaultField&#125;
+```java
+
+(str("IsDefault") != null ? str("IsDefault") : "str(IsDefault)") + ": " + $F{IsDefaultField}
 
 ```
 
@@ -20807,14 +20813,16 @@ Let's say your company has a rule for commissions where the commission for sales
 
 *The explanation of where to get the purchase price is out of the scope of this guide and it will be assumed that there's a CUSTOM_PurchasePrice column in C_OrderLine that contains the purchase price of the selected product.*
 
-In this case, all you need to do is create a class like this to override the getOrderCommissionSQL with the right amount:```java
+In this case, all you need to do is create a class like this to override the getOrderCommissionSQL with the right amount:
 
-public class CUSTOM_CommissionCalc extends CommissionCalc  &#123;
+```java
 
-	protected String getOrderCommissionSQL() &#123;
+public class CUSTOM_CommissionCalc extends CommissionCalc  {
+
+	protected String getOrderCommissionSQL() {
 		StringBuilder sql = new StringBuilder();
 		if (m_com.isListDetails())
-		&#123;
+		{
 			sql.append("SELECT h.C_Currency_ID, l.LineNetAmt - (l.CUSTOM_PurchasePrice*l.QtyOrdered) AS Amt, l.QtyOrdered, ")
 				.append("l.C_OrderLine_ID, NULL, h.DocumentNo,")
 				.append(" COALESCE(prd.Value,l.Description),h.DateOrdered ")
@@ -20825,9 +20833,9 @@ public class CUSTOM_CommissionCalc extends CommissionCalc  &#123;
 				.append(" AND h.IsSOTrx='Y'")
 				.append(" AND h.AD_Client_ID = ?")
 				.append(" AND h.DateOrdered BETWEEN ? AND ?");
-		&#125;
+		}
 		else
-		&#123;
+		{
 			sql.append("SELECT h.C_Currency_ID, SUM(l.LineNetAmt-(CUSTOM_PurchasePrice*l.QtyOrdered)) AS Amt,")
 				.append(" SUM(l.QtyOrdered) AS Qty, ")
 				.append("NULL, NULL, NULL, NULL, MAX(h.DateOrdered) ")
@@ -20837,11 +20845,11 @@ public class CUSTOM_CommissionCalc extends CommissionCalc  &#123;
 				.append(" AND h.IsSOTrx='Y'")
 				.append(" AND h.AD_Client_ID = ?")
 				.append(" AND h.DateOrdered BETWEEN ? AND ?");
-		&#125;
+		}
 		return sql.toString();
-	&#125;
+	}
 
-&#125;
+}
 
 ```
 
@@ -21096,6 +21104,7 @@ _Grid View with Auto Hide Empty Column turn on_
 ## How To: Using Print Format Item Scripts In Reports
 
 #### Introduction
+
 This document expands on the information provided in [NF8.2 Print Format Item Script](/docs/new-features/v8.2/print-format-item-script) and incorporates the additional features provided by  [IDEMPIERE-5111 Data type improvements to Print Format Item Script](https://idempiere.atlassian.net/browse/IDEMPIERE-5111) and [IDEMPIERE-5253](https://idempiere.atlassian.net/browse/IDEMPIERE-5253).
 
 The purpose of this feature is to make it possible to create new columns in a report based on an expression, without having to modify the database. The expressions  can make use of either beanshell or SQL scripts.
@@ -21112,37 +21121,60 @@ Scripts containing Column Value and Running Total tokens are parsed as a string 
 The SQLStatement token is exclusive and the script must start with the @SQL= token. The sql statement must return a single value and is displayed as text in the report.
 
 #### Column Value
+
 The @COL/column_name@ token is used to insert the value of a column in a script, for example @COL/DocumentNo@ means the to insert the value of the DocumentNo column in the report. The column must already exist as a Print Format Item prior to being used in a script, however it can be hidden by setting the display logic to 1=2 and clearing the Print Text field. The Column Value can also be a previously defined script column and is referenced by the Print Format Item "Name" field.
 
-Consider the following example script comparing two columns and returning a True or False result:```java
+Consider the following example script comparing two columns and returning a True or False result:
 
-if (@COL/GrandTotal@ > @COL/TotalLines@) &#123;
+```java
+
+if (@COL/GrandTotal@ > @COL/TotalLines@) {
  return true;
-&#125;
+}
 return false;
 
-```This could be entered as follows:![IDEMPIERE 5011 boolean](pathname:///img/new-features/v9/IDEMPIERE-5011-boolean.png)
+```
 
-Using the value from the example above, our next script column could contain something like:```java
+This could be entered as follows:
+
+![IDEMPIERE 5011 boolean](pathname:///img/new-features/v9/IDEMPIERE-5011-boolean.png)
+
+Using the value from the example above, our next script column could contain something like:
+
+```java
 
 if (@COL/Has Tax@) {
    return (@COL/Tax@ / @COL/TotalLines@) ;
 }
 return 0;
 
-```This could be entered as follows and include a Format Pattern to display as a percentage:![IDEMPIERE 5011 previous](pathname:///img/new-features/v9/IDEMPIERE-5011-previous.png)
+```
+
+This could be entered as follows and include a Format Pattern to display as a percentage:
+
+![IDEMPIERE 5011 previous](pathname:///img/new-features/v9/IDEMPIERE-5011-previous.png)
 
 There are a vast variety of scripts that can be created using the functionality provided by beanshell. Here are a few more examples:
 
-Perform simple arithmetic operations on numeric columns and return a numeric result:```java
+Perform simple arithmetic operations on numeric columns and return a numeric result:
+
+```java
 
 @COL/GrandTotal@ - @COL/TotalLines@
 
-```Join two strings and return a string result:```java
+```
+
+Join two strings and return a string result:
+
+```java
 
 "@COL/DocumentNo@" + "-" + "@COL/DocStatus@"
 
-```Convert the string representation of an SQL timestamp to a date. Then based on a comparison add a certain number of days and return the updated date:```java
+```
+
+Convert the string representation of an SQL timestamp to a date. Then based on a comparison add a certain number of days and return the updated date:
+
+```java
 
 import java.util.date;
 import java.text.DateFormat;
@@ -21155,37 +21187,45 @@ str_date = "@COL/DateOrdered@";
 formatter = new SimpleDateFormat("yyyy-MM-dd");
 date = (Date)formatter.parse(str_date);
 
-if (@COL/GrandTotal@ > 100) &#123;
+if (@COL/GrandTotal@ > 100) {
  date.setDate(date.getDate() + 7);
  return date;
-&#125;
+}
 date.setDate(date.getDate() + 14);
 return date;
 
 ```
 
 #### Running Total
+
 The @ACCUMULATE token is used to print a running total for any numeric column. As in the Column Value token, the column must already exist as a Print Format Item prior to being used in a script. The Running Total and Column Value tokens can also be used in the same script.
 
-Example of showing a running total in a report:```java
+Example of showing a running total in a report:
+
+```java
 
 @ACCUMULATE/GrandTotal@
 
 ```
 
-### Line Number
+#### Line Number
+
 The @LINE@ token is used to print the current line on the report.
 
 Example of showing a number line:
-```
+
+```text
 @LINE@
 ```
+
 Note: this was added in [release-9.20220406](https://wiki.idempiere.org/en/ChangeLog_Release_9#2022-04-06)
 
-### SQL Statement
+#### SQL Statement
+
 You can use @SQL= to print the value returned from an SQL statement as a string. The SQL statement can reference any column contained in the table associated with the print format and also make use of system variables.
 
 Example using available columns from C_Order base Print Format:
+
 ```sql
 
 @SQL=SELECT CASE WHEN DatePromised <> DateOrdered THEN DatePromised - DateOrdered ELSE NULL END FROM Dual
@@ -21193,6 +21233,7 @@ Example using available columns from C_Order base Print Format:
 ```
 
 Example using System variable @#AD_User_ID@:
+
 ```sql
 
 @SQL=SELECT Name FROM AD_User WHERE AD_User_ID=@#AD_User_ID@
@@ -21200,6 +21241,7 @@ Example using System variable @#AD_User_ID@:
 ```
 
 Example to show the ConvertedAmt on a report based on RV_Payment:
+
 ```sql
 
 @SQL=SELECT COALESCE(ConvertedAmt,PayAmt)*CASE WHEN C_Payment.IsReceipt='Y' THEN 1 ELSE -1 END FROM C_Payment WHERE C_Payment_ID=RV_Payment.C_Payment_ID
@@ -21207,6 +21249,7 @@ Example to show the ConvertedAmt on a report based on RV_Payment:
 ```
 
 ### Note About Security
+
 Please note that the beanshell interpreter is a very powerful tool, but also very dangerous. The script field could be misused for SQL Injection, exposing database sensitive information, or even running scripts in the operating system.
 
 That's why the script field is protected, just to be configured by advanced roles.
@@ -22785,19 +22828,19 @@ Virtual columns were loaded among the rest of the regular columns when instantia
 
 **New constructor**
 
-```
+```java
  testPo = new MTest(Env.getCtx(), testPo.get_ID(), getTrxName(), MTest.COLUMNNAME_TestVirtualQty);
 ```
 
 One or many virtual columns can passed on as parameters after the trxName parameter.
 
-```
+```java
  testPo = new MTest(Env.getCtx(), testPo.get_ID(), getTrxName(), MTest.COLUMNNAME_TestVirtualQty, MTest.COLUMNNAME_AnotherVirtualColumn);
 ```
 
 **Using Query**
 
-```
+```java
  new Query(Env.getCtx(), MTest.Table_Name, MTest.COLUMNNAME_Test_ID + "=?", getTrxName())
    .setVirtualColumns(I_Test.COLUMNNAME_TestVirtualQty).first();
 ```

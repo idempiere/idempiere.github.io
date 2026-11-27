@@ -44,7 +44,7 @@ There is one plugin version for each iDempiere version. Download the jar from [G
 
 You can also install it from the OSGi console:
 
-```
+```text
 install file:/path/com.soropeza.sqlquery-13.2.0.jar
 start <bundle-id>
 ```

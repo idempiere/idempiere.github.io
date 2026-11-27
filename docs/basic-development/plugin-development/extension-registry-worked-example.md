@@ -32,7 +32,7 @@ JAR=/path/to/de.bxservice.docstatusvalidator_1.0.1.202609091909.jar
 unzip -p "$JAR" META-INF/MANIFEST.MF
 ```
 
-```
+```properties
 Bundle-Name: BXS_DocStatusValidator
 Bundle-SymbolicName: de.bxservice.docstatusvalidator
 Bundle-Version: 1.0.1.202609091909
@@ -58,7 +58,7 @@ Four things to take from this:
 unzip -l "$JAR" | grep 2Pack
 ```
 
-```
+```text
     14282  META-INF/2Pack_1.0.0.zip
      1777  META-INF/2Pack_1.0.1.zip
 ```
@@ -75,7 +75,7 @@ unzip -o -q "$JAR" 'META-INF/2Pack_*.zip' && unzip -o -q META-INF/2Pack_1.0.0.zi
 grep -o '<EntityType>[^<]*<' 2Pack_1.0.0/dict/PackOut.xml | sort | uniq -c
 ```
 
-```
+```text
      58 <EntityType>BAY<
 ```
 
@@ -148,7 +148,7 @@ cp /path/to/de.bxservice.docstatusvalidator_1.0.1.202609091909.jar "$REG/jars/"
 sha256sum "$REG/jars/"*.jar | cut -d' ' -f1
 ```
 
-```
+```text
 3464e6e50b4f957b073a04a0ad93c4bfa409890ed7bd049acf3c43c17b03e00f
 ```
 
@@ -251,14 +251,14 @@ All four passed here before the server was touched.
 
 `org.adempiere.server-feature/server.product.launch` already ships the argument, pointing at the public registry:
 
-```
+```text
 -DIDEMPIERE_EXTENSION_REPOSITORY=https://github.com/idempiere/idempiere-extension-repository
 ```
 
 :::tip Duplicate the launch configuration rather than editing that file
 Run → Run Configurations → right-click `server.product` → Duplicate, and change the value in the copy:
 
-```
+```text
 -DIDEMPIERE_EXTENSION_REPOSITORY=file:/home/diego/idempiere-local-registry
 ```
 
@@ -322,7 +322,7 @@ SELECT count(*) FROM AD_ExtensionEntity e
 
 Observed on this install:
 
-```
+```text
  1000000 | 0.0.0 | Completed successfully |   0
  1000001 | 1.0.0 | Completed successfully |  86
  1000002 | 1.0.1 | Completed successfully |   4

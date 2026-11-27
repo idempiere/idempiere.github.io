@@ -82,7 +82,7 @@ Use **Automatic External Pack In** for CI/CD pipelines and Docker deployments to
 
 For general use, 2Pack files are typically named using a descriptive format:
 
-```
+```text
 2Pack_1.0.0_MyPlugin.zip
 ```
 
@@ -93,7 +93,7 @@ If you use the **Automatic External Pack In** feature, you must follow a specifi
 :::
 
 **Required Format:**
-```
+```text
 [Timestamp]_[ClientValue]_[AdditionalInformation].zip
 ```
 
@@ -103,7 +103,7 @@ If you use the **Automatic External Pack In** feature, you must follow a specifi
 - **AdditionalInformation**: Descriptive name for the pack
 
 **Example:**
-```
+```text
 201803161725_SYSTEM_CreateNewColumn.zip
 ```
 
