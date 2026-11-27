@@ -6,7 +6,7 @@ tags:
   - functional
   - technical
 applies_to: ">=14"
-last_reviewed: 2026-11-26
+last_reviewed: 2026-11-27
 ---
 
 # Charge-based posting for manual cost elements
@@ -119,28 +119,40 @@ Because `MCost.getCurrentCost(...)` excludes charge-mapped manual cost elements 
 
 - **Rounding consistency:** Each manual cost entry and the material cost are rounded to the Accounting Schema's standard currency precision (`StdPrecision`) before summing, preventing unbalanced DR/CR rounding differences.
 - **Batch/Lot costing:** When a product uses Batch/Lot costing and a line splits across multiple `M_InOutLineMA` or `M_ProductionLineMA` allocations, manual costs are evaluated per ASI (preferring an exact ASI cost row over the `ASI=0` fallback without double-counting) and accumulated per `M_CostElement_ID` before rounding.
-- **Reversal fidelity:** Reversals for Sales Shipment, Customer Return, Production, and Project Issue replay all originally posted `Fact_Acct` lines (plus document-level DueTo/DueFrom balancing rows) directly from `Fact_Acct`, skip GL Distribution on replayed rows, and negate the original `M_CostDetail` amount where available. Production and Project Issue reversals require the original document to be posted first. This reversal replay behavior applies to all documents of these four types, even when `C_Charge_ID` is not set, and ensures reversals still match original postings if a manual cost element's Charge, rate, or active status is changed later.
+- **Reversal fidelity via `M_ManualCostDetail`:** When a Sales Shipment, Customer Return, Production, or Project Issue posts charge-mapped manual costs, each charge posting is persisted in `M_ManualCostDetail` with its cost element, Charge, `C_ValidCombination_ID`, accounting date, and signed amount (Charge CR minus Charge DR). When reversing a document whose original lines have `M_ManualCostDetail` rows, posting reads those records together with the original `M_CostDetail` amounts so the reversal restores the exact historical manual cost amounts and charge account combinations even if rates, Charges, `Ch_Expense_Acct`, or active flags changed later, and persists negated `M_ManualCostDetail` rows so the net total sums to zero.
+- **Unchanged path for non-adopters:** When an original document line has no `M_ManualCostDetail` rows, reversals follow the existing standard iDempiere reversal path and GL Distribution behavior. Requiring the original Production or Project Issue to be posted before its reversal is gated to Tenants that have at least one active charge-mapped manual cost element (`MCost.hasChargeManualCostElements`).
+- **Production reversal line linkage:** `M_ProductionLine.ReversalLine_ID` links reversal production lines to their original lines for both Production Plan and standard Production reversals, allowing `Doc_Production` to look up original `M_ManualCostDetail` and `M_CostDetail` records and populate `M_CostDetail.Ref_CostDetail_ID` directly.
+- **Reposting, Reset Accounting, and backdated costing:** `M_ManualCostDetail` rows are deleted alongside `Fact_Acct` during document repost (`Doc.deleteAcct()`), `MFactAcct.deleteEx()`, and the **Reset Accounting** process (`FactAcctReset`), keeping backdated costing reposts consistent.
 
 ## Technical notes
 
 New and updated APIs for core and plugin developers:
 
+- `MManualCostDetail` (`M_ManualCostDetail`): Model class persisting posted charge-mapped manual cost absorptions and reversals (`create`, `getByRecord`, `getByLine`, `hasForRecord`, `delete`), storing `C_ValidCombination_ID` to preserve historical charge accounts and sub-accounts.
 - `MCost.ManualCost`: Value class holding an `MCostElement` and its calculated `BigDecimal` amount.
 - `MCost.getManualCosts(MProduct, int, MAcctSchema, int, BigDecimal, BigDecimal, String)`: Queries active charge-mapped manual cost records (`CostingMethod IS NULL AND CostElementType <> 'M' AND C_Charge_ID > 0`), resolving org/ASI via `MCost.CostingKey.resolve` and deduplicating exact ASI vs. `ASI=0` rows.
+- `MCost.hasChargeManualCostElements(int, String)`: Reports whether a Tenant has at least one active charge-mapped manual cost element.
 - `MCost.hasMaterialCost(MProduct, int, MAcctSchema, int, String, BigDecimal, Timestamp, String)`: Reports whether a product has non-zero material cost (even when cancelled by unmapped non-material adjustments).
 - `ProductCost.getManualCosts(MAcctSchema, int, BigDecimal)` and `DocLine.getManualCosts(MAcctSchema, int, BigDecimal)`: Convenience wrappers delegating to `MCost.getManualCosts`.
 - `DocLine.getTotalProductCosts(MAcctSchema, int, boolean)`: Returns material cost plus all charge-mapped manual costs.
 - `MCharge.getAccount(int C_Charge_ID, MAcctSchema as, String trxName)`: Transaction-aware overload (existing 2-argument method delegates with `null`).
 - `MTimeExpenseLine.getLaborCost(MAcctSchema)`: Returns `null` (instead of `BigDecimal.ZERO`) when the expense line does not exist so callers can fall back to standard product costs, uses the line's own transaction name when set, and throws `DBException` on SQL errors.
-- `MFactAcct.removeDistributionReversalPairs(List<MFactAcct>, BigDecimal)`: Filters cancelling GL-distribution reversal pairs (`GL_Distribution.IsCreateReversal='Y'`) during fallback reversal cost resolution.
-- `FactLine.getReversedFactAcct_ID()` and `FactLine.updateReverseLine(MFactAcct, BigDecimal, boolean)`: Exposes the matched original `Fact_Acct_ID` and reverses an explicit `MFactAcct` record.
-- `Doc` protected helpers: `accumulateManualCosts`, `roundManualCosts`, `hasPostedFacts`, `getPostedLineFacts`, `getPostedHeaderFacts`, `reversePostedHeaderFacts`, `createReversalFactLine`, `removeDistributionReversalPairs`, `resolveReversalInventoryCost`, and `formatMissingChargeAccountError`.
+- `MProduction.copyFrom(Timestamp)`: Populates `M_ProductionLine.ReversalLine_ID` bidirectionally between original and reversal production lines; `Doc_Production` loads it into `DocLine.setReversalLine_ID(...)`.
+- `MFactAcct.deleteEx(int, int, String)`, `Doc.deleteAcct()`, and `FactAcctReset`: Delete matching `M_ManualCostDetail` records alongside `Fact_Acct`.
+- `Doc` protected helpers: `accumulateManualCosts`, `roundManualCosts`, `saveManualCostDetail`, `getManualCostChargeAccount`, and `formatMissingChargeAccountError`.
 
 ## Migration impact
 
-The iD14 migration scripts add `M_CostElement.C_Charge_ID` (`NUMERIC(10)` / `NUMBER(10)`, nullable, with foreign key `CCharge_MCostElement` referencing `C_Charge`), the **Charge** field on the **Cost Element** tab, and `C_ProjectIssue.CostAmt` (`NUMERIC` / `NUMBER`, nullable) to store each Project Issue's project balance contribution for accurate reversals. Existing manual cost elements with `C_Charge_ID` unset keep their previous behavior until a Charge is assigned.
+The iD14 migration scripts add:
 
-Pre-migration Project Issue records have `C_ProjectIssue.CostAmt` set to `NULL`. When reversing a pre-migration Project Issue, `MProjectIssue` resolves the original project balance contribution from PO or labor cost, original `M_CostDetail`, or posted `Fact_Acct` records, and excludes any charge-mapped manual cost facts (`C_Charge_ID > 0`) because pre-migration completion never included charge-mapped manual costs in `C_Project.ProjectBalanceAmt`. If an unposted pre-migration Project Issue is reversed, the balance fallback also excludes charge-mapped manual costs.
+- `M_CostElement.C_Charge_ID` (`NUMERIC(10)` / `NUMBER(10)`, nullable, with foreign key `CCharge_MCostElement` referencing `C_Charge`) and the **Charge** field on the **Cost Element** tab.
+- `C_ProjectIssue.CostAmt` (`NUMERIC` / `NUMBER`, nullable) to store each Project Issue's project balance contribution for accurate reversals.
+- `M_ManualCostDetail` table with indexes `M_ManualCostDetail_UU_idx`, `M_ManualCostDetail_Record`, and `M_ManualCostDetail_DateAcct`.
+- `M_ProductionLine.ReversalLine_ID` (`NUMERIC(10)` / `NUMBER(10)`, nullable, foreign key referencing `M_ProductionLine`).
+
+Existing manual cost elements with `C_Charge_ID` unset keep their previous behavior until a Charge is assigned.
+
+Pre-migration Project Issue records have `C_ProjectIssue.CostAmt` set to `NULL`. When reversing a pre-migration Project Issue, `MProjectIssue` resolves the original project balance contribution from PO cost, labor cost, or original `M_CostDetail`, and otherwise falls back to `MCost.getCost(...)` using the Accounting Schema costing method and original issue inputs (excluding charge-mapped manual costs, because pre-migration completion never included them in `C_Project.ProjectBalanceAmt`).
 
 ## Related tickets
 

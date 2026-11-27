@@ -83,17 +83,17 @@ Check the exit code of the scripts that call the generator. See [Model generator
 
 See [Charge-based posting for manual cost elements](/docs/new-features/v14/charge-based-manual-cost-elements) for full details.
 
-## Reversal posting replay for shipments, returns, production and project issues
+## Manual cost element reversal posting
 
-Sales Shipment, Customer Return, Production, and Project Issue reversals now replay all posted `Fact_Acct` rows (plus document-level DueTo/DueFrom balancing rows) from the original document, skip GL Distribution on replayed rows, and negate the original `M_CostDetail` amount where available. Production and Project Issue reversals now require the original document to be posted first instead of posting independently, and `MProjectIssue` resolves product costing method via `product.getCostingMethod(as)` instead of `as.getCostingMethod()`.
+Tenants that configure active charge-mapped manual cost elements (`M_CostElement.C_Charge_ID`) now persist manual charge postings in `M_ManualCostDetail` and reverse Sales Shipments, Customer Returns, Productions, and Project Issues using `M_ManualCostDetail` and `M_CostDetail` instead of recalculating current rates. In those Tenants, Production and Project Issue reversals require the original document to be posted first. Installations without charge-mapped manual cost elements keep the existing reversal paths unchanged, while `MProjectIssue` now resolves product costing method via `product.getCostingMethod(as)` instead of `as.getCostingMethod()`.
 
-**Who is affected:** all installations posting reversals of Sales Shipments, Customer Returns, Productions, or Project Issues (including installations that do not configure `M_CostElement.C_Charge_ID`), especially workflows that reverse documents before the original is posted or rely on GL Distribution re-running during reversal.  
+**Who is affected:** Tenants that configure `M_CostElement.C_Charge_ID`, custom code deleting `Fact_Acct` rows directly, and installations using Product Category costing method overrides on Project Issues.  
 **Ticket:** [IDEMPIERE-7231](https://idempiere.atlassian.net/browse/IDEMPIERE-7231)
 
 ### What to do
 
-1. Ensure original Production and Project Issue documents are posted before their reversals are posted (or allow the accounting processor to retry once the original posts).
-2. Review any GL Distribution rules or custom accounting validators that previously expected GL Distribution to run again on reversal lines for these four document types.
+1. If you configure active charge-mapped manual cost elements, ensure original Production and Project Issue documents are posted before their reversals are posted (or allow the accounting processor to retry once the original posts).
+2. If custom processes or scripts delete `Fact_Acct` rows directly via SQL instead of calling `MFactAcct.deleteEx()`, `Doc.deleteAcct()`, or the **Reset Accounting** process (`FactAcctReset`), delete matching `M_ManualCostDetail` rows as well.
 3. Verify Project Issue balance calculations if products use Product Category costing method overrides.
 
 See [Charge-based posting for manual cost elements](/docs/new-features/v14/charge-based-manual-cost-elements) for full details.
