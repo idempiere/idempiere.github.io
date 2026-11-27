@@ -18,7 +18,7 @@ This page lists the common problems with core tests, grouped by symptom. Start w
 ## A test is not found
 
 - The test uses JUnit 4 imports (`org.junit.Test`). Use JUnit 5: `org.junit.jupiter.api.Test`.
-- In Eclipse, the class was run as "JUnit Test". Use Run As => JUnit Plug-in Test.
+- In Eclipse, the class was run as "JUnit Test". Use the `idempiere.unit.test` launch, or a copy of it with your class selected. See [Run from your editor](./running-core-tests.md#run-from-your-editor).
 - A bundle the test needs is missing from `idempiere.unit.test.launch`. Add it to the launch.
 
 ## Tests fail at startup or the context is empty
