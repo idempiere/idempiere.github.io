@@ -113,7 +113,7 @@ Rules that follow:
 - Pass `getTrxName()` to every model constructor, `Query` and `DB` call. A `null` transaction writes outside the test and leaves data behind.
 - Use `Env.getCtx()`, not a new `Properties` object.
 - Use `saveEx()`, not `save()`, so a failed save shows its reason.
-- For your own setup, add a separate `@BeforeEach` method. If you override `init(TestInfo)`, call `super.init(testInfo)` first.
+- For your own setup, add a separate `@BeforeEach` method. If you override `init(TestInfo)`, annotate the override with `@BeforeEach` and call `super.init(testInfo)` first. Without the annotation, JUnit 5 runs neither method.
 
 ### Refer to records with DictionaryIDs
 
