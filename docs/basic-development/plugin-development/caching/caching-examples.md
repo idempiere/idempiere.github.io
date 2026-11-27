@@ -8,11 +8,11 @@ last_reviewed: 2026-11-27
 ---
 # Caching examples
 
-Each example solves one common task and names the rules it follows. The examples use a custom table `MY_Category` with an integer ID and the columns `Value` and `Name`, and core tables where that is clearer. `Query` creates `MMyCategory` objects only when a [model factory](../plugin-modelfactory) returns that class for `MY_Category`. Without one, `Query` returns a `GenericPO`, and the examples fail with a `ClassCastException`. Read [How caching works](./caching-overview) first. Applies to iDempiere 12 and later.
+The examples use a custom table `MY_Category` with an integer ID, `Value` and `Name`. `Query` returns `MMyCategory` only with a [model factory](../plugin-modelfactory) for the table. Otherwise it returns a `GenericPO`, and the casts fail. Applies to iDempiere 12 and later.
 
 ## Cache model objects by ID
 
-This model class caches its records the way core model classes such as `MCharge` and `MUOM` do. It follows `MCharge` in iDempiere 13. `X_MY_Category` stands for the class that the model generator created for your table.
+The pattern of `MCharge` in iDempiere 13. `X_MY_Category` is the class the model generator created.
 
 ```java title="src/com/example/model/MMyCategory.java"
 package com.example.model;
@@ -91,24 +91,19 @@ public class MMyCategory extends X_MY_Category implements ImmutablePOSupport {
 }
 ```
 
-Points to note:
-
-- The cache is created with `Table_Name`, so saving or deleting a `MY_Category` record removes its entry.
-- `get` only puts the object in the cache when the record exists (`get_ID() == MY_Category_ID`). It does not cache "not found".
-- `get` and `put` get a copy operator, so the cache never needs reflection. The copy constructors are still needed, because the copy operator and `getCopy` call them.
-- The UUID constructor is used when iDempiere creates the model from a UUID. Model classes in core have it too.
-- If your class holds child objects, such as lines, copy them in the copy constructor and mark them immutable in `markImmutable`.
+- `get` caches only records that exist, never "not found".
+- The copy operators avoid reflection. The copy constructors are still needed by them and by `getCopy`.
+- Copy child objects, such as lines, in the copy constructor and mark them immutable in `markImmutable`.
 
 ## Look up a record by search key
 
-Users often look up records by their search key, not their ID. Add a second cache keyed by tenant and search key to the class above. The key contains the tenant, because the cache is shared by all tenants on the server.
+The key contains the tenant, because one cache serves all tenants.
 
 ```java
-/** Cache by tenant and search key. Every save of MY_Category clears it, because the key is not the record ID. */
+/** Cache by tenant and search key. Every save of MY_Category clears it. */
 private static final ImmutablePOCache<String, MMyCategory> s_cacheByValue =
     new ImmutablePOCache<>(Table_Name, Table_Name + "|Value", 20, 0, false, 0);
 
-/** Get by search key from the cache (immutable) */
 public static MMyCategory getByValue(Properties ctx, String value) {
     int clientId = Env.getAD_Client_ID(ctx);
     String key = clientId + "|" + value;
@@ -126,14 +121,13 @@ public static MMyCategory getByValue(Properties ctx, String value) {
 }
 ```
 
-Add `import org.compiere.model.Query;` and `import org.idempiere.cache.ImmutablePOCache;` to the class. The cache has no size limit, so use this only for tables with a limited number of records.
+Imports: `org.compiere.model.Query`, `org.idempiere.cache.ImmutablePOCache`. No size limit, so only for small tables.
 
 ## Cache a list per tenant
 
-A list of records needs two changes to `CCache`. The key here is a tenant ID, not a record ID, so `reset(int)` must clear everything. And a new record must clear the list, because `CCache` ignores new records.
+The key is a tenant ID, not a record ID, so `reset(int)` must clear everything. A new record changes the list, so `newRecord` must clear it too.
 
 ```java
-/** Active category IDs per tenant, cleared on every change and every new record. */
 private static final CCache<Integer, List<Integer>> s_activeIds =
     new CCache<>(Table_Name, Table_Name + "|ActiveIDs", 5, 0, false, 0) {
         private static final long serialVersionUID = 1L;
@@ -149,7 +143,6 @@ private static final CCache<Integer, List<Integer>> s_activeIds =
         }
     };
 
-/** IDs of the active categories of the tenant, sorted by name */
 public static List<Integer> getActiveIds(Properties ctx) {
     int clientId = Env.getAD_Client_ID(ctx);
     List<Integer> ids = s_activeIds.get(clientId);
@@ -160,18 +153,17 @@ public static List<Integer> getActiveIds(Properties ctx) {
         .setOnlyActiveRecords(true)
         .setOrderBy("Name")
         .getIDs();
-    // An unmodifiable list, because every caller gets the same object
-    ids = Arrays.stream(found).boxed().toList();
+    ids = Arrays.stream(found).boxed().toList(); // unmodifiable: callers share it
     s_activeIds.put(clientId, ids);
     return ids;
 }
 ```
 
-Add `import java.util.Arrays;`, `import java.util.List;`, `import org.compiere.model.Query;` and `import org.compiere.util.CCache;` to the class.
+Imports: `java.util.Arrays`, `java.util.List`, `org.compiere.model.Query`, `org.compiere.util.CCache`.
 
-## Cache a value that depends on several tables
+## Cache a value from several tables
 
-Some values combine data from several tables. This cache holds the sales price list of a Business Partner Group: the group's own price list, or the tenant's default sales price list. It has to be cleared when either `C_BP_Group` or `M_PriceList` changes. Its table name is not a real table, so only the event handler below clears it.
+The sales price list of a Business Partner Group: its own price list, or the tenant's default. It depends on `C_BP_Group` and `M_PriceList`, so its name is not a table, and an event handler clears it.
 
 ```java title="src/com/example/cache/BPGroupPriceListCache.java"
 package com.example.cache;
@@ -220,7 +212,7 @@ public final class BPGroupPriceListCache {
 }
 ```
 
-The event handler clears the cache after every new, changed or deleted record of either table. `scheduleCacheReset` waits for the commit and sends the reset to every server. Calling `init()` in `initialize()` registers the cache on every server where the plug-in runs, so that a save on any server sends the reset. Register the handler as shown in [Event handlers](../plugin-eventhandler).
+The handler clears the cache after the commit, on every server. `init()` registers the cache on every server. Register the handler as in [Event handlers](../plugin-eventhandler). `FROM DUAL` works on PostgreSQL too, because iDempiere creates a `DUAL` view.
 
 ```java title="src/com/example/event/BPGroupPriceListCacheHandler.java"
 package com.example.event;
@@ -256,11 +248,7 @@ public class BPGroupPriceListCacheHandler extends AbstractEventHandler {
 }
 ```
 
-The SQL ends with `FROM DUAL`. iDempiere creates a `DUAL` view on PostgreSQL, so the same statement works on PostgreSQL and Oracle.
-
 ## Create a record and read it in the same transaction
-
-A process that creates a record and reads it again must not use the cache, because the record is not committed yet.
 
 ```java
 MMyCategory category = new MMyCategory(getCtx(), 0, get_TrxName());
@@ -275,8 +263,37 @@ MMyCategory notFound = MMyCategory.get(getCtx(), category.get_ID());
 MMyCategory found = new MMyCategory(getCtx(), category.get_ID(), get_TrxName());
 ```
 
+## Clear the cache after direct SQL
+
+```java
+int count = DB.executeUpdateEx(
+    "UPDATE C_Charge SET IsActive='N' WHERE C_ChargeType_ID=?",
+    new Object[] {C_ChargeType_ID}, trxName);
+if (count > 0)
+    // -1 clears all C_Charge caches after the commit
+    CacheMgt.scheduleCacheReset(MCharge.Table_Name, -1, false, trxName);
+```
+
 ## Change many records in a batch
 
-See [Suspend resets during batch jobs](./caching-best-practices#suspend-resets-during-batch-jobs) for a batch that commits in chunks and clears the cache once at the end.
+Resets run after a commit, so commit inside the suspended period. In a process, use your own transaction, because the process transaction commits after `doIt`.
 
-This page is part of [Caching](/docs/basic-development/plugin-development/caching): [overview](./caching-overview), [best practices](./caching-best-practices), [gotchas](./caching-gotchas), [practical examples](./caching-examples), [fast cache code](./caching-performance), [development checklist](./caching-checklist), [settings](./caching-settings) and [REST API](./caching-rest-api).
+```java
+CacheMgt.get().suspendTableCacheReset(MCharge.Table_Name);
+Trx trx = Trx.get(Trx.createTrxName("ChargeBatch"), true);
+try {
+    // change many C_Charge records with trx.getTrxName(),
+    // and call trx.commit(true) every few hundred records
+    trx.commit(true); // throws SQLException
+} finally {
+    trx.close();
+    CacheMgt.get().resumeTableCacheReset(MCharge.Table_Name);
+}
+CacheMgt.get().reset(MCharge.Table_Name); // one reset for the whole batch
+```
+
+:::warning
+
+The suspension applies to the whole server and drops resets, it does not queue them. Resets of the last commit can still run after you resume. Always resume in `finally` and reset the table afterwards.
+
+:::
