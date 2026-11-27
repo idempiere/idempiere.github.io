@@ -63,6 +63,7 @@ WHERE C_Invoice_ID = $P{RECORD_ID} AND AD_Language = $P{CURRENT_LANG}
 ```
 
 - **Amounts in another currency:** `DisplayType.getCurrencyFormat(language, currencyISOCode)` formats them for the language.
+- **Letters of the language:** characters such as `ľ č ő` print only when the PDF font and its encoding contain them, for example an embedded font with `Identity-H`. See [Fonts in JasperReports](../basic-development/fonts-for-printing/jasperreports.md).
 
 :::tip
 
