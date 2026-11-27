@@ -48,8 +48,6 @@ Every cache is a `org.compiere.util.CCache`, a thread-safe `Map` that registers 
 - **New records clear nothing by default.** `CCache.newRecord` does nothing, so cached lists and cached "not found" results stay. Exception in iDempiere 14: for tables in [`Cache.ClusterResetDebounceTables`](./caching-settings#cluster-settings), a new record clears the whole table on the other servers.
 - **Direct SQL clears nothing.** Only saves through `PO` trigger a reset.
 
-<!-- TODO: link the IDEMPIERE ticket for the UUID reset regression once it is filed -->
-
 ### Size and expiry
 
 - Default: at most 1000 entries (`Cache.MaxSize`), expiring 60 minutes after the last access (`Cache.ExpireMinute`).
