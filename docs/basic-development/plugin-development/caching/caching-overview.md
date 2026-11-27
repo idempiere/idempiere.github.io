@@ -44,11 +44,11 @@ Every cache is a `org.compiere.util.CCache`, a thread-safe `Map` that registers 
 - **After the commit, on a background thread.** A rollback clears nothing. For a short time, other threads and servers still see the old value.
 - **Only if this server has a cache for the table.** Caches are matched by their table name argument, not their cache name.
 - **By record ID.** An integer-keyed cache removes that one entry. A `String`-keyed cache is cleared completely. An integer key that is not the record ID is not cleared at all.
-- **UUID tables differ.** Since iDempiere 13 the reset carries the UUID. A `String`-keyed cache removes only that exact key, so a key built from something else stays stale.
+- **Tables without a single integer ID differ.** This covers UUID-keyed tables and tables with several key columns. Since iDempiere 13 their reset carries the UUID, and a `String`-keyed cache removes only that exact key. A key built from something else stays stale, also in core caches such as `MProductCategoryAcct` and `MTableValRule`. In iDempiere 12 these resets cleared the whole cache. Clear such caches yourself in `afterSave` and `afterDelete`, as `MSysConfig` does, or run **Cache Reset**.
 - **New records clear nothing by default.** `CCache.newRecord` does nothing, so cached lists and cached "not found" results stay. Exception in iDempiere 14: for tables in [`Cache.ClusterResetDebounceTables`](./caching-settings#cluster-settings), a new record clears the whole table on the other servers.
 - **Direct SQL clears nothing.** Only saves through `PO` trigger a reset.
 
-<!-- TODO: verify: confirm with the core team whether String-keyed caches on UUID tables staying stale is intended, or a bug to report -->
+<!-- TODO: link the IDEMPIERE ticket for the UUID reset regression once it is filed -->
 
 ### Size and expiry
 

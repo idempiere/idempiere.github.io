@@ -36,6 +36,7 @@ What you see, why, and the fix. Applies to iDempiere 12 and later.
 | You see | Why | Fix |
 | --- | --- | --- |
 | Stale values in a cache keyed by tenant ID | `reset(int)` removes only the key equal to the record ID. | Use a `String` key, or override `reset(int)`. |
+| Stale values on a table without a single integer ID (iDempiere 13 and later) | The reset carries the UUID, and a `String` key built from other columns is not cleared. | Clear the cache in `afterSave` and `afterDelete`, or run **Cache Reset**. |
 | Data from another tenant or language | The key leaves out what the value depends on. | Add tenant, organization or language to the key. |
 | Values change in other sessions | `CCache` returns the stored list itself. | Store `List.copyOf` with immutable elements, or records. |
 
