@@ -152,6 +152,8 @@ Write a key in code format: `ZK_THEME`. When a page introduces or depends on key
 | --- | --- | --- | --- |
 | `EXAMPLE_KEY` | `N` | System | Example row. Replace it with the real key. |
 
+The [System Configurator](/docs/basic-development/system-configurator) reference page lists every key and uses its own columns: Key, What it does, Values, Reference. To add a key there, follow the row format in the comment above its tables.
+
 Never guess a key name or default value. Look it up in the System Configurator window or in the core migration scripts.
 
 ## Writing style
