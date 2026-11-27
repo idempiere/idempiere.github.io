@@ -1,4 +1,4 @@
-import {useDeferredValue, useEffect, useRef, useState} from 'react';
+import {Fragment, useDeferredValue, useEffect, useRef, useState} from 'react';
 import useBrokenLinks from '@docusaurus/useBrokenLinks';
 import styles from './styles.module.css';
 
@@ -13,7 +13,21 @@ import styles from './styles.module.css';
 export function Key({children, deprecated = false}) {
   const id = String(children).trim();
   useBrokenLinks().collectAnchor(id);
-  const code = <code>{id}</code>;
+  // A long key wraps after an underscore, not in the middle of a word.
+  const code = (
+    <code>
+      {id.split('_').map((part, i) => (
+        <Fragment key={i}>
+          {i > 0 && (
+            <>
+              _<wbr />
+            </>
+          )}
+          {part}
+        </Fragment>
+      ))}
+    </code>
+  );
   return (
     <span id={id} className={styles.key}>
       {deprecated ? <del title="Deprecated">{code}</del> : code}
@@ -38,6 +52,16 @@ export default function SysConfigFilter() {
   const [query, setQuery] = useState('');
   const deferredQuery = useDeferredValue(query);
   const [counts, setCounts] = useState({shown: 0, total: 0});
+  const hiddenLetters = useRef(new Set()); // ids of the letter headings with no match
+
+  // Hide the letters with no match in the table of contents too.
+  const syncToc = () => {
+    document.querySelectorAll('.table-of-contents a[href^="#"]').forEach((a) => {
+      const item = a.closest('li');
+      const hide = hiddenLetters.current.has(decodeURIComponent(a.getAttribute('href').slice(1)));
+      if (item && item.hidden !== hide) item.hidden = hide;
+    });
+  };
 
   // The tables (and the heading before each) that follow the box.
   const getSections = () => {
@@ -83,6 +107,16 @@ export default function SysConfigFilter() {
     return () => document.removeEventListener('keydown', onKey);
   }, []);
 
+  // On phones the table of contents is only rendered when the reader opens
+  // "On this page", so update it again when it appears.
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      if (hiddenLetters.current.size > 0) syncToc();
+    });
+    observer.observe(document.body, {childList: true, subtree: true});
+    return () => observer.disconnect();
+  }, []);
+
   // Apply the filter.
   useEffect(() => {
     const words = deferredQuery.toLowerCase().split(/\s+/).filter(Boolean);
@@ -97,15 +131,13 @@ export default function SysConfigFilter() {
       const hide = visible === 0;
       if (table.hidden !== hide) table.hidden = hide;
       if (heading && heading.hidden !== hide) heading.hidden = hide;
-      // Hide the letter in the table of contents too.
       if (heading?.id) {
-        document.querySelectorAll(`.table-of-contents a[href="#${CSS.escape(heading.id)}"]`).forEach((a) => {
-          const item = a.closest('li');
-          if (item && item.hidden !== hide) item.hidden = hide;
-        });
+        if (hide) hiddenLetters.current.add(heading.id);
+        else hiddenLetters.current.delete(heading.id);
       }
       shown += visible;
     });
+    syncToc();
     setCounts((c) => (c.shown === shown ? c : {...c, shown}));
   }, [deferredQuery]);
 
