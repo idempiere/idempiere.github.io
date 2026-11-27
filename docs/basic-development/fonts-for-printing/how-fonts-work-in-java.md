@@ -19,7 +19,7 @@ These classes in `org.adempiere.base` take part:
 
 | Output | Path through the code | Fonts |
 | --- | --- | --- |
-| PDF | `ReportEngine.createPDF()` => `PDFReportRenderer` => `Document.writePDF()`. In iDempiere 10, `createPDF()` calls `Document.getPDFAsFile()` and `createPDFData()` calls `Document.getPDFAsArray()`. A print format with a Jasper Process creates its PDF with that report instead, but only through `createPDF()`. `createPDFData()` does not run the Jasper Process. For such a print format it returns `null` in iDempiere 10 and throws an `AdempiereException` from iDempiere 11 on, so use `createPDF()` for Jasper-backed PDFs. | `Document` creates an OpenPDF `DefaultFontMapper`, adds the fonts of `PDF_FONT_DIR`, and draws the pages through `PdfGraphics2D`. The mapper uses `Cp1252`. |
+| PDF | `ReportEngine.createPDF()` => `PDFReportRenderer` => `Document.writePDF()`. In iDempiere 10, `createPDF()` calls `Document.getPDFAsFile()` and `createPDFData()` calls `Document.getPDFAsArray()`. A print format with a Jasper Process creates its PDF with that report instead, but only through `createPDF()`. `createPDFData()` does not run the Jasper Process. It writes the normal layout of the print format, so use `createPDF()` for Jasper-backed PDFs. If the layout or the PDF fails, `createPDFData()` returns `null` in iDempiere 10 and throws an `AdempiereException` from iDempiere 11 on. | `Document` creates an OpenPDF `DefaultFontMapper`, adds the fonts of `PDF_FONT_DIR`, and draws the pages through `PdfGraphics2D`. The mapper uses `Cp1252`. |
 | Document archive | `ArchiveEngine` => `Document.getPDFAsArray()` | Same as the PDF |
 | Direct print | `ReportEngine.print()` => `PrintUtil.print()` => `java.awt.print.PrinterJob` | Java fonts, sent through the Java print service |
 | Report renderer from a plug-in (only in versions with [Extensible Report Content Generation](../../new-features/v13/extensible-report-content-generation.md)) | `IReportContentRendererFactory` services | Chosen by the plug-in |
@@ -28,10 +28,10 @@ The layout always uses Java fonts, whatever the output. A font that Java does no
 
 ## How Java finds fonts
 
-The JDK keeps its own list of fonts. iDempiere does not manage fonts itself.
+The JDK keeps its own list of fonts. Up to iDempiere 13, iDempiere does not manage fonts itself. From iDempiere 14, `Document.registerCustomAwtFonts()` also registers the fonts of `PDF_FONT_DIR` with Java before the layout, see [PDF font caching and default directory](../../new-features/v14/pdf-font-caching-and-directory.md).
 
-- **Font list:** the first time a font is used, the JDK reads the fonts of the operating system through fontconfig. It does not read them again until the JVM restarts.
-- **Logical fonts:** `Dialog`, `DialogInput`, `SansSerif`, `Serif` and `Monospaced` are mapped to installed fonts through fontconfig. If the JDK has its own `fontconfig.properties` file in its `lib` directory, that file sets this mapping instead.
+- **Font list:** the first time a font is used, the JDK reads the fonts of the operating system. On Linux, it reads them through fontconfig. It does not read them again until the JVM restarts.
+- **Logical fonts:** `Dialog`, `DialogInput`, `SansSerif`, `Serif` and `Monospaced` are mapped to installed fonts, on Linux through fontconfig. If the JDK has its own `fontconfig.properties` file in its `lib` directory, that file sets this mapping instead.
 - **Fonts from a plug-in:** a plug-in can add a font file for its JVM with `Font.createFont()` and `GraphicsEnvironment.registerFont()`. Java then knows the font, but fontconfig and other programs do not. `registerFont()` returns `false` when Java already knows a font with the same name, for example from the operating system. The font that was there first is used. Some JDKs bring their own fonts, for example DejaVu in Amazon Corretto.
 - **Styles of a face:** for a face name such as "Helvetica Neue Medium", Java returns that face for every style. Only fontconfig turns it into the bold face of the family, so this works only for fonts installed on the operating system ([IDEMPIERE-7201](https://idempiere.atlassian.net/browse/IDEMPIERE-7201)).
 - **macOS:** Java finds a face there only by its PostScript name (`HelveticaNeue-Medium`), so a print format can fall back to another font.

@@ -55,6 +55,8 @@ List the font families the server has:
 fc-list : family | sort -u
 ```
 
+`fc-list` shows only the fonts that fontconfig knows. Fonts that iDempiere loads from `PDF_FONT_DIR` are not in this list. To check them, list the files in that directory.
+
 ## Check a PDF
 
 List the fonts inside a PDF with `pdffonts` (in the `poppler-utils` package):
