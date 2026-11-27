@@ -58,7 +58,7 @@ Note the above instructions are specific for Ubuntu or Debian, in folder `/opt/i
 
 If you try to run the script and encounter the following error: 
 
-```
+```text
 ===================================
 Starting iDempiere Server
 ===================================

@@ -39,14 +39,16 @@ Let's say your company has a rule for commissions where the commission for sales
 
 *The explanation of where to get the purchase price is out of the scope of this guide and it will be assumed that there's a CUSTOM_PurchasePrice column in C_OrderLine that contains the purchase price of the selected product.*
 
-In this case, all you need to do is create a class like this to override the getOrderCommissionSQL with the right amount:```java
+In this case, all you need to do is create a class like this to override the getOrderCommissionSQL with the right amount:
 
-public class CUSTOM_CommissionCalc extends CommissionCalc  &#123;
+```java
 
-	protected String getOrderCommissionSQL() &#123;
+public class CUSTOM_CommissionCalc extends CommissionCalc  {
+
+	protected String getOrderCommissionSQL() {
 		StringBuilder sql = new StringBuilder();
 		if (m_com.isListDetails())
-		&#123;
+		{
 			sql.append("SELECT h.C_Currency_ID, l.LineNetAmt - (l.CUSTOM_PurchasePrice*l.QtyOrdered) AS Amt, l.QtyOrdered, ")
 				.append("l.C_OrderLine_ID, NULL, h.DocumentNo,")
 				.append(" COALESCE(prd.Value,l.Description),h.DateOrdered ")
@@ -57,9 +59,9 @@ public class CUSTOM_CommissionCalc extends CommissionCalc  &#123;
 				.append(" AND h.IsSOTrx='Y'")
 				.append(" AND h.AD_Client_ID = ?")
 				.append(" AND h.DateOrdered BETWEEN ? AND ?");
-		&#125;
+		}
 		else
-		&#123;
+		{
 			sql.append("SELECT h.C_Currency_ID, SUM(l.LineNetAmt-(CUSTOM_PurchasePrice*l.QtyOrdered)) AS Amt,")
 				.append(" SUM(l.QtyOrdered) AS Qty, ")
 				.append("NULL, NULL, NULL, NULL, MAX(h.DateOrdered) ")
@@ -69,10 +71,10 @@ public class CUSTOM_CommissionCalc extends CommissionCalc  &#123;
 				.append(" AND h.IsSOTrx='Y'")
 				.append(" AND h.AD_Client_ID = ?")
 				.append(" AND h.DateOrdered BETWEEN ? AND ?");
-		&#125;
+		}
 		return sql.toString();
-	&#125;
+	}
 
-&#125;
+}
 
 ```

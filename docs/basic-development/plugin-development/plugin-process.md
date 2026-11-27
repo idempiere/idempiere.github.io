@@ -281,7 +281,7 @@ Create `OSGI-INF/processfactory.xml`:
 
 Update `META-INF/MANIFEST.MF`:
 
-```
+```properties
 Service-Component: OSGI-INF/*.xml
 ```
 

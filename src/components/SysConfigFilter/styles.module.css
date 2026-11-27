@@ -1,0 +1,288 @@
+/* Filter box. Not sticky: a sticky box covered table rows while scrolling.
+   Press "/" to jump back to it. */
+.filter {
+  margin: 1rem 0 1.5rem;
+}
+
+.box {
+  padding: 0.75rem 1rem;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+}
+
+.label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.hint {
+  font-weight: 400;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.hint kbd {
+  padding: 0 0.35rem;
+  font-size: 0.75rem;
+}
+
+/* The "/" shortcut needs a keyboard. */
+@media (hover: none), (pointer: coarse) {
+  .hint {
+    display: none;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.45rem 0.7rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+}
+
+.input:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.count {
+  flex: none;
+  min-width: 7.5rem;
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Small screens: the counter goes below the input, so the input keeps the
+   full width. */
+@media (max-width: 996px) {
+  .row {
+    flex-wrap: wrap;
+    gap: 0.35rem 0.75rem;
+  }
+
+  .input {
+    flex-basis: 100%;
+  }
+
+  .count {
+    min-width: 0;
+    text-align: left;
+  }
+}
+
+/* Empty state: shown in place of the tables when nothing matches. */
+.empty {
+  margin-top: 1rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 1px dashed var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+}
+
+.emptyTitle {
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+}
+
+.emptyText {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.clear {
+  padding: 0.4rem 0.9rem;
+  font: inherit;
+  font-size: 0.875rem;
+  color: var(--ifm-color-primary);
+  background: transparent;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clear:hover {
+  color: #fff;
+  background: var(--ifm-color-primary);
+}
+
+/* Key name with its anchor. Targets land below the navbar. */
+.key {
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
+}
+
+.key code {
+  font-size: 0.85em;
+}
+
+/* "#" link to the key, shown on hover or keyboard focus, as on a heading. */
+.keyLink {
+  padding-left: 0.3rem;
+  opacity: 0;
+  text-decoration: none;
+  user-select: none;
+  transition: opacity var(--ifm-transition-fast);
+}
+
+.keyLink::before {
+  content: '#';
+}
+
+.key:hover .keyLink,
+.keyLink:focus {
+  opacity: 1;
+}
+
+/* Key tables: the tables that follow the filter box, up to the next section
+   of the page. Styled from CSS, not from a class added by the script, so the
+   layout is already final in the server-rendered page and a link to a key
+   (#KEY) does not move after the page loads. */
+.filter ~ table:not(.filter ~ h2 ~ table) {
+  font-size: 0.9rem;
+}
+
+/* Infima's table display rule would override the hidden attribute. */
+.filter ~ table:not(.filter ~ h2 ~ table)[hidden] {
+  display: none;
+}
+
+.filter ~ table:not(.filter ~ h2 ~ table) th,
+.filter ~ table:not(.filter ~ h2 ~ table) td {
+  padding: 0.45rem 0.6rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.filter ~ table:not(.filter ~ h2 ~ table) td {
+  vertical-align: top;
+}
+
+/* Rows that jump in from a link get a short highlight. */
+.filter ~ table:not(.filter ~ h2 ~ table) tr:has(.key:target) {
+  background: color-mix(in srgb, var(--ifm-color-primary) 10%, transparent);
+}
+
+/* Tablets and desktop: fixed layout so columns line up across letters, and
+   long key names wrap instead of pushing the description off screen. */
+@media (min-width: 577px) {
+  .filter ~ table:not(.filter ~ h2 ~ table):not([hidden]) {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) th:nth-child(1) {
+    width: 28%;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) th:nth-child(2) {
+    width: 39%;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) th:nth-child(3) {
+    width: 15%;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) th:nth-child(4) {
+    width: 18%;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) td {
+    overflow-wrap: break-word;
+  }
+
+  .key code {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Phones: each key is a card with the key name on top, so nothing scrolls
+   sideways. The column names of the last two cells are shown as labels. */
+@media (max-width: 576px) {
+  .filter ~ table:not(.filter ~ h2 ~ table):not([hidden]) {
+    display: block;
+    overflow: visible;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) tbody,
+  .filter ~ table:not(.filter ~ h2 ~ table) td {
+    display: block;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) tr:not([hidden]) {
+    display: block;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) tr {
+    margin-bottom: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 8px;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) tr:not(:has(.key:target)) {
+    background: none;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) td {
+    padding: 0.15rem 0;
+    border: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) td:empty {
+    display: none;
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) td:nth-child(3)::before,
+  .filter ~ table:not(.filter ~ h2 ~ table) td:nth-child(4)::before {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--ifm-color-emphasis-700);
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) td:nth-child(3)::before {
+    content: 'Values';
+  }
+
+  .filter ~ table:not(.filter ~ h2 ~ table) td:nth-child(4)::before {
+    content: 'Reference';
+  }
+
+  .key code {
+    font-size: 0.9em;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+}

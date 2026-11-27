@@ -157,6 +157,8 @@ Write a key in code format: `ZK_THEME`. When a page introduces or depends on key
 | --- | --- | --- | --- |
 | `EXAMPLE_KEY` | `N` | System | Example row. Replace it with the real key. |
 
+The [System Configurator](/docs/basic-development/system-configurator) reference page lists every key and uses its own columns: Key, What it does, Values, Reference. To add a key there, follow the row format in the comment above its tables.
+
 Never guess a key name or default value. Look it up in the System Configurator window or in the core migration scripts.
 
 ## Writing style
@@ -235,7 +237,7 @@ Use Docusaurus admonitions for content that needs to stand out:
 
 ## Code examples
 
-- Give every code block a language, such as `java`, `sql`, `xml`, `bash`, `properties` or `yaml`.
+- Give every code block a language, such as `java`, `sql`, `xml`, `bash`, `properties` or `yaml`. Use `text` for file names, folder trees, console output and anything else without a fitting language. Write the language in lower case (`sql`, not `SQL`). The allowed languages are listed under MD040 in `.markdownlint-cli2.jsonc`. A code block without a language, or with one that is not on the list, fails the pull request checks.
 - When the code belongs in a file, add a `title` with the file path, for example `title="src/com/example/callout/MyCallout.java"`.
 - Show complete code a reader can copy: include the `package` line and all `import` lines.
 - Say which iDempiere version you tested the code on, in a sentence before the block.
@@ -301,6 +303,7 @@ On a page that already exists, the pull request only has to keep its own changes
 
 - Vale finds no em dashes and no words to avoid on the lines you add or change.
 - Frontmatter fields that are set have the right format, for example `last_reviewed: 2026-10-19` or `applies_to: ">=9"`.
+- Every code block has a language from the allowed list. Use `text` when no other language fits.
 
 <!-- vale iDempiere.AvoidWords = NO -->
 If Vale flags a word that is correct in context, such as "leverage" as a noun in "financial leverage", turn the rule off around that line and turn it back on after it:
