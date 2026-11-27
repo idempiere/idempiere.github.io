@@ -33,8 +33,8 @@ Every cache is a `org.compiere.util.CCache`, a thread-safe `Map` that registers 
 
 ### Cached model objects are immutable
 
-- `put` marks the object immutable and removes its transaction. A setter or `save()` then throws `PO is Immutable`.
-- The cache stores objects without a transaction. Objects loaded in a transaction or another context are stored as a copy.
+- `put` marks the object immutable and removes its transaction. Setters and saves that change it then throw `PO is Immutable`. A `save()` without changes returns before that check.
+- Because `put` removes the transaction first, an object loaded in a transaction is stored as it is, with any uncommitted values. Only put objects loaded without a transaction. Objects with another context are stored as a copy.
 - `get(ctx, key, copyOperator)` returns the shared object only for the same `Properties` object. Every other thread gets a new copy per call.
 
 ### When a cache is cleared
@@ -45,7 +45,7 @@ Every cache is a `org.compiere.util.CCache`, a thread-safe `Map` that registers 
 - **Only if this server has a cache for the table.** Caches are matched by their table name argument, not their cache name.
 - **By record ID.** An integer-keyed cache removes that one entry. A `String`-keyed cache is cleared completely. An integer key that is not the record ID is not cleared at all.
 - **UUID tables differ.** Since iDempiere 13 the reset carries the UUID. A `String`-keyed cache removes only that exact key, so a key built from something else stays stale.
-- **New records clear nothing.** `CCache.newRecord` does nothing, so cached lists and cached "not found" results stay.
+- **New records clear nothing by default.** `CCache.newRecord` does nothing, so cached lists and cached "not found" results stay. Exception in iDempiere 14: for tables in [`Cache.ClusterResetDebounceTables`](./caching-settings#cluster-settings), a new record clears the whole table on the other servers.
 - **Direct SQL clears nothing.** Only saves through `PO` trigger a reset.
 
 <!-- TODO: verify: confirm with the core team whether String-keyed caches on UUID tables staying stale is intended, or a bug to report -->

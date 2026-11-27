@@ -15,13 +15,14 @@ The REST API is the separate [idempiere-rest](https://github.com/bxservice/idemp
 - Behind a load balancer, a read after a save can reach a server that has not reset yet. Use sticky sessions.
 - Lookups in a response come from core caches. If they are too small, every request reloads them.
 - The plug-in sends no caching headers or `ETag`. For fast responses, the core developers suggest a process that returns prebuilt JSON, a summary table, or a cache in front of the API.
+- A cache in front of the API must keep responses apart by user, tenant and role, and check access. Otherwise it serves one user's data to another. Do not cache authenticated responses without that.
 
 ## Cache endpoints
 
 | Request | Does | Who |
 | --- | --- | --- |
 | `GET /api/v1/caches` | Lists caches. Filter with `table_name` or `name`. | Users with the System role |
-| `DELETE /api/v1/caches` | Resets all caches, or one table (`table_name`), or one record (`record_id`), on all servers. `entriesReset` is `0` in a cluster. | Roles with access to **Cache Reset** |
+| `DELETE /api/v1/caches` | Resets all caches, or one table (`table_name`), or one record (`record_id`), on all servers. With `record_id`, caches whose keys are not integers are cleared completely. `entriesReset` sums all servers in 12 and 13. In 14 it counts only this server, so it is `0` in a cluster. | Roles with access to **Cache Reset** |
 
 ## Reported and fixed
 

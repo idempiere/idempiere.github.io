@@ -26,6 +26,7 @@ What you see, why, and the fix. Applies to iDempiere 12 and later.
 | A new record is missing from a cached list | `CCache.newRecord` does nothing. | Override `newRecord`. |
 | A record added later is still "not found" | A cached `null` is not cleared by new records. | Do not cache misses. |
 | Old value after direct SQL, even after an hour | Only `PO` saves clear caches. Entries that are read often never expire. | `scheduleCacheReset` after the SQL. |
+| Old value after another application changed the data | No iDempiere code ran, so nothing reset the cache. | Run **Cache Reset**, or call `DELETE /api/v1/caches?table_name=...` from the integration. |
 | Another server returns the old value for a moment | Resets reach other servers after the commit. | Read from the database where it matters. |
 | A save on one server does not clear another | That server never loaded the cache class, so it sends no reset. | Load the class when the plug-in starts. |
 | Old translations (iDempiere 11 and earlier) | Saving `_Trl` did not clear the translation cache. | Fixed in 12. Use **Cache Reset** before. |
@@ -36,7 +37,7 @@ What you see, why, and the fix. Applies to iDempiere 12 and later.
 | --- | --- | --- |
 | Stale values in a cache keyed by tenant ID | `reset(int)` removes only the key equal to the record ID. | Use a `String` key, or override `reset(int)`. |
 | Data from another tenant or language | The key leaves out what the value depends on. | Add tenant, organization or language to the key. |
-| Values change in other sessions | `CCache` returns the stored list itself. | Store `List.copyOf` or records. |
+| Values change in other sessions | `CCache` returns the stored list itself. | Store `List.copyOf` with immutable elements, or records. |
 
 ## Size and load
 

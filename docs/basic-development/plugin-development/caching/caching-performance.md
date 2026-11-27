@@ -16,12 +16,12 @@ Single reports from production servers in the community chat, not benchmarks.
 
 | Measured | Cause | After the fix |
 | --- | --- | --- |
-| 2 million locator queries in 2 hours (280 per second) | 3000 locators, cache limit 1000 | 44,000 in 2 hours with a limit of 10,000: 98% fewer |
+| 2 million locator queries in 2 hours (280 per second) | Requests used about 3000 locators, but the cache held 1000 | 44,000 in 2 hours with a limit of 10,000: 98% fewer |
 | 4.4 million reference queries in 2 hours | Code that bypassed the cache | Use the cached `get` |
 | 1 to 2 million locator queries in 8 to 10 hours | Each product read loaded all locators | Fixed in [IDEMPIERE-5224](https://idempiere.atlassian.net/browse/IDEMPIERE-5224) |
 
 - A query by ID takes under a millisecond. At 280 per second, that is still up to 0.28 seconds of database time every second.
-- A cache that is too small costs more than none: every miss also evicts an entry.
+- A cache smaller than the set of records in use costs more than none: every miss also evicts an entry that the next request needs. A few hot records still hit.
 - One cache serves all tenants, so size it for the total, for example `-DCache.MaxSize.M_Locator=20000` for 17,612 locators.
 
 ## Preload small tables in one query
@@ -149,8 +149,8 @@ public static BigDecimal getPrice(int clientId, int MY_Category_ID) {
         s_prices.put(key, price);
         mine.complete(price);
         return price;
-    } catch (RuntimeException e) {
-        mine.completeExceptionally(e);
+    } catch (RuntimeException | Error e) {
+        mine.completeExceptionally(e); // never leave waiting threads blocked
         throw e;
     } finally {
         s_loading.remove(key, mine);
@@ -161,7 +161,7 @@ public static BigDecimal getPrice(int clientId, int MY_Category_ID) {
 - `computePrice` must not return `null`.
 - If it fails, waiting threads get a `CompletionException` from `join()`.
 - Do not compute inside `ConcurrentHashMap.computeIfAbsent`. It blocks other keys while the database works.
-- A reset during the computation can be overwritten with the old result. Use this only where that does no harm.
+- A reset during the computation can be overwritten with the old result. Expiry counts from the last access, so a value that is read often can stay old until the next reset. Add the version check from the [list example](./caching-examples#cache-a-list-per-tenant) where that matters.
 
 ## Keep the hot path short
 
