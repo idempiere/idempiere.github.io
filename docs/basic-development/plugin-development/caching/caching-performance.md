@@ -161,7 +161,7 @@ public static BigDecimal getPrice(int clientId, int MY_Category_ID) {
 - `computePrice` must not return `null`.
 - If it fails, waiting threads get a `CompletionException` from `join()`.
 - Do not compute inside `ConcurrentHashMap.computeIfAbsent`. It blocks other keys while the database works.
-- A reset during the computation can be overwritten with the old result. Expiry counts from the last access, so a value that is read often can stay old until the next reset. Add the version check from the [list example](./caching-examples#cache-a-list-per-tenant) where that matters.
+- A reset during the computation can be overwritten with the old result. Expiry counts from the last access, so a value that is read often can stay old until the next reset. Add the version check and the `size()` override from the [list example](./caching-examples#cache-a-list-per-tenant) where that matters.
 
 ## Keep the hot path short
 

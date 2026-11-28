@@ -129,9 +129,12 @@ Imports: `org.compiere.model.Query`, `org.idempiere.cache.ImmutablePOCache`. No 
 
 The key is a tenant ID, not a record ID, so `reset(int)` must clear everything. A new record changes the list, so `newRecord` must clear it too. A version number stops a query that started before a reset from putting the old list back afterwards.
 
+`CacheMgt` passes a reset only to caches with entries (`size() > 0`). Right after a reset the cache is empty, so a second save during the next query would be skipped, and the old list stored. The `size()` override keeps the cache visible to resets while a query runs. New records always arrive, because `newRecord` has no such check.
+
 ```java
 private static final Object s_activeIdsLock = new Object();
 private static int s_activeIdsVersion;
+private static final AtomicInteger s_activeIdsLoading = new AtomicInteger();
 
 private static final CCache<Integer, List<Integer>> s_activeIds =
     new CCache<>(Table_Name, Table_Name + "|ActiveIDs", 5, 0, false, 0) {
@@ -154,6 +157,13 @@ private static final CCache<Integer, List<Integer>> s_activeIds =
         public void newRecord(int record_ID) {
             reset(); // a new record changes the list
         }
+
+        @Override
+        public int size() {
+            int size = super.size();
+            // CacheMgt resets only caches with entries: stay visible while a query runs
+            return size == 0 && s_activeIdsLoading.get() > 0 ? 1 : size;
+        }
     };
 
 public static List<Integer> getActiveIds(Properties ctx) {
@@ -161,25 +171,30 @@ public static List<Integer> getActiveIds(Properties ctx) {
     List<Integer> ids = s_activeIds.get(clientId);
     if (ids != null)
         return ids;
-    int version;
-    synchronized (s_activeIdsLock) {
-        version = s_activeIdsVersion;
+    s_activeIdsLoading.incrementAndGet(); // before the version is read
+    try {
+        int version;
+        synchronized (s_activeIdsLock) {
+            version = s_activeIdsVersion;
+        }
+        int[] found = new Query(ctx, Table_Name, "AD_Client_ID=?", null)
+            .setParameters(clientId)
+            .setOnlyActiveRecords(true)
+            .setOrderBy("Name")
+            .getIDs();
+        ids = Arrays.stream(found).boxed().toList(); // unmodifiable: callers share it
+        synchronized (s_activeIdsLock) {
+            if (version == s_activeIdsVersion) // no reset since the query started
+                s_activeIds.put(clientId, ids);
+        }
+        return ids;
+    } finally {
+        s_activeIdsLoading.decrementAndGet();
     }
-    int[] found = new Query(ctx, Table_Name, "AD_Client_ID=?", null)
-        .setParameters(clientId)
-        .setOnlyActiveRecords(true)
-        .setOrderBy("Name")
-        .getIDs();
-    ids = Arrays.stream(found).boxed().toList(); // unmodifiable: callers share it
-    synchronized (s_activeIdsLock) {
-        if (version == s_activeIdsVersion) // no reset since the query started
-            s_activeIds.put(clientId, ids);
-    }
-    return ids;
 }
 ```
 
-Imports: `java.util.Arrays`, `java.util.List`, `org.compiere.model.Query`, `org.compiere.util.CCache`.
+Imports: `java.util.Arrays`, `java.util.List`, `java.util.concurrent.atomic.AtomicInteger`, `org.compiere.model.Query`, `org.compiere.util.CCache`. While a query runs, the server monitor shows a size of 1 for this cache.
 
 ## Cache a value from several tables
 
@@ -232,7 +247,7 @@ public final class BPGroupPriceListCache {
 }
 ```
 
-The handler clears the cache after the commit, on every server. `init()` registers the cache on every server. The cache has no expiry, so if a change during the query must never leave an old value, add the version check from the list example. Register the handler as in [Event handlers](../plugin-eventhandler). `FROM DUAL` works on PostgreSQL too, because iDempiere creates a `DUAL` view.
+The handler clears the cache after the commit, on every server. `init()` registers the cache on every server. The cache has no expiry, so if a change during the query must never leave an old value, add the version check and the `size()` override from the list example. Register the handler as in [Event handlers](../plugin-eventhandler). `FROM DUAL` works on PostgreSQL too, because iDempiere creates a `DUAL` view.
 
 ```java title="src/com/example/event/BPGroupPriceListCacheHandler.java"
 package com.example.event;

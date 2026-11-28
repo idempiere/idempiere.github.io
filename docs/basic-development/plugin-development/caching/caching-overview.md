@@ -47,6 +47,7 @@ Every cache is a `org.compiere.util.CCache`, a thread-safe `Map` that registers 
 - **Tables without a single integer ID differ.** This covers UUID-keyed tables and tables with several key columns. Since iDempiere 13 their reset carries the UUID, and a `String`-keyed cache removes only that exact key. A key built from something else stays stale, also in core caches such as `MProductCategoryAcct` and `MTableValRule`. In iDempiere 12 these resets cleared the whole cache. Clear such caches yourself in `afterSave` and `afterDelete`, as `MSysConfig` does, or run **Cache Reset**.
 - **New records clear nothing by default.** `CCache.newRecord` does nothing, so cached lists and cached "not found" results stay. Exception in iDempiere 14: for tables in [`Cache.ClusterResetDebounceTables`](./caching-settings#cluster-settings), a new record clears the whole table on the other servers.
 - **Direct SQL clears nothing.** Only saves through `PO` trigger a reset.
+- **Empty caches are skipped.** `CacheMgt` passes a reset only to caches with entries (`size() > 0`). A cache that is empty while it reloads does not see a save that commits during the query. New-record notices have no such check.
 
 ### Size and expiry
 
