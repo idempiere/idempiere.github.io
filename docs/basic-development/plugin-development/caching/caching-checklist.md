@@ -24,7 +24,7 @@ Applies to iDempiere 12 and later.
 - [ ] Right class, table name and record ID key. See [How it works](./caching-overview#how-it-works).
 - [ ] Copy constructors, `markImmutable` and copy operators for model classes.
 - [ ] No cached `null`, only values that cannot change.
-- [ ] `newRecord` overridden for cached lists, `reset(int)` for other integer keys.
+- [ ] `newRecord` overridden for cached lists, `reset(int)` for other integer keys. On tables without a single integer ID, a full reset scheduled in `afterSave` and `afterDelete` instead, because they send no `newRecord` notice.
 - [ ] Size limit set, or none for small fixed data.
 - [ ] Cache class loaded when the plug-in starts.
 

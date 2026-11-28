@@ -16,7 +16,7 @@ Applies to iDempiere 12 and later. Code for each rule is on [Practical examples]
 | Never change a cached object. Use `getCopy(ctx, id, trxName)`. | Cached objects are shared and throw `PO is Immutable`. |
 | Inside your own transaction, read with the `(ctx, id, trxName)` constructor. | The cache cannot see uncommitted data. This includes 2Pack and migration code. |
 | Create the cache with the table name of its data. | Saves clear caches by table name. |
-| Key by the record ID. | Other `String` keys clear the whole cache on every save. Other integer keys are not cleared at all. |
+| Key by the record ID. | On tables with an integer ID, other `String` keys clear the whole cache on every save, and other integer keys are not cleared at all. On tables without one (iDempiere 13 and later), `String` keys from other columns are not cleared: schedule a full reset in `afterSave` and `afterDelete` with `CacheMgt.scheduleCacheReset(Table_Name, -1, false, get_TrxName())`. |
 | Put everything the value depends on into the key: tenant, organization, language. | One cache serves all users and tenants of the server. |
 | Do not cache "not found". | New records do not clear it. |
 | Store only values that cannot change, such as immutable POs, records, or `List.copyOf` with immutable elements. | `CCache` returns the stored object itself. |

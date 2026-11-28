@@ -22,7 +22,7 @@ The REST API is the separate [idempiere-rest](https://github.com/bxservice/idemp
 | Request | Does | Who |
 | --- | --- | --- |
 | `GET /api/v1/caches` | Lists caches. Filter with `table_name` or `name`. | Users with the System role |
-| `DELETE /api/v1/caches` | Resets all caches, or one table (`table_name`), or one record (`record_id`), on all servers. With `record_id`, caches whose keys are not integers are cleared completely. `entriesReset` sums all servers in 12 and 13. In 14 it counts only this server, so it is `0` in a cluster. | Roles with access to **Cache Reset** |
+| `DELETE /api/v1/caches` | Resets all caches, or one table (`table_name`), or one record (`table_name` and a positive `record_id`), on all servers. `record_id` without `table_name` resets all caches. With `record_id`, caches whose keys are not integers are cleared completely. `entriesReset` sums all servers in 12 and 13. In 14 it counts only this server, so it is `0` in a cluster. | Roles with access to **Cache Reset** |
 
 ## Reported and fixed
 

@@ -33,6 +33,8 @@ private static final ImmutableIntPOCache<Integer, MMyCategory> s_cache =
     new ImmutableIntPOCache<>(Table_Name, Table_Name, 100, 0, false, 0);
 
 public static synchronized MMyCategory get(Properties ctx, int MY_Category_ID) {
+    if (MY_Category_ID <= 0)
+        return null; // ID 0 would create and cache a new, unsaved record
     if (s_cache.isEmpty())
         loadAll();
     MMyCategory category = s_cache.get(ctx, MY_Category_ID, e -> new MMyCategory(ctx, e));
@@ -57,6 +59,7 @@ private static void loadAll() {
 - Only for small tables. It loads the rows of **every tenant** into one cache.
 - `synchronized` stops two threads from preloading at once. Every caller waits for the lock.
 - An empty table makes every `get` run the full query again.
+- A save during the preload can be lost: the cache is empty, so `CacheMgt` skips its reset, and the preload puts the old row. Where that matters, add the version check and the `size()` override from the [list example](./caching-examples#cache-a-list-per-tenant).
 - `MUOM` adds `setApplyAccessFilter(MRole.SQL_NOTQUALIFIED, MRole.SQL_RO)`. That suits shared data, not tenant data.
 
 ## Load many records in one query

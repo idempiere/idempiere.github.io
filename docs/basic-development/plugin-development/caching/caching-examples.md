@@ -123,7 +123,7 @@ public static MMyCategory getByValue(Properties ctx, String value) {
 }
 ```
 
-Imports: `org.compiere.model.Query`, `org.idempiere.cache.ImmutablePOCache`. No size limit, so only for small tables.
+Imports: `org.compiere.model.Query`, `org.idempiere.cache.ImmutablePOCache`. No size limit, so only for small tables. A query that reads a row just before a save can put the old row back after the reset, as in core's `get` methods. Where that matters, add the version check and the `size()` override from the [list example](#cache-a-list-per-tenant).
 
 ## Cache a list per tenant
 
@@ -320,6 +320,9 @@ try {
     // change many C_Charge records with trx.getTrxName(),
     // and call trx.commit(true) every few hundred records
     trx.commit(true); // throws SQLException
+} catch (Exception e) {
+    trx.rollback(); // close() would commit the failed chunk
+    throw e;
 } finally {
     trx.close();
     CacheMgt.get().resumeTableCacheReset(MCharge.Table_Name);
@@ -330,6 +333,6 @@ try {
 
 :::warning
 
-The suspension applies to the whole server and drops resets, it does not queue them. Resets of the last commit can still run after you resume. Always resume and reset the table in `finally`, so that chunks committed before a failure are cleared too.
+`Trx.close()` commits an active transaction, so roll back a failed chunk before closing. The suspension applies to the whole server and drops resets, it does not queue them. Resets of the last commit can still run after you resume. Always resume and reset the table in `finally`, so that chunks committed before a failure are cleared too.
 
 :::
