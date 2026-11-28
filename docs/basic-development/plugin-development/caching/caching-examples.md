@@ -1,18 +1,21 @@
 ---
 sidebar_position: 4
-sidebar_label: Practical examples
-description: Copyable examples of iDempiere caches in plug-ins, from a cached model class to tenant-aware lookups, cached lists and caches cleared by event handlers.
+sidebar_label: Examples
+description: Copyable examples of iDempiere caches in plug-ins, from a cached model class and tenant-aware lookups to fast loading and batch changes.
 tags: [development]
 applies_to: ">=12"
-last_reviewed: 2026-11-27
+last_reviewed: 2026-11-28
 ---
 # Caching examples
 
-The examples use a custom table `MY_Category` with an integer ID, `Value` and `Name`. `Query` returns `MMyCategory` only with a [model factory](../plugin-modelfactory) for the table. Otherwise it returns a `GenericPO`, and the casts fail. Applies to iDempiere 12 and later.
+The examples use a custom table `MY_Category` with an integer ID, `Value` and `Name`. `Query` returns `MMyCategory` only with a [model factory](../plugin-modelfactory). Applies to iDempiere 12 and later, on Java 17 or later.
 
 ## Cache model objects by ID
 
-The pattern of `MCharge` in iDempiere 13. `X_MY_Category` is the class the model generator created.
+The pattern of core's `MCharge`. `X_MY_Category` is the generated class.
+
+<details>
+<summary>Show code: MMyCategory.java</summary>
 
 ```java title="src/com/example/model/MMyCategory.java"
 package com.example.model;
@@ -93,13 +96,17 @@ public class MMyCategory extends X_MY_Category implements ImmutablePOSupport {
 }
 ```
 
-- `get` caches only records that exist, never "not found".
-- The copy operators avoid reflection. The copy constructors are still needed by them and by `getCopy`.
-- Copy child objects, such as lines, in the copy constructor and mark them immutable in `markImmutable`.
+</details>
+
+- The copy constructors and `markImmutable` are required.
+- Copy child objects, such as lines, in the copy constructor.
 
 ## Look up a record by search key
 
-The key contains the tenant, because one cache serves all tenants.
+The key holds the tenant, because one cache serves all tenants.
+
+<details>
+<summary>Show code</summary>
 
 ```java
 /** Cache by tenant and search key. Every save of MY_Category clears it. */
@@ -123,13 +130,17 @@ public static MMyCategory getByValue(Properties ctx, String value) {
 }
 ```
 
-Imports: `org.compiere.model.Query`, `org.idempiere.cache.ImmutablePOCache`. No size limit, so only for small tables. A query that reads a row just before a save can put the old row back after the reset, as in core's `get` methods. Where that matters, add the version check and the `size()` override from the [list example](#cache-a-list-per-tenant).
+</details>
+
+- Only for small tables: the cache has no size limit.
+- A query just before a save can put the old row back. Where that matters, use the version check of the next example.
 
 ## Cache a list per tenant
 
-The key is a tenant ID, not a record ID, so `reset(int)` must clear everything. A new record changes the list, so `newRecord` must clear it too. A version number stops a query that started before a reset from putting the old list back afterwards.
+A list needs three overrides: `reset(int)`, because the key is a tenant ID; `newRecord`, because a new record changes the list; and `size()`, because `CacheMgt` skips empty caches. The version check stops a query that started before a reset from storing the old list.
 
-`CacheMgt` passes a reset only to caches with entries (`size() > 0`). Right after a reset the cache is empty, so a second save during the next query would be skipped, and the old list stored. The `size()` override keeps the cache visible to resets while a query runs. New records always arrive, because `newRecord` has no such check.
+<details>
+<summary>Show code</summary>
 
 ```java
 private static final Object s_activeIdsLock = new Object();
@@ -194,11 +205,16 @@ public static List<Integer> getActiveIds(Properties ctx) {
 }
 ```
 
-Imports: `java.util.Arrays`, `java.util.List`, `java.util.concurrent.atomic.AtomicInteger`, `org.compiere.model.Query`, `org.compiere.util.CCache`. While a query runs, the server monitor shows a size of 1 for this cache.
+</details>
+
+- Imports: `java.util.Arrays`, `java.util.List`, `java.util.concurrent.atomic.AtomicInteger`.
 
 ## Cache a value from several tables
 
-The sales price list of a Business Partner Group: its own price list, or the tenant's default. It depends on `C_BP_Group` and `M_PriceList`, so its name is not a table, and an event handler clears it.
+The sales price list of a Business Partner Group depends on `C_BP_Group` and `M_PriceList`. Its name is not a table, so an event handler clears it on new, changed and deleted records of both tables.
+
+<details>
+<summary>Show code: BPGroupPriceListCache.java</summary>
 
 ```java title="src/com/example/cache/BPGroupPriceListCache.java"
 package com.example.cache;
@@ -247,7 +263,10 @@ public final class BPGroupPriceListCache {
 }
 ```
 
-The handler clears the cache after the commit, on every server. `init()` registers the cache on every server. The cache has no expiry, so if a change during the query must never leave an old value, add the version check and the `size()` override from the list example. Register the handler as in [Event handlers](../plugin-eventhandler). `FROM DUAL` works on PostgreSQL too, because iDempiere creates a `DUAL` view.
+</details>
+
+<details>
+<summary>Show code: BPGroupPriceListCacheHandler.java</summary>
 
 ```java title="src/com/example/event/BPGroupPriceListCacheHandler.java"
 package com.example.event;
@@ -283,22 +302,17 @@ public class BPGroupPriceListCacheHandler extends AbstractEventHandler {
 }
 ```
 
-## Create a record and read it in the same transaction
+</details>
 
-```java
-MMyCategory category = new MMyCategory(getCtx(), 0, get_TrxName());
-category.setValue("NEW");
-category.setName("New category");
-category.saveEx();
+- `init()` registers the cache on every server, so a save on any server sends the reset.
+- Register the handler as in [Event handlers](../plugin-eventhandler).
 
-// Wrong: the cache reads without the transaction and does not find the record
-MMyCategory notFound = MMyCategory.get(getCtx(), category.get_ID());
+## Clear the cache after SQL
 
-// Right: read in the same transaction
-MMyCategory found = new MMyCategory(getCtx(), category.get_ID(), get_TrxName());
-```
+Only saves through `PO` clear caches. After SQL, schedule the reset for after the commit.
 
-## Clear the cache after direct SQL
+<details>
+<summary>Show code</summary>
 
 ```java
 int count = DB.executeUpdateEx(
@@ -309,9 +323,14 @@ if (count > 0)
     CacheMgt.scheduleCacheReset(MCharge.Table_Name, -1, false, trxName);
 ```
 
+</details>
+
 ## Change many records in a batch
 
-Resets run after a commit, so commit inside the suspended period. In a process, use your own transaction, because the process transaction commits after `doIt`.
+Suspend resets, commit inside the suspended period, and reset the table once at the end.
+
+<details>
+<summary>Show code</summary>
 
 ```java
 CacheMgt.get().suspendTableCacheReset(MCharge.Table_Name);
@@ -331,8 +350,124 @@ try {
 }
 ```
 
-:::warning
+</details>
 
-`Trx.close()` commits an active transaction, so roll back a failed chunk before closing. The suspension applies to the whole server and drops resets, it does not queue them. Resets of the last commit can still run after you resume. Always resume and reset the table in `finally`, so that chunks committed before a failure are cleared too.
+- `Trx.close()` commits an active transaction, so roll back a failed chunk first.
+- The suspension applies to the whole server and drops resets. Some can still run after you resume.
 
-:::
+## Load many records in one query
+
+One query for all cache misses, instead of one per `get`.
+
+<details>
+<summary>Show code</summary>
+
+```java
+public static Map<Integer, MMyCategory> getAll(Properties ctx, Collection<Integer> ids) {
+    Map<Integer, MMyCategory> result = new HashMap<>(ids.size() * 2);
+    List<Integer> missing = new ArrayList<>();
+    for (Integer id : ids) {
+        MMyCategory category = s_cache.get(ctx, id, e -> new MMyCategory(ctx, e));
+        if (category != null)
+            result.put(id, category);
+        else
+            missing.add(id);
+    }
+    // Oracle allows at most 1000 values in an IN list
+    for (int from = 0; from < missing.size(); from += 1000) {
+        List<Integer> chunk = missing.subList(from, Math.min(from + 1000, missing.size()));
+        String in = chunk.stream().map(String::valueOf).collect(Collectors.joining(","));
+        List<MMyCategory> loaded =
+            new Query(ctx, Table_Name, "MY_Category_ID IN (" + in + ")", null).list();
+        for (MMyCategory category : loaded) {
+            // put marks the object immutable, so it can be returned as it is
+            s_cache.put(category.get_ID(), category, e -> new MMyCategory(Env.getCtx(), e));
+            result.put(category.get_ID(), category);
+        }
+    }
+    return result;
+}
+```
+
+</details>
+
+- Oracle allows at most 1000 values in an `IN` list.
+
+## Cache small records instead of model objects
+
+A Java `record` is small, immutable and needs no copy.
+
+<details>
+<summary>Show code</summary>
+
+```java
+public record CategoryInfo(int id, String value, String name) {
+}
+
+private static final CCache<Integer, CategoryInfo> s_info =
+    new CCache<>(Table_Name, Table_Name + "|Info", 100, 0, false, 5000);
+
+public static CategoryInfo getInfo(int MY_Category_ID) {
+    CategoryInfo info = s_info.get(MY_Category_ID);
+    if (info != null)
+        return info;
+    String sql = "SELECT Value, Name FROM MY_Category WHERE MY_Category_ID=?";
+    try (PreparedStatement pstmt = DB.prepareStatement(sql, null)) {
+        pstmt.setInt(1, MY_Category_ID);
+        try (ResultSet rs = pstmt.executeQuery()) {
+            if (rs.next()) {
+                info = new CategoryInfo(MY_Category_ID, rs.getString(1), rs.getString(2));
+                s_info.put(MY_Category_ID, info);
+            }
+        }
+    } catch (SQLException e) {
+        throw new DBException(e, sql);
+    }
+    return info;
+}
+```
+
+</details>
+
+## Compute an expensive value only once
+
+When many threads miss at once, the first computes and the others wait.
+
+<details>
+<summary>Show code</summary>
+
+```java
+private static final CCache<String, BigDecimal> s_prices =
+    new CCache<>(Table_Name, Table_Name + "|Price", 100, 60, false, 5000);
+private static final ConcurrentHashMap<String, CompletableFuture<BigDecimal>> s_loading =
+    new ConcurrentHashMap<>();
+
+public static BigDecimal getPrice(int clientId, int MY_Category_ID) {
+    String key = clientId + "|" + MY_Category_ID;
+    BigDecimal price = s_prices.get(key);
+    if (price != null)
+        return price;
+    CompletableFuture<BigDecimal> mine = new CompletableFuture<>();
+    CompletableFuture<BigDecimal> running = s_loading.putIfAbsent(key, mine);
+    if (running != null)
+        return running.join(); // another thread is computing it
+    try {
+        price = s_prices.get(key); // it may have finished meanwhile
+        if (price == null)
+            price = computePrice(clientId, MY_Category_ID); // your expensive code
+        s_prices.put(key, price);
+        mine.complete(price);
+        return price;
+    } catch (RuntimeException | Error e) {
+        mine.completeExceptionally(e); // never leave waiting threads blocked
+        throw e;
+    } finally {
+        s_loading.remove(key, mine);
+    }
+}
+```
+
+</details>
+
+- `computePrice` must not return `null`.
+- Do not compute inside `ConcurrentHashMap.computeIfAbsent`: it blocks other keys.

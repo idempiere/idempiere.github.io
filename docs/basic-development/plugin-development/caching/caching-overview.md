@@ -1,68 +1,93 @@
 ---
 sidebar_position: 1
 sidebar_label: How caching works
-description: Learn how iDempiere caches work, which cache classes exist, and when caches are cleared on one server and across a cluster.
+description: Learn how iDempiere caches work, which cache classes exist, when caches are cleared, and which settings change them.
 tags: [development]
 applies_to: ">=12"
-last_reviewed: 2026-11-27
+last_reviewed: 2026-11-28
 ---
 # How caching works
 
-iDempiere keeps often-read records and values in memory. This page explains the mechanism. The next pages show how to use it. Applies to iDempiere 12 and later.
+iDempiere keeps often-read data in memory on each server. Applies to iDempiere 12 and later.
 
-## Choose the kind of cache first
+## What it covers
 
-| Kind | What it does | In iDempiere |
-| --- | --- | --- |
-| Custom cache | Your code fills and reads it, for example `MCharge.get(ctx, id)`. | Used everywhere in core. This section is about it. |
-| Second-level cache | Every model read goes through a cache without code changes. | Does not exist. |
-| Response cache | Whole API responses are kept. | Not in core. See [REST API](./caching-rest-api). |
+The cache saves database reads for data that many users read often. It is not a general data store.
 
-A cache helps only when the same data is read many times. It does not make a slow query fast.
+| Covers | Does not cover |
+| --- | --- |
+| In-memory caches on each server, filled on first read | A shared cache server holding the data |
+| Clearing an entry after a save commits, also on other servers | Caching every database read automatically |
+| Master data, such as products, price list headers, units of measure, settings | Calculated results, such as product prices |
+| | API responses: see [REST API](./caching-rest-api) |
+| | Changes from outside iDempiere, such as SQL scripts: they need **Cache Reset** |
 
-## How it works
+## Cache classes
 
-Every cache is a `org.compiere.util.CCache`, a thread-safe `Map` that registers with `CacheMgt` when it is created. A cache in a `static` field is created when its class is first used.
+Pick the class by what you store. Model objects need a cache that protects them from changes.
 
 | Class | For |
 | --- | --- |
 | `ImmutableIntPOCache` | Model objects by record ID. Most core model classes. |
-| `ImmutablePOCache` | Model objects by `String` key. |
-| `CCache` | Other values: IDs, strings, lists, records. |
-| `POCopyCache`, `IntPOCopyCache` | A writable copy on every `get`. Rare. |
+| `ImmutablePOCache` | Model objects by `String` key |
+| `CCache` | Other values: IDs, strings, lists, records |
 
-### Cached model objects are immutable
+All of them are `CCache`, a thread-safe `Map` registered with `CacheMgt`.
 
-- `put` marks the object immutable and removes its transaction. Setters and saves that change it then throw `PO is Immutable`. A `save()` without changes returns before that check.
-- Because `put` removes the transaction first, an object loaded in a transaction is stored as it is, with any uncommitted values. Only put objects loaded without a transaction. Objects with another context are stored as a copy.
-- `get(ctx, key, copyOperator)` returns the shared object only when you pass the same `Properties` object it holds, on any thread. Any other `Properties` object gets a new copy per call. Each web UI session and REST request has its own.
+## Cached objects are read-only
 
-### When a cache is cleared
+Many users share one cached object, so nobody may change it.
+
+- A setter or save that changes a cached object throws `PO is Immutable`.
+- Store only objects loaded without a transaction.
+- Another `Properties` object gets its own copy on every `get`.
+
+## When a cache is cleared
+
+A cache entry is cleared after the database change is committed, not before. Some changes do not clear it at all.
 
 ![Diagram of one server. On a read, your code calls MCharge.get. On a cache hit it gets the immutable object. On a miss, MCharge.get loads the record from the database itself and puts it into the cache, which marks it immutable. On a write, saveEx registers a cache reset with the transaction, then the transaction commits. After the commit, a background thread removes the record's entry from the cache, or clears the whole cache when its key type differs. On a rollback nothing is cleared.](/img/docs/plugin-development/cache-local.svg)
 
-- **After the commit, on a background thread.** A rollback clears nothing. For a short time, other threads and servers still see the old value.
-- **Only if this server has a cache for the table.** Caches are matched by their table name argument, not their cache name.
-- **By record ID.** An integer-keyed cache removes that one entry. A `String`-keyed cache is cleared completely. An integer key that is not the record ID is not cleared at all.
-- **Tables without a single integer ID differ.** This covers UUID-keyed tables and tables with several key columns. Since iDempiere 13 their reset carries the UUID, and a `String`-keyed cache removes only that exact key. A key built from something else stays stale, also in core caches such as `MProductCategoryAcct` and `MTableValRule`. New records of these tables send no `newRecord` notice at all. In iDempiere 12 these resets cleared the whole cache. In `afterSave` and `afterDelete`, schedule a full reset after the commit with `CacheMgt.scheduleCacheReset(Table_Name, -1, false, get_TrxName())`, as `MSysConfig` does, or run **Cache Reset**.
-- **New records clear nothing by default.** `CCache.newRecord` does nothing, so cached lists and cached "not found" results stay. Exception in iDempiere 14: for tables in [`Cache.ClusterResetDebounceTables`](./caching-settings#cluster-settings), a new record clears the whole table on the other servers.
-- **Direct SQL clears nothing.** Only saves through `PO` trigger a reset.
-- **Empty caches are skipped.** `CacheMgt` passes a reset only to caches with entries (`size() > 0`). A cache that is empty while it reloads does not see a save that commits during the query. New-record notices have no such check.
+| Event | Effect |
+| --- | --- |
+| Save or delete through `PO`, after commit | Removes the entry with that record ID. Clears `String`-keyed caches completely. |
+| Rollback | Nothing |
+| New record | Nothing, by default |
+| SQL script, import by script, other application | Nothing: run **Cache Reset** |
+| Cache is empty | The reset is skipped |
+| Table without a single integer ID (13 and later) | Removes only the entry keyed by the UUID |
 
-### Size and expiry
+Details and fixes: [Rules and gotchas](./caching-best-practices).
 
-- Default: at most 1000 entries (`Cache.MaxSize`), expiring 60 minutes after the last access (`Cache.ExpireMinute`).
-- `(tableName, name, capacity, expireMinutes, distributed, maxSize)` sets your own limits for a local cache. `0` means no limit. A distributed cache in a cluster uses the limits of Hazelcast or Redis instead.
-- A cached `null` is kept in a separate set without limit or expiry. A reset of that key or of the whole cache removes it.
+## Caches in a cluster
 
-See [Settings](./caching-settings).
-
-### Caches in a cluster
+With several servers, each keeps its own copy, and the server that saved a change tells the others to clear theirs.
 
 ![Timeline with four columns: Server A, Database, Hazelcast or Redis, and Server B. Server A saves and commits a record, clears its own cache and sends a reset with the table and the record ID or key. The distributed service delivers it to Server B, which waits a delay of 0 up to Cache.ResetStaggerMaxMs milliseconds and then clears its own cache. Until then Server B can still return the old value. The next get on Server B loads the new row from the database.](/img/docs/plugin-development/cache-cluster.svg)
 
 - Each server has its own cache. Only resets travel between servers.
-- **iDempiere 14:** the saving server clears itself, then sends the reset through Hazelcast (a remote task) or Redis (a message). Receivers wait a short delay, then clear.
-- **iDempiere 12 and 13:** the saving server runs the reset on all servers and waits for them.
-- Code that must see the latest value reads from the database.
-- `distributed=true` keeps the content itself in Hazelcast or Redis. Core uses it twice. Prefer local caches.
+- iDempiere 14 sends them through Hazelcast (default) or Redis. iDempiere 12 and 13 run the reset on every server and wait.
+- Other servers can show the old value for a moment.
+
+## Settings
+
+The administrator can change cache sizes and cluster behavior without code. These are Java system properties, for example in `IDEMPIERE_JAVA_OPTIONS`, read once at startup.
+
+| Property | Default | Effect |
+| --- | --- | --- |
+| `Cache.MaxSize` | `1000` | Entries per cache, if the code sets no limit |
+| `Cache.MaxSize.<cache name>` | none | Entries for one cache, overrides the code. Names are on the server monitor. |
+| `Cache.ExpireMinute` | `60` | Minutes without access before an entry expires |
+| `Cache.ClusterResetDebounceTables` (14) | none | Tables whose resets to other servers are combined |
+| `Cache.ClusterResetDebounceMs` (14) | `1000` | Interval for those combined resets |
+| `Cache.ResetStaggerMaxMs` (14) | `500` | Maximum delay before other servers clear. `0` turns it off. |
+
+The server monitor lists caches with size, hits and misses at `/idempiereMonitor?CacheDetails=Yes`.
+
+## Public resources
+
+The source code, tickets and libraries behind this section.
+
+- Source: [`CCache`](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/compiere/util/CCache.java), [`CacheMgt`](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/compiere/util/CacheMgt.java), [`ImmutablePOCache`](https://github.com/idempiere/idempiere/blob/master/org.adempiere.base/src/org/idempiere/cache/ImmutablePOCache.java), [`CacheTest`](https://github.com/idempiere/idempiere/blob/master/org.idempiere.test/src/org/idempiere/test/performance/CacheTest.java)
+- Tickets: [IDEMPIERE-4287](https://idempiere.atlassian.net/browse/IDEMPIERE-4287) immutable objects, [IDEMPIERE-5267](https://idempiere.atlassian.net/browse/IDEMPIERE-5267) size per cache, [IDEMPIERE-6851](https://idempiere.atlassian.net/browse/IDEMPIERE-6851) reset after commit, [IDEMPIERE-6989](https://idempiere.atlassian.net/browse/IDEMPIERE-6989) Redis, [IDEMPIERE-7090](https://idempiere.atlassian.net/browse/IDEMPIERE-7090) cluster resets
+- Libraries: [Caffeine](https://github.com/ben-manes/caffeine/wiki), [Hazelcast](https://docs.hazelcast.com/hazelcast/latest/), [Redisson](https://redisson.org/docs/), [caching patterns](https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html) (AWS)

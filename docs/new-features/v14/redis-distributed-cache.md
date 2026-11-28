@@ -43,4 +43,4 @@ A key prefix (`idempiere:<INSTANCE_NAME>:`) is applied automatically to all Redi
 - **Resilience**: A circuit breaker detects Redis unavailability. Optionally, iDempiere can fall back to a local in-memory cache while Redis is down.
 - **Diagnostics**: OSGi console commands are available to inspect Redis state: `redisStatus`, `redisHealth`, `redisMembers`, `redisKeys`, `redisBound`, `redisKeyspace`.
 
-For settings that limit the cache reset messages between servers, see [Cluster settings](/docs/basic-development/plugin-development/caching/caching-settings#cluster-settings).
+For settings that limit the cache reset messages between servers, see [Cluster settings](/docs/basic-development/plugin-development/caching/caching-overview#settings).

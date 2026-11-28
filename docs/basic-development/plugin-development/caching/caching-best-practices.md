@@ -1,27 +1,61 @@
 ---
-sidebar_position: 2
-sidebar_label: Best practices
-description: Rules for using iDempiere caches in plug-ins, such as reusing existing caches, never changing cached objects and clearing caches correctly.
+sidebar_position: 3
+sidebar_label: Rules and gotchas
+description: Rules for using iDempiere caches in plug-ins, the common problems with their causes and fixes, and a short checklist.
 tags: [development]
 applies_to: ">=12"
-last_reviewed: 2026-11-27
+last_reviewed: 2026-11-28
 ---
-# Caching best practices
+# Caching rules and gotchas
 
-Applies to iDempiere 12 and later. Code for each rule is on [Practical examples](./caching-examples).
+Applies to iDempiere 12 and later. Code for the rules is on [Examples](./caching-examples).
+
+## Rules
+
+Follow these when you write cache code. Each one prevents a gotcha below.
 
 | Rule | Why |
 | --- | --- |
-| Use the existing cache: `MCharge.get(ctx, id)`, not `new MCharge(ctx, id, trxName)`. | The constructor queries the database every time. |
-| Never change a cached object. Use `getCopy(ctx, id, trxName)`. | Cached objects are shared and throw `PO is Immutable`. |
-| Inside your own transaction, read with the `(ctx, id, trxName)` constructor. | The cache cannot see uncommitted data. This includes 2Pack and migration code. |
-| Create the cache with the table name of its data. | Saves clear caches by table name. |
-| Key by the record ID. | On tables with an integer ID, other `String` keys clear the whole cache on every save, and other integer keys are not cleared at all. On tables without one (iDempiere 13 and later), `String` keys from other columns are not cleared: schedule a full reset in `afterSave` and `afterDelete` with `CacheMgt.scheduleCacheReset(Table_Name, -1, false, get_TrxName())`. |
-| Put everything the value depends on into the key: tenant, organization, language. | One cache serves all users and tenants of the server. |
-| Do not cache "not found". | New records do not clear it. |
-| Store only values that cannot change, such as immutable POs, records, or `List.copyOf` with immutable elements. | `CCache` returns the stored object itself. |
-| After direct SQL, call `CacheMgt.scheduleCacheReset`. After changes by another application, run **Cache Reset** or call the REST reset endpoint. | Only saves through `PO` clear caches. |
-| Size the cache for the data, or use no limit for small fixed data. | A cache that is too small evicts and reloads, and adds load. |
-| Use the class that owns the cache when the plug-in starts. | A server only sends resets for caches it has registered. |
-| Do not cache tables with heavy write traffic. | Every save sends a reset to every server. |
-| In big batches, suspend resets and commit inside the suspended period. | Each save triggers a reset, and resets run only after a commit. |
+| Use `MCharge.get(ctx, id)`, not `new MCharge(ctx, id, trxName)` | The constructor always queries the database |
+| Change records through `getCopy(ctx, id, trxName)` | Cached objects are shared and read-only |
+| In your own transaction, read with `(ctx, id, trxName)` | The cache cannot see uncommitted data, also in 2Pack |
+| Give the cache the table name of its data | Saves clear caches by table name |
+| Key by the record ID | Other keys are cleared completely, or not at all |
+| Put tenant, organization and language into the key | One cache serves all users |
+| Do not cache "not found" | New records do not clear it |
+| Store only values that cannot change | `CCache` returns the stored object itself |
+| After SQL, call `CacheMgt.scheduleCacheReset` | Only `PO` saves clear caches |
+| Size the cache for the data | A small cache evicts and reloads |
+| Load the cache class when the plug-in starts | A server sends resets only for caches it has |
+| Do not cache tables with heavy writes | Every save sends a reset to every server |
+
+## Gotchas
+
+What goes wrong in practice, why, and how to fix it. Start from what you see.
+
+| You see | Why | Fix |
+| --- | --- | --- |
+| `PO is Immutable` | The object came from a cache | Use `getCopy` |
+| A new record is not found | The cache reads without your transaction | Read with `(ctx, id, trxName)` |
+| A new record is missing from a cached list | `newRecord` does nothing by default | Override `newRecord` |
+| A later record is still "not found" | A cached `null` stays | Do not cache misses |
+| Old value after SQL, even after an hour | Often-read entries never expire | `scheduleCacheReset` after the SQL |
+| Old value on another server for a moment | Resets reach other servers later | Read from the database where it matters |
+| A save does not clear another server | That server never loaded the cache class | Load it at plug-in start |
+| Stale values, key is a tenant ID | `reset(int)` removes only the key equal to the record ID | Override `reset(int)` |
+| Stale values on a table without a single integer ID (13 and later) | The reset carries the UUID | Schedule `CacheMgt.scheduleCacheReset(Table_Name, -1, false, get_TrxName())` in `afterSave` and `afterDelete` |
+| Old list after a reload | The cache was empty, so the reset was skipped | See the [list example](./caching-examples#cache-a-list-per-tenant) |
+| Another tenant's data | The key misses tenant, organization or language | Complete the key |
+| `Cache.MaxSize.<table>` does nothing | It needs the cache name | Look it up on the server monitor |
+| Lookups reload during an import | Every save resets the table | Suspend resets, see [batch example](./caching-examples#change-many-records-in-a-batch) |
+| Millions of identical queries | Cache bypassed or too small | Use `get`, raise `Cache.MaxSize.<name>` |
+
+## Checklist
+
+Check these before you add a cache and after it goes live.
+
+- [ ] Measured first: the query runs often in `pg_stat_statements`.
+- [ ] Core does not cache it already.
+- [ ] Every way the data changes clears the cache: saves, SQL, imports, other applications.
+- [ ] Tested on `AbstractTestCase`: a second `get` is a hit; after `commit()` and a short wait, `get` returns the new value. See [Testing plug-ins](/docs/basic-development/testing/testing-plugins).
+- [ ] After go-live: hits, misses and heap watched on the server monitor.
