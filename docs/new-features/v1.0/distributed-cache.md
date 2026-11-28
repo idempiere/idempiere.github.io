@@ -41,8 +41,13 @@ org.idempiere.hazelcast.service is the bundle that implement the distributed cac
 **Technical Info:** [IDEMPIERE-491](https://idempiere.atlassian.net/browse/IDEMPIERE-491)
 
 ## Using separate instances
-If you have several server instances on one machine or in one lan they will distribute their caches through the hazelcast. If you do not want that behaviour, e.g. because you use different instances for production and testing you better use different hazelcast groups. To do that you have to create a hazelcast.xml file (you can use the link up on this page for an example) and set a name in the &lt;group&gt; element. (See meeting minutes from 2014-06-25)
+
+If you have several server instances on one machine or in one lan they will distribute their caches through the hazelcast. If you do not want that behaviour, e.g. because you use different instances for production and testing you better use different hazelcast groups. To do that you have to create a hazelcast.xml file (you can use the link up on this page for an example) and set a name in the `<cluster-name>` element (`<group>` in older releases). (See meeting minutes from 2014-06-25)
 
 **Best Practices:**
 
-Norbert Bede experience - version 7.1 - hazelcast makes group by database username. This was a problem for me when i had application servers with multiple postgres users in same cluster. As CarlosRuiz suggested, this can be done by changing hazelcast-template.xml around line 35--&gt; DEFAULT is: &lt;name&gt;@ADEMPIERE_DB_USER@.@ADEMPIERE_DB_NAME@/@ADEMPIERE_DB_SERVER@&lt;/name&gt; Can be changed to &lt;name&gt;@ADEMPIERE_DB_NAME@/@ADEMPIERE_DB_SERVER@&lt;/name&gt;
+Norbert Bede experience - version 7.1 - hazelcast makes group by database username. This was a problem for me when i had application servers with multiple postgres users in same cluster. As CarlosRuiz suggested, this can be done by changing hazelcast-template.xml.
+
+In current releases the cluster name is set in the `<cluster-name>` element of `hazelcast-template.xml`. The default is `@ADEMPIERE_DB_USER@.@ADEMPIERE_DB_NAME@/@ADEMPIERE_DB_SERVER@:@ADEMPIERE_DB_PORT@`. Remove `@ADEMPIERE_DB_USER@.` to group the servers by database only.
+
+Most iDempiere caches are local to each server. Hazelcast mainly carries the messages that tell the other servers to clear their caches. See [Caching in plug-ins](/docs/basic-development/plugin-development/caching/caching-overview#caches-in-a-cluster).

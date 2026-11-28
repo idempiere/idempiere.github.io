@@ -1,0 +1,9 @@
+{
+  "label": "Caching",
+  "position": 11,
+  "link": {
+    "type": "generated-index",
+    "slug": "/basic-development/plugin-development/caching",
+    "description": "How iDempiere caches work, and how to use them in plug-ins without serving stale or shared data. Read the pages from top to bottom."
+  }
+}
